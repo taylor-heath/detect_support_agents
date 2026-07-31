@@ -1,0 +1,169 @@
+{
+  "input": { "targetUrl": "https://billybetsportugal.com", "country": "Spain", "runAt": "2026-07-31T00:00:00Z" },
+  "brand": {
+    "value": "BillyBets",
+    "confidence": "high",
+    "basis": "disclosed",
+    "sources": [
+      { "url": "https://www.sportsgambler.com/review/billybets/", "retrievedAt": "2026-07-31", "note": "Third-party review confirms trading name 'BillyBets', launched 2024" },
+      { "url": "https://www.mightytips.com/bookmakers/billybets/", "retrievedAt": "2026-07-31" },
+      { "url": "https://www.askgamblers.com/online-casinos/reviews/billybets-casino", "retrievedAt": "2026-07-31" },
+      { "url": "https://www.trustpilot.com/review/www.billybets.com", "retrievedAt": "2026-07-31" }
+    ],
+    "note": "Direct fetch of billybetsportugal.com itself failed with HTTP 403 (see analystNotes); brand name is corroborated by numerous independent, mutually-consistent review/complaint sites rather than read directly from the target page."
+  },
+  "aliases": {
+    "value": [
+      "billybetsportugal.com",
+      "billybets.com",
+      "billybetscom.com",
+      "billybets.ca",
+      "billybet-casinos.com"
+    ],
+    "confidence": "medium",
+    "basis": "inferred",
+    "sources": [
+      { "url": "https://billybets.ca/terms/", "retrievedAt": "2026-07-31", "note": "Country/region-specific 'BillyBets' domain surfaced in search results" },
+      { "url": "https://billybet-casinos.com/terms/", "retrievedAt": "2026-07-31" },
+      { "url": "https://billybetscom.com/", "retrievedAt": "2026-07-31" }
+    ],
+    "note": "billybetsportugal.com is itself one of several country/language-targeted mirror domains for the same 'BillyBets' brand (others include the .ca and generic .com variants). Each presents identical BillyBets branding in search results; not independently confirmed to share the exact same operating entity, but consistent with known industry practice of per-market mirror domains for a single brand."
+  },
+  "legalEntity": {
+    "value": {
+      "name": "NovaForge Ltd (candidate current operator; unverified)",
+      "registrationNumber": "unknown",
+      "registeredAddress": "unknown",
+      "incorporationCountry": "Marshall Islands (reported by multiple secondary sources; not primary-verified)"
+    },
+    "confidence": "medium",
+    "basis": "inferred",
+    "sources": [
+      { "url": "https://mrwager.com/company/novaforge-ltd-casinos/", "retrievedAt": "2026-07-31", "note": "Lists BillyBets as part of the NovaForge Ltd brand portfolio" },
+      { "url": "https://casizon.com/owner/novaforge-ltd/", "retrievedAt": "2026-07-31", "note": "States 'BillyBets Casino is an online casino part of Novaforge Limited'" },
+      { "url": "https://casino.guru/forum/casinos/beware-of-casinos-associated-with-novaforge-ltd", "retrievedAt": "2026-07-31", "note": "Player-forum warning describing NovaForge Ltd as Marshall Islands-registered, successor to Rabidi N.V./Liernin Enterprises Ltd" },
+      { "url": "https://fintelegram.com/financial-intelligence-report-novaforge-ltd-the-new-face-in-the-illegal-online-casino-scene/", "retrievedAt": "2026-07-31", "note": "Financial-crime journalism report on NovaForge Ltd; body could not be fetched directly (403), title/summary only from search snippet" },
+      { "url": "https://fintelegram.com/wp-content/uploads/2024/09/Rabidi-Report.pdf", "retrievedAt": "2026-07-31", "note": "Primary investigative PDF on the Rabidi group referenced by multiple secondary sources; could not be fetched directly (403)" }
+    ],
+    "note": "No single operating entity could be confirmed from a primary source (site T&Cs/imprint were unreachable; Anjouan Gaming and Marshall Islands corporate registries could not be queried directly due to a systemic fetch-tool block, see analystNotes). However, unlike a purely scattered set of guesses, multiple independent secondary/industry-watchdog sources this session converge on the same succession chain: Rabidi N.V. (Curaçao licence revoked, bankrupt mid-2024) -> Adonio N.V. (May 2024) -> Liernin Enterprises Ltd. (Marshall Islands, July 2024) -> NovaForge Ltd (current, Marshall Islands), with NovaForge/Liernin explicitly named as BillyBets' operator by three independent aggregator sites. Treat 'NovaForge Ltd' as the best-attested current candidate, not a verified fact."
+  },
+  "parentGroup": {
+    "value": "NovaForge Ltd — reported successor operator group to the bankrupt Rabidi N.V. / Adonio N.V. / Liernin Enterprises Ltd casino network (unverified against a primary registry)",
+    "confidence": "medium",
+    "basis": "inferred",
+    "sources": [
+      { "url": "https://mrwager.com/company/novaforge-ltd-casinos/", "retrievedAt": "2026-07-31" },
+      { "url": "https://www.blackjackinfo.com/company/novaforge-ltd/", "retrievedAt": "2026-07-31" },
+      { "url": "https://fintelegram.com/financial-intelligence-report-novaforge-ltd-the-new-face-in-the-illegal-online-casino-scene/", "retrievedAt": "2026-07-31", "note": "Describes NovaForge as operating dozens of brands (50+ domains registered with Anjouan Gaming) tied to the collapsed Rabidi Group" }
+    ],
+    "note": "A separate, older secondary-source thread (seen in a prior related investigation of a www-prefixed variant of this same domain) instead associated BillyBets with a 'Boomerang Partners'/Soft2Bet-linked affiliate network. Both attributions recur across low-authority aggregator sources and could not be reconciled or verified against a primary source in this session; logged as a contradiction below rather than resolved."
+  },
+  "countryOfOperation": {
+    "value": { "incorporation": "Marshall Islands (reported, unverified)", "licensingJurisdiction": "Primarily claimed as Anjouan (Union of Comoros); also variously claimed as Philippines (PAGCOR), Curaçao (historical/superseded), and Costa Rica (single low-reliability source)" },
+    "confidence": "low",
+    "basis": "disclosed",
+    "sources": [
+      { "url": "https://www.diarioavanza.es/explora-mas/sitio-extranjero-que-acepta-espanoles-deja-dgoj-poder/20260730193155024817.html", "retrievedAt": "2026-07-31", "note": "Spanish-language article: 'BillyBets holds a license from Anjouan, which allows it to operate globally'; explicitly states BillyBets has no DGOJ licence and is not authorised in Spain" },
+      { "url": "https://www.mightytips.com/bookmakers/billybets/", "retrievedAt": "2026-07-31", "note": "States BillyBets operates under a PAGCOR (Philippines) licence" }
+    ],
+    "note": "No incorporation country could be confirmed from a primary source. Licensing-jurisdiction claims are inconsistent across sources; none of the claimed jurisdictions is Spain."
+  },
+  "licences": [
+    {
+      "jurisdiction": "Anjouan, Union of Comoros (Anjouan Gaming Authority)",
+      "reference": "unknown",
+      "status": "unverifiable",
+      "holderEntity": "unknown (reported as NovaForge Ltd / Liernin Enterprises Ltd)",
+      "authorisesInputCountry": false,
+      "sources": [
+        { "url": "https://www.diarioavanza.es/explora-mas/sitio-extranjero-que-acepta-espanoles-deja-dgoj-poder/20260730193155024817.html", "retrievedAt": "2026-07-31" },
+        { "url": "https://anjouangaming.com/public-register/", "retrievedAt": "2026-07-31", "note": "Register identified but could not be queried directly; WebFetch returned HTTP 403" }
+      ]
+    },
+    {
+      "jurisdiction": "Philippines (PAGCOR)",
+      "reference": "unknown",
+      "status": "unverifiable",
+      "holderEntity": "unknown",
+      "authorisesInputCountry": false,
+      "sources": [ { "url": "https://www.mightytips.com/bookmakers/billybets/", "retrievedAt": "2026-07-31" } ]
+    },
+    {
+      "jurisdiction": "Curaçao (historical, via Rabidi N.V. predecessor entity)",
+      "reference": "unknown",
+      "status": "revoked",
+      "holderEntity": "Rabidi N.V.",
+      "authorisesInputCountry": false,
+      "sources": [ { "url": "https://casino.guru/forum/casinos/beware-of-casinos-associated-with-novaforge-ltd", "retrievedAt": "2026-07-31", "note": "Reports Rabidi N.V.'s Curaçao licence was revoked in summer 2024 followed by bankruptcy, before brands transitioned to Adonio N.V. then Liernin Enterprises Ltd" } ]
+    },
+    {
+      "jurisdiction": "Costa Rica",
+      "reference": "unknown",
+      "status": "unverifiable",
+      "holderEntity": "unknown",
+      "authorisesInputCountry": false,
+      "sources": [ { "url": "https://www.askgamblers.com/sports-betting/sportsbook-reviews/billybets-sportsbook", "retrievedAt": "2026-07-31", "note": "Single low-reliability mention; Costa Rica does not issue a formal online-gambling licence, so this claim is treated with particular skepticism" } ]
+    },
+    {
+      "jurisdiction": "Spain (DGOJ)",
+      "reference": null,
+      "status": "not_found",
+      "holderEntity": null,
+      "authorisesInputCountry": false,
+      "sources": [
+        { "url": "https://www.diarioavanza.es/explora-mas/sitio-extranjero-que-acepta-espanoles-deja-dgoj-poder/20260730193155024817.html", "retrievedAt": "2026-07-31", "note": "States explicitly: BillyBets does not have a DGOJ licence and is not authorised to operate in Spain" }
+      ]
+    }
+  ],
+  "authorisedInInputCountry": {
+    "value": false,
+    "confidence": "high",
+    "basis": "disclosed",
+    "sources": [
+      { "url": "https://www.diarioavanza.es/explora-mas/sitio-extranjero-que-acepta-espanoles-deja-dgoj-poder/20260730193155024817.html", "retrievedAt": "2026-07-31", "note": "Spanish media article specifically about BillyBets: no DGOJ licence, DGOJ has no jurisdiction over it, yet the site has drawn significant traction among Spanish bettors since 2024" }
+    ],
+    "note": "This is a direct, brand-specific secondary source (not merely an absence-of-listing inference), which raises confidence above the 'medium' level typical of a not-found search on a regulator register alone. No DGOJ register entry for BillyBets or any candidate operating entity was independently found."
+  },
+  "news": [
+    {
+      "title": "Un sitio extranjero que acepta españoles deja a la DGOJ sin poder",
+      "publisher": "Diario Avanza",
+      "url": "https://www.diarioavanza.es/explora-mas/sitio-extranjero-que-acepta-espanoles-deja-dgoj-poder/20260730193155024817.html",
+      "publishedAt": "2026-07-30",
+      "summary": "Spanish-language article naming BillyBets directly: the site, launched in 2024, has gained significant traction with Spanish bettors despite holding no DGOJ licence, only an Anjouan licence, leaving Spain's regulator without jurisdiction to act against it.",
+      "relatesTo": "brand"
+    },
+    {
+      "title": "Financial Intelligence Report: NovaForge Ltd – The New Face in the Illegal Online Casino Scene!",
+      "publisher": "FinTelegram News",
+      "url": "https://fintelegram.com/financial-intelligence-report-novaforge-ltd-the-new-face-in-the-illegal-online-casino-scene/",
+      "publishedAt": null,
+      "summary": "Investigative report describing NovaForge Ltd (Marshall Islands) as operator of dozens of casino brands and 50+ domains registered with Anjouan Gaming, positioned as successor to the bankrupt Rabidi N.V./Liernin Enterprises Ltd network; full body could not be fetched in this session (HTTP 403), summary drawn from search snippet only.",
+      "relatesTo": "parent"
+    },
+    {
+      "title": "Beware of casinos associated with Novaforge Ltd?",
+      "publisher": "Casino Guru (player forum)",
+      "url": "https://casino.guru/forum/casinos/beware-of-casinos-associated-with-novaforge-ltd",
+      "publishedAt": null,
+      "summary": "Player-community discussion warning about casinos tied to NovaForge Ltd, tracing the corporate lineage Rabidi N.V. (Curaçao licence revoked, bankrupt) -> Adonio N.V. -> Liernin Enterprises Ltd -> NovaForge Ltd.",
+      "relatesTo": "parent"
+    },
+    {
+      "title": "BillyBets Sportsbook Review 2026 - Is it Safe?",
+      "publisher": "AskGamblers",
+      "url": "https://www.askgamblers.com/sports-betting/sportsbook-reviews/billybets-sportsbook",
+      "publishedAt": null,
+      "summary": "Includes a logged player complaint (dated 2026-07-10) reporting €9,000 in pending withdrawals, of which only €3,000 had been paid, with the remainder outstanding.",
+      "relatesTo": "brand"
+    }
+  ],
+  "contradictions": [
+    "Licensing jurisdiction is claimed inconsistently across sources: Anjouan is the most frequently and most directly cited (including in a brand-specific news article), but PAGCOR (Philippines), a historical/superseded Curaçao licence (via predecessor Rabidi N.V., since revoked), and a single unverifiable Costa Rica claim also appear — consistent with a pattern of regulatory-arbitrage/licence-shopping documented for this operator lineage.",
+    "The operating legal entity has changed hands multiple times within roughly 12 months per industry-watchdog reporting: Rabidi N.V. (Curaçao licence revoked, bankrupt mid-2024) -> Adonio N.V. -> Liernin Enterprises Ltd -> NovaForge Ltd (current, per most sources this session). A separate line of secondary sources found in a related prior investigation instead links the BillyBets brand to a 'Boomerang Partners'/Soft2Bet-linked affiliate network — this alternate attribution could not be reconciled with the NovaForge/Rabidi lineage and both are reported here as unresolved leads.",
+    "The target domain is branded 'billybetsportugal.com' (nominally suggesting a Portugal-focused mirror) yet independent Spanish media report the same BillyBets brand specifically targeting and gaining traction with Spanish bettors — consistent with the known industry pattern of country-named mirror domains being used to reach players outside, or in addition to, their nominal target market.",
+    "No DGOJ (Spain) authorisation was found for BillyBets or any candidate operating entity, corroborated by a brand-specific news source, while the current best-attested operator (NovaForge Ltd) and its predecessor entities are independently reported by watchdog sources as unlicensed/illegal-casino operators in a broader sense."
+  ],
+  "overallConfidence": "low",
+  "analystNotes": "This investigation was significantly constrained by a tool-level failure: the WebFetch capability returned HTTP 403 for every URL attempted in this session, including the target site (billybetsportugal.com), the Anjouan Gaming public licence register, the FinTelegram NovaForge report and Rabidi PDF, and the Diario Avanza news article — indicating a systemic block on direct page retrieval rather than site-specific blocking. As a result, no page content (footer, T&Cs, licensing page, WHOIS record, or full article/report text) could be directly read or quoted; all findings are derived from WebSearch result snippets and AI-generated summaries of those snippets, which can occasionally over-generalise. Despite this, the investigation reached a materially stronger result than a purely inconclusive one: (1) a Spanish-language, brand-specific news article directly confirms BillyBets has no DGOJ licence and is not authorised in Spain, giving high confidence to the core enforcement question; (2) three independent industry sources converge on 'NovaForge Ltd' (Marshall Islands) as the current operator, with a well-documented corporate lineage (Rabidi N.V. -> Adonio N.V. -> Liernin Enterprises Ltd -> NovaForge Ltd) tied to a revoked Curaçao licence and bankruptcy — a solid investigative lead even though it is not yet primary-source verified. Recommend the enforcement team, from a non-blocked network path: (a) directly retrieve billybetsportugal.com's Terms & Conditions/Imprint to identify the disclosed operating company; (b) query the Anjouan Gaming public register (anjouangaming.com/public-register/) for 'BillyBets', 'NovaForge Ltd', and 'Liernin Enterprises Ltd'; (c) run a formal WHOIS query on billybetsportugal.com and its known aliases; (d) obtain the FinTelegram Rabidi Report PDF directly to corroborate the corporate-succession chain; (e) confirm the absence of a DGOJ entry via the regulator's own public operator list rather than secondary reporting alone."
+}
