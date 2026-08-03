@@ -2,8 +2,8 @@
   "name": "data_esp",
   "userId": "Heath",
   "createdAt": "2026-08-03T10:53:30.091Z",
-  "updatedAt": "2026-08-03T10:53:30.091Z",
-  "version": 1,
+  "updatedAt": "2026-08-03T12:29:12.018Z",
+  "version": 2,
   "data": {
     "fileName": "data_esp.csv",
     "country": "Spain",
@@ -66119,8 +66119,38 @@
         }
       ]
     },
-    "cases": [],
+    "cases": [
+      {
+        "id": "#msd7hju90",
+        "subject": "Illegal gambling — betpawa.ug",
+        "type": "new_detection",
+        "priority": "high",
+        "status": "identified",
+        "assignee": "Heath",
+        "createdAt": "2026-08-03T12:29:11.985Z",
+        "updatedAt": "2026-08-03T12:29:11.985Z",
+        "slaDueAt": "2026-08-03T16:29:11.985Z",
+        "urls": [
+          "https://www.betpawa.ug/events/country/237"
+        ],
+        "notes": [],
+        "timeline": [
+          {
+            "at": "2026-08-03T12:29:11.985Z",
+            "actor": "Heath",
+            "event": "Case identified"
+          }
+        ]
+      }
+    ],
     "audit": [
+      {
+        "at": "2026-08-03T12:29:11.985Z",
+        "actor": "Heath",
+        "action": "Opened case",
+        "target": "#msd7hju90",
+        "instance": "data_esp"
+      },
       {
         "at": "2026-08-03T10:53:30.059Z",
         "actor": "Heath",
