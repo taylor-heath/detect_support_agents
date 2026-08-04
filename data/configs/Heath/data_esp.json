@@ -2,8 +2,8 @@
   "name": "data_esp",
   "userId": "Heath",
   "createdAt": "2026-08-03T10:53:30.091Z",
-  "updatedAt": "2026-08-03T12:29:12.018Z",
-  "version": 2,
+  "updatedAt": "2026-08-04T08:53:08.563Z",
+  "version": 3,
   "data": {
     "fileName": "data_esp.csv",
     "country": "Spain",
@@ -66144,6 +66144,13 @@
       }
     ],
     "audit": [
+      {
+        "at": "2026-08-04T08:53:07.214Z",
+        "actor": "Heath",
+        "action": "Initiated deep search",
+        "target": "https://www.betpawa.ug/events/country/237 (Spain)",
+        "instance": "data_esp"
+      },
       {
         "at": "2026-08-03T12:29:11.985Z",
         "actor": "Heath",
