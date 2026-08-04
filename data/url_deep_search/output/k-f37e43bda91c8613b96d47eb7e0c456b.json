@@ -1,0 +1,162 @@
+{
+  "input": {
+    "targetUrl": "https://www.betpawa.ug/events/country/237",
+    "country": "Spain",
+    "runAt": "2026-08-04T00:00:00Z"
+  },
+  "brand": {
+    "value": "betPawa",
+    "confidence": "high",
+    "basis": "disclosed",
+    "sources": [
+      { "url": "https://www.betpawa.ug/events/country/237", "retrievedAt": "2026-08-04T00:00:00Z", "note": "Target URL; direct fetch of the page returned HTTP 403 in this session (see analystNotes) - brand name taken from the domain/brand itself and corroborated by press coverage below." },
+      { "url": "https://www.pulse.ug/business/who-owns-betpawa/l4qyttn", "retrievedAt": "2026-08-04T00:00:00Z", "note": "Confirms betPawa as the trading brand active in Uganda via WebSearch aggregation." }
+    ],
+    "note": "Could not directly fetch betpawa.ug (WebFetch tool returned HTTP 403 for this and all other test URLs during this session, including control URLs like google.com and wikipedia.org, indicating a session-wide fetch failure rather than site-specific blocking). Brand identity inferred from domain name and consistent multi-source press coverage found via search."
+  },
+  "aliases": {
+    "value": [
+      "betpawa.com",
+      "betpawa.ng",
+      "betpawa.co.ke",
+      "betpawa.co.zm",
+      "betpawa.com.gh",
+      "betpawa.co.tz",
+      "betpawa.co.zw"
+    ],
+    "confidence": "medium",
+    "basis": "inferred",
+    "sources": [
+      { "url": "https://www.betpawa.com/", "retrievedAt": "2026-08-04T00:00:00Z", "note": "Country-selector landing page for the betPawa brand group, per search snippet." },
+      { "url": "https://www.urlert.com/domains/betpawa.co.zm", "retrievedAt": "2026-08-04T00:00:00Z" },
+      { "url": "https://footprint.digitalstakeout.com/domain/betpawa.co.zw", "retrievedAt": "2026-08-04T00:00:00Z" }
+    ],
+    "note": "betPawa operates country-specific domains (ccTLD/local variants) across roughly 13-17 African markets (Benin, Cameroon, DRC, Ghana, Kenya, Malawi, Nigeria, Rwanda, Senegal, Sierra Leone, Tanzania, Uganda, Zambia). Additionally, unaffiliated-looking domains such as betpawacasino.com, betpawagong.com, betpawa.org and betpawa.download surfaced in search results using the betPawa name; their relationship to the official brand/group could not be verified in this session and they are NOT included in the value list above - flagged here as possible copycat/affiliate sites warranting separate verification."
+  },
+  "legalEntity": {
+    "value": {
+      "name": "Chop Gaming Limited (trading as betPawa)",
+      "registrationNumber": "unknown",
+      "registeredAddress": "unknown",
+      "incorporationCountry": "Uganda"
+    },
+    "confidence": "medium",
+    "basis": "disclosed",
+    "sources": [
+      { "url": "https://x.com/lgrb_uganda/status/1935325963128291492", "retrievedAt": "2026-08-04T00:00:00Z", "note": "Uganda's National Lotteries and Gaming Regulatory Board (NLGRB) itself refers to 'Allan Tumushabe, CEO Chop Gaming Limited T/A betPawa' in an official social media post." },
+      { "url": "https://champsbase.com/en/sports-betting/best-sports-betting-sites/uganda/", "retrievedAt": "2026-08-04T00:00:00Z", "note": "Third-party review site states betPawa processes bets/payouts through Chop Gaming Limited under licence numbers NLGRB-CS-26-0182 and NLGRB-BM-26-0181." }
+    ],
+    "note": "Chop Gaming Limited is identified as the direct Ugandan licensee operating the betpawa.ug site, corroborated by the Uganda regulator's own account, but its registration number and registered address could not be independently confirmed against the Uganda Registration Services Bureau (URSB) register in this session (WebFetch to lgrb.go.ug and other Uganda government sources failed with HTTP 403 - tool-level failure, see analystNotes). Incorporation country of Uganda is inferred from licensing requirements and 'T/A betPawa' local trading structure, not verified against URSB directly."
+  },
+  "parentGroup": {
+    "value": "Mchezo Limited (Rwanda) - reported brand owner of betPawa; pawaTech OU (Estonia) is the associated technology/development group entity",
+    "confidence": "medium",
+    "basis": "inferred",
+    "sources": [
+      { "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Who-owns-betPawa-1806935", "retrievedAt": "2026-08-04T00:00:00Z" },
+      { "url": "https://citinewsroom.com/2023/07/who-owns-betpawa/", "retrievedAt": "2026-08-04T00:00:00Z" },
+      { "url": "https://starrfm.com.gh/mchezo-limited-are-owners-of-betpawa/", "retrievedAt": "2026-08-04T00:00:00Z" },
+      { "url": "https://www.myjoyonline.com/who-owns-betpawa/", "retrievedAt": "2026-08-04T00:00:00Z" },
+      { "url": "https://ariregister.rik.ee/eng/company/12551662/pawaTech-O%C3%9C", "retrievedAt": "2026-08-04T00:00:00Z", "note": "Estonian e-Business Register entry (via WebSearch aggregation) for pawaTech OU, registry code 12551662, incorporated 2013-10-11, Tallinn." }
+    ],
+    "note": "Multiple independent African press outlets (2023) report that as of 2023 the betPawa brand is owned by Mchezo Limited, a Rwanda-based (Kigali) company, following a stated shift of ownership toward African-based/customer shareholders (a 2022 pawaPass/Mchezo scheme distributed ~$2m of shares to 200,000 betPawa customers). The betPawa technology platform itself is attributed to pawaTech OU, an Estonian private limited company (registry code 12551662, Tallinn), historically linked to the 88mph African tech investment fund and Group CEO Kresten Buch. No independent Rwandan company-registry (RDB) confirmation of 'Mchezo Limited' / 'Mchezo IP Limited' registration number could be obtained in this session (WebFetch to rdb.rw and OpenCorporates failed; RDB portal search was not completable via WebSearch alone) - this parent attribution rests on consistent press reporting plus WHOIS registrant data (see legalEntity/aliases), not a verified registry record, hence basis = inferred rather than verified."
+  },
+  "countryOfOperation": {
+    "value": {
+      "incorporation": "Uganda (direct licensee Chop Gaming Limited, unverified against URSB); Rwanda (reported brand owner Mchezo Limited/Mchezo IP Limited, unverified against RDB); Estonia (pawaTech OU, verified registry code 12551662)",
+      "licensingJurisdiction": "Uganda - National Lotteries and Gaming Regulatory Board (NLGRB) only, per sources found"
+    },
+    "confidence": "medium",
+    "basis": "inferred",
+    "sources": [
+      { "url": "https://x.com/lgrb_uganda/status/1935325963128291492", "retrievedAt": "2026-08-04T00:00:00Z" },
+      { "url": "https://ariregister.rik.ee/eng/company/12551662/pawaTech-O%C3%9C", "retrievedAt": "2026-08-04T00:00:00Z" }
+    ],
+    "note": "No licence, incorporation, or authorisation was found anywhere in Spain (see licences[] and authorisedInInputCountry). The site's genuine licensing footprint appears confined to Uganda's domestic regulator; no MGA, UKGC, Gibraltar, Isle of Man, or Curacao licence claim was located for this specific brand/domain in the sources reviewed."
+  },
+  "licences": [
+    {
+      "jurisdiction": "Uganda (National Lotteries and Gaming Regulatory Board, NLGRB)",
+      "reference": "NLGRB-BM-26-0181 (betting) and NLGRB-CS-26-0182 (casino/gaming), as reported",
+      "status": "active",
+      "holderEntity": "Chop Gaming Limited (T/A betPawa)",
+      "authorisesInputCountry": false,
+      "sources": [
+        { "url": "https://x.com/lgrb_uganda/status/1935325963128291492", "retrievedAt": "2026-08-04T00:00:00Z" },
+        { "url": "https://champsbase.com/en/sports-betting/best-sports-betting-sites/uganda/", "retrievedAt": "2026-08-04T00:00:00Z" }
+      ]
+    },
+    {
+      "jurisdiction": "Spain (Direccion General de Ordenacion del Juego, DGOJ)",
+      "reference": null,
+      "status": "not_found",
+      "holderEntity": null,
+      "authorisesInputCountry": false,
+      "sources": [
+        { "url": "https://www.ordenacionjuego.es/", "retrievedAt": "2026-08-04T00:00:00Z" },
+        { "url": "https://openmercantil.es/fuentes/dgoj_operadores", "retrievedAt": "2026-08-04T00:00:00Z" },
+        { "url": "https://www.juego-legal-espana.es/noticia-casino-listado-operadores-legales-de-juego-autorizados-por-la-dgoj.html", "retrievedAt": "2026-08-04T00:00:00Z" }
+      ]
+    }
+  ],
+  "authorisedInInputCountry": {
+    "value": false,
+    "confidence": "medium",
+    "basis": "inferred",
+    "sources": [
+      { "url": "https://www.ordenacionjuego.es/", "retrievedAt": "2026-08-04T00:00:00Z", "note": "DGOJ's published authorised-operator list (via WebSearch summaries) names operators such as Bet365, William Hill, Betfair, PokerStars, 888, Sportium, Marathonbet, Codere, R Franco, Luckia, Sport Country - betPawa, Mchezo, Chop Gaming, and pawaTech do not appear in any list of DGOJ-authorised operators found." },
+      { "url": "https://esportsinsider.com/2025/05/spain-cracks-down-on-illegal-gambling-and-boosts-player-protection", "retrievedAt": "2026-08-04T00:00:00Z", "note": "Coverage of DGOJ's 2024/2025 enforcement action against 14 unlicensed operators - betPawa/Mchezo/Chop Gaming were not named among the operators discussed in the results reviewed." }
+    ],
+    "note": "Could not directly query the live DGOJ public register (WebFetch to ordenacionjuego.es and third-party mirrors returned HTTP 403 throughout this session - a tool-wide failure, confirmed against unrelated control URLs). Conclusion of non-authorisation is therefore inferred from the absence of any betPawa/Mchezo/Chop Gaming/pawaTech reference across DGOJ-related pages and Spanish gambling-law commentary surfaced by search, combined with the operator's evident focus and licensing being confined to African markets (see licences[]). This should be treated as a strong lead, not a confirmed register check, until the DGOJ register is queried directly."
+  },
+  "news": [
+    {
+      "title": "Betway and betPawa Engage With Malawi Gambling Regulator Over 15% Tax Increase",
+      "publisher": "iGamingToday",
+      "url": "https://www.igamingtoday.com/betway-and-betpawa-engage-with-malawi-gambling-regulator-over-15-tax-increase/",
+      "publishedAt": null,
+      "summary": "Malawi's Gaming and Lotteries Authority (MAGLA) opened talks with major brands including betPawa after a new law (effective end of December 2025) raised withholding tax on gambling winnings from 10% to 15% and removed tax-free thresholds.",
+      "relatesTo": "brand"
+    },
+    {
+      "title": "BetPawa deposits disrupted amid Cameroon mobile-money routing dispute",
+      "publisher": "Reported via industry/news aggregation (exact original publisher not confirmed)",
+      "url": "https://focusgn.com/africa/kiwibet-ceases-operations-in-uganda",
+      "publishedAt": "2025-01-26",
+      "summary": "On 25-26 January 2025, deposits on betPawa and other betting platforms in Cameroon were disrupted when the government attempted to force all betting payments through a single provider (INTOUCH Cameroon); the decision was reversed within 48 hours.",
+      "relatesTo": "brand"
+    },
+    {
+      "title": "Who owns betPawa?",
+      "publisher": "GhanaWeb / Citinewsroom / MyJoyOnline / StarrFM (multiple outlets, 2023)",
+      "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Who-owns-betPawa-1806935",
+      "publishedAt": "2023-07-01",
+      "summary": "Multiple Ghanaian outlets reported in July 2023 that the betPawa brand is owned by Mchezo Limited, a Rwanda-based company, as part of coverage explaining the brand's ownership structure following its shareholder-distribution scheme.",
+      "relatesTo": "parent"
+    },
+    {
+      "title": "pawaPass, Mchezo to distribute $2 million shares to betPawa customers",
+      "publisher": "The Citizen (Tanzania) / BusinessDay NG / Daily News (Tanzania)",
+      "url": "https://www.thecitizen.co.tz/tanzania/sports/pawapass-mchezo-to-distribute-2-million-shares-to-betpawa-customers-4430694",
+      "publishedAt": "2022-01-01",
+      "summary": "In 2022, betPawa's parent Mchezo partnered with pawaPass (which holds a Trust and Corporate Service Provider licence from the Rwandan central bank) to distribute $2 million in shares to roughly 200,000 loyal betPawa customers, framed as a customer-shareholder/Africanisation initiative.",
+      "relatesTo": "parent"
+    },
+    {
+      "title": "Consumer complaints against betPawa (withheld winnings, altered bet settlement, unresponsive support)",
+      "publisher": "Trustpilot / legalbet.ng / sikayetvar (consumer complaint aggregators)",
+      "url": "https://www.trustpilot.com/review/betpawa.com",
+      "publishedAt": null,
+      "summary": "Aggregated consumer-complaint sites record recurring user complaints against betPawa properties (e.g. betpawa.com, betpawa.ng) alleging withheld winnings, unilateral bet-market changes after settlement, and slow/unhelpful customer support responses; these are unverified individual consumer disputes rather than regulatory findings.",
+      "relatesTo": "brand"
+    }
+  ],
+  "contradictions": [
+    "The site under investigation (betpawa.ug) is a Uganda-market betting platform licensed only by Uganda's NLGRB, yet the investigation context (input country: Spain) implies the site/brand is reachable by and of concern to a Spanish audience; no corresponding DGOJ authorisation for this brand or any related entity was found, indicating potential unlicensed accessibility in Spain.",
+    "Domain WHOIS data for betpawa.ug (via third-party WHOIS aggregation) names the registrant as 'Mchezo IP Limited' of Kigali, Rwanda, while the entity publicly identified by Uganda's own regulator as the licensed operator is 'Chop Gaming Limited' - a different legal name, consistent with a brand-holding-company vs. local-licensee split typical of white-label/franchise gambling groups, and a structure that can obscure a single accountable entity for enforcement purposes.",
+    "Press reports consistently name 'Mchezo Limited' (Rwanda) as the owner of the betPawa brand, but WHOIS registrant data names the closely-related but distinct 'Mchezo IP Limited' - the precise legal relationship between these two similarly-named entities (and whether they are the same entity under different disclosure) could not be confirmed in this session.",
+    "This session's WebFetch tool returned HTTP 403 for every URL attempted, including unrelated control pages (e.g. google.com, en.wikipedia.org), preventing direct verification of the target site's own footer/terms disclosures, the live DGOJ register, Uganda's LGRB/URSB registers, and Rwanda's RDB register; all findings therefore rely on WebSearch-aggregated third-party snippets rather than primary-source confirmation, and should be re-verified once direct fetch access is restored."
+  ],
+  "overallConfidence": "low",
+  "analystNotes": "Investigation method: the WebFetch tool was non-functional throughout this session, returning HTTP 403 Forbidden for every URL attempted - including the target site, WHOIS lookup pages, the DGOJ register, Uganda's LGRB site, OpenCorporates, and even unrelated control URLs (google.com, en.wikipedia.org, an igamingtoday.com article) - indicating a session-level tool failure rather than site-specific blocking or anti-bot measures. As a substitute, all findings in this brief were assembled via WebSearch, which aggregates snippets from third-party sources: WHOIS resellers (ip2whois.com), business-registry mirror/aggregator sites (Estonia's ariregister.rik.ee reflected via search, OpenCorporates commentary), a regulator's own social-media account (Uganda NLGRB on X), and African/industry press. Because no primary source was fetched directly, several facts that would normally be 'verified' (basis) have been downgraded to 'disclosed' or 'inferred' to reflect that only secondary reporting of the primary source was available, not the primary source itself. Headline findings for the enforcement case file: (1) betpawa.ug is operated locally under Uganda's NLGRB licensing regime by Chop Gaming Limited (T/A betPawa); (2) the wider betPawa brand is reported to be owned by a Rwanda-based entity, Mchezo Limited/Mchezo IP Limited, with platform technology attributed to pawaTech OU of Estonia (verified Estonian registry code 12551662); (3) no evidence of any Spanish DGOJ authorisation for betPawa, Mchezo, Chop Gaming, or pawaTech was found in DGOJ-related search results, consistent with this being an unlicensed-in-Spain operation, though this could not be confirmed against the live DGOJ register directly; (4) recurring unverified consumer complaints about withheld winnings and bet-settlement disputes were found on complaint-aggregator sites. Recommended next steps for a follow-up pass: re-run with working direct fetch access to (a) capture betpawa.ug's own footer/terms/licensing-page disclosures verbatim, (b) query the DGOJ public operator register directly for 'betPawa'/'Mchezo'/'Chop Gaming'/'pawaTech', (c) query Uganda's URSB and Rwanda's RDB registries for exact registration numbers and registered addresses of Chop Gaming Limited and Mchezo Limited/Mchezo IP Limited respectively, and (d) obtain a live, tool-verified WHOIS record for betpawa.ug rather than a search-engine-summarized one."
+}
