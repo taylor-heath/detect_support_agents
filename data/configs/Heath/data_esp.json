@@ -2,8 +2,8 @@
   "name": "data_esp",
   "userId": "Heath",
   "createdAt": "2026-08-03T10:53:30.091Z",
-  "updatedAt": "2026-08-04T12:10:26.929Z",
-  "version": 10,
+  "updatedAt": "2026-08-04T12:11:44.557Z",
+  "version": 11,
   "data": {
     "fileName": "data_esp.csv",
     "country": "Spain",
@@ -66145,6 +66145,13 @@
     ],
     "audit": [
       {
+        "at": "2026-08-04T12:11:44.538Z",
+        "actor": "Heath",
+        "action": "Initiated deep search",
+        "target": "https://www.unibet.co.uk/bonus (Spain)",
+        "instance": "data_esp"
+      },
+      {
         "at": "2026-08-04T12:10:26.897Z",
         "actor": "Heath",
         "action": "Initiated deep search",
@@ -66216,6 +66223,15 @@
       }
     ],
     "deepSearches": [
+      {
+        "id": "dsmsemayai5",
+        "url": "https://www.unibet.co.uk/bonus",
+        "date": "2026-08-04",
+        "country": "Spain",
+        "at": "2026-08-04T12:11:44.538Z",
+        "by": "Heath",
+        "status": "in progress"
+      },
       {
         "id": "dsmsem9adt4",
         "url": "https://www.888poker.com/",
