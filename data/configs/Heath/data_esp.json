@@ -2,8 +2,8 @@
   "name": "data_esp",
   "userId": "Heath",
   "createdAt": "2026-08-03T10:53:30.091Z",
-  "updatedAt": "2026-08-04T08:53:08.563Z",
-  "version": 3,
+  "updatedAt": "2026-08-04T09:15:16.146Z",
+  "version": 4,
   "data": {
     "fileName": "data_esp.csv",
     "country": "Spain",
@@ -66145,6 +66145,13 @@
     ],
     "audit": [
       {
+        "at": "2026-08-04T09:15:16.118Z",
+        "actor": "Heath",
+        "action": "Initiated deep search",
+        "target": "https://www.ladbrokes.com/en/sports/sport/cricket (Spain)",
+        "instance": "data_esp"
+      },
+      {
         "at": "2026-08-04T08:53:07.214Z",
         "actor": "Heath",
         "action": "Initiated deep search",
@@ -66164,6 +66171,17 @@
         "action": "Created configuration",
         "target": "data_esp",
         "instance": "data_esp"
+      }
+    ],
+    "deepSearches": [
+      {
+        "id": "dsmseg007q0",
+        "url": "https://www.ladbrokes.com/en/sports/sport/cricket",
+        "date": "2026-08-04",
+        "country": "Spain",
+        "at": "2026-08-04T09:15:16.118Z",
+        "by": "Heath",
+        "status": "in progress"
       }
     ]
   }
