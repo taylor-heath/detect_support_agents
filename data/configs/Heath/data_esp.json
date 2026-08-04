@@ -2,8 +2,8 @@
   "name": "data_esp",
   "userId": "Heath",
   "createdAt": "2026-08-03T10:53:30.091Z",
-  "updatedAt": "2026-08-04T12:11:44.557Z",
-  "version": 11,
+  "updatedAt": "2026-08-04T12:13:56.305Z",
+  "version": 12,
   "data": {
     "fileName": "data_esp.csv",
     "country": "Spain",
@@ -66145,6 +66145,13 @@
     ],
     "audit": [
       {
+        "at": "2026-08-04T12:13:56.270Z",
+        "actor": "Heath",
+        "action": "Initiated deep search",
+        "target": "https://casumo.com/ (Spain)",
+        "instance": "data_esp"
+      },
+      {
         "at": "2026-08-04T12:11:44.538Z",
         "actor": "Heath",
         "action": "Initiated deep search",
@@ -66223,6 +66230,15 @@
       }
     ],
     "deepSearches": [
+      {
+        "id": "dsmsemdrxq6",
+        "url": "https://casumo.com/",
+        "date": "2026-08-04",
+        "country": "Spain",
+        "at": "2026-08-04T12:13:56.270Z",
+        "by": "Heath",
+        "status": "in progress"
+      },
       {
         "id": "dsmsemayai5",
         "url": "https://www.unibet.co.uk/bonus",
