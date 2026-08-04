@@ -2,8 +2,8 @@
   "name": "data_esp",
   "userId": "Heath",
   "createdAt": "2026-08-03T10:53:30.091Z",
-  "updatedAt": "2026-08-04T12:08:09.745Z",
-  "version": 7,
+  "updatedAt": "2026-08-04T12:08:54.510Z",
+  "version": 8,
   "data": {
     "fileName": "data_esp.csv",
     "country": "Spain",
@@ -66145,6 +66145,13 @@
     ],
     "audit": [
       {
+        "at": "2026-08-04T12:08:54.480Z",
+        "actor": "Heath",
+        "action": "Initiated deep search",
+        "target": "https://lotteryusa.com/ (Spain)",
+        "instance": "data_esp"
+      },
+      {
         "at": "2026-08-04T12:08:08.706Z",
         "actor": "Heath",
         "action": "Initiated deep search",
@@ -66195,6 +66202,15 @@
       }
     ],
     "deepSearches": [
+      {
+        "id": "dsmsem7b2o2",
+        "url": "https://lotteryusa.com/",
+        "date": "2026-08-04",
+        "country": "Spain",
+        "at": "2026-08-04T12:08:54.480Z",
+        "by": "Heath",
+        "status": "in progress"
+      },
       {
         "id": "dsmsem6br61",
         "url": "https://www.pokerstars.com/hu/casino/",
