@@ -23,7 +23,7 @@ fi
 git commit -m "Heath committed . ${TIMESTAMP}"
 
 # Pull any remote changes before pushing (rebase keeps history linear)
-git pull --rebase origin main
+#git pull --rebase origin main
 
 git push origin main
 
