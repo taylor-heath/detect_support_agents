@@ -2,8 +2,8 @@
   "name": "data_esp",
   "userId": "Heath",
   "createdAt": "2026-08-03T10:53:30.091Z",
-  "updatedAt": "2026-08-04T09:15:16.146Z",
-  "version": 4,
+  "updatedAt": "2026-08-04T09:15:25.782Z",
+  "version": 5,
   "data": {
     "fileName": "data_esp.csv",
     "country": "Spain",
@@ -66145,6 +66145,13 @@
     ],
     "audit": [
       {
+        "at": "2026-08-04T09:15:25.763Z",
+        "actor": "Heath",
+        "action": "Initiated deep search",
+        "target": "https://coral.co.uk (Spain)",
+        "instance": "data_esp"
+      },
+      {
         "at": "2026-08-04T09:15:16.118Z",
         "actor": "Heath",
         "action": "Initiated deep search",
@@ -66174,6 +66181,15 @@
       }
     ],
     "deepSearches": [
+      {
+        "id": "dsmseg07nn1",
+        "url": "https://coral.co.uk",
+        "date": "2026-08-04",
+        "country": "Spain",
+        "at": "2026-08-04T09:15:25.763Z",
+        "by": "Heath",
+        "status": "in progress"
+      },
       {
         "id": "dsmseg007q0",
         "url": "https://www.ladbrokes.com/en/sports/sport/cricket",
