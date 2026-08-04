@@ -2,8 +2,8 @@
   "name": "data_esp",
   "userId": "Heath",
   "createdAt": "2026-08-03T10:53:30.091Z",
-  "updatedAt": "2026-08-04T09:15:25.782Z",
-  "version": 5,
+  "updatedAt": "2026-08-04T12:06:41.078Z",
+  "version": 6,
   "data": {
     "fileName": "data_esp.csv",
     "country": "Spain",
@@ -66145,6 +66145,13 @@
     ],
     "audit": [
       {
+        "at": "2026-08-04T12:06:41.057Z",
+        "actor": "Heath",
+        "action": "Initiated deep search",
+        "target": "https://www.juegosonce.es/eurojackpot (Spain)",
+        "instance": "data_esp"
+      },
+      {
         "at": "2026-08-04T09:15:25.763Z",
         "actor": "Heath",
         "action": "Initiated deep search",
@@ -66181,6 +66188,15 @@
       }
     ],
     "deepSearches": [
+      {
+        "id": "dsmsem4g4h0",
+        "url": "https://www.juegosonce.es/eurojackpot",
+        "date": "2026-08-04",
+        "country": "Spain",
+        "at": "2026-08-04T12:06:41.057Z",
+        "by": "Heath",
+        "status": "in progress"
+      },
       {
         "id": "dsmseg07nn1",
         "url": "https://coral.co.uk",
