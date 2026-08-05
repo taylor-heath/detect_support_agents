@@ -1,0 +1,81 @@
+{
+  "input": { "targetUrl": "https://lotteryusa.com/", "country": "Spain", "runAt": "2026-08-04T00:00:00Z" },
+  "brand": {
+    "value": "Lottery USA",
+    "confidence": "high",
+    "basis": "disclosed",
+    "sources": [
+      { "url": "https://www.lotteryusa.com/", "retrievedAt": "2026-08-04", "note": "Search-indexed title: 'Lottery USA: Lottery Numbers, Results, Payouts, Rules & more. Est. 1995'; direct fetch returned HTTP 403." },
+      { "url": "https://www.similarweb.com/website/lotteryusa.com/", "retrievedAt": "2026-08-04" },
+      { "url": "https://www.zoominfo.com/c/lottery-usa/354637574", "retrievedAt": "2026-08-04" }
+    ],
+    "note": "Direct fetch of the homepage and /about-us/ returned HTTP 403 (bot-blocked); brand identity is corroborated across multiple independent secondary sources instead."
+  },
+  "aliases": {
+    "value": [],
+    "confidence": "low",
+    "basis": "unknown",
+    "sources": [],
+    "note": "No mirror domains or alias brands were identified. Note the brand is easily confused with the unrelated 'Lottery.com' / SEGG Media Corporation (ticker LTRY) — confirmed via search to be a separate company with no established ownership link to lotteryusa.com; see contradictions."
+  },
+  "legalEntity": {
+    "value": {
+      "name": "DNStination Inc. (WHOIS registrant organisation; not independently confirmed as the publishing/operating entity)",
+      "registrationNumber": "unknown",
+      "registeredAddress": "3450 Sacramento Street, Suite 405, San Francisco, CA 94118, USA (per WHOIS aggregator); a separate listing shows DNStination Inc. at 303 2nd St Ste 800N, San Francisco, CA — addresses not reconciled",
+      "incorporationCountry": "United States (inferred from address)"
+    },
+    "confidence": "low",
+    "basis": "verified",
+    "sources": [
+      { "url": "https://www.whois.com/whois/lotteryusa.com", "retrievedAt": "2026-08-04", "note": "Direct fetch returned 403; data taken from search-indexed WHOIS snippet showing registrant org DNStination Inc., registrar MarkMonitor Inc., created 1995-10-02, expires 2030-10-01, hosted on Google LLC IP 34.107.247.218." },
+      { "url": "https://www.yellowpages.com/san-francisco-ca/mip/dnstination-inc-475925921", "retrievedAt": "2026-08-04" },
+      { "url": "https://www.dnb.com/business-directory/company-profiles.dnstination_inc.dcc0d966ae3d3f5db4c18113960d176f.html", "retrievedAt": "2026-08-04" }
+    ],
+    "note": "The site's own Terms of Use reference an unnamed 'the Company' without disclosing a formal legal entity name in the search-indexed excerpt; the full page could not be fetched (403) to verify. DNStination Inc. is a real San Francisco-registered business (appears categorised as a web design/hosting/domain-management company in directories), so it may be a technical domain registrant/holding entity rather than confirmed as the publisher of record. No California Secretary of State entity number could be retrieved via search alone."
+  },
+  "parentGroup": {
+    "value": null,
+    "confidence": "low",
+    "basis": "unknown",
+    "sources": [],
+    "note": "No corporate parent or group structure could be identified beyond the WHOIS registrant DNStination Inc. Not to be confused with 'Lottery.com Inc.' / SEGG Media Corporation, a distinct, unrelated public company — see contradictions."
+  },
+  "countryOfOperation": {
+    "value": { "incorporation": "United States (inferred)", "licensingJurisdiction": null },
+    "confidence": "low",
+    "basis": "inferred",
+    "sources": [
+      { "url": "https://www.whois.com/whois/lotteryusa.com", "retrievedAt": "2026-08-04" }
+    ],
+    "note": "No licensing jurisdiction applies because the site does not appear to be a gambling operator requiring a licence (see analystNotes)."
+  },
+  "licences": [],
+  "authorisedInInputCountry": {
+    "value": null,
+    "confidence": "low",
+    "basis": "unknown",
+    "sources": [],
+    "note": "No gambling licence claim was found on the site to check against Spain's DGOJ register or any other regulator, because the site does not appear to offer real-money wagering. No DGOJ blocklist entry or Spain-specific enforcement action naming lotteryusa.com was found via search of ordenacionjuego.es and general news."
+  },
+  "news": [],
+  "contradictions": [
+    "No evidence was found that lotteryusa.com targets Spain: no Spanish-language version was located, no EUR pricing, and its content is limited to US state lottery results/tools — inconsistent with the premise that it is an illegal gambling site targeting the Spanish market.",
+    "lotteryusa.com is easily confused with the similarly-named but distinct and unaffiliated 'Lottery.com Inc.' (NASDAQ: LTRY, rebranded SEGG Media Corporation in 2025), which faced SEC fraud charges and related litigation over 'sham transactions.' Search results confirm these are separate companies (one an informational lottery-results site since 1995, the other a lottery-courier company that went public via SPAC); the SEC/fraud news pertains to Lottery.com/SEGG Media, not to lotteryusa.com or DNStination Inc., and has been excluded from the news section to avoid misattribution.",
+    "The WHOIS registrant (DNStination Inc.) may be a technical domain-registration/holding entity rather than the confirmed publisher/operator of the site; the site's own Terms of Use refer only to an unnamed 'the Company,' and the page could not be independently fetched (403) to resolve this."
+  ],
+  "priority": {
+    "value": "dont_enforce",
+    "rationale": "Based on all available public information, lotteryusa.com functions as a US lottery-results/information aggregator (results, numbers, statistics, and third-party courier-service reviews) rather than a real-money gambling operator. It shows no Spanish-language content, no EUR/local payment integration, and no evidence of targeting the Spanish market; it makes no discoverable gambling-licence claims to check against Spain's DGOJ or any other regulator. Enforcement resource against this target for the Spanish jurisdiction appears misdirected absent further evidence; recommend confirming the original flagging rationale (e.g., was a specific page, ad, or courier-affiliate link accessed from Spain?) before allocating investigative resources.",
+    "factors": {
+      "harmAndExposure": "No evidence of traffic from Spain, Spanish-language content, EUR pricing, or localized marketing; the content is US state-lottery specific.",
+      "consumerHarmSeverity": "The site itself does not appear to accept deposits or bets; it is a results/info/comparison site. Independent scam-check aggregators (Scamadviser, Scam Detector, Scamdoc) rate it as low-risk/legitimate and long-established (domain since 1995).",
+      "legalReachability": "Registrant (DNStination Inc.) and hosting (Google LLC, US) are both US-based and identifiable at a surface WHOIS level, but the true publishing/operating entity's legal name, registration number, and any relationship to DNStination Inc. remain unconfirmed due to blocked page access.",
+      "actorBehaviorIntent": "No mirror domains, no history of Spain-specific evasion, no prior Spanish regulatory warnings found. Long-standing single domain (since 1995) with no rotation pattern typical of evasive illegal operators.",
+      "feasibilityCost": "Given the apparent absence of any wagering activity or Spain-targeting, an enforcement action would have low likelihood of a meaningful or durable regulatory outcome and carries reputational/collateral risk of pursuing a non-gambling informational publisher.",
+      "strategicValue": "Little deterrent or precedent value in pursuing an apparent informational aggregator; resources are better directed at the courier/wagering services it reviews (e.g., Jackpot.com, which markets itself as allowing betting on lotteries 'from anywhere') if those independently target Spain."
+    }
+  },
+  "overallConfidence": "low",
+  "analystNotes": "Per the pre-investigation guidance, this brief specifically assessed whether lotteryusa.com is a real-money gambling operator or an information aggregator. All corroborating evidence (site description across multiple independent secondary sources, scam-check aggregator profiles, and the nature of its '/couriers/' section which reviews third-party lottery-courier apps like Jackpocket, Jackpot.com, Lotto.com and Mido Lotto rather than itself processing wagers) points to lotteryusa.com being a US lottery-results/information and affiliate-content site, not itself a gambling operator taking bets or deposits. Direct fetches of the homepage, /about-us/, /terms/, and WHOIS aggregator pages all returned HTTP 403 (bot-blocked), so all findings rely on search-indexed snippets and third-party directory/aggregator data — this is a material limitation and every fact here should be re-verified with direct/manual browsing or a compliant scraping method before any enforcement step is taken. No connection to Spain (language, currency, marketing, DGOJ listing, or news) was found. Recommend: (1) reconfirm why this URL was flagged for Spain — check the specific referral/complaint source; (2) if the actual concern is a courier or betting service reachable via links from lotteryusa.com (e.g., Jackpot.com, which advertises betting on lotteries 'from anywhere'), open a separate investigation targeting that service directly against Spain's DGOJ register; (3) if pursuing lotteryusa.com's corporate identity further, attempt direct browser-based access or a California Secretary of State business-entity search for 'DNStination Inc.' to confirm registration status and officers, since search alone could not retrieve a registry entry."
+}

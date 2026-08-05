@@ -1,0 +1,170 @@
+{
+  "input": { "targetUrl": "https://www.unibet.co.uk/bonus", "country": "Spain", "runAt": "2026-08-04T00:00:00Z" },
+  "brand": {
+    "value": "Unibet",
+    "confidence": "high",
+    "basis": "verified",
+    "sources": [
+      { "url": "https://en.wikipedia.org/wiki/Unibet", "retrievedAt": "2026-08-04", "note": "Brand history and corporate structure" },
+      { "url": "https://www.gamblingcommission.gov.uk/public-register/business/detail/45322", "retrievedAt": "2026-08-04", "note": "UKGC register lists 'Unibet.co.uk' brand under licensee Platinum Gaming Limited; direct fetch returned HTTP 403, content taken from search-indexed snippet" }
+    ],
+    "note": "Direct fetch of https://www.unibet.co.uk/bonus and /general-info/terms returned HTTP 403; brand/footer content reconstructed from search-engine snippets of those pages and third-party citations, not a first-hand page read."
+  },
+  "aliases": {
+    "value": ["Unibet.com", "Unibet.mt", "Unibet.com.au", "Unibet-7.com", "32Red (UK stablemate brand, shared licence)", "Bingo.com (UK stablemate brand, shared licence)"],
+    "confidence": "medium",
+    "basis": "disclosed",
+    "sources": [
+      { "url": "https://www.gamblingcommission.gov.uk/public-register/business/detail/45322", "retrievedAt": "2026-08-04", "note": "Platinum Gaming Limited licence covers Unibet, 32Red and Bingo.com brands in the UK" },
+      { "url": "https://www.ranksays.com/siteinfo/unibet-7.com", "retrievedAt": "2026-08-04", "note": "Alternate Unibet domain registered to Kindred IP Limited" },
+      { "url": "https://www.whois.com/whois/unibet.com", "retrievedAt": "2026-08-04" }
+    ],
+    "note": "Separately, 'Maria Casino', 'iGame', 'Kolikkopelit' and 'Bohemia' are also Unibet-group brands but are run by a different legal entity (Trannel International Limited, Malta) for other European markets, not by the UK entity behind unibet.co.uk — see parentGroup note. Also found unrelated third-party domains using the Unibet name for Spanish-speaking audiences (e.g. unibetcasinoespana.com, unibet.com.es) that could not be confirmed as officially operated by Kindred/Platinum Gaming/Trannel; flagged under contradictions as a possible brand-impersonation/affiliate risk requiring separate verification, not attributed here as a confirmed alias."
+  },
+  "legalEntity": {
+    "value": {
+      "name": "Platinum Gaming Limited",
+      "registrationNumber": "unknown (UK Companies House number 10900582 for an entity named 'Platinum Gaming Ltd' shows dissolved 8 Jan 2019 — see contradictions; the actively licensed operating company is Gibraltar-incorporated and its Gibraltar company number was not confirmed)",
+      "registeredAddress": "4th Floor, World Trade Centre, Gibraltar (operating/licensed address); UK head office given to UKGC as Kindred House, 17 Hartfield Road, London SW19 3SE",
+      "incorporationCountry": "Gibraltar"
+    },
+    "confidence": "high",
+    "basis": "verified",
+    "sources": [
+      { "url": "https://www.gamblingcommission.gov.uk/public-register/business/detail/45322", "retrievedAt": "2026-08-04", "note": "UKGC register: Platinum Gaming Limited, account 45322, head office Kindred House, London SW19 3SE" },
+      { "url": "https://www.datocapital.com.gi/companies/Platinum-Gaming-Ltd.html", "retrievedAt": "2026-08-04", "note": "Lists Platinum Gaming Limited as a Gibraltar-registered company" },
+      { "url": "https://www.gibraltar.gov.gi/uploads/Gambling/Approved%20Brands/Platinum%20Gaming%20Ltd.pdf", "retrievedAt": "2026-08-04", "note": "Gibraltar Government approved-brands list, address 4th Floor, World Trade Centre, Gibraltar" },
+      { "url": "https://find-and-update.company-information.service.gov.uk/company/10900582", "retrievedAt": "2026-08-04", "note": "UK Companies House record for a 'PLATINUM GAMING LTD', dissolved 2019 — relationship to the currently-licensed Gibraltar entity unresolved" }
+    ],
+    "note": "The unibet.co.uk footer/terms (per search-indexed snippets, direct fetch blocked) state the site is operated by Platinum Gaming Limited, wholly owned by Kindred Group. This is corroborated independently by the UK Gambling Commission's public register and Gibraltar Government gambling licensee records, so treated as verified rather than merely disclosed."
+  },
+  "parentGroup": {
+    "value": "Kindred Group plc, acquired by FDJ United (La Française des Jeux group) in October 2024 for approximately €2.5 billion",
+    "confidence": "high",
+    "basis": "verified",
+    "sources": [
+      { "url": "https://en.wikipedia.org/wiki/Kindred_Group", "retrievedAt": "2026-08-04" },
+      { "url": "https://gamblingclub.be/en/fdj-united-sells-trannel-hurry-scandal-revealed/", "retrievedAt": "2026-08-04", "note": "Direct fetch returned HTTP 403; content from search-indexed snippet describing FDJ's October 2024 acquisition of Kindred Group" }
+    ],
+    "note": "Important distinction for the case file: Kindred/FDJ United's Malta subsidiary Trannel International Limited (a separate legal entity that runs other Unibet-branded sites for various European markets) was sold on by FDJ United within about three weeks of the Kindred acquisition, reportedly because Trannel had been operating without local licences in the Netherlands, Austria, Germany and Norway. Platinum Gaming Limited — the entity behind unibet.co.uk — was not part of that divestment and remains under the FDJ United/Kindred umbrella as the UK/Gibraltar-licensed operator."
+  },
+  "countryOfOperation": {
+    "value": { "incorporation": "Gibraltar", "licensingJurisdiction": "United Kingdom (Gambling Commission) and Gibraltar (Gibraltar Gambling Commissioner, licences RGL 091/RGL 092)" },
+    "confidence": "high",
+    "basis": "verified",
+    "sources": [
+      { "url": "https://www.gamblingcommission.gov.uk/public-register/business/detail/45322", "retrievedAt": "2026-08-04" },
+      { "url": "https://www.gibraltar.gov.gi/uploads/Gambling/Approved%20Brands/Platinum%20Gaming%20Ltd.pdf", "retrievedAt": "2026-08-04" }
+    ]
+  },
+  "licences": [
+    {
+      "jurisdiction": "United Kingdom (Gambling Commission)",
+      "reference": "Account 45322 / Combined Continuation Remote Operating Licence 000-045322-R-324275-001",
+      "status": "active",
+      "holderEntity": "Platinum Gaming Limited",
+      "authorisesInputCountry": false,
+      "sources": [ { "url": "https://www.gamblingcommission.gov.uk/public-register/business/detail/45322", "retrievedAt": "2026-08-04" } ]
+    },
+    {
+      "jurisdiction": "Gibraltar (Gibraltar Gambling Commissioner)",
+      "reference": "RGL 091 / RGL 092",
+      "status": "active",
+      "holderEntity": "Platinum Gaming Limited",
+      "authorisesInputCountry": false,
+      "sources": [ { "url": "https://www.gibraltar.gov.gi/uploads/Gambling/Approved%20Brands/Platinum%20Gaming%20Ltd.pdf", "retrievedAt": "2026-08-04" } ]
+    },
+    {
+      "jurisdiction": "Spain (DGOJ / Dirección General de Ordenación del Juego)",
+      "reference": null,
+      "status": "not_found",
+      "holderEntity": null,
+      "authorisesInputCountry": false,
+      "sources": [
+        { "url": "https://www.juego-legal-espana.es/noticia-casino-listado-operadores-legales-de-juego-autorizados-por-la-dgoj.html", "retrievedAt": "2026-08-04", "note": "DGOJ's authorised-operator roster (approx. 80 operators, including Bet365, William Hill, Betfair, PokerStars, 888, Sportium, Codere, R.Franco, Luckia, etc.) does not include Unibet, Kindred, Trannel or Platinum Gaming" },
+        { "url": "https://openmercantil.es/fuentes/dgoj_operadores", "retrievedAt": "2026-08-04", "note": "Secondary aggregator of the same DGOJ public registry" },
+        { "url": "https://www.casinonewsdaily.com/blog/2019/07/11/kindred-withdraws-spanish-gambling-license-application-to-pursue-us-expansion/", "retrievedAt": "2026-08-04", "note": "Kindred Group withdrew its Spanish DGOJ licence application in 2019" }
+      ]
+    }
+  ],
+  "authorisedInInputCountry": {
+    "value": false,
+    "confidence": "medium",
+    "basis": "verified",
+    "sources": [
+      { "url": "https://www.juego-legal-espana.es/noticia-casino-listado-operadores-legales-de-juego-autorizados-por-la-dgoj.html", "retrievedAt": "2026-08-04" },
+      { "url": "https://www.cheekypunter.com/faq/unibet-country-restrictions/", "retrievedAt": "2026-08-04", "note": "Third-party guide states Unibet cannot accept players from Spain; direct fetch of this page returned HTTP 403, so this is from a search-indexed snippet" }
+    ],
+    "note": "No DGOJ authorisation was found for Platinum Gaming/Kindred/Trannel/Unibet. Independently, multiple secondary betting-guide sources describe Spain as an excluded/restricted country for Unibet, and Kindred is documented as having withdrawn its own Spanish licence application in 2019 rather than pursuing entry. This is a material tension with the initial premise that the site is being used to serve the Spanish market — see contradictions. No live technical test (e.g. Spanish-IP access/registration attempt) was performed to confirm the geo-block in practice, which is why confidence is medium rather than high."
+  },
+  "news": [
+    {
+      "title": "Gambling Commission fines Unibet operator £10 million",
+      "publisher": "Gaming Intelligence / multiple trade press (Racing Post, ITV News, Yogonet, next.io)",
+      "url": "https://www.gamingintelligence.com/legal/221476-gambling-commission-fines-unibet-operator-10-million/",
+      "publishedAt": "2025-10-22",
+      "summary": "UK Gambling Commission fined Platinum Gaming Limited (operator of Unibet.co.uk and uk.bingo.com) £10 million for 'serious' anti-money-laundering and social-responsibility failures between January 2023 and May 2024, including allowing high-spending customers to gamble large sums without adequate monitoring; an independent auditor was mandated to oversee remediation. Reported as the operator's second such penalty for similar breaches.",
+      "relatesTo": "entity"
+    },
+    {
+      "title": "Gambling Commission fines 32Red and Platinum Gaming £7.1m (Platinum Gaming portion ~£2.9m) for AML/safer-gambling failures",
+      "publisher": "Trade press (search-aggregated; original UKGC enforcement notice not independently fetched)",
+      "url": "https://www.gamblingcommission.gov.uk/news/enforcement-action",
+      "publishedAt": "2023-02-16",
+      "summary": "First UKGC enforcement action against Platinum Gaming Limited/32Red for anti-money-laundering and social-responsibility shortcomings, preceding the October 2025 repeat penalty.",
+      "relatesTo": "entity"
+    },
+    {
+      "title": "FDJ acquires Kindred Group for approximately €2.5 billion",
+      "publisher": "Multiple (Reuters/trade press, via search aggregation)",
+      "url": "https://en.wikipedia.org/wiki/Kindred_Group",
+      "publishedAt": "2024-10-01",
+      "summary": "La Française des Jeux (FDJ) completed acquisition of Kindred Group plc, becoming the parent of Unibet, 32Red, Maria Casino and other brands.",
+      "relatesTo": "parent"
+    },
+    {
+      "title": "FDJ United sells Trannel International 'in a hurry' amid unlicensed-market concerns",
+      "publisher": "gamblingclub.be (trade press)",
+      "url": "https://gamblingclub.be/en/fdj-united-sells-trannel-hurry-scandal-revealed/",
+      "publishedAt": "2024-11-01",
+      "summary": "Within roughly three weeks of completing the Kindred acquisition, FDJ United divested Trannel International Limited (Malta) — a separate Unibet-brand operating entity used in other European markets — to Carlos Strazzer's Ventures Lab group, reportedly because Trannel had been operating without licences in the Netherlands, Austria, Germany and Norway. Raises questions about acquisition due diligence and group-wide licensing discipline within the wider Unibet brand family, though this entity is distinct from Platinum Gaming Limited (operator of the target unibet.co.uk site).",
+      "relatesTo": "parent"
+    },
+    {
+      "title": "Kindred Group withdraws Spanish gambling licence application",
+      "publisher": "Casino News Daily",
+      "url": "https://www.casinonewsdaily.com/blog/2019/07/11/kindred-withdraws-spanish-gambling-license-application-to-pursue-us-expansion/",
+      "publishedAt": "2019-07-11",
+      "summary": "Kindred Group ended its pursuit of a Spanish DGOJ online gambling licence (application filed December 2018) to focus resources on other markets including the US, leaving Unibet without Spanish authorisation.",
+      "relatesTo": "brand"
+    },
+    {
+      "title": "Trannel International (Malta) fined €222,736",
+      "publisher": "iGaming Capital Malta",
+      "url": "https://igamingcapital.mt/malta-based-kindred-subsidiary-trannel-international-slapped-with-e222736-fine/",
+      "publishedAt": null,
+      "summary": "Separate MGA-licensed Kindred/Unibet-brand subsidiary Trannel International Limited was fined by regulatory authorities; included for brand-family context though it is not the entity behind the target UK site.",
+      "relatesTo": "brand"
+    }
+  ],
+  "contradictions": [
+    "The investigation premise (unibet.co.uk as an illegal site targeting Spain) is in tension with independent evidence that Unibet publicly lists Spain among countries where it cannot accept players, and that Kindred Group withdrew its own Spanish DGOJ licence application in 2019 rather than seeking entry — suggesting deliberate non-targeting rather than covert targeting. This should be verified with a live accessibility/geo-block test before enforcement resources are committed.",
+    "UK Companies House record for a UK-registered 'PLATINUM GAMING LTD' (company no. 10900582) shows the company dissolved on 8 January 2019, yet 'Platinum Gaming Limited' continues to hold active UK Gambling Commission and Gibraltar gambling licences as of 2025-2026 — the relationship between the dissolved UK-registered entity and the actively-licensed Gibraltar-incorporated company of the same name was not resolved from public sources and needs registry-level clarification.",
+    "Several look-alike domains referencing 'Unibet Casino España' (e.g. unibetcasinoespana.com, unibet.com.es) surfaced in searches; these could not be confirmed as officially operated by Kindred/Platinum Gaming/Trannel and may be unaffiliated affiliate-marketing or brand-referencing sites rather than genuine Unibet-operated services — worth flagging as a distinct, separate lead rather than conflating with the target unibet.co.uk domain.",
+    "The broader Unibet brand family includes a separate operating entity (Trannel International Limited, Malta) with a documented history of operating without local licences in other EU states (Netherlands, Austria, Germany, Norway) prior to its November 2024 divestment — illustrating group-level licensing risk patterns, even though this is legally distinct from Platinum Gaming Limited, the entity actually operating the target unibet.co.uk site."
+  ],
+  "priority": {
+    "value": "low",
+    "rationale": "The target URL (unibet.co.uk) is operated by Platinum Gaming Limited, a well-identified, UK/Gibraltar-licensed entity within a large, publicly-traded corporate group (FDJ United). Public evidence indicates Unibet does not accept Spanish players and that Kindred withdrew from Spain's licensing process in 2019, which weakens the premise of active illegal targeting of the Spanish market via this specific domain. The entity does carry a serious and repeated UK regulatory compliance history (two AML/safer-gambling fines, 2023 and 2025) and the wider brand family has separate group-level licensing-discipline concerns (Trannel divestment), which justify continued monitoring, but do not by themselves establish unlawful conduct directed at Spain through this domain. Recommend a low-cost verification step (technical test of Spanish-IP/geo access and any Spanish-language/currency features on unibet.co.uk) before allocating further enforcement resources; escalate to medium/high only if that test shows Spanish consumers can in fact register or deposit.",
+    "factors": {
+      "harmAndExposure": "No evidence found of Spanish-language content, EUR/Spanish payment rails, or Spanish-targeted marketing on unibet.co.uk; multiple secondary sources state Spain is an excluded/restricted country for Unibet. Actual traffic volume from Spain to this specific domain is unknown and not measurable from public sources — flagged as the key evidentiary gap.",
+      "consumerHarmSeverity": "Platinum Gaming Limited has a documented, serious compliance record (repeated AML and safer-gambling failures, £10m UKGC fine Oct 2025 following a 2023 penalty) — but these findings relate to its regulated UK customer base, not confirmed Spanish consumers.",
+      "legalReachability": "High — the operator is fully identified (Platinum Gaming Limited, Gibraltar-incorporated, UK Gambling Commission account 45322), its beneficial parent (Kindred Group/FDJ United) is a large, publicly known, Nasdaq/Euronext-linked corporate group, and existing regulator relationships (UKGC, Gibraltar Gambling Commissioner) provide clear channels for cross-regulator referral if needed.",
+      "actorBehaviorIntent": "No evidence of mirror-domain rotation or evasive behaviour specific to unibet.co.uk with respect to Spain; the operator appears to have proactively excluded Spain rather than targeted it. Group-level caution warranted given the Trannel International track record of unlicensed operation elsewhere in Europe, but that is a different legal entity.",
+      "feasibilityCost": "Low cost, low complexity to close the remaining evidentiary gap (a simple access/registration test from a Spanish IP/locale); a durable enforcement outcome against this specific URL is not clearly warranted until that gap is closed, given the operator's licensed, cooperative regulatory profile.",
+      "strategicValue": "Limited strategic value in pursuing a well-regulated, licensed EU operator's UK-facing domain without first confirming actual unlawful access from Spain; premature action against a compliant, licensed brand could carry reputational/collateral risk and is better reserved for confirmed unlicensed operators actively targeting the Spanish market."
+    }
+  },
+  "overallConfidence": "medium",
+  "analystNotes": "Direct WebFetch calls to unibet.co.uk (homepage, /bonus, /general-info/terms) and to several secondary sources (igaming-atlas.com, cheekypunter.com, gamblingclub.be, en.wikipedia.org/wiki/Kindred_Group, gamblingcommission.gov.uk register page) all returned HTTP 403 Forbidden; all findings from those sources were reconstructed from WebSearch-indexed snippets rather than first-hand page reads, and are flagged accordingly per source. Confirmed facts (UKGC register data, Gibraltar Government approved-brands list, UKGC enforcement press coverage) came from search snippets citing those official/primary documents, not from directly rendered pages, so a case officer with authenticated/direct browser access should re-verify the UKGC register entry (account 45322) and the Companies House record (10900582) first-hand before filing. The single most important open question for this case is whether unibet.co.uk is in practice accessible to, or used by, Spanish residents (via VPN or otherwise) despite Unibet's stated country restrictions — this was not directly testable within a read-only OSINT-only investigation and should be the first follow-up action. Distinguish clearly in any case file between (1) Platinum Gaming Limited — UK/Gibraltar-licensed, operator of the target unibet.co.uk — and (2) Trannel International Limited — Malta-licensed, a separate legal entity in the same brand family that has a documented history of unlicensed operation in other EU states and was divested by FDJ United in November 2024; conflating the two would misattribute findings in an enforcement referral."
+}
