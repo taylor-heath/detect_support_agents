@@ -2,8 +2,8 @@
   "name": "ESP-Evaluation",
   "userId": "HeathTaylor",
   "createdAt": "2026-08-05T13:34:49.439Z",
-  "updatedAt": "2026-08-05T13:34:49.439Z",
-  "version": 1,
+  "updatedAt": "2026-08-05T13:35:29.719Z",
+  "version": 2,
   "data": {
     "fileName": "data_esp.csv",
     "country": "Spain",
@@ -72053,14 +72053,32 @@
       ]
     },
     "cases": [],
-    "deepSearches": [],
     "audit": [
+      {
+        "at": "2026-08-05T13:35:29.689Z",
+        "actor": "HeathTaylor",
+        "action": "Initiated deep search",
+        "target": "https://vegasslotscasino.org/ (Spain)",
+        "instance": "ESP-Evaluation"
+      },
       {
         "at": "2026-08-05T13:34:49.410Z",
         "actor": "HeathTaylor",
         "action": "Created configuration",
         "target": "ESP Evaluation",
         "instance": "ESP Evaluation"
+      }
+    ],
+    "deepSearches": [
+      {
+        "id": "dsmsg4qie10",
+        "requestId": "k-74f0c3a49a8fa283470733cdfb7aab7c",
+        "url": "https://vegasslotscasino.org/",
+        "date": "2026-08-05",
+        "country": "Spain",
+        "at": "2026-08-05T13:35:29.689Z",
+        "by": "HeathTaylor",
+        "status": "in progress"
       }
     ]
   }
