@@ -1,8 +1,8 @@
 {
   "name": "Chile-Evaluation",
   "createdAt": "2026-08-06T09:27:02.027Z",
-  "updatedAt": "2026-08-06T15:07:33.472Z",
-  "version": 7,
+  "updatedAt": "2026-08-06T15:07:44.146Z",
+  "version": 8,
   "createdBy": "HeathTaylor",
   "updatedBy": "HeathTaylor",
   "data": {
@@ -44450,7 +44450,7 @@
           "source": "Google Search (welcome casino bonus)",
           "rank": 31783,
           "date": "2026-07-23",
-          "status": "illegal_gambling",
+          "status": "blacklisted",
           "legalEntity": "",
           "legalEntityCountry": ""
         },
@@ -104016,10 +104016,10 @@
         "subject": "Illegal gambling — 32red.com",
         "type": "new_detection",
         "priority": "high",
-        "status": "identified",
+        "status": "blocked",
         "assignee": "HeathTaylor",
         "createdAt": "2026-08-06T15:07:33.440Z",
-        "updatedAt": "2026-08-06T15:07:33.440Z",
+        "updatedAt": "2026-08-06T15:07:44.116Z",
         "slaDueAt": "2026-08-06T19:07:33.440Z",
         "urls": [
           "https://www.32red.com/"
@@ -104030,6 +104030,11 @@
             "at": "2026-08-06T15:07:33.440Z",
             "actor": "HeathTaylor",
             "event": "Case identified"
+          },
+          {
+            "at": "2026-08-06T15:07:44.116Z",
+            "actor": "HeathTaylor",
+            "event": "Added to blocklist"
           }
         ]
       },
@@ -104062,6 +104067,13 @@
       }
     ],
     "audit": [
+      {
+        "at": "2026-08-06T15:07:44.116Z",
+        "actor": "HeathTaylor",
+        "action": "Added to blocklist",
+        "target": "#mshngr7k1",
+        "instance": "Chile-Evaluation"
+      },
       {
         "at": "2026-08-06T15:07:33.440Z",
         "actor": "HeathTaylor",
