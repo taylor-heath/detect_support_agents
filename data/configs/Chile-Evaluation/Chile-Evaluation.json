@@ -1,8 +1,8 @@
 {
   "name": "Chile-Evaluation",
   "createdAt": "2026-08-06T09:27:02.027Z",
-  "updatedAt": "2026-08-06T11:58:05.473Z",
-  "version": 3,
+  "updatedAt": "2026-08-06T14:47:09.197Z",
+  "version": 4,
   "createdBy": "HeathTaylor",
   "updatedBy": "HeathTaylor",
   "data": {
@@ -104013,6 +104013,13 @@
     "cases": [],
     "audit": [
       {
+        "at": "2026-08-06T14:47:09.161Z",
+        "actor": "HeathTaylor",
+        "action": "Initiated deep search",
+        "target": "https://cm88v.com/ (Chile)",
+        "instance": "Chile-Evaluation"
+      },
+      {
         "at": "2026-08-06T11:58:05.457Z",
         "actor": "HeathTaylor",
         "action": "Changed country to Chile",
@@ -104035,6 +104042,16 @@
       }
     ],
     "deepSearches": [
+      {
+        "id": "dsmshmqijs0",
+        "requestId": "k-88371b039399ce183b2e24bd90b70ce1",
+        "url": "https://cm88v.com/",
+        "date": "2026-08-06",
+        "country": "Chile",
+        "at": "2026-08-06T14:47:09.160Z",
+        "by": "HeathTaylor",
+        "status": "in progress"
+      },
       {
         "id": "dsmshe8ed40",
         "requestId": "k-235bd314d540e72ca8538f5ab5207cd7",
