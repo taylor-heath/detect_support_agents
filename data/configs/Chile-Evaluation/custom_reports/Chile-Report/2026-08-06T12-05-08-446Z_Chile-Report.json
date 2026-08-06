@@ -8,7 +8,614 @@
   "updatedAt": "2026-08-06T12:04:53.585Z",
   "createdBy": "HeathTaylor",
   "updatedBy": "HeathTaylor",
-  "status": "queued",
+  "status": "completed",
   "scheduledAt": "2026-08-06T12:05:08.446Z",
-  "scheduledBy": "HeathTaylor"
+  "scheduledBy": "HeathTaylor",
+  "date": "2026-08-06T12:07:00.000Z",
+  "report": {
+    "sectionA": {
+      "title": "The numbers",
+      "metricCards": {
+        "totalUrlsAnalyzed": 11298,
+        "illegalGambling": 8955,
+        "licensedGambling": 0,
+        "evaluationPeriod": {
+          "days": 21,
+          "earliest": "2026-07-16",
+          "latest": "2026-08-05"
+        }
+      },
+      "urlsPerDayChart": [
+        {
+          "date": "2026-07-16",
+          "count": 4214
+        },
+        {
+          "date": "2026-07-17",
+          "count": 508
+        },
+        {
+          "date": "2026-07-18",
+          "count": 130
+        },
+        {
+          "date": "2026-07-19",
+          "count": 189
+        },
+        {
+          "date": "2026-07-20",
+          "count": 248
+        },
+        {
+          "date": "2026-07-21",
+          "count": 377
+        },
+        {
+          "date": "2026-07-22",
+          "count": 494
+        },
+        {
+          "date": "2026-07-23",
+          "count": 470
+        },
+        {
+          "date": "2026-07-24",
+          "count": 465
+        },
+        {
+          "date": "2026-07-25",
+          "count": 589
+        },
+        {
+          "date": "2026-07-26",
+          "count": 472
+        },
+        {
+          "date": "2026-07-27",
+          "count": 604
+        },
+        {
+          "date": "2026-07-28",
+          "count": 457
+        },
+        {
+          "date": "2026-07-29",
+          "count": 392
+        },
+        {
+          "date": "2026-07-30",
+          "count": 291
+        },
+        {
+          "date": "2026-07-31",
+          "count": 300
+        },
+        {
+          "date": "2026-08-01",
+          "count": 169
+        },
+        {
+          "date": "2026-08-02",
+          "count": 178
+        },
+        {
+          "date": "2026-08-03",
+          "count": 287
+        },
+        {
+          "date": "2026-08-04",
+          "count": 163
+        },
+        {
+          "date": "2026-08-05",
+          "count": 301
+        }
+      ],
+      "statusDistribution": {
+        "chart": [
+          {
+            "status": "Illegal gambling",
+            "count": 8955,
+            "pct": 79.3,
+            "color": "#c0392b"
+          },
+          {
+            "status": "Not gambling",
+            "count": 2343,
+            "pct": 20.7,
+            "color": "#9aa7b4"
+          }
+        ],
+        "table": [
+          {
+            "status": "Illegal gambling",
+            "count": 8955,
+            "pct": 79.3,
+            "color": "#c0392b"
+          },
+          {
+            "status": "Not gambling",
+            "count": 2343,
+            "pct": 20.7,
+            "color": "#9aa7b4"
+          }
+        ]
+      },
+      "topUrlSuffixes": {
+        "chart": [
+          {
+            "suffix": ".com",
+            "total": 2292,
+            "pct": 20.3,
+            "illegal": 1765,
+            "pctIllegal": 77.0
+          },
+          {
+            "suffix": ".app",
+            "total": 1386,
+            "pct": 12.3,
+            "illegal": 1184,
+            "pctIllegal": 85.4
+          },
+          {
+            "suffix": ".pro",
+            "total": 1216,
+            "pct": 10.8,
+            "illegal": 1153,
+            "pctIllegal": 94.8
+          },
+          {
+            "suffix": ".bet",
+            "total": 1005,
+            "pct": 8.9,
+            "illegal": 993,
+            "pctIllegal": 98.8
+          },
+          {
+            "suffix": ".club",
+            "total": 576,
+            "pct": 5.1,
+            "illegal": 534,
+            "pctIllegal": 92.7
+          },
+          {
+            "suffix": ".net",
+            "total": 569,
+            "pct": 5.0,
+            "illegal": 401,
+            "pctIllegal": 70.5
+          },
+          {
+            "suffix": ".org",
+            "total": 458,
+            "pct": 4.1,
+            "illegal": 237,
+            "pctIllegal": 51.7
+          },
+          {
+            "suffix": ".fun",
+            "total": 312,
+            "pct": 2.8,
+            "illegal": 280,
+            "pctIllegal": 89.7
+          },
+          {
+            "suffix": ".click",
+            "total": 294,
+            "pct": 2.6,
+            "illegal": 275,
+            "pctIllegal": 93.5
+          },
+          {
+            "suffix": ".cc",
+            "total": 270,
+            "pct": 2.4,
+            "illegal": 170,
+            "pctIllegal": 63.0
+          }
+        ],
+        "table": [
+          {
+            "suffix": ".com",
+            "total": 2292,
+            "pct": 20.3,
+            "illegal": 1765,
+            "pctIllegal": 77.0
+          },
+          {
+            "suffix": ".app",
+            "total": 1386,
+            "pct": 12.3,
+            "illegal": 1184,
+            "pctIllegal": 85.4
+          },
+          {
+            "suffix": ".pro",
+            "total": 1216,
+            "pct": 10.8,
+            "illegal": 1153,
+            "pctIllegal": 94.8
+          },
+          {
+            "suffix": ".bet",
+            "total": 1005,
+            "pct": 8.9,
+            "illegal": 993,
+            "pctIllegal": 98.8
+          },
+          {
+            "suffix": ".club",
+            "total": 576,
+            "pct": 5.1,
+            "illegal": 534,
+            "pctIllegal": 92.7
+          },
+          {
+            "suffix": ".net",
+            "total": 569,
+            "pct": 5.0,
+            "illegal": 401,
+            "pctIllegal": 70.5
+          },
+          {
+            "suffix": ".org",
+            "total": 458,
+            "pct": 4.1,
+            "illegal": 237,
+            "pctIllegal": 51.7
+          },
+          {
+            "suffix": ".fun",
+            "total": 312,
+            "pct": 2.8,
+            "illegal": 280,
+            "pctIllegal": 89.7
+          },
+          {
+            "suffix": ".click",
+            "total": 294,
+            "pct": 2.6,
+            "illegal": 275,
+            "pctIllegal": 93.5
+          },
+          {
+            "suffix": ".cc",
+            "total": 270,
+            "pct": 2.4,
+            "illegal": 170,
+            "pctIllegal": 63.0
+          }
+        ]
+      }
+    },
+    "sectionB": {
+      "title": "The insights",
+      "brandsAndVariants": {
+        "distinctBrands": 1270,
+        "chart": [
+          {
+            "seed": "tk88.pro",
+            "count": 18
+          },
+          {
+            "seed": "hi888.app",
+            "count": 17
+          },
+          {
+            "seed": "mobile.00sm88.site",
+            "count": 16
+          },
+          {
+            "seed": "09sm88.site",
+            "count": 14
+          },
+          {
+            "seed": "account.m.account.login.secure.verify.login.mobile.secure.m.support.mobile.m.b77.pro",
+            "count": 14
+          },
+          {
+            "seed": "m.account.m.account.login.secure.verify.login.mobile.secure.m.support.m.b77.pro",
+            "count": 14
+          },
+          {
+            "seed": "tk888.pro",
+            "count": 14
+          },
+          {
+            "seed": "account.login.secure.verify.login.mobile.secure.m.support.support.secure.b77.pro",
+            "count": 14
+          },
+          {
+            "seed": "gk89.app",
+            "count": 14
+          },
+          {
+            "seed": "m.account.login.secure.verify.login.mobile.secure.m.support.m.b77.pro",
+            "count": 14
+          },
+          {
+            "seed": "login.mobile.secure.login.secure.verify.login.mobile.secure.m.b77.pro",
+            "count": 14
+          },
+          {
+            "seed": "d03.app",
+            "count": 14
+          },
+          {
+            "seed": "account.login.secure.verify.login.mobile.secure.m.m.b77.pro",
+            "count": 14
+          },
+          {
+            "seed": "r39.app",
+            "count": 14
+          },
+          {
+            "seed": "login.secure.verify.login.mobile.secure.m.b77.pro",
+            "count": 14
+          }
+        ],
+        "emptyState": null
+      },
+      "variantNamingConventionInsights": [
+        "Recurring keywords \"app\" (888), \"mobile\" (675), \"login\" (645) recur across variant names, suggesting a templated naming scheme.",
+        "TLD switching is evident across 49 suffixes (.pro ×999, .app ×888, .bet ×576, .club ×358) — the same operation rotates top-level domains.",
+        "4628 distinct variant domains identified in total."
+      ],
+      "variantProliferation": {
+        "seed": "tk88.pro",
+        "variantUrls": [
+          "kt88.pro",
+          "tk888.pro",
+          "k88.pro",
+          "tk98.pro",
+          "rk88.pro",
+          "tkk88.pro",
+          "to88.pro",
+          "tk8i.pro",
+          "tj88.pro",
+          "gk88.pro",
+          "tl88.pro",
+          "fk88.pro",
+          "ti88.pro",
+          "tm88.pro",
+          "tk881.pro",
+          "yk88.pro",
+          "ttk88.pro",
+          "tk89.pro"
+        ],
+        "interpretation": "tk88.pro is the most-cloned brand with 18 variant URLs."
+      },
+      "redirectsFromTop10": {
+        "chart": [
+          {
+            "url": "c37.club",
+            "count": 12
+          },
+          {
+            "url": "hi88.org",
+            "count": 9
+          },
+          {
+            "url": "vk88.ng",
+            "count": 5
+          },
+          {
+            "url": "e38.casino",
+            "count": 4
+          },
+          {
+            "url": "rr886.net",
+            "count": 3
+          },
+          {
+            "url": "mr95.net",
+            "count": 3
+          },
+          {
+            "url": "i91.live",
+            "count": 3
+          },
+          {
+            "url": "bk88.pro",
+            "count": 3
+          },
+          {
+            "url": "d25.io",
+            "count": 3
+          },
+          {
+            "url": "888.bet",
+            "count": 3
+          }
+        ],
+        "emptyState": null
+      },
+      "redirectNamingConventionInsights": [
+        "Recurring keywords \"bet\" (15), \"m.\" (14), \"app\" (10) recur across redirect names, suggesting a templated naming scheme.",
+        "TLD switching is evident across 89 suffixes (.com ×93, .net ×12, .vip ×8, .bet ×8) — the same operation rotates top-level domains.",
+        "257 distinct redirect domains identified in total."
+      ],
+      "redirectPropagation": {
+        "url": "c37.club",
+        "destinations": [
+          "orderbagelplus.com",
+          "drdanielrivera.com.co",
+          "bufeteroblesmiaja.com.mx",
+          "uniquehalalfood.jp",
+          "kaarinanputkityo.fi",
+          "raitsbarbershop.nl",
+          "partnersluziny.cz",
+          "topexpertacoperisuri.ro",
+          "mimmilashop.fi",
+          "naphini-labrador.at",
+          "madinitravel.com",
+          "theskyebistro.com"
+        ],
+        "interpretation": "c37.club redirects to 12 destinations."
+      },
+      "comparisonUrlsRedirectsVariants": {
+        "direct": 4070,
+        "directPct": 45.4,
+        "redirects": 257,
+        "redirectPct": 2.9,
+        "variants": 4628,
+        "variantPct": 51.7
+      }
+    },
+    "sectionC": {
+      "title": "Ranking",
+      "illegalRanking": [
+        {
+          "rank": 16,
+          "domain": "twitter.com",
+          "source": "Youtube (online casino)"
+        },
+        {
+          "rank": 7586,
+          "domain": "caesars.com",
+          "source": "Google Search (welcome casino bonus)"
+        },
+        {
+          "rank": 12340,
+          "domain": "national-lottery.co.uk",
+          "source": "Google Search (online jackpot)"
+        },
+        {
+          "rank": 18121,
+          "domain": "singaporepools.com.sg",
+          "source": "Google Search (bet on match)"
+        },
+        {
+          "rank": 21394,
+          "domain": "codere.mx",
+          "source": "Google Search (free spins)"
+        },
+        {
+          "rank": 21510,
+          "domain": "cm88v.com",
+          "source": "Redirect (cm88.com)"
+        },
+        {
+          "rank": 21510,
+          "domain": "cm88.com",
+          "source": "Variant (cm88.pro)"
+        },
+        {
+          "rank": 31408,
+          "domain": "betfanatics.com",
+          "source": "Youtube (sportsbook)"
+        },
+        {
+          "rank": 31783,
+          "domain": "32red.com",
+          "source": "Google Search (welcome casino bonus)"
+        },
+        {
+          "rank": 36398,
+          "domain": "unibet.co.uk",
+          "source": "Google Search (welcome casino bonus)"
+        },
+        {
+          "rank": 49111,
+          "domain": "mohegansun.com",
+          "source": "Google Search (online jackpot)"
+        },
+        {
+          "rank": 53109,
+          "domain": "worldsportsbetting.co.za",
+          "source": "Google Search (sport betting)"
+        },
+        {
+          "rank": 67207,
+          "domain": "tonybet.com",
+          "source": "Google Search (online casino)"
+        },
+        {
+          "rank": 68328,
+          "domain": "thelotter.com",
+          "source": "Google Search (online jackpot)"
+        },
+        {
+          "rank": 74635,
+          "domain": "williamhill.us",
+          "source": "Google Search (bet on match)"
+        }
+      ],
+      "licensedRanking": [],
+      "licensedRankingIsSample": true,
+      "licensedRankingEmptyState": "No licensed gambling rows were present in this data set."
+    },
+    "sectionD": {
+      "title": "Key insights",
+      "keyInsights": [
+        {
+          "title": "Scale of the analysis",
+          "body": "Over a 21-day evaluation period (2026-07-16 → 2026-08-05), 11,298 distinct URLs were analyzed, of which 8,955 were illegal gambling operations and 0 were licensed.",
+          "take": "The sample is large enough to reason about patterns, not isolated cases."
+        },
+        {
+          "title": "Status mix",
+          "body": "Illegal gambling sites make up 79.3% of all URLs analyzed and 100.0% of identified gambling sites (licensed + illegal). Not-gambling accounted for 2,343 URLs; 0 were unreachable.",
+          "take": "Illegal operators are the majority of the gambling population observed."
+        },
+        {
+          "title": "Variants and brand abuse",
+          "body": "1,270 distinct brands were identified as cloned via variant domains, with the most-abused brand \"tk88.pro\" spawning 18 variant domains.",
+          "take": "A handful of brands drive most of the proliferation; these should be prioritized for enforcement."
+        },
+        {
+          "title": "Redirects and traffic shaping",
+          "body": "257 illegal URLs used redirect chains, the busiest source \"c37.club\" pointing to 12 destinations.",
+          "take": "Redirects keep a stable entry point while rotating the sites behind it."
+        },
+        {
+          "title": "Enforcement and regulatory relevance",
+          "body": "No pages in this sample show regulatory-blocking indicators (court orders, regulator notices, block pages).",
+          "take": "The set appears pre-enforcement and is a candidate for a first enforcement pass."
+        }
+      ]
+    },
+    "sourceAnalysis": [
+      {
+        "category": "Manual",
+        "total": 4014,
+        "licensed": 0,
+        "illegal": 4014,
+        "pctLicensed": 0,
+        "pctIllegal": 100
+      },
+      {
+        "category": "Google Search",
+        "total": 69,
+        "licensed": 0,
+        "illegal": 26,
+        "pctLicensed": 0,
+        "pctIllegal": 100
+      },
+      {
+        "category": "Variant",
+        "total": 6401,
+        "licensed": 0,
+        "illegal": 4628,
+        "pctLicensed": 0,
+        "pctIllegal": 100
+      },
+      {
+        "category": "Redirect",
+        "total": 524,
+        "licensed": 0,
+        "illegal": 257,
+        "pctLicensed": 0,
+        "pctIllegal": 100
+      },
+      {
+        "category": "Other",
+        "total": 290,
+        "licensed": 0,
+        "illegal": 30,
+        "pctLicensed": 0,
+        "pctIllegal": 100
+      }
+    ]
+  }
 }
