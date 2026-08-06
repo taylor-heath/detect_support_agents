@@ -1,9 +1,10 @@
 {
   "name": "Chile-Evaluation",
-  "userId": "HeathTaylor",
   "createdAt": "2026-08-06T09:27:02.027Z",
-  "updatedAt": "2026-08-06T09:27:02.027Z",
-  "version": 1,
+  "updatedAt": "2026-08-06T10:49:07.027Z",
+  "version": 2,
+  "createdBy": "HeathTaylor",
+  "updatedBy": "HeathTaylor",
   "data": {
     "fileName": "data_chile.csv",
     "country": "Spain",
@@ -104010,14 +104011,32 @@
       ]
     },
     "cases": [],
-    "deepSearches": [],
     "audit": [
+      {
+        "at": "2026-08-06T10:49:07.000Z",
+        "actor": "HeathTaylor",
+        "action": "Initiated deep search",
+        "target": "https://www.32red.com/ (Spain)",
+        "instance": "Chile-Evaluation"
+      },
       {
         "at": "2026-08-06T09:27:00.826Z",
         "actor": "HeathTaylor",
         "action": "Created configuration",
         "target": "Chile-Evaluation",
         "instance": "Chile-Evaluation"
+      }
+    ],
+    "deepSearches": [
+      {
+        "id": "dsmshe8ed40",
+        "requestId": "k-235bd314d540e72ca8538f5ab5207cd7",
+        "url": "https://www.32red.com/",
+        "date": "2026-08-06",
+        "country": "Spain",
+        "at": "2026-08-06T10:49:07.000Z",
+        "by": "HeathTaylor",
+        "status": "in progress"
       }
     ]
   }
