@@ -1,8 +1,8 @@
 {
   "name": "Chile-Evaluation",
   "createdAt": "2026-08-06T09:27:02.027Z",
-  "updatedAt": "2026-08-06T15:04:13.528Z",
-  "version": 6,
+  "updatedAt": "2026-08-06T15:07:33.472Z",
+  "version": 7,
   "createdBy": "HeathTaylor",
   "updatedBy": "HeathTaylor",
   "data": {
@@ -104012,6 +104012,28 @@
     },
     "cases": [
       {
+        "id": "#mshngr7k1",
+        "subject": "Illegal gambling — 32red.com",
+        "type": "new_detection",
+        "priority": "high",
+        "status": "identified",
+        "assignee": "HeathTaylor",
+        "createdAt": "2026-08-06T15:07:33.440Z",
+        "updatedAt": "2026-08-06T15:07:33.440Z",
+        "slaDueAt": "2026-08-06T19:07:33.440Z",
+        "urls": [
+          "https://www.32red.com/"
+        ],
+        "notes": [],
+        "timeline": [
+          {
+            "at": "2026-08-06T15:07:33.440Z",
+            "actor": "HeathTaylor",
+            "event": "Case identified"
+          }
+        ]
+      },
+      {
         "id": "#mshnb3650",
         "subject": "Illegal gambling — cm88v.com",
         "type": "new_detection",
@@ -104040,6 +104062,13 @@
       }
     ],
     "audit": [
+      {
+        "at": "2026-08-06T15:07:33.440Z",
+        "actor": "HeathTaylor",
+        "action": "Opened case",
+        "target": "#mshngr7k1",
+        "instance": "Chile-Evaluation"
+      },
       {
         "at": "2026-08-06T15:04:13.497Z",
         "actor": "HeathTaylor",
