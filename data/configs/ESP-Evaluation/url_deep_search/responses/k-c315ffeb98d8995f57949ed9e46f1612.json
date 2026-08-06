@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "1.0",
+
+  "header": {
+    "caseId": "k-c315ffeb98d8995f57949ed9e46f1612",
+    "targetUrl": "https://www.speedybet.es/en",
+    "country": "ES",
+    "runAt": "2026-08-06T00:00:00Z",
+    "agentVersion": "url-deep-search-1.0",
+    "priority": "do_not_enforce",
+    "overallConfidence": "medium"
+  },
+
+  "executiveSummary": {
+    "headline": "speedybet.es is the Spanish-market domain of SpeedyBet, a betting brand of Paf Games, S.A. (part of the long-established Nordic Paf Group), which multiple independent sources describe as holding an active DGOJ betting licence in Spain — contradicting this domain's 'illegal_gambling' flag in the internal traffic-detection dataset.",
+    "narrative": "The internal ESP-Evaluation dataset flags speedybet.es as illegal_gambling (source: a Google 'sport betting spain' search crawl, rank 575,341), with the legalEntity and legalEntityCountry fields left blank. However, independent public sourcing converges strongly on a different picture: betting-industry review sites (legalbet.es, betbrothers.es, estafa.info, onefootball.com) and gambling-trade press (sectordeljuego.com, infoplay.info) consistently describe SpeedyBet as operated by Paf Games, S.A. (CIF A22921639, registered in Ceuta, Spain), holding a DGOJ General Betting Licence (cited reference 182-11/GA/N0321850J/SGR) plus singular licences for sports betting, roulette, blackjack and slots. SpeedyBet is also the public, named official betting sponsor of La Liga club Real Betis Balompié, a sponsorship running since 2024 and extended through the 2027/28 season — a level of public, contractually-disclosed visibility that is atypical for a covert illegal operator. Trade press additionally reports a March 2026 DGOJ licence reorganisation involving Paf Games and related Paf-group Spanish entities (Comar Inversiones, Games Spain Operations), consistent with an active, currently-regulated relationship. Direct verification against DGOJ's own operator register, WHOIS, the site itself, and the company registry aggregator all returned HTTP 403 during this run, so the licence claim rests on convergent secondary sourcing rather than a primary-register hit. On balance, the evidence points to this being a licensed, authorised operator and a likely false positive in the internal detection dataset rather than an enforcement target.",
+    "keyFindings": [
+      "Internal Spain traffic-detection dataset (ESP-Evaluation) flags speedybet.es as illegal_gambling but leaves legalEntity/legalEntityCountry blank, with a comparatively low traffic rank (575,341) versus other flagged domains in the same dataset.",
+      "Multiple independent betting-industry review sites and trade press consistently identify the operator as Paf Games, S.A. (CIF A22921639, Ceuta, Spain), holding a DGOJ General Betting Licence (cited reference 182-11/GA/N0321850J/SGR) plus singular licences for sports betting, roulette, blackjack and slots.",
+      "SpeedyBet is the publicly disclosed official betting sponsor of Real Betis Balompié since 2024, with the deal extended through the 2027/28 season — inconsistent with a covert illegal operation.",
+      "Trade press reports a March 2026 DGOJ licence reorganisation involving Paf Games and related Paf-group Spanish entities, consistent with an active, currently-regulated licensing relationship.",
+      "No player complaints, scam reports, or DGOJ sanctions specific to this brand were found in public search.",
+      "Direct verification against the DGOJ register, WHOIS, the site itself, and the company registry could not be completed (all returned HTTP 403 during this run), so this rests on convergent secondary sourcing, not a primary-register hit."
+    ],
+    "authorisedInInputCountry": true,
+    "topContradictions": [
+      "The internal dataset classifies speedybet.es as illegal_gambling with no legal entity recorded, while multiple independent public sources consistently describe it as a DGOJ-licensed brand of Paf Games, S.A. — indicating a likely false positive in the internal classifier for this domain.",
+      "Direct verification against the DGOJ operator register, WHOIS, and the site itself all returned HTTP 403 during this run (including on unrelated .gob.es pages), so the licence claim could not be independently confirmed against the primary source during this investigation."
+    ],
+    "recommendedAction": "Do not pursue enforcement pending a primary-source check: have an analyst manually verify 'Paf Games, S.A.' and licence reference 182-11/GA/N0321850J/SGR against DGOJ's operator register (automated fetch was blocked in this run). If confirmed active, reclassify this domain as licensed/out-of-scope in the source dataset and flag the underlying ESP-Evaluation detection pipeline for a data-quality review, since its 'licensed' bucket appears very small (0.99% of the dataset) relative to the number of apparently-licensed domains like this one being caught in the 'illegal' bucket."
+  },
+
+  "findings": {
+    "brand": {
+      "value": "SpeedyBet (SpeedyBet.es)",
+      "confidence": "medium",
+      "basis": "inferred",
+      "sources": [
+        { "url": "https://www.speedybet.es/en", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Direct fetch returned HTTP 403 (Forbidden); brand name inferred from domain, search-result titles, and third-party review coverage, not confirmed on-page." },
+        { "url": "web-search:speedybet.es", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Search titles confirm 'SpeedyBet.es | Apuestas | Deportes' branding and an official app." }
+      ],
+      "note": "Could not confirm on-page branding, logo, or copyright text because the homepage, root domain, terms page, and privacy-policy page all blocked automated access (HTTP 403)."
+    },
+
+    "aliases": {
+      "value": ["speedybet.com"],
+      "confidence": "low",
+      "basis": "inferred",
+      "sources": [
+        { "url": "web-search:speedybet.es", "retrievedAt": "2026-08-06T00:00:00Z", "note": "speedybet.com surfaces as 'SpeedyBet | Betting, slots and live casino with welcome bonus' — appears to be Paf's main international SpeedyBet brand domain, of which speedybet.es is the Spain-localised version." }
+      ],
+      "note": "Several other look-alike domains (speedybet-es.com, speedybet.com.es, speedybete.es) surfaced in search but read as third-party review/affiliate content sites ('Análisis Completo', 'Opiniones') rather than operator-controlled mirrors; they are NOT included here as confirmed aliases and should not be conflated with the operator's own domains without further check."
+    },
+
+    "legalEntity": {
+      "value": { "name": "Paf Games, S.A.", "registrationNumber": "A22921639 (CIF)", "registeredAddress": "Calle Queipo de Llano, 1 - Piso 2 Loc L1, Ceuta, 51001, Spain", "incorporationCountry": "ES" },
+      "confidence": "medium",
+      "basis": "inferred",
+      "sources": [
+        { "url": "https://empresite.eleconomista.es/PAF-GAMES.html", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Direct fetch returned HTTP 403; company name, CIF, and address taken from web-search result summary of this company-registry aggregator page, not independently re-fetched." },
+        { "url": "web-search:\"speedybet.es\" OR \"SpeedyBet\" \"Paf Games\" S.A. CIF OR razón social", "retrievedAt": "2026-08-06T00:00:00Z", "note": null }
+      ],
+      "note": "Multiple industry review sites (legalbet.es, betbrothers.es, estafa.info) independently name Paf Games, S.A. as the DGOJ-licensed operator behind SpeedyBet, but none could be directly fetched (all HTTP 403) to confirm exact wording; this rests on converging search-result summaries rather than a directly re-read primary or registry document."
+    },
+
+    "parentGroup": {
+      "value": "Paf Group (Paf International Plc) — Ålandic/Finnish-origin operator group founded 1966",
+      "confidence": "medium",
+      "basis": "inferred",
+      "sources": [
+        { "url": "web-search:SpeedyBet Real Betis apuestas oficial patrocinador Paf", "retrievedAt": "2026-08-06T00:00:00Z", "note": "SpeedyBet described as acquired by Paf Group in 2021, distributed internationally with a strong Nordic presence, arriving in Spain in 2024." },
+        { "url": "https://sectordeljuego.com/2026/07/14/el-real-betis-y-speedybet-que-forma-parte-de-paf-group-amplian-su-acuerdo-de-patrocinio-hasta-2028/", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Direct fetch returned HTTP 403; headline itself states SpeedyBet 'forma parte de Paf Group' (is part of Paf Group)." }
+      ],
+      "note": null
+    },
+
+    "countryOfOperation": {
+      "value": { "incorporation": "ES", "licensingJurisdiction": "ES (DGOJ)", "inputCountry": "ES" },
+      "confidence": "medium",
+      "basis": "inferred",
+      "sources": [
+        { "url": "web-search:\"Paf Games\" Spain DGOJ licencia registro", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Trade press describes a March 2026 DGOJ licence reorganisation involving Paf Games and related Paf-group Spanish entities." }
+      ],
+      "note": "No jurisdictional gap identified: incorporation, licensing, and the input country all appear to be Spain. This is the key basis for the do_not_enforce recommendation, pending primary-source confirmation."
+    },
+
+    "licences": [
+      {
+        "jurisdiction": "Spain (DGOJ — Dirección General de Ordenación del Juego)",
+        "reference": "182-11/GA/N0321850J/SGR (General Betting Licence, as cited by third-party review sources)",
+        "status": "active",
+        "holderEntity": "Paf Games, S.A.",
+        "authorisesInputCountry": true,
+        "basis": "inferred",
+        "sources": [
+          { "url": "web-search:\"speedybet.es\" apuestas licencia OR DGOJ OR ilegal", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Review-site summaries state SpeedyBet holds this DGOJ general licence plus singular licences (sports betting counterparty, other counterparty bets, roulette, blackjack, slots)." },
+          { "url": "https://www.ordenacionjuego.es/en/operadores-juego/operadores-licencia/operadores", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Direct fetch of the DGOJ licensed-operator register returned HTTP 403; could not directly confirm the licence entry in this run." },
+          { "url": "https://sede.ordenacionjuego.gob.es/cid/consultaCID?cid=14564311676339217487020-DGOJ", "retrievedAt": "2026-08-06T00:00:00Z", "note": "A DGOJ record-lookup URL surfaced in search results; direct fetch returned HTTP 403." }
+        ]
+      }
+    ],
+
+    "authorisation": {
+      "authorisedInInputCountry": true,
+      "confidence": "medium",
+      "basis": "inferred",
+      "sources": [
+        { "url": "web-search:\"speedybet.es\" apuestas licencia OR DGOJ OR ilegal", "retrievedAt": "2026-08-06T00:00:00Z", "note": null },
+        { "url": "web-search:\"Paf Games\" Spain DGOJ licencia registro", "retrievedAt": "2026-08-06T00:00:00Z", "note": null },
+        { "url": "internal:data/configs/HeathTaylor/ESP-Evaluation.json#analysis.illegalUrls[2372]", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Internal dataset classifies this domain status=illegal_gambling with blank legalEntity — the source of the contradiction this report surfaces." }
+      ],
+      "note": "Convergent secondary-source evidence (industry review sites, trade press, company-registry aggregator) indicates this is a DGOJ-licensed operator authorised in Spain, contradicting the internal dataset's illegal_gambling flag. Could not be confirmed against DGOJ's primary register directly — that fetch returned HTTP 403 in this run. Recommend manual register verification before formally closing this out as authorised."
+    },
+
+    "news": [
+      {
+        "title": "El Real Betis y Speedybet, que forma parte de Paf Group, amplían su acuerdo de patrocinio hasta 2028",
+        "publisher": "Sector del Juego",
+        "url": "https://sectordeljuego.com/2026/07/14/el-real-betis-y-speedybet-que-forma-parte-de-paf-group-amplian-su-acuerdo-de-patrocinio-hasta-2028/",
+        "publishedAt": "2026-07-14",
+        "summary": "Real Betis and SpeedyBet, part of Paf Group, extended their official betting-sponsorship agreement through the 2027/28 season.",
+        "relatesTo": "brand"
+      },
+      {
+        "title": "El Real Betis firma un acuerdo de patrocinio con SpeedyBet.es hasta 2027",
+        "publisher": "Real Betis Balompié (club site)",
+        "url": "https://www.realbetisbalompie.es/noticias/amp/actualidad/el-real-betis-firma-un-acuerdo-de-patrocinio-con-speedybet-es-hasta-2027-30873",
+        "publishedAt": null,
+        "summary": "Announcement of the original sponsorship deal making SpeedyBet.es the club's official betting partner.",
+        "relatesTo": "brand"
+      },
+      {
+        "title": "Paf reordena sus licencias en España y Comar y Games Spain aseguran continuidad en verticales clave",
+        "publisher": "Infoplay",
+        "url": "https://www.infoplay.info/es/2026-03-27/paf-reordena-sus-licencias-en-espaa-y-comar-y-games-spain-aseguran-continuidad-en-verticales-clave/35299/noticia/",
+        "publishedAt": "2026-03-27",
+        "summary": "Reports a DGOJ licence reorganisation among Paf-group Spanish entities (Paf Games, Comar Inversiones, Games Spain Operations), indicating an active, currently-regulated licensing relationship.",
+        "relatesTo": "parent"
+      }
+    ]
+  },
+
+  "priorityAssessment": {
+    "priority": "do_not_enforce",
+    "rationale": "The weight of independent public evidence — DGOJ-licensed operator naming (Paf Games, S.A.) across multiple industry review sites, a company-registry hit for that entity in Spain, trade-press confirmation of an active March 2026 DGOJ licence reorganisation for the Paf group, and a high-profile, publicly disclosed sponsorship of a La Liga club — converges on this being a legitimately licensed, authorised Spanish operator rather than an illegal one. This directly contradicts the internal dataset's illegal_gambling classification, which itself records no legal entity for the domain. Per the rubric, evidence that an operator is already authorised in the input country puts a case out of scope for enforcement. The one caveat is that primary-source confirmation (DGOJ register itself) could not be completed in this run because it returned HTTP 403, so the do_not_enforce call rests on strong secondary sourcing rather than a direct register hit — hence medium rather than high overall confidence, and a recommendation for manual verification before the internal dataset is corrected.",
+    "referralFlags": ["requires_primary_register_verification", "possible_internal_dataset_false_positive"],
+    "dimensions": [
+      {
+        "dimension": "harmAndExposure",
+        "rating": "low",
+        "evidence": "Real, disclosed Spanish-market presence (Spanish-facing site, high-profile Real Betis sponsorship) but this reflects lawful marketing by an apparently licensed operator rather than illicit targeting; internal traffic rank (575,341) is comparatively low versus other flagged domains in the same dataset.",
+        "sources": [
+          { "url": "internal:data/configs/HeathTaylor/ESP-Evaluation.json#analysis.illegalUrls[2372]", "retrievedAt": "2026-08-06T00:00:00Z", "note": null }
+        ]
+      },
+      {
+        "dimension": "consumerHarmSeverity",
+        "rating": "low",
+        "evidence": "No player complaints, scam reports, or DGOJ sanctions specific to this brand were found; review-site coverage describes standard licensed-operator protections (RGIAJ self-exclusion participation, DGOJ-mandated identity verification).",
+        "sources": []
+      },
+      {
+        "dimension": "legalReachability",
+        "rating": "high",
+        "evidence": "Operator is fully named and locatable in public sourcing: Paf Games, S.A., CIF A22921639, registered address in Ceuta, Spain, part of the well-known Paf Group — trivially identifiable and reachable if any future action were needed.",
+        "sources": [
+          { "url": "https://empresite.eleconomista.es/PAF-GAMES.html", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 on direct fetch; entity details from search-result summary" }
+        ]
+      },
+      {
+        "dimension": "actorBehaviour",
+        "rating": "low",
+        "evidence": "No mirror-domain rotation, WHOIS concealment, or evasion pattern identified; a single coherent domain family (speedybet.es localised from speedybet.com) with a long-running, publicly disclosed sponsorship deal is inconsistent with evasive operator behaviour.",
+        "sources": []
+      },
+      {
+        "dimension": "feasibilityAndCost",
+        "rating": "low",
+        "evidence": "No established violation to act on if the licence is confirmed; pursuing action against an apparently properly licensed operator would carry legal and reputational risk for the regulator with no durable enforcement outcome to achieve.",
+        "sources": []
+      },
+      {
+        "dimension": "strategicValue",
+        "rating": "low",
+        "evidence": "No deterrence or campaign value in pursuing an apparently licensed operator; the real strategic value here is correcting the internal detection dataset's false positive rather than an enforcement action against this domain.",
+        "sources": []
+      }
+    ]
+  },
+
+  "contradictions": [
+    "The internal ESP-Evaluation dataset classifies speedybet.es as illegal_gambling with legalEntity/legalEntityCountry left blank, while multiple independent industry review sites and trade press consistently describe it as a DGOJ-licensed brand of Paf Games, S.A. — indicating a likely false positive in the internal automated classifier for this domain.",
+    "Direct verification against DGOJ's own operator register, a DGOJ record-lookup page, WHOIS, the site itself, and a company-registry aggregator all returned HTTP 403 during this run (including on unrelated .gob.es government pages), so none of the licence, entity, or on-site disclosure claims could be independently confirmed against a primary source in this investigation — they rest on converging secondary sourcing only.",
+    "Several look-alike domains (speedybet-es.com, speedybet.com.es, speedybete.es) surfaced in search alongside the target; these read as third-party review/affiliate content sites rather than operator-controlled mirrors and were not included as confirmed aliases, but this distinction was not independently verified."
+  ],
+
+  "provenance": {
+    "toolCallCount": 21,
+    "sourcesConsulted": [
+      { "url": "https://www.speedybet.es/en", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://www.speedybet.es/", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://www.speedybet.es/terms", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://www.speedybet.es/en/terms/privacy-policy", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://www.whois.com/whois/speedybet.es", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://www.ordenacionjuego.es/en/operadores-juego/operadores-licencia/operadores", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://sede.ordenacionjuego.gob.es/cid/consultaCID?cid=14564311676339217487020-DGOJ", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://legalbet.es/casas-de-apuestas/speedybet/", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://legalbet.es/complaints/speedybet/", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://betbrothers.es/casas-de-apuestas/speedybet/", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://www.paf.es/en/novedades-en-casino/licencias-de-casinos-espanoles-la-dgoj-y-el-sosten-del-juego", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://www.infoplay.info/es/2026-03-27/paf-reordena-sus-licencias-en-espaa-y-comar-y-games-spain-aseguran-continuidad-en-verticales-clave/35299/noticia/", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://sectordeljuego.com/2026/07/14/el-real-betis-y-speedybet-que-forma-parte-de-paf-group-amplian-su-acuerdo-de-patrocinio-hasta-2028/", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "https://empresite.eleconomista.es/PAF-GAMES.html", "retrievedAt": "2026-08-06T00:00:00Z", "note": "HTTP 403 Forbidden" },
+      { "url": "web-search:speedybet.es", "retrievedAt": "2026-08-06T00:00:00Z", "note": "General brand search" },
+      { "url": "web-search:\"speedybet.es\" apuestas licencia OR DGOJ OR ilegal", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Licence/legality search" },
+      { "url": "web-search:\"Paf Games\" Spain DGOJ licencia registro", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Parent-group licensing search" },
+      { "url": "web-search:SpeedyBet Real Betis apuestas oficial patrocinador Paf", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Sponsorship confirmation search" },
+      { "url": "web-search:SpeedyBet.es reclamaciones OR estafa OR sancion OR queja", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Complaints/sanctions search" },
+      { "url": "web-search:\"speedybet.es\" OR \"SpeedyBet\" \"Paf Games\" S.A. CIF OR razón social", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Company-registry search" },
+      { "url": "web-search:SpeedyBet menores OR minors OR self-exclusion OR RGPD sancion DGOJ", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Player-protection/sanctions search" },
+      { "url": "internal:data/configs/HeathTaylor/ESP-Evaluation.json#analysis.illegalUrls[2372]", "retrievedAt": "2026-08-06T00:00:00Z", "note": "Internal Spain traffic-detection dataset record for this domain" }
+    ],
+    "unresolved": [
+      { "field": "findings.licences[0].reference", "attempted": "Attempted direct fetch of DGOJ's operator register and a DGOJ record-lookup URL (both 403); licence reference number rests on third-party review-site paraphrase, not a primary-register read." },
+      { "field": "findings.legalEntity", "attempted": "Attempted direct fetch of the company-registry aggregator page (403); CIF and address rest on a search-result summary of that page." },
+      { "field": "findings.brand / on-site disclosure", "attempted": "Attempted fetch of homepage, root domain, terms page, and privacy-policy page (all 403); could not read on-site 'operated by' disclosure directly." },
+      { "field": "findings.aliases", "attempted": "Searched for mirror/variant domains; could not confirm whether look-alike domains (speedybet-es.com, speedybet.com.es, speedybete.es) are operator-controlled or independent third-party review sites." }
+    ]
+  },
+
+  "analystNotes": "This case differs from typical illegal-gambling referrals in that the internal detection signal (ESP-Evaluation dataset, status=illegal_gambling) appears to be contradicted by strong, convergent public evidence of a legitimate, DGOJ-licensed operator (Paf Games, S.A., part of the established Paf Group) with a high-profile, publicly disclosed sponsorship of Real Betis Balompié. The ESP-Evaluation dataset's own statistics show only 117 of 11,836 domains (0.99%) classified 'Licensed gambling', which suggests its automated classifier may under-detect licensed operators and default ambiguous cases to 'illegal_gambling' — this domain looks like a plausible instance of that. Every direct-fetch attempt in this run (the site itself, DGOJ's register and record-lookup pages, WHOIS, and a company registry aggregator) returned HTTP 403, so nothing here has been confirmed against a primary source; recommend a manual, non-automated check of the DGOJ operator register for 'Paf Games, S.A.' / licence 182-11/GA/N0321850J/SGR before either closing this out as authorised or feeding a correction back into the ESP-Evaluation dataset."
+}
