@@ -1,8 +1,8 @@
 {
   "name": "Chile-Evaluation",
   "createdAt": "2026-08-06T09:27:02.027Z",
-  "updatedAt": "2026-08-06T14:47:09.197Z",
-  "version": 4,
+  "updatedAt": "2026-08-06T15:03:09.038Z",
+  "version": 5,
   "createdBy": "HeathTaylor",
   "updatedBy": "HeathTaylor",
   "data": {
@@ -104010,8 +104010,38 @@
         }
       ]
     },
-    "cases": [],
+    "cases": [
+      {
+        "id": "#mshnb3650",
+        "subject": "Illegal gambling — cm88v.com",
+        "type": "new_detection",
+        "priority": "high",
+        "status": "identified",
+        "assignee": "HeathTaylor",
+        "createdAt": "2026-08-06T15:03:09.005Z",
+        "updatedAt": "2026-08-06T15:03:09.005Z",
+        "slaDueAt": "2026-08-06T19:03:09.005Z",
+        "urls": [
+          "https://cm88v.com/"
+        ],
+        "notes": [],
+        "timeline": [
+          {
+            "at": "2026-08-06T15:03:09.005Z",
+            "actor": "HeathTaylor",
+            "event": "Case identified"
+          }
+        ]
+      }
+    ],
     "audit": [
+      {
+        "at": "2026-08-06T15:03:09.005Z",
+        "actor": "HeathTaylor",
+        "action": "Opened case",
+        "target": "#mshnb3650",
+        "instance": "Chile-Evaluation"
+      },
       {
         "at": "2026-08-06T14:47:09.161Z",
         "actor": "HeathTaylor",
