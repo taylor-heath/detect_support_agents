@@ -1,8 +1,8 @@
 {
   "name": "Chile-Evaluation",
   "createdAt": "2026-08-06T09:27:02.027Z",
-  "updatedAt": "2026-08-06T15:03:09.038Z",
-  "version": 5,
+  "updatedAt": "2026-08-06T15:04:13.528Z",
+  "version": 6,
   "createdBy": "HeathTaylor",
   "updatedBy": "HeathTaylor",
   "data": {
@@ -15278,7 +15278,7 @@
           "source": "Redirect (cm88.com)",
           "rank": 21510,
           "date": "2026-07-31",
-          "status": "illegal_gambling",
+          "status": "blacklisted",
           "legalEntity": "",
           "legalEntityCountry": ""
         },
@@ -104016,10 +104016,10 @@
         "subject": "Illegal gambling — cm88v.com",
         "type": "new_detection",
         "priority": "high",
-        "status": "identified",
+        "status": "blocked",
         "assignee": "HeathTaylor",
         "createdAt": "2026-08-06T15:03:09.005Z",
-        "updatedAt": "2026-08-06T15:03:09.005Z",
+        "updatedAt": "2026-08-06T15:04:13.494Z",
         "slaDueAt": "2026-08-06T19:03:09.005Z",
         "urls": [
           "https://cm88v.com/"
@@ -104030,11 +104030,23 @@
             "at": "2026-08-06T15:03:09.005Z",
             "actor": "HeathTaylor",
             "event": "Case identified"
+          },
+          {
+            "at": "2026-08-06T15:04:13.494Z",
+            "actor": "HeathTaylor",
+            "event": "Added to blocklist"
           }
         ]
       }
     ],
     "audit": [
+      {
+        "at": "2026-08-06T15:04:13.497Z",
+        "actor": "HeathTaylor",
+        "action": "Added to blocklist",
+        "target": "#mshnb3650",
+        "instance": "Chile-Evaluation"
+      },
       {
         "at": "2026-08-06T15:03:09.005Z",
         "actor": "HeathTaylor",
