@@ -20,9 +20,9 @@
 > This document specifies the **Data Insights & Patterns** report as delivered to
 > Loterie Romande. It is derived from the base specification
 > (`DATA_INSIGHTS_REPORT_INSTRUCTIONS.md`) with the client-specific adjustments set
-> out in Part II and Part IV. Where this document is silent, the base specification
-> governs. The report remains fully **data-driven**: never invent a value — if the
-> input does not contain it, leave it blank or omit the section.
+> out in Part II, Part III and Part IV. Where this document is silent, the base
+> specification governs. The report remains fully **data-driven**: never invent a
+> value — if the input does not contain it, leave it blank or omit the section.
 
 ---
 
@@ -78,7 +78,8 @@ ESBK page.
 | casineo.ch | <https://www.casineo.ch> | — | Newer brand — verify on ESBK list |
 
 > The roster changes as casinos launch or close. The tables above are the
-> **reference whitelist** the report uses to classify licensed sites (Part II).
+> **reference whitelist** the report uses (a) to classify licensed sites (Part II)
+> and (b) to supply the **brand tokens** for variation detection (Part III §3.14).
 > They must be reconciled against the official ESBK/Gespa pages before each run.
 
 ---
@@ -134,9 +135,9 @@ category(row):
 **Default-to-ESBK rule.** Gespa is a closed **two-operator** set (Swisslos, Loterie
 Romande). Any row that is licensed but does not match `GESPA_DOMAINS` is therefore an
 ESBK casino and is categorised `ESBK_LICENSED`. If a licensed row matches neither
-list *and* is not a `.ch` domain, flag it in the run log as
-`LICENSED_UNMATCHED` for manual review, but still count it under `ESBK_LICENSED` in
-totals so no licensed site is silently dropped.
+list *and* is not a `.ch` domain, flag it in the run log as `LICENSED_UNMATCHED` for
+manual review, but still count it under `ESBK_LICENSED` in totals so no licensed site
+is silently dropped.
 
 **Derived flags** (replace the base spec's `isLicensed`):
 `isIllegal = category == ILLEGAL_GAMBLING`;
@@ -272,15 +273,60 @@ rank (or null), date (YYYY-MM-DD from "Updated at", else raw),
 status: "illegal_gambling", legalEntity, legalEntityCountry }`. Legal-entity fields
 come only from the optional columns in §1 — blank if absent.
 
-### 3.13 Licensed variants & ranks (ESBK and GESPA)  *(NEW — feeds Part IV)*
+### 3.13 Licensed sites & ranks (ESBK and GESPA)  *(NEW — feeds Part IV)*
 For each licensed category (`ESBK_LICENSED`, `GESPA_SUPERVISED`) independently:
 - **Sites**: distinct rows of that category → `{ label, registrableDomain, rank
-  (or null), source }`.
-- **Variants**: rows of that category whose Source category is `Variant`, grouped by
-  `seed` → `{ seed, count, labels (up to 40) }` desc. (These represent look-alike or
-  brand-adjacent domains riding on a licensed brand.)
-- **Ranks**: the per-site ranks above, ascending, `—` where absent.
+  (or null), source }`, one entry per registrable domain.
+- **Ranks**: the sites ordered by ascending numeric rank (`—` last).
 - Empty when none found (explicit empty state, never fabricated).
+
+### 3.14 Brand-proximity variations (per licensed site)  *(NEW — feeds Part IV)*
+This detects **look-alike / impersonation** URLs that ride on a licensed brand. It is
+distinct from the base spec's Source-category `Variant` (§3.5): a variation here is
+matched by **brand-name proximity**, regardless of Source. Source-category `Variant`
+rows seeded on a licensed brand are naturally included when they match.
+
+Definitions:
+```
+brandToken(site)  = distinctive brand string of a Part I licensed site, lower-cased,
+                    TLD stripped and separators removed
+                    e.g. jackpots.ch->"jackpots", mycasino.ch->"mycasino",
+                         casino777.ch->"casino777", swisslos.ch->"swisslos",
+                         loro.ch->"loro"; brand aliases added from Part I brands
+                         (e.g. "sporttip" for Swisslos, "jouezsport" for Loterie
+                         Romande).
+host(row)         = full host of URL (or Domain), lower-cased.
+
+A row is a VARIATION CANDIDATE for a licensed site S if:
+  - brandToken(S) is a substring of host(row) OR of registrable(row), AND
+  - registrable(row) != registrable(S)          # exclude the genuine site itself
+  - (candidates are drawn from the whole standard set; in practice they are
+     ILLEGAL_GAMBLING or UNKNOWN rows — a candidate that is itself licensed is
+     dropped, since it is the real operator on another domain.)
+
+Each candidate captures "brand name + other characters or a different suffix",
+i.e. the brand token wrapped in extra characters (myswisslos, swisslos-bet,
+jackpots24) and/or a swapped TLD (jackpots.io, mycasino.net).
+```
+
+Scoring & ordering (per licensed site):
+```
+similarity(cand, S) = normalized Levenshtein similarity in [0,1] between
+                      registrable(cand) and registrable(S)  (1.0 = identical stem)
+rankKey(cand)       = numeric Rank if present, else +infinity (unranked sort last)
+
+Order candidates by (rankKey ASC, similarity DESC, host ASC).
+Keep the TOP 20 per licensed site.   # "highest in rank and closest to the domain"
+```
+
+Outputs:
+- `variationsPerSite` = for each licensed site with ≥1 candidate:
+  `{ licensedDomain, category, brandToken,
+     variations: [ { url, domain, rank (or —), similarity, category, source } ] (≤20) }`.
+- `variationCounts` = for each licensed site: `{ licensedDomain, category, count }`
+  (count = **all** matched candidates, not just the displayed top 20). Feeds the
+  §4 "variations per licensed URL" bar charts.
+- Explicit empty state per site / per category when no candidates are found.
 
 ## 4. Report structure (render in this order)
 
@@ -343,9 +389,10 @@ Compute first: `illegalShare = illegal/total*100`;
    ESBK/GESPA regime.
 3. **Variants and brand abuse** — `distinctBrands` brands cloned via variant
    domains; the most-abused brand `topBrand.seed` spawned `topBrand.count` variants.
-   Where variants target an **ESBK** or **GESPA** brand from Part I, call that out
-   explicitly (impersonation of an authorised operator). If no variants: state that
-   variant proliferation is not a factor.
+   Where variations target an **ESBK** or **GESPA** brand from Part I (see §3.14),
+   call that out explicitly (impersonation of an authorised operator) and name the
+   licensed brands with the most look-alikes. If no variants: state that variant
+   proliferation is not a factor.
    *Take:* a handful of brands drive most proliferation; prioritize enforcement,
    especially clones of authorised (ESBK/GESPA) brands.
 4. **Redirects and traffic shaping** — `illegalRedirects` illegal URLs use redirect
@@ -362,40 +409,58 @@ Compute first: `illegalShare = illegal/total*100`;
 
 # PART IV — ADDED CLIENT REPORTS
 
-Rendered after Section C, before Section D. Both are **conditional**: render only if
+Rendered after Section C, before Section D. All are **conditional**: render only if
 the corresponding rows exist; otherwise show the explicit empty state and no chart.
 
-### Section C-bis — "GESPA-supervised sites — variants & ranks"
-From §3.13 (`GESPA_SUPERVISED`):
-- **Sites table:** `domain / brand (Part I) / rank (or —) / source`.
-- **Variants:** for each GESPA brand with variant rows, a small bar chart / list of
-  `seed → count`, and up to 40 variant labels per seed (look-alikes of Swisslos /
-  Loterie Romande brands such as Sporttip / JouezSport).
-- **Ranks:** the sites table ordered by ascending numeric rank (`—` last).
-- **Empty state:** "No GESPA-supervised sites (or variants thereof) were found in
+### Section C-bis — "GESPA-supervised — sites, variations & ranks"
+From §3.13 and §3.14 (`GESPA_SUPERVISED`):
+- **Sites table** (§3.13): `domain / brand (Part I) / rank (or —) / source`, ordered
+  by ascending rank.
+- **Top-20 brand-proximity variations, per site** (§3.14): for each GESPA site with
+  candidates, a table of its **top 20** variations —
+  `url / domain / rank (or —) / similarity / category / source` — ordered highest in
+  rank and closest to the licensed domain. These are look-alikes of Swisslos /
+  Loterie Romande brands (e.g. Sporttip, JouezSport, `loro`, `swisslos`).
+- **Chart — "Variations per GESPA-supervised URL"** (§3.14 `variationCounts`): bar
+  chart, one bar per GESPA licensed URL, height = total matched variations for that
+  URL (full count, not just the displayed 20).
+- **Empty state:** "No GESPA-supervised sites (or variations thereof) were found in
   this sample."
 
-### Section C-ter — "ESBK-licensed sites — variants & ranks"
-From §3.13 (`ESBK_LICENSED`):
-- **Sites table:** `domain / land-based operator (Part I, where known) / rank
-  (or —) / source`.
-- **Variants:** per ESBK brand with variant rows, `seed → count` chart / list and up
-  to 40 variant labels per seed (look-alikes of licensed casino brands).
-- **Ranks:** the sites table ordered by ascending numeric rank (`—` last).
-- **Empty state:** "No ESBK-licensed sites (or variants thereof) were found in this
+### Section C-ter — "ESBK-licensed — sites, variations & ranks"
+From §3.13 and §3.14 (`ESBK_LICENSED`):
+- **Sites table** (§3.13): `domain / land-based operator (Part I, where known) /
+  rank (or —) / source`, ordered by ascending rank.
+- **Top-20 brand-proximity variations, per site** (§3.14): for each ESBK site with
+  candidates, a table of its **top 20** variations —
+  `url / domain / rank (or —) / similarity / category / source` — ordered highest in
+  rank and closest to the licensed domain. These are look-alikes of licensed casino
+  brands (e.g. `jackpots`, `mycasino`, `casino777`).
+- **Chart — "Variations per ESBK-licensed URL"** (§3.14 `variationCounts`): bar
+  chart, one bar per ESBK licensed URL, height = total matched variations for that
+  URL.
+- **Empty state:** "No ESBK-licensed sites (or variations thereof) were found in this
   sample."
+
+> **Combined overview (optional):** a single grouped bar chart may additionally plot
+> variation counts across **all** licensed URLs (GESPA + ESBK together), coloured by
+> category (`#1F3F63` GESPA, `#27ae60` ESBK), to surface which authorised brands
+> attract the most impersonation at a glance.
 
 ---
 
 # PART V — OUTPUT & PRESENTATION NOTES
 
-- Percentages are shown to **one decimal place**.
+- Percentages are shown to **one decimal place**; similarity scores to **two**.
 - **Empty states are explicit** (e.g. "No variant-based brand abuse was detected in
   this sample."), never fabricated data.
 - Category **codes** (`ILLEGAL_GAMBLING`, `ESBK_LICENSED`, `GESPA_SUPERVISED`,
   `NON_GAMBLING`) are used for data categorisation; **display labels**
   ("Illegal Gambling Site", "Licensed by ESBK", "Supervised by GESPA",
   "Not Gambling") are used on every rendered surface.
+- "Variations" (§3.14, brand-proximity look-alikes) and "variants" (base-spec
+  Source-category `Variant`) are **distinct concepts**; keep the terminology
+  separate on rendered surfaces to avoid confusion.
 - Colors are brand-fixed and must stay readable in light and dark themes; the
   categorical palette is `#1F3F63, #c0392b, #27ae60, #7d3c98, #9aa7b4, #2f5c8f,
   #e67e22`.
@@ -405,6 +470,7 @@ From §3.13 (`ESBK_LICENSED`):
 - The report is self-contained per configuration; the blocklist feed (§3.12)
   remains the one output consumed by the downstream Blocklist screen, where an
   operator can promote an illegal site to `blacklisted`.
+- Make the heading section pronounced and professional.
 
 ---
 
