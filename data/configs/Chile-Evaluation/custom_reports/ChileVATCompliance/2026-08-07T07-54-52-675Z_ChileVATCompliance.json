@@ -9,7 +9,8 @@
   "updatedAt": "2026-08-07T07:54:44.851Z",
   "createdBy": "HeathTaylor",
   "updatedBy": "HeathTaylor",
-  "status": "queued",
+  "status": "completed",
   "scheduledAt": "2026-08-07T07:54:52.675Z",
-  "scheduledBy": "HeathTaylor"
+  "scheduledBy": "HeathTaylor",
+  "date": "2026-08-07T08:30:00.000Z"
 }
