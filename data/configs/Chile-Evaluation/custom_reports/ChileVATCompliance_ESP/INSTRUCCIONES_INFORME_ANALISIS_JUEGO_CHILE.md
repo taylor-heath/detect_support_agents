@@ -43,11 +43,11 @@ formula juicios sobre legalidad**. La única distinción primaria visible es ent
 exportación de SICPADetect use los estados `Illegal gambling` o `Licensed gambling`,
 esas filas se tratan simplemente como filas de **Juego**.
 
-La clasificación de IVA (§1.3, §2.3) se computa de forma **interna** y se emplea
-**únicamente** en: (a) el indicador de color de la tabla "Sitios de Juego Mejor
+La clasificación de registro de IVA (§1.3, §2.3) se computa de forma **interna** y se
+emplea **únicamente** en: (a) el indicador de color de la tabla "Sitios de Juego Mejor
 Posicionados" (verde/rojo), y (b) los dos registros ampliados de la Sección D. La
-narrativa de hallazgos (§5) **no** menciona cumplimiento, incumplimiento, legalidad ni
-bloqueo; se limita a las cifras de Juego / No juego y a hallazgos técnicos.
+narrativa de hallazgos (§5) **no** menciona registro de IVA, legalidad ni bloqueo; se
+limita a las cifras de Juego / No juego y a hallazgos técnicos.
 
 ---
 
@@ -77,15 +77,16 @@ bloqueo; se limita a las cifras de Juego / No juego y a hallazgos técnicos.
 
 Si faltan columnas requeridas, detenerse e informar exactamente cuáles faltan.
 
-### 1.3 Listas de referencia de IVA (Chile) — datos de referencia incorporados
+### 1.3 Listas de referencia de registro de IVA (Chile) — datos de referencia incorporados
 
-Estas listas son la autoridad para la clasificación interna de IVA. Se reproducen aquí
-para que el informe sea autocontenido. **No se muestran como sección narrativa**; solo
-alimentan el color de la tabla de la Sección C y los registros de la Sección D.
+Estas listas son la autoridad para la clasificación interna de registro de IVA. Se
+reproducen aquí para que el informe sea autocontenido. **No se muestran como sección
+narrativa**; solo alimentan el color de la tabla de la Sección C y los registros de la
+Sección D.
 
-#### A) Plataformas registradas para IVA → clasificar como **`IVA_PAGADO`** (verde)
+#### A) Plataformas registradas para IVA → clasificar como **`IVA_REGISTRADO`** (verde)
 Todo sitio de juego cuyo dominio (o, para una variante/redirección, cuya marca semilla)
-coincida con una de estas plataformas — **y sus variantes** — es `IVA_PAGADO`.
+coincida con una de estas plataformas — **y sus variantes** — es `IVA_REGISTRADO`.
 
 | # | Dominio | Entidad legal |
 |---|---------|---------------|
@@ -116,9 +117,9 @@ coincida con una de estas plataformas — **y sus variantes** — es `IVA_PAGADO
 
 > Nota: `latamwin.online` aparece dos veces en la lista de origen; es una sola plataforma.
 
-#### B) Marcas listadas → clasificar como **`IVA_NO_PAGADO_LISTADO`** (rojo)
+#### B) Marcas listadas → clasificar como **`IVA_NO_REGISTRADO_LISTADO`** (rojo)
 Todo sitio de juego cuyo dominio/marca semilla contenga uno de estos tokens de marca —
-**y sus variantes** — es `IVA_NO_PAGADO_LISTADO`.
+**y sus variantes** — es `IVA_NO_REGISTRADO_LISTADO`.
 
 | # | Marca | Token de coincidencia (minúsculas) |
 |---|-------|-----------------------------------|
@@ -133,9 +134,9 @@ Todo sitio de juego cuyo dominio/marca semilla contenga uno de estos tokens de m
 | 9 | LEOVEGAS | `leovegas` |
 | 10 | ROOBET | `roobet` |
 
-#### C) Todo lo demás → clasificar como **`IVA_NO_PAGADO`** (rojo)
+#### C) Todo lo demás → clasificar como **`IVA_NO_REGISTRADO`** (rojo)
 Todo sitio detectado como **Juego** que **no** coincida con la lista A ni la lista B es
-`IVA_NO_PAGADO`.
+`IVA_NO_REGISTRADO`.
 
 ---
 
@@ -162,7 +163,7 @@ Definiciones auxiliares usadas en todo el documento:
 - **esJuego** = `Status ∈ { 'Illegal gambling', 'Licensed gambling' }`.
 - **esNoJuego** = `Status == 'Not gambling'`.
 
-### 2.1 Normalización de dominios (para la coincidencia de IVA)
+### 2.1 Normalización de dominios (para la coincidencia de registro de IVA)
 
 Definir `norm(host)`:
 1. minúsculas;
@@ -173,22 +174,22 @@ Definir `norm(host)`:
 Definir `registrable(host)` = el dominio registrable efectivo (eTLD+1),
 p. ej. `cl.novibet.com` → `novibet.com`, `m.betsala.com` → `betsala.com`.
 
-### 2.3 Clasificación interna de IVA de cada fila de Juego
+### 2.3 Clasificación interna de registro de IVA de cada fila de Juego
 
 Computar `brandKey(fila)` = `norm(brand(fila))`. Luego, **en este orden de prioridad**:
 
-1. **`IVA_PAGADO`** — si `brandKey` coincide con alguna plataforma de la lista A. La
+1. **`IVA_REGISTRADO`** — si `brandKey` coincide con alguna plataforma de la lista A. La
    coincidencia se da cuando `norm(brandKey)` es igual a un dominio de la lista A, **o**
    `registrable(brandKey)` es igual a la forma `registrable` de un dominio de la lista A
    (así las variantes y subdominios heredan, p. ej. `m.betway.com` → `betway.com`).
-2. **`IVA_NO_PAGADO_LISTADO`** — si no, y si `brandKey` (o `label(fila)`) contiene algún
-   token de marca de la lista B como subcadena. Coincidir primero los tokens más largos
-   (`pokerstars` antes que `stars`) para evitar clasificaciones erróneas.
-3. **`IVA_NO_PAGADO`** — en otro caso (cualquier sitio de juego restante).
+2. **`IVA_NO_REGISTRADO_LISTADO`** — si no, y si `brandKey` (o `label(fila)`) contiene
+   algún token de marca de la lista B como subcadena. Coincidir primero los tokens más
+   largos (`pokerstars` antes que `stars`) para evitar clasificaciones erróneas.
+3. **`IVA_NO_REGISTRADO`** — en otro caso (cualquier sitio de juego restante).
 
-Las filas de No juego, inaccesibles y desconocidas **no** reciben categoría de IVA. Esta
-clasificación es **interna** y solo se materializa donde se indica explícitamente
-(Sección C y Sección D).
+Las filas de No juego, inaccesibles y desconocidas **no** reciben categoría de registro de
+IVA. Esta clasificación es **interna** y solo se materializa donde se indica
+explícitamente (Sección C y Sección D).
 
 ---
 
@@ -197,8 +198,8 @@ clasificación es **interna** y solo se materializa donde se indica explícitame
 ### 3.1 Conteos
 - `total` — tamaño del conjunto estándar.
 - `juego`, `noJuego`, `inaccesibles` — conteos de las categorías mapeadas respectivas.
-- **Conteos internos de IVA (sobre filas de Juego):** `ivaPagado`,
-  `ivaNoPagadoListado`, `ivaNoPagado` (para uso exclusivo de las Secciones C y D).
+- **Conteos internos de registro de IVA (sobre filas de Juego):** `ivaRegistrado`,
+  `ivaNoRegistradoListado`, `ivaNoRegistrado` (para uso exclusivo de las Secciones C y D).
 
 ### 3.2 Período de evaluación y volumen en el tiempo  *(sin cambios)*
 - Parsear `Updated at` como fecha; ignorar valores no parseables.
@@ -211,7 +212,7 @@ clasificación es **interna** y solo se materializa donde se indica explícitame
 - Contar `juego` y `noJuego` sobre el conjunto estándar (opcionalmente mostrar
   `inaccesibles` como categoría neutra).
 - Para cada una: `{ categoria, conteo, pct = conteo/total*100 }`, ordenado por conteo
-  desc. **No** se muestran subcategorías de IVA en esta distribución.
+  desc. **No** se muestran subcategorías de registro de IVA en esta distribución.
 
 ### 3.4 Top 10 sufijos de URL  *(columnas "illegal" → "juego")*
 - Agrupar el conjunto estándar por `suffix(Domain)`.
@@ -250,42 +251,33 @@ Para cada categoría en el orden fijo `Manual, Google Search, Variant, Redirect,
 `{ total, juego, noJuego, pctJuego, pctNoJuego }` donde los porcentajes usan
 `juego + noJuego` como denominador.
 
-### 3.10 Evidencia de indicadores de estado de acceso  *(acotada a filas de Juego)*
-Escanear `LLM Reasoning` (sin distinguir mayúsculas). Una fila es **evidencia** si el
-razonamiento contiene alguna de estas frases: `access to this site has been blocked`,
-`court order`, `regulatory authority`, `illegal content`, `not permitted in your
-country`, `blocked by`, `has been blocked` — **excepto** omitir filas de juego cuyo
-razonamiento también contenga `gambling site` (aún activo). Por cada coincidencia capturar
-`{ url, frase, extracto }` donde el extracto es ~160 caracteres alrededor de la frase.
-*(Esta métrica se computa y se renderiza como listado técnico en la Sección B; no se
-referencia en la narrativa de hallazgos §5.)*
-
-### 3.11 Posicionamiento (rankings)  *(renombrado; con estado IVA; se elimina el ranking con licencia)*
+### 3.10 Posicionamiento (rankings)  *(renombrado; con estado de registro de IVA; se elimina el ranking con licencia)*
 - Parsear `Rank` numéricamente.
 - **Sitios de Juego Mejor Posicionados** = filas de juego con rank numérico, ascendente,
   **top 15** → `{ rank, dominio = label, source, estadoIva, colorIva }`.
-  - `colorIva` = **verde** (`#27ae60`) para `IVA_PAGADO`; **rojo** (`#c0392b`) para
-    `IVA_NO_PAGADO_LISTADO` e `IVA_NO_PAGADO`.
+  - `colorIva` = **verde** (`#27ae60`) para `IVA_REGISTRADO`; **rojo** (`#c0392b`) para
+    `IVA_NO_REGISTRADO_LISTADO` e `IVA_NO_REGISTRADO`.
 - **La tabla de "ranking con licencia" se elimina.**
 
-### 3.12 Feed de sitios de juego (URLs de Juego)
+### 3.11 Feed de sitios de juego (URLs de Juego)
 Por cada fila de juego emitir `{ url, domain, brand, source, rank (o null),
 fecha (YYYY-MM-DD de "Updated at", si no el valor bruto), estadoIva ∈
-{IVA_PAGADO, IVA_NO_PAGADO_LISTADO, IVA_NO_PAGADO}, legalEntity, legalEntityCountry }`.
-`legalEntity`/`legalEntityCountry` provienen solo de las columnas opcionales del §1.2 —
-en blanco si están ausentes (usar como respaldo la entidad legal de la lista A cuando la
-coincidencia `IVA_PAGADO` la aporte). Este feed alimenta la Sección D.
+{IVA_REGISTRADO, IVA_NO_REGISTRADO_LISTADO, IVA_NO_REGISTRADO}, legalEntity,
+legalEntityCountry }`. `legalEntity`/`legalEntityCountry` provienen solo de las columnas
+opcionales del §1.2 — en blanco si están ausentes (usar como respaldo la entidad legal de
+la lista A cuando la coincidencia `IVA_REGISTRADO` la aporte). Este feed alimenta la
+Sección D.
 
-### 3.13 Registros Top 100  *(nuevo — ver §4 Sección D)*
-- **`top100IvaPagado`** — todas las filas de juego con `estadoIva == IVA_PAGADO`,
+### 3.12 Registros Top 100  *(nuevo — ver §4 Sección D)*
+- **`top100IvaRegistrado`** — todas las filas de juego con `estadoIva == IVA_REGISTRADO`,
   ordenadas por `Rank` numérico ascendente (filas sin rank al final, ordenadas por
   `Updated at` desc), **top 100**. Campos: `{ rank (o —), dominio = label, brand,
   source, fecha, legalEntity }`.
-- **`top100IvaNoPagadoListado`** — igual, para `estadoIva == IVA_NO_PAGADO_LISTADO`,
-  **top 100**.
+- **`top100IvaNoRegistradoListado`** — igual, para
+  `estadoIva == IVA_NO_REGISTRADO_LISTADO`, **top 100**.
 - Ambas listas incluyen **variantes** (las filas variante/redirección resuelven a su
-  marca semilla, que determina su clase de IVA), de modo que una marca y todos sus
-  dominios variantes detectados aparecen juntos.
+  marca semilla, que determina su clase de registro de IVA), de modo que una marca y
+  todos sus dominios variantes detectados aparecen juntos.
 
 ---
 
@@ -319,23 +311,22 @@ fecha de emisión), luego:
   nodos de la fuente de redirección → sus destinos; línea de interpretación: "`url`
   redirige a `N` destinos."
 - **"Comparación — URLs → redirecciones → variantes":** tarjetas de métricas del split §3.8.
-- **"Indicadores técnicos de estado de acceso":** listado de la evidencia de §3.10
-  (`url / frase / extracto`), presentado como hallazgo técnico. Estado vacío explícito si
-  no hay coincidencias.
 
 ### Sección C — "Sitios de Juego Mejor Posicionados"
 - Tabla **Sitios de Juego Mejor Posicionados** (top 15 por rank) con columnas
-  `rank / dominio / source / estado IVA`. Colorear la celda de estado IVA en **verde**
-  (`IVA_PAGADO`) y **rojo** (`IVA_NO_PAGADO_LISTADO` / `IVA_NO_PAGADO`).
+  `rank / dominio / source / estado de registro de IVA`. Colorear la celda de estado en
+  **verde** (`IVA_REGISTRADO`) y **rojo** (`IVA_NO_REGISTRADO_LISTADO` /
+  `IVA_NO_REGISTRADO`).
 - *(Sin tabla de sitios con licencia.)*
 
 ### Sección D — "Registros ampliados"  *(nuevo)*
-- **"Top 100 — sitios y variantes (`IVA_PAGADO`)":** tabla de §3.13 `top100IvaPagado`
-  (`rank / dominio / marca / source / fecha / entidad legal`). Encabezado/insignia en
-  verde. Estado vacío: "No se detectaron sitios de la lista A en esta muestra."
-- **"Top 100 — sitios y variantes (`IVA_NO_PAGADO_LISTADO`)":** tabla de §3.13
-  `top100IvaNoPagadoListado`. Encabezado/insignia en rojo. Estado vacío: "No se detectaron
-  sitios de la lista B en esta muestra."
+- **"Top 100 — sitios y variantes (`IVA_REGISTRADO`)":** tabla de §3.12
+  `top100IvaRegistrado` (`rank / dominio / marca / source / fecha / entidad legal`).
+  Encabezado/insignia en verde. Estado vacío: "No se detectaron sitios de la lista A en
+  esta muestra."
+- **"Top 100 — sitios y variantes (`IVA_NO_REGISTRADO_LISTADO`)":** tabla de §3.12
+  `top100IvaNoRegistradoListado`. Encabezado/insignia en rojo. Estado vacío: "No se
+  detectaron sitios de la lista B en esta muestra."
 
 ### Sección E — "Hallazgos clave"
 Las tarjetas narrativas de §5.
@@ -347,9 +338,9 @@ Las tarjetas narrativas de §5.
 Cada tarjeta tiene un **título**, un **cuerpo** y una **conclusión** de una línea. Computar
 primero las cifras: `juegoShare = juego/total*100`.
 
-**Restricción de redacción:** la narrativa **no** menciona cumplimiento, incumplimiento,
-legalidad, IVA ni bloqueo. Se limita a las cifras de Juego / No juego y a hallazgos
-técnicos (variantes, redirecciones, convenciones de nombres, rotación de TLD).
+**Restricción de redacción:** la narrativa **no** menciona registro de IVA, legalidad ni
+bloqueo. Se limita a las cifras de Juego / No juego y a hallazgos técnicos (variantes,
+redirecciones, convenciones de nombres, rotación de TLD).
 
 1. **Escala del análisis** — total de URLs distintas en el período de evaluación (`days`,
    más `earliest → latest` si se conoce), de las cuales `juego` son sitios de juego y
@@ -385,15 +376,16 @@ técnicos (variantes, redirecciones, convenciones de nombres, rotación de TLD).
 ## 6. Notas de salida y presentación
 
 - Los porcentajes se muestran con un decimal.
-- **Convención de color de estado IVA (fija, solo Secciones C y D):** `IVA_PAGADO` = verde
-  `#27ae60`; `IVA_NO_PAGADO_LISTADO` e `IVA_NO_PAGADO` = rojo `#c0392b`. En contextos
-  binarios (tabla de la Sección C) el estado se muestra simplemente como verde / rojo.
+- **Convención de color de estado de registro de IVA (fija, solo Secciones C y D):**
+  `IVA_REGISTRADO` = verde `#27ae60`; `IVA_NO_REGISTRADO_LISTADO` e `IVA_NO_REGISTRADO` =
+  rojo `#c0392b`. En contextos binarios (tabla de la Sección C) el estado se muestra
+  simplemente como verde / rojo.
 - La banda de encabezado usa el primario SICPA `#1F3F63`; la paleta categórica es
   `#1F3F63, #c0392b, #27ae60, #7d3c98, #9aa7b4, #2f5c8f, #e67e22`. Los colores deben
   mantenerse legibles en temas claro y oscuro.
 - Los estados vacíos son explícitos ("No se detectó abuso de marca basado en variantes en
   esta muestra."), nunca datos fabricados.
-- El informe es autocontenido por configuración. El feed de §3.12 alimenta la pantalla de
+- El informe es autocontenido por configuración. El feed de §3.11 alimenta la pantalla de
   registros, donde un operador puede promover un sitio a una lista de seguimiento.
 - El bloque de identificación del encabezado (**Cliente**, **Propósito**, **Productor:
   SICPA SA**, **Fecha de emisión**) es obligatorio en cada emisión de este informe.
