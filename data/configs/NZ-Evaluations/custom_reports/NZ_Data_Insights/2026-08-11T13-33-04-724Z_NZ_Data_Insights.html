@@ -66,13 +66,19 @@ ul.insight-list li { margin-bottom:8px; }
 .node-edge { stroke:var(--border); stroke-width:1.5; }
 .node-label { font-size:11px; fill:var(--text-muted); }
 .node-center-label { font-size:12px; fill:#fff; font-weight:600; }
-.chart-container { position:relative; height:320px; }
-.chart-container.small { height:280px; }
 .interp-line { font-size:14px; color:var(--text-muted); margin-top:10px; font-style:italic; }
 footer.report-footer { margin-top:60px; padding-top:20px; border-top:1px solid var(--border);
   color:var(--text-muted); font-size:12.5px; }
+.svg-chart { width:100%; height:auto; display:block; }
+.chart-grid { stroke:var(--border); stroke-width:1; }
+.chart-axis-label { font-size:11px; fill:var(--text-muted); }
+.pie-wrap { display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+.pie-svg { width:180px; flex:0 0 180px; }
+.legend-list { display:flex; flex-direction:column; gap:8px; font-size:13.5px; }
+.legend-item { display:flex; align-items:center; gap:8px; }
+.legend-swatch { width:11px; height:11px; border-radius:3px; display:inline-block; flex:0 0 auto; }
+.legend-value { color:var(--text-muted); margin-left:2px; }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="header-band">
@@ -101,12 +107,40 @@ footer.report-footer { margin-top:60px; padding-top:20px; border-top:1px solid v
 
 <div class="panel">
   <h3 class="card-title">URLs analyzed per day</h3>
-  <div class="chart-container"><canvas id="perDayChart"></canvas></div>
+  <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" class="svg-chart" role="img" aria-label="Line chart">
+<line x1="46" y1="16.0" x2="864" y2="16.0" class="chart-grid" />
+<text x="38" y="20.0" text-anchor="end" class="chart-axis-label">2,393</text>
+<line x1="46" y1="73.5" x2="864" y2="73.5" class="chart-grid" />
+<text x="38" y="77.5" text-anchor="end" class="chart-axis-label">1,795</text>
+<line x1="46" y1="131.0" x2="864" y2="131.0" class="chart-grid" />
+<text x="38" y="135.0" text-anchor="end" class="chart-axis-label">1,196</text>
+<line x1="46" y1="188.5" x2="864" y2="188.5" class="chart-grid" />
+<text x="38" y="192.5" text-anchor="end" class="chart-axis-label">598</text>
+<line x1="46" y1="246.0" x2="864" y2="246.0" class="chart-grid" />
+<text x="38" y="250.0" text-anchor="end" class="chart-axis-label">0</text>
+<polygon points="46.0,246.0 46.0,202.4 86.9,209.9 127.8,205.2 168.7,210.5 209.6,213.1 250.5,215.6 291.4,213.0 332.3,202.5 373.2,192.5 414.1,135.6 455.0,16.0 495.9,30.3 536.8,245.6 577.7,244.8 618.6,245.4 659.5,245.6 700.4,245.6 741.3,243.6 782.2,245.0 823.1,245.3 864.0,245.4 864.0,246.0" fill="#1F3F63" opacity="0.12" />
+<polyline points="46.0,202.4 86.9,209.9 127.8,205.2 168.7,210.5 209.6,213.1 250.5,215.6 291.4,213.0 332.3,202.5 373.2,192.5 414.1,135.6 455.0,16.0 495.9,30.3 536.8,245.6 577.7,244.8 618.6,245.4 659.5,245.6 700.4,245.6 741.3,243.6 782.2,245.0 823.1,245.3 864.0,245.4" fill="none" stroke="#1F3F63" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" />
+<text x="46.0" y="272" text-anchor="middle" class="chart-axis-label">2026-07-13</text>
+<text x="127.8" y="272" text-anchor="middle" class="chart-axis-label">2026-07-15</text>
+<text x="209.6" y="272" text-anchor="middle" class="chart-axis-label">2026-07-17</text>
+<text x="291.4" y="272" text-anchor="middle" class="chart-axis-label">2026-07-19</text>
+<text x="373.2" y="272" text-anchor="middle" class="chart-axis-label">2026-07-21</text>
+<text x="455.0" y="272" text-anchor="middle" class="chart-axis-label">2026-07-23</text>
+<text x="536.8" y="272" text-anchor="middle" class="chart-axis-label">2026-07-27</text>
+<text x="618.6" y="272" text-anchor="middle" class="chart-axis-label">2026-07-29</text>
+<text x="700.4" y="272" text-anchor="middle" class="chart-axis-label">2026-07-31</text>
+<text x="782.2" y="272" text-anchor="middle" class="chart-axis-label">2026-08-02</text>
+<text x="864.0" y="272" text-anchor="middle" class="chart-axis-label">2026-08-04</text>
+</svg>
 </div>
 <div class="two-col">
   <div class="panel">
     <h3 class="card-title">Status distribution</h3>
-    <div class="chart-container small"><canvas id="statusChart"></canvas></div>
+    <div class="pie-wrap"><div class="pie-svg"><svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" class="svg-chart" role="img" aria-label="Pie chart">
+<path d="M130.0,130.0 L130.0,8.0 A122.0,122.0 0 1 1 25.8,66.6 Z" fill="#c0392b" />
+<path d="M130.0,130.0 L25.8,66.6 A122.0,122.0 0 0 1 129.9,8.0 Z" fill="#9aa7b4" />
+<path d="M130.0,130.0 L129.9,8.0 A122.0,122.0 0 0 1 130.0,8.0 Z" fill="#27ae60" />
+</svg></div><div class="legend-list"><div class="legend-item"><span class="legend-swatch" style="background:#c0392b"></span>Illegal gambling <span class="legend-value">7,950</span></div><div class="legend-item"><span class="legend-swatch" style="background:#9aa7b4"></span>Not gambling <span class="legend-value">1,548</span></div><div class="legend-item"><span class="legend-swatch" style="background:#27ae60"></span>Licensed gambling <span class="legend-value">1</span></div></div></div>
   </div>
   <div class="panel">
     <h3 class="card-title">Status distribution &mdash; detail</h3>
@@ -121,7 +155,52 @@ footer.report-footer { margin-top:60px; padding-top:20px; border-top:1px solid v
 <div class="two-col">
   <div class="panel">
     <h3 class="card-title">Top 10 URL suffixes</h3>
-    <div class="chart-container small"><canvas id="suffixChart"></canvas></div>
+    <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" class="svg-chart" role="img" aria-label="Bar chart">
+<line x1="46" y1="30.0" x2="864" y2="30.0" class="chart-grid" />
+<text x="38" y="34.0" text-anchor="end" class="chart-axis-label">5,580</text>
+<line x1="46" y1="86.0" x2="864" y2="86.0" class="chart-grid" />
+<text x="38" y="90.0" text-anchor="end" class="chart-axis-label">4,185</text>
+<line x1="46" y1="142.0" x2="864" y2="142.0" class="chart-grid" />
+<text x="38" y="146.0" text-anchor="end" class="chart-axis-label">2,790</text>
+<line x1="46" y1="198.0" x2="864" y2="198.0" class="chart-grid" />
+<text x="38" y="202.0" text-anchor="end" class="chart-axis-label">1,395</text>
+<line x1="46" y1="254.0" x2="864" y2="254.0" class="chart-grid" />
+<text x="38" y="258.0" text-anchor="end" class="chart-axis-label">0</text>
+<rect x="59.6" y="30.0" width="23.2" height="224.0" fill="#2f5c8f" rx="2" />
+<rect x="86.9" y="30.2" width="23.2" height="223.8" fill="#c0392b" rx="2" />
+<text x="86.9" y="286" text-anchor="middle" class="chart-axis-label">.bet</text>
+<rect x="141.4" y="231.8" width="23.2" height="22.2" fill="#2f5c8f" rx="2" />
+<rect x="168.7" y="236.7" width="23.2" height="17.3" fill="#c0392b" rx="2" />
+<text x="168.7" y="286" text-anchor="middle" class="chart-axis-label">.app</text>
+<rect x="223.2" y="232.1" width="23.2" height="21.9" fill="#2f5c8f" rx="2" />
+<rect x="250.5" y="242.5" width="23.2" height="11.5" fill="#c0392b" rx="2" />
+<text x="250.5" y="286" text-anchor="middle" class="chart-axis-label">.com</text>
+<rect x="305.0" y="235.3" width="23.2" height="18.7" fill="#2f5c8f" rx="2" />
+<rect x="332.3" y="238.3" width="23.2" height="15.7" fill="#c0392b" rx="2" />
+<text x="332.3" y="286" text-anchor="middle" class="chart-axis-label">.pro</text>
+<rect x="386.8" y="241.0" width="23.2" height="13.0" fill="#2f5c8f" rx="2" />
+<rect x="414.1" y="248.3" width="23.2" height="5.7" fill="#c0392b" rx="2" />
+<text x="414.1" y="286" text-anchor="middle" class="chart-axis-label">.org</text>
+<rect x="468.6" y="241.6" width="23.2" height="12.4" fill="#2f5c8f" rx="2" />
+<rect x="495.9" y="243.4" width="23.2" height="10.6" fill="#c0392b" rx="2" />
+<text x="495.9" y="286" text-anchor="middle" class="chart-axis-label">.club</text>
+<rect x="550.4" y="245.9" width="23.2" height="8.1" fill="#2f5c8f" rx="2" />
+<rect x="577.7" y="246.9" width="23.2" height="7.1" fill="#c0392b" rx="2" />
+<text x="577.7" y="286" text-anchor="middle" class="chart-axis-label">.fun</text>
+<rect x="632.2" y="246.3" width="23.2" height="7.7" fill="#2f5c8f" rx="2" />
+<rect x="659.5" y="250.3" width="23.2" height="3.7" fill="#c0392b" rx="2" />
+<text x="659.5" y="286" text-anchor="middle" class="chart-axis-label">.top</text>
+<rect x="714.0" y="246.7" width="23.2" height="7.3" fill="#2f5c8f" rx="2" />
+<rect x="741.3" y="250.7" width="23.2" height="3.3" fill="#c0392b" rx="2" />
+<text x="741.3" y="286" text-anchor="middle" class="chart-axis-label">.net</text>
+<rect x="795.8" y="247.3" width="23.2" height="6.7" fill="#2f5c8f" rx="2" />
+<rect x="823.1" y="247.9" width="23.2" height="6.1" fill="#c0392b" rx="2" />
+<text x="823.1" y="286" text-anchor="middle" class="chart-axis-label">.click</text>
+<rect x="46" y="5" width="10" height="10" fill="#2f5c8f" rx="2" />
+<text x="60" y="14" class="chart-axis-label">Total</text>
+<rect x="114.0" y="5" width="10" height="10" fill="#c0392b" rx="2" />
+<text x="128.0" y="14" class="chart-axis-label">Illegal</text>
+</svg>
   </div>
   <div class="panel">
     <h3 class="card-title">Top 10 URL suffixes &mdash; detail</h3>
@@ -145,7 +224,53 @@ footer.report-footer { margin-top:60px; padding-top:20px; border-top:1px solid v
 <h2 class="section-title">Section B &mdash; The Insights</h2>
 <div class="panel">
   <h3 class="card-title">Brands and variants (2731 distinct brands)</h3>
-  <div class="chart-container"><canvas id="brandsChart"></canvas></div>
+  <svg viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" class="svg-chart" role="img" aria-label="Bar chart">
+<text x="250" y="24.0" text-anchor="end" class="chart-axis-label">t80.bet</text>
+<rect x="260" y="9" width="440.0" height="18" rx="3" fill="#7d3c98" />
+<text x="708.0" y="24.0" class="chart-axis-label">16</text>
+<text x="250" y="52.0" text-anchor="end" class="chart-axis-label">g78.bet</text>
+<rect x="260" y="37" width="302.5" height="18" rx="3" fill="#7d3c98" />
+<text x="570.5" y="52.0" class="chart-axis-label">11</text>
+<text x="250" y="80.0" text-anchor="end" class="chart-axis-label">g77.bet</text>
+<rect x="260" y="65" width="275.0" height="18" rx="3" fill="#7d3c98" />
+<text x="543.0" y="80.0" class="chart-axis-label">10</text>
+<text x="250" y="108.0" text-anchor="end" class="chart-axis-label">rb051.com</text>
+<rect x="260" y="93" width="247.5" height="18" rx="3" fill="#7d3c98" />
+<text x="515.5" y="108.0" class="chart-axis-label">9</text>
+<text x="250" y="136.0" text-anchor="end" class="chart-axis-label">bd7.club</text>
+<rect x="260" y="121" width="247.5" height="18" rx="3" fill="#7d3c98" />
+<text x="515.5" y="136.0" class="chart-axis-label">9</text>
+<text x="250" y="164.0" text-anchor="end" class="chart-axis-label">www.m.mobile.secure.support.accou…</text>
+<rect x="260" y="149" width="220.0" height="18" rx="3" fill="#7d3c98" />
+<text x="488.0" y="164.0" class="chart-axis-label">8</text>
+<text x="250" y="192.0" text-anchor="end" class="chart-axis-label">www.support.secure.verify.support…</text>
+<rect x="260" y="177" width="220.0" height="18" rx="3" fill="#7d3c98" />
+<text x="488.0" y="192.0" class="chart-axis-label">8</text>
+<text x="250" y="220.0" text-anchor="end" class="chart-axis-label">www.verify.mobile.mobile.mobile.s…</text>
+<rect x="260" y="205" width="220.0" height="18" rx="3" fill="#7d3c98" />
+<text x="488.0" y="220.0" class="chart-axis-label">8</text>
+<text x="250" y="248.0" text-anchor="end" class="chart-axis-label">www.verify.secure.support.mobile.…</text>
+<rect x="260" y="233" width="220.0" height="18" rx="3" fill="#7d3c98" />
+<text x="488.0" y="248.0" class="chart-axis-label">8</text>
+<text x="250" y="276.0" text-anchor="end" class="chart-axis-label">www.m.mobile.mobile.mobile.accoun…</text>
+<rect x="260" y="261" width="220.0" height="18" rx="3" fill="#7d3c98" />
+<text x="488.0" y="276.0" class="chart-axis-label">8</text>
+<text x="250" y="304.0" text-anchor="end" class="chart-axis-label">www.verify.secure.support.login.s…</text>
+<rect x="260" y="289" width="220.0" height="18" rx="3" fill="#7d3c98" />
+<text x="488.0" y="304.0" class="chart-axis-label">8</text>
+<text x="250" y="332.0" text-anchor="end" class="chart-axis-label">www.verify.secure.secure.support.…</text>
+<rect x="260" y="317" width="220.0" height="18" rx="3" fill="#7d3c98" />
+<text x="488.0" y="332.0" class="chart-axis-label">8</text>
+<text x="250" y="360.0" text-anchor="end" class="chart-axis-label">www.verify.secure.verify.secure.m…</text>
+<rect x="260" y="345" width="220.0" height="18" rx="3" fill="#7d3c98" />
+<text x="488.0" y="360.0" class="chart-axis-label">8</text>
+<text x="250" y="388.0" text-anchor="end" class="chart-axis-label">www.verify.mobile.secure.mobile.s…</text>
+<rect x="260" y="373" width="220.0" height="18" rx="3" fill="#7d3c98" />
+<text x="488.0" y="388.0" class="chart-axis-label">8</text>
+<text x="250" y="416.0" text-anchor="end" class="chart-axis-label">www.verify.mobile.secure.secure.s…</text>
+<rect x="260" y="401" width="220.0" height="18" rx="3" fill="#7d3c98" />
+<text x="488.0" y="416.0" class="chart-axis-label">8</text>
+</svg>
 </div>
 <div class="panel">
   <h3 class="card-title">Variant naming convention insights</h3>
@@ -213,7 +338,38 @@ footer.report-footer { margin-top:60px; padding-top:20px; border-top:1px solid v
     
 <div class="panel">
   <h3 class="card-title">Redirects from &mdash; top 10</h3>
-  <div class="chart-container"><canvas id="redirectsChart"></canvas></div>
+  <svg viewBox="0 0 760 290" xmlns="http://www.w3.org/2000/svg" class="svg-chart" role="img" aria-label="Bar chart">
+<text x="250" y="24.0" text-anchor="end" class="chart-axis-label">c37.club</text>
+<rect x="260" y="9" width="440.0" height="18" rx="3" fill="#e67e22" />
+<text x="708.0" y="24.0" class="chart-axis-label">14</text>
+<text x="250" y="52.0" text-anchor="end" class="chart-axis-label">e336.xyz</text>
+<rect x="260" y="37" width="62.9" height="18" rx="3" fill="#e67e22" />
+<text x="330.9" y="52.0" class="chart-axis-label">2</text>
+<text x="250" y="80.0" text-anchor="end" class="chart-axis-label">t123.com</text>
+<rect x="260" y="65" width="62.9" height="18" rx="3" fill="#e67e22" />
+<text x="330.9" y="80.0" class="chart-axis-label">2</text>
+<text x="250" y="108.0" text-anchor="end" class="chart-axis-label">bg8.app</text>
+<rect x="260" y="93" width="62.9" height="18" rx="3" fill="#e67e22" />
+<text x="330.9" y="108.0" class="chart-axis-label">2</text>
+<text x="250" y="136.0" text-anchor="end" class="chart-axis-label">dakatop.link</text>
+<rect x="260" y="121" width="62.9" height="18" rx="3" fill="#e67e22" />
+<text x="330.9" y="136.0" class="chart-axis-label">2</text>
+<text x="250" y="164.0" text-anchor="end" class="chart-axis-label">g78.top</text>
+<rect x="260" y="149" width="62.9" height="18" rx="3" fill="#e67e22" />
+<text x="330.9" y="164.0" class="chart-axis-label">2</text>
+<text x="250" y="192.0" text-anchor="end" class="chart-axis-label">kytiyu198.vip</text>
+<rect x="260" y="177" width="31.4" height="18" rx="3" fill="#e67e22" />
+<text x="299.4" y="192.0" class="chart-axis-label">1</text>
+<text x="250" y="220.0" text-anchor="end" class="chart-axis-label">fb777.net</text>
+<rect x="260" y="205" width="31.4" height="18" rx="3" fill="#e67e22" />
+<text x="299.4" y="220.0" class="chart-axis-label">1</text>
+<text x="250" y="248.0" text-anchor="end" class="chart-axis-label">kytiyu186.vip</text>
+<rect x="260" y="233" width="31.4" height="18" rx="3" fill="#e67e22" />
+<text x="299.4" y="248.0" class="chart-axis-label">1</text>
+<text x="250" y="276.0" text-anchor="end" class="chart-axis-label">e37.com</text>
+<rect x="260" y="261" width="31.4" height="18" rx="3" fill="#e67e22" />
+<text x="299.4" y="276.0" class="chart-axis-label">1</text>
+</svg>
 </div>
 
     <div class="panel">
@@ -350,32 +506,5 @@ footer.report-footer { margin-top:60px; padding-top:20px; border-top:1px solid v
 <footer class="report-footer">Report specification: Data Insights &amp; Patterns &mdash; Report Generation Instructions.
 Generated by the Custom Report Processor on 2026-08-11.</footer>
 </div>
-
-<script>
-const palette = ['#1F3F63','#c0392b','#27ae60','#7d3c98','#9aa7b4','#2f5c8f','#e67e22'];
-new Chart(document.getElementById('perDayChart'), {
-  type: 'line',
-  data: { labels: ["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04"], datasets: [{ label:'URLs analyzed', data: [454, 376, 425, 369, 342, 316, 343, 453, 557, 1149, 2393, 2244, 4, 12, 6, 4, 4, 25, 10, 7, 6],
-    borderColor:'#1F3F63', backgroundColor:'rgba(31,63,99,0.12)', fill:true, tension:0.25, pointRadius:0 }] },
-  options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
-    scales:{ x:{ticks:{maxRotation:60,minRotation:60,autoSkip:true,maxTicksLimit:20}}, y:{beginAtZero:true} } }
-});
-new Chart(document.getElementById('statusChart'), {
-  type: 'pie',
-  data: { labels: ["Illegal gambling", "Not gambling", "Licensed gambling"], datasets: [{ data: [7950, 1548, 1], backgroundColor: ["#c0392b", "#9aa7b4", "#27ae60"] }] },
-  options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom'}} }
-});
-new Chart(document.getElementById('suffixChart'), {
-  type: 'bar',
-  data: { labels: [".bet", ".app", ".com", ".pro", ".org", ".club", ".fun", ".top", ".net", ".click"], datasets: [
-    { label:'Total', data: [5580, 554, 546, 466, 323, 309, 203, 193, 181, 166], backgroundColor:'#2f5c8f' },
-    { label:'Illegal', data: [5576, 432, 287, 392, 141, 265, 178, 93, 82, 151], backgroundColor:'#c0392b' } ] },
-  options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom'}},
-    scales:{ y:{beginAtZero:true} } }
-});
-new Chart(document.getElementById('brandsChart'), { type:'bar', data:{ labels: ["t80.bet", "g78.bet", "g77.bet", "rb051.com", "bd7.club", "www.m.mobile.secure.support.account.support.7bt.bet", "www.support.secure.verify.support.mobile.verify.7bt.bet", "www.verify.mobile.mobile.mobile.secure.account.7bt.bet", "www.verify.secure.support.mobile.mobile.mobile.7bt.bet", "www.m.mobile.mobile.mobile.account.mobile.7bt.bet", "www.verify.secure.support.login.secure.support.7bt.bet", "www.verify.secure.secure.support.secure.mobile.7bt.bet", "www.verify.secure.verify.secure.mobile.support.7bt.bet", "www.verify.mobile.secure.mobile.secure.secure.7bt.bet", "www.verify.mobile.secure.secure.support.support.7bt.bet"], datasets:[{ label:'Variant count', data:[16, 11, 10, 9, 9, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], backgroundColor:'#7d3c98' }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{ beginAtZero:true } } } });
-new Chart(document.getElementById('redirectsChart'), { type:'bar', data:{ labels: ["c37.club", "e336.xyz", "t123.com", "bg8.app", "dakatop.link", "g78.top", "kytiyu198.vip", "fb777.net", "kytiyu186.vip", "e37.com"], datasets:[{ label:'Redirect count', data:[14, 2, 2, 2, 2, 2, 1, 1, 1, 1], backgroundColor:'#e67e22' }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{ beginAtZero:true } } } });
-</script>
-
 </body>
 </html>
