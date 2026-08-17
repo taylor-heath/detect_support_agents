@@ -142,7 +142,37 @@ Todo sitio detectado como **Juego** que **no** coincida con la lista A ni la lis
 ---
 
 #### B1) Brands
-Create a detailedheat map of brands with the number of URLS which correspopnd to that brand. Try to get information such as licence number, where company is regiostered for each branch
+Create a detailed heat map of brands listed below with the number of URLS which correspond to that brand. Try to get information such as licence number, where company is registered for each brand using external lookup for this information.
+
+1XBET
+APUESTAS ROYAL
+BET365
+BETANO
+BETCRIS
+BETFAIR
+BETPLAY
+BETSALA
+BETSONN
+BETSSON
+BETWARRIOR
+BETWAY
+BODOG
+BWIN
+COOLBET
+EPICBET
+ESTELARBET
+JUEGAENLINEA
+JUEGALO
+JUGABET
+KTO
+LATAMWIN
+MARATHONBET
+MICASINO
+NOVIBET
+RIVALO
+ROJABET
+RUSHBET
+SPORTINGBET
 
 ----
 
