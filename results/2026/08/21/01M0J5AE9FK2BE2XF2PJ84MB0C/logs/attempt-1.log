@@ -1,0 +1,8 @@
+2026-08-21T12:41:00.000Z claimed job 01M0J5AE9FK2BE2XF2PJ84MB0C (attempt 1)
+2026-08-21T12:41:05.000Z read request.json: type=report.custom, tenantRef=lotschberg-dev, savedSearchId=bbd394d8-c011-492c-8f0a-0789d487a8bc, reportRuleId=b58d3466-a0cd-4071-9834-52653e4bf73c
+2026-08-21T12:41:10.000Z read spec.md attachment, sha256 verified against specSha256 in params
+2026-08-21T12:41:15.000Z searched job repository for a matching config/dataset under data/configs/** — no directory or file references lotschberg-dev, the savedSearchId, or the reportRuleId
+2026-08-21T12:41:30.000Z searched for a CSV "SICPADetect spreadsheet export" (the input format required by spec.md section 1) anywhere in the repository — none found
+2026-08-21T12:41:45.000Z searched available tools/connectors for a way to execute the saved-search query (query.startDate/endDate/orderBy against savedSearchId) against a live dataset — none available in this environment
+2026-08-21T12:42:00.000Z no attachment, config file, or tool provided the underlying Domains rows needed to build the "standard set" per spec.md section 2 — cannot compute any of the section 3 metrics or render report.html
+2026-08-21T12:43:00.000Z aborting: writing failed result, code=DATASET_UNAVAILABLE, retryable=false

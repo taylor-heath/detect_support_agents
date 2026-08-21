@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M0J5AE9FK2BE2XF2PJ84MB0C",
+  "requestCommit": "7f848d3624e853fc30a789c6925951a4d56fc1e2",
+  "agent": { "id": "agent-report-custom", "version": "1.0.0" },
+  "attempt": 1,
+  "status": "failed",
+  "startedAt": "2026-08-21T12:41:00.000Z",
+  "finishedAt": "2026-08-21T12:43:00.000Z",
+  "durationMs": 120000,
+  "assets": [],
+  "metrics": { "rowsRead": 0 },
+  "error": {
+    "code": "DATASET_UNAVAILABLE",
+    "message": "No dataset export or query interface was available to run the requested Domains filter (savedSearchId bbd394d8-c011-492c-8f0a-0789d487a8bc) for tenant lotschberg-dev; the report could not be generated.",
+    "retryable": false,
+    "detailsRef": "logs/attempt-1.log"
+  }
+}
