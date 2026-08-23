@@ -1,0 +1,51 @@
+name: document-mcp-server
+
+# Acceptance criteria 1 and 3: the build fails if the OpenAPI document grows a
+# non-GET operation, if any HTTP method other than GET reaches the outbound
+# client, or if a tool is registered without readOnlyHint: true.
+
+on:
+  push:
+    branches: ['**']
+    paths:
+      - 'document-mcp-server/**'
+      - '.github/workflows/document-mcp-server.yml'
+  pull_request:
+    paths:
+      - 'document-mcp-server/**'
+      - '.github/workflows/document-mcp-server.yml'
+
+defaults:
+  run:
+    working-directory: document-mcp-server
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: document-mcp-server/package-lock.json
+
+      - run: npm ci
+
+      # Gate 1 — the spec is valid OpenAPI 3.1 and GET-only.
+      - name: OpenAPI is read-only
+        run: npm run check:openapi
+
+      # Gate 2 — no write path in the source, no tool without readOnlyHint.
+      - name: Source is read-only
+        run: npm run check:readonly
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Tests
+        run: npm test
+
+      - name: Build
+        run: npm run build

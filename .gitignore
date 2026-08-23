@@ -28,3 +28,8 @@ Temporary Items
 .apdisk
 
 .gitpush.log
+# document-mcp-server
+document-mcp-server/node_modules/
+document-mcp-server/dist/
+document-mcp-server/coverage/
+document-mcp-server/.env

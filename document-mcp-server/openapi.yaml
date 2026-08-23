@@ -1,0 +1,716 @@
+openapi: 3.1.0
+
+info:
+  title: Document Service API (Read-Only)
+  version: 1.0.0
+  description: |
+    Read-only interface to the document rendering service. Exposes templates,
+    payload schemas, render jobs, and produced artifacts.
+
+    **This specification is deliberately read-only.** Every operation is a GET.
+    There are no POST, PUT, PATCH, or DELETE operations, and none may be added
+    to this document. Write operations, if they exist, live in a separate
+    specification with a separate OAuth scope and are not reachable through
+    any client built against this contract.
+
+    Authentication is OAuth 2.0 bearer, issued by Keycloak. All operations
+    require the `docs:read` scope and no other.
+  contact:
+    name: Platform Team
+    email: platform@example.com
+  license:
+    name: Proprietary
+
+servers:
+  - url: https://api.example.com/v1
+    description: Production
+  - url: https://api.staging.example.com/v1
+    description: Staging
+  - url: http://localhost:8080/v1
+    description: Local development
+
+security:
+  - keycloak: [docs:read]
+
+tags:
+  - name: Templates
+    description: Rendering templates available to the service
+  - name: Schemas
+    description: JSON Schemas describing accepted document payloads
+  - name: Jobs
+    description: Render jobs and their status
+  - name: Artifacts
+    description: Files produced by render jobs
+  - name: System
+    description: Service health
+
+paths:
+
+  /health:
+    get:
+      operationId: getHealth
+      summary: Service health
+      description: Liveness and readiness probe. Does not require authentication.
+      tags: [System]
+      security: []
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /templates:
+    get:
+      operationId: listTemplates
+      summary: List rendering templates
+      description: |
+        Returns templates available for rendering, optionally filtered by
+        target format. Summary representation only — call `getTemplate` for
+        the full definition including layout and style-slot detail.
+      tags: [Templates]
+      parameters:
+        - $ref: '#/components/parameters/Target'
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Cursor'
+      responses:
+        '200':
+          description: A page of templates
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    required: [items]
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/TemplateSummary'
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+
+  /templates/{templateId}:
+    parameters:
+      - $ref: '#/components/parameters/TemplateId'
+    get:
+      operationId: getTemplate
+      summary: Get a template
+      description: |
+        Full template definition, including the layouts or named styles a
+        payload may reference. Use this to discover the valid values for the
+        `layout` and `style` fields of a document payload.
+      tags: [Templates]
+      responses:
+        '200':
+          description: The template
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Template'
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /schemas:
+    get:
+      operationId: listSchemas
+      summary: List payload schemas
+      description: |
+        Returns the identifiers and versions of every document payload schema
+        the service accepts, e.g. `pptx/v1`, `docx/v1`, `html/v1`.
+      tags: [Schemas]
+      parameters:
+        - $ref: '#/components/parameters/Target'
+      responses:
+        '200':
+          description: Available schemas
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SchemaSummary'
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+
+  /schemas/{schemaId}:
+    parameters:
+      - $ref: '#/components/parameters/SchemaId'
+    get:
+      operationId: getSchema
+      summary: Get a payload JSON Schema
+      description: |
+        Returns the JSON Schema document itself, suitable for use as a
+        structured-output constraint when generating a document payload.
+      tags: [Schemas]
+      responses:
+        '200':
+          description: The JSON Schema document
+          content:
+            application/schema+json:
+              schema:
+                type: object
+                description: A JSON Schema (2020-12) document.
+                additionalProperties: true
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /jobs:
+    get:
+      operationId: listJobs
+      summary: List render jobs
+      description: |
+        Returns render jobs in reverse chronological order, most recent first.
+        Filterable by status, target format, and creation time.
+      tags: [Jobs]
+      parameters:
+        - $ref: '#/components/parameters/JobStatus'
+        - $ref: '#/components/parameters/Target'
+        - name: createdAfter
+          in: query
+          description: Only jobs created at or after this instant.
+          schema:
+            type: string
+            format: date-time
+        - name: createdBefore
+          in: query
+          description: Only jobs created strictly before this instant.
+          schema:
+            type: string
+            format: date-time
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Cursor'
+      responses:
+        '200':
+          description: A page of jobs
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    required: [items]
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/JobSummary'
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+
+  /jobs/{jobId}:
+    parameters:
+      - $ref: '#/components/parameters/JobId'
+    get:
+      operationId: getJob
+      summary: Get a render job
+      description: |
+        Full job record including status, timings, the template used, any
+        validation or rendering errors, and references to produced artifacts.
+
+        The submitted payload is **not** returned by default; request it with
+        `include=payload` only when needed, as payloads can be large.
+      tags: [Jobs]
+      parameters:
+        - name: include
+          in: query
+          description: Optional expansions.
+          schema:
+            type: array
+            uniqueItems: true
+            items:
+              type: string
+              enum: [payload]
+          style: form
+          explode: false
+      responses:
+        '200':
+          description: The job
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /jobs/{jobId}/artifacts:
+    parameters:
+      - $ref: '#/components/parameters/JobId'
+    get:
+      operationId: listJobArtifacts
+      summary: List artifacts produced by a job
+      tags: [Artifacts]
+      responses:
+        '200':
+          description: Artifacts belonging to the job
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Artifact'
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /artifacts/{artifactId}:
+    parameters:
+      - $ref: '#/components/parameters/ArtifactId'
+    get:
+      operationId: getArtifact
+      summary: Get artifact metadata
+      description: |
+        Metadata only — filename, media type, size, checksum. The bytes are
+        retrieved via `getArtifactDownloadUrl`.
+      tags: [Artifacts]
+      responses:
+        '200':
+          description: The artifact
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artifact'
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /artifacts/{artifactId}/download-url:
+    parameters:
+      - $ref: '#/components/parameters/ArtifactId'
+    get:
+      operationId: getArtifactDownloadUrl
+      summary: Get a short-lived download URL for an artifact
+      description: |
+        Returns a time-limited, signed URL from which the artifact bytes may
+        be fetched directly.
+
+        This is a read operation: it derives a URL from an existing artifact
+        and creates no new resource. The URL is deterministic for a given
+        artifact within its validity window, so repeated calls are idempotent
+        and do not accumulate state.
+
+        Binary content is never returned inline by this API.
+      tags: [Artifacts]
+      responses:
+        '200':
+          description: A signed download URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DownloadUrl'
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '410':
+          description: The artifact has expired and is no longer retrievable.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+
+components:
+
+  securitySchemes:
+    keycloak:
+      type: oauth2
+      description: |
+        OAuth 2.0 via Keycloak. Only the `docs:read` scope is issued to
+        clients of this API; it confers no write capability anywhere in the
+        system.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.example.com/realms/docs/protocol/openid-connect/auth
+          tokenUrl: https://auth.example.com/realms/docs/protocol/openid-connect/token
+          refreshUrl: https://auth.example.com/realms/docs/protocol/openid-connect/token
+          scopes:
+            docs:read: Read templates, schemas, jobs, and artifacts
+
+  parameters:
+
+    Limit:
+      name: limit
+      in: query
+      description: Maximum items to return. Values above 100 are clamped to 100.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+
+    Cursor:
+      name: cursor
+      in: query
+      description: Opaque pagination cursor from a previous response's `nextCursor`.
+      schema:
+        type: string
+        maxLength: 512
+
+    Target:
+      name: target
+      in: query
+      description: Filter by output format.
+      schema:
+        $ref: '#/components/schemas/Target'
+
+    JobStatus:
+      name: status
+      in: query
+      description: Filter by job status.
+      schema:
+        $ref: '#/components/schemas/JobStatus'
+
+    TemplateId:
+      name: templateId
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^[a-z0-9][a-z0-9-]{0,62}$'
+      example: corp-16x9
+
+    SchemaId:
+      name: schemaId
+      in: path
+      required: true
+      description: Schema identifier including version, e.g. `pptx/v1`.
+      schema:
+        type: string
+        pattern: '^(pptx|docx|html)/v[0-9]+$'
+      example: pptx/v1
+
+    JobId:
+      name: jobId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+    ArtifactId:
+      name: artifactId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+
+  schemas:
+
+    Target:
+      type: string
+      enum: [pptx, docx, html]
+      description: Output format.
+
+    JobStatus:
+      type: string
+      enum: [queued, running, succeeded, failed, expired]
+
+    Health:
+      type: object
+      required: [status]
+      properties:
+        status:
+          type: string
+          enum: [ok, degraded]
+        version:
+          type: string
+          example: 1.4.2
+
+    Page:
+      type: object
+      required: [nextCursor]
+      properties:
+        nextCursor:
+          type: [string, 'null']
+          description: Cursor for the next page, or null when no further pages exist.
+
+    TemplateSummary:
+      type: object
+      required: [id, name, target]
+      properties:
+        id:
+          type: string
+          example: corp-16x9
+        name:
+          type: string
+          example: Corporate 16:9
+        target:
+          $ref: '#/components/schemas/Target'
+        description:
+          type: string
+        updatedAt:
+          type: string
+          format: date-time
+
+    Template:
+      allOf:
+        - $ref: '#/components/schemas/TemplateSummary'
+        - type: object
+          properties:
+            schemaId:
+              type: string
+              description: The payload schema this template renders.
+              example: pptx/v1
+            layouts:
+              type: array
+              description: |
+                Layout identifiers a pptx payload may use. Absent for
+                non-slide targets.
+              items:
+                type: object
+                required: [id, slots]
+                properties:
+                  id:
+                    type: string
+                    example: title-bullets
+                  slots:
+                    type: array
+                    items:
+                      type: string
+                    example: [title, bullets, notes]
+                  maxBullets:
+                    type: integer
+                  maxTitleLength:
+                    type: integer
+            styles:
+              type: array
+              description: |
+                Named paragraph or character styles a docx payload may
+                reference. Absent for non-document targets.
+              items:
+                type: string
+              example: [Heading 1, Heading 2, Callout Warning]
+
+    SchemaSummary:
+      type: object
+      required: [id, target, version]
+      properties:
+        id:
+          type: string
+          example: pptx/v1
+        target:
+          $ref: '#/components/schemas/Target'
+        version:
+          type: integer
+          example: 1
+        deprecated:
+          type: boolean
+          default: false
+
+    JobSummary:
+      type: object
+      required: [id, status, target, createdAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          $ref: '#/components/schemas/JobStatus'
+        target:
+          $ref: '#/components/schemas/Target'
+        templateId:
+          type: string
+        title:
+          type: string
+          description: The `meta.title` of the submitted payload, if present.
+        createdAt:
+          type: string
+          format: date-time
+        completedAt:
+          type: [string, 'null']
+          format: date-time
+
+    Job:
+      allOf:
+        - $ref: '#/components/schemas/JobSummary'
+        - type: object
+          properties:
+            schemaId:
+              type: string
+              example: pptx/v1
+            submittedBy:
+              type: string
+              description: Subject identifier of the principal that created the job.
+            durationMs:
+              type: [integer, 'null']
+            artifacts:
+              type: array
+              items:
+                $ref: '#/components/schemas/Artifact'
+            errors:
+              type: array
+              description: Validation or rendering errors, empty when successful.
+              items:
+                type: object
+                required: [code, message]
+                properties:
+                  code:
+                    type: string
+                    example: schema_violation
+                  message:
+                    type: string
+                  pointer:
+                    type: string
+                    description: JSON Pointer into the submitted payload.
+                    example: /body/slides/3/bullets/7
+            payload:
+              type: object
+              description: |
+                The submitted document payload. Present only when requested
+                via `include=payload`.
+              additionalProperties: true
+
+    Artifact:
+      type: object
+      required: [id, jobId, filename, mediaType, sizeBytes]
+      properties:
+        id:
+          type: string
+          format: uuid
+        jobId:
+          type: string
+          format: uuid
+        filename:
+          type: string
+          example: q3-review.pptx
+        mediaType:
+          type: string
+          example: application/vnd.openxmlformats-officedocument.presentationml.presentation
+        sizeBytes:
+          type: integer
+          format: int64
+        checksumSha256:
+          type: string
+          pattern: '^[a-f0-9]{64}$'
+        createdAt:
+          type: string
+          format: date-time
+        expiresAt:
+          type: [string, 'null']
+          format: date-time
+
+    DownloadUrl:
+      type: object
+      required: [url, expiresAt]
+      properties:
+        url:
+          type: string
+          format: uri
+        expiresAt:
+          type: string
+          format: date-time
+        mediaType:
+          type: string
+        sizeBytes:
+          type: integer
+          format: int64
+
+    Problem:
+      type: object
+      description: RFC 9457 problem detail.
+      required: [type, title, status]
+      properties:
+        type:
+          type: string
+          format: uri
+          default: about:blank
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        instance:
+          type: string
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              pointer:
+                type: string
+              message:
+                type: string
+
+  responses:
+
+    BadRequest:
+      description: The request was malformed or a parameter was invalid.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+
+    Unauthorized:
+      description: |
+        Missing, malformed, or expired bearer token. The `WWW-Authenticate`
+        header carries a `resource_metadata` pointer to the protected
+        resource metadata document.
+      headers:
+        WWW-Authenticate:
+          schema:
+            type: string
+          example: >-
+            Bearer error="invalid_token",
+            resource_metadata="https://mcp.example.com/.well-known/oauth-protected-resource"
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+
+    Forbidden:
+      description: The token is valid but lacks the `docs:read` scope.
+      headers:
+        WWW-Authenticate:
+          schema:
+            type: string
+          example: 'Bearer error="insufficient_scope", scope="docs:read"'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+
+    NotFound:
+      description: No such resource, or the caller may not see it.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+
+    TooManyRequests:
+      description: Rate limit exceeded.
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+          description: Seconds to wait before retrying.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+
+    ServiceUnavailable:
+      description: The service is not ready to serve requests.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
