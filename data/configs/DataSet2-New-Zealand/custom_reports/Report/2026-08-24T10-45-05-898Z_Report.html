@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Data Insights &amp; Patterns — New Zealand</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --primary: #1F3F63; --illegal: #c0392b; --licensed: #27ae60; --neutral: #9aa7b4;
+    --purple: #7d3c98; --blue2: #2f5c8f; --orange: #e67e22;
+    --bg: #f5f7fa; --card-bg: #ffffff; --text: #1a2433; --muted: #5b6b7f; --border: #e1e6ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #10161f; --card-bg: #1a2230; --text: #e7ecf2; --muted: #9aa7b4; --border: #2b3646; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background: var(--bg); color: var(--text); font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px 64px; }
+  .header-band { background: var(--primary); color: #fff; padding: 36px 24px; border-bottom: 6px solid var(--orange); }
+  .header-band .inner { max-width: 1180px; margin: 0 auto; }
+  .header-band h1 { margin: 0 0 6px; font-size: 1.9rem; }
+  .header-band .meta { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 6px 24px; margin-top: 18px; font-size: 0.95rem; }
+  .header-band .meta div span.k { opacity: .75; display:block; font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; }
+  section { margin-top: 44px; }
+  h2.section-title { font-size: 1.5rem; border-bottom: 3px solid var(--primary); padding-bottom: 8px; margin-bottom: 20px; }
+  h3.sub-title { font-size: 1.15rem; margin: 32px 0 12px; color: var(--primary); }
+  .cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 16px; }
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+  .card .num { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+  .card .label { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+  .chart-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-top: 20px; }
+  .chart-card h4 { margin: 0 0 14px; font-size: 1.05rem; }
+  .chart-container { position: relative; height: 320px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: .92rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: .72rem; letter-spacing: .03em; }
+  .table-scroll { overflow-x: auto; }
+  .insight-list { padding-left: 20px; }
+  .insight-list li { margin-bottom: 8px; }
+  .empty-state { color: var(--muted); font-style: italic; }
+  .node-diagram { width: 100%; height: auto; max-height: 440px; }
+  .node-edge { stroke: var(--border); stroke-width: 1.3; }
+  .node-label { fill: var(--text); font-size: 11px; }
+  .node-center-label { fill: #fff; font-size: 11px; font-weight: 600; }
+  .interp { margin-top: 10px; color: var(--muted); font-size: .92rem; }
+  .narrative-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 18px; }
+  .narrative-card h4 { margin: 0 0 8px; color: var(--primary); }
+  .narrative-card .take { margin-top: 10px; font-weight: 600; border-top: 1px dashed var(--border); padding-top: 8px; }
+  footer { margin-top: 60px; color: var(--muted); font-size: .8rem; text-align: center; }
+</style>
+</head>
+<body>
+<div class="header-band"><div class="inner">
+  <h1>Data Insights &amp; Patterns</h1>
+  <div class="meta">
+    <div><span class="k">Configuration</span>DataSet2 — New Zealand</div>
+    <div><span class="k">Producer</span>SICPA SA · SICPADetect®</div>
+    <div><span class="k">Report generated</span>2026-08-24</div>
+    <div><span class="k">Evaluation period</span>2026-07-13 → 2026-08-24 (43 days)</div>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+<section id="section-a">
+  <h2 class="section-title">Section A — The numbers</h2>
+  <div class="cards">
+    <div class="card"><div class="num">9,502</div><div class="label">Total URLs analyzed</div></div>
+    <div class="card"><div class="num" style="color:var(--illegal)">7,950</div><div class="label">Illegal gambling</div></div>
+    <div class="card"><div class="num" style="color:var(--licensed)">4</div><div class="label">Licensed gambling</div></div>
+    <div class="card"><div class="num">43</div><div class="label">Evaluation period (days)<br>2026-07-13 → 2026-08-24</div></div>
+  </div>
+
+  <div class="chart-card">
+    <h4>URLs analyzed per day</h4>
+    <div class="chart-container"><canvas id="perDayChart"></canvas></div>
+  </div>
+
+  <div class="chart-card">
+    <h4>Status distribution</h4>
+    <div class="chart-container"><canvas id="statusChart"></canvas></div>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Status</th><th>Count</th><th>%</th></tr></thead>
+      <tbody><tr><td>Illegal gambling</td><td>7,950</td><td>83.7%</td></tr><tr><td>Not gambling</td><td>1,548</td><td>16.3%</td></tr><tr><td>Licensed gambling</td><td>4</td><td>0.0%</td></tr></tbody>
+    </table></div>
+  </div>
+
+  <div class="chart-card">
+    <h4>Top 10 URL suffixes</h4>
+    <div class="chart-container"><canvas id="suffixChart"></canvas></div>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Suffix</th><th>Total</th><th>% of all</th><th>Illegal</th><th>% illegal</th></tr></thead>
+      <tbody><tr><td>.bet</td><td>5,580</td><td>58.7%</td><td>5,576</td><td>99.9%</td></tr><tr><td>.app</td><td>554</td><td>5.8%</td><td>432</td><td>78.0%</td></tr><tr><td>.com</td><td>546</td><td>5.7%</td><td>287</td><td>52.6%</td></tr><tr><td>.pro</td><td>466</td><td>4.9%</td><td>392</td><td>84.1%</td></tr><tr><td>.org</td><td>323</td><td>3.4%</td><td>141</td><td>43.7%</td></tr><tr><td>.club</td><td>309</td><td>3.3%</td><td>265</td><td>85.8%</td></tr><tr><td>.fun</td><td>203</td><td>2.1%</td><td>178</td><td>87.7%</td></tr><tr><td>.top</td><td>193</td><td>2.0%</td><td>93</td><td>48.2%</td></tr><tr><td>.net</td><td>181</td><td>1.9%</td><td>82</td><td>45.3%</td></tr><tr><td>.click</td><td>166</td><td>1.7%</td><td>151</td><td>91.0%</td></tr></tbody>
+    </table></div>
+  </div>
+</section>
+
+<section id="section-b">
+  <h2 class="section-title">Section B — The insights</h2>
+
+  <h3 class="sub-title">Brands and variants (2,731 distinct brands)</h3>
+  <div class="chart-card">
+    <div class="chart-container"><canvas id="brandsChart"></canvas></div>
+  </div>
+
+  <h3 class="sub-title">Variant naming convention insights</h3>
+  <ul class="insight-list"><li>Recurring keywords &quot;bet&quot; (5585), &quot;verify&quot; (4596), &quot;secure&quot; (3809) recur across variant names, suggesting a templated naming scheme.</li><li>TLD switching is evident across 26 suffixes (.bet ×5572, .app ×429, .pro ×392, .club ×264) — the same operation rotates top-level domains.</li><li>7851 distinct variant domains identified in total.</li></ul>
+
+  <h3 class='sub-title'>Variant proliferation — t80.bet</h3><div class='chart-card'><svg viewBox="0 0 720 420" class="node-diagram" role="img" aria-label="Node diagram">
+<line x1="360.0" y1="210.0" x2="360.0" y2="70.0" class="node-edge" />
+<circle cx="360.0" cy="70.0" r="5" fill="#2f5c8f" />
+<text x="360.0" y="70.0" text-anchor="middle" class="node-label" dy="4">t83.org</text>
+<line x1="360.0" y1="210.0" x2="413.6" y2="80.7" class="node-edge" />
+<circle cx="413.6" cy="80.7" r="5" fill="#2f5c8f" />
+<text x="421.6" y="80.7" text-anchor="start" class="node-label" dy="4">t83.info</text>
+<line x1="360.0" y1="210.0" x2="459.0" y2="111.0" class="node-edge" />
+<circle cx="459.0" cy="111.0" r="5" fill="#2f5c8f" />
+<text x="467.0" y="111.0" text-anchor="start" class="node-label" dy="4">www.t80.bet</text>
+<line x1="360.0" y1="210.0" x2="489.3" y2="156.4" class="node-edge" />
+<circle cx="489.3" cy="156.4" r="5" fill="#2f5c8f" />
+<text x="497.3" y="156.4" text-anchor="start" class="node-label" dy="4">t800.bet</text>
+<line x1="360.0" y1="210.0" x2="500.0" y2="210.0" class="node-edge" />
+<circle cx="500.0" cy="210.0" r="5" fill="#2f5c8f" />
+<text x="508.0" y="210.0" text-anchor="start" class="node-label" dy="4">t83.live</text>
+<line x1="360.0" y1="210.0" x2="489.3" y2="263.6" class="node-edge" />
+<circle cx="489.3" cy="263.6" r="5" fill="#2f5c8f" />
+<text x="497.3" y="263.6" text-anchor="start" class="node-label" dy="4">t78.pro</text>
+<line x1="360.0" y1="210.0" x2="459.0" y2="309.0" class="node-edge" />
+<circle cx="459.0" cy="309.0" r="5" fill="#2f5c8f" />
+<text x="467.0" y="309.0" text-anchor="start" class="node-label" dy="4">t83.shop</text>
+<line x1="360.0" y1="210.0" x2="413.6" y2="339.3" class="node-edge" />
+<circle cx="413.6" cy="339.3" r="5" fill="#2f5c8f" />
+<text x="421.6" y="339.3" text-anchor="start" class="node-label" dy="4">t80.app</text>
+<line x1="360.0" y1="210.0" x2="360.0" y2="350.0" class="node-edge" />
+<circle cx="360.0" cy="350.0" r="5" fill="#2f5c8f" />
+<text x="360.0" y="350.0" text-anchor="middle" class="node-label" dy="4">t83.online</text>
+<line x1="360.0" y1="210.0" x2="306.4" y2="339.3" class="node-edge" />
+<circle cx="306.4" cy="339.3" r="5" fill="#2f5c8f" />
+<text x="298.4" y="339.3" text-anchor="end" class="node-label" dy="4">t83.bet</text>
+<line x1="360.0" y1="210.0" x2="261.0" y2="309.0" class="node-edge" />
+<circle cx="261.0" cy="309.0" r="5" fill="#2f5c8f" />
+<text x="253.0" y="309.0" text-anchor="end" class="node-label" dy="4">t83.top</text>
+<line x1="360.0" y1="210.0" x2="230.7" y2="263.6" class="node-edge" />
+<circle cx="230.7" cy="263.6" r="5" fill="#2f5c8f" />
+<text x="222.7" y="263.6" text-anchor="end" class="node-label" dy="4">t83.pro</text>
+<line x1="360.0" y1="210.0" x2="220.0" y2="210.0" class="node-edge" />
+<circle cx="220.0" cy="210.0" r="5" fill="#2f5c8f" />
+<text x="212.0" y="210.0" text-anchor="end" class="node-label" dy="4">t83.vip</text>
+<line x1="360.0" y1="210.0" x2="230.7" y2="156.4" class="node-edge" />
+<circle cx="230.7" cy="156.4" r="5" fill="#2f5c8f" />
+<text x="222.7" y="156.4" text-anchor="end" class="node-label" dy="4">t83.xyz</text>
+<line x1="360.0" y1="210.0" x2="261.0" y2="111.0" class="node-edge" />
+<circle cx="261.0" cy="111.0" r="5" fill="#2f5c8f" />
+<text x="253.0" y="111.0" text-anchor="end" class="node-label" dy="4">t85.app</text>
+<line x1="360.0" y1="210.0" x2="306.4" y2="80.7" class="node-edge" />
+<circle cx="306.4" cy="80.7" r="5" fill="#2f5c8f" />
+<text x="298.4" y="80.7" text-anchor="end" class="node-label" dy="4">r80.bet</text>
+
+<circle cx="360.0" cy="210.0" r="34" fill="#c0392b" />
+<text x="360.0" y="210.0" text-anchor="middle" dy="4" class="node-center-label">t80.bet</text>
+</svg><div class='interp'><strong>t80.bet</strong> is the most-cloned brand with 16 variant URLs.</div></div>
+
+  <h3 class="sub-title">Redirects from — top 10</h3>
+  <div class="chart-card">
+    <div class="chart-container"><canvas id="redirectsChart"></canvas></div>
+  </div>
+
+  <h3 class='sub-title'>Redirect propagation — c37.club</h3><div class='chart-card'><svg viewBox="0 0 720 420" class="node-diagram" role="img" aria-label="Node diagram">
+<line x1="360.0" y1="210.0" x2="360.0" y2="70.0" class="node-edge" />
+<circle cx="360.0" cy="70.0" r="5" fill="#e67e22" />
+<text x="360.0" y="70.0" text-anchor="middle" class="node-label" dy="4">orderbagelplus.com</text>
+<line x1="360.0" y1="210.0" x2="420.7" y2="83.9" class="node-edge" />
+<circle cx="420.7" cy="83.9" r="5" fill="#e67e22" />
+<text x="428.7" y="83.9" text-anchor="start" class="node-label" dy="4">hai-sushiundwok.de</text>
+<line x1="360.0" y1="210.0" x2="469.5" y2="122.7" class="node-edge" />
+<circle cx="469.5" cy="122.7" r="5" fill="#e67e22" />
+<text x="477.5" y="122.7" text-anchor="start" class="node-label" dy="4">drdanielrivera.com.co</text>
+<line x1="360.0" y1="210.0" x2="496.5" y2="178.8" class="node-edge" />
+<circle cx="496.5" cy="178.8" r="5" fill="#e67e22" />
+<text x="504.5" y="178.8" text-anchor="start" class="node-label" dy="4">interlakegardencenter…</text>
+<line x1="360.0" y1="210.0" x2="496.5" y2="241.2" class="node-edge" />
+<circle cx="496.5" cy="241.2" r="5" fill="#e67e22" />
+<text x="504.5" y="241.2" text-anchor="start" class="node-label" dy="4">bufeteroblesmiaja.com.mx</text>
+<line x1="360.0" y1="210.0" x2="469.5" y2="297.3" class="node-edge" />
+<circle cx="469.5" cy="297.3" r="5" fill="#e67e22" />
+<text x="477.5" y="297.3" text-anchor="start" class="node-label" dy="4">uniquehalalfood.jp</text>
+<line x1="360.0" y1="210.0" x2="420.7" y2="336.1" class="node-edge" />
+<circle cx="420.7" cy="336.1" r="5" fill="#e67e22" />
+<text x="428.7" y="336.1" text-anchor="start" class="node-label" dy="4">kaarinanputkityo.fi</text>
+<line x1="360.0" y1="210.0" x2="360.0" y2="350.0" class="node-edge" />
+<circle cx="360.0" cy="350.0" r="5" fill="#e67e22" />
+<text x="360.0" y="350.0" text-anchor="middle" class="node-label" dy="4">raitsbarbershop.nl</text>
+<line x1="360.0" y1="210.0" x2="299.3" y2="336.1" class="node-edge" />
+<circle cx="299.3" cy="336.1" r="5" fill="#e67e22" />
+<text x="291.3" y="336.1" text-anchor="end" class="node-label" dy="4">partnersluziny.cz</text>
+<line x1="360.0" y1="210.0" x2="250.5" y2="297.3" class="node-edge" />
+<circle cx="250.5" cy="297.3" r="5" fill="#e67e22" />
+<text x="242.5" y="297.3" text-anchor="end" class="node-label" dy="4">topexpertacoperisuri.ro</text>
+<line x1="360.0" y1="210.0" x2="223.5" y2="241.2" class="node-edge" />
+<circle cx="223.5" cy="241.2" r="5" fill="#e67e22" />
+<text x="215.5" y="241.2" text-anchor="end" class="node-label" dy="4">mimmilashop.fi</text>
+<line x1="360.0" y1="210.0" x2="223.5" y2="178.8" class="node-edge" />
+<circle cx="223.5" cy="178.8" r="5" fill="#e67e22" />
+<text x="215.5" y="178.8" text-anchor="end" class="node-label" dy="4">naphini-labrador.at</text>
+<line x1="360.0" y1="210.0" x2="250.5" y2="122.7" class="node-edge" />
+<circle cx="250.5" cy="122.7" r="5" fill="#e67e22" />
+<text x="242.5" y="122.7" text-anchor="end" class="node-label" dy="4">madinitravel.com</text>
+<line x1="360.0" y1="210.0" x2="299.3" y2="83.9" class="node-edge" />
+<circle cx="299.3" cy="83.9" r="5" fill="#e67e22" />
+<text x="291.3" y="83.9" text-anchor="end" class="node-label" dy="4">theskyebistro.com</text>
+
+<circle cx="360.0" cy="210.0" r="34" fill="#1F3F63" />
+<text x="360.0" y="210.0" text-anchor="middle" dy="4" class="node-center-label">c37.club</text>
+</svg><div class='interp'>c37.club redirects to 14 destinations.</div></div>
+
+  <h3 class="sub-title">Comparison — URLs → redirects → variants</h3>
+  <div class="cards">
+    <div class="card"><div class="num">32</div><div class="label">Direct (0.4%)</div></div>
+    <div class="card"><div class="num">67</div><div class="label">Redirects (0.8%)</div></div>
+    <div class="card"><div class="num">7,851</div><div class="label">Variants (98.8%)</div></div>
+  </div>
+
+  <h3 class="sub-title">Source analysis</h3>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Category</th><th>Total</th><th>Licensed</th><th>Illegal</th><th>% licensed</th><th>% illegal</th></tr></thead>
+    <tbody><tr><td>Manual</td><td>16</td><td>4</td><td>4</td><td>50.0%</td><td>50.0%</td></tr><tr><td>Google Search</td><td>54</td><td>0</td><td>11</td><td>0.0%</td><td>100.0%</td></tr><tr><td>Variant</td><td>9,040</td><td>0</td><td>7,851</td><td>0.0%</td><td>100.0%</td></tr><tr><td>Redirect</td><td>229</td><td>0</td><td>67</td><td>0.0%</td><td>100.0%</td></tr><tr><td>Other</td><td>163</td><td>0</td><td>17</td><td>0.0%</td><td>100.0%</td></tr></tbody>
+  </table></div>
+</section>
+
+<section id="section-c">
+  <h2 class="section-title">Section C — Ranking</h2>
+  <h3 class="sub-title">Illegal ranking (top 15 by rank)</h3>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Rank</th><th>Domain</th><th>Source</th></tr></thead>
+    <tbody><tr><td>95,269</td><td>spincrush47.com</td><td>Variant (spincrush45.com)</td></tr><tr><td>496,316</td><td>fanball.com</td><td>Youtube (best odds)</td></tr><tr><td>629,102</td><td>shrib.com</td><td>Youtube (casino welcome bonus)</td></tr><tr><td>824,755</td><td>spincrush46.com</td><td>Variant (spincrush45.com)</td></tr><tr><td>825,761</td><td>spincrush52.com</td><td>Variant (spincrush42.com)</td></tr><tr><td>825,762</td><td>spincrush53.com</td><td>Variant (spincrush55.com)</td></tr><tr><td>827,815</td><td>t20fun4.com</td><td>Variant (t20fun6.com)</td></tr><tr><td>827,816</td><td>t20fun5.com</td><td>Variant (t20fun7.com)</td></tr><tr><td>828,190</td><td>t33.app</td><td>Variant (t30.app)</td></tr><tr><td>862,431</td><td>t83.info</td><td>Variant (t80.bet)</td></tr><tr><td>872,570</td><td>v79.bet</td><td>Variant (v89.bet)</td></tr><tr><td>873,089</td><td>v44.bet</td><td>Variant (v39.bet)</td></tr><tr><td>884,497</td><td>br5.bet</td><td>Variant (bt5.bet)</td></tr><tr><td>894,100</td><td>spincrush51.com</td><td>Variant (spincrush50.com)</td></tr><tr><td>917,339</td><td>spincrush42.com</td><td>Variant (spincrush45.com)</td></tr></tbody>
+  </table></div>
+
+  <h3 class="sub-title">Licensed ranking (sample — no licensed rows carry a numeric rank)</h3>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Rank</th><th>Domain</th><th>Source</th></tr></thead>
+    <tbody><tr><td>—</td><td>betcha.co.nz</td><td>Manual (htaylor)</td></tr><tr><td>—</td><td>tab.co.nz</td><td>Manual (htaylor)</td></tr><tr><td>—</td><td>mylotto.co.nz</td><td>Manual (htaylor)</td></tr><tr><td>—</td><td>bk-partners1.co.uk</td><td>Manual (htaylor)</td></tr></tbody>
+  </table></div>
+</section>
+
+<section id="section-d">
+  <h2 class="section-title">Section D — Key insights</h2>
+  <div class="narrative-grid">
+    <div class="card narrative-card">
+      <h4>1. Scale of the analysis</h4>
+      <p>9,502 distinct URLs were analyzed over the 43-day evaluation period (2026-07-13 → 2026-08-24), of which 7,950 were illegal gambling sites and 4 were licensed.</p>
+      <div class="take">Take: the sample is large enough to reason about patterns, not isolated cases.</div>
+    </div>
+    <div class="card narrative-card">
+      <h4>2. Status mix</h4>
+      <p>Illegal gambling represents 83.7% of all URLs analyzed and 99.9% of gambling sites (licensed + illegal). 1,548 URLs were not gambling and 0 were unreachable.</p>
+      <div class="take">Take: illegal operators are the majority of the gambling sites detected.</div>
+    </div>
+    <div class="card narrative-card">
+      <h4>3. Variants and brand abuse</h4>
+      <p>2731 brands were cloned via variant domains; the most-abused brand <strong>t80.bet</strong> spawned 16 variants.</p>
+      <div class="take">Take: A handful of brands drive most proliferation; prioritize enforcement against them.</div>
+    </div>
+    <div class="card narrative-card">
+      <h4>4. Redirects and traffic shaping</h4>
+      <p>67 illegal URLs use redirect chains; the busiest source <strong>c37.club</strong> points to 14 destinations.</p>
+      <div class="take">Take: Redirects keep a stable entry point while rotating sites behind it.</div>
+    </div>
+    <div class="card narrative-card">
+      <h4>5. Enforcement and regulatory relevance</h4>
+      <p>No pages in this sample show regulatory-blocking indicators (court orders, regulator notices, block pages) in their reasoning text — the set appears pre-enforcement.</p>
+      <div class="take">Take: This set is a candidate for a first enforcement pass.</div>
+    </div>
+  </div>
+</section>
+
+<footer>Report self-contained per configuration · SICPADetect® · Data Insights &amp; Patterns — New Zealand</footer>
+</div>
+
+<script>
+const gridColor = getComputedStyle(document.documentElement).getPropertyValue('--border').trim() || '#e1e6ec';
+const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text').trim() || '#1a2433';
+Chart.defaults.color = textColor;
+Chart.defaults.borderColor = gridColor;
+
+new Chart(document.getElementById('perDayChart'), {
+  type: 'line',
+  data: { labels: ["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02", "2026-08-03", "2026-08-04", "2026-08-24"], datasets: [{ label: 'URLs analyzed', data: [454, 376, 425, 369, 342, 316, 343, 453, 557, 1149, 2393, 2244, 4, 12, 6, 4, 4, 25, 10, 7, 6, 3],
+    borderColor: '#1F3F63', backgroundColor: 'rgba(31,63,99,0.15)', fill: true, tension: 0.25, pointRadius: 2 }] },
+  options: { responsive: true, maintainAspectRatio: false, scales: { x: { ticks: { maxRotation: 60, autoSkip: true } } } }
+});
+
+new Chart(document.getElementById('statusChart'), {
+  type: 'pie',
+  data: { labels: ["Illegal gambling", "Not gambling", "Licensed gambling"], datasets: [{ data: [7950, 1548, 4], backgroundColor: ["#c0392b", "#9aa7b4", "#27ae60"] }] },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+new Chart(document.getElementById('suffixChart'), {
+  type: 'bar',
+  data: { labels: [".bet", ".app", ".com", ".pro", ".org", ".club", ".fun", ".top", ".net", ".click"], datasets: [
+    { label: 'Total', data: [5580, 554, 546, 466, 323, 309, 203, 193, 181, 166], backgroundColor: '#9aa7b4' },
+    { label: 'Illegal', data: [5576, 432, 287, 392, 141, 265, 178, 93, 82, 151], backgroundColor: '#c0392b' }
+  ] },
+  options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+});
+
+new Chart(document.getElementById('brandsChart'), {
+  type: 'bar',
+  data: { labels: ["t80.bet", "g78.bet", "g77.bet", "rb051.com", "bd7.club", "www.m.mobile.secure.support.account.support.7bt.bet", "www.support.secure.verify.support.mobile.verify.7bt.bet", "www.verify.mobile.mobile.mobile.secure.account.7bt.bet", "www.verify.secure.support.mobile.mobile.mobile.7bt.bet", "www.m.mobile.mobile.mobile.account.mobile.7bt.bet", "www.verify.secure.support.login.secure.support.7bt.bet", "www.verify.secure.secure.support.secure.mobile.7bt.bet", "www.verify.secure.verify.secure.mobile.support.7bt.bet", "www.verify.mobile.secure.mobile.secure.secure.7bt.bet", "www.verify.mobile.secure.secure.support.support.7bt.bet"], datasets: [{ label: 'Variant URLs', data: [16, 11, 10, 9, 9, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], backgroundColor: '#7d3c98' }] },
+  options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y' }
+});
+
+new Chart(document.getElementById('redirectsChart'), {
+  type: 'bar',
+  data: { labels: ["c37.club", "e336.xyz", "t123.com", "bg8.app", "dakatop.link", "g78.top", "kytiyu198.vip", "fb777.net", "kytiyu186.vip", "e37.com"], datasets: [{ label: 'Redirected URLs', data: [14, 2, 2, 2, 2, 2, 1, 1, 1, 1], backgroundColor: '#2f5c8f' }] },
+  options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y' }
+});
+</script>
+</body>
+</html>
