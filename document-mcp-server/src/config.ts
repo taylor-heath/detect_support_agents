@@ -66,7 +66,13 @@ class ConfigError extends Error {}
 function required(env: NodeJS.ProcessEnv, name: string): string {
   const value = env[name];
   if (!value || value.trim() === '') {
-    throw new ConfigError(`Missing required environment variable ${name}`);
+    // Node does not read .env files on its own, and this server deliberately
+    // has no dotenv dependency, so say where values are actually expected from.
+    throw new ConfigError(
+      `Missing required environment variable ${name}. Values are read from the process environment; ` +
+        'a .env file is only loaded when Node is started with --env-file (the npm start:* and dev:* ' +
+        'scripts pass --env-file-if-exists=.env for you).'
+    );
   }
   return value.trim();
 }

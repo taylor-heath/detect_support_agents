@@ -131,6 +131,22 @@ npm run start:stdio        # local development, Claude Desktop / Claude Code
 npm run start:http         # remote connector for Claude.ai web and mobile
 ```
 
+### How configuration reaches the process
+
+There is no dotenv dependency: the server reads `process.env` and nothing else.
+A `.env` file is loaded only when Node is told to, via its built-in
+`--env-file-if-exists`, which the `start:*` and `dev:*` scripts pass for you
+(Node 20.18+). So `npm run start:http` picks up `.env`; a bare
+`node dist/bin/http.js` does not, and reports the first missing variable.
+
+In production, inject real environment variables from your platform or secrets
+manager and skip `.env` entirely. To launch a binary directly with a file, pass
+the flag yourself:
+
+```bash
+node --env-file=.env dist/bin/http.js
+```
+
 Claude Desktop / Claude Code, stdio:
 
 ```json
@@ -138,7 +154,10 @@ Claude Desktop / Claude Code, stdio:
   "mcpServers": {
     "documents": {
       "command": "node",
-      "args": ["/opt/document-mcp-server/dist/bin/stdio.js"],
+      "args": [
+        "--env-file-if-exists=/opt/document-mcp-server/.env",
+        "/opt/document-mcp-server/dist/bin/stdio.js"
+      ],
       "env": {
         "DOCS_API_BASE_URL": "https://api.example.com/v1",
         "DOCS_MCP_ISSUER_URL": "https://auth.example.com/realms/docs",
