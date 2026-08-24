@@ -6,7 +6,7 @@
   "type": "module",
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=20.18"
+    "node": ">=20.11"
   },
   "bin": {
     "document-mcp-stdio": "./dist/bin/stdio.js",
@@ -15,10 +15,10 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "start:stdio": "node --env-file-if-exists=.env dist/bin/stdio.js",
-    "start:http": "node --env-file-if-exists=.env dist/bin/http.js",
-    "dev:stdio": "tsx --env-file-if-exists=.env src/bin/stdio.ts",
-    "dev:http": "tsx --env-file-if-exists=.env src/bin/http.ts",
+    "start:stdio": "node dist/bin/stdio.js",
+    "start:http": "node dist/bin/http.js",
+    "dev:stdio": "tsx src/bin/stdio.ts",
+    "dev:http": "tsx src/bin/http.ts",
     "test": "vitest run",
     "check:readonly": "node scripts/check-readonly.mjs",
     "check:openapi": "node scripts/check-openapi.mjs",

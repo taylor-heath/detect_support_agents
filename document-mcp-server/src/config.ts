@@ -69,9 +69,9 @@ function required(env: NodeJS.ProcessEnv, name: string): string {
     // Node does not read .env files on its own, and this server deliberately
     // has no dotenv dependency, so say where values are actually expected from.
     throw new ConfigError(
-      `Missing required environment variable ${name}. Values are read from the process environment; ` +
-        'a .env file is only loaded when Node is started with --env-file (the npm start:* and dev:* ' +
-        'scripts pass --env-file-if-exists=.env for you).'
+      `Missing required environment variable ${name}. Values come from the process environment, or ` +
+        'from a .env file next to the package or in the working directory — set DOCS_MCP_ENV_FILE to ' +
+        'point at one explicitly. The startup log names the file that was read, or the paths searched.'
     );
   }
   return value.trim();

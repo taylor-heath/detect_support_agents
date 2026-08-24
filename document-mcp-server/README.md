@@ -133,19 +133,28 @@ npm run start:http         # remote connector for Claude.ai web and mobile
 
 ### How configuration reaches the process
 
-There is no dotenv dependency: the server reads `process.env` and nothing else.
-A `.env` file is loaded only when Node is told to, via its built-in
-`--env-file-if-exists`, which the `start:*` and `dev:*` scripts pass for you
-(Node 20.18+). So `npm run start:http` picks up `.env`; a bare
-`node dist/bin/http.js` does not, and reports the first missing variable.
+The server reads `process.env`. There is no dotenv dependency, but the two
+entry points do look for a local `.env` before config is read, so a development
+run works whatever directory it was launched from:
 
-In production, inject real environment variables from your platform or secrets
-manager and skip `.env` entirely. To launch a binary directly with a file, pass
-the flag yourself:
+1. `DOCS_MCP_ENV_FILE`, when set — an explicit path always wins.
+2. `.env` in the current working directory.
+3. `.env` beside the package root, found by walking up from the running file.
 
-```bash
-node --env-file=.env dist/bin/http.js
+A real environment variable always beats the file, so a deployed process cannot
+be re-pointed by a stray `.env` in the image. In production, inject these as
+environment variables from your platform or secrets manager and ship no `.env`
+at all.
+
+The startup log says which file was read:
+
+```json
+{"event":"env_file_loaded","file":"/opt/document-mcp-server/.env","applied":5,"overriddenByEnvironment":0}
 ```
+
+If a variable is missing, that line — or an `env_file_absent` line listing the
+paths searched — tells you whether the file was found at all before you start
+questioning its contents.
 
 Claude Desktop / Claude Code, stdio:
 
@@ -154,10 +163,7 @@ Claude Desktop / Claude Code, stdio:
   "mcpServers": {
     "documents": {
       "command": "node",
-      "args": [
-        "--env-file-if-exists=/opt/document-mcp-server/.env",
-        "/opt/document-mcp-server/dist/bin/stdio.js"
-      ],
+      "args": ["/opt/document-mcp-server/dist/bin/stdio.js"],
       "env": {
         "DOCS_API_BASE_URL": "https://api.example.com/v1",
         "DOCS_MCP_ISSUER_URL": "https://auth.example.com/realms/docs",
@@ -179,6 +185,7 @@ character, path included, or the OAuth flow will not complete.
 src/
   constants.ts          values the contract fixes: scope, ceiling, timeouts, tool count
   config.ts             environment only; no hostname, client id or secret in source
+  envFile.ts            finds a local .env for development runs; environment still wins
   logging.ts            one structured line per tool call, to stderr
   upstream/client.ts    the GET-only Document API client
   upstream/errors.ts    upstream failures, modelled for the §7 mapping
