@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M0WMCBG99KJWY62P79TN142R",
+  "requestCommit": "b8c32e040d9e9d7cd62ae34093de51307ef3fc2d",
+  "agent": { "id": "report-custom-agent", "version": "1.0.0" },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-25T14:16:24.000Z",
+  "finishedAt": "2026-08-25T14:24:30.000Z",
+  "durationMs": 486000,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 4033183,
+      "sha256": "6c0ec8c16eb2a1257c71914a5dd3e02baa731bab266bcea5209d8685ea32d4a4",
+      "storage": { "kind": "git", "key": "assets/01M0WMCBG99KJWY62P79TN142R/report.html" }
+    }
+  ],
+  "metrics": {
+    "domainsProcessed": 2,
+    "urlRecordsProcessed": 3,
+    "urlsIncludedInSchedule": 2,
+    "urlsReferredForManualReview": 1,
+    "urlsExcludedByTld": 0,
+    "screenshotExhibits": 3
+  },
+  "error": null
+}
