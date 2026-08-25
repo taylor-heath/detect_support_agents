@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data Insights &amp; Patterns Report</title>
+<style>
+  :root {
+    --bg: #f7f9fb; --fg: #1c2733; --muted: #64748b; --card-bg: #ffffff;
+    --border: #e2e8f0; --gridline: #e8edf2; --accent: #1F3F63;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10161d; --fg: #e6edf3; --muted: #93a3b3; --card-bg: #171f28;
+      --border: #2a3644; --gridline: #253038; --accent: #4d7ab5;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 32px 24px 80px; }
+  header.report-header { margin-bottom: 32px; }
+  header.report-header h1 { font-size: 26px; margin: 0 0 6px; color: var(--accent); }
+  header.report-header p { margin: 0; color: var(--muted); font-size: 14px; }
+  section { margin-bottom: 40px; }
+  section > h2 {
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px;
+  }
+  .card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 20px; margin-bottom: 16px;
+  }
+  .card h3 { margin: 0 0 12px; font-size: 15px; }
+  .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 20px; }
+  .metric-card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; text-align: center;
+  }
+  .metric-value { font-size: 26px; font-weight: 600; color: var(--accent); }
+  .metric-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .chart-row { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .chart-row.two-col { grid-template-columns: 1fr 1fr; align-items: start; }
+  @media (max-width: 760px) { .chart-row.two-col { grid-template-columns: 1fr; } }
+  svg.chart, svg.pie { width: 100%; height: auto; display: block; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+  .empty { color: var(--muted); font-style: italic; font-size: 13px; }
+  .interp { color: var(--muted); font-size: 13px; margin-top: 8px; }
+  ul.bullets { margin: 0; padding-left: 18px; font-size: 13px; }
+  ul.bullets li { margin-bottom: 6px; }
+  .insight-card p { font-size: 13.5px; line-height: 1.5; margin: 0 0 8px; }
+  .take { color: var(--accent); }
+  footer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="report-header">
+    <h1>Data Insights &amp; Patterns</h1>
+    <p>Evaluation period 2026-07-13 → 2026-08-12 &middot; 15 URLs in the standard set &middot; generated 2026-08-25T09:00:56Z</p>
+  </header>
+
+  <section id="section-a">
+    <h2>A &middot; The numbers</h2>
+    <div class="metric-grid"><div class="metric-card"><div class="metric-value">15</div><div class="metric-label">Total URLs analyzed</div></div><div class="metric-card"><div class="metric-value">3</div><div class="metric-label">Illegal gambling</div></div><div class="metric-card"><div class="metric-value">0</div><div class="metric-label">Licensed gambling</div></div><div class="metric-card"><div class="metric-value">2026-07-13 → 2026-08-12</div><div class="metric-label">Evaluation period (31 days)</div></div></div>
+    <div class="chart-row two-col">
+      <div class="card">
+        <h3>URLs analyzed per day</h3>
+        <svg viewBox="0 0 760 220" class="chart">
+      <line x1="40" y1="192.0" x2="740" y2="192.0" stroke="var(--gridline)" stroke-width="1"/><text x="34" y="195.0" font-size="10" text-anchor="end" fill="var(--muted)">0</text><line x1="40" y1="104.0" x2="740" y2="104.0" stroke="var(--gridline)" stroke-width="1"/><text x="34" y="107.0" font-size="10" text-anchor="end" fill="var(--muted)">6</text><line x1="40" y1="16.0" x2="740" y2="16.0" stroke="var(--gridline)" stroke-width="1"/><text x="34" y="19.0" font-size="10" text-anchor="end" fill="var(--muted)">11</text>
+      <path d="M 40.0,160.0 L 273.3,176.0 L 506.7,176.0 L 740.0,16.0" fill="none" stroke="#1F3F63" stroke-width="2"/>
+      <circle cx="40.0" cy="160.0" r="3" fill="#1F3F63"><title>2026-07-13: 2</title></circle><circle cx="273.3" cy="176.0" r="3" fill="#1F3F63"><title>2026-07-14: 1</title></circle><circle cx="506.7" cy="176.0" r="3" fill="#1F3F63"><title>2026-08-04: 1</title></circle><circle cx="740.0" cy="16.0" r="3" fill="#1F3F63"><title>2026-08-12: 11</title></circle>
+      <text x="40.0" y="212" font-size="10" text-anchor="middle" fill="var(--muted)">2026-07-13</text><text x="506.7" y="212" font-size="10" text-anchor="middle" fill="var(--muted)">2026-08-04</text><text x="740.0" y="212" font-size="10" text-anchor="middle" fill="var(--muted)">2026-08-12</text>
+    </svg>
+      </div>
+      <div class="card">
+        <h3>Status distribution</h3>
+        <div style="display:flex; gap:20px; align-items:center; flex-wrap:wrap;">
+          <div style="flex:0 0 160px;"><svg viewBox="0 0 200 200" class="pie"><path d="M 100.0,100.0 L 100.00,4.00 A 96.0,96.0 0 1 1 8.70,70.33 Z" fill="#9aa7b4"><title>Not gambling: 12 (80.0%)</title></path><path d="M 100.0,100.0 L 8.70,70.33 A 96.0,96.0 0 0 1 100.00,4.00 Z" fill="#c0392b"><title>Illegal gambling: 3 (20.0%)</title></path></svg></div>
+          <table style="flex:1; min-width:220px;">
+            <thead><tr><th>Status</th><th>Count</th><th>%</th></tr></thead>
+            <tbody><tr><td><span class="dot" style="background:#9aa7b4"></span>Not gambling</td><td>12</td><td>80.0%</td></tr><tr><td><span class="dot" style="background:#c0392b"></span>Illegal gambling</td><td>3</td><td>20.0%</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Top 10 URL suffixes</h3>
+      <div class="chart-row two-col">
+        <div><svg viewBox="0 0 760 370" class="chart"><text x="122" y="27.0" font-size="11" text-anchor="end" fill="var(--fg)">.com</text><rect x="130" y="10" width="570.0" height="26" rx="3" fill="#1F3F63"><title>.com: 4</title></rect><text x="706.0" y="27.0" font-size="11" fill="var(--fg)">4</text><text x="122" y="63.0" font-size="11" text-anchor="end" fill="var(--fg)">.io</text><rect x="130" y="46" width="285.0" height="26" rx="3" fill="#1F3F63"><title>.io: 2</title></rect><text x="421.0" y="63.0" font-size="11" fill="var(--fg)">2</text><text x="122" y="99.0" font-size="11" text-anchor="end" fill="var(--fg)">.ru</text><rect x="130" y="82" width="285.0" height="26" rx="3" fill="#1F3F63"><title>.ru: 2</title></rect><text x="421.0" y="99.0" font-size="11" fill="var(--fg)">2</text><text x="122" y="135.0" font-size="11" text-anchor="end" fill="var(--fg)">.cc</text><rect x="130" y="118" width="142.5" height="26" rx="3" fill="#1F3F63"><title>.cc: 1</title></rect><text x="278.5" y="135.0" font-size="11" fill="var(--fg)">1</text><text x="122" y="171.0" font-size="11" text-anchor="end" fill="var(--fg)">.ch</text><rect x="130" y="154" width="142.5" height="26" rx="3" fill="#1F3F63"><title>.ch: 1</title></rect><text x="278.5" y="171.0" font-size="11" fill="var(--fg)">1</text><text x="122" y="207.0" font-size="11" text-anchor="end" fill="var(--fg)">.tv</text><rect x="130" y="190" width="142.5" height="26" rx="3" fill="#1F3F63"><title>.tv: 1</title></rect><text x="278.5" y="207.0" font-size="11" fill="var(--fg)">1</text><text x="122" y="243.0" font-size="11" text-anchor="end" fill="var(--fg)">.gle</text><rect x="130" y="226" width="142.5" height="26" rx="3" fill="#1F3F63"><title>.gle: 1</title></rect><text x="278.5" y="243.0" font-size="11" fill="var(--fg)">1</text><text x="122" y="279.0" font-size="11" text-anchor="end" fill="var(--fg)">.be</text><rect x="130" y="262" width="142.5" height="26" rx="3" fill="#1F3F63"><title>.be: 1</title></rect><text x="278.5" y="279.0" font-size="11" fill="var(--fg)">1</text><text x="122" y="315.0" font-size="11" text-anchor="end" fill="var(--fg)">.pro</text><rect x="130" y="298" width="142.5" height="26" rx="3" fill="#1F3F63"><title>.pro: 1</title></rect><text x="278.5" y="315.0" font-size="11" fill="var(--fg)">1</text><text x="122" y="351.0" font-size="11" text-anchor="end" fill="var(--fg)">.app</text><rect x="130" y="334" width="142.5" height="26" rx="3" fill="#1F3F63"><title>.app: 1</title></rect><text x="278.5" y="351.0" font-size="11" fill="var(--fg)">1</text></svg></div>
+        <table>
+          <thead><tr><th>Suffix</th><th>Total</th><th>% of all</th><th>Illegal</th><th>% illegal</th></tr></thead>
+          <tbody><tr><td>.com</td><td>4</td><td>26.7%</td><td>1</td><td>25.0%</td></tr><tr><td>.io</td><td>2</td><td>13.3%</td><td>0</td><td>0.0%</td></tr><tr><td>.ru</td><td>2</td><td>13.3%</td><td>0</td><td>0.0%</td></tr><tr><td>.cc</td><td>1</td><td>6.7%</td><td>0</td><td>0.0%</td></tr><tr><td>.ch</td><td>1</td><td>6.7%</td><td>1</td><td>100.0%</td></tr><tr><td>.tv</td><td>1</td><td>6.7%</td><td>0</td><td>0.0%</td></tr><tr><td>.gle</td><td>1</td><td>6.7%</td><td>0</td><td>0.0%</td></tr><tr><td>.be</td><td>1</td><td>6.7%</td><td>0</td><td>0.0%</td></tr><tr><td>.pro</td><td>1</td><td>6.7%</td><td>1</td><td>100.0%</td></tr><tr><td>.app</td><td>1</td><td>6.7%</td><td>0</td><td>0.0%</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-b">
+    <h2>B &middot; The insights</h2>
+    <div class="card">
+      <h3>Brands and variants (0 distinct brands)</h3>
+      <p class="empty">No variant-based brand abuse was detected in this sample.</p>
+    </div>
+    <div class="card">
+      <h3>Variant naming convention insights</h3>
+      <ul class="bullets"><li>No evidence found.</li></ul>
+    </div>
+    
+    <div class="card">
+      <h3>Redirects from &mdash; top 10</h3>
+      <p class="empty">No redirect-based propagation was detected in this sample.</p>
+    </div>
+    
+    <div class="card">
+      <h3>Comparison &mdash; URLs &rarr; redirects &rarr; variants</h3>
+      <div class="metric-grid"><div class="metric-card"><div class="metric-value">3 (100.0%)</div><div class="metric-label">Direct</div></div><div class="metric-card"><div class="metric-value">0 (0.0%)</div><div class="metric-label">Redirects</div></div><div class="metric-card"><div class="metric-value">0 (0.0%)</div><div class="metric-label">Variants</div></div></div>
+    </div>
+    <div class="card">
+      <h3>Source analysis</h3>
+      <table>
+        <thead><tr><th>Category</th><th>Total</th><th>Licensed</th><th>Illegal</th><th>% licensed</th><th>% illegal</th></tr></thead>
+        <tbody><tr><td>Manual</td><td>13</td><td>0</td><td>3</td><td>0.0%</td><td>100.0%</td></tr><tr><td>Google Search</td><td>0</td><td>0</td><td>0</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Variant</td><td>0</td><td>0</td><td>0</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Redirect</td><td>2</td><td>0</td><td>0</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Other</td><td>0</td><td>0</td><td>0</td><td>0.0%</td><td>0.0%</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Regulatory-blocking evidence</h3>
+      <table>
+        <thead><tr><th>URL</th><th>Phrase</th><th>Excerpt</th></tr></thead>
+        <tbody><tr><td colspan="3" class="empty">No regulatory-blocking indicators found in this sample.</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="section-c">
+    <h2>C &middot; Ranking</h2>
+    <div class="card">
+      <h3>Illegal ranking</h3>
+      <table>
+        <thead><tr><th>Rank</th><th>Domain</th><th>Source</th></tr></thead>
+        <tbody><tr><td>46003</td><td>swisslos.ch</td><td>Manual (crossier)</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Licensed ranking </h3>
+      <table>
+        <thead><tr><th>Rank</th><th>Domain</th><th>Source</th></tr></thead>
+        <tbody><tr><td colspan="3" class="empty">No licensed domains in this sample.</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="section-d">
+    <h2>D &middot; Key insights</h2>
+    <div class="card insight-card"><h3>1. Scale of the analysis</h3><p>This report covers 15 distinct URLs over a 31-day evaluation period (2026-07-13 → 2026-08-12), of which 3 were found illegal and 0 licensed.</p><p class="take"><strong>Take:</strong> The sample is large enough to reason about patterns, not isolated cases.</p></div><div class="card insight-card"><h3>2. Status mix</h3><p>Illegal gambling accounts for 20.0% of all URLs analyzed and 100.0% of gambling sites (licensed + illegal). 12 URLs were found not to be gambling-related and 0 were unreachable.</p><p class="take"><strong>Take:</strong> Illegal operators are the majority of identified gambling sites in this sample.</p></div><div class="card insight-card"><h3>3. Variants and brand abuse</h3><p>No variant-based brand cloning was detected in this sample — variant proliferation is not a factor here.</p><p class="take"><strong>Take:</strong> No handful of brands is driving proliferation in this window.</p></div><div class="card insight-card"><h3>4. Redirects and traffic shaping</h3><p>No illegal URLs in this sample arrived via redirect chains — direct access dominates.</p><p class="take"><strong>Take:</strong> Direct access dominates; no redirect infrastructure was observed in this window.</p></div><div class="card insight-card"><h3>5. Enforcement and regulatory relevance</h3><p>No pages in this sample show regulatory-blocking indicators yet.</p><p class="take"><strong>Take:</strong> The set appears pre-enforcement and is a candidate for a first enforcement pass.</p></div>
+  </section>
+
+  <footer>Data-driven report generated from the SICPADetect dataset for the 31-day period 2026-07-13 → 2026-08-12.</footer>
+</div>
+</body>
+</html>
