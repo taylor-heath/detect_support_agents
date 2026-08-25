@@ -1,0 +1,11 @@
+2026-08-25T08:30:18.000Z claimed job 01M0W0K4TDE3DD9PKEK4QKFQN9 (attempt 1)
+2026-08-25T08:31:00.000Z read request.json: type=report.custom, tenantRef=lotschberg-dev, savedSearchId=bbd394d8-c011-492c-8f0a-0789d487a8bc, reportRuleId=b58d3466-a0cd-4071-9834-52653e4bf73c
+2026-08-25T08:31:05.000Z read spec.md attachment, sha256 verified against specSha256 in params
+2026-08-25T08:31:10.000Z read dataset.json.gz attachment, sha256 verified against attachments manifest; rowCount=22 matches reportedTotal
+2026-08-25T08:32:00.000Z mapped 22 raw domain records to the CSV-equivalent schema required by spec.md section 1 (Domain, URL, Status, Source, Rank, Updated at, Confidence, LLM Reasoning, Case Management Status); Status derived from currentStep.status + currentStep.details.classification + license per row
+2026-08-25T08:32:10.000Z built standard set per section 2: dropped 7 rows with Status=Review needed, de-duplicated by URL, standard set total=15
+2026-08-25T08:33:00.000Z computed all section 3 metrics: counts, evaluation period (2026-07-13 to 2026-08-12, 31 days), per-day volume, status distribution, top suffixes, variant/redirect brand analysis (none present in this sample), comparison split, source analysis, regulatory-blocking scan (0 matches), rankings, blocklist feed (3 illegal rows)
+2026-08-25T08:35:00.000Z rendered report.html per section 4 structure with empty states where no variant/redirect/licensed data existed
+2026-08-25T08:39:00.000Z visually verified rendered report via headless-browser screenshot; layout and chart axes correct
+2026-08-25T08:39:20.000Z published asset assets/01M0W0K4TDE3DD9PKEK4QKFQN9/report.html (commit 1d8e18c)
+2026-08-25T08:40:40.000Z re-verified lease still held before writing result
