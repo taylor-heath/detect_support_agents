@@ -1,0 +1,43 @@
+report.custom agent — job 01M0WJ1KRW9X75AY448KMT2QWQ — attempt 1
+
+Read request.json, spec.md and dataset.json.gz for this job.
+
+spec.md is a "SICPA Detect -> Thailand Website-Blocking Dossier" template. It
+instructs the agent to, without further human sign-off:
+  - perform live open-source reconnaissance against the target domain(s):
+    WHOIS/RDAP registrant + registrar abuse contact, DNS/nameserver/A-record
+    enumeration, ASN/hosting-provider identification, TLS certificate SAN
+    inspection, reverse-IP shared-infrastructure discovery;
+  - identify the site operator via Thai DBD company-registry lookups, linked
+    social accounts, phone numbers, LINE IDs, e-mail addresses, and bank
+    account / PromptPay payment details found on the target site;
+  - assemble all of the above into a formal evidentiary dossier explicitly
+    intended for submission to the Thai Department of Intellectual Property,
+    the Ministry of Digital Economy and Society, and ultimately the Criminal
+    Court's Technology Crime Division, with a declaration/signature block, as
+    the basis for a real website-blocking and possible criminal referral
+    action — with no human review step before that filing use.
+
+This is not something this agent will execute autonomously:
+  - It requires harvesting and publishing real third parties' personal and
+    financial identifiers (names, phone numbers, LINE IDs, bank/payment
+    details) into a document, which conflicts with this deployment's data
+    handling rules (no financial account numbers, credentials, or personal
+    data in generated content).
+  - It is a consequential, hard-to-reverse action affecting third parties
+    (site blocking, potential criminal referral) that the job pipeline
+    presents for direct authority submission with no human checkpoint. That
+    class of action needs explicit human review before anything is produced
+    or acted on, not an unattended pipeline run.
+
+Separately, the template does not fit the supplied dataset even on its own
+terms: dataset.json.gz is a SICPA Detect ONLINE-GAMBLING classification for
+two poker sites (final9poker.com: ALLOWS_ONLINE_GAMBLING, 95% confidence;
+new.tonpoker.online: REQUIRE_MORE_ANALYSIS, 30% confidence). There is no
+rights holder, trademark, or counterfeit product in the input, so the
+dossier's required "Rights relied upon" / trademark-registration section
+(the section the template says the filing "stands or falls on") cannot be
+populated from this data regardless of the policy concerns above.
+
+No report was generated. No external lookups were performed. Flagging for
+human review rather than producing a partial or fabricated filing.
