@@ -5,6 +5,6 @@
   "agent": { "id": "report-custom-agent", "version": "1.0.0" },
   "attempt": 1,
   "claimedAt": "2026-08-25T08:57:10.210Z",
-  "leaseExpiresAt": "2026-08-25T09:07:10.210Z",
-  "heartbeatAt": "2026-08-25T08:57:10.210Z"
+  "leaseExpiresAt": "2026-08-25T09:11:00.000Z",
+  "heartbeatAt": "2026-08-25T09:01:00.000Z"
 }
