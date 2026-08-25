@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M0WJGQ2ARZ3BMBK6DX66665D",
+  "requestCommit": "fd3c2f8bc8a8dd25c75f9d4dfbf3d7e618503ae4",
+  "agent": { "id": "report-custom-agent", "version": "1.0" },
+  "attempt": 1,
+  "status": "failed",
+  "startedAt": "2026-08-25T13:44:20.286Z",
+  "finishedAt": "2026-08-25T13:44:54.453Z",
+  "durationMs": 34167,
+  "assets": [],
+  "metrics": {},
+  "error": {
+    "code": "UNSAFE_REQUEST_REQUIRES_HUMAN_REVIEW",
+    "message": "This report requires a rights-holder trademark/copyright basis the supplied dataset does not contain (it is an online-gambling site classification, not a counterfeit case), and separately calls for an unattended pipeline to produce a formal dossier meant to be relied on for real site-blocking action with no human review step. Declined pending human review rather than fabricating the missing rights basis or producing that document unattended.",
+    "retryable": false,
+    "detailsRef": "logs/attempt-1.log"
+  }
+}

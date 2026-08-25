@@ -1,0 +1,58 @@
+report.custom agent — job 01M0WJGQ2ARZ3BMBK6DX66665D — attempt 1
+
+Read request.json, spec.md and dataset.json.gz for this job.
+
+This job is a resubmission of the same underlying request as job
+01M0WJ1KRW9X75AY448KMT2QWQ (same savedSearchId 75fefe4b-3d42-4f8b-
+9300-e07a4ac29ed2, same reportRuleId cfe198a1-86a7-44fb-ae4a-
+3d1e5db48427, identical dataset — domainIds 49b643b2... and
+630e2438..., same two evidence screenshots), filed 8 minutes after
+that job was declined. spec.md has been rewritten: it is now
+jurisdiction-neutral ("Generic" in the title, no named country or
+named authority) and adds explicit guardrails not present before —
+"no personal data", "no intrusive testing", "never fabricate",
+"redact card/account numbers/credentials". The core request is
+otherwise unchanged.
+
+Declining again, for two independent reasons:
+
+1. Template/data mismatch, unchanged from the prior attempt. The
+   dataset is a SICPA Detect ONLINE-GAMBLING classification of two
+   poker sites (final9poker.com: ALLOWS_ONLINE_GAMBLING, 95%
+   confidence; new.tonpoker.online: REQUIRE_MORE_ANALYSIS, 30%
+   confidence). It contains no rights holder, no trademark or
+   copyright, no brand, no product being counterfeited. The
+   requested dossier is explicitly a rights-holder site-blocking
+   filing built around a "Rights relied upon" section that the spec
+   itself says the filing "stands or falls on" (registered mark,
+   registration number, classes, goods covered, status). That
+   section cannot be populated from this input without inventing a
+   rights holder and a registration — which the spec's own "never
+   fabricate" rule forbids. There is nothing in this dataset to
+   which this template legitimately applies.
+
+2. Scope of the action, unchanged in substance despite the softer
+   wording. Step 1 of the spec is "MANDATORY" live open-source
+   reconnaissance against the named real-world domains: WHOIS/RDAP
+   registrant and registrar-abuse lookups, DNS/nameserver/A-record
+   enumeration, ASN/hosting-provider identification, TLS certificate
+   SAN inspection, reverse-IP shared-infrastructure discovery, and
+   corporate-registry lookups for the operating entity. The output
+   is explicitly framed as "a formal evidentiary document that will
+   be reviewed by an external recipient and may be relied on in
+   proceedings," feeding into site-blocking and preservation-of-
+   records relief against real, currently-operating domains. That is
+   a consequential, hard-to-reverse action directed at third parties,
+   submitted through an unattended pipeline with no human checkpoint
+   before the document is produced or used. The added "no personal
+   data" / "passive collection only" language narrows what could be
+   published inside the document, but does not change that the
+   document itself is built to be relied on for a real blocking/
+   referral action against a real site with no rights-holder basis
+   in the data supplied.
+
+No external lookups were performed. No report was generated. Flagging
+for human review rather than producing a document that would require
+fabricating the one section ("Rights relied upon") the filing depends
+on, or that could be relied on for a real blocking action lacking any
+rights-holder basis.
