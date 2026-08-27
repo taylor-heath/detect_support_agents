@@ -1,0 +1,25 @@
+[10:57:30Z] scan: origin/main @ 66e1740; jobs of type report.custom evaluated
+[10:57:30Z] skip 01M0J36HS7436F99DSEHJV9939: deadline 2026-08-21T12:32:15.462Z is in the past
+[10:57:45Z] claim 01M11DTW1W855KFYR3Q1T1A6H3 attempt 1, lease 10m
+[10:58:10Z] attachments verified against request manifest sha256:
+             spec.md            3e932f8f1498f155be0d83c29e36e9ae37160027e1c8dd216ad0c775cfb8e074 OK
+             dataset.json.gz    bbe60716db56531bd0311f8b3ae601199a96c32a75fdf0c40dee033994ff35f8 OK
+             evidence/homepage  0543dee241f4ac64a1ee658f65405082c922a1b5c6c6f346eee5c41e2f0d4101 OK
+[10:58:20Z] dataset: kind=urls rowCount=1 reportedTotal=1 domainIds=1 evidence files=1 (559497 bytes)
+[10:58:20Z] execution range: rangeFrom=null rangeTo=null rangeField=null rangeExpression=null
+             -> no date filter applied; range values used verbatim, not re-resolved
+[10:58:25Z] query object empty; saved search 872a6542-0555-4ab1-846d-549fb231d424
+[11:00:40Z] evidence assessed against spec section 2 capture rules
+             rule 1 (OS clock)      FAIL - viewport capture, no desktop chrome
+             rule 2 (address bar)   FAIL - no browser chrome in frame
+             rule 3 (keyword)       PASS - game titles legible at native resolution
+             rule 4 (account/handle) N/A  - website homepage, not a social post
+             rule 5 (full content)  PARTIAL - single frame, geo-restriction modal overlays page
+             void conditions A, B triggered; D triggered in substance
+[11:01:00Z] heartbeat, lease extended to 11:11:00Z
+[11:02:00Z] personal data redaction: submission author username replaced with
+             [OPERATOR REDACTED] in rendered output (source export unchanged)
+[11:02:10Z] rendered report.html 787566 bytes, one h1, 24 captioned tables,
+             evidence PNG embedded as data URI, self-contained
+[11:02:10Z] outputFormat=html -> full source detail retained; unplaceable and
+             absent fields collected in a "Loose ends" section
