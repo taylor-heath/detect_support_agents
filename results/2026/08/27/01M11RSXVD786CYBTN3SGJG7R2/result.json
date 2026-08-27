@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M11RSXVD786CYBTN3SGJG7R2",
+  "requestCommit": "ee12a463692b125c7457077eea46f58a590e02b2",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-27T14:09:49.498Z",
+  "finishedAt": "2026-08-27T14:20:56.815Z",
+  "durationMs": 667317,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 81888,
+      "sha256": "d6307cf157a6d1a561d0695b0c76de31f3abd23376cc6c7d8d7491f00c9cfa64",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M11RSXVD786CYBTN3SGJG7R2/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 625,
+    "reportedTotal": 625,
+    "reviewNeededDropped": 2,
+    "duplicateUrlsDropped": 0,
+    "workingSetRows": 623,
+    "gamblingRows": 79,
+    "notGamblingRows": 252,
+    "unreachableRows": 117,
+    "unknownRows": 175,
+    "distinctClusters": 411,
+    "multiUrlClusters": 65,
+    "singletonClusters": 346,
+    "clustersToHalf": 10,
+    "inferredSharePct": 100.0,
+    "generalSharePct": 0.0,
+    "keywordAssignedRows": 0,
+    "lexiconTabsLoaded": 0,
+    "lexiconKeywordsLoaded": 0,
+    "signalTagsAssigned": 1,
+    "legacyIllegalGamblingNormalised": 78,
+    "licensedGamblingNormalised": 0,
+    "enforcementEvidenceRows": 3,
+    "rankedGamblingRows": 47,
+    "blocklistRecords": 79,
+    "attachmentHashesVerified": 2,
+    "suppressedSections": 4,
+    "looseEndsRecorded": 9
+  },
+  "error": null
+}
