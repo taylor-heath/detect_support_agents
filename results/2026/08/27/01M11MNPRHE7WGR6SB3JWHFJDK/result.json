@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M11MNPRHE7WGR6SB3JWHFJDK",
+  "requestCommit": "2688920e31f6a56bbd3ddd5f21d304a0c493f82a",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-27T12:59:35.000Z",
+  "finishedAt": "2026-08-27T13:04:10.000Z",
+  "durationMs": 275000,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 777272,
+      "sha256": "3c58bcfdbeb53044d1b645fb0429991369da13a5654c4fcce07fd9d08b6accb6",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M11MNPRHE7WGR6SB3JWHFJDK/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 1,
+    "reportedTotal": 1,
+    "recordsRendered": 1,
+    "templateRecordSkeletonsUnused": 2,
+    "decisionsSummarised": 2,
+    "statusStepsSummarised": 5,
+    "evidenceFilesEmbedded": 1,
+    "evidenceBytesEmbedded": 559497,
+    "evidenceFilesOmittedBySource": 1,
+    "attachmentHashesVerified": 3,
+    "templateFieldsUnsuppliedBySource": 4,
+    "looseEndsRecorded": 9
+  },
+  "error": null
+}
