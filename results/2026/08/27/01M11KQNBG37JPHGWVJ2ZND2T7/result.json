@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M11KQNBG37JPHGWVJ2ZND2T7",
+  "requestCommit": "dc5e8b52199ba4143975a1e26d1909d6b1412eb6",
+  "agent": { "id": "report.custom", "version": "1.0.0" },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-27T12:41:00.000Z",
+  "finishedAt": "2026-08-27T12:46:20.000Z",
+  "durationMs": 320000,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 72850,
+      "sha256": "52fb2e6456471815ca6187380a0915016a0008777b8cdae3f4967dbeba3a984e",
+      "storage": { "kind": "git", "key": "assets/01M11KQNBG37JPHGWVJ2ZND2T7/report.html" }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 13704,
+    "standardSetSize": 13698,
+    "juego": 10419,
+    "noJuego": 3279,
+    "ivaRegistrado": 41,
+    "ivaNoRegistradoListado": 72,
+    "ivaNoRegistrado": 10306
+  },
+  "error": null
+}
