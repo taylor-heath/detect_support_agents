@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Classification Report — roobet.com</title>
+<style>
+/* ============================================================
+   SICPADetect — Site Classification Report
+   A4 print stylesheet. Edit values here to restyle the report.
+   ============================================================ */
+@page { size: A4 portrait; margin: 16mm 15mm 14mm 15mm; }
+
+:root{
+  --ink:#111417;        /* headings, body */
+  --muted:#5B6670;      /* subtitles, captions */
+  --rule:#111417;       /* heavy rule under section titles */
+  --hair:#C9D2DB;       /* table gridlines */
+  --brand-a:#C8102E;    /* confidence badge accent */
+  --ok-bg:#D3E7BD;   --ok-ink:#2C5015;   /* confirmed / valid */
+  --warn-bg:#FBC9AC; --warn-ink:#7A3A12; /* pending / partial */
+  --off-bg:#E6EAEE;  --off-ink:#4A555F;  /* dismissed / n/a */
+}
+
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Helvetica Neue",Helvetica,Arial,"Noto Sans Thai",sans-serif;
+  color:var(--ink); font-size:9.5pt; line-height:1.55;
+  margin:0 !important; padding:0 !important; max-width:none !important;
+  background:#fff;
+}
+
+/* ---- A4 page frame (screen only; print uses @page) ------------ */
+.page{ width:auto; }
+@media screen{
+  body{ background:#F2F4F6; }
+  .page{
+    box-sizing:border-box; max-width:210mm; min-height:297mm;
+    margin:0 auto; padding:16mm 15mm 14mm; background:#fff;
+  }
+}
+
+/* ---- section titles ------------------------------------------ */
+h1{
+  font-size:19pt; font-weight:800; letter-spacing:-.4px; margin:0 0 2px;
+  padding-bottom:5px; border-bottom:2.5px solid var(--rule);
+}
+h2{
+  font-size:13pt; font-weight:800; margin:22px 0 2px;
+  padding-bottom:4px; border-bottom:2px solid var(--rule);
+  page-break-after:avoid;
+}
+h3{
+  font-size:10.5pt; font-weight:800; margin:16px 0 4px;
+  page-break-after:avoid;
+}
+.sub{ font-size:8pt; font-weight:700; color:var(--muted); margin:4px 0 12px; }
+
+/* ---- tables --------------------------------------------------- */
+.tablewrap{ overflow-x:auto; }
+table{
+  width:100% !important; border-collapse:collapse; margin:6px 0 4px;
+  font-size:8.8pt; page-break-inside:avoid; table-layout:fixed;
+  display:table !important;  /* some converters set display:block, which collapses width */
+}
+/* some Markdown converters inject <colgroup> percentages — neutralise them */
+colgroup, col{ width:auto !important; }
+/* header row is structural only — pipe tables require one, but it is not shown */
+thead{ display:none; }
+td, th{ padding:5px 8px; border:1px solid var(--hair); vertical-align:top; }
+th[scope="row"], td:first-child{ width:34%; font-weight:700; text-align:left; }
+tr{ page-break-inside:avoid; }
+table.grid{ table-layout:auto; }
+table.grid th[scope="row"], table.grid td:first-child{ width:auto; }
+table.grid th[scope="col"]{
+  display:table-cell; font-weight:800; font-size:8.2pt;
+  background:var(--off-bg); color:var(--off-ink); width:auto;
+}
+table.grid td{ font-weight:400; }
+caption{
+  caption-side:bottom; text-align:left; font-size:7.6pt; color:var(--muted);
+  padding:4px 0 0;
+}
+
+/* ---- status fills (UniDOC-style solid cells) ------------------ */
+.ok  { background:var(--ok-bg);   color:var(--ok-ink);   font-weight:700; }
+.warn{ background:var(--warn-bg); color:var(--warn-ink); font-weight:700; }
+.off { background:var(--off-bg);  color:var(--off-ink);  font-weight:700; }
+
+/* ---- confidence badge ---------------------------------------- */
+.badge{
+  display:inline-block; min-width:20px; padding:1px 7px; border-radius:4px;
+  background:var(--brand-a); color:#fff; font-weight:800; font-size:9pt;
+  text-align:center; margin-right:6px;
+}
+.badge.g-a{ background:#2E7D32; } .badge.g-b{ background:#7CB342; }
+.badge.g-c{ background:#F9A825; } .badge.g-d{ background:#EF6C00; }
+.badge.g-f{ background:var(--brand-a); }
+
+/* ---- record blocks ------------------------------------------- */
+.record{ page-break-inside:avoid; margin-bottom:4px; }
+.mono{ font-family:"SF Mono",Menlo,Consolas,monospace; font-size:8.2pt; word-break:break-all; }
+hr{ border:none; border-top:1px solid var(--hair); margin:16px 0; }
+.note{ font-size:7.6pt; color:var(--muted); margin:4px 0 0; }
+.foot{ margin-top:18px; padding-top:8px; border-top:1px solid var(--hair);
+       font-size:7.2pt; color:var(--muted); }
+ul.reasons{ margin:0; padding-left:14px; }
+ul.reasons li{ margin:0 0 3px; }
+ul.reasons li:last-child{ margin-bottom:0; }
+figure{ margin:8px 0 4px; page-break-inside:avoid; }
+figure img{ max-width:100%; height:auto; border:1px solid var(--hair); }
+
+/* ---- small screens ------------------------------------------- */
+@media screen and (max-width:600px){
+  body{ font-size:11pt; }
+  .page{ padding:16px 14px 24px; min-height:0; }
+  table{ font-size:10pt; table-layout:auto; }
+  th[scope="row"], td:first-child{ width:40%; }
+  .mono{ font-size:9pt; }
+}
+</style>
+</head>
+<body>
+<article class="page">
+
+<h1>Site Classification Report</h1>
+
+<p class="sub">Automated site classification — evidence record</p>
+
+<div class="tablewrap">
+<table>
+<tbody>
+<tr><th scope="row">Report reference</th><td class="mono">01M13V2SKXHD400P2MSGRSGW7W</td></tr>
+<tr><th scope="row">Reporting period</th><td>Not constrained — the request carried no date range (<span class="mono">rangeFrom</span> and <span class="mono">rangeTo</span> both null); the report covers every record in the supplied dataset</td></tr>
+<tr><th scope="row">Prepared by</th><td>SICPADetect automated report agent <span class="mono">report.custom</span> v1.0.0</td></tr>
+<tr><th scope="row">Date of issue</th><td>28/08/2026</td></tr>
+<tr><th scope="row">Document classification</th><td><span class="off">Not specified in the request</span></td></tr>
+<tr><th scope="row">System / model version</th><td>SICPADetect — version not recorded in the source data</td></tr>
+<tr><th scope="row">Records in this report</th><td>1 (dataset <span class="mono">rowCount</span> 1, <span class="mono">reportedTotal</span> 1)</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2>1 · Analysis</h2>
+
+<h3>roobet.com — Thai-language online casino, blacklisted</h3>
+
+<section class="record">
+
+<div class="tablewrap">
+<table>
+<tbody>
+<tr><th scope="row">Source where URL was found</th><td>Manual submission by an operator account (name redacted), 27/08/2026. The domain had previously been listed from an external blocklist feed (<em>hagezi</em>) on 26/09/2025.</td></tr>
+<tr><th scope="row">URL of classified site</th><td><span class="mono">hxxps://www[.]roobet[.]com/th</span></td></tr>
+<tr><th scope="row">Domain</th><td><span class="mono">roobet[.]com</span></td></tr>
+<tr><th scope="row">Status</th><td><span class="ok">Confirmed — BLACKLISTED</span></td></tr>
+<tr><th scope="row">Confidence</th><td><span class="badge g-a">A</span> 0.95</td></tr>
+<tr><th scope="row">Classification</th><td>ALLOWS_ONLINE_GAMBLING</td></tr>
+<tr><th scope="row">Subcategory</th><td>Gambling → online casino (source tags: slots, casino, jackpot)</td></tr>
+<tr><th scope="row">Case management state</th><td><span class="warn">ILLEGAL_GAMBLING</span> — no case steps recorded</td></tr>
+<tr><th scope="row">Keywords detected</th><td>slots; casino; jackpot</td></tr>
+<tr><th scope="row">Target element detected</th><td><span class="ok">Yes</span></td></tr>
+<tr><th scope="row">Rationale</th><td>
+  <ul class="reasons">
+    <li><strong>URL.</strong> The URL contains <span class="mono">roobet.com</span>, which is known for online gambling services.</li>
+    <li><strong>Screenshot.</strong> The screenshot shows a prominent “Sign up” button, which is commonly associated with creating an account to gamble on online gambling sites.</li>
+    <li><strong>Screenshot.</strong> The text in the screenshot includes references to various gambling games such as “WHEEL”, “CRASH”, “BLACKJACK”, “LIMBO”, “DICE”, “MISSION UNCROSSABLE” and “KENO”, which are all indicative of online gambling activities.</li>
+    <li><strong>Screenshot.</strong> The presence of a “Live RTP” section suggests real-time gambling statistics, which is a feature typically found on online gambling platforms.</li>
+  </ul>
+</td></tr>
+<tr><th scope="row">Screenshot</th><td><span class="mono">evidence/2e06d364-6a7f-4038-ba4f-32dc9fee0a7a/4c6ba781-49ba-4db0-9af8-cb422d0ff832/homepage</span> (PNG, 1919 × 992, 559,497 bytes, document name <em>homepage</em>)</td></tr>
+<tr><th scope="row">Capture (date / time / TZ)</th><td>27/08/2026 10:53, UTC — timestamp taken from the analysis step the evidence is attached to (<span class="mono">2026-08-27T10:53:31.714729Z</span>)</td></tr>
+<tr><th scope="row">SHA-256</th><td><span class="mono">0543dee241f4ac64a1ee658f65405082c922a1b5c6c6f346eee5c41e2f0d4101</span></td></tr>
+<tr><th scope="row">Capture valid</th><td><span class="warn">Partial</span> — gambling keywords and site branding are legible, but the capture contains no browser address bar and no clock, so neither the URL nor the capture time is self-evidenced within the image</td></tr>
+<tr><th scope="row">Capture contents</th><td>Thai-language Roobet homepage. Left navigation lists คาสิโน (casino), สล็อต (slots), รูเล็ต (roulette), แบล็คแจ็ค (blackjack), บาคาร่า (baccarat), สปอร์ตบุ๊ค (sportsbook) and a “Live RTP” entry; a game carousel shows WHEEL, CRASH, BLACKJACK, LIMBO, DICE, MISSION UNCROSSABLE and KENO tiles; a registration panel offers Google and MetaMask sign-in; a running total of 15,199,423,669 is displayed at the foot of the navigation. A modal overlay states in Thai that Roobet is not available in the viewer’s region because of its gaming licence.</td></tr>
+<tr><th scope="row">Service country</th><td>US</td></tr>
+<tr><th scope="row">Page language</th><td>th (Thai)</td></tr>
+<tr><th scope="row">Tranco list ranking</th><td>37,150</td></tr>
+<tr><th scope="row">Analysis error</th><td><span class="ok">None</span></td></tr>
+<tr><th scope="row">First seen</th><td>26/09/2025 09:25 UTC</td></tr>
+<tr><th scope="row">Last updated</th><td>27/08/2026 10:53 UTC</td></tr>
+<tr><th scope="row">Domain ID</th><td><span class="mono">2e06d364-6a7f-4038-ba4f-32dc9fee0a7a</span></td></tr>
+<tr><th scope="row">Current decision ID</th><td><span class="mono">4c6ba781-49ba-4db0-9af8-cb422d0ff832</span></td></tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<hr>
+
+<h2>2 · Decision and status history</h2>
+
+<p>Two decisions exist for this domain. The current decision supersedes an earlier external-feed listing; the earlier decision is retained for the record.</p>
+
+<h3>Current decision — <span class="mono">4c6ba781-49ba-4db0-9af8-cb422d0ff832</span></h3>
+
+<p>URL <span class="mono">hxxps://www[.]roobet[.]com/th</span>. Opened 27/08/2026 10:53:01 UTC by an operator account (name redacted), last updated 27/08/2026 10:53:32 UTC. Marked current.</p>
+
+<div class="tablewrap">
+<table class="grid">
+<caption>Table 1 — Status steps for the current decision, most recent first.</caption>
+<thead>
+<tr><th scope="col">Timestamp (UTC)</th><th scope="col">Status</th><th scope="col">Author</th><th scope="col">Analysis details</th></tr>
+</thead>
+<tbody>
+<tr><td class="mono">2026-08-27 10:53:32.648</td><td><span class="ok">BLACKLISTED</span></td><td>System</td><td>Classification ALLOWS_ONLINE_GAMBLING, confidence 95, tags slots / casino / jackpot, country US, language th, Tranco 37,150, no error</td></tr>
+<tr><td class="mono">2026-08-27 10:53:32.648</td><td>ANALYSIS_DONE</td><td>System</td><td>Same analysis payload as the step above</td></tr>
+<tr><td class="mono">2026-08-27 10:53:31.715</td><td>PENDING_DATA_ANALYSIS</td><td>System</td><td>None — this is the step the homepage screenshot is attached to</td></tr>
+<tr><td class="mono">2026-08-27 10:53:01.129</td><td>PENDING_URL_SCRAPPING</td><td>Operator (name redacted)</td><td>None</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="note">No comments were recorded on any step, and no licence was recorded on any step.</p>
+
+<h3>Superseded decision — <span class="mono">c6d640ce-1467-4ed1-a3db-f99d6d69ece6</span></h3>
+
+<p>URL <span class="mono">hxxps://roobet[.]com/</span>. Created and last updated 26/09/2025 09:25:55 UTC, initial author <em>External (hagezi)</em>. Not current.</p>
+
+<div class="tablewrap">
+<table class="grid">
+<caption>Table 2 — Status steps for the superseded decision.</caption>
+<thead>
+<tr><th scope="col">Timestamp (UTC)</th><th scope="col">Status</th><th scope="col">Author</th><th scope="col">Analysis details</th></tr>
+</thead>
+<tbody>
+<tr><td class="mono">2025-09-26 09:25:55.011</td><td><span class="ok">BLACKLISTED</span></td><td>External (hagezi)</td><td>No target element detected; classification, confidence, reasons, tags, country, language and Tranco ranking all unrecorded</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="note">This decision carries no attached documents. It reflects a third-party blocklist entry rather than a SICPADetect analysis, which is why its analysis fields are empty.</p>
+
+<hr>
+
+<h2>3 · Provenance and integrity</h2>
+
+<div class="tablewrap">
+<table>
+<tbody>
+<tr><th scope="row">Job ID</th><td class="mono">01M13V2SKXHD400P2MSGRSGW7W</td></tr>
+<tr><th scope="row">Request commit</th><td class="mono">2c09ffccf09e61401c32301cf4ffe725d9b9b052</td></tr>
+<tr><th scope="row">Requesting tenant</th><td><span class="mono">lotschberg-dev</span></td></tr>
+<tr><th scope="row">Saved search ID</th><td class="mono">872a6542-0555-4ab1-846d-549fb231d424</td></tr>
+<tr><th scope="row">Report rule ID</th><td class="mono">ee21fc76-d756-4834-bb4c-b18b4fadb230</td></tr>
+<tr><th scope="row">Range resolved at</th><td>28/08/2026 09:26:42 UTC — no range field, range bounds or range expression was supplied</td></tr>
+<tr><th scope="row">Dataset fetched at</th><td>28/08/2026 09:26:43 UTC</td></tr>
+<tr><th scope="row">Dataset</th><td><span class="mono">dataset.json.gz</span> — kind <em>urls</em>, 1 row, 1 reported total, 1 evidence file totalling 559,497 bytes</td></tr>
+<tr><th scope="row">Specification integrity</th><td><span class="ok">Verified</span> — <span class="mono">spec.md</span> SHA-256 <span class="mono">243b67706fff60b0ab6754e5db58b784f3eb262fa7c7857ab2807dc1e0152afe</span> matches the request</td></tr>
+<tr><th scope="row">Dataset integrity</th><td><span class="ok">Verified</span> — <span class="mono">dataset.json.gz</span> SHA-256 <span class="mono">a88e41173b333020d6e7050ac8bce87020daf97beb6aad9b4aa3b9335750c4e6</span> matches the request</td></tr>
+<tr><th scope="row">Evidence integrity</th><td><span class="ok">Verified</span> — the homepage capture&rsquo;s SHA-256 matches the request manifest</td></tr>
+<tr><th scope="row">Output format</th><td>html</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2>4 · Loose ends</h2>
+
+<ul>
+  <li><strong>Report reference.</strong> The specification template asks for a reference of the form REF-YYYY-NNN. No such reference was supplied, so the job ID is used instead.</li>
+  <li><strong>Document classification and model version.</strong> Neither was supplied in the request or dataset; both are recorded as unspecified rather than guessed.</li>
+  <li><strong>Second evidence document not included.</strong> The current decision lists a document named <em>homepage-html</em> against step <span class="mono">424b0d57-60d1-4227-a699-6ca5546120d6</span>, marked not included with reason <em>not-an-image</em>. Its bytes were not supplied with the request, so it could not be examined.</li>
+  <li><strong>Country versus language.</strong> The analysis records the service country as US while the page language is Thai, and the capture itself shows a Thai-language page that declines service to the viewer&rsquo;s region. The source data does not reconcile these, and no inference is drawn here.</li>
+  <li><strong>Duplicated status timestamps.</strong> The BLACKLISTED and ANALYSIS_DONE steps of the current decision share the timestamp <span class="mono">2026-08-27T10:53:32.648625Z</span> exactly and carry identical analysis payloads. Their order in this report follows the order in the source history.</li>
+  <li><strong>Unexplained figure in the capture.</strong> The value 15,199,423,669 appears at the foot of the site navigation in the screenshot. Its meaning is not stated anywhere in the source data.</li>
+  <li><strong>Empty case-management steps.</strong> The case state is ILLEGAL_GAMBLING but the step list is empty, so no enforcement history is available.</li>
+  <li><strong>Personal identifiers withheld.</strong> The dataset names the submitting operator account and the request names a submitting user reference. Both are withheld from this report; the external blocklist feed name is retained as it identifies a project, not a person.</li>
+  <li><strong>Spec template scope.</strong> The specification template carries three record blocks. Only one record exists in the dataset, so the two empty blocks are not reproduced.</li>
+</ul>
+
+<p class="note"><strong>Fill guide.</strong> Status cell: <span class="ok">Confirmed</span> · <span class="warn">Pending</span> · <span class="off">Dismissed</span>. Confidence badge grades: A ≥ 0.90, B 0.75–0.89, C 0.60–0.74, D 0.40–0.59, F &lt; 0.40. This record is graded A on a confidence of 0.95.</p>
+
+<p class="foot">SICPADetect · Ministry of Digital Economy and Society, Thailand · URLs are defanged for safe handling · Page size A4</p>
+
+</article>
+</body>
+</html>
