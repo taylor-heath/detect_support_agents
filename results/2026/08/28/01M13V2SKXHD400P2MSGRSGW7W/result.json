@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M13V2SKXHD400P2MSGRSGW7W",
+  "requestCommit": "2c09ffccf09e61401c32301cf4ffe725d9b9b052",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-28T09:27:39.605Z",
+  "finishedAt": "2026-08-28T09:31:22.410Z",
+  "durationMs": 222805,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 17540,
+      "sha256": "74d9aab086f38468b1990304a8f46d753427086e33fc3c947de760f08d4aeaa7",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M13V2SKXHD400P2MSGRSGW7W/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 1,
+    "reportedTotal": 1,
+    "recordsRendered": 1,
+    "decisionsRendered": 2,
+    "statusStepsRendered": 5,
+    "evidenceFilesSupplied": 1,
+    "evidenceFilesExamined": 1,
+    "evidenceDocumentsOmittedBySource": 1,
+    "attachmentHashesVerified": 3,
+    "gamblingRows": 1,
+    "blacklistedRows": 1,
+    "looseEndsRecorded": 9
+  },
+  "error": null
+}
