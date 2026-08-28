@@ -1,0 +1,49 @@
+attempt 1 — report.custom — job 01M144RR37TB7CB9GB2QAKJ7K3
+request commit 9d8d54854db22bbd0fc4035dc7c13bd161517021
+claimed 2026-08-28T12:17:29.249Z, lease honoured through result commit
+
+input
+  request.json           type=report.custom typeVersion=1 outputFormat=html
+  attachments            3/3 sha256 verified against the request manifest
+  dataset.json.gz        kind=urls rowCount=1 reportedTotal=1 domainIds=1
+  execution              rangeField/rangeFrom/rangeTo all null -> no range filter
+                         applied; resolvedAt 2026-08-28T12:15:59.192Z used verbatim
+  query                  {} (empty saved-search filter set)
+
+render
+  template               spec.md, fixed-format evidence template
+  style block            reused byte-identical from spec.md (rule 11)
+  crest                  reused byte-identical from spec.md
+  record blocks          template carries 3; 1 emitted, one per classified URL (rule 5)
+  screenshot             embedded as base64 data URI, unaltered; sha256 matches the
+                         request manifest entry for the evidence file
+  capture timestamp      taken from the detection step the capture is attached to
+                         (ANALYSIS_DONE, insertedAt 2026-08-27T10:53:32Z), not from
+                         report generation time (rule 7)
+  URLs                   defanged (rule 8)
+  layout                 headless Chromium print-to-PDF: 2 A4 portrait pages
+
+values reported absent (rule 6, no inference)
+  Report reference       not supplied in request or dataset
+  Reporting period       execution range is null; no period to state
+  Document classification  not supplied
+  System / model version   not supplied
+  Subcategory            no approved subcategory list supplied with the job (rule 4)
+
+judgements worth noting
+  Status                 dataset currentStatus BLACKLISTED -> template vocabulary
+                         "Confirmed" (class ok)
+  Confidence             confidencePercent 95 -> 0.95, badge grade g-a per fill guide
+  Capture valid          reported "No". The capture was inspected: the game keywords
+                         (WHEEL, CRASH, BLACKJACK, LIMBO, DICE, KENO, Live RTP) are
+                         legible, but it is a viewport-only image carrying no clock
+                         and no address bar, so the three-part attestation in rule 10
+                         cannot be made in full.
+  Source                 decision initialAuthor carries an operator account name; the
+                         submission is reported with the account name withheld, since
+                         personal data must not be committed to this repository.
+
+not carried into the report
+  documents[].homepage-html  marked included=false, omitted="not-an-image" by the
+                         source; no bytes supplied, so nothing to embed. The template
+                         forbids adding sections, so this is recorded here only.

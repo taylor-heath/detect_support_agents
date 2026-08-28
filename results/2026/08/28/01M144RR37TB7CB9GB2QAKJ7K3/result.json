@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M144RR37TB7CB9GB2QAKJ7K3",
+  "requestCommit": "9d8d54854db22bbd0fc4035dc7c13bd161517021",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-28T12:17:29.249Z",
+  "finishedAt": "2026-08-28T12:21:16.601Z",
+  "durationMs": 227352,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 776063,
+      "sha256": "21330c4d0aca8cbab957336461902724ef7f85341547c076861166ba958c32d7",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M144RR37TB7CB9GB2QAKJ7K3/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 1,
+    "reportedTotal": 1,
+    "recordsRendered": 1,
+    "recordBlocksInTemplate": 3,
+    "recordBlocksEmitted": 1,
+    "placeholdersFilled": 18,
+    "fieldsNotAvailable": 5,
+    "attachmentHashesVerified": 3,
+    "evidenceFilesSupplied": 1,
+    "evidenceFilesEmbedded": 1,
+    "evidenceDocumentsOmittedBySource": 1,
+    "embeddedImageBytes": 559497,
+    "rationaleClausesRendered": 4,
+    "renderedA4Pages": 2,
+    "captureAttestedValid": 0,
+    "captureAttestedInvalid": 1
+  },
+  "error": null
+}
