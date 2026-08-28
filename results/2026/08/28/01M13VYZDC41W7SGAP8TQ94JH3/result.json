@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M13VYZDC41W7SGAP8TQ94JH3",
+  "requestCommit": "dc77b5a9b4eea4907a9472fe469ebf1d8b8879a8",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-28T09:44:36.810Z",
+  "finishedAt": "2026-08-28T09:51:13.579Z",
+  "durationMs": 396769,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 779929,
+      "sha256": "9f1cbd0d44bf6c4452a54d7a8fa114370f90b86866d528a20382f6ea8ce54d95",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M13VYZDC41W7SGAP8TQ94JH3/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 1,
+    "reportedTotal": 1,
+    "recordsRendered": 1,
+    "recordBlocksInTemplate": 3,
+    "recordBlocksEmitted": 1,
+    "placeholdersFilled": 20,
+    "fieldsNotAvailable": 5,
+    "attachmentHashesVerified": 3,
+    "evidenceFilesSupplied": 1,
+    "evidenceFilesEmbedded": 1,
+    "evidenceDocumentsOmittedBySource": 1,
+    "embeddedImageBytes": 559497,
+    "renderedA4Pages": 2,
+    "gamblingRows": 1,
+    "blacklistedRows": 1
+  },
+  "error": null
+}

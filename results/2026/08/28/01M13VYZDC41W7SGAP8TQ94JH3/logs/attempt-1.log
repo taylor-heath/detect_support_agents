@@ -1,0 +1,72 @@
+job 01M13VYZDC41W7SGAP8TQ94JH3  type report.custom  attempt 1  outputFormat html
+
+INPUT INTEGRITY
+  spec.md          sha256 b2f02064... matches request manifest   OK
+  dataset.json.gz  sha256 d632053d... matches request manifest   OK
+  evidence/.../homepage  sha256 0543dee2... matches manifest     OK
+  execution range: rangeField, rangeFrom, rangeTo, rangeExpression all null.
+  Applied verbatim: no date constraint, so the report covers the whole supplied
+  dataset (rowCount 1, reportedTotal 1). No range was re-resolved.
+
+SPEC CHANGE SINCE PREVIOUS RUN (job 01M13V2SKXHD400P2MSGRSGW7W)
+  spec.md now carries an 11-rule agent instruction block that was absent from the
+  previous revision, and the Screenshot row changed from a filename reference to an
+  inline <img class="shot"> placeholder. This attempt conforms to the new rules:
+  only bracketed placeholders were filled; the <style> block, crest, .record
+  wrapper, class names, fill guide and footer are byte-identical to the template;
+  no section, field or commentary was added; the capture is embedded rather than
+  referenced.
+
+FIELDS RECORDED AS "Not available" (spec rule 6 — absent is reported as absent)
+  Report reference        no reference of the form REF-YYYY-NNN exists in the
+                          request or the dataset. The job ID was NOT substituted.
+  Reporting period        no range bounds supplied.
+  Document classification not stated in the request or dataset.
+  System / model version  not recorded anywhere in the source data.
+  Subcategory             spec rule 4 permits only a subcategory from an approved
+                          list supplied with the job. No such list was supplied.
+                          The source tags (slots, casino, jackpot) are reported in
+                          "Keywords detected" instead, not promoted to a subcategory.
+
+QUALIFIED VALUES
+  Capture (date / time / TZ)  the source records no capture timestamp. Reported as
+                          the timestamp of the analysis step the capture is attached
+                          to (step 9f11d0de..., 2026-08-27T10:53:32.648625Z), with
+                          that qualification stated in the cell.
+  Capture valid           No. The capture was examined: gambling keywords (WHEEL,
+                          CRASH, BLACKJACK, LIMBO, DICE, KENO and the Thai casino
+                          navigation) and Roobet branding are legible, but the image
+                          contains no browser address bar and no clock, so the URL
+                          and capture time are not self-evidenced within it. The
+                          capture was embedded unaltered — not cropped, rescaled,
+                          annotated or redacted (spec rule 9).
+
+MATERIAL NOT PLACEABLE IN THE TEMPLATE
+  Spec rule 3 forbids adding any section, so the following are recorded here rather
+  than in the report:
+  - Second evidence document "homepage-html" is listed against the current decision
+    but marked included=false, reason "not-an-image". Its bytes were not supplied.
+  - The dataset carries a superseded decision (c6d640ce..., BLACKLISTED 2025-09-26,
+    author External (hagezi)) with no analysis payload and no documents. The fixed
+    template has one URL row per record, so only the current decision's URL is
+    reported; the earlier listing is summarised in "Source where URL was found".
+  - Case management state is ILLEGAL_GAMBLING with an empty steps list.
+  - Analysis records country US while page language is th; the source does not
+    reconcile these and no inference was drawn.
+  - BLACKLISTED and ANALYSIS_DONE steps share the timestamp 2026-08-27T10:53:32.648625Z.
+  - The figure 15,199,423,669 appears in the capture with no explanation in the source.
+  - The template ships three record blocks; the dataset holds one classified URL, so
+    one block was emitted (spec rule 5).
+
+PERSONAL DATA
+  The dataset names the submitting operator account and the request carries a user
+  reference. Both were withheld from the report and from this log. The external
+  blocklist feed name was retained: it identifies a project, not a person.
+
+OUTPUT
+  assets/01M13VYZDC41W7SGAP8TQ94JH3/report.html  779,929 bytes, self-contained,
+  no external image or stylesheet dependencies. Crest and capture both inline.
+  Print check: renders to 2 A4 pages under the template's @page rule; the record
+  block fits within one page (page-break-inside:avoid honoured).
+  Asset storage kind "git": git-lfs is not available in this environment and the
+  asset is well under the 25 MB limit.
