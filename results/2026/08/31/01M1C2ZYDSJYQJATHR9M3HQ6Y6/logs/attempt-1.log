@@ -1,0 +1,14 @@
+attempt 1 — report.custom — job 01M1C2ZYDSJYQJATHR9M3HQ6Y6
+claimed 2026-08-31T14:20:07.711Z  finished 2026-08-31T14:38:27.482Z
+request commit da8ce45ea4f10504e387d8fa3ac5898d9e0b397c
+attachments verified: spec.md, dataset.json.gz (sha256 both match request.attachments)
+execution range applied verbatim: 2026-08-26T22:00:00.000Z -> 2026-08-27T21:59:59.999Z
+dataset kind=query, 652 rows; mapped onto the spec's logical columns
+working set: -4 review-needed, -0 duplicate URL => 648 rows
+classification: 45 keyword-assigned, 73 reasoning-inferred (61.9%)
+coverage disclosure triggered: inferredShare 61.9% > 30 threshold
+short_abbreviation monitor triggered: {'term': 'BET', 'count': 28, 'share': 48.3}
+clustering: 66 clusters, 23 multi-URL, 0 similarity merges
+regulatory blocking: 5 phrase matches, all anti-bot challenge pages; 0 confirmed regulatory blocks
+redaction: manual-entry operator identity omitted from the report (personal data)
+render: A4 portrait, 25mm margins, 160mm content column, 0 external resource requests, no horizontal overflow

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1C2ZYDSJYQJATHR9M3HQ6Y6",
+  "requestCommit": "da8ce45ea4f10504e387d8fa3ac5898d9e0b397c",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-31T14:20:07.711Z",
+  "finishedAt": "2026-08-31T14:38:27.482Z",
+  "durationMs": 1099771,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 159698,
+      "sha256": "72419c412dbefca2dbc3010645061e8851c86cb4351ea49210407771d80465fd",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1C2ZYDSJYQJATHR9M3HQ6Y6/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 652,
+    "reportedTotal": 652,
+    "rowsDroppedReviewNeeded": 4,
+    "rowsDroppedDuplicateUrl": 0,
+    "standardSetSize": 648,
+    "gamblingRows": 118,
+    "nonGamblingRows": 336,
+    "unreachableRows": 168,
+    "unknownRows": 26,
+    "analysisErrorRows": 26,
+    "evaluationDays": 1,
+    "distinctSuffixes": 15,
+    "keywordAssignedRows": 45,
+    "reasoningInferredRows": 73,
+    "inferredSharePct": 61.9,
+    "generalSharePct": 14.4,
+    "distinctKeywordsMatched": 27,
+    "keywordsNeverMatched": 261,
+    "distinctClusters": 66,
+    "multiUrlClusters": 23,
+    "singletonClusters": 43,
+    "clustersToHalf": 15,
+    "similarityMerges": 0,
+    "crossSubcategoryClusters": 1,
+    "tldRotationClusters": 14,
+    "linkageCandidates": 7,
+    "redirectRows": 48,
+    "distinctRedirectSources": 55,
+    "rankedGamblingRows": 74,
+    "blockingPhraseMatches": 5,
+    "confirmedRegulatoryBlocks": 0,
+    "blocklistFeedRows": 118,
+    "attachmentHashesVerified": 2,
+    "chartsRendered": 14,
+    "tablesRendered": 15,
+    "externalResourceRequests": 0,
+    "renderedA4Pages": 29
+  },
+  "error": null
+}
