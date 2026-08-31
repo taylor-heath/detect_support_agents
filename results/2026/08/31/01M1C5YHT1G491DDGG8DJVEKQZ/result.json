@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1C5YHT1G491DDGG8DJVEKQZ",
+  "requestCommit": "4b12afd108993650df10d87300360943ef79db7c",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-31T15:14:04.172Z",
+  "finishedAt": "2026-08-31T15:35:56.736Z",
+  "durationMs": 1312564,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 94480,
+      "sha256": "8d16f885bebceab730a7d7523f3f806491f1d43c7d51d79ef8518e7dc97d368f",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1C5YHT1G491DDGG8DJVEKQZ/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 652,
+    "reportedTotal": 652,
+    "reviewNeededDropped": 4,
+    "duplicateUrlsDropped": 0,
+    "standardSetTotal": 648,
+    "gamblingRows": 118,
+    "notGamblingRows": 336,
+    "unreachableRows": 168,
+    "unknownRows": 26,
+    "gamblingSharePct": 18.2,
+    "licensedGamblingNormalised": 0,
+    "evaluationPeriodDays": 1,
+    "lexiconEntriesLoaded": 291,
+    "lexiconDistinctKeywords": 286,
+    "keywordsMatched": 27,
+    "keywordsNeverMatched": 261,
+    "subcategoryKeywordAssigned": 45,
+    "subcategoryInferred": 73,
+    "inferredSharePct": 61.9,
+    "generalSharePct": 5.9,
+    "unspecifiedRows": 0,
+    "signalTagsAssigned": 79,
+    "tagsPerSite": 0.67,
+    "distinctClusters": 66,
+    "multiUrlClusters": 23,
+    "singletonClusters": 43,
+    "clustersToHalf": 15,
+    "top5ClusterSharePct": 24.6,
+    "similarityMerges": 0,
+    "crossSubcategoryClusters": 1,
+    "tldRotatingClusters": 14,
+    "operatorLinkagePairsReported": 1,
+    "operatorLinkagePairsWithheld": 6,
+    "regulatoryBlockingEvidence": 0,
+    "botChallengePages": 5,
+    "rankedGamblingRows": 15,
+    "blocklistFeedRows": 118,
+    "cardsRendered": 30,
+    "cardsOmitted": 0,
+    "heatMapsRendered": 3,
+    "attachmentHashesVerified": 2,
+    "externalResourceRequests": 0
+  },
+  "error": null
+}
