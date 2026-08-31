@@ -1,0 +1,45 @@
+job=01M1C4J59Y8G5BVSH0GVCXY1JZ type=report.custom typeVersion=1 attempt=1 agent=report.custom/1.0.0
+requestCommit=f8395fd8a8cb7cb66ffa5235a31f5fc6e5c65c7b outputFormat=html
+attachments verified: 2/2 sha256 match (spec.md, dataset.json.gz)
+dataset kind=query rowCount=652 reportedTotal=652 distinctUrls=652 evidenceFiles=0
+execution applied verbatim: rangeFrom=2026-08-26T22:00:00.000Z rangeTo=2026-08-27T21:59:59.999Z rangeField=null
+  rangeField is null, so no field selector exists to filter on; the dataset as fetched by the
+  gateway is used as-is and no relative range was re-resolved. All 652 classification steps
+  fall on 2026-08-27, consistent with the range.
+spec: fixed-format evidence template + Appendix A (subcategory data model)
+  style block, crest, Appendix A.1-A.4, fill-guide note and footer carried over verbatim
+  Appendix A parsed for the keyword model: 291 keyword entries across 14 categories,
+  286 distinct (7 product subcategories A.1 + 7 signal tags A.2), matched per A.3 rules
+  (Thai substring case-sensitive; Latin token-boundary case-insensitive; mixed substring;
+  hashtag re-run against product categories; two-letter abbreviations only standalone or
+  at a domain-stem separator)
+records: one block per classified URL (652), rendered in dataset order
+status mapping: BLACKLISTED->Confirmed(ok) 116 | REVIEW_NEEDED->Pending(warn) 213 |
+  WHITELISTED->Dismissed(off) 297 | ANALYSIS_ERROR->"Not available"(off) 26
+  ANALYSIS_ERROR rows carry no classification, confidence, reasons or tags; every derived
+  field on them is reported as "Not available" per spec rule 6 rather than dropped
+subcategory: assigned only to the 118 ALLOWS_ONLINE_GAMBLING records, exactly one from A.1
+  football_betting 54 | slots 52 | casino 10 | lottery 2 | general_gambling 0
+  selection: count of A.1 keyword matches (general_gambling excluded as catch-all) plus
+  classifier product tags; ties resolved to the tag the classifier listed first, then A.1 order
+  tag->A.1 mapping grounded in A.1 membership and the A.3 collision rules:
+  casino->Casino, slots->Slots, baccarat->Baccarat, poker->Playing card, lottery->Lottery,
+  betting/sports/sports betting->Football Betting (พนันกีฬา resolves to Football Betting)
+  jackpot, wagering, bingo are not product categories in A.1 and cast no vote
+  non-gambling records: "Not available" (534)
+keywords detected: A.1/A.2 matches (171 records) unioned with the classifier's own tags
+signal tags: NOT rendered. Appendix A.2 refers to a "Signal tags" field, but the record block
+  in this spec has no such row; rules 2 and 5a forbid adding a field or editing the appendix,
+  so the A.2 assignment has nowhere to go in this template. Flagged, not worked around.
+heat maps: A.4 describes three heat maps but the template provides no placeholder for them
+  and rule 3 forbids adding sections; A.4 is reproduced as reference only.
+source of URL: 87 records carry a redirect origin (rendered defanged); 565 are manual
+  submissions - the submitting account is withheld and reported as "Not available"
+screenshot / SHA-256 / capture valid: no evidence captures accompany this query dataset,
+  so all three are "Not available" on every record; capture time comes from the
+  classification step timestamp (spec rule 7) and is present on the 626 classified rows
+render check: chromium headless, no horizontal overflow, no external resource requests,
+  Thai appendix text legible, markdown emphasis converted, all appendix rows well-formed
+asset: assets/01M1C4J59Y8G5BVSH0GVCXY1JZ/report.html 1037086 bytes, pushed to main before result
+lease re-verified immediately before writing result: held by this agent, not expired
+status=succeeded

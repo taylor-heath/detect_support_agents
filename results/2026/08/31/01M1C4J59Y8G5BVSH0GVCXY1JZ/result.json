@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1C4J59Y8G5BVSH0GVCXY1JZ",
+  "requestCommit": "f8395fd8a8cb7cb66ffa5235a31f5fc6e5c65c7b",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-31T14:53:48.936Z",
+  "finishedAt": "2026-08-31T15:00:24.829Z",
+  "durationMs": 395893,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 1037086,
+      "sha256": "d5518402972f3f8a309f8a5b916ffa2421bbf4741037b226c650e8e8f18f5798",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1C4J59Y8G5BVSH0GVCXY1JZ/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 652,
+    "reportedTotal": 652,
+    "recordsRendered": 652,
+    "distinctUrls": 652,
+    "statusConfirmed": 116,
+    "statusPending": 213,
+    "statusDismissed": 297,
+    "statusNotAvailable": 26,
+    "gamblingRows": 118,
+    "nonGamblingRows": 336,
+    "unavailableRows": 168,
+    "requireMoreAnalysisRows": 4,
+    "analysisErrorRows": 26,
+    "subcategoryFootballBetting": 54,
+    "subcategorySlots": 52,
+    "subcategoryCasino": 10,
+    "subcategoryLottery": 2,
+    "subcategoryGeneralGambling": 0,
+    "subcategoryNotAvailable": 534,
+    "appendixKeywordsParsed": 291,
+    "appendixKeywordsDistinct": 286,
+    "recordsWithAppendixKeywordHits": 171,
+    "rationaleClausesRendered": 1860,
+    "redirectSourcedRecords": 87,
+    "manualSourcedRecords": 565,
+    "capturesAvailable": 0,
+    "capturesEmbedded": 0,
+    "attachmentHashesVerified": 2,
+    "externalResourceRequests": 0,
+    "templateFieldsPerRecord": 11,
+    "appendixSectionsCarriedVerbatim": 4
+  },
+  "error": null
+}
