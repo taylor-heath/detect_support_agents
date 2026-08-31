@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1C3KJCQS2R9E4BT60ACZC2M",
+  "requestCommit": "f8395fd8a8cb7cb66ffa5235a31f5fc6e5c65c7b",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-31T14:47:35.774Z",
+  "finishedAt": "2026-08-31T14:53:15.589Z",
+  "durationMs": 339815,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 4033609,
+      "sha256": "e6a141aa5c97604c534b69399c58cb5d3c3dc6749867c19d548711516661689f",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1C3KJCQS2R9E4BT60ACZC2M/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "domainsIngested": 2,
+    "reportedTotal": 2,
+    "classifiedUrls": 3,
+    "recordsRendered": 3,
+    "currentDecisions": 2,
+    "supersededDecisions": 1,
+    "gamblingConfirmedRecords": 2,
+    "pendingReviewRecords": 1,
+    "dismissedRecords": 0,
+    "evidenceCapturesEmbedded": 3,
+    "distinctCaptureHashes": 2,
+    "capturesAttestedValid": 0,
+    "capturesAttestedInvalid": 3,
+    "attachmentHashesVerified": 5,
+    "subcategoriesAssigned": 0,
+    "keywordsReported": 1,
+    "rationaleClausesRendered": 12,
+    "externalResourceRequests": 0,
+    "templateFieldsPerRecord": 12
+  },
+  "error": null
+}

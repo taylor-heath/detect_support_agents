@@ -1,0 +1,22 @@
+job=01M1C3KJCQS2R9E4BT60ACZC2M type=report.custom typeVersion=1 attempt=1 agent=report.custom/1.0.0
+requestCommit=f8395fd8a8cb7cb66ffa5235a31f5fc6e5c65c7b outputFormat=html
+claim ok lease=10m
+attachments verified: 5/5 sha256 match (spec.md, dataset.json.gz, 3 evidence captures)
+dataset kind=urls rowCount=2 reportedTotal=2 domains=2 decisions=3 evidenceFiles=3
+execution range: rangeFrom=null rangeTo=null rangeField=null -> no date constraint applied (verbatim from request)
+spec: fixed-format evidence template (SICPADetect Site Classification Report, A4 portrait, @page 20/25mm)
+  style block, crest image, fill-guide note and footer carried over verbatim from spec.md
+records: one block per classified URL (3)
+  final9poker.com decision 211ae86a (current)    BLACKLISTED    -> Confirmed  0.95 g-a
+  final9poker.com decision 1e7fcab0 (superseded) BLACKLISTED    -> Confirmed  0.95 g-a
+  new.tonpoker.online decision ba47aa70 (current) REVIEW_NEEDED -> Pending    0.30 g-f
+capture timestamps taken from the ANALYSIS_DONE classification step of each decision (spec rule 7)
+subcategory: no approved list supplied with the job -> "Not available" on all records (spec rule 4)
+keywords: from classification tags; tonpoker record has no tags -> "Not available"
+source of URL: only a manual ANALYSIS_REQUESTED step is recorded; no platform/account/feed -> "Not available"
+capture valid: No on all 3 - viewport-only page renders, no clock and no address bar in frame
+captures embedded as base64 data URIs, unmodified (no crop, rescale or annotation)
+render check: chromium headless, no horizontal overflow, no external resource requests
+asset: assets/01M1C3KJCQS2R9E4BT60ACZC2M/report.html 4033609 bytes, pushed to main before result
+lease re-verified immediately before writing result: held by this agent, not expired
+status=succeeded
