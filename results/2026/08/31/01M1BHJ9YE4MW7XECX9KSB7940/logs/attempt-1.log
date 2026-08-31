@@ -1,0 +1,50 @@
+job=01M1BHJ9YE4MW7XECX9KSB7940 type=report.custom typeVersion=1 attempt=1
+agent=report.custom/1.0.0 requestCommit=a38ceccfd325984c88a07dda36d98876c99be103
+
+[ingest] attachments verified against request.attachments[].sha256
+  spec.md        21736 B  a8c8d975... OK (matches params.specSha256)
+  dataset.json.gz  331 B  9d3d752f... OK
+  dataset.csv  7448798 B  10cfb0c0... OK
+[ingest] csv delimiter=';' headers=9 required=9 missing=0
+[ingest] optional columns: legal entity ABSENT, legal entity country ABSENT
+[ingest] execution range: rangeFrom=null rangeTo=null rangeField=null
+         -> no temporal constraint applied (params used verbatim, not re-resolved)
+
+[filter] spec.md header directive: remove urls containing "twitter.comn"
+         literal token matches: 0
+         "twitter.com" matches: 1 (https://www.twitter.com/Quicktiming,
+         Status='Illegal gambling', Rank=16)
+         DECISION: applied on "twitter.com" as the evident intent; the row would
+         otherwise head the Section C top-15 table. Documented as an open issue
+         in the report ("Notas metodologicas y puntos abiertos").
+
+[workingset] rows in file           13793
+[workingset] - header filter           -1
+[workingset] - status 'Review needed'  -0
+[workingset] - duplicate URL           -6
+[workingset] = standard set         13786
+
+[metrics] juego=10507 (76.2%) noJuego=3279 (23.8%) unreachable=0
+[metrics] status values present: Illegal gambling=10514, Not gambling=3279
+          (no Licensed gambling / Unreachable / Review needed rows in sample)
+[metrics] period 2026-07-16 -> 2026-08-30 (46 days), 46 dates with activity
+[metrics] iva internal: registrado=41 listado=72 noRegistrado=10394
+[metrics] suffixes=266 brandSeeds=1594 redirectSources=226 rankedGambling=372
+
+[b1] brand heat map: 29 brands profiled, 1 with zero matches (BETSONN)
+[b1] licence number / country of registration: NOT RESOLVED (58 fields).
+     Spec asks for external lookup; no verifiable citable source available in
+     this run. Left explicitly blank per the spec rule "nunca inventar un valor".
+
+[render] output=html, A4 portrait, @page margin 20mm, content width 170mm
+[render] self-contained: 0 external resource requests, inline SVG charts
+[render] validation: well-formed, 1 <h1>, no heading level skips,
+         lang="es", charset utf-8, no horizontal overflow at 375/643/820 px
+[render] print check: 21 A4 pages, MediaBox 595x842 pt
+
+[publish] asset committed before result (invariant S2)
+          assets/01M1BHJ9YE4MW7XECX9KSB7940/report.html
+          90792 B sha256=377254659655ed9127d4d57c24bc502b3147dc158d56ba776704d58feddcc9e8
+[publish] lease re-verified before result commit (invariant C2): held by this agent
+
+status=succeeded

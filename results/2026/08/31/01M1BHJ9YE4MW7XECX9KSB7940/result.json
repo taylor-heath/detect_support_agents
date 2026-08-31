@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1BHJ9YE4MW7XECX9KSB7940",
+  "requestCommit": "a38ceccfd325984c88a07dda36d98876c99be103",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-08-31T09:21:09.879Z",
+  "finishedAt": "2026-08-31T09:35:03.249Z",
+  "durationMs": 833370,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 90792,
+      "sha256": "377254659655ed9127d4d57c24bc502b3147dc158d56ba776704d58feddcc9e8",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1BHJ9YE4MW7XECX9KSB7940/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 13793,
+    "reportedTotal": 13793,
+    "rowsRemovedByHeaderFilter": 1,
+    "rowsDroppedReviewNeeded": 0,
+    "rowsDroppedDuplicateUrl": 6,
+    "standardSetSize": 13786,
+    "gamblingRows": 10507,
+    "nonGamblingRows": 3279,
+    "unreachableRows": 0,
+    "ivaRegistrado": 41,
+    "ivaNoRegistradoListado": 72,
+    "ivaNoRegistrado": 10394,
+    "evaluationDays": 46,
+    "distinctSuffixes": 266,
+    "distinctBrandSeeds": 1594,
+    "distinctRedirectSources": 226,
+    "rankedGamblingRows": 372,
+    "top100RegistradoRendered": 41,
+    "top100ListadoRendered": 72,
+    "b1BrandsProfiled": 29,
+    "b1BrandsWithZeroMatches": 1,
+    "b1LicenceFieldsUnresolved": 58,
+    "attachmentHashesVerified": 3,
+    "chartsRendered": 9,
+    "tablesRendered": 8,
+    "renderedA4Pages": 21,
+    "externalResourceRequests": 0,
+    "openIssuesFlagged": 6
+  },
+  "error": null
+}
