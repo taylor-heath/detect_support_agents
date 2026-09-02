@@ -1,0 +1,174 @@
+job=01M1H5MJCT5572RR678BASKB0M type=report.custom typeVersion=1 attempt=1 agent=report.custom/1.0.0
+requestCommit=7b7105f61bc14c47b178af883faecc29b4c5d5fd outputFormat=html
+attachments verified: 2/2 sha256 match (spec.md 43350B, dataset.json.gz 144419B);
+  params.specSha256 also matches spec.md.
+spec: "Data Insights & Patterns — Report Generation Instructions (MDES edition)"
+
+execution applied verbatim: rangeFrom=2026-08-26T22:00:00.000Z rangeTo=2026-08-27T21:59:59.999Z
+  rangeField=null rangeExpression=null resolvedAt=2026-09-02T13:41:17.894Z
+  No relative range was re-resolved and no field selector exists to filter on, so the
+  dataset as fetched by the gateway (kind=query, rowCount=652, reportedTotal=652) is used
+  as-is. Every row's "Updated at" falls on 2026-08-27, consistent with the range.
+
+provenance note. This job's params (savedSearchId, reportRuleId, execution range, spec
+  sha256) are identical to job 01M1C5YHT1G491DDGG8DJVEKQZ of 2026-08-31, and the dataset
+  differs only in its fetch stamps: all 652 rows compare byte-identical, with only
+  fetchedAt (2026-08-31T15:10:34.281Z -> 2026-09-02T13:41:19.329Z) and execution.resolvedAt
+  changed. The idempotencyKey differs, so this is a distinct job and was run, not skipped.
+  The pipeline was rebuilt independently here rather than copied; every deterministic
+  figure below reproduces that run exactly (counts, lexicon, keyword pass, clustering,
+  concentration, suffixes, redirects, ranking, linkage). The one axis that differs is the
+  §4.4 reasoning pass, which is a judgement, not a computation — see below.
+
+ingest (§1). The gateway feed is JSON, not the semicolon CSV the spec describes, so its
+fields were mapped onto the required columns:
+  Domain <- name | URL <- currentDecision.url | Source <- currentDecision.initialAuthor
+  Rank <- details.trancoListRanking | Updated at <- updatedAt
+  Confidence <- details.confidencePercent | LLM Reasoning <- details.reasons joined
+  Case Management Status <- caseManagement.currentState
+  Status <- details.classification, normalised per the §1 table:
+    ALLOWS_ONLINE_GAMBLING 118 -> Gambling
+    NO_ALLOWS_ONLINE_GAMBLING 336 -> Not gambling
+    UNAVAILABLE 168 -> Unreachable
+    REQUIRE_MORE_ANALYSIS 4 -> Review needed
+    null (workflow ANALYSIS_ERROR) 26 -> Unknown
+  Status is taken from the classification rather than the workflow state (BLACKLISTED 116 /
+  WHITELISTED 297 / REVIEW_NEEDED 213 / ANALYSIS_ERROR 26) because the spec's Status values
+  are gambling-classification values; the classification mapping also populates every branch
+  of the table, whereas the workflow state leaves Unreachable empty and would discard the
+  168 rows the crawler could not reach.
+  optional columns: Interesting Keywords <- details.tags; Remarks <- currentStep.comment
+  (empty throughout). Legal entity and legal-entity country are absent from the feed, so
+  they are never inferred: blocklist rows carry null.
+  §0 normalisation: caseManagement ILLEGAL_GAMBLING (116 rows) normalised to "Gambling" on
+  ingest. Rows arriving as Licensed gambling: 0 (license is null on all 652 rows). No
+  legal/illegal/licensed axis, label, header or metric name appears anywhere in the report.
+  encoding: UTF-8 verified, 66 rows carry Thai script intact, 0 mojibake.
+  required columns present: 9/9.
+
+working set (§3): 652 raw - 4 Review needed = 648; 0 duplicate URLs dropped. total=648.
+
+lexicon (§2, Appendix A): parsed directly out of the spec's Appendix A tables rather than
+  transcribed, to remove any risk of copy error. 14 categories, 291 entries,
+  286 distinct — matches the spec's own stated count of 286.
+  5 cross-tab duplicates (คาสิโน, คาสิโนออนไลน์, พนันกีฬา, พนันบอล, แทงบอล) resolved to the
+  specific product tab per §2.4; รูเล็ตออนไลน์ counted once (Casino = 14 distinct).
+  Loaded as found: nothing added, translated or extended. suggestedLexiconAdditions: none.
+  matching (§2.3/A.3): Thai = case-sensitive substring; Latin = case-insensitive on a
+  token boundary; mixed (สล็อต pg, จับยี่กี VIP) = substring, case-insensitively, since a
+  boundary test is meaningless around Thai; hashtags matched with '#' then re-run stripped
+  against the product tabs (§4.3).
+  short abbreviations PG PP FC XO SA WM AG AE: confined to the Domain/URL text and matched
+  only as a whole domain segment or at a segment edge. The spec's own example `slotxo` shows
+  a stem edge counts with no separator present, which is what reconciles "stands alone or at
+  a separator inside a domain stem" with "a bare occurrence inside running prose does not
+  count". A prose-boundary reading would have missed FC on qpfc.com.
+  Abbreviations matches: BET 28, WALLET 10, RTP 8, WIN 7, VIP 4, FC 1 (58 total).
+  §2.3 flag: BET accounts for 48.3% of Abbreviations matches — over the
+  20% mark, so flagged as a probable false-positive source (it matches the standalone word
+  "bet" in classifier prose).
+
+subcategory and signal tags (§4):
+  530 non-gambling rows -> "Not applicable", method n/a, no tags (§4.1).
+  118 gambling rows: 45 assigned by keyword (§4.2), 73 by the reasoning pass (§4.4).
+  0 rows hit §4.4 constraint 6 ("Unspecified"): every gambling row has reasoning text.
+  reasoning pass: reasons arrive as clauses prefixed "Screenshot:" and "URL:";
+  URL-attributed clauses are excluded from the product judgement per constraint 2, which is
+  branding rather than offering. Product terms are read out of the reasoning itself and are
+  never added to the lexicon. Primary offering = most mentions, then earliest mention, then
+  A.1 order; the rest go to subcategoryAlternatives (constraint 3). Constraint 5 applied
+  where the reasoning describes a site listing/reviewing/linking other gambling sites.
+  Each inferred row carries a subcategoryBasis quoting the phrase that drove it (constraint 8).
+  distribution: Football Betting 40 (21 kw / 19 inferred) | Casino 35 (4 kw / 31 inferred) | Slots 28 (17 kw / 11 inferred) | General Gambling 9 (2 kw / 7 inferred) | Lottery 2 (0 kw / 2 inferred) | Playing card 2 (0 kw / 2 inferred) | Baccarat 2 (1 kw / 1 inferred)
+  No value outside Appendix A.1 was emitted.
+  divergence from the 2026-08-31 run on identical data: the keyword pass agrees exactly on
+  every tab (Football 21, Slots 17, Casino 4, General 2, Baccarat 1, Lottery 0, Playing card
+  0 = 45). The 73 inferred rows are distributed differently (that run read Casino 37 /
+  Slots 16 / Football 11; this one reads Casino 31 / Football 19 / Slots 11). §4.4 is an
+  explicit judgement step, so two passes over the same prose can differ. Each assignment
+  here is traceable to a quoted phrase: the Football-assigned rows include FIFA World Cup
+  betting slips, "sports betting advertisements", sportsbook-first navigation and the ufabet
+  family. Subcategory figures carry their method split everywhere they appear, and the
+  methodology card states that they are indicative.
+  signal tags: Deposit & Withdrawal 10, Promotions 0, Marketing & Acquisition 18, Affiliate & Agent 2, Vague-Evasion Terms 0, Abbreviations 49, Hashtags 0.
+    The three zeros are real, not a matching failure: no keyword from those tabs occurs
+    anywhere in the dataset. tagsPerSite=0.67.
+  §4.6: inferredShare=61.9%, generalShare=7.6%, keywordsNeverMatched=259 of 286 distinct.
+    inferredShare > 30%, so the report states plainly on the methodology card that the
+    lexicon has poor coverage of this dataset and that subcategory figures are indicative
+    only — the Thai-lexicon-against-international-domains case the spec anticipates.
+
+clustering (§5): 66 clusters over the 118 gambling URLs; 23 multi-URL, 43 singletons;
+  clustersToHalf=15, top5=24.6%, top10=39.8%. Seed linkage (§5.2.1) dominates:
+  the crawler asserts a redirect seed for 48 of the 118 rows. Near-miss merges: 0 fired —
+  the closest candidates (ufa/ufabet, JW 0.883) sit below the 0.90 floor, and the spec
+  forbids merging below it. "Differ only in trailing characters" was made testable as a
+  shared leading stem of >= 4 characters alongside JW >= 0.90; both thresholds are stated
+  on the methodology card. Rule 4 names each cluster by its shortest *member* stem, so a
+  seed-linked cluster is named for its members, not for the redirect entry point.
+  topCluster=moenas (7 URLs, seed-linked). Cross-subcategory clusters: 2
+  (ufabet: Football Betting 6, General Gambling 1; ufa: Casino 2, Football Betting 1).
+  TLD rotation: 14 clusters.
+  §5.3 linkage: 7 pairs met Jaccard >= 0.60; 6 shared only BET, the
+  abbreviation flagged above as a probable false-positive source, and are withheld with the
+  count stated in the card rather than presented as leads. 1 pair reported (ufa/ufagool).
+  Nothing was merged on this signal.
+
+metrics (§6): total=648 gambling=118 (18.2%) notGambling=336 unreachable=168 unknown=26.
+  period 2026-08-27 -> 2026-08-27, days=1, one point in the per-day series (stated in the
+  card caption rather than dressed up as a trend).
+  suffixes: .com 326/92 gambling, .th 157/1 gambling, .org 45/7 gambling, .net 24/6 gambling (top 10 rendered).
+  structure: direct 70, redirect 48, variant 0. topRedirect=localcoffeemontclair.com (6).
+  ranking: 15 gambling rows carry a numeric Tranco rank, so the real top 15 is rendered.
+  §6.11 regulatory-blocking evidence: 5 rows match the phrase list, all on the generic
+  "blocked by" trigger, and all of those excerpts are Cloudflare/CAPTCHA anti-bot
+  interstitials. No court order, regulator notice, jurisdictional block or Thai-language
+  equivalent occurs anywhere in the feed. Reporting those as regulatory blocking would
+  assert an enforcement finding the data does not support, so enforcement=0 and they are
+  reported separately in the E5 card as access controls set by the sites' own
+  infrastructure. E5 therefore takes the spec's zero branch: the set appears pre-enforcement.
+  §6.10 source analysis was computed (Manual 561/70 gambling; Redirect 87/48) but §7 defines
+  no card for it, and §7 is exhaustive, so it is not rendered.
+  §6.13 blocklist feed: 118 rows emitted internally for the Blocklist screen; it is not a
+  §7 card and so does not appear in the HTML.
+
+rendering (§7/§9): 30 cards in §7 order — exec summary, A1-A4, B1-B7, C1-C11, D1, E1-E5, F,
+  laid out as 38 card elements once metric rows are counted individually.
+  No card omitted: every card's data was available. Nothing renders outside a card.
+  A4 portrait via @page margin 20mm; body margin/padding 0; content column 170mm.
+  §9.4 names a 160mm column, which implies 25mm margins; the 20mm page geometry required
+  for this output format was kept and cards span the resulting 170mm column, identical left
+  and right. Metric cards were switched to border-box sizing so that a 4-up metric row fits
+  the content column on one line instead of wrapping its fourth card.
+  Verified in Chromium at the A4 content box (643x971px): document scrollWidth == clientWidth
+  (no horizontal scroll), no card or table or SVG exceeds the column, no card is taller than
+  one page, no card overflows its own box, and all three metric rows sit on a single line.
+  17 A4 pages when printed with the renderer's default margins.
+  palette per §9.2, product colours assigned in descending count order; signal bars at 70%
+  opacity. Heat maps per §9.3: single-hue #1F3F63 8%-100%, zero cells page background with a
+  hairline border, white text above 55% fill, rows and columns by descending total, legend at
+  both endpoints, 25x7 and 7x7 and 20x7 — under the 25x12 cap, nothing collapsed to "Other".
+  Thai keywords render in original script; axis and node labels truncate with an ellipsis and
+  carry the full string in a tooltip per §9.1.
+  self-contained: 0 external requests, 0 scripts, charts are inline SVG. lang="en", one h1,
+  no skipped heading levels, title/tooltip text on figures, theme-aware colours for light and
+  dark, print colours forced exact.
+  §2.1 respected: the report carries no lexicon provenance, no input or status mapping, no
+  column-validation notes and no loose ends. Where §9.1's footnote list conflicts with §2.1
+  and §7 Card F ("carries only inferredShare, generalShare and the clustering thresholds"),
+  Card F was followed. The footnote values it excludes are recorded here instead:
+  lexiconSource=Appendix A of spec.md (upstream
+  Gambling_Keywords_Full_English_Categories_V1.xlsx), lexiconVersion=V1, per-tab counts
+  21/32/14/20/12/11/22 product and 24/27/25/20/20/22/21 signal, rows normalised from
+  Licensed gambling=0, abbreviation flagged=BET.
+  The format brief's jump-link table of contents was omitted: it would be a card outside the
+  §7 set, and §7 is exhaustive.
+  No personal data is rendered: Source is reduced to its §3 category, so the feed's
+  initialAuthor username never reaches the report.
+
+loose ends: none. Every input field was either used, mapped above, or is absent from the feed.
+asset: assets/01M1H5MJCT5572RR678BASKB0M/report.html 81472 bytes
+  sha256=5082e88623f81adc5d9c05c15e8c49be2cfff61d3fa1ee0618770fd652732e19
+  storage=git (text/html; LFS is reserved for binary .docx/.pptx artefacts, and git-lfs is
+  not installed in this environment)
+  published before this result, per invariant S2.
