@@ -1,0 +1,52 @@
+attempt 2 — report.custom 1.0.0 — job 01M1H5MJCT5572RR678BASKB0M
+
+Attempt 1 claimed the job at 2026-09-02T14:14:55Z, rendered and committed
+assets/01M1H5MJCT5572RR678BASKB0M/report.html (commit bcf3f5e), then stopped
+without writing a result. Its lease lapsed at 2026-09-02T14:55:11Z.
+
+Attempt 2 reclaimed the expired lease and validated the standing artefact
+rather than re-rendering it, by recomputing the spec's metrics independently
+from requests/2026/09/02/01M1H5MJCT5572RR678BASKB0M/dataset.json.gz.
+
+Input verification
+  spec.md          sha256 be9918163be3a8cd03518511e3640b7fc2b18d5221714c01737cf56f4ab9abf6  OK
+  dataset.json.gz  sha256 7777beb46e06ede0d1c4f7cb8e4b211f829d77913deaae71bddc64ffeb3855b8  OK
+  execution range applied verbatim: 2026-08-26T22:00:00.000Z .. 2026-08-27T21:59:59.999Z
+  outputFormat html
+
+Independently reproduced (exact agreement)
+  standard set 648 after dropping 4 Review needed, 0 duplicate URLs
+  gambling 118 / not gambling 336 / unreachable 168 / unknown 26; share 18.2%
+  lexicon 291 entries, 286 distinct; keyword-assigned 45, inferred 73 (61.9%)
+  suffix table .com 326/92, .th 157/1, .org 45/7, .net 24/6
+  clusters 66, multi-URL 23, singletons 43, clustersToHalf 15,
+    top5 24.6%, top10 39.8%, TLD-rotating 14, similarity merges 0
+  source split: 48 redirect / 70 direct / 0 variant
+  busiest redirect seed localcoffeemontclair.com with 6 destinations
+  gambling ranking table: same 15 rows, same ranks, same order
+
+Judgement-based differences, resolved in the artefact's favour
+  Subcategory mix over the 73 rows assigned by the reasoning pass (spec 4.4
+    calls for a reading of LLM Reasoning; the recomputation used a coarser
+    regex proxy). Keyword-assigned counts agree exactly, so the divergence is
+    confined to the inference pass.
+  Cluster naming: the artefact names each cluster by its shortest member stem
+    per spec 5.2 rule 4 ("moenas"); the recomputation named by union-find root.
+  Blocking evidence: 5 "blocked by" hits are Cloudflare/anti-bot interstitials,
+    not authority-imposed blocks. The artefact excludes them from the
+    regulatory count and states this explicitly in card E5. Correct.
+
+Defect found and corrected
+  Card D1 subtitle read "Top 15 of the 15 gambling sites carrying a numeric
+  ranking". 74 gambling rows carry a numeric rank; 15 is the number displayed.
+  Subtitle corrected to 74. No other change to the artefact.
+
+Presentation checks
+  single h1, no skipped heading levels, lang="en"
+  @page A4 portrait / 20mm, body margin:0 padding:0, print-color-adjust exact
+  no element wider than 150mm (170mm usable), img/table/pre max-width:100%
+  0 external resource requests, 11 inline SVG charts, 3 heat maps
+  no legal/illegal/licensed classification vocabulary anywhere (spec 0)
+  no lexicon provenance, no loose-ends section (spec 2.1)
+
+Result: succeeded.
