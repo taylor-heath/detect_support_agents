@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1H8SDN2BKG09SAN68XPRQFS",
+  "requestCommit": "23c4155f29b2de3714669b6e2c8a9f894aa8c94a",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-03T08:28:17.513Z",
+  "finishedAt": "2026-09-03T08:40:27.978Z",
+  "durationMs": 730465,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 73092,
+      "sha256": "12287fa74fdbcbeef697fe91b394fcd698ba3fe461f65587f47598f4af14a9b2",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1H8SDN2BKG09SAN68XPRQFS/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 13793,
+    "reportedTotal": 13793,
+    "excludedByDirective": 1,
+    "reviewNeededDropped": 0,
+    "duplicateUrlsDropped": 6,
+    "standardSetTotal": 13786,
+    "gamblingRows": 10507,
+    "notGamblingRows": 3279,
+    "unreachableRows": 0,
+    "unknownRows": 0,
+    "gamblingSharePct": 76.2,
+    "ivaRegistrado": 41,
+    "ivaNoRegistradoListado": 72,
+    "ivaNoRegistrado": 10394,
+    "evaluationPeriodDays": 46,
+    "distinctVariantBrands": 1594,
+    "topBrandVariants": 19,
+    "redirectSeeds": 10,
+    "topRedirectTargets": 12,
+    "variantRows": 5979,
+    "redirectRows": 306,
+    "directRows": 4222,
+    "suffixesRanked": 10,
+    "top100IvaRegistradoRows": 41,
+    "top100IvaNoRegistradoListadoRows": 72,
+    "gamblingFeedRows": 10507,
+    "b1BrandsMapped": 29,
+    "b1BrandsWithZeroUrls": 1,
+    "b1LicenceNumbersAvailable": 0,
+    "chartsRendered": 7,
+    "tablesRendered": 8,
+    "narrativeCards": 5,
+    "attachmentHashesVerified": 3,
+    "externalResourceRequests": 0,
+    "renderedPdfPages": 11,
+    "assetBytes": 73092
+  },
+  "error": null
+}

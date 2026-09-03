@@ -1,0 +1,65 @@
+report.custom v1.0.0 — attempt 1 — job 01M1H8SDN2BKG09SAN68XPRQFS
+request commit 23c4155f29b2de3714669b6e2c8a9f894aa8c94a
+
+input
+  spec.md         21736 B  sha256 verified
+  dataset.json.gz   333 B  sha256 verified
+  dataset.csv   7448798 B  sha256 verified
+  execution: rangeField/rangeFrom/rangeTo all null; no range filter applied
+  query: {} (empty); dataset used verbatim, nothing re-resolved
+
+validacion del insumo (§1.2)
+  9 required columns present: Domain, URL, Status, Source, Rank, Updated at,
+    Confidence, LLM Reasoning, Case Management Status
+  optional legal-entity / legal-entity-country columns: ABSENT -> those fields
+    come only from the §1.3 A reference list, never inferred
+  Status values seen: Illegal gambling 10.507, Not gambling 3.279
+    (no Licensed gambling, Unreachable, Review needed or unrecognised values)
+
+conjunto de trabajo (§2)
+  ingested 13.793 rows
+  excluded 1 row(s) matching the header-block directive (see decision below)
+  dropped 0 rows with Status "Review needed"
+  dropped 6 duplicate URLs (first occurrence kept)
+  conjunto estandar = 13.786 rows
+  juego 10.507 / no juego 3.279 / inaccesibles 0 / desconocidos 0
+  IVA interno (solo filas de juego): registrado 41, no registrado listado
+    72, no registrado 10.394
+
+decisions taken
+  "twitter.comn" directive: the literal token appears in no URL or Domain of
+    this export. Any URL containing it necessarily contains "twitter.com", so
+    the filter was applied on that substring -- a superset of the literal
+    rule -- removing 1 row (a twitter.com URL carrying Status "Illegal
+    gambling" and Rank 16, which would otherwise have led the Section C
+    top-ranked table). The exclusion and its count are declared in the
+    report's method note rather than applied silently.
+  §B1 licence number / registration jurisdiction: reported as "No disponible"
+    for all 29 brands. The export carries no such column and the report is
+    self-contained with no external lookups; per the spec's "nunca inventar un
+    valor" rule these cells are declared unavailable instead of being filled
+    with unverified data. Legal entity is filled only where the brand matches
+    a §1.3 A platform, which supplies that datum.
+  §B1 brand matching: a URL counts toward a brand when the brand token is a
+    host label of the URL, or of its seed brand, that equals the token, begins
+    with it, or carries it hyphen-delimited. Path and query text are never
+    matched -- doing so pulled in unrelated sites carrying a brand inside a
+    redirect parameter. Variants and redirects are attributed to their seed
+    per §2 brand(fila). BETSONN matches 0 URLs and is rendered as an explicit
+    empty state.
+  registrable(host): eTLD+1 via a two-label public-suffix table, so subdomains
+    and variants inherit their platform's IVA class (§2.1).
+  narrative (§5) mentions neither VAT registration, legality nor blocking;
+    the IVA classification surfaces only in Sections C and D and in the §B1
+    legal-entity column.
+
+output
+  assets/01M1H8SDN2BKG09SAN68XPRQFS/report.html  73092 B
+  sha256 12287fa74fdbcbeef697fe91b394fcd698ba3fe461f65587f47598f4af14a9b2
+  language: Spanish throughout; percentages to one decimal
+  sections rendered: cabecera obligatoria, A, B, B1, C, D, E, notas de metodo
+  7 inline SVG charts (line, donut, 3 bar, 2 hub-and-spoke node diagrams)
+  validation: 1 h1, 6 h2, 13 h3, 8 tables, balanced tags,
+    0 external resource references, 0 unresolved template placeholders
+  print check: chromium headless, default margins -> 11 pages, MediaBox
+    595 x 842 pt (A4 portrait), @page rule honoured
