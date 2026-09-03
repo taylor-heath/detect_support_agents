@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Insights &amp; Patterns</title>
+<style>
+@page { size: A4 portrait; margin: 15mm; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin:0; padding:0; background:#fff; color:#16202b; font-size:9.5pt;
+  line-height:1.5; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }
+img, table, svg, pre { max-width:100%; }
+h1 { font-size:20pt; font-weight:800; margin:0 0 3px; letter-spacing:-.4px; }
+h2 { font-size:14pt; font-weight:800; color:#1F3F63; margin:20px 0 6px;
+  padding-bottom:5px; border-bottom:2.5px solid #1F3F63; page-break-after:avoid; }
+h3 { font-size:11pt; font-weight:800; margin:14px 0 4px; color:#16324f;
+  page-break-after:avoid; }
+p { margin:5px 0; }
+.lead { color:#4a5866; font-size:9pt; }
+.cards { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+.card { flex:1 1 110px; min-width:110px; border:1px solid #C9D2DB;
+  border-top:3px solid #1F3F63; padding:8px 10px; background:#f7f9fc;
+  page-break-inside:avoid; }
+.card .k { font-size:7.6pt; font-weight:700; color:#56677a;
+  text-transform:uppercase; letter-spacing:.3px; }
+.card .v { font-size:16pt; font-weight:800; color:#1F3F63; line-height:1.1; }
+.card .s { font-size:7.6pt; color:#6b7a8c; }
+table.d { width:100%; border-collapse:collapse; font-size:8.2pt; margin:6px 0 4px; }
+table.d th { background:#1F3F63; color:#fff; text-align:left; padding:4px 6px;
+  font-size:8pt; border:1px solid #16324f; }
+table.d td { padding:3px 6px; border:1px solid #dbe3ec; vertical-align:top; }
+table.d tbody tr:nth-child(even) td { background:#f5f8fb; }
+table.d td.num, table.d th.num { text-align:right;
+  font-variant-numeric:tabular-nums; }
+table.d tr { page-break-inside:avoid; }
+.mono { font-family:"SF Mono",Menlo,Consolas,monospace; font-size:7.6pt;
+  word-break:break-all; }
+.nw { white-space:nowrap; }
+.narr { border:1px solid #C9D2DB; border-left:5px solid #1F3F63;
+  padding:8px 10px; margin:8px 0; background:#f7f9fc; page-break-inside:avoid; }
+.narr .t { font-weight:800; color:#1F3F63; font-size:10pt; }
+.narr .c { font-size:8.6pt; font-style:italic; color:#40526b; margin-top:4px;
+  border-top:1px dotted #b9c6d6; padding-top:4px; }
+.empty { border:1px dashed #b9c6d6; background:#f7f9fc; padding:8px 10px;
+  color:#56677a; font-size:8.6pt; }
+figure { margin:8px 0; page-break-inside:avoid; }
+figcaption { font-size:7.8pt; color:#56677a; margin-top:3px; }
+ul { margin:5px 0 5px 16px; padding:0; }
+li { margin:2px 0; }
+.foot { margin-top:16px; padding-top:8px; border-top:1px solid #C9D2DB;
+  font-size:7.4pt; color:#56677a; }
+</style>
+</head>
+<body>
+<h1>Data Insights &amp; Patterns</h1>
+<p class="lead">SICPADetect · issued 03 September 2026 · 828 URLs analysed · evaluation period 2026-08-25 → 2026-09-03 (10 days).</p>
+<h2>Section A — The numbers</h2>
+<div class="cards">
+<div class="card"><div class="k">Total URLs analyzed</div><div class="v">828</div><div class="s">standard working set</div></div>
+<div class="card"><div class="k">Illegal gambling</div><div class="v">62</div><div class="s">7.5% of URLs</div></div>
+<div class="card"><div class="k">Licensed gambling</div><div class="v">0</div><div class="s">0.0% of URLs</div></div>
+<div class="card"><div class="k">Evaluation period</div><div class="v">10 days</div><div class="s">2026-08-25 → 2026-09-03</div></div>
+</div>
+<h3>URLs analyzed per day</h3>
+<figure><svg viewBox="0 0 900 280" width="100%" height="auto" role="img" aria-label="URLs analyzed per day" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="900" height="280" fill="#ffffff"/><line x1="56.0" y1="234.0" x2="886.0" y2="234.0" stroke="#dbe3ec"/><text x="50.0" y="238.0" font-size="11" fill="#6b7a8c" text-anchor="end" font-weight="normal">0</text><line x1="56.0" y1="179.0" x2="886.0" y2="179.0" stroke="#dbe3ec"/><text x="50.0" y="183.0" font-size="11" fill="#6b7a8c" text-anchor="end" font-weight="normal">170</text><line x1="56.0" y1="124.0" x2="886.0" y2="124.0" stroke="#dbe3ec"/><text x="50.0" y="128.0" font-size="11" fill="#6b7a8c" text-anchor="end" font-weight="normal">340</text><line x1="56.0" y1="69.0" x2="886.0" y2="69.0" stroke="#dbe3ec"/><text x="50.0" y="73.0" font-size="11" fill="#6b7a8c" text-anchor="end" font-weight="normal">510</text><line x1="56.0" y1="14.0" x2="886.0" y2="14.0" stroke="#dbe3ec"/><text x="50.0" y="18.0" font-size="11" fill="#6b7a8c" text-anchor="end" font-weight="normal">680</text><path d="M56.0,234.0 L56.0,233.7 L148.2,231.1 L240.4,231.7 L332.7,223.3 L424.9,225.3 L517.1,230.1 L609.3,232.7 L701.6,225.9 L793.8,224.3 L886.0,14.0 L886.0,234.0 Z" fill="#1F3F63" opacity="0.13"/><path d="M56.0,233.7 L148.2,231.1 L240.4,231.7 L332.7,223.3 L424.9,225.3 L517.1,230.1 L609.3,232.7 L701.6,225.9 L793.8,224.3 L886.0,14.0" fill="none" stroke="#1F3F63" stroke-width="2.2"/><text x="56.0" y="254.0" font-size="11" fill="#6b7a8c" text-anchor="start" font-weight="normal">2026-08-25</text><text x="240.4" y="254.0" font-size="11" fill="#6b7a8c" text-anchor="middle" font-weight="normal">2026-08-27</text><text x="424.9" y="254.0" font-size="11" fill="#6b7a8c" text-anchor="middle" font-weight="normal">2026-08-29</text><text x="609.3" y="254.0" font-size="11" fill="#6b7a8c" text-anchor="middle" font-weight="normal">2026-08-31</text><text x="793.8" y="254.0" font-size="11" fill="#6b7a8c" text-anchor="middle" font-weight="normal">2026-09-02</text><text x="886.0" y="254.0" font-size="11" fill="#6b7a8c" text-anchor="end" font-weight="normal">2026-09-03</text><line x1="56.0" y1="234.0" x2="886.0" y2="234.0" stroke="#8fa0b3"/></svg><figcaption>Distinct URLs updated per date, 2026-08-25 → 2026-09-03 (10 dates with activity).</figcaption></figure>
+<h3>Status distribution</h3>
+<figure><svg viewBox="0 0 900 250" width="100%" height="auto" role="img" aria-label="Status distribution" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="900" height="250" fill="#ffffff"/><path d="M130.0,25.0 A100.0,100.0 0 1 1 48.3,182.7 L85.1,156.7 A55.0,55.0 0 1 0 130.0,70.0 Z" fill="#9aa7b4"/><path d="M48.3,182.7 A100.0,100.0 0 0 1 84.7,35.9 L105.1,76.0 A55.0,55.0 0 0 0 85.1,156.7 Z" fill="#7d3c98"/><path d="M84.7,35.9 A100.0,100.0 0 0 1 130.0,25.0 L130.0,70.0 A55.0,55.0 0 0 0 105.1,76.0 Z" fill="#c0392b"/><rect x="290" y="34" width="14" height="14" fill="#9aa7b4"/><text x="311.0" y="46.0" font-size="13" fill="#16202b" text-anchor="start" font-weight="bold">Not gambling</text><text x="580.0" y="46.0" font-size="12" fill="#5b6b7b" text-anchor="start" font-weight="normal">540  (65.2%)</text><rect x="290" y="61" width="14" height="14" fill="#7d3c98"/><text x="311.0" y="73.0" font-size="13" fill="#16202b" text-anchor="start" font-weight="bold">Unreachable</text><text x="580.0" y="73.0" font-size="12" fill="#5b6b7b" text-anchor="start" font-weight="normal">226  (27.3%)</text><rect x="290" y="88" width="14" height="14" fill="#c0392b"/><text x="311.0" y="100.0" font-size="13" fill="#16202b" text-anchor="start" font-weight="bold">Illegal gambling</text><text x="580.0" y="100.0" font-size="12" fill="#5b6b7b" text-anchor="start" font-weight="normal">62  (7.5%)</text></svg><figcaption>Status distribution across the standard working set.</figcaption></figure>
+<table class="d"><thead><tr><th>Status</th><th class="num">Count</th><th class="num">Per cent</th></tr></thead><tbody>
+<tr><td>Not gambling</td><td class="num">540</td><td class="num">65.2</td></tr>
+<tr><td>Unreachable</td><td class="num">226</td><td class="num">27.3</td></tr>
+<tr><td>Illegal gambling</td><td class="num">62</td><td class="num">7.5</td></tr>
+</tbody></table>
+<h3>Top 10 URL suffixes</h3>
+<figure><svg viewBox="0 0 900 294" width="100%" height="auto" role="img" aria-label="Top 10 URL suffixes" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="900" height="294" fill="#ffffff"/><text x="112.0" y="21.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">.com</text><rect x="120" y="7.0" width="700.0" height="20" fill="#1F3F63" rx="1.5"/><text x="826.0" y="21.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">450</text><text x="112.0" y="49.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">.hn</text><rect x="120" y="35.0" width="102.7" height="20" fill="#1F3F63" rx="1.5"/><text x="228.7" y="49.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">66</text><text x="112.0" y="77.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">.org</text><rect x="120" y="63.0" width="45.1" height="20" fill="#1F3F63" rx="1.5"/><text x="171.1" y="77.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">29</text><text x="112.0" y="105.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">.br</text><rect x="120" y="91.0" width="35.8" height="20" fill="#1F3F63" rx="1.5"/><text x="161.8" y="105.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">23</text><text x="112.0" y="133.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">.ch</text><rect x="120" y="119.0" width="35.8" height="20" fill="#1F3F63" rx="1.5"/><text x="161.8" y="133.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">23</text><text x="112.0" y="161.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">.net</text><rect x="120" y="147.0" width="31.1" height="20" fill="#1F3F63" rx="1.5"/><text x="157.1" y="161.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">20</text><text x="112.0" y="189.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">.fr</text><rect x="120" y="175.0" width="26.4" height="20" fill="#1F3F63" rx="1.5"/><text x="152.4" y="189.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">17</text><text x="112.0" y="217.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">.es</text><rect x="120" y="203.0" width="21.8" height="20" fill="#1F3F63" rx="1.5"/><text x="147.8" y="217.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">14</text><text x="112.0" y="245.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">.gov</text><rect x="120" y="231.0" width="15.6" height="20" fill="#1F3F63" rx="1.5"/><text x="141.6" y="245.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">10</text><text x="112.0" y="273.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">.mx</text><rect x="120" y="259.0" width="15.6" height="20" fill="#1F3F63" rx="1.5"/><text x="141.6" y="273.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">10</text></svg><figcaption>The ten URL suffixes carrying the most URLs.</figcaption></figure>
+<table class="d"><thead><tr><th>Suffix</th><th class="num">Total</th><th class="num">Per cent of all</th><th class="num">Illegal</th><th class="num">Per cent illegal</th></tr></thead><tbody>
+<tr><td class="mono">.com</td><td class="num">450</td><td class="num">54.3</td><td class="num">34</td><td class="num">7.6</td></tr>
+<tr><td class="mono">.hn</td><td class="num">66</td><td class="num">8.0</td><td class="num">8</td><td class="num">12.1</td></tr>
+<tr><td class="mono">.org</td><td class="num">29</td><td class="num">3.5</td><td class="num">0</td><td class="num">0.0</td></tr>
+<tr><td class="mono">.br</td><td class="num">23</td><td class="num">2.8</td><td class="num">0</td><td class="num">0.0</td></tr>
+<tr><td class="mono">.ch</td><td class="num">23</td><td class="num">2.8</td><td class="num">0</td><td class="num">0.0</td></tr>
+<tr><td class="mono">.net</td><td class="num">20</td><td class="num">2.4</td><td class="num">2</td><td class="num">10.0</td></tr>
+<tr><td class="mono">.fr</td><td class="num">17</td><td class="num">2.1</td><td class="num">0</td><td class="num">0.0</td></tr>
+<tr><td class="mono">.es</td><td class="num">14</td><td class="num">1.7</td><td class="num">1</td><td class="num">7.1</td></tr>
+<tr><td class="mono">.gov</td><td class="num">10</td><td class="num">1.2</td><td class="num">0</td><td class="num">0.0</td></tr>
+<tr><td class="mono">.mx</td><td class="num">10</td><td class="num">1.2</td><td class="num">2</td><td class="num">20.0</td></tr>
+</tbody></table>
+<h3>Source analysis</h3>
+<table class="d"><thead><tr><th>Source category</th><th class="num">Total</th><th class="num">Licensed</th><th class="num">Illegal</th><th class="num">Per cent licensed</th><th class="num">Per cent illegal</th></tr></thead><tbody>
+<tr><td>Manual</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0.0</td><td class="num">0.0</td></tr>
+<tr><td>Google Search</td><td class="num">397</td><td class="num">0</td><td class="num">32</td><td class="num">0.0</td><td class="num">100.0</td></tr>
+<tr><td>Variant</td><td class="num">44</td><td class="num">0</td><td class="num">2</td><td class="num">0.0</td><td class="num">100.0</td></tr>
+<tr><td>Redirect</td><td class="num">44</td><td class="num">0</td><td class="num">7</td><td class="num">0.0</td><td class="num">100.0</td></tr>
+<tr><td>Other</td><td class="num">342</td><td class="num">0</td><td class="num">21</td><td class="num">0.0</td><td class="num">100.0</td></tr>
+</tbody></table>
+<p class="lead">Percentages use licensed + illegal as the denominator, so a category with no gambling rows shows 0.0.</p>
+<h2>Section B — The insights</h2>
+<h3>Brands and variants (2 distinct brands)</h3>
+<figure><svg viewBox="0 0 900 70" width="100%" height="auto" role="img" aria-label="Brands by variant count" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="900" height="70" fill="#ffffff"/><text x="252.0" y="21.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">mercyrewards.com</text><rect x="260" y="7.0" width="560.0" height="20" fill="#1F3F63" rx="1.5"/><text x="826.0" y="21.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">1</text><text x="252.0" y="49.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">www.mercyrewards.com</text><rect x="260" y="35.0" width="560.0" height="20" fill="#1F3F63" rx="1.5"/><text x="826.0" y="49.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">1</text></svg><figcaption>Seed brands ranked by the number of distinct variant URLs cloned from them.</figcaption></figure>
+<h3>Variant naming convention insights</h3>
+<ul>
+<li>2 distinct variant domains identified in total.</li>
+</ul>
+<h3>Variant proliferation — mercyrewards.com</h3>
+<figure><svg viewBox="0 0 900 150" width="100%" height="auto" role="img" aria-label="Variant proliferation" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="900" height="150" fill="#ffffff"/><rect x="8" y="43.0" width="230" height="64" fill="#1F3F63" rx="5"/><text x="123.0" y="63.0" font-size="11" fill="#b9c9dd" text-anchor="middle" font-weight="normal">cluster</text><text x="123.0" y="82.0" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">mercyrewards.com</text><text x="123.0" y="98.0" font-size="11" fill="#dce6f2" text-anchor="middle" font-weight="normal">1 domains</text><path d="M238,75.0 C278,75.0 260,16.0 296,16.0" fill="none" stroke="#9fb2c8" stroke-width="1"/><circle cx="300" cy="16.0" r="3" fill="#c0392b"/><text x="309.0" y="20.0" font-size="11.5" fill="#16202b" text-anchor="start" font-weight="normal">www.mercyrewards.com</text><text x="8.0" y="146.0" font-size="10.5" fill="#6b7a8c" text-anchor="start" font-weight="normal">solid = seed · dashed = stem · dotted = similarity</text></svg><figcaption>mercyrewards.com is the most-cloned brand with 1 variant URLs.</figcaption></figure>
+<p>mercyrewards.com is the most-cloned brand with 1 variant URLs.</p>
+<h3>Redirects from — top 10</h3>
+<figure><svg viewBox="0 0 900 154" width="100%" height="auto" role="img" aria-label="Redirects from — top 10" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="900" height="154" fill="#ffffff"/><text x="252.0" y="21.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">cryptoalertscam.com</text><rect x="260" y="7.0" width="560.0" height="20" fill="#c0392b" rx="1.5"/><text x="826.0" y="21.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">2</text><text x="252.0" y="49.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">megapari.media</text><rect x="260" y="35.0" width="560.0" height="20" fill="#c0392b" rx="1.5"/><text x="826.0" y="49.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">2</text><text x="252.0" y="77.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">betix360.com</text><rect x="260" y="63.0" width="280.0" height="20" fill="#c0392b" rx="1.5"/><text x="546.0" y="77.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">1</text><text x="252.0" y="105.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">invite.lavishluck.net</text><rect x="260" y="91.0" width="280.0" height="20" fill="#c0392b" rx="1.5"/><text x="546.0" y="105.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">1</text><text x="252.0" y="133.4" font-size="12" fill="#16202b" text-anchor="end" font-weight="normal">juega.loto.hn</text><rect x="260" y="119.0" width="280.0" height="20" fill="#c0392b" rx="1.5"/><text x="546.0" y="133.4" font-size="12" fill="#16202b" text-anchor="start" font-weight="bold">1</text></svg><figcaption>Redirect sources ranked by the number of distinct illegal destinations reached.</figcaption></figure>
+<h3>Redirect naming convention insights</h3>
+<ul>
+<li>TLD switching: .com (3), .net (1), .top (1), .pro (1) — the operator rotates top-level domains.</li>
+<li>7 distinct redirect domains identified in total.</li>
+</ul>
+<h3>Redirect propagation — cryptoalertscam.com</h3>
+<figure><svg viewBox="0 0 900 150" width="100%" height="auto" role="img" aria-label="Redirect propagation" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="900" height="150" fill="#ffffff"/><rect x="8" y="43.0" width="230" height="64" fill="#1F3F63" rx="5"/><text x="123.0" y="63.0" font-size="11" fill="#b9c9dd" text-anchor="middle" font-weight="normal">cluster</text><text x="123.0" y="82.0" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">cryptoalertscam.com</text><text x="123.0" y="98.0" font-size="11" fill="#dce6f2" text-anchor="middle" font-weight="normal">2 domains</text><path d="M238,75.0 C278,75.0 260,16.0 296,16.0" fill="none" stroke="#9fb2c8" stroke-width="1"/><circle cx="300" cy="16.0" r="3" fill="#c0392b"/><text x="309.0" y="20.0" font-size="11.5" fill="#16202b" text-anchor="start" font-weight="normal">thebostonfashionista.com</text><path d="M238,75.0 C278,75.0 260,36.0 296,36.0" fill="none" stroke="#9fb2c8" stroke-width="1"/><circle cx="300" cy="36.0" r="3" fill="#c0392b"/><text x="309.0" y="40.0" font-size="11.5" fill="#16202b" text-anchor="start" font-weight="normal">broadcastforfriends.com</text><text x="8.0" y="146.0" font-size="10.5" fill="#6b7a8c" text-anchor="start" font-weight="normal">solid = seed · dashed = stem · dotted = similarity</text></svg><figcaption>cryptoalertscam.com redirects to 2 destinations.</figcaption></figure>
+<p>cryptoalertscam.com redirects to 2 destinations.</p>
+<h3>Comparison — URLs → redirects → variants</h3>
+<div class="cards">
+<div class="card"><div class="k">Reached directly</div><div class="v">53</div><div class="s">85.5% of illegal URLs</div></div>
+<div class="card"><div class="k">Behind a redirect</div><div class="v">7</div><div class="s">11.3% of illegal URLs</div></div>
+<div class="card"><div class="k">Crawler-identified variants</div><div class="v">2</div><div class="s">3.2% of illegal URLs</div></div>
+</div>
+<h2>Section C — Ranking</h2>
+<h3>Illegal ranking</h3>
+<table class="d"><thead><tr><th class="num">Rank</th><th>Domain</th><th>Source</th></tr></thead><tbody>
+<tr><td class="num nw">50,396</td><td class="mono">faucetpay.io</td><td>Other</td></tr>
+<tr><td class="num nw">80,077</td><td class="mono">1win.lat</td><td>Google Search</td></tr>
+<tr><td class="num nw">86,303</td><td class="mono">hondubet.com</td><td>Google Search</td></tr>
+<tr><td class="num nw">217,002</td><td class="mono">paniplay.com</td><td>Google Search</td></tr>
+<tr><td class="num nw">592,404</td><td class="mono">loto.hn</td><td>Google Search</td></tr>
+<tr><td class="num nw">842,949</td><td class="mono">thelotter.mx</td><td>Google Search</td></tr>
+<tr><td class="num nw">1,357,366</td><td class="mono">black-jack-21.com</td><td>Other</td></tr>
+<tr><td class="num nw">1,701,490</td><td class="mono">oddjusta.com</td><td>Other</td></tr>
+<tr><td class="num nw">1,968,197</td><td class="mono">spincasino.mx</td><td>Other</td></tr>
+<tr><td class="num nw">2,002,488</td><td class="mono">luxxbet.com</td><td>Google Search</td></tr>
+<tr><td class="num nw">2,250,851</td><td class="mono">pinup.hn</td><td>Google Search</td></tr>
+<tr><td class="num nw">2,541,781</td><td class="mono">pinup.net.hn</td><td>Google Search</td></tr>
+<tr><td class="num nw">2,673,853</td><td class="mono">cryptoalertscam.com</td><td>Other</td></tr>
+<tr><td class="num nw">2,673,853</td><td class="mono">thebostonfashionista.com</td><td>Redirect</td></tr>
+<tr><td class="num nw">2,673,853</td><td class="mono">broadcastforfriends.com</td><td>Redirect</td></tr>
+</tbody></table>
+<h3>Licensed ranking</h3>
+<p class="empty">No licensed gambling sites were recorded in this sample, so there is no licensed ranking to show.</p>
+<h2>Section D — Key insights</h2>
+<div class="narr"><div class="t">Scale of the analysis</div><p>The standard set holds 828 distinct URLs over an evaluation period of 10 days (2026-08-25 → 2026-09-03), of which 62 are illegal gambling sites and 0 are licensed.</p><div class="c">The sample is large enough to reason about patterns, not isolated cases.</div></div>
+<div class="narr"><div class="t">Status mix</div><p>Illegal gambling accounts for 7.5% of all URLs analysed and 100.0% of gambling sites (licensed plus illegal). 540 URLs were not gambling and 226 were unreachable.</p><div class="c">Illegal operators are the majority of the gambling sites found.</div></div>
+<div class="narr"><div class="t">Variants and brand abuse</div><p>2 brands were cloned via variant domains; the most-abused brand, mercyrewards.com, spawned 1 variants.</p><div class="c">A handful of brands drive most of the proliferation, so enforcement is best prioritised by brand rather than by URL.</div></div>
+<div class="narr"><div class="t">Redirects and traffic shaping</div><p>7 illegal URLs use redirect chains; the busiest source, cryptoalertscam.com, points to 2 destinations.</p><div class="c">Redirects keep a stable entry point while the sites behind it are rotated.</div></div>
+<div class="narr"><div class="t">Enforcement and regulatory relevance</div><p>No page in this sample carries a regulatory-blocking indicator, so the set appears pre-enforcement and is a candidate for a first pass. 3 pages matched a blocking phrase only because the crawl met an anti-bot challenge; those are access failures rather than enforcement, and are excluded.</p><div class="c">This set is a candidate for a first enforcement pass.</div></div>
+<div class="foot"><p>Input: 843 rows; 15 dropped as awaiting adjudication and 0 duplicate URLs removed, leaving a standard working set of 828 rows. The optional legal-entity and legal-entity-country columns are absent from this input, so those fields are left blank rather than inferred. Percentages are shown to one decimal place. Self-contained report: no external stylesheets, images or scripts.</p></div>
+
+</body>
+</html>
