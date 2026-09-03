@@ -1,0 +1,63 @@
+probe.analysis v1.0.0 — attempt 1 — job 01M1KT6FAAA8YN8AMYT48H2F11
+request commit ec3832dbb000fde31a7a61ee63cec7c7b945c7ad
+
+input
+  target        mstslot7.com
+  country       FR
+  limit         50
+  watchlistItemId a83bca3f-af7d-4ba2-9b57-176da1b41d72
+  domainId      bc25a3e2-9813-435d-876d-8dae2f1e51a5
+  expectedAssets probe-analysis.html (required), probe.json (optional)
+
+execution
+  2026-09-03T14:24:52.266Z  claimed, attempt 1
+  2026-09-03T14:24:52Z      POST https://api.globalping.io/v1/measurements
+                            target=mstslot7.com type=http limit=50
+                            locations=[{"country":"FR"}]
+                            -> connection failed: CONNECT tunnel failed,
+                               response 403 (egress proxy denied the
+                               destination — organization policy)
+  2026-09-03T14:24:52Z      GET https://rdap.org/domain/mstslot7.com
+                            -> connection failed: CONNECT tunnel failed,
+                               response 403 (same egress policy denial)
+  2026-09-03T14:24:52Z      GET http://ip-api.com/json/1.1.1.1?fields=...
+                            -> HTTP 403 from the egress proxy itself:
+                               "Host not in allowlist: ip-api.com. Add
+                               this host to your network egress settings
+                               to allow access."
+  2026-09-03T14:24:53Z      GET https://ipwho.is/1.1.1.1
+                            -> connection failed: CONNECT tunnel failed,
+                               response 403 (same egress policy denial)
+  2026-09-03T14:24:53Z      GET https://dns.google/resolve?name=mstslot7.com&type=A
+                            -> connection failed: CONNECT tunnel failed,
+                               response 403 (same egress policy denial)
+
+diagnosis
+  every upstream this job type depends on (api.globalping.io, rdap.org,
+  ip-api.com, ipwho.is, dns.google) is outside this execution
+  environment's outbound network allowlist. The proxy's own status
+  endpoint (http://127.0.0.1:35841/__agentproxy/status) confirms the
+  rejections as "connect_rejected ... policy denial", and the ip-api.com
+  attempt (routed as plain HTTP rather than a CONNECT tunnel) returns the
+  allowlist's own message verbatim: "Host not in allowlist: ip-api.com.
+  Add this host to your network egress settings to allow access."
+  This is a static per-environment configuration, not a transient
+  outage — a same-attempt retry against any of the five hosts reproduced
+  the identical rejection, so a second or third job attempt in this same
+  environment would fail identically. No probe was created, so there is
+  no measurementId and no probe/WHOIS/IP data to report on; fabricating
+  any of §2-3 output would misrepresent this job's grounding in real
+  Globalping data, so no probe-analysis.html or probe.json asset is
+  produced for this attempt (see edge case §4 "API / network error").
+
+decision
+  attempt 1 recorded as failed, not retried automatically: the failure
+  is an environment egress-allowlist restriction, not a Globalping-side
+  or transient network condition, so an automatic re-attempt in this
+  same environment cannot succeed. Unblocking requires the environment
+  owner to add api.globalping.io, rdap.org, ip-api.com (or an HTTPS
+  proxied/Pro base), ipwho.is and dns.google (or cloudflare-dns.com) to
+  this environment's outbound network policy.
+
+output
+  none — no assets produced

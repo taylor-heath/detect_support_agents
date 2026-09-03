@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1KT6FAAA8YN8AMYT48H2F11",
+  "requestCommit": "ec3832dbb000fde31a7a61ee63cec7c7b945c7ad",
+  "agent": {
+    "id": "probe.analysis",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "failed",
+  "startedAt": "2026-09-03T14:24:52.266Z",
+  "finishedAt": "2026-09-03T14:24:53.500Z",
+  "durationMs": 1234,
+  "assets": [],
+  "metrics": {},
+  "error": {
+    "code": "UPSTREAM_NETWORK_BLOCKED",
+    "message": "This environment's outbound network policy blocks every upstream this job type requires (api.globalping.io, rdap.org, ip-api.com, ipwho.is, dns.google), so no Globalping measurement could be created and no probe data was obtained. Not retryable in this environment without an egress-allowlist change; see logs/attempt-1.log for the per-host errors.",
+    "retryable": false,
+    "detailsRef": "logs/attempt-1.log"
+  }
+}
