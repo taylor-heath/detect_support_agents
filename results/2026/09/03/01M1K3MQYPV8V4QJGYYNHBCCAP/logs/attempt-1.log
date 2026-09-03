@@ -1,0 +1,83 @@
+report.custom v1.0.0 — attempt 1 — job 01M1K3MQYPV8V4QJGYYNHBCCAP
+request commit 0af15c8f5988bf5150e03324789946f0d9597052
+
+input
+  spec.md          43350 B  sha256 verified
+  dataset.json.gz  144419 B  sha256 verified
+  dataset kind: query; rows carried verbatim from the request
+  execution applied verbatim: rangeFrom 2026-08-26T22:00:00.000Z rangeTo 2026-08-27T21:59:59.999Z
+    rangeField null (the gateway has no field selector); nothing re-resolved
+
+ingest and normalisation (§1)
+  652 rows in; the export is the query form of a SICPADetect spreadsheet export,
+    so the nine required logical columns were mapped from the row objects:
+      Domain <- name                       URL <- currentDecision.url
+      Status <- currentStep.details.classification (mapped below)
+      Source <- currentDecision.initialAuthor (category + seed)
+      Rank <- details.trancoListRanking     Updated at <- updatedAt
+      Confidence <- details.confidencePercent
+      LLM Reasoning <- details.reasons      Case Management Status <-
+      caseManagement.currentState
+    optional legal-entity / legal-entity-country columns: absent, never inferred
+  status normalisation: ALLOWS_ONLINE_GAMBLING -> Gambling (118);
+    NO_ALLOWS_ONLINE_GAMBLING -> Not gambling (336);
+    UNAVAILABLE -> Unreachable (168); REQUIRE_MORE_ANALYSIS -> Review needed
+    (4, dropped per §3); no classification -> Unknown (26)
+  rows arriving as "Licensed gambling": 0 (data-quality signal only)
+  Thai text arrived intact (lexicon matched 26 distinct keywords), so no
+    encoding failure
+
+lexicon (§2)
+  parsed out of Appendix A of spec.md rather than transcribed, so it cannot
+    drift from the authority: 291 entries across 14 tabs, 286 distinct
+    keywords (5 keywords carried on two tabs each, resolved per §2.4)
+  matching: Thai case-sensitive substring; Latin case-insensitive on a token
+    boundary; hashtags matched whole and re-run stripped against the product
+    tabs; the eight two-letter abbreviations counted only inside a host label
+    or at a separator, never in running prose
+  distinct keywords matched 26; never matched 260 of 286
+
+working set (§3) and assignment (§4)
+  standard set 648 rows (0 duplicate URLs dropped)
+  subcategory: 45 keyword-assigned, 73 inferred (inferredShare 61.9%)
+  generalShare 9.3%  ->  both quality figures surface on card F, and because
+    inferredShare exceeds 30% the report states plainly that the lexicon has
+    poor coverage of this dataset and the subcategory figures are indicative
+  signal tags assigned 78 across 118 gambling rows (tagsPerSite 0.66)
+
+clustering (§5)
+  run over the gambling rows: §5.4's concentration metrics and insight 3 are
+    both defined as "clusters across gambling URLs"
+  66 clusters, 23 holding >= 2 URLs, 43 singletons; 15 clusters cover
+    half the gambling estate; top 5 24.6%, top 10 39.8%
+  near-miss merges applied: 0 (Jaro-Winkler >= 0.90 with one stem a
+    prefix of the other)
+  cluster names are the shortest member stem, per §5.2 rule 4
+  §5.3 linkage: 7 pairs reached Jaccard >= 0.60, all on a single shared
+    generic keyword. A one-term overlap is not the "unusual fingerprint" §5.3
+    describes, so they are declared withheld on the card rather than presented
+    as operator leads. No pair was ever merged on this signal.
+
+decisions taken
+  §6.11 regulatory blocking: 0 pages qualify. 5 rows matched the
+    phrase "blocked by" only because the crawl met a Cloudflare/anti-bot
+    challenge ("blocked by Cloudflare's anti-bot verification"). That is an
+    access failure, not a regulator or court block page, so those rows are
+    excluded from enforcement evidence and the exclusion is stated in insight 5.
+  Source: only the category is rendered (Manual / Google Search / Variant /
+    Redirect / Other) plus, for Variant and Redirect rows, the seed domain.
+    The Manual parenthetical in this export is an operator's personal handle,
+    which is not committed to the repository or shown in the report.
+  §6.10 source analysis is computed but not rendered: §7 fixes the card list
+    and §2.1 states the report contains only those cards.
+  no "illegal", "licensed" or "unlicensed" appears anywhere in the output, as
+    §0 requires; verified mechanically before publishing.
+
+output
+  assets/01M1K3MQYPV8V4QJGYYNHBCCAP/report.html  86082 B
+  sha256 adcd11c8bfabde2d64146f7af7a7e53f3bef20b0bc78280a10f386323d81ae03
+  cards 38 (27 full-width + 11 metric cards), charts 11, heat maps 3
+  validation: 1 h1, 0 external resource references, balanced tags,
+    §0 vocabulary check clean, no personal data
+  print check: chromium headless, default margins -> 14 pages, MediaBox
+    595 x 842 pt (A4 portrait), @page rule honoured
