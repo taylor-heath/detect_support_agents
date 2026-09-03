@@ -1,0 +1,71 @@
+report.custom v1.0.0 — attempt 1 — job 01M1KJF80GT1VB3X0WCB5D2CQA
+request commit 0b6f9bcec7e246703ff18c8e7e02ff3dd70a921d
+
+input
+  spec.md          10686 B  sha256 verified
+  dataset.json.gz 209664 B  sha256 verified
+  outputFormat html; expectedAssets report.html
+  execution applied verbatim: rangeFrom 2026-08-24T22:00:00.000Z rangeTo 2026-09-10T21:59:59.999Z; rangeField null;
+    nothing re-resolved
+  spec dd507b5b... is the licensed/illegal edition of Data Insights & Patterns
+    — distinct from the MDES edition (be991816...) handled earlier in this run:
+    no jurisdictional premise, no keyword lexicon, no brand clustering, and
+    licensed vs illegal IS the classification axis here
+
+ingest and normalisation (§1)
+  dataset kind: query, so the nine required logical columns were mapped from
+    the row objects (Domain <- name, URL <- currentDecision.url,
+    Status <- classification, Source <- initialAuthor, Rank <-
+    trancoListRanking, Updated at <- updatedAt, LLM Reasoning <- reasons,
+    Case Management Status <- caseManagement.currentState)
+  optional legal-entity / legal-entity-country columns: absent, left blank
+  status: ALLOWS_ONLINE_GAMBLING with a licence on the decision -> Licensed
+    gambling, otherwise Illegal gambling; NO_ALLOWS_ONLINE_GAMBLING -> Not
+    gambling; UNAVAILABLE -> Unreachable; REQUIRE_MORE_ANALYSIS -> Review
+    needed. No row in this export carries a licence, so licensed = 0; that is
+    read off the record and never inferred.
+
+working set (§2) and metrics (§3)
+  ingested 843; 15 Review needed dropped; 0 duplicate URLs dropped;
+    standard set 828
+  illegal 62, licensed 0, not gambling 540, unreachable 226,
+    unknown 0; illegalShare 7.5%, illegalOfGambling 100.0%
+  evaluation period 10 days (2026-08-25 -> 2026-09-03), 10 dates with activity
+  distinct variant brands 2; illegal split: direct 53, redirect 7,
+    variant 2
+  top brand mercyrewards.com; top redirect cryptoalertscam.com
+  regulatory-blocking evidence 0; 3 rows matched a blocking phrase only
+    inside an anti-bot challenge description ("blocked by Cloudflare's bot
+    check") and were excluded as access failures rather than enforcement
+  blocklist feed (§3.12) computed: 62 illegal rows. It is consumed by the
+    Blocklist screen rather than rendered, so it appears in these metrics only.
+
+decisions taken
+  §3.11 licensed ranking: with zero licensed rows there is neither a ranking
+    nor a sample to show, so the card carries an explicit empty state rather
+    than an empty table.
+  §3.7 computes naming-convention bullets for variants and, separately, for
+    redirects. §4 lists only the variant bullets, but the redirect bullets are
+    rendered too, immediately after the redirects chart — computing them and
+    discarding them would lose evidence the spec asks for.
+  Source: only the category is rendered plus, for variant and redirect rows,
+    the seed domain. Operator handles in the Manual parenthetical are not
+    committed or shown.
+  the whole sample updated on one day dominates the per-day series (a spike of
+    680 distinct URLs on the last date); that is what the export contains and
+    is presented as-is, with the series labelled.
+
+output
+  assets/01M1KJF80GT1VB3X0WCB5D2CQA/report.html  23753 B
+  sha256 97d6979f41a6e31443ec3ff05d19eb02eab094a5a2d3899c227ef3168215da48
+  sections: A The numbers, B The insights, C Ranking, D Key insights
+  7 inline SVG charts (line, donut, 3 bar, 2 hub-and-spoke node diagrams),
+    4 tables, 5 narrative cards
+  validation: 1 h1, 0 external resource references, balanced tags,
+    no personal data
+  print check: chromium headless, default margins -> 5 pages, MediaBox
+    595 x 842 pt (A4 portrait), @page rule honoured
+  fixed during this job: for a series of 14 points or fewer the volume chart
+    now labels the x axis horizontally with the first and last labels anchored
+    inward. The previous rotated labels lost their leading character when
+    rendered and the last label overran the plot area.

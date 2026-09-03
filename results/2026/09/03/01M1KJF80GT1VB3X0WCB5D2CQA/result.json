@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1KJF80GT1VB3X0WCB5D2CQA",
+  "requestCommit": "0b6f9bcec7e246703ff18c8e7e02ff3dd70a921d",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-03T12:17:45.381Z",
+  "finishedAt": "2026-09-03T12:24:18.502Z",
+  "durationMs": 393121,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 23753,
+      "sha256": "97d6979f41a6e31443ec3ff05d19eb02eab094a5a2d3899c227ef3168215da48",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1KJF80GT1VB3X0WCB5D2CQA/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 843,
+    "reportedTotal": 843,
+    "reviewNeededDropped": 15,
+    "duplicateUrlsDropped": 0,
+    "standardSetTotal": 828,
+    "illegalRows": 62,
+    "licensedRows": 0,
+    "notGamblingRows": 540,
+    "unreachableRows": 226,
+    "unknownRows": 0,
+    "illegalSharePct": 7.5,
+    "illegalOfGamblingPct": 100.0,
+    "evaluationPeriodDays": 10,
+    "datesWithActivity": 10,
+    "suffixesRanked": 10,
+    "distinctVariantBrands": 2,
+    "topBrandVariants": 1,
+    "redirectSeeds": 5,
+    "topRedirectTargets": 2,
+    "variantRows": 2,
+    "redirectRows": 7,
+    "directRows": 53,
+    "regulatoryBlockingEvidence": 0,
+    "botChallengePagesExcluded": 3,
+    "illegalRankingRows": 15,
+    "licensedRankingRows": 0,
+    "licensedSampleRows": 0,
+    "blocklistFeedRows": 62,
+    "chartsRendered": 7,
+    "tablesRendered": 4,
+    "narrativeCards": 5,
+    "attachmentHashesVerified": 2,
+    "externalResourceRequests": 0,
+    "renderedPdfPages": 5,
+    "assetBytes": 23753
+  },
+  "error": null
+}
