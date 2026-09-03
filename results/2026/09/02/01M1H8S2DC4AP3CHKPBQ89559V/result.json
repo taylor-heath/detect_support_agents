@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1H8S2DC4AP3CHKPBQ89559V",
+  "requestCommit": "74352174dc70f79265ca2cd1053f905394193b96",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-03T08:18:07.170Z",
+  "finishedAt": "2026-09-03T08:25:46.114Z",
+  "durationMs": 458944,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 4033522,
+      "sha256": "305b8553f9980184ac6fe28d6d428b44358972e52853fbd431cfeee8559ae22f",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1H8S2DC4AP3CHKPBQ89559V/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsIngested": 2,
+    "reportedTotal": 2,
+    "decisionsClassified": 3,
+    "recordsRendered": 3,
+    "currentDecisions": 2,
+    "supersededDecisions": 1,
+    "confirmedRecords": 2,
+    "pendingRecords": 1,
+    "dismissedRecords": 0,
+    "evidenceFilesEmbedded": 3,
+    "distinctEvidenceFiles": 2,
+    "duplicateCaptures": 1,
+    "attachmentHashesVerified": 5,
+    "subcategoriesAssigned": 0,
+    "subcategoriesNotAvailable": 3,
+    "approvedSubcategoryListSupplied": 0,
+    "keywordFieldsPopulated": 2,
+    "keywordFieldsNotAvailable": 1,
+    "capturesValid": 0,
+    "capturesInvalid": 3,
+    "capturesInspected": 2,
+    "externalResourceRequests": 0,
+    "templatePlaceholdersRemaining": 0,
+    "renderedPdfPages": 4,
+    "assetBytes": 4033522
+  },
+  "error": null
+}

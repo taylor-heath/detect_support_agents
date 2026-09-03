@@ -1,0 +1,47 @@
+report.custom v1.0.0 — attempt 1 — job 01M1H8S2DC4AP3CHKPBQ89559V
+request commit 74352174dc70f79265ca2cd1053f905394193b96
+
+input
+  spec.md                          34023 B  sha256 verified
+  dataset.json.gz                   2499 B  sha256 verified
+  evidence/.../211ae86a.../homepage 1378612 B  sha256 verified
+  evidence/.../1e7fcab0.../homepage 1378612 B  sha256 verified
+  evidence/.../ba47aa70.../homepage  241982 B  sha256 verified
+  execution: rangeField/rangeFrom/rangeTo all null; no range filter applied
+  query: {} (empty); dataset used verbatim, nothing re-resolved
+
+dataset
+  2 analyses (rowCount 2, reportedTotal 2), 3 decisions, 3 included PNG captures
+  49b643b2 final9poker.com        BLACKLISTED    2 decisions (211ae86a current, 1e7fcab0 superseded)
+  630e2438 new.tonpoker.online    REVIEW_NEEDED  1 decision  (ba47aa70 current)
+  the two final9poker.com captures are byte-identical (same sha256)
+
+decisions taken while filling the template
+  records: one per classified URL -> 3 record blocks
+  status:  BLACKLISTED -> Confirmed (class ok); REVIEW_NEEDED -> Pending (class warn)
+  confidence: confidencePercent/100; badge grade per the template fill guide
+  capture time: taken from each decision's ANALYSIS_DONE step (spec rule 7),
+    reported in UTC as recorded -- not converted to another zone, not the run time
+  subcategory: "Not available" for all 3 records. Spec rule 4 permits only a
+    subcategory from the approved list supplied with the job; no such list is
+    present in spec.md or in request params, so none could be used.
+  keywords detected: from the classification step's tags. ba47aa70 has an empty
+    tag list -> "Not available" (rule 6: an absent value is reported as absent).
+  source where URL was found: not recorded anywhere in the dataset. Reported as
+    "Not available" with the one piece of provenance the case does hold -- a
+    manual analysis request and its timestamp.
+  capture valid: "No" on all 3. Each capture is a 1919x992 viewport-only page
+    render inspected during this run: site name/keyword legible, but no browser
+    address bar and no clock are in frame, so URL and capture time cannot be
+    read from the image, which is what "Capture valid" attests to.
+  captures embedded as base64 PNG data URIs, byte-for-byte as taken (rule 10);
+    style block, crest, fill-guide note and footer copied verbatim from spec.md
+
+output
+  assets/01M1H8S2DC4AP3CHKPBQ89559V/report.html  4033522 B
+  sha256 305b8553f9980184ac6fe28d6d428b44358972e52853fbd431cfeee8559ae22f
+  validation: 1 h1, 1 h2, 3 h3, 3 record divs, 4 empty header rows,
+    0 template placeholders left, 0 external resource references,
+    balanced tags, 4 PNG data URIs decode and re-hash to their source bytes
+  print check: chromium headless, default margins -> 4 pages, MediaBox
+    595 x 842 pt (A4 portrait), @page rule honoured
