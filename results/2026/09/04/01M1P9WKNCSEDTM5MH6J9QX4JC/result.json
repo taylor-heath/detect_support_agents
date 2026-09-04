@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1P9WKNCSEDTM5MH6J9QX4JC",
+  "requestCommit": "4c67632f6d1dec2006a6316c04b782456ae3973e",
+  "agent": {
+    "id": "deep.search",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-04T13:34:42.000Z",
+  "finishedAt": "2026-09-04T13:41:50.000Z",
+  "durationMs": 428000,
+  "assets": [
+    {
+      "name": "deep-search.html",
+      "contentType": "text/html",
+      "bytes": 33801,
+      "sha256": "7a7d21bfe2458802c7954b57c6655fc9800ff11416249fbf7b874276c95c1921",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1P9WKNCSEDTM5MH6J9QX4JC/deep-search.html"
+      }
+    },
+    {
+      "name": "findings.json",
+      "contentType": "application/json",
+      "bytes": 20730,
+      "sha256": "8f9368ca4d612da9a5b1b5a745864dcf804609b19d26b5e384a6450f59108b97",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1P9WKNCSEDTM5MH6J9QX4JC/findings.json"
+      }
+    }
+  ],
+  "metrics": {
+    "toolCallCount": 23,
+    "sourcesConsulted": 21,
+    "priority": "low",
+    "overallConfidence": "low",
+    "authorisedInInputCountry": false,
+    "licencesFound": 0,
+    "newsItemsFound": 0,
+    "contradictionsFlagged": 3,
+    "referralFlagsRaised": 0,
+    "unresolvedFields": 5,
+    "directFetchesBlocked": 6
+  },
+  "error": null
+}
