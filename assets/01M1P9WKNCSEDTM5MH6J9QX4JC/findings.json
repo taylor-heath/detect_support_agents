@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "1.0",
+
+  "header": {
+    "caseId": "01M1P9WKNCSEDTM5MH6J9QX4JC",
+    "targetUrl": "https://apuesta365.bet/",
+    "country": "CL",
+    "runAt": "2026-09-04T13:38:44.000Z",
+    "agentVersion": "deep-search-agent-1.0",
+    "priority": "low",
+    "overallConfidence": "low"
+  },
+
+  "executiveSummary": {
+    "headline": "apuesta365.bet could not be independently verified during this run: direct fetch and WHOIS tooling were unavailable in the investigating environment, and public search surfaced only weak, unconfirmed signals tying a 'Apuesta365' sports-betting brand to the Chilean market.",
+    "narrative": "apuesta365.bet was submitted as a suspected illegal gambling site targeting Chile. Automated access to the site itself, to WHOIS/registrar lookup services, and to several Chilean news and government sources was blocked at the network-egress level of the investigating environment for this run, not by the target site — so brand, operator, and licensing could not be confirmed from primary sources. Public search surfaced a low-follower Instagram account ('apuesta365chile') describing a sports-betting brand 'arriving in Chile', which is consistent with the domain name but is not confirmed to be operated by the same entity as apuesta365.bet. Chile's gambling regulator (Superintendencia de Casinos, Apuestas y Juegos de Azar, SCJ) requires online betting operators to hold a Chilean licence under the framework that took effect in 2024-2025; on 1 September 2026 (three days before this run) Chile's telecoms regulator Subtel, acting on an SCJ-supplied list, ordered ISPs to block 42 unlicensed betting sites (Betano, Coolbet, Betsson, Stake, bet365, 1xBet and others). apuesta365.bet was not identified by name in the portions of that list captured by available press reporting, though 6 of the 42 entries were not individually named in the sources reviewed, so its absence there is not conclusive. No licence claim, operating entity, or news coverage specific to this domain was found.",
+    "keyFindings": [
+      "Automated fetch of apuesta365.bet and of WHOIS/registrar lookup services was blocked by the investigating environment's own network egress policy for this run; this is a tooling limitation of this investigation, not a demonstrated evasion behaviour by the target.",
+      "An Instagram account 'apuesta365chile' (56 followers) advertises a sports-betting brand explicitly targeting Chile ('Llegamos a Chile'), matching the domain's naming pattern, but no confirmed link to the apuesta365.bet domain itself was found.",
+      "Chile requires online betting operators to hold a licence from the Superintendencia de Casinos, Apuestas y Juegos de Azar (SCJ) under a framework in force since 2024-2025; no such licence, or any other licence claim, was found for this brand or domain.",
+      "On 1 September 2026, Chile's Subtel ordered ISPs to block 42 unlicensed betting sites identified by the SCJ; apuesta365.bet was not identified by name in the portion of that list captured by available reporting, though several list entries were not individually named in the sources reviewed.",
+      "No operating entity, registration details, hosting/registrar information, or complaint/news history specific to this domain could be found via public search."
+    ],
+    "authorisedInInputCountry": false,
+    "topContradictions": [
+      "Findings rest almost entirely on search-engine snippets rather than direct verification, because direct fetch of the target site and of independent lookup services (WHOIS, government registers) was blocked by this investigation's own environment, not by the target.",
+      "A similarly-named Instagram account explicitly targets Chile, but no evidence confirms it is operated by, or otherwise linked to, the apuesta365.bet domain.",
+      "This domain was not seen by name in the visible portion of Chile's September 2026 official blocklist of 42 unlicensed betting sites, but that reporting was incomplete, so this is not evidence the domain is authorised."
+    ],
+    "recommendedAction": "Re-run investigation with live-browser or manually-routed access to apuesta365.bet, WHOIS, and the SCJ/Subtel registers, since automated tooling was unavailable in this environment this run. Confirm or rule out any relationship to the 'apuesta365chile' Instagram account and to the full, verified 42-domain Subtel blocklist (including its 6 unnamed entries) before taking enforcement action."
+  },
+
+  "findings": {
+    "brand": {
+      "value": "Apuesta365 (unverified)",
+      "confidence": "low",
+      "basis": "inferred",
+      "sources": [
+        { "url": "web-search:apuesta365chile instagram casino apuestas deportivas Chile", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "Instagram account 'apuesta365chile' bio: 'Llegamos a Chile - Apuestas Deportiva - Somos la casa de apuesta deportiva con la cuota mas alta del mercado'." }
+      ],
+      "note": "Brand name inferred from the domain string and a similarly-named Instagram account; on-page branding, logo, and copyright text could not be confirmed because the homepage was not reachable from this investigating environment during this run."
+    },
+
+    "aliases": {
+      "value": ["apuesta365chile (Instagram, unconfirmed link)", "tuapuesta365chile.com (unconfirmed link)", "tuapuesta365.com (unconfirmed link)"],
+      "confidence": "low",
+      "basis": "inferred",
+      "sources": [
+        { "url": "web-search:tuapuesta365chile.com apuesta365 relacion mismo sitio", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "Naming-pattern overlap only; search did not confirm any operational relationship." }
+      ],
+      "note": "These are naming-pattern matches surfaced by search, not confirmed mirrors or aliases of apuesta365.bet. Do not treat as the same operator without independent verification."
+    },
+
+    "legalEntity": {
+      "value": { "name": "unknown", "registrationNumber": null, "registeredAddress": null, "incorporationCountry": null },
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [],
+      "note": "Could not be determined: the homepage, terms pages, and WHOIS lookup services (whois.com, who.is) all returned EGRESS_BLOCKED from this investigating environment, and no company-registry match surfaced via public search."
+    },
+
+    "parentGroup": {
+      "value": null,
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [],
+      "note": "No parent or group entity could be identified from available sources."
+    },
+
+    "countryOfOperation": {
+      "value": { "incorporation": null, "licensingJurisdiction": null, "inputCountry": "CL" },
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [],
+      "note": "Incorporation country and licensing jurisdiction could not be determined; site and WHOIS access were unavailable during this run."
+    },
+
+    "licences": [],
+
+    "authorisation": {
+      "authorisedInInputCountry": false,
+      "confidence": "low",
+      "basis": "inferred",
+      "sources": [
+        { "url": "web-search:Chile ley apuestas deportivas online 2024 licencia operadores registro", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "Chile requires online betting/casino operators to hold an SCJ licence, restricted to Chilean-incorporated companies, under the framework in force since 2024-2025." },
+        { "url": "web-search:Chile bloqueo sitios apuestas ilegales SCJ lista dominios 2026", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "On 1 Sept 2026 Subtel ordered blocking of 42 unlicensed betting sites on an SCJ-supplied list; apuesta365.bet not identified by name in the named portion of reporting reviewed." }
+      ],
+      "note": "No licence claim of any kind was found for this brand/domain, and no evidence places it among Chile's licensed operators. This is an inference from the absence of any licence disclosure combined with Chile's licensing regime, not a direct confirmation against the SCJ's own licensed-operator register, which could not be reached from this environment during this run."
+    },
+
+    "news": []
+  },
+
+  "priorityAssessment": {
+    "priority": "low",
+    "rationale": "Every dimension that would justify elevating this case rests on unverified or absent evidence: no confirmed traffic, targeting, or consumer-harm data exists for this specific domain, and legalReachability and feasibilityAndCost are both low because the operator, hosting, and registrar are entirely unidentified — automated verification tooling (site fetch, WHOIS, government registers) was unavailable in the investigating environment this run, so these gaps reflect an incomplete investigation more than a confirmed absence of exposure. strategicValue is elevated to medium only because Chile is currently running a high-profile, verified enforcement campaign against unlicensed betting sites (Subtel/SCJ block of 42 domains, 1 Sept 2026), so any confirmed unlicensed operator targeting Chile right now has real strategic timing value — but that campaign context does not itself establish that this domain is one of the targeted or high-harm operators. Net: insufficient verified evidence to justify medium or high priority; recommend a follow-up pass with working fetch/WHOIS access before re-scoring.",
+    "referralFlags": [],
+    "dimensions": [
+      {
+        "dimension": "harmAndExposure",
+        "rating": "unknown",
+        "evidence": "No verified traffic, ad-targeting, language/currency, or scale data exists for this exact domain. A low-follower (56) Instagram account with a similar name claims Chilean market entry, but no confirmed link to apuesta365.bet was established.",
+        "sources": [
+          { "url": "web-search:apuesta365chile instagram casino apuestas deportivas Chile", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": null }
+        ]
+      },
+      {
+        "dimension": "consumerHarmSeverity",
+        "rating": "unknown",
+        "evidence": "No player complaints, reviews, or scam-check listings naming this domain were found via public search; Chile's SERNAC/SCJ report 150+ complaints against unlicensed betting platforms generally, but none were attributed to this domain specifically.",
+        "sources": [
+          { "url": "web-search:\"apuesta365.bet\" estafa denuncia SERNAC OR reclamos", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "General SERNAC/SCJ complaint statistics found; none named this domain." }
+        ]
+      },
+      {
+        "dimension": "legalReachability",
+        "rating": "low",
+        "evidence": "Operator identity, hosting provider, and registrar are all unidentified. Direct fetch of the site and of WHOIS lookup services (whois.com, who.is) all returned EGRESS_BLOCKED from the investigating environment during this run, preventing verification.",
+        "sources": [
+          { "url": "https://apuesta365.bet/", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "EGRESS_BLOCKED by investigating environment's network policy" },
+          { "url": "https://www.whois.com/whois/apuesta365.bet", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "EGRESS_BLOCKED by investigating environment's network policy" }
+        ]
+      },
+      {
+        "dimension": "actorBehaviour",
+        "rating": "unknown",
+        "evidence": "No confirmed evasion, mirroring, or recidivism pattern for this specific domain. Several similarly-named properties surfaced (Instagram 'apuesta365chile'/'apuesta365sa', domains 'tuapuesta365.com'/'tuapuesta365chile.com') but none could be confirmed as the same operator; treated as an unverified lead, not evidence.",
+        "sources": []
+      },
+      {
+        "dimension": "feasibilityAndCost",
+        "rating": "low",
+        "evidence": "With the operator, hosting, and registrar all unidentified, no durable single-domain action could currently be well-targeted; further (non-automated) investigation is needed first.",
+        "sources": []
+      },
+      {
+        "dimension": "strategicValue",
+        "rating": "medium",
+        "evidence": "Chile is currently running a high-profile, verified enforcement campaign: on 1 Sept 2026 Subtel ordered ISPs to block 42 unlicensed betting sites identified by the SCJ, following legal action by Loteria de Concepcion, with the process explicitly extended to future mirror/alias domains. Acting on additional unlicensed operators targeting Chile aligns with this active campaign, though this specific domain's place within it is unconfirmed.",
+        "sources": [
+          { "url": "web-search:Chile bloqueo sitios apuestas ilegales SCJ lista dominios 2026", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "Multiple Chilean outlets (Subtel, BioBioChile, Diario Financiero, 24horas, La Tercera, trendTIC) reporting the 1 Sept 2026 block order." }
+        ]
+      }
+    ]
+  },
+
+  "contradictions": [
+    "Findings rest almost entirely on search-engine snippets rather than direct verification: fetch of the target site and of independent lookup services (WHOIS, Chile's SCJ/Subtel sites) returned EGRESS_BLOCKED from this investigating environment during this run. This is a limitation of this investigation's tooling access, not a demonstrated evasion behaviour by the target, and should not be conflated with the target itself blocking automated access.",
+    "A similarly-named Instagram account ('apuesta365chile') explicitly targets the Chilean market, matching the domain's naming pattern, but no evidence confirms it is operated by, or otherwise linked to, the apuesta365.bet domain — it should be treated as an unverified lead only.",
+    "apuesta365.bet was not identified by name in the portion of Chile's 1 September 2026 official 42-site blocklist captured by available reporting, but 6 of the 42 entries were not individually named in the sources reviewed, so this is not evidence the domain is authorised or excluded from enforcement action."
+  ],
+
+  "provenance": {
+    "toolCallCount": 23,
+    "sourcesConsulted": [
+      { "url": "https://apuesta365.bet/", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "https://www.whois.com/whois/apuesta365.bet", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "https://who.is/whois/apuesta365.bet", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "https://www.scjuegos.gob.cl", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "DNS resolution failed from investigating environment" },
+      { "url": "https://www.trendtic.cl/2026/09/estos-son-los-42-sitios-de-apuesta-que-subtel-ordeno-su-bloqueo/", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "EGRESS_BLOCKED by investigating environment; only search-snippet summary available" },
+      { "url": "https://www.subtel.gob.cl/subtel-ordena-bloqueo-de-42-sitios-de-apuestas-online/", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "EGRESS_BLOCKED by investigating environment; only search-snippet summary available" },
+      { "url": "web-search:apuesta365.bet Chile casino apuestas", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "No results specific to this domain; returned unrelated bet365 Chile content" },
+      { "url": "web-search:\"apuesta365\" licencia Curacao OR Curacao operador", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "No licence-specific match for this brand" },
+      { "url": "web-search:\"apuesta365.bet\"", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "One indexed page noted ('lesiones.html'); otherwise dominated by unrelated bet365 results" },
+      { "url": "web-search:apuesta365.bet whois registrar", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "No domain-specific WHOIS data surfaced" },
+      { "url": "web-search:Chile ley apuestas deportivas online 2024 licencia operadores registro", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "Confirmed SCJ licensing framework requiring Chilean-incorporated operators" },
+      { "url": "web-search:\"apuesta365\" Chile", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "Surfaced Instagram account 'apuesta365chile' and unrelated 'tuapuesta365chile.com'" },
+      { "url": "web-search:apuesta365.bet resena opiniones casino", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "No brand-specific reviews found" },
+      { "url": "web-search:tuapuesta365chile.com apuesta365 relacion mismo sitio", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "No confirmed relationship found" },
+      { "url": "web-search:apuesta365chile instagram casino apuestas deportivas Chile", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "Found Instagram bio text targeting Chile" },
+      { "url": "web-search:Chile bloqueo sitios apuestas ilegales SCJ lista dominios 2026", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "Confirmed 1 Sept 2026 Subtel block order of 42 unlicensed sites" },
+      { "url": "web-search:site:apuesta365.bet", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "Minimal indexed content; one lesiones.html page noted" },
+      { "url": "web-search:\"apuesta365\" Betano Coolbet Betsson Stake Rojabet Betsala Estelarbet Novibet Doradobet lista 42 sitios", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "Obtained partial named list of the 42 blocked domains (36 of 42 named); apuesta365.bet not among the named entries" },
+      { "url": "web-search:apuesta365.bet Curacao gaming licence check CGCB", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "No licence-specific match; general CGCB background only" },
+      { "url": "web-search:\"apuesta365.bet\" estafa denuncia SERNAC OR reclamos", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "No brand-specific complaints; general SERNAC/SCJ complaint statistics found" },
+      { "url": "web-search:apuesta365.bet domain registered creation date namecheap OR godaddy OR dynadot", "retrievedAt": "2026-09-04T13:38:44.000Z", "note": "No domain-specific registration data found" }
+    ],
+    "unresolved": [
+      { "field": "findings.legalEntity", "attempted": "Attempted to fetch homepage, terms page, and two WHOIS lookup services; all returned EGRESS_BLOCKED from the investigating environment. Searched for a company-registry match; none found." },
+      { "field": "findings.licences", "attempted": "Searched for Curacao/CGCB and other licence claims tied to the brand; none found. Could not fetch Chile's SCJ licensed-operator register directly (DNS/egress blocked)." },
+      { "field": "findings.brand / findings.aliases", "attempted": "Could not load the homepage to confirm on-page branding or check for stated mirror/alias domains; relied on domain string and an unconfirmed similarly-named Instagram account." },
+      { "field": "findings.authorisation", "attempted": "Could not fetch the SCJ or Subtel sites directly to check the full, official 42-domain blocklist or any licensed-operator register; relied on press summaries that did not name all 42 entries." },
+      { "field": "findings.news", "attempted": "Searched brand name and domain for news, complaints, and regulatory coverage; found only general Chilean regulatory/complaint context, nothing specific to this domain." }
+    ]
+  },
+
+  "analystNotes": "This run's investigation was materially constrained by the environment it ran in: automated fetch of the target site, of WHOIS lookup services, and of several Chilean government/news sites all returned EGRESS_BLOCKED or DNS-resolution failures from the investigating environment itself (an operator/organization-level network policy in this sandbox), not from the target refusing access. That is a meaningful caveat for whoever reviews this case: the sparse findings here reflect an investigation-tooling gap, not evidence that the target is unusually hardened against scraping. A follow-up pass with working outbound fetch/WHOIS access (or manual browser verification) is recommended before this case is deprioritised or closed. Separately, and for context only: Chile is in the middle of an active, high-profile enforcement campaign against unlicensed online betting operators (Subtel ordered blocking of 42 sites on 1 Sept 2026, following action by Loteria de Concepcion, with the process explicitly extendable to future mirror domains) - if a follow-up pass confirms apuesta365.bet is targeting Chilean bettors without an SCJ licence, this campaign is a natural vehicle for enforcement. Take care not to conflate apuesta365.bet with the unrelated, similarly-named 'tuapuesta365.com' / 'tuapuesta365chile.com' properties or the 'apuesta365sa' Instagram account surfaced in search; none of these were confirmed as the same operator."
+}
