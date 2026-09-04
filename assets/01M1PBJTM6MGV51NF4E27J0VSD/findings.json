@@ -1,0 +1,231 @@
+{
+  "schemaVersion": "1.0",
+
+  "header": {
+    "caseId": "01M1PBJTM6MGV51NF4E27J0VSD",
+    "targetUrl": "https://pinupbet.hn/",
+    "country": "HN",
+    "runAt": "2026-09-04T14:55:00.000Z",
+    "agentVersion": "deep-search-agent-1.0",
+    "priority": "medium",
+    "overallConfidence": "low"
+  },
+
+  "executiveSummary": {
+    "headline": "pinupbet.hn presents as a Honduras-localized 'Pin-Up Bet' sportsbook/casino claiming a Curaçao licence; direct site and register access was blocked in this environment, and the parent 'Pin-Up' brand network carries serious unresolved sanctions history in Ukraine.",
+    "narrative": "pinupbet.hn was submitted as a suspected illegal gambling site targeting Honduras. Direct fetch of the target site, of a general WHOIS lookup service, and of the Curaçao Gaming Control Board's public licence register were all blocked at the network-egress level of the investigating environment for this run, so no finding below rests on a primary-source page load; everything is drawn from public web search of secondary and marketing sources. Search results consistently describe pinupbet.hn as a Spanish-language, Honduras-targeted instance of the international 'Pin-Up' betting/casino brand, operated (per Pin-Up's own regional licence-information pages, replicated near-identically across many country-specific Pin-Up sites) by Carletta N.V. of Willemstad, Curaçao under Curaçao Gaming Control Board licence OGL/2024/580/0570. At least three other near-identical '.hn' domains (pinup-bet.hn, pinupcasino.hn, pinup-casino.hn) carry the same branding, consistent with the brand's known pattern of many country- and mirror-specific domains, though none was confirmed to be operated by the identical legal entity. Honduras currently has no dedicated online-gambling licensing regime under its 1977 casino law, though one 2026 secondary source claims roughly five operators already hold some form of online authorisation; this claim could not be corroborated against a primary Honduran regulator source, and pinupbet.hn was not identified as one of them. Separately, investigative reporting (OCCRP) and Ukrainian authorities have publicly linked the broader international 'Pin-Up' brand and its identified ultimate ownership (Guruflow Team Limited, Cyprus; named beneficial owner Dmitriy Punin) to sanctions over alleged financial support to Russia's invasion of Ukraine — a serious signal at the brand level that is not independently confirmed to implicate the specific Curaçao licensee (Carletta N.V.) claimed for this Honduras-facing property.",
+    "keyFindings": [
+      "Direct fetch of pinupbet.hn, of a WHOIS lookup service, and of the Curaçao Gaming Control Board's public licence register all returned EGRESS_BLOCKED from the investigating environment during this run; no finding here is based on a directly loaded primary page.",
+      "Secondary/marketing sources consistently name the operator as Carletta N.V. (Willemstad, Curaçao; business registration number 142346) under Curaçao Gaming Control Board licence OGL/2024/580/0570 — this is a disclosed claim replicated across many Pin-Up regional sites, not an independently verified register entry.",
+      "At least three other near-identical '.hn' domains (pinup-bet.hn, pinupcasino.hn, pinup-casino.hn) carry the same 'Pin-Up' Honduras branding; none was confirmed to be operated by the identical legal entity to pinupbet.hn.",
+      "Honduras has no dedicated online-gambling licensing regime under its current (1977) casino law; a 2026 anteproyecto de ley to regulate online gaming remained under discussion as of May 2026. A separate, lower-quality secondary source claims roughly five operators hold some online authorisation as of June 2026, but this could not be corroborated and did not name pinupbet.hn.",
+      "The broader international 'Pin-Up' brand and its identified ultimate owners (Guruflow Team Limited, Cyprus; Dmitriy Punin) have been publicly sanctioned by Ukraine and covered by OCCRP over alleged financial links to Russia's invasion — a serious, unresolved brand-level flag not independently confirmed to implicate the Curaçao licensee claimed for this specific Honduras property."
+    ],
+    "authorisedInInputCountry": false,
+    "topContradictions": [
+      "All licensing and operator-entity data comes from Pin-Up's own regional marketing/licence-information pages, not from a directly loaded site page or the Curaçao register itself (both blocked from this environment), so it is disclosed, not verified.",
+      "Secondary sources conflict on Honduras's online-gambling licensing status: one describes the current law as covering only physical casinos, another claims roughly five operators are already licensed online — neither is a primary regulator source, and this domain was not named in either.",
+      "The parent 'Pin-Up' brand's sanctioned ownership network is a serious flag, but no source directly ties the disclosed Curaçao licensee (Carletta N.V.) for pinupbet.hn to the sanctioned entities beyond shared brand identity."
+    ],
+    "recommendedAction": "Re-run investigation with live-browser or manually-routed access to pinupbet.hn, the Curaçao Gaming Control Board register (to confirm licence OGL/2024/580/0570 and its holder), and Honduran regulator sources, since automated tooling was blocked in this environment this run. Separately verify whether Carletta N.V. is part of the same corporate structure as the Ukraine-sanctioned Pin-Up ownership network before any escalation on that basis, and confirm whether pinup-bet.hn, pinupcasino.hn and pinup-casino.hn are operated by the same entity."
+  },
+
+  "findings": {
+    "brand": {
+      "value": "Pin-Up Bet (Honduras)",
+      "confidence": "medium",
+      "basis": "inferred",
+      "sources": [
+        { "url": "https://pinupbet.hn/", "retrievedAt": "2026-09-04T14:52:10.000Z", "note": "EGRESS_BLOCKED by investigating environment; title indexed via search as 'Apuestas en Línea con Pin-Up Bet Honduras: Emoción Total'." },
+        { "url": "https://pinupbet.hn/sobre-la-empresa/", "retrievedAt": "2026-09-04T14:52:10.000Z", "note": "Indexed 'Sobre la empresa' (About the company) page found via search; not directly fetched." }
+      ],
+      "note": "Brand identified from search-indexed page titles and snippets only; the homepage itself could not be loaded from this environment during this run, so on-page logo/copyright branding was not directly confirmed."
+    },
+
+    "aliases": {
+      "value": ["pinup-bet.hn (unconfirmed same-operator)", "pinupcasino.hn (unconfirmed same-operator)", "pinup-casino.hn (unconfirmed same-operator)"],
+      "confidence": "low",
+      "basis": "inferred",
+      "sources": [
+        { "url": "web-search:pinupbet.hn Honduras apuestas casino", "retrievedAt": "2026-09-04T14:52:10.000Z", "note": "Search surfaced pinup-bet.hn, pinupcasino.hn and pinup-casino.hn as separate, near-identically branded Honduras domains." }
+      ],
+      "note": "Naming-pattern and branding overlap only; no source confirmed these are operated by the identical legal entity as pinupbet.hn, though this multi-domain pattern is consistent with the broader Pin-Up brand's known country-by-country and mirror rollout."
+    },
+
+    "legalEntity": {
+      "value": {
+        "name": "Carletta N.V.",
+        "registrationNumber": "142346",
+        "lei": null,
+        "registeredAddress": "Dr. Henri Fergusonweg 1, Willemstad, Curaçao (mailing address also cited: Chuchubiweg 17, Willemstad, Curaçao)",
+        "incorporationCountry": "CW"
+      },
+      "confidence": "medium",
+      "basis": "disclosed",
+      "sources": [
+        { "url": "https://canada-pinup.ca/license/", "retrievedAt": "2026-09-04T14:53:40.000Z", "note": "Regional Pin-Up licence-information page naming Carletta N.V., registration number 142346, and registered/mailing addresses." },
+        { "url": "https://officialpinupcasino.com/about-us", "retrievedAt": "2026-09-04T14:53:40.000Z", "note": "Corroborating regional 'About' page naming Carletta N.V. as operator." }
+      ],
+      "note": "This operator identity is self-published by the Pin-Up brand network across many country-specific sites (Canada, Nigeria, Bangladesh, etc.), not from pinupbet.hn itself or an independently queried Curaçao company/UBO register, which returned EGRESS_BLOCKED from this environment. Treat as disclosed pending independent register verification."
+    },
+
+    "parentGroup": {
+      "value": { "name": "Pin-Up Global / Guruflow Team Limited (Cyprus)", "lei": null, "relationship": "ultimate" },
+      "confidence": "low",
+      "basis": "inferred",
+      "sources": [
+        { "url": "https://www.occrp.org/en/news/ukraine-cracks-down-on-online-casino-pin-up-alleging-it-bankrolls-the-invasion", "retrievedAt": "2026-09-04T14:53:15.000Z", "note": "OCCRP reporting names Guruflow Team Limited (Cyprus) as the offshore foundation of the Pin-Up brand and Dmitriy Punin as the identified real owner." }
+      ],
+      "note": "Relationship between the disclosed Curaçao licensee (Carletta N.V.) and Guruflow Team Limited/Pin-Up Global is inferred from shared brand identity only; no GLEIF or corporate-registry relationship record was available to this run to confirm direct or ultimate ownership."
+    },
+
+    "domainRegistration": {
+      "value": {
+        "registrar": null, "createdAt": null, "expiresAt": null,
+        "nameservers": [], "statusCodes": [], "registrantCountry": null, "privacyProxy": null
+      },
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [],
+      "note": "RDAP/WHOIS lookup could not be performed: a general WHOIS lookup service returned EGRESS_BLOCKED from the investigating environment, and no dedicated RDAP tool was available this run."
+    },
+
+    "countryOfOperation": {
+      "value": { "incorporation": "CW", "licensingJurisdiction": "CW", "inputCountry": "HN" },
+      "confidence": "low",
+      "basis": "disclosed",
+      "sources": [
+        { "url": "https://canada-pinup.ca/license/", "retrievedAt": "2026-09-04T14:53:40.000Z", "note": "Curaçao incorporation and licensing claimed; not independently verified against a primary register." }
+      ],
+      "note": "Both incorporation and licensing jurisdiction rest on the same disclosed, self-published operator claim; neither was independently confirmed."
+    },
+
+    "licences": [
+      {
+        "jurisdiction": "Curaçao",
+        "reference": "OGL/2024/580/0570",
+        "status": "unverifiable",
+        "holderEntity": "Carletta N.V.",
+        "authorisesInputCountry": false,
+        "basis": "disclosed",
+        "sources": [
+          { "url": "https://canada-pinup.ca/license/", "retrievedAt": "2026-09-04T14:53:40.000Z", "note": "Licence number and issue date (1 July 2024) as disclosed on a Pin-Up regional licence-information page." },
+          { "url": "https://www.cga.cw/en/133i348441001", "retrievedAt": "2026-09-04T14:52:55.000Z", "note": "Curaçao Gaming Control Board licence register entry link surfaced by search; direct fetch returned EGRESS_BLOCKED, so the entry could not be confirmed." }
+        ]
+      }
+    ],
+
+    "authorisation": {
+      "authorisedInInputCountry": false,
+      "confidence": "medium",
+      "basis": "inferred",
+      "sources": [
+        { "url": "https://www.yogonet.com/latinoamerica/noticias/2024/10/02/101079-honduras-presentaron-un-anteproyecto-de-ley-para-regular-el-juego-online", "retrievedAt": "2026-09-04T14:52:40.000Z", "note": "Reports a 2024 draft bill to regulate online gaming in Honduras still under discussion as of May 2026 — no current online-specific licensing regime in force under the existing 1977 casino law." },
+        { "url": "https://gamblingmaps.org/map/regulations/honduras", "retrievedAt": "2026-09-04T14:52:40.000Z", "note": "Describes Honduras's existing law as covering only physical, in-person gaming and not contemplating internet-based gambling." }
+      ],
+      "note": "A claimed Curaçao licence does not itself authorise operation in Honduras. A separate, lower-quality secondary source (apuestasdeportivaslatinoamerica.com) claimed roughly five operators hold some form of online authorisation in Honduras as of June 2026, but this could not be corroborated against a primary regulator source, and pinupbet.hn was not named among any such operators. No evidence of Honduras-specific authorisation for this brand or domain was found."
+    },
+
+    "news": [
+      {
+        "title": "Ukraine Cracks Down on Online Casino Pin-Up, Alleging it Bankrolls the Invasion",
+        "publisher": "OCCRP",
+        "url": "https://www.occrp.org/en/news/ukraine-cracks-down-on-online-casino-pin-up-alleging-it-bankrolls-the-invasion",
+        "publishedAt": null,
+        "summary": "OCCRP reports that Ukrainian authorities sanctioned entities behind the international online casino brand Pin-Up, alleging the Cyprus-based network (whose offshore foundation is described as Guruflow Team Limited, with Dmitriy Punin named as the real owner) helps fund Russia's invasion of Ukraine, and that Pin-Up was accused of operating illegally in Ukraine.",
+        "relatesTo": "parent"
+      }
+    ]
+  },
+
+  "priorityAssessment": {
+    "rationale": "harmAndExposure is rated medium on clear country-targeting signals — a Spanish-language, Honduras-specific ccTLD (.hn) site plus at least three near-identically branded Honduras mirror domains — but no verified traffic or scale data exists for this run. consumerHarmSeverity is unknown: no complaint or fraud reports specific to this domain were found, and responsible-gaming claims on marketing pages are unverified self-disclosure. legalReachability is medium: a named offshore operator and licensing jurisdiction (Carletta N.V., Curaçao) give a plausible regulator-to-regulator referral path, but this rests on disclosed rather than register-verified data, and hosting/registrar details are entirely unknown because RDAP/WHOIS access was blocked. actorBehaviour is elevated to high on two compounding signals: a domain-proliferation pattern consistent with known Pin-Up brand practice, and the parent brand's ownership network being publicly sanctioned by Ukraine over alleged state-linked financial flows — though this second signal is not independently confirmed to implicate the specific Curaçao licensee claimed for pinupbet.hn. feasibilityAndCost is medium given an identifiable named operator and jurisdiction but complicated by the multi-domain footprint. strategicValue is medium: Pin-Up is a large, well-resourced brand already under international scrutiny, giving any confirmed action real signal value, tempered by Honduras currently lacking a dedicated online-gambling regulatory framework to anchor formal enforcement. Net: real targeting and brand-risk signals justify a medium overall priority; verified confirmation that Carletta N.V. sits within the sanctioned Pin-Up ownership structure, or of Honduras-specific consumer-harm reports, would justify escalation to high.",
+    "referralFlags": [
+      "Parent brand network ('Pin-Up' / Guruflow Team Limited, Cyprus; identified ultimate owner Dmitriy Punin) publicly sanctioned by Ukraine over alleged organised financial support to Russia's invasion — not independently confirmed to implicate the disclosed Curaçao licensee (Carletta N.V.) or this specific Honduras-facing property, but warrants further scrutiny and possible cross-regulator referral before enforcement action."
+    ],
+    "dimensions": [
+      {
+        "dimension": "harmAndExposure",
+        "rating": "medium",
+        "evidence": "Spanish-language, Honduras-specific '.hn' domain plus at least three near-identically branded Honduras mirror domains (pinup-bet.hn, pinupcasino.hn, pinup-casino.hn) indicate deliberate targeting of the Honduran market; no verified traffic or scale metrics were available this run.",
+        "sources": [
+          { "url": "web-search:pinupbet.hn Honduras apuestas casino", "retrievedAt": "2026-09-04T14:52:10.000Z", "note": null }
+        ]
+      },
+      {
+        "dimension": "consumerHarmSeverity",
+        "rating": "unknown",
+        "evidence": "No complaint, fraud, or non-payment reports specific to this domain or brand in Honduras were found via public search; Honduras-wide fraud-complaint statistics found were general and not attributable to this operator.",
+        "sources": [
+          { "url": "web-search:\"Pin Up\" Honduras estafa denuncia reclamos OR queja", "retrievedAt": "2026-09-04T14:52:55.000Z", "note": "No brand-specific complaints found." }
+        ]
+      },
+      {
+        "dimension": "legalReachability",
+        "rating": "medium",
+        "evidence": "A named operator (Carletta N.V.) and licensing jurisdiction (Curaçao) are disclosed, offering a plausible cross-regulator referral path via the Curaçao Gaming Control Board, but this is unverified against the primary register, and hosting/registrar data could not be obtained (RDAP/WHOIS blocked).",
+        "sources": [
+          { "url": "https://canada-pinup.ca/license/", "retrievedAt": "2026-09-04T14:53:40.000Z", "note": null },
+          { "url": "https://www.whois.com/whois/pinupbet.hn", "retrievedAt": "2026-09-04T14:52:25.000Z", "note": "EGRESS_BLOCKED by investigating environment's network policy" }
+        ]
+      },
+      {
+        "dimension": "actorBehaviour",
+        "rating": "high",
+        "evidence": "At least three near-identical Honduras mirror domains under the same brand were found, consistent with known Pin-Up multi-domain rollout. Separately, the broader Pin-Up brand and its identified ultimate ownership network have been publicly sanctioned by Ukraine over alleged financial links to Russia's invasion — a serious unresolved flag, though not independently confirmed to implicate the specific Curaçao licensee claimed for this Honduras property.",
+        "sources": [
+          { "url": "https://www.occrp.org/en/news/ukraine-cracks-down-on-online-casino-pin-up-alleging-it-bankrolls-the-invasion", "retrievedAt": "2026-09-04T14:53:15.000Z", "note": null }
+        ]
+      },
+      {
+        "dimension": "feasibilityAndCost",
+        "rating": "medium",
+        "evidence": "A named offshore operator and jurisdiction provide a workable starting point for referral, but the multi-domain footprint (at least four near-identical Honduras domains found) complicates a durable single-domain takedown.",
+        "sources": []
+      },
+      {
+        "dimension": "strategicValue",
+        "rating": "medium",
+        "evidence": "Pin-Up is a large, internationally active gambling brand already under regulatory and investigative scrutiny elsewhere (Ukraine sanctions, OCCRP reporting), giving confirmed action real deterrent/signal value; tempered by Honduras currently lacking a dedicated online-gambling licensing framework to formally anchor enforcement.",
+        "sources": [
+          { "url": "https://www.occrp.org/en/news/ukraine-cracks-down-on-online-casino-pin-up-alleging-it-bankrolls-the-invasion", "retrievedAt": "2026-09-04T14:53:15.000Z", "note": null }
+        ]
+      }
+    ]
+  },
+
+  "contradictions": [
+    "All licensing and operator-entity data (Carletta N.V., licence OGL/2024/580/0570) comes from Pin-Up's own regional marketing/licence-information pages replicated across many country sites, not from a directly loaded pinupbet.hn page or the Curaçao Gaming Control Board register itself — both returned EGRESS_BLOCKED from this investigating environment during this run.",
+    "Secondary sources conflict on Honduras's online-gambling licensing status: one source describes the current (1977) law as covering only physical casinos with an online-regulation bill still under discussion as of May 2026, while a separate, lower-quality source claims roughly five operators already hold some online authorisation as of June 2026. Neither is a primary regulator source, and pinupbet.hn was not named in either.",
+    "At least three other near-identical Honduras '.hn' domains (pinup-bet.hn, pinupcasino.hn, pinup-casino.hn) carry the same 'Pin-Up' branding; none was confirmed to be operated by the identical legal entity as pinupbet.hn, so the domain-proliferation signal used in the actorBehaviour rating should be treated as suggestive, not confirmed.",
+    "The parent 'Pin-Up' brand's ownership network is publicly sanctioned by Ukraine over alleged organised financial links to Russia's invasion, but no source directly ties the disclosed Curaçao licensee (Carletta N.V.) for pinupbet.hn to the sanctioned entities beyond shared brand identity — this should be verified before it is used to justify escalation."
+  ],
+
+  "provenance": {
+    "toolCallCount": 15,
+    "sourcesConsulted": [
+      { "url": "https://pinupbet.hn/", "retrievedAt": "2026-09-04T14:52:10.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "https://www.whois.com/whois/pinupbet.hn", "retrievedAt": "2026-09-04T14:52:25.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "https://www.cga.cw/en/133i348441001", "retrievedAt": "2026-09-04T14:52:55.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "web-search:pinupbet.hn Honduras apuestas casino", "retrievedAt": "2026-09-04T14:52:10.000Z", "note": "Surfaced pinupbet.hn plus three near-identical Honduras mirror domains" },
+      { "url": "web-search:\"Pin-Up\" OR \"Pin Up\" Bet operating company legal entity Curacao license number", "retrievedAt": "2026-09-04T14:52:25.000Z", "note": "First surfaced Carletta N.V. and licence OGL/2024/580/0570" },
+      { "url": "web-search:Honduras regulación apuestas en línea casino online ley licencia 2026", "retrievedAt": "2026-09-04T14:52:40.000Z", "note": "Found conflicting descriptions of Honduras's online-gambling regulatory status" },
+      { "url": "web-search:Honduras autoridad reguladora juegos de azar en línea lista operadores licenciados 2026", "retrievedAt": "2026-09-04T14:52:48.000Z", "note": "Named Secretaría de Cultura, Turismo e Información as physical-casino regulator; no online-specific register found" },
+      { "url": "web-search:\"Pin Up\" Honduras estafa denuncia reclamos OR queja", "retrievedAt": "2026-09-04T14:52:55.000Z", "note": "No brand-specific complaints found" },
+      { "url": "web-search:\"Pin-Up\" betting brand owner group Cyprus OR parent company gambling operator multiple countries banned", "retrievedAt": "2026-09-04T14:53:15.000Z", "note": "Surfaced OCCRP reporting on Ukraine sanctions and Guruflow Team Limited/Dmitriy Punin ownership" },
+      { "url": "web-search:pinup-bet.hn OR pinupcasino.hn OR pinup-casino.hn \"Pin-Up\" Honduras mismo operador mirror", "retrievedAt": "2026-09-04T14:53:25.000Z", "note": "Did not confirm or rule out common ownership of the mirror domains" },
+      { "url": "web-search:\"Carletta N.V.\" Curacao gambling license Pin-Up registered address", "retrievedAt": "2026-09-04T14:53:40.000Z", "note": "Confirmed registration number 142346 and registered/mailing addresses across multiple Pin-Up regional sites" },
+      { "url": "web-search:Honduras bloqueo sitios apuestas ilegales lista dominios 2026", "retrievedAt": "2026-09-04T14:53:55.000Z", "note": "Returned only Chile blocklist coverage; no Honduras-specific blocklist found" }
+    ],
+    "unresolved": [
+      { "field": "findings.brand / findings.aliases", "attempted": "Could not load pinupbet.hn homepage or footer directly (EGRESS_BLOCKED); relied on search-indexed titles and snippets, and could not confirm common ownership of the three similarly-named mirror domains." },
+      { "field": "findings.legalEntity", "attempted": "Could not query a Curaçao company or UBO register directly; relied on Pin-Up's own self-published regional licence-information pages for Carletta N.V.'s registration number and address." },
+      { "field": "findings.parentGroup", "attempted": "No GLEIF or corporate-registry relationship lookup was available this run; the link between Carletta N.V. and Guruflow Team Limited/Pin-Up Global is inferred from shared brand identity in OCCRP reporting only, not a confirmed ownership record." },
+      { "field": "findings.domainRegistration", "attempted": "Attempted a general WHOIS lookup (whois.com); returned EGRESS_BLOCKED. No RDAP tool was available this run." },
+      { "field": "findings.licences", "attempted": "Attempted to fetch the Curaçao Gaming Control Board register entry directly; returned EGRESS_BLOCKED. Licence status recorded as unverifiable rather than active." },
+      { "field": "findings.authorisation", "attempted": "Searched for a primary Honduran regulator source on online-gambling licensing; found only secondary/marketing sources with conflicting claims, none naming pinupbet.hn." }
+    ]
+  },
+
+  "analystNotes": "This run's investigation was materially constrained by the environment it ran in: direct fetch of pinupbet.hn, of a WHOIS lookup service, and of the Curaçao Gaming Control Board's public register all returned EGRESS_BLOCKED from the investigating environment itself, not from the target refusing access. Every finding here is therefore built from public web-search snippets and secondary/marketing sources, several of which are Pin-Up's own regional promotional pages (e.g. canada-pinup.ca, officialpinupcasino.com) rather than independently queried registers — treat the operator identity (Carletta N.V.) and licence claim (OGL/2024/580/0570) as disclosed, not verified, until a follow-up pass with working fetch/RDAP/register access can confirm them directly. The most consequential open thread is the parent 'Pin-Up' brand's Ukraine sanctions and OCCRP reporting on its ownership network's alleged links to financing Russia's invasion: this is a serious, legitimate flag for further scrutiny, but this run could not establish whether the specific Curaçao licensee disclosed for pinupbet.hn sits within that same sanctioned ownership structure, so it has been recorded as a referral flag rather than folded into a firm conclusion. A secondary open thread is Honduras's own online-gambling regulatory status, where available secondary sources directly conflict (no online regime in force vs. roughly five operators already licensed) and neither could be corroborated against a primary regulator source from this environment."
+}
