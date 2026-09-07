@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M1XB6S5GYNT3FXK9FECMYYCR",
+  "requestCommit": "ff614e5c3a7d8d3c8f5211c0314b942f3d4ee92f",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-07T07:11:34.000Z",
+  "finishedAt": "2026-09-07T07:24:47.676Z",
+  "durationMs": 793676,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 95533,
+      "sha256": "cb6f63cfe9a03cda3f757cb37a8ff1239dc0db5d0b6ea2919f34ec390283aba6",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M1XB6S5GYNT3FXK9FECMYYCR/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 14181,
+    "rowsExcludedByUrlRule": 1,
+    "rowsReviewNeededDropped": 0,
+    "duplicateUrlsDropped": 6,
+    "standardSetTotal": 14174,
+    "juego": 10862,
+    "noJuego": 3312,
+    "inaccesibles": 0,
+    "ivaRegistrado": 52,
+    "ivaNoRegistradoListado": 74,
+    "ivaNoRegistrado": 10736,
+    "evaluationDays": 53,
+    "distinctVariantBrands": 1662,
+    "redirectSources": 230,
+    "gamblingFeedRows": 10862,
+    "rankedGamblingRows": 386,
+    "brandsInHeatMap": 29,
+    "externalLookupsPerformed": 13,
+    "figuresRendered": 8,
+    "tablesRendered": 13,
+    "a4Pages": 20,
+    "outputFormat": "html"
+  },
+  "error": null
+}
