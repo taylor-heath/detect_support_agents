@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Informe de análisis de juego en línea y cumplimiento de IVA para Polla Chilena de Beneficencia S.A., producido por SICPA SA con SICPADetect.">
+<title>Análisis de Juego en Línea — Polla Chilena de Beneficencia</title>
+<style>
+@page { size: A4 portrait; margin: 20mm; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; padding: 0; }
+img, table, pre { max-width: 100%; }
+:root{
+  --ink:#16202b; --ink-soft:#4a5a6b; --bg:#ffffff; --panel:#f4f6f9;
+  --line:#d5dde6; --grid:#e3e9f0; --prim:#1F3F63; --prim-ink:#ffffff;
+  --verde:#27ae60; --rojo:#c0392b; --neutro:#9aa7b4; --accent:#2f5c8f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#e8eef5; --ink-soft:#a9b8c8; --bg:#111820; --panel:#1b2530;
+    --line:#33414f; --grid:#2b3945; --prim:#7fa8d6; --prim-ink:#0d141c;
+    --verde:#4cc47f; --rojo:#e8695a; --neutro:#8b98a6; --accent:#9dbde0;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#e8eef5; --ink-soft:#a9b8c8; --bg:#111820; --panel:#1b2530;
+  --line:#33414f; --grid:#2b3945; --prim:#7fa8d6; --prim-ink:#0d141c;
+  --verde:#4cc47f; --rojo:#e8695a; --neutro:#8b98a6; --accent:#9dbde0;
+}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  font-size:10.5pt; line-height:1.55;
+}
+@media screen{ body{ padding:20px; } }
+article{ display:block; }
+p,li{ max-width:74ch; }
+h1,h2,h3{ line-height:1.25; color:var(--ink); break-after:avoid; }
+h1{ font-size:20pt; margin:0 0 6px; letter-spacing:-0.2px; }
+h2{ font-size:14pt; margin:26px 0 8px; padding-bottom:5px; border-bottom:2px solid var(--prim); }
+h3{ font-size:11.5pt; margin:18px 0 6px; color:var(--accent); }
+h4{ font-size:10.5pt; margin:14px 0 4px; }
+section{ margin-bottom:6px; }
+.band{ background:var(--prim); color:var(--prim-ink); border:1px solid var(--prim);
+  border-left:6px solid var(--prim); padding:14px 16px; margin-bottom:16px; }
+.band h1{ color:var(--prim-ink); font-size:22pt; }
+.band .purpose{ font-size:13pt; font-weight:600; margin:2px 0 10px; color:var(--prim-ink); }
+.band dl{ display:grid; grid-template-columns:auto 1fr; gap:2px 12px; margin:0; font-size:9.5pt; }
+.band dt{ font-weight:700; opacity:.85; }
+.band dd{ margin:0; }
+.toc{ background:var(--panel); border:1px solid var(--line); padding:10px 14px; margin:0 0 18px; }
+.toc h2{ font-size:11pt; margin:0 0 6px; border:0; padding:0; }
+.toc ol{ margin:0; padding-left:20px; column-count:2; column-gap:18px; font-size:9.5pt; }
+.toc a{ color:var(--accent); }
+.cards{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:10px 0 4px; }
+.cards.c3{ grid-template-columns:repeat(3,1fr); }
+.card{ background:var(--panel); border:1px solid var(--line); border-top:3px solid var(--prim);
+  padding:8px 10px; break-inside:avoid; }
+.card .k{ font-size:8.5pt; text-transform:uppercase; letter-spacing:.4px; color:var(--ink-soft); }
+.card .v{ font-size:16pt; font-weight:700; color:var(--prim); line-height:1.15; }
+.card .s{ font-size:8.5pt; color:var(--ink-soft); }
+.nb{ white-space:nowrap; }
+table{ width:100%; border-collapse:collapse; font-size:9pt; margin:8px 0 4px; }
+caption{ caption-side:top; text-align:left; font-size:9pt; font-style:italic;
+  color:var(--ink-soft); padding:2px 0 6px; }
+th,td{ border:1px solid var(--line); padding:3px 5px; text-align:left; vertical-align:top; }
+th{ background:var(--prim); color:var(--prim-ink); font-weight:600; }
+thead{ display:table-header-group; }
+tbody tr:nth-child(even){ background:var(--panel); }
+td.num,th.num{ text-align:right; font-variant-numeric:tabular-nums; }
+td.dom{ word-break:break-all; }
+td.date{ white-space:nowrap; }
+.badge{ display:inline-block; padding:1px 6px; border-radius:2px; font-size:8pt;
+  font-weight:700; color:#fff; }
+.b-verde{ background:var(--verde); }
+.b-rojo{ background:var(--rojo); }
+.hdr-verde th{ background:var(--verde); }
+.hdr-rojo th{ background:var(--rojo); }
+figure{ margin:10px 0 14px; break-inside:avoid; }
+figure.long{ break-inside:auto; }
+figcaption{ font-size:8.5pt; color:var(--ink-soft); font-style:italic; margin-top:3px; }
+svg.chart{ width:100%; height:auto; display:block; }
+.chart .grid{ stroke:var(--grid); stroke-width:1; }
+.chart .axis{ stroke:var(--line); stroke-width:1; }
+.chart .tick{ fill:var(--ink-soft); font-size:8px; }
+.chart .leg{ fill:var(--ink); font-size:10px; }
+.chart .blab{ fill:var(--ink); font-size:9px; }
+.chart .bval{ fill:var(--ink-soft); font-size:9px; }
+.chart .edge{ stroke:var(--neutro); stroke-width:.9; }
+.chart .node{ fill:var(--ink); font-size:8px; }
+.chart .nodec{ fill:var(--prim); font-size:10px; font-weight:700; }
+blockquote{ margin:10px 0; padding:8px 12px; background:var(--panel);
+  border-left:4px solid var(--accent); font-size:9.5pt; }
+blockquote p{ margin:0; }
+.callout{ background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--accent);
+  padding:8px 12px; margin:10px 0; font-size:9.5pt; break-inside:avoid; }
+.finding{ background:var(--panel); border:1px solid var(--line); border-left:5px solid var(--prim);
+  padding:9px 12px; margin:9px 0; break-inside:avoid; }
+.finding h3{ margin:0 0 4px; color:var(--prim); }
+.finding .concl{ margin:6px 0 0; font-size:9.5pt; font-style:italic; color:var(--ink-soft);
+  border-top:1px dotted var(--line); padding-top:5px; }
+.empty{ font-style:italic; color:var(--ink-soft); background:var(--panel);
+  border:1px dashed var(--line); padding:8px 10px; }
+.heat td.cell{ text-align:right; font-variant-numeric:tabular-nums; font-weight:600; }
+.legend{ font-size:8.5pt; color:var(--ink-soft); margin:4px 0 0; }
+.scroll{ overflow-x:auto; }
+ul.tight{ margin:6px 0; padding-left:20px; }
+ul.tight li{ margin:2px 0; }
+.small{ font-size:8.5pt; color:var(--ink-soft); }
+footer{ margin-top:22px; padding-top:8px; border-top:1px solid var(--line);
+  font-size:8.5pt; color:var(--ink-soft); }
+</style>
+</head>
+<body>
+<article>
+<header class="band">
+<h1>Informe de Análisis de Juego en Línea y Cumplimiento de IVA</h1>
+<p class="purpose">Análisis de juego en línea y cumplimiento de IVA</p>
+<dl>
+<dt>Preparado para (Cliente):</dt><dd><strong>Polla Chilena de Beneficencia S.A.</strong></dd>
+<dt>Propósito del informe:</dt><dd><strong>Análisis de juego en línea y cumplimiento de IVA</strong></dd>
+<dt>Producido por:</dt><dd><strong>SICPA SA</strong></dd>
+<dt>Solución:</dt><dd>SICPADetect®</dd>
+<dt>Fecha de emisión:</dt><dd>2026-09-07</dd>
+<dt>Confidencialidad:</dt><dd>Confidencial — para uso exclusivo de Polla Chilena de Beneficencia S.A.</dd>
+</dl></header>
+<nav class="toc" aria-label="Índice del informe"><h2>Contenido</h2><ol>
+<li><a href="#resumen">Resumen de la ejecución</a></li>
+<li><a href="#sec-a">Sección A — Las cifras</a></li>
+<li><a href="#sec-b">Sección B — Los hallazgos</a></li>
+<li><a href="#sec-b1">Sección B1 — Mapa de calor de marcas</a></li>
+<li><a href="#sec-c">Sección C — Sitios de Juego Mejor Posicionados</a></li>
+<li><a href="#sec-d">Sección D — Registros ampliados</a></li>
+<li><a href="#sec-e">Sección E — Hallazgos clave</a></li>
+<li><a href="#notas">Notas metodológicas y de presentación</a></li>
+<li><a href="#cabos">Cabos sueltos</a></li>
+</ol></nav>
+<section id="resumen"><h2>Resumen de la ejecución</h2>
+<p>Este informe se generó a partir de una exportación de planilla de SICPADetect de <strong>14.181</strong> filas, correspondiente a la configuración de Chile. Tras aplicar las reglas de construcción del conjunto de trabajo (§2 de la especificación), el conjunto estándar analizado contiene <strong>14.174</strong> URLs distintas.</p>
+<table><caption>Tabla 1 — Trazabilidad del conjunto de trabajo desde el insumo hasta el conjunto estándar.</caption><thead><tr><th>Paso</th><th class="num">Filas</th><th>Detalle</th></tr></thead><tbody>
+<tr><td>Filas leídas del CSV</td><td class="num">14.181</td><td>Delimitador «;», encabezado recortado, líneas vacías omitidas</td></tr>
+<tr><td>Excluidas por regla de URL</td><td class="num">−1</td><td>URLs que contienen «twitter.com» (regla del encabezado de la especificación)</td></tr>
+<tr><td>Descartadas por <code>Review needed</code></td><td class="num">−0</td><td>Filas aún no adjudicadas</td></tr>
+<tr><td>Duplicados por URL</td><td class="num">−6</td><td>Se conserva la primera aparición de cada URL</td></tr>
+<tr><td><strong>Conjunto estándar (total)</strong></td><td class="num"><strong>14.174</strong></td><td>Base de cálculo de todas las métricas</td></tr>
+</tbody></table>
+<p class="small">Columnas presentes en el insumo: Domain, URL, Status, Source, Rank, Updated at, Confidence, LLM Reasoning, Case Management Status. Las columnas opcionales de entidad legal y país de la entidad legal <strong>no</strong> están presentes en esta exportación, por lo que esos campos se muestran en blanco salvo cuando la coincidencia con la lista de referencia aporta la entidad legal.</p>
+</section>
+<section id="sec-a"><h2>Sección A — Las cifras</h2>
+<div class="cards">
+<div class="card"><p class="k">Total de URLs analizadas</p><p class="v">14.174</p><p class="s">URLs distintas del conjunto estándar</p></div>
+<div class="card"><p class="k">Período de evaluación</p><p class="v">53 días</p><p class="s"><span class="nb">2026-07-16</span> → <span class="nb">2026-09-06</span></p></div>
+<div class="card"><p class="k">Sitios de juego</p><p class="v">10.862</p><p class="s">76,6% del total</p></div>
+<div class="card"><p class="k">Sitios que no son de juego</p><p class="v">3.312</p><p class="s">23,4% del total</p></div>
+</div>
+<h3>URLs analizadas por día</h3>
+<figure><svg viewBox="0 0 700 270" role="img" class="chart" aria-label="Gráfico de líneas: URLs distintas analizadas por día, de 2026-07-16 a 2026-09-06, máximo 4.205 URLs en un día."><line x1="46" y1="230.0" x2="688" y2="230.0" class="grid"/><line x1="46" y1="176.0" x2="688" y2="176.0" class="grid"/><line x1="46" y1="122.0" x2="688" y2="122.0" class="grid"/><line x1="46" y1="68.0" x2="688" y2="68.0" class="grid"/><line x1="46" y1="14.0" x2="688" y2="14.0" class="grid"/><path d="M 46.0,230.0 L 46.0,18.8 L 58.3,204.5 L 70.7,223.5 L 83.0,220.5 L 95.4,217.5 L 107.7,211.1 L 120.1,205.2 L 132.4,206.4 L 144.8,206.6 L 157.1,200.4 L 169.5,206.3 L 181.8,199.7 L 194.2,207.0 L 206.5,210.3 L 218.8,215.4 L 231.2,214.9 L 243.5,221.5 L 255.9,221.1 L 268.2,215.6 L 280.6,221.8 L 292.9,214.9 L 305.3,219.7 L 317.6,203.9 L 330.0,219.2 L 342.3,227.2 L 354.7,223.8 L 367.0,226.3 L 379.3,221.1 L 391.7,228.9 L 404.0,224.3 L 416.4,217.0 L 428.7,226.2 L 441.1,229.4 L 453.4,223.4 L 465.8,226.9 L 478.1,227.4 L 490.5,228.8 L 502.8,229.0 L 515.2,226.4 L 527.5,228.6 L 539.8,228.9 L 552.2,222.9 L 564.5,228.8 L 576.9,228.9 L 589.2,228.8 L 601.6,228.9 L 613.9,228.8 L 626.3,228.9 L 638.6,222.7 L 651.0,229.0 L 663.3,222.6 L 675.7,228.8 L 688.0,229.1 L 688.0,230.0 Z" fill="#1F3F63" opacity="0.10"/><polyline points="46.0,18.8 58.3,204.5 70.7,223.5 83.0,220.5 95.4,217.5 107.7,211.1 120.1,205.2 132.4,206.4 144.8,206.6 157.1,200.4 169.5,206.3 181.8,199.7 194.2,207.0 206.5,210.3 218.8,215.4 231.2,214.9 243.5,221.5 255.9,221.1 268.2,215.6 280.6,221.8 292.9,214.9 305.3,219.7 317.6,203.9 330.0,219.2 342.3,227.2 354.7,223.8 367.0,226.3 379.3,221.1 391.7,228.9 404.0,224.3 416.4,217.0 428.7,226.2 441.1,229.4 453.4,223.4 465.8,226.9 478.1,227.4 490.5,228.8 502.8,229.0 515.2,226.4 527.5,228.6 539.8,228.9 552.2,222.9 564.5,228.8 576.9,228.9 589.2,228.8 601.6,228.9 613.9,228.8 626.3,228.9 638.6,222.7 651.0,229.0 663.3,222.6 675.7,228.8 688.0,229.1" fill="none" stroke="#1F3F63" stroke-width="1.8"/><circle cx="46.0" cy="18.8" r="1.9" fill="#1F3F63"/><circle cx="58.3" cy="204.5" r="1.9" fill="#1F3F63"/><circle cx="70.7" cy="223.5" r="1.9" fill="#1F3F63"/><circle cx="83.0" cy="220.5" r="1.9" fill="#1F3F63"/><circle cx="95.4" cy="217.5" r="1.9" fill="#1F3F63"/><circle cx="107.7" cy="211.1" r="1.9" fill="#1F3F63"/><circle cx="120.1" cy="205.2" r="1.9" fill="#1F3F63"/><circle cx="132.4" cy="206.4" r="1.9" fill="#1F3F63"/><circle cx="144.8" cy="206.6" r="1.9" fill="#1F3F63"/><circle cx="157.1" cy="200.4" r="1.9" fill="#1F3F63"/><circle cx="169.5" cy="206.3" r="1.9" fill="#1F3F63"/><circle cx="181.8" cy="199.7" r="1.9" fill="#1F3F63"/><circle cx="194.2" cy="207.0" r="1.9" fill="#1F3F63"/><circle cx="206.5" cy="210.3" r="1.9" fill="#1F3F63"/><circle cx="218.8" cy="215.4" r="1.9" fill="#1F3F63"/><circle cx="231.2" cy="214.9" r="1.9" fill="#1F3F63"/><circle cx="243.5" cy="221.5" r="1.9" fill="#1F3F63"/><circle cx="255.9" cy="221.1" r="1.9" fill="#1F3F63"/><circle cx="268.2" cy="215.6" r="1.9" fill="#1F3F63"/><circle cx="280.6" cy="221.8" r="1.9" fill="#1F3F63"/><circle cx="292.9" cy="214.9" r="1.9" fill="#1F3F63"/><circle cx="305.3" cy="219.7" r="1.9" fill="#1F3F63"/><circle cx="317.6" cy="203.9" r="1.9" fill="#1F3F63"/><circle cx="330.0" cy="219.2" r="1.9" fill="#1F3F63"/><circle cx="342.3" cy="227.2" r="1.9" fill="#1F3F63"/><circle cx="354.7" cy="223.8" r="1.9" fill="#1F3F63"/><circle cx="367.0" cy="226.3" r="1.9" fill="#1F3F63"/><circle cx="379.3" cy="221.1" r="1.9" fill="#1F3F63"/><circle cx="391.7" cy="228.9" r="1.9" fill="#1F3F63"/><circle cx="404.0" cy="224.3" r="1.9" fill="#1F3F63"/><circle cx="416.4" cy="217.0" r="1.9" fill="#1F3F63"/><circle cx="428.7" cy="226.2" r="1.9" fill="#1F3F63"/><circle cx="441.1" cy="229.4" r="1.9" fill="#1F3F63"/><circle cx="453.4" cy="223.4" r="1.9" fill="#1F3F63"/><circle cx="465.8" cy="226.9" r="1.9" fill="#1F3F63"/><circle cx="478.1" cy="227.4" r="1.9" fill="#1F3F63"/><circle cx="490.5" cy="228.8" r="1.9" fill="#1F3F63"/><circle cx="502.8" cy="229.0" r="1.9" fill="#1F3F63"/><circle cx="515.2" cy="226.4" r="1.9" fill="#1F3F63"/><circle cx="527.5" cy="228.6" r="1.9" fill="#1F3F63"/><circle cx="539.8" cy="228.9" r="1.9" fill="#1F3F63"/><circle cx="552.2" cy="222.9" r="1.9" fill="#1F3F63"/><circle cx="564.5" cy="228.8" r="1.9" fill="#1F3F63"/><circle cx="576.9" cy="228.9" r="1.9" fill="#1F3F63"/><circle cx="589.2" cy="228.8" r="1.9" fill="#1F3F63"/><circle cx="601.6" cy="228.9" r="1.9" fill="#1F3F63"/><circle cx="613.9" cy="228.8" r="1.9" fill="#1F3F63"/><circle cx="626.3" cy="228.9" r="1.9" fill="#1F3F63"/><circle cx="638.6" cy="222.7" r="1.9" fill="#1F3F63"/><circle cx="651.0" cy="229.0" r="1.9" fill="#1F3F63"/><circle cx="663.3" cy="222.6" r="1.9" fill="#1F3F63"/><circle cx="675.7" cy="228.8" r="1.9" fill="#1F3F63"/><circle cx="688.0" cy="229.1" r="1.9" fill="#1F3F63"/><line x1="46" y1="230" x2="688" y2="230" class="axis"/><line x1="46" y1="14" x2="46" y2="230" class="axis"/><text x="40" y="233.0" class="tick" text-anchor="end">0</text><text x="40" y="179.0" class="tick" text-anchor="end">1.075</text><text x="40" y="125.0" class="tick" text-anchor="end">2.150</text><text x="40" y="71.0" class="tick" text-anchor="end">3.225</text><text x="40" y="17.0" class="tick" text-anchor="end">4.300</text><text x="46.0" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 46.0 246.0)">07-16</text><text x="107.7" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 107.7 246.0)">07-21</text><text x="169.5" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 169.5 246.0)">07-26</text><text x="231.2" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 231.2 246.0)">07-31</text><text x="292.9" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 292.9 246.0)">08-05</text><text x="354.7" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 354.7 246.0)">08-10</text><text x="416.4" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 416.4 246.0)">08-15</text><text x="478.1" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 478.1 246.0)">08-20</text><text x="539.8" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 539.8 246.0)">08-25</text><text x="601.6" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 601.6 246.0)">08-30</text><text x="663.3" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 663.3 246.0)">09-04</text><text x="688.0" y="246.0" class="tick" text-anchor="end" transform="rotate(-40 688.0 246.0)">09-06</text></svg><figcaption>Figura 1 — URLs distintas actualizadas por fecha, del 2026-07-16 al 2026-09-06 (53 días). Fechas no parseables: 0.</figcaption></figure>
+<div class="callout"><strong>Volumen diario:</strong> el día de mayor actividad es <strong>2026-07-16</strong> con <strong>4.205</strong> URLs distintas actualizadas; el promedio del período es de 267,4 URLs por día sobre 53 fechas con actividad registrada.</div>
+<details open><summary class="small">Serie completa por fecha (53 fechas)</summary>
+<div class="scroll"><table><caption>Tabla 2 — URLs distintas actualizadas por fecha (serie completa).</caption><thead><tr><th>Fecha</th><th class="num">URLs</th><th>Fecha</th><th class="num">URLs</th><th>Fecha</th><th class="num">URLs</th></tr></thead><tbody>
+<tr><td>2026-07-16</td><td class="num">4.205</td><td>2026-08-03</td><td class="num">287</td><td>2026-08-21</td><td class="num">23</td></tr>
+<tr><td>2026-07-17</td><td class="num">508</td><td>2026-08-04</td><td class="num">163</td><td>2026-08-22</td><td class="num">20</td></tr>
+<tr><td>2026-07-18</td><td class="num">130</td><td>2026-08-05</td><td class="num">301</td><td>2026-08-23</td><td class="num">71</td></tr>
+<tr><td>2026-07-19</td><td class="num">189</td><td>2026-08-06</td><td class="num">205</td><td>2026-08-24</td><td class="num">28</td></tr>
+<tr><td>2026-07-20</td><td class="num">248</td><td>2026-08-07</td><td class="num">519</td><td>2026-08-25</td><td class="num">21</td></tr>
+<tr><td>2026-07-21</td><td class="num">377</td><td>2026-08-08</td><td class="num">215</td><td>2026-08-26</td><td class="num">141</td></tr>
+<tr><td>2026-07-22</td><td class="num">494</td><td>2026-08-09</td><td class="num">55</td><td>2026-08-27</td><td class="num">23</td></tr>
+<tr><td>2026-07-23</td><td class="num">470</td><td>2026-08-10</td><td class="num">124</td><td>2026-08-28</td><td class="num">21</td></tr>
+<tr><td>2026-07-24</td><td class="num">465</td><td>2026-08-11</td><td class="num">74</td><td>2026-08-29</td><td class="num">23</td></tr>
+<tr><td>2026-07-25</td><td class="num">589</td><td>2026-08-12</td><td class="num">178</td><td>2026-08-30</td><td class="num">22</td></tr>
+<tr><td>2026-07-26</td><td class="num">472</td><td>2026-08-13</td><td class="num">21</td><td>2026-08-31</td><td class="num">24</td></tr>
+<tr><td>2026-07-27</td><td class="num">604</td><td>2026-08-14</td><td class="num">113</td><td>2026-09-01</td><td class="num">21</td></tr>
+<tr><td>2026-07-28</td><td class="num">457</td><td>2026-08-15</td><td class="num">258</td><td>2026-09-02</td><td class="num">146</td></tr>
+<tr><td>2026-07-29</td><td class="num">392</td><td>2026-08-16</td><td class="num">75</td><td>2026-09-03</td><td class="num">20</td></tr>
+<tr><td>2026-07-30</td><td class="num">291</td><td>2026-08-17</td><td class="num">12</td><td>2026-09-04</td><td class="num">148</td></tr>
+<tr><td>2026-07-31</td><td class="num">300</td><td>2026-08-18</td><td class="num">131</td><td>2026-09-05</td><td class="num">23</td></tr>
+<tr><td>2026-08-01</td><td class="num">169</td><td>2026-08-19</td><td class="num">61</td><td>2026-09-06</td><td class="num">18</td></tr>
+<tr><td>2026-08-02</td><td class="num">178</td><td>2026-08-20</td><td class="num">51</td><td></td><td></td></tr>
+</tbody></table></div></details>
+<h3>Distribución Juego / No juego</h3>
+<figure><svg viewBox="0 0 430 250" role="img" class="chart" aria-label="Gráfico de anillo: Juego 10.862 URLs, 76,6%; No juego 3.312 URLs, 23,4%."><path d="M 118.0,30.0 A 92,92 0 1 1 26.5,112.6 L 66.3,116.7 A 52,52 0 1 0 118.0,70.0 Z" fill="#1F3F63"/><path d="M 26.5,112.6 A 92,92 0 0 1 118.0,30.0 L 118.0,70.0 A 52,52 0 0 0 66.3,116.7 Z" fill="#9aa7b4"/><rect x="250" y="60" width="13" height="13" fill="#1F3F63"/><text x="271" y="71" class="leg">Juego — 10.862 (76,6%)</text><rect x="250" y="90" width="13" height="13" fill="#9aa7b4"/><text x="271" y="101" class="leg">No juego — 3.312 (23,4%)</text></svg><figcaption>Figura 2 — Composición del conjunto estándar entre sitios de juego y sitios que no son de juego. Colores neutros: Juego (azul SICPA), No juego (gris).</figcaption></figure>
+<table><caption>Tabla 3 — Distribución Juego / No juego sobre el conjunto estándar.</caption><thead><tr><th>Categoría</th><th class="num">Conteo</th><th class="num">%</th></tr></thead><tbody>
+<tr><td>Juego</td><td class="num">10.862</td><td class="num">76,6%</td></tr>
+<tr><td>No juego</td><td class="num">3.312</td><td class="num">23,4%</td></tr>
+<tr><td><strong>Total</strong></td><td class="num"><strong>14.174</strong></td><td class="num"><strong>100,0%</strong></td></tr>
+</tbody></table>
+<p class="small">No se registraron filas <code>Unreachable</code> ni con estado no reconocido en esta muestra, por lo que la categoría neutra de inaccesibles queda en cero.</p>
+<h3>Top 10 sufijos de URL</h3>
+<figure><svg viewBox="0 0 700 212" role="img" class="chart" aria-label="Gráfico de barras: .com 2.918; .site 1.541; .app 1.453; .pro 1.222; .bet 1.039; .net 608; .club 594; .org 524; .fun 353; .click 315."><text x="0" y="20" class="blab">.com</text><rect x="330" y="9" width="300.0" height="12" fill="#1F3F63"/><text x="638.0" y="20" class="bval">2.918 (20,6%)</text><text x="0" y="40" class="blab">.site</text><rect x="330" y="29" width="158.4" height="12" fill="#1F3F63"/><text x="496.4" y="40" class="bval">1.541 (10,9%)</text><text x="0" y="60" class="blab">.app</text><rect x="330" y="49" width="149.4" height="12" fill="#1F3F63"/><text x="487.4" y="60" class="bval">1.453 (10,3%)</text><text x="0" y="80" class="blab">.pro</text><rect x="330" y="69" width="125.6" height="12" fill="#1F3F63"/><text x="463.6" y="80" class="bval">1.222 (8,6%)</text><text x="0" y="100" class="blab">.bet</text><rect x="330" y="89" width="106.8" height="12" fill="#1F3F63"/><text x="444.8" y="100" class="bval">1.039 (7,3%)</text><text x="0" y="120" class="blab">.net</text><rect x="330" y="109" width="62.5" height="12" fill="#1F3F63"/><text x="400.5" y="120" class="bval">608 (4,3%)</text><text x="0" y="140" class="blab">.club</text><rect x="330" y="129" width="61.1" height="12" fill="#1F3F63"/><text x="399.1" y="140" class="bval">594 (4,2%)</text><text x="0" y="160" class="blab">.org</text><rect x="330" y="149" width="53.9" height="12" fill="#1F3F63"/><text x="391.9" y="160" class="bval">524 (3,7%)</text><text x="0" y="180" class="blab">.fun</text><rect x="330" y="169" width="36.3" height="12" fill="#1F3F63"/><text x="374.3" y="180" class="bval">353 (2,5%)</text><text x="0" y="200" class="blab">.click</text><rect x="330" y="189" width="32.4" height="12" fill="#1F3F63"/><text x="370.4" y="200" class="bval">315 (2,2%)</text></svg><figcaption>Figura 3 — Los diez sufijos de dominio más frecuentes en el conjunto estándar, por número total de URLs.</figcaption></figure>
+<table><caption>Tabla 4 — Top 10 sufijos de URL, con la proporción de sitios de juego dentro de cada sufijo.</caption><thead><tr><th>Sufijo</th><th class="num">Total</th><th class="num">% del total</th><th class="num">Juego</th><th class="num">% juego</th></tr></thead><tbody>
+<tr><td>.com</td><td class="num">2.918</td><td class="num">20,6%</td><td class="num">1.912</td><td class="num">65,5%</td></tr>
+<tr><td>.site</td><td class="num">1.541</td><td class="num">10,9%</td><td class="num">1.519</td><td class="num">98,6%</td></tr>
+<tr><td>.app</td><td class="num">1.453</td><td class="num">10,3%</td><td class="num">1.240</td><td class="num">85,3%</td></tr>
+<tr><td>.pro</td><td class="num">1.222</td><td class="num">8,6%</td><td class="num">1.158</td><td class="num">94,8%</td></tr>
+<tr><td>.bet</td><td class="num">1.039</td><td class="num">7,3%</td><td class="num">1.026</td><td class="num">98,7%</td></tr>
+<tr><td>.net</td><td class="num">608</td><td class="num">4,3%</td><td class="num">423</td><td class="num">69,6%</td></tr>
+<tr><td>.club</td><td class="num">594</td><td class="num">4,2%</td><td class="num">550</td><td class="num">92,6%</td></tr>
+<tr><td>.org</td><td class="num">524</td><td class="num">3,7%</td><td class="num">266</td><td class="num">50,8%</td></tr>
+<tr><td>.fun</td><td class="num">353</td><td class="num">2,5%</td><td class="num">318</td><td class="num">90,1%</td></tr>
+<tr><td>.click</td><td class="num">315</td><td class="num">2,2%</td><td class="num">293</td><td class="num">93,0%</td></tr>
+</tbody></table>
+<div class="callout"><strong>Lectura:</strong> el sufijo más frecuente es <strong>.com</strong> (2.918 URLs, 20,6% del total). 6 de los diez sufijos superan el 90% de sitios de juego: .site, .pro, .bet, .club, .fun, .click.</div>
+<h3>Análisis por fuente</h3>
+<table><caption>Tabla 5 — Distribución Juego / No juego por categoría de <code>Source</code>. Los porcentajes usan «juego + no juego» como denominador.</caption><thead><tr><th>Categoría de fuente</th><th class="num">Total</th><th class="num">Juego</th><th class="num">No juego</th><th class="num">% juego</th><th class="num">% no juego</th></tr></thead><tbody>
+<tr><td>Manual</td><td class="num">4.030</td><td class="num">4.029</td><td class="num">1</td><td class="num">100,0%</td><td class="num">0,0%</td></tr>
+<tr><td>Google Search</td><td class="num">474</td><td class="num">121</td><td class="num">353</td><td class="num">25,5%</td><td class="num">74,5%</td></tr>
+<tr><td>Variant</td><td class="num">8.239</td><td class="num">6.322</td><td class="num">1.917</td><td class="num">76,7%</td><td class="num">23,3%</td></tr>
+<tr><td>Redirect</td><td class="num">675</td><td class="num">311</td><td class="num">364</td><td class="num">46,1%</td><td class="num">53,9%</td></tr>
+<tr><td>Other</td><td class="num">756</td><td class="num">79</td><td class="num">677</td><td class="num">10,4%</td><td class="num">89,6%</td></tr>
+</tbody></table>
+<p class="small">La categoría <code>Other</code> agrupa las fuentes que no comienzan por <code>Manual</code>, <code>Google Search</code>, <code>Variant</code> ni <code>Redirect</code> — en esta exportación corresponde principalmente a detecciones con origen <code>Youtube</code>.</p>
+</section>
+<section id="sec-b"><h2>Sección B — Los hallazgos</h2>
+<h3>Marcas y variantes (1.662 marcas distintas)</h3>
+<figure><svg viewBox="0 0 700 512" role="img" class="chart" aria-label="Gráfico de barras: mobile.verify.00sm88.site 19; login.account.mobile.mobile.secure.06sm88.site 18; tk88.pro 18; ek999.app 17; hi888.app 17; support.account.mobile.mobile.secure.account.mobile.verify.… 17; mobile.00sm88.site 16; mobile.mobile.00sm88.site 16; account.mobile.mobile.secure.account.mobile.verify.login.mo… 15; roobet.com 15; 09sm88.site 14; account.login.secure.verify.login.mobile.secure.m.m.b77.pro 14; …."><text x="0" y="20" class="blab">mobile.verify.00sm88.site</text><rect x="330" y="9" width="300.0" height="12" fill="#1F3F63"/><text x="638.0" y="20" class="bval">19</text><text x="0" y="40" class="blab">login.account.mobile.mobile.secure.06sm88.site</text><rect x="330" y="29" width="284.2" height="12" fill="#1F3F63"/><text x="622.2" y="40" class="bval">18</text><text x="0" y="60" class="blab">tk88.pro</text><rect x="330" y="49" width="284.2" height="12" fill="#1F3F63"/><text x="622.2" y="60" class="bval">18</text><text x="0" y="80" class="blab">ek999.app</text><rect x="330" y="69" width="268.4" height="12" fill="#1F3F63"/><text x="606.4" y="80" class="bval">17</text><text x="0" y="100" class="blab">hi888.app</text><rect x="330" y="89" width="268.4" height="12" fill="#1F3F63"/><text x="606.4" y="100" class="bval">17</text><text x="0" y="120" class="blab">support.account.mobile.mobile.secure.account.mobile…</text><rect x="330" y="109" width="268.4" height="12" fill="#1F3F63"/><text x="606.4" y="120" class="bval">17</text><text x="0" y="140" class="blab">mobile.00sm88.site</text><rect x="330" y="129" width="252.6" height="12" fill="#1F3F63"/><text x="590.6" y="140" class="bval">16</text><text x="0" y="160" class="blab">mobile.mobile.00sm88.site</text><rect x="330" y="149" width="252.6" height="12" fill="#1F3F63"/><text x="590.6" y="160" class="bval">16</text><text x="0" y="180" class="blab">account.mobile.mobile.secure.account.mobile.verify.…</text><rect x="330" y="169" width="236.8" height="12" fill="#1F3F63"/><text x="574.8" y="180" class="bval">15</text><text x="0" y="200" class="blab">roobet.com</text><rect x="330" y="189" width="236.8" height="12" fill="#1F3F63"/><text x="574.8" y="200" class="bval">15</text><text x="0" y="220" class="blab">09sm88.site</text><rect x="330" y="209" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="220" class="bval">14</text><text x="0" y="240" class="blab">account.login.secure.verify.login.mobile.secure.m.m…</text><rect x="330" y="229" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="240" class="bval">14</text><text x="0" y="260" class="blab">account.login.secure.verify.login.mobile.secure.m.s…</text><rect x="330" y="249" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="260" class="bval">14</text><text x="0" y="280" class="blab">account.m.account.login.secure.verify.login.mobile.…</text><rect x="330" y="269" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="280" class="bval">14</text><text x="0" y="300" class="blab">account.mobile.mobile.secure.account.login.19sm88.s…</text><rect x="330" y="289" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="300" class="bval">14</text><text x="0" y="320" class="blab">account.secure.login.mobile.secure.b77.pro</text><rect x="330" y="309" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="320" class="bval">14</text><text x="0" y="340" class="blab">d03.app</text><rect x="330" y="329" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="340" class="bval">14</text><text x="0" y="360" class="blab">ek77.win</text><rect x="330" y="349" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="360" class="bval">14</text><text x="0" y="380" class="blab">gk89.app</text><rect x="330" y="369" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="380" class="bval">14</text><text x="0" y="400" class="blab">login.m.verify.login.mobile.secure.b77.pro</text><rect x="330" y="389" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="400" class="bval">14</text><text x="0" y="420" class="blab">login.mobile.secure.login.secure.verify.login.mobil…</text><rect x="330" y="409" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="420" class="bval">14</text><text x="0" y="440" class="blab">login.secure.verify.login.mobile.secure.m.b77.pro</text><rect x="330" y="429" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="440" class="bval">14</text><text x="0" y="460" class="blab">m.account.login.secure.verify.login.mobile.secure.m…</text><rect x="330" y="449" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="460" class="bval">14</text><text x="0" y="480" class="blab">m.account.m.account.login.secure.verify.login.mobil…</text><rect x="330" y="469" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="480" class="bval">14</text><text x="0" y="500" class="blab">mobile.mobile.secure.account.06sm88.site</text><rect x="330" y="489" width="221.1" height="12" fill="#1F3F63"/><text x="559.1" y="500" class="bval">14</text></svg><figcaption>Figura 4 — Las 25 marcas semilla con mayor número de URLs variantes distintas, de un total de 1.662 marcas semilla identificadas.</figcaption></figure>
+<div class="scroll"><table><caption>Tabla 6 — Top 40 marcas semilla por número de URLs variantes distintas.</caption><thead><tr><th class="num">#</th><th>Marca semilla (<code>seed</code>)</th><th class="num">Variantes</th></tr></thead><tbody>
+<tr><td class="num">1</td><td class="dom">mobile.verify.00sm88.site</td><td class="num">19</td></tr>
+<tr><td class="num">2</td><td class="dom">login.account.mobile.mobile.secure.06sm88.site</td><td class="num">18</td></tr>
+<tr><td class="num">3</td><td class="dom">tk88.pro</td><td class="num">18</td></tr>
+<tr><td class="num">4</td><td class="dom">ek999.app</td><td class="num">17</td></tr>
+<tr><td class="num">5</td><td class="dom">hi888.app</td><td class="num">17</td></tr>
+<tr><td class="num">6</td><td class="dom">support.account.mobile.mobile.secure.account.mobile.verify.login.mobile.00sm88.site</td><td class="num">17</td></tr>
+<tr><td class="num">7</td><td class="dom">mobile.00sm88.site</td><td class="num">16</td></tr>
+<tr><td class="num">8</td><td class="dom">mobile.mobile.00sm88.site</td><td class="num">16</td></tr>
+<tr><td class="num">9</td><td class="dom">account.mobile.mobile.secure.account.mobile.verify.login.mobile.verify.m.m.21sm88.site</td><td class="num">15</td></tr>
+<tr><td class="num">10</td><td class="dom">roobet.com</td><td class="num">15</td></tr>
+<tr><td class="num">11</td><td class="dom">09sm88.site</td><td class="num">14</td></tr>
+<tr><td class="num">12</td><td class="dom">account.login.secure.verify.login.mobile.secure.m.m.b77.pro</td><td class="num">14</td></tr>
+<tr><td class="num">13</td><td class="dom">account.login.secure.verify.login.mobile.secure.m.support.support.secure.b77.pro</td><td class="num">14</td></tr>
+<tr><td class="num">14</td><td class="dom">account.m.account.login.secure.verify.login.mobile.secure.m.support.mobile.m.b77.pro</td><td class="num">14</td></tr>
+<tr><td class="num">15</td><td class="dom">account.mobile.mobile.secure.account.login.19sm88.site</td><td class="num">14</td></tr>
+<tr><td class="num">16</td><td class="dom">account.secure.login.mobile.secure.b77.pro</td><td class="num">14</td></tr>
+<tr><td class="num">17</td><td class="dom">d03.app</td><td class="num">14</td></tr>
+<tr><td class="num">18</td><td class="dom">ek77.win</td><td class="num">14</td></tr>
+<tr><td class="num">19</td><td class="dom">gk89.app</td><td class="num">14</td></tr>
+<tr><td class="num">20</td><td class="dom">login.m.verify.login.mobile.secure.b77.pro</td><td class="num">14</td></tr>
+<tr><td class="num">21</td><td class="dom">login.mobile.secure.login.secure.verify.login.mobile.secure.m.b77.pro</td><td class="num">14</td></tr>
+<tr><td class="num">22</td><td class="dom">login.secure.verify.login.mobile.secure.m.b77.pro</td><td class="num">14</td></tr>
+<tr><td class="num">23</td><td class="dom">m.account.login.secure.verify.login.mobile.secure.m.support.m.b77.pro</td><td class="num">14</td></tr>
+<tr><td class="num">24</td><td class="dom">m.account.m.account.login.secure.verify.login.mobile.secure.m.support.m.b77.pro</td><td class="num">14</td></tr>
+<tr><td class="num">25</td><td class="dom">mobile.mobile.secure.account.06sm88.site</td><td class="num">14</td></tr>
+<tr><td class="num">26</td><td class="dom">mobile.support.account.mobile.mobile.secure.account.mobile.verify.login.mobile.m.secure.mobile.secure.00sm88.site</td><td class="num">14</td></tr>
+<tr><td class="num">27</td><td class="dom">r39.app</td><td class="num">14</td></tr>
+<tr><td class="num">28</td><td class="dom">tk888.pro</td><td class="num">14</td></tr>
+<tr><td class="num">29</td><td class="dom">verify.login.mobile.verify.b77.pro</td><td class="num">14</td></tr>
+<tr><td class="num">30</td><td class="dom">account.login.secure.verify.login.mobile.secure.m.support.b77.pro</td><td class="num">13</td></tr>
+<tr><td class="num">31</td><td class="dom">account.m.account.login.secure.verify.login.mobile.secure.m.support.mobile.account.b77.pro</td><td class="num">13</td></tr>
+<tr><td class="num">32</td><td class="dom">account.mobile.support.account.mobile.mobile.secure.account.mobile.verify.login.mobile.m.00sm88.site</td><td class="num">13</td></tr>
+<tr><td class="num">33</td><td class="dom">bh77.club</td><td class="num">13</td></tr>
+<tr><td class="num">34</td><td class="dom">h781.top</td><td class="num">13</td></tr>
+<tr><td class="num">35</td><td class="dom">login.mobile.b77.pro</td><td class="num">13</td></tr>
+<tr><td class="num">36</td><td class="dom">login.mobile.secure.b77.pro</td><td class="num">13</td></tr>
+<tr><td class="num">37</td><td class="dom">login.secure.verify.login.mobile.secure.m.account.b77.pro</td><td class="num">13</td></tr>
+<tr><td class="num">38</td><td class="dom">login.secure.verify.login.mobile.secure.m.m.login.b77.pro</td><td class="num">13</td></tr>
+<tr><td class="num">39</td><td class="dom">login.verify.login.mobile.secure.secure.b77.pro</td><td class="num">13</td></tr>
+<tr><td class="num">40</td><td class="dom">mobile.j9.net</td><td class="num">13</td></tr>
+</tbody></table></div>
+<p class="small">La cola es larga y plana: 1.662 marcas semilla distintas producen 6.322 URLs variantes de juego, con un máximo de 19 variantes por semilla.</p>
+<h3>Hallazgos de convención de nombres — variantes</h3>
+<ul class="tight"><li>Palabras clave recurrentes: “mobile” (1994), “secure” (1618), “account” (1530) — evidencia de un esquema de nombres basado en plantillas.</li><li>Rotación de TLD: .site (1484), .pro (1004), .app (943), .bet (608) — el operador rota dominios de nivel superior.</li><li>6322 dominios variante distintos identificados en total.</li></ul>
+<h3>Proliferación de variantes — mobile.verify.00sm88.site</h3>
+<figure><svg viewBox="0 0 700 340" role="img" class="chart" aria-label="Diagrama de nodos: mobile.verify.00sm88.site en el centro conectado a 19 dominios detectados."><line x1="350.0" y1="170.0" x2="350.0" y2="44.0" class="edge"/><line x1="350.0" y1="170.0" x2="442.9" y2="56.5" class="edge"/><line x1="350.0" y1="170.0" x2="517.3" y2="91.4" class="edge"/><line x1="350.0" y1="170.0" x2="558.6" y2="142.0" class="edge"/><line x1="350.0" y1="170.0" x2="558.6" y2="198.0" class="edge"/><line x1="350.0" y1="170.0" x2="517.3" y2="248.6" class="edge"/><line x1="350.0" y1="170.0" x2="442.9" y2="283.5" class="edge"/><line x1="350.0" y1="170.0" x2="350.0" y2="296.0" class="edge"/><line x1="350.0" y1="170.0" x2="257.1" y2="283.5" class="edge"/><line x1="350.0" y1="170.0" x2="182.7" y2="248.6" class="edge"/><line x1="350.0" y1="170.0" x2="141.4" y2="198.0" class="edge"/><line x1="350.0" y1="170.0" x2="141.4" y2="142.0" class="edge"/><line x1="350.0" y1="170.0" x2="182.7" y2="91.4" class="edge"/><line x1="350.0" y1="170.0" x2="257.1" y2="56.5" class="edge"/><circle cx="350.0" cy="170.0" r="11" fill="#1F3F63"/><text x="350.0" y="196" class="nodec" text-anchor="middle">mobile.verify.00sm88.site</text><circle cx="350.0" cy="44.0" r="5" fill="#c0392b"/><text x="350.0" y="34.0" class="node" text-anchor="middle">account.mobile.verify.00sm88.site</text><circle cx="442.9" cy="56.5" r="5" fill="#c0392b"/><text x="442.9" y="46.5" class="node" text-anchor="middle">login.mobile.verify.00sm88.site</text><circle cx="517.3" cy="91.4" r="5" fill="#c0392b"/><text x="526.3" y="94.4" class="node" text-anchor="start">m.mobile.verify.00sm88.site</text><circle cx="558.6" cy="142.0" r="5" fill="#c0392b"/><text x="567.6" y="145.0" class="node" text-anchor="start">mobile.verify.01sm88.site</text><circle cx="558.6" cy="198.0" r="5" fill="#c0392b"/><text x="567.6" y="201.0" class="node" text-anchor="start">mobile.verify.02sm88.site</text><circle cx="517.3" cy="248.6" r="5" fill="#c0392b"/><text x="526.3" y="251.6" class="node" text-anchor="start">mobile.verify.03sm88.site</text><circle cx="442.9" cy="283.5" r="5" fill="#c0392b"/><text x="442.9" y="298.5" class="node" text-anchor="middle">mobile.verify.05sm88.site</text><circle cx="350.0" cy="296.0" r="5" fill="#c0392b"/><text x="350.0" y="311.0" class="node" text-anchor="middle">mobile.verify.09sm88.site</text><circle cx="257.1" cy="283.5" r="5" fill="#c0392b"/><text x="257.1" y="298.5" class="node" text-anchor="middle">mobile.verify.10sm88.site</text><circle cx="182.7" cy="248.6" r="5" fill="#c0392b"/><text x="173.7" y="251.6" class="node" text-anchor="end">mobile.verify.25sm88.site</text><circle cx="141.4" cy="198.0" r="5" fill="#c0392b"/><text x="132.4" y="201.0" class="node" text-anchor="end">mobile.verify.26sm88.site</text><circle cx="141.4" cy="142.0" r="5" fill="#c0392b"/><text x="132.4" y="145.0" class="node" text-anchor="end">mobile.verify.27sm88.site</text><circle cx="182.7" cy="91.4" r="5" fill="#c0392b"/><text x="173.7" y="94.4" class="node" text-anchor="end">mobile.verify.account.00sm88.site</text><circle cx="257.1" cy="56.5" r="5" fill="#c0392b"/><text x="257.1" y="46.5" class="node" text-anchor="middle">mobile.verify.m.00sm88.site</text><text x="350.0" y="334" class="tick" text-anchor="middle">Se muestran 14 de 19 dominios; el listado completo aparece en la tabla siguiente.</text></svg><figcaption>Figura 5 — Diagrama de nodos: la marca semilla más clonada en el centro y los dominios variantes detectados a su alrededor.</figcaption></figure>
+<blockquote><p><strong>mobile.verify.00sm88.site</strong> es la marca más clonada, con <strong>19</strong> URLs variantes.</p></blockquote>
+<div class="scroll"><table><caption>Tabla 7 — Dominios variantes de la marca semilla más clonada (hasta 40 etiquetas).</caption><thead><tr><th class="num">#</th><th>Dominio variante</th></tr></thead><tbody>
+<tr><td class="num">1</td><td class="dom">account.mobile.verify.00sm88.site</td></tr>
+<tr><td class="num">2</td><td class="dom">login.mobile.verify.00sm88.site</td></tr>
+<tr><td class="num">3</td><td class="dom">m.mobile.verify.00sm88.site</td></tr>
+<tr><td class="num">4</td><td class="dom">mobile.verify.01sm88.site</td></tr>
+<tr><td class="num">5</td><td class="dom">mobile.verify.02sm88.site</td></tr>
+<tr><td class="num">6</td><td class="dom">mobile.verify.03sm88.site</td></tr>
+<tr><td class="num">7</td><td class="dom">mobile.verify.05sm88.site</td></tr>
+<tr><td class="num">8</td><td class="dom">mobile.verify.09sm88.site</td></tr>
+<tr><td class="num">9</td><td class="dom">mobile.verify.10sm88.site</td></tr>
+<tr><td class="num">10</td><td class="dom">mobile.verify.25sm88.site</td></tr>
+<tr><td class="num">11</td><td class="dom">mobile.verify.26sm88.site</td></tr>
+<tr><td class="num">12</td><td class="dom">mobile.verify.27sm88.site</td></tr>
+<tr><td class="num">13</td><td class="dom">mobile.verify.account.00sm88.site</td></tr>
+<tr><td class="num">14</td><td class="dom">mobile.verify.m.00sm88.site</td></tr>
+<tr><td class="num">15</td><td class="dom">mobile.verify.mobile.00sm88.site</td></tr>
+<tr><td class="num">16</td><td class="dom">mobile.verify.secure.00sm88.site</td></tr>
+<tr><td class="num">17</td><td class="dom">mobile.verify.support.00sm88.site</td></tr>
+<tr><td class="num">18</td><td class="dom">mobile.verify.verify.00sm88.site</td></tr>
+<tr><td class="num">19</td><td class="dom">secure.mobile.verify.00sm88.site</td></tr>
+</tbody></table></div>
+<h3>Redirecciones desde — top 10</h3>
+<figure><svg viewBox="0 0 700 212" role="img" class="chart" aria-label="Gráfico de barras: c37.club 12; hi88.org 9; vk88.ng 5; e38.casino 4; marathonbetlogin.com 4; 888.bet 3; bk88.pro 3; bouchanibeden.cz 3; chillbet.live 3; d25.io 3."><text x="0" y="20" class="blab">c37.club</text><rect x="330" y="9" width="300.0" height="12" fill="#1F3F63"/><text x="638.0" y="20" class="bval">12</text><text x="0" y="40" class="blab">hi88.org</text><rect x="330" y="29" width="225.0" height="12" fill="#1F3F63"/><text x="563.0" y="40" class="bval">9</text><text x="0" y="60" class="blab">vk88.ng</text><rect x="330" y="49" width="125.0" height="12" fill="#1F3F63"/><text x="463.0" y="60" class="bval">5</text><text x="0" y="80" class="blab">e38.casino</text><rect x="330" y="69" width="100.0" height="12" fill="#1F3F63"/><text x="438.0" y="80" class="bval">4</text><text x="0" y="100" class="blab">marathonbetlogin.com</text><rect x="330" y="89" width="100.0" height="12" fill="#1F3F63"/><text x="438.0" y="100" class="bval">4</text><text x="0" y="120" class="blab">888.bet</text><rect x="330" y="109" width="75.0" height="12" fill="#1F3F63"/><text x="413.0" y="120" class="bval">3</text><text x="0" y="140" class="blab">bk88.pro</text><rect x="330" y="129" width="75.0" height="12" fill="#1F3F63"/><text x="413.0" y="140" class="bval">3</text><text x="0" y="160" class="blab">bouchanibeden.cz</text><rect x="330" y="149" width="75.0" height="12" fill="#1F3F63"/><text x="413.0" y="160" class="bval">3</text><text x="0" y="180" class="blab">chillbet.live</text><rect x="330" y="169" width="75.0" height="12" fill="#1F3F63"/><text x="413.0" y="180" class="bval">3</text><text x="0" y="200" class="blab">d25.io</text><rect x="330" y="189" width="75.0" height="12" fill="#1F3F63"/><text x="413.0" y="200" class="bval">3</text></svg><figcaption>Figura 6 — Las diez fuentes de redirección con mayor número de destinos distintos, de 230 fuentes de redirección identificadas.</figcaption></figure>
+<table><caption>Tabla 8 — Top 10 fuentes de redirección por número de URLs de destino distintas.</caption><thead><tr><th class="num">#</th><th>Fuente de redirección</th><th class="num">Destinos</th></tr></thead><tbody>
+<tr><td class="num">1</td><td class="dom">c37.club</td><td class="num">12</td></tr>
+<tr><td class="num">2</td><td class="dom">hi88.org</td><td class="num">9</td></tr>
+<tr><td class="num">3</td><td class="dom">vk88.ng</td><td class="num">5</td></tr>
+<tr><td class="num">4</td><td class="dom">e38.casino</td><td class="num">4</td></tr>
+<tr><td class="num">5</td><td class="dom">marathonbetlogin.com</td><td class="num">4</td></tr>
+<tr><td class="num">6</td><td class="dom">888.bet</td><td class="num">3</td></tr>
+<tr><td class="num">7</td><td class="dom">bk88.pro</td><td class="num">3</td></tr>
+<tr><td class="num">8</td><td class="dom">bouchanibeden.cz</td><td class="num">3</td></tr>
+<tr><td class="num">9</td><td class="dom">chillbet.live</td><td class="num">3</td></tr>
+<tr><td class="num">10</td><td class="dom">d25.io</td><td class="num">3</td></tr>
+</tbody></table>
+<h3>Hallazgos de convención de nombres — redirecciones</h3>
+<ul class="tight"><li>Palabras clave recurrentes: “bet” (32), “m.” (15), “app” (11) — evidencia de un esquema de nombres basado en plantillas.</li><li>Rotación de TLD: .com (116), .net (14), .mx (10), .bet (9) — el operador rota dominios de nivel superior.</li><li>311 dominios redirección distintos identificados en total.</li></ul>
+<h3>Propagación de redirecciones — c37.club</h3>
+<figure><svg viewBox="0 0 700 340" role="img" class="chart" aria-label="Diagrama de nodos: c37.club en el centro conectado a 12 dominios detectados."><line x1="350.0" y1="170.0" x2="350.0" y2="44.0" class="edge"/><line x1="350.0" y1="170.0" x2="457.0" y2="60.9" class="edge"/><line x1="350.0" y1="170.0" x2="535.3" y2="107.0" class="edge"/><line x1="350.0" y1="170.0" x2="564.0" y2="170.0" class="edge"/><line x1="350.0" y1="170.0" x2="535.3" y2="233.0" class="edge"/><line x1="350.0" y1="170.0" x2="457.0" y2="279.1" class="edge"/><line x1="350.0" y1="170.0" x2="350.0" y2="296.0" class="edge"/><line x1="350.0" y1="170.0" x2="243.0" y2="279.1" class="edge"/><line x1="350.0" y1="170.0" x2="164.7" y2="233.0" class="edge"/><line x1="350.0" y1="170.0" x2="136.0" y2="170.0" class="edge"/><line x1="350.0" y1="170.0" x2="164.7" y2="107.0" class="edge"/><line x1="350.0" y1="170.0" x2="243.0" y2="60.9" class="edge"/><circle cx="350.0" cy="170.0" r="11" fill="#1F3F63"/><text x="350.0" y="196" class="nodec" text-anchor="middle">c37.club</text><circle cx="350.0" cy="44.0" r="5" fill="#c0392b"/><text x="350.0" y="34.0" class="node" text-anchor="middle">bufeteroblesmiaja.com.mx</text><circle cx="457.0" cy="60.9" r="5" fill="#c0392b"/><text x="457.0" y="50.9" class="node" text-anchor="middle">drdanielrivera.com.co</text><circle cx="535.3" cy="107.0" r="5" fill="#c0392b"/><text x="544.3" y="110.0" class="node" text-anchor="start">kaarinanputkityo.fi</text><circle cx="564.0" cy="170.0" r="5" fill="#c0392b"/><text x="573.0" y="173.0" class="node" text-anchor="start">madinitravel.com</text><circle cx="535.3" cy="233.0" r="5" fill="#c0392b"/><text x="544.3" y="236.0" class="node" text-anchor="start">mimmilashop.fi</text><circle cx="457.0" cy="279.1" r="5" fill="#c0392b"/><text x="457.0" y="294.1" class="node" text-anchor="middle">naphini-labrador.at</text><circle cx="350.0" cy="296.0" r="5" fill="#c0392b"/><text x="350.0" y="311.0" class="node" text-anchor="middle">orderbagelplus.com</text><circle cx="243.0" cy="279.1" r="5" fill="#c0392b"/><text x="243.0" y="294.1" class="node" text-anchor="middle">partnersluziny.cz</text><circle cx="164.7" cy="233.0" r="5" fill="#c0392b"/><text x="155.7" y="236.0" class="node" text-anchor="end">raitsbarbershop.nl</text><circle cx="136.0" cy="170.0" r="5" fill="#c0392b"/><text x="127.0" y="173.0" class="node" text-anchor="end">theskyebistro.com</text><circle cx="164.7" cy="107.0" r="5" fill="#c0392b"/><text x="155.7" y="110.0" class="node" text-anchor="end">topexpertacoperisuri.ro</text><circle cx="243.0" cy="60.9" r="5" fill="#c0392b"/><text x="234.0" y="63.9" class="node" text-anchor="end">uniquehalalfood.jp</text></svg><figcaption>Figura 7 — Diagrama de nodos: la fuente de redirección más activa y sus destinos detectados.</figcaption></figure>
+<blockquote><p><strong>c37.club</strong> redirige a <strong>12</strong> destinos.</p></blockquote>
+<table><caption>Tabla 9 — Destinos de la fuente de redirección más activa (hasta 40 etiquetas).</caption><thead><tr><th class="num">#</th><th>Destino</th></tr></thead><tbody>
+<tr><td class="num">1</td><td class="dom">bufeteroblesmiaja.com.mx</td></tr>
+<tr><td class="num">2</td><td class="dom">drdanielrivera.com.co</td></tr>
+<tr><td class="num">3</td><td class="dom">kaarinanputkityo.fi</td></tr>
+<tr><td class="num">4</td><td class="dom">madinitravel.com</td></tr>
+<tr><td class="num">5</td><td class="dom">mimmilashop.fi</td></tr>
+<tr><td class="num">6</td><td class="dom">naphini-labrador.at</td></tr>
+<tr><td class="num">7</td><td class="dom">orderbagelplus.com</td></tr>
+<tr><td class="num">8</td><td class="dom">partnersluziny.cz</td></tr>
+<tr><td class="num">9</td><td class="dom">raitsbarbershop.nl</td></tr>
+<tr><td class="num">10</td><td class="dom">theskyebistro.com</td></tr>
+<tr><td class="num">11</td><td class="dom">topexpertacoperisuri.ro</td></tr>
+<tr><td class="num">12</td><td class="dom">uniquehalalfood.jp</td></tr>
+</tbody></table>
+<h3>Comparación — URLs → redirecciones → variantes</h3>
+<div class="cards c3">
+<div class="card"><p class="k">Acceso directo</p><p class="v">4.229</p><p class="s">38,9% de las 10.862 URLs de juego</p></div>
+<div class="card"><p class="k">Vía redirección</p><p class="v">311</p><p class="s">2,9% de las 10.862 URLs de juego</p></div>
+<div class="card"><p class="k">Dominios variantes</p><p class="v">6.322</p><p class="s">58,2% de las 10.862 URLs de juego</p></div>
+</div>
+</section>
+<section id="sec-b1"><h2>Sección B1 — Mapa de calor de marcas</h2>
+<p>Cobertura de las marcas nombradas en la especificación dentro del conjunto estándar. El conteo corresponde al número de URLs cuya marca semilla o etiqueta de dominio contiene el token de la marca; la intensidad del color acompaña ese conteo.</p>
+<figure class="long"><div class="scroll"><table class="heat"><caption>Tabla 10 — Mapa de calor de marcas: URLs detectadas por marca. La intensidad de la celda es proporcional al número de URLs; el registro corporativo y la licencia provienen de fuentes públicas externas.</caption><thead><tr><th>Marca</th><th class="num">URLs</th><th class="num">Dominios</th><th class="num">de los cuales Juego</th><th>Entidad registrada</th><th>N.º de registro</th><th>Licencia declarada</th><th>Jurisdicción</th></tr></thead><tbody>
+<tr><td>BETWAY</td><td class="cell" style="background:rgba(31,63,99,0.72);color:#fff">20</td><td class="num">20</td><td class="num">17</td><td>Betway Limited — Gżira, Malta</td><td>MT C 39710 (Malta)</td><td>Cuenta UKGC 39372 — licencias remotas de casino y apuestas (activas)</td><td>Malta / Reino Unido</td></tr>
+<tr><td>BET365</td><td class="cell" style="background:rgba(31,63,99,0.53);color:#fff">14</td><td class="num">14</td><td class="num">14</td><td>Hillside (New Media Malta) plc</td><td>C 66039 (Malta)</td><td>Licencia de apuestas deportivas MGA (número no publicado en las fuentes consultadas)</td><td>Malta</td></tr>
+<tr><td>BETSALA</td><td class="cell" style="background:rgba(31,63,99,0.53);color:#fff">14</td><td class="num">14</td><td class="num">11</td><td>Betsala B.V.</td><td></td><td></td><td></td></tr>
+<tr><td>BODOG</td><td class="cell" style="background:rgba(31,63,99,0.50);color:#fff">13</td><td class="num">13</td><td class="num">4</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BWIN</td><td class="cell" style="background:rgba(31,63,99,0.47);color:#fff">12</td><td class="num">12</td><td class="num">10</td><td>ElectraWorks Limited (Gibraltar); Bwin Holdings (Malta) Limited</td><td></td><td>Gibraltar núms. 050 y 051</td><td>Gibraltar / Malta</td></tr>
+<tr><td>RIVALO</td><td class="cell" style="background:rgba(31,63,99,0.47);color:#fff">12</td><td class="num">12</td><td class="num">5</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BETCRIS</td><td class="cell" style="background:rgba(31,63,99,0.44);color:inherit">11</td><td class="num">11</td><td class="num">10</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>KTO</td><td class="cell" style="background:rgba(31,63,99,0.44);color:inherit">11</td><td class="num">11</td><td class="num">2</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MARATHONBET</td><td class="cell" style="background:rgba(31,63,99,0.44);color:inherit">11</td><td class="num">11</td><td class="num">10</td><td>Panbet Curacao N.V.</td><td></td><td>OGL/2024/648/0172</td><td>Curazao</td></tr>
+<tr><td>JUGABET</td><td class="cell" style="background:rgba(31,63,99,0.41);color:inherit">10</td><td class="num">10</td><td class="num">9</td><td>Gladia N.V., Curazao</td><td>163761 (Curazao)</td><td>OGL/2024/378/0652</td><td>Curazao</td></tr>
+<tr><td>BETANO</td><td class="cell" style="background:rgba(31,63,99,0.38);color:inherit">9</td><td class="num">9</td><td class="num">7</td><td>Kaizen Gaming International Limited</td><td>C 43209 (Malta)</td><td></td><td>Malta</td></tr>
+<tr><td>1XBET</td><td class="cell" style="background:rgba(31,63,99,0.35);color:inherit">8</td><td class="num">8</td><td class="num">6</td><td>Caecus N.V. (operadora de 1xbet.com), Curazao</td><td>163779 (Curazao)</td><td>OGL/2024/1262/0493</td><td>Curazao</td></tr>
+<tr><td>BETSSON</td><td class="cell" style="background:rgba(31,63,99,0.35);color:inherit">8</td><td class="num">8</td><td class="num">7</td><td>Rizk Nordic Limited (entidad operadora UE de Betsson)</td><td>C101569 (Malta)</td><td>MGA/B2C/959/2022 (emitida 2022-11-07)</td><td>Malta</td></tr>
+<tr><td>BETFAIR</td><td class="cell" style="background:rgba(31,63,99,0.32);color:inherit">7</td><td class="num">7</td><td class="num">3</td><td>PPB Counterparty Services Limited — St. Julian&#x27;s, Malta</td><td>C40083 (Malta)</td><td>MGA/CRP/131/2006; cuenta UKGC 39439</td><td>Malta / Reino Unido</td></tr>
+<tr><td>RUSHBET</td><td class="cell" style="background:rgba(31,63,99,0.32);color:inherit">7</td><td class="num">7</td><td class="num">7</td><td>Rush Street Interactive (rushbet.co)</td><td></td><td>Autorización de Coljuegos (décimo operador de juego en línea)</td><td>Colombia</td></tr>
+<tr><td>SPORTINGBET</td><td class="cell" style="background:rgba(31,63,99,0.32);color:inherit">7</td><td class="num">7</td><td class="num">6</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>JUEGALO</td><td class="cell" style="background:rgba(31,63,99,0.26);color:inherit">5</td><td class="num">5</td><td class="num">4</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MICASINO</td><td class="cell" style="background:rgba(31,63,99,0.26);color:inherit">5</td><td class="num">5</td><td class="num">5</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BETPLAY</td><td class="cell" style="background:rgba(31,63,99,0.22);color:inherit">4</td><td class="num">4</td><td class="num">4</td><td>betplay.com.co</td><td></td><td>Operador autorizado por Coljuegos</td><td>Colombia</td></tr>
+<tr><td>ESTELARBET</td><td class="cell" style="background:rgba(31,63,99,0.22);color:inherit">4</td><td class="num">4</td><td class="num">4</td><td>S3 Tech N.V., Curazao</td><td>154961 (Curazao)</td><td></td><td>Curazao</td></tr>
+<tr><td>NOVIBET</td><td class="cell" style="background:rgba(31,63,99,0.22);color:inherit">4</td><td class="num">4</td><td class="num">2</td><td>Logflex MT Limited — Naxxar, Malta</td><td></td><td>MGA/CRP/186/2010 (emitida 2019-07-05)</td><td>Malta</td></tr>
+<tr><td>ROJABET</td><td class="cell" style="background:rgba(31,63,99,0.22);color:inherit">4</td><td class="num">4</td><td class="num">4</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BETWARRIOR</td><td class="cell" style="background:rgba(31,63,99,0.19);color:inherit">3</td><td class="num">3</td><td class="num">3</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>COOLBET</td><td class="cell" style="background:rgba(31,63,99,0.19);color:inherit">3</td><td class="num">3</td><td class="num">3</td><td>Polar Limited; StayCool OÜ — Tallin, Estonia</td><td>12814989 (StayCool OÜ, Estonia)</td><td>MGA/CRP/681/2019</td><td>Malta / Estonia</td></tr>
+<tr><td>EPICBET</td><td class="cell" style="background:rgba(31,63,99,0.19);color:inherit">3</td><td class="num">3</td><td class="num">2</td><td>Overcooked LTD.</td><td></td><td></td><td></td></tr>
+<tr><td>JUEGAENLINEA</td><td class="cell" style="background:rgba(31,63,99,0.19);color:inherit">3</td><td class="num">3</td><td class="num">3</td><td>Ingus Bridge Corp</td><td></td><td></td><td></td></tr>
+<tr><td>LATAMWIN</td><td class="cell" style="background:rgba(31,63,99,0.19);color:inherit">3</td><td class="num">3</td><td class="num">3</td><td>W&amp;C N.V.</td><td></td><td></td><td></td></tr>
+<tr><td>APUESTAS ROYAL</td><td class="cell" style="background:rgba(31,63,99,0.13);color:inherit">1</td><td class="num">1</td><td class="num">1</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BETSONN</td><td class="cell">0</td><td class="num">0</td><td class="num">0</td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<figcaption>Figura 8 — Mapa de calor de las 29 marcas nombradas en la especificación, ordenado por número de URLs detectadas.</figcaption></figure>
+<div class="callout"><strong>Alcance de los datos de registro y licencia.</strong> Datos de registro corporativo y licencias obtenidos mediante búsqueda pública externa el 2026-09-07. Informativos y no verificados contra el registro oficial de cada jurisdicción. Ninguna de estas licencias es chilena y su presencia o ausencia no constituye un juicio de legalidad.</div>
+<p class="small">Sin datos de entidad registrada ni licencia localizados en fuentes públicas para 11 marcas: BODOG, RIVALO, BETCRIS, KTO, SPORTINGBET, JUEGALO, MICASINO, ROJABET, BETWARRIOR, APUESTAS ROYAL, BETSONN. Los campos quedan en blanco de forma deliberada; no se ha inferido ningún valor.</p>
+<p class="small">Marcas sin ninguna URL en esta muestra: BETSONN.</p>
+</section>
+<section id="sec-c"><h2>Sección C — Sitios de Juego Mejor Posicionados</h2>
+<table><caption>Tabla 11 — Sitios de juego mejor posicionados (top 15 por <code>Rank</code> ascendente), con el estado interno de registro de IVA en verde o rojo.</caption><thead><tr><th class="num">Rank</th><th>Dominio</th><th>Source</th><th>Estado de registro de IVA</th></tr></thead><tbody>
+<tr><td class="num">1.374</td><td class="dom">sportybet.com</td><td class="dom">Google Search (sports.sportingbet.com)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">2.278</td><td class="dom">polymarket.com</td><td class="dom">Youtube (Baytree Interactive)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">5.620</td><td class="dom">onefootball.com</td><td class="dom">Google Search (casas de apuestas Chile)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">7.586</td><td class="dom">caesars.com</td><td class="dom">Google Search (welcome casino bonus)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">9.505</td><td class="dom">taplink.cc</td><td class="dom">Youtube (Juega en Línea Chile)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">9.776</td><td class="dom">bplay.bet.ar</td><td class="dom">Google Search (BetPlay apuestas)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">12.340</td><td class="dom">national-lottery.co.uk</td><td class="dom">Google Search (online jackpot)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">17.579</td><td class="dom">bwin.de</td><td class="dom">Redirect (bwin.com)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">17.579</td><td class="dom">bwin.com</td><td class="dom">Google Search (Bwin)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">18.121</td><td class="dom">singaporepools.com.sg</td><td class="dom">Google Search (bet on match)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">21.394</td><td class="dom">codere.mx</td><td class="dom">Google Search (free spins)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">21.510</td><td class="dom">cm88v.com</td><td class="dom">Redirect (cm88.com)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">21.510</td><td class="dom">cm88.com</td><td class="dom">Variant (cm88.pro)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">24.917</td><td class="dom">sportingbet.de</td><td class="dom">Redirect (sportingbet.com)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+<tr><td class="num">24.917</td><td class="dom">sportingbet.com</td><td class="dom">Google Search (Sportingbet)</td><td><span class="badge b-rojo">IVA_NO_REGISTRADO</span></td></tr>
+</tbody></table>
+<p class="small">De las 10.862 URLs de juego del conjunto estándar, 386 traen un valor numérico en la columna <code>Rank</code> y 10.476 no lo traen; la tabla se construye únicamente sobre las primeras. Un <code>Rank</code> menor indica una mejor posición.</p>
+</section>
+<section id="sec-d"><h2>Sección D — Registros ampliados</h2>
+<h3>Top 100 — sitios y variantes (IVA_REGISTRADO)</h3>
+<p><span class="badge b-verde">IVA_REGISTRADO</span> 52 registros mostrados de 52 disponibles en el conjunto estándar.</p>
+<div class="scroll"><table><caption>Tabla 12 — Top 100 — sitios y variantes (IVA_REGISTRADO). Incluye variantes y redirecciones, que resuelven a su marca semilla.</caption><thead class="hdr-verde"><tr><th class="num">Rank</th><th>Dominio</th><th>Marca</th><th>Source</th><th>Fecha</th><th>Entidad legal</th></tr></thead><tbody>
+<tr><td class="num">743.578</td><td class="dom">estelarbet.cl</td><td class="dom">estelarbet.cl</td><td class="dom">Manual (htaylor)</td><td class="date">2026-09-04</td><td>S3 Tech N.V.</td></tr>
+<tr><td class="num">813.179</td><td class="dom">playsala.com</td><td class="dom">playsala.com</td><td class="dom">Google Search (PlaySala)</td><td class="date">2026-08-07</td><td>(operador compartido — Betsala)</td></tr>
+<tr><td class="num">4.181.962</td><td class="dom">respin.bet</td><td class="dom">respin.com</td><td class="dom">Variant (respin.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">doraodbet.com</td><td class="dom">doradobet.com</td><td class="dom">Variant (doradobet.com)</td><td class="date">2026-09-04</td><td>VS Services LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">doradoet.com</td><td class="dom">doradobet.com</td><td class="dom">Variant (doradobet.com)</td><td class="date">2026-09-04</td><td>VS Services LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">doradobwt.com</td><td class="dom">doradobet.com</td><td class="dom">Variant (doradobet.com)</td><td class="date">2026-09-04</td><td>VS Services LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">doradobrt.com</td><td class="dom">doradobet.com</td><td class="dom">Variant (doradobet.com)</td><td class="date">2026-09-04</td><td>VS Services LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">doradobey.com</td><td class="dom">doradobet.com</td><td class="dom">Variant (doradobet.com)</td><td class="date">2026-09-04</td><td>VS Services LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">diradobet.com</td><td class="dom">doradobet.com</td><td class="dom">Variant (doradobet.com)</td><td class="date">2026-09-04</td><td>VS Services LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">doradpbet.com</td><td class="dom">doradobet.com</td><td class="dom">Variant (doradobet.com)</td><td class="date">2026-09-04</td><td>VS Services LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">doradovet.com</td><td class="dom">doradobet.com</td><td class="dom">Variant (doradobet.com)</td><td class="date">2026-09-04</td><td>VS Services LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">doradobe.com</td><td class="dom">doradobet.com</td><td class="dom">Variant (doradobet.com)</td><td class="date">2026-09-04</td><td>VS Services LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">betaay.com</td><td class="dom">betway.com</td><td class="dom">Variant (betway.com)</td><td class="date">2026-09-04</td><td>Betway Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">betsala.com</td><td class="dom">betsala.com</td><td class="dom">Manual (htaylor)</td><td class="date">2026-09-04</td><td>Betsala B.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">jugabet.online</td><td class="dom">jugabet.cl</td><td class="dom">Variant (jugabet.cl)</td><td class="date">2026-09-02</td><td>Gladia N.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">jugabet.fun</td><td class="dom">jugabet.cl</td><td class="dom">Variant (jugabet.cl)</td><td class="date">2026-09-02</td><td>Gladia N.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">jugabet.io</td><td class="dom">jugabet.cl</td><td class="dom">Variant (jugabet.cl)</td><td class="date">2026-08-23</td><td>Gladia N.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">betwaay.com</td><td class="dom">betway.com</td><td class="dom">Variant (betway.com)</td><td class="date">2026-08-23</td><td>Betway Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">abcbetway.com</td><td class="dom">betway.com</td><td class="dom">Variant (betway.com)</td><td class="date">2026-08-23</td><td>Betway Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">betwayy.com</td><td class="dom">betway.com</td><td class="dom">Variant (betway.com)</td><td class="date">2026-08-23</td><td>Betway Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">fortunazoplay.cl</td><td class="dom">fortunazo.cl</td><td class="dom">Variant (fortunazo.cl)</td><td class="date">2026-08-23</td><td>Leontodo N.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">betway.org</td><td class="dom">betway.com</td><td class="dom">Variant (betway.com)</td><td class="date">2026-08-18</td><td>Betway Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">pokerenchile.online</td><td class="dom">pokerenchile.com</td><td class="dom">Variant (pokerenchile.com)</td><td class="date">2026-08-18</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">jugabet.live</td><td class="dom">jugabet.cl</td><td class="dom">Variant (jugabet.cl)</td><td class="date">2026-08-18</td><td>Gladia N.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">m.betsala.com</td><td class="dom">betsala.com</td><td class="dom">Variant (betsala.com)</td><td class="date">2026-08-14</td><td>Betsala B.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">jugabett.cl</td><td class="dom">jugabet.cl</td><td class="dom">Variant (jugabet.cl)</td><td class="date">2026-08-14</td><td>Gladia N.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">account.betway.com</td><td class="dom">betway.com</td><td class="dom">Variant (betway.com)</td><td class="date">2026-08-14</td><td>Betway Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">beteay.com</td><td class="dom">betway.com</td><td class="dom">Variant (betway.com)</td><td class="date">2026-08-14</td><td>Betway Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">betqay.com</td><td class="dom">betway.com</td><td class="dom">Variant (betway.com)</td><td class="date">2026-08-14</td><td>Betway Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">betawy.com</td><td class="dom">betway.com</td><td class="dom">Variant (betway.com)</td><td class="date">2026-08-14</td><td>Betway Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">100xbet.com</td><td class="dom">1xbet.com</td><td class="dom">Variant (1xbet.com)</td><td class="date">2026-08-14</td><td>1XBET</td></tr>
+<tr><td class="num">—</td><td class="dom">11xbet.site</td><td class="dom">1xbet.com</td><td class="dom">Variant (1xbet.com)</td><td class="date">2026-08-14</td><td>1XBET</td></tr>
+<tr><td class="num">—</td><td class="dom">11xbet.com</td><td class="dom">1xbet.com</td><td class="dom">Variant (1xbet.com)</td><td class="date">2026-08-14</td><td>1XBET</td></tr>
+<tr><td class="num">—</td><td class="dom">jugabet.club</td><td class="dom">jugabet.cl</td><td class="dom">Variant (jugabet.cl)</td><td class="date">2026-08-14</td><td>Gladia N.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">www.418services.com</td><td class="dom">418services.com</td><td class="dom">Variant (418services.com)</td><td class="date">2026-08-12</td><td>418SERVICES B.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">doradobet.me</td><td class="dom">doradobet.com</td><td class="dom">Variant (doradobet.com)</td><td class="date">2026-08-12</td><td>VS Services LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">respin.click</td><td class="dom">respin.com</td><td class="dom">Variant (respin.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">epiicbet.com</td><td class="dom">epicbet.com</td><td class="dom">Variant (epicbet.com)</td><td class="date">2026-08-12</td><td>Overcooked LTD.</td></tr>
+<tr><td class="num">—</td><td class="dom">coolbetchile.top</td><td class="dom">coolbetchile.com</td><td class="dom">Variant (coolbetchile.com)</td><td class="date">2026-08-12</td><td>Polar Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">coolbetchile.net</td><td class="dom">coolbetchile.com</td><td class="dom">Variant (coolbetchile.com)</td><td class="date">2026-08-12</td><td>Polar Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">coolbetchile.info</td><td class="dom">coolbetchile.com</td><td class="dom">Variant (coolbetchile.com)</td><td class="date">2026-08-12</td><td>Polar Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">sate77.com</td><td class="dom">state77.com</td><td class="dom">Variant (state77.com)</td><td class="date">2026-08-12</td><td>Novawave Technology N.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">juegaenlineachile.net</td><td class="dom">juegaenlineachile.com</td><td class="dom">Variant (juegaenlineachile.com)</td><td class="date">2026-08-12</td><td>Ingus Bridge Corp</td></tr>
+<tr><td class="num">—</td><td class="dom">juegaenlineachile.org</td><td class="dom">juegaenlineachile.com</td><td class="dom">Variant (juegaenlineachile.com)</td><td class="date">2026-08-12</td><td>Ingus Bridge Corp</td></tr>
+<tr><td class="num">—</td><td class="dom">juegaenlineachile.bet</td><td class="dom">juegaenlineachile.com</td><td class="dom">Variant (juegaenlineachile.com)</td><td class="date">2026-08-12</td><td>Ingus Bridge Corp</td></tr>
+<tr><td class="num">—</td><td class="dom">betzala.com</td><td class="dom">betsala.com</td><td class="dom">Variant (betsala.com)</td><td class="date">2026-08-12</td><td>Betsala B.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">betsala.app</td><td class="dom">betsala.com</td><td class="dom">Variant (betsala.com)</td><td class="date">2026-08-12</td><td>Betsala B.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">www.betsala.com</td><td class="dom">betsala.com</td><td class="dom">Variant (betsala.com)</td><td class="date">2026-08-12</td><td>Betsala B.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">mobile.betsala.com</td><td class="dom">betsala.com</td><td class="dom">Variant (betsala.com)</td><td class="date">2026-08-12</td><td>Betsala B.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">betsala.bet</td><td class="dom">betsala.com</td><td class="dom">Variant (betsala.com)</td><td class="date">2026-08-12</td><td>Betsala B.V.</td></tr>
+<tr><td class="num">—</td><td class="dom">blog.betway.com</td><td class="dom">blog.betway.com</td><td class="dom">Google Search (Betway Chile casino)</td><td class="date">2026-08-07</td><td>Betway Limited</td></tr>
+<tr><td class="num">—</td><td class="dom">betway.com</td><td class="dom">betway.com</td><td class="dom">Manual (mnoinin)</td><td class="date">2026-07-16</td><td>Betway Limited</td></tr>
+</tbody></table></div>
+<h3>Top 100 — sitios y variantes (IVA_NO_REGISTRADO_LISTADO)</h3>
+<p><span class="badge b-rojo">IVA_NO_REGISTRADO_LISTADO</span> 74 registros mostrados de 74 disponibles en el conjunto estándar.</p>
+<div class="scroll"><table><caption>Tabla 13 — Top 100 — sitios y variantes (IVA_NO_REGISTRADO_LISTADO). Incluye variantes y redirecciones, que resuelven a su marca semilla.</caption><thead class="hdr-rojo"><tr><th class="num">Rank</th><th>Dominio</th><th>Marca</th><th>Source</th><th>Fecha</th><th>Entidad legal</th></tr></thead><tbody>
+<tr><td class="num">37.360</td><td class="dom">roobet.com</td><td class="dom">roobet.com</td><td class="dom">Google Search (Roobet)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">68.328</td><td class="dom">thelotter.com</td><td class="dom">thelotter.com</td><td class="dom">Google Search (online jackpot)</td><td class="date">2026-07-22</td><td></td></tr>
+<tr><td class="num">75.491</td><td class="dom">ggpoker.de</td><td class="dom">ggpoker.com</td><td class="dom">Redirect (ggpoker.com)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">75.491</td><td class="dom">ggpoker.com</td><td class="dom">ggpoker.com</td><td class="dom">Google Search (GGPoker)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">188.953</td><td class="dom">betcris.mx</td><td class="dom">betcris.mx</td><td class="dom">Google Search (Betcris)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">235.637</td><td class="dom">betcris.com</td><td class="dom">betcris.com</td><td class="dom">Manual (htaylor)</td><td class="date">2026-09-04</td><td></td></tr>
+<tr><td class="num">287.126</td><td class="dom">leovegas.es</td><td class="dom">leovegas.es</td><td class="dom">Google Search (LeoVegas)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">459.709</td><td class="dom">1win.cl</td><td class="dom">1win.cl</td><td class="dom">Google Search (1Win Chile)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">460.426</td><td class="dom">1wins.cl</td><td class="dom">1wins.cl</td><td class="dom">Manual (htaylor)</td><td class="date">2026-09-04</td><td></td></tr>
+<tr><td class="num">830.414</td><td class="dom">thelotter.mx</td><td class="dom">thelotter.mx</td><td class="dom">Google Search (TheLotter)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">1.902.210</td><td class="dom">ggpoker.world</td><td class="dom">ggpoker.world</td><td class="dom">Google Search (ggpoker.com)</td><td class="date">2026-08-16</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">2win.fun</td><td class="dom">1win.com</td><td class="dom">Variant (1win.com)</td><td class="date">2026-09-04</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">2win.club</td><td class="dom">1win.com</td><td class="dom">Variant (1win.com)</td><td class="date">2026-09-04</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">robet.fun</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-26</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">robet.co</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-26</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">pokertsars.com</td><td class="dom">pokerstars.com</td><td class="dom">Variant (pokerstars.com)</td><td class="date">2026-08-23</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet368.io</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-23</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">1wins.net.ar</td><td class="dom">1wins.net.ar</td><td class="dom">Google Search (1win.com)</td><td class="date">2026-08-19</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">winchile1.cl</td><td class="dom">1winchile1.cl</td><td class="dom">Variant (1winchile1.cl)</td><td class="date">2026-08-19</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">1winchile1.cl</td><td class="dom">1winchile1.cl</td><td class="dom">Google Search (1Win Chile)</td><td class="date">2026-08-18</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">brand.pokerstars.com</td><td class="dom">brand.pokerstars.com</td><td class="dom">Google Search (pokerstars.com)</td><td class="date">2026-08-14</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">101win.live</td><td class="dom">1win.com</td><td class="dom">Variant (1win.com)</td><td class="date">2026-08-14</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">oobet.pro</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-14</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">oobet.click</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-14</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">pokrestars.com</td><td class="dom">pokerstars.com</td><td class="dom">Variant (pokerstars.com)</td><td class="date">2026-08-14</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">pokerstarslogin.com</td><td class="dom">pokerstars.com</td><td class="dom">Variant (pokerstars.com)</td><td class="date">2026-08-14</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet367.bet</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-14</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet368.vip</td><td class="dom">bet365.chile</td><td class="dom">Variant (bet365.chile)</td><td class="date">2026-08-14</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet368.app</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-14</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet362.net</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-14</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">www.betcris.pe</td><td class="dom">betcris.pe</td><td class="dom">Variant (betcris.pe)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet363.bet</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">roobet.click</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">1win.fun</td><td class="dom">1win.com</td><td class="dom">Variant (1win.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">10win.com</td><td class="dom">1win.com</td><td class="dom">Variant (1win.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">001win.online</td><td class="dom">1win.com</td><td class="dom">Variant (1win.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">roobet.cc</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">1win.hu</td><td class="dom">1win.com</td><td class="dom">Variant (1win.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">robet.com</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">roobeet.com</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">www.roobet.com</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">roobet.buzz</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">roobet.io</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">roobet.me</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">roobet.pro</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">roobet.info</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">orobet.com</td><td class="dom">roobet.com</td><td class="dom">Variant (roobet.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">leovegas-chile.com</td><td class="dom">leovegas-chile.cl</td><td class="dom">Variant (leovegas-chile.cl)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet36.com</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet365bonus.com</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">loginbet365.com</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">officialbet365.com</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet362.vip</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet363.app</td><td class="dom">bet365.com</td><td class="dom">Variant (bet365.com)</td><td class="date">2026-08-12</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">be.betcris.mx</td><td class="dom">betcris.onelink.me</td><td class="dom">Redirect (betcris.onelink.me)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">betcris.onelink.me</td><td class="dom">betcris.onelink.me</td><td class="dom">Youtube (Betcris)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">help.roobet.com</td><td class="dom">help.roobet.com</td><td class="dom">Google Search (Roobet Chile)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">leovegas-chile.cl</td><td class="dom">leovegas-chile.cl</td><td class="dom">Google Search (LeoVegas Chile)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">leovegas-mx.com</td><td class="dom">leovegas-mx.com</td><td class="dom">Google Search (LeoVegas)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">be.betcris.com</td><td class="dom">be.betcris.com</td><td class="dom">Youtube (Betcris)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">affi.betcris.mx</td><td class="dom">betnbet.mx</td><td class="dom">Redirect (betnbet.mx)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">leovegas.nl</td><td class="dom">leovegas.co</td><td class="dom">Redirect (leovegas.co)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">ntrfr.leovegas.com</td><td class="dom">leovegas.co</td><td class="dom">Redirect (leovegas.co)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">leovegas.co</td><td class="dom">leovegas.co</td><td class="dom">Youtube (LeoVegas)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">promo-latam.ggpoker.com</td><td class="dom">click.ggpartners.com</td><td class="dom">Redirect (click.ggpartners.com)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">promo-es.ggpoker.com</td><td class="dom">click.ggpartners.com</td><td class="dom">Redirect (click.ggpartners.com)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">1win-casinoo.it.com</td><td class="dom">1win-casinoo.it.com</td><td class="dom">Google Search (1Win)</td><td class="date">2026-08-07</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">https%253a%252f%252fpokerstars.com</td><td class="dom">https%253a%252f%252fpokerstars.com</td><td class="dom">Manual (mnoinin)</td><td class="date">2026-07-16</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">https%253a%252f%252fbet365.com</td><td class="dom">https%253a%252f%252fbet365.com</td><td class="dom">Manual (mnoinin)</td><td class="date">2026-07-16</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">bet365.com</td><td class="dom">bet365.com</td><td class="dom">Manual (mnoinin)</td><td class="date">2026-07-16</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">record.betcrisaffiliates.com</td><td class="dom">record.betcrisaffiliates.com</td><td class="dom">Manual (mnoinin)</td><td class="date">2026-07-16</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">affi.betcris.do</td><td class="dom">affi.betcris.do</td><td class="dom">Manual (mnoinin)</td><td class="date">2026-07-16</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">https%253a%252f%252fbetcris.com</td><td class="dom">https%253a%252f%252fbetcris.com</td><td class="dom">Manual (mnoinin)</td><td class="date">2026-07-16</td><td></td></tr>
+<tr><td class="num">—</td><td class="dom">pokerstars.com</td><td class="dom">pokerstars.com</td><td class="dom">Manual (mnoinin)</td><td class="date">2026-07-16</td><td></td></tr>
+</tbody></table></div>
+<p class="small">Ordenación: <code>Rank</code> numérico ascendente y, para las filas sin rank, <code>Updated at</code> descendente. La columna «Entidad legal» se toma de las columnas opcionales del insumo cuando existen; en esta exportación no están presentes, de modo que solo se completa cuando la coincidencia con la lista de referencia aporta la entidad. El resto de las 10.862 URLs de juego (10.736 en la clase restante) alimenta la pantalla de registros, donde un operador puede promover un sitio a una lista de seguimiento.</p>
+</section>
+<section id="sec-e"><h2>Sección E — Hallazgos clave</h2>
+<div class="finding"><h3>1. Escala del análisis</h3><p>El análisis abarca <strong>14.174</strong> URLs distintas a lo largo de 53 días (2026-07-16 → 2026-09-06). De ellas, <strong>10.862</strong> son sitios de juego y <strong>3.312</strong> no lo son.</p><p class="concl">La muestra es suficientemente grande para razonar sobre patrones, no sobre casos aislados.</p></div>
+<div class="finding"><h3>2. Composición Juego / No juego</h3><p>El juego representa el <strong>76,6%</strong> de todas las URLs analizadas (10.862 de 14.174), frente a 3.312 URLs que no son de juego. No se registraron URLs inaccesibles ni de estado desconocido.</p><p class="concl">La actividad de juego domina el espacio monitoreado.</p></div>
+<div class="finding"><h3>3. Variantes y clonación de marcas</h3><p>Se identificaron <strong>1.662</strong> marcas clonadas mediante dominios variantes. La marca más replicada, <strong>mobile.verify.00sm88.site</strong>, generó <strong>19</strong> variantes. En conjunto, las variantes representan 58,2% de las URLs de juego (6.322 URLs).</p><p class="concl">La proliferación se reparte entre un número muy alto de marcas semilla, cada una con pocas variantes, más que concentrarse en un puñado de marcas.</p></div>
+<div class="finding"><h3>4. Redirecciones y modelado del tráfico</h3><p><strong>311</strong> URLs de juego (2,9% del total de juego) usan cadenas de redirección, repartidas entre 230 fuentes. La fuente más activa, <strong>c37.club</strong>, apunta a <strong>12</strong> destinos.</p><p class="concl">Las redirecciones mantienen un punto de entrada estable mientras rotan los sitios detrás de él.</p></div>
+<div class="finding"><h3>5. Patrones técnicos de nomenclatura</h3><p>Convenciones detectadas en los dominios variante:</p><ul class="tight"><li>Palabras clave recurrentes: “mobile” (1994), “secure” (1618), “account” (1530) — evidencia de un esquema de nombres basado en plantillas.</li><li>Rotación de TLD: .site (1484), .pro (1004), .app (943), .bet (608) — el operador rota dominios de nivel superior.</li><li>6322 dominios variante distintos identificados en total.</li></ul><p>Y en los dominios de redirección:</p><ul class="tight"><li>Palabras clave recurrentes: “bet” (32), “m.” (15), “app” (11) — evidencia de un esquema de nombres basado en plantillas.</li><li>Rotación de TLD: .com (116), .net (14), .mx (10), .bet (9) — el operador rota dominios de nivel superior.</li><li>311 dominios redirección distintos identificados en total.</li></ul><p class="concl">Los nombres siguen esquemas basados en plantillas, coherentes con una generación automatizada de dominios.</p></div>
+</section>
+<section id="notas"><h2>Notas metodológicas y de presentación</h2>
+<ul class="tight">
+<li>Los porcentajes se muestran con un decimal.</li>
+<li>Este informe no utiliza las nociones de «juego con licencia» ni «juego ilegal» y no formula juicios sobre legalidad. Las filas con estado <code>Illegal gambling</code> o <code>Licensed gambling</code> se tratan simplemente como filas de <strong>Juego</strong>.</li>
+<li>La clasificación de registro de IVA se computa de forma interna y se materializa únicamente en el indicador de color de la Sección C y en los dos registros ampliados de la Sección D. La narrativa de la Sección E no menciona registro de IVA, legalidad ni bloqueo.</li>
+<li>Convención de color fija (Secciones C y D): <span class="badge b-verde">IVA_REGISTRADO</span> verde <code>#27ae60</code>; <span class="badge b-rojo">IVA_NO_REGISTRADO_LISTADO</span> y <span class="badge b-rojo">IVA_NO_REGISTRADO</span> rojo <code>#c0392b</code>.</li>
+<li>Normalización de dominios para la coincidencia de registro de IVA: minúsculas, sin esquema, sin <code>www.</code> inicial y solo el host; la coincidencia admite el dominio registrable (eTLD+1), de modo que subdominios y variantes heredan la clase de su marca semilla.</li>
+<li>Prioridad de clasificación: lista A (registrado) → lista B (marca listada, tokens más largos primero) → resto de los sitios de juego. Las filas que no son de juego no reciben categoría de registro de IVA.</li>
+<li>Conteos internos de registro de IVA sobre las 10.862 filas de juego: 52 <code>IVA_REGISTRADO</code>, 74 <code>IVA_NO_REGISTRADO_LISTADO</code> y 10.736 <code>IVA_NO_REGISTRADO</code>.</li>
+<li>Los estados vacíos son explícitos; no se fabrican datos. Cuando el insumo no contiene un valor, el campo queda en blanco.</li>
+<li>El informe es autocontenido y se presenta íntegramente en español. La geometría de página es A4 vertical con márgenes de 20 mm y los colores se mantienen legibles en temas claro y oscuro.</li>
+</ul></section>
+<section id="cabos"><h2>Cabos sueltos</h2>
+<ul class="tight">
+<li><strong>Regla de exclusión de URL.</strong> La especificación indica excluir del conjunto de datos y del cálculo toda URL que contenga «twitter.comn». Ese literal no coincide con ninguna fila de esta exportación; la subcadena «twitter.com» coincide con exactamente 1 fila (https://www.twitter.com/Quicktiming), que es la que se ha excluido. Se documenta aquí por ser una interpretación de un literal que parece contener una errata.</li>
+<li><strong>Columnas opcionales ausentes.</strong> El insumo no trae columnas de entidad legal ni de país de la entidad legal, de modo que esos campos del feed de registros y de las tablas de la Sección D solo se completan con la entidad legal que aporta la lista de referencia A.</li>
+<li><strong>Cobertura de <code>Rank</code>.</strong> Solo 386 de las 10.862 URLs de juego traen un valor numérico de <code>Rank</code>; el resto se ordena por fecha de actualización descendente en los registros de la Sección D.</li>
+<li><strong>«BETSONN» en la lista de marcas.</strong> La lista de la especificación incluye tanto <code>BETSONN</code> como <code>BETSSON</code>. Se han mantenido ambas entradas tal como se nombran; <code>BETSONN</code> no registra ninguna URL en esta muestra.</li>
+<li><strong>«latamwin.online» duplicado.</strong> La lista A de la especificación lo nombra dos veces; se trata como una sola plataforma, según la nota de la propia especificación.</li>
+<li><strong>Licencias externas.</strong> Los números de licencia y de registro corporativo de la Sección B1 provienen de búsquedas públicas realizadas el 2026-09-07 y no han sido verificados contra los registros oficiales de cada jurisdicción. Ninguno corresponde a una licencia chilena.</li>
+<li><strong>Columnas del insumo no explotadas en el informe.</strong> <code>Confidence</code>, <code>LLM Reasoning</code> y <code>Case Management Status</code> son obligatorias en la validación del insumo, pero la especificación no define ninguna métrica sobre ellas; se conservan en el conjunto estándar y no se agregan aquí.</li>
+</ul></section>
+<footer><p>Informe generado por SICPA SA — SICPADetect®. Especificación de informe 01M1XB6S5GYNT3FXK9FECMYYCR, ejecución del 2026-09-07. Confidencial — para uso exclusivo de Polla Chilena de Beneficencia S.A.</p></footer>
+</article>
+</body>
+</html>
