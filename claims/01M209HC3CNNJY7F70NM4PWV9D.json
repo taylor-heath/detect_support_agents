@@ -6,8 +6,8 @@
     "id": "report.custom",
     "version": "1.0.0"
   },
-  "attempt": 1,
-  "claimedAt": "2026-09-08T10:40:03.512Z",
-  "leaseExpiresAt": "2026-09-08T11:16:44.407Z",
-  "heartbeatAt": "2026-09-08T10:56:44.407Z"
+  "attempt": 2,
+  "claimedAt": "2026-09-08T11:26:11.190Z",
+  "leaseExpiresAt": "2026-09-08T11:41:11.190Z",
+  "heartbeatAt": "2026-09-08T11:26:11.190Z"
 }
