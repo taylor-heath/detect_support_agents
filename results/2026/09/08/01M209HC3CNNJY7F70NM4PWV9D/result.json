@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M209HC3CNNJY7F70NM4PWV9D",
+  "requestCommit": "fb190831cbabfa208816056f60008c47c7f2234b",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 2,
+  "status": "succeeded",
+  "startedAt": "2026-09-08T10:40:03.512Z",
+  "finishedAt": "2026-09-08T11:26:34.672Z",
+  "durationMs": 2791160,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 1632794,
+      "sha256": "233818b46d7d5502e1e61de9455bdee36a4c6038c972e9656d37276367fc425c",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M209HC3CNNJY7F70NM4PWV9D/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 14181,
+    "duplicateUrlsDropped": 6,
+    "reviewNeededDropped": 0,
+    "standardSetTotal": 14175,
+    "gambling": 10863,
+    "nonGambling": 3312,
+    "marketRelevantReported": 178,
+    "excludedNotMarketRelevant": 10685,
+    "vatPaid": 38,
+    "vatNotPaidListed": 15,
+    "vatNotPaid": 125,
+    "distinctRootBrandsReported": 124,
+    "distinctRootBrandsGambling": 4257,
+    "brandAdjacentNearMisses": 28,
+    "domainContentContradictions": 2,
+    "mixedOrInstitutionalHosts": 5,
+    "chainCyclesFound": 0,
+    "blankReasoningGambling": 4007,
+    "urlEncodedRows": 516,
+    "figuresRendered": 7,
+    "tablesRendered": 13,
+    "a4PagesTotal": 373,
+    "a4PagesBody": 19,
+    "annexARows": 178,
+    "annexBRows": 10685,
+    "outputFormat": "html",
+    "vatReferenceFileSupplied": false
+  },
+  "error": null
+}

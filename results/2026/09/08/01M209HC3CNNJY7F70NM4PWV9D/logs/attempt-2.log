@@ -1,0 +1,44 @@
+report.custom 01M209HC3CNNJY7F70NM4PWV9D
+
+Input verification
+  spec.md          sha256 matches request.attachments   OK
+  dataset.json.gz  sha256 matches request.attachments   OK
+  dataset.csv      sha256 matches request.attachments   OK
+  execution range  rangeFrom/rangeTo/rangeField all null; applied verbatim,
+                   no relative range re-resolved.
+
+Input gap
+  The specification names a VAT reference file as input 3. No such attachment
+  was present on this request. The spec says to stop and ask; no interactive
+  channel exists for this job type, so the run proceeded using the
+  registered-platform and listed-brand tables carried in the client's own
+  report specification for the same saved search and market, and states that
+  provenance prominently in section 6.4 of the report. Nothing was added to
+  those lists and nothing was re-derived. If the lists have moved, every VAT
+  figure moves with them; the market-relevance analysis does not depend on them.
+
+Deliverable scope
+  expectedAssets named report.html only. The specification's OUTPUT 2 (two CSV
+  extracts) was therefore not produced; noted in report section 6.5.
+
+Verification before delivery
+  terminology scan       no illegal/unlawful/licensed/unlicensed/prohibited
+                         outside the terminology disclaimer
+  annex A count          178 == reported figure
+  source reconciliation  10869 gambling + 3312 non-gambling == 10863 + 3312 + 6
+                         duplicates
+  spot checks            10 retained and 10 excluded records read against their
+                         LLM Reasoning text
+  page geometry          MediaBox 594.96 x 841.92 pt (A4); @page honoured,
+                         renderer default margins
+  pagination             tr break-inside avoid, thead table-header-group;
+                         19 body pages, 373 total including annexes
+  personal data          operator account names in the Source field collapsed
+                         to the bare discovery category; none reach the output
+
+Lease
+  attempt 1 claimed 10:40:03Z, lapsed 11:16:44Z during rendering and
+  verification. No other agent holds this job type. Lease reclaimed as
+  attempt 2 at 11:26:11Z per the expired-lease recovery path; the result was
+  written under the live attempt-2 lease. The asset was published under
+  attempt 1 and is unchanged.
