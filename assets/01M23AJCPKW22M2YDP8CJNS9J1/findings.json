@@ -1,0 +1,245 @@
+{
+  "schemaVersion": "1.0",
+  "evidenceCoverage": {
+    "egressVantagePoint": "unknown",
+    "targetSiteRead": false,
+    "sourcesAttempted": 20,
+    "sourcesRetrieved": 11,
+    "sourcesBlocked": 9,
+    "registersChecked": [
+      { "register": "IANA RDAP Bootstrap", "host": "data.iana.org", "retrievalStatus": "blocked", "result": null },
+      { "register": ".com Registry RDAP (Verisign)", "host": "rdap.verisign.com", "retrievalStatus": "blocked", "result": null },
+      { "register": "GLEIF LEI Index", "host": "api.gleif.org", "retrievalStatus": "blocked", "result": null },
+      { "register": "LOTBA (CABA, Argentina) authorized-operator register", "host": "www.lotba.gob.ar", "retrievalStatus": "blocked", "result": null },
+      { "register": "WHOIS / domain-keyword aggregator (Whoxy)", "host": "www.whoxy.com", "retrievalStatus": "blocked", "result": null }
+    ],
+    "coverageCaveat": "Every direct verification attempt this run — the target site itself, an archived snapshot, and all five registers listed above — was blocked or unreachable. Nothing in this brief is based on a directly loaded primary page or register record; all findings rest on secondary web-search reporting. In particular: no register was reached that could confirm or deny an Argentine licence for this domain (authorisation stays null, not a confirmed 'not found'); no registration data (registrar, creation date, registrant) could be obtained; and no operator entity could be identified. The comparatively stronger actorBehaviour evidence (a documented Betsson-brand mirror-domain evasion episode in Chile) is real and independently sourced, but is not itself evidence about this specific domain's content or targeting of Argentina.",
+    "rerunRecommended": true,
+    "allowlistDelta": ["betsson1002.com", "data.iana.org", "rdap.verisign.com", "api.gleif.org", "www.lotba.gob.ar", "www.whoxy.com", "web.archive.org", "beccarvarela.com", "www.epicentrochile.com"]
+  },
+  "header": {
+    "caseId": "01M23AJCPKW22M2YDP8CJNS9J1",
+    "targetUrl": "betsson1002.com",
+    "country": "AR",
+    "runAt": "2026-09-09T15:25:00.000Z",
+    "agentVersion": "deep-search-agent-1.0",
+    "priority": "insufficient_evidence",
+    "overallConfidence": "low"
+  },
+  "executiveSummary": {
+    "headline": "betsson1002.com could not be directly investigated — the target site, domain-registration registers, and legal-entity registers were all blocked at the network-egress level this run — but secondary reporting shows the site self-presents under the \"Betsson\" brand on a domain outside Argentina's mandatory '.bet.ar' licensed-operator naming convention, and the same brand name was tied to a documented mirror-domain evasion episode in Chile days earlier.",
+    "narrative": "betsson1002.com was submitted as a suspected illegal gambling site targeting Argentina via an internal watchlist item, not itself a public-source finding. Direct fetch of the target (https and http, with and without the www prefix), an archived snapshot via the Wayback Machine, the IANA RDAP bootstrap file, the .com registry's RDAP endpoint (rdap.verisign.com), the GLEIF LEI API, a WHOIS/domain-keyword aggregator (whoxy.com), Argentina's CABA gambling regulator LOTBA's own site, and two secondary-press pages were all blocked or unreachable from the investigating environment, so no finding below rests on a directly loaded primary register or on the target's own page content. What is known comes entirely from search-engine indexing and independent press reporting. A web-search index snippet titles the page \"Betsson: Online Casino, Live Casino & Sportsbetting\", i.e. the site self-presents using the well-known Betsson brand name; however betsson1002.com does not match any of Betsson's known official domains (betsson.com, betsson.co, betsson.lt, betssonab.com), nor does it use the '.bet.ar' domain that multiple independent Argentine sources report is mandatory for provincially-licensed online gambling operators (Betsson itself holds active licences from LOTBA, IPLyC-PBA and the Cordoba lottery, and operates in Argentina under a .bet.ar domain per those sources). Argentine authorities blocked several hundred unauthorized gambling domains during 2026 (500+ in a July operation, 251 in an earlier one), underscoring that non-'.bet.ar' domains are treated as unlicensed at scale. Separately, and independently of the Argentine context, multiple Chilean outlets (Diario Financiero, Emol, Chócale, La Cuarta) reported that Chile's telecoms regulator Subtel ordered 42 gambling domains blocked on 2026-09-01, that a domain associated with the Betsson brand was on that list, and that several of the listed operators activated new domains within 24–48 hours to keep operating — a documented, brand-linked mirror-domain evasion pattern. No source reviewed this run specifically named betsson1002.com as the replacement domain used in that Chilean episode; one search-engine summary asserted that link, but the underlying article could not be loaded to confirm it (EGRESS_BLOCKED), so that specific attribution is treated as unverified and is not relied upon as a finding.",
+    "keyFindings": [
+      "Direct fetch of https://betsson1002.com, http://www.betsson1002.com, a Wayback Machine snapshot, and every domain/entity register attempted (IANA RDAP bootstrap, rdap.verisign.com, api.gleif.org, whoxy.com, www.lotba.gob.ar) returned EGRESS_BLOCKED or was otherwise unreachable this run; no finding rests on directly loaded primary source content.",
+      "A search-engine index snippet titles the page \"Betsson: Online Casino, Live Casino & Sportsbetting\", i.e. the site self-presents under the Betsson brand, but betsson1002.com is not among Betsson's known official domains and does not use Argentina's '.bet.ar' domain required of licensed operators — a naming mismatch consistent with brand impersonation, though unconfirmed against the live page.",
+      "Multiple independent Chilean press sources confirm that a domain associated with the Betsson brand was targeted by a Chilean Subtel blocking order on 2026-09-01, and that Betsson-branded and other operators on that list activated replacement domains within 24–48 hours — a verified, brand-linked mirror-domain evasion pattern, though no source confirmed betsson1002.com itself as that specific replacement domain.",
+      "Argentina blocked 500+ (July 2026) and 251 (earlier 2026) unauthorized online-gambling domains at scale, and CABA regulator LOTBA is separately reported to have acted against unauthorized sites and promoting influencers — general market/enforcement context, not evidence specific to this domain.",
+      "No operator entity, registration data, or licence claim could be established for betsson1002.com from any source reached this run; legal entity, parent group, and domain-registration fields are all null."
+    ],
+    "authorisedInInputCountry": null,
+    "topContradictions": [
+      "The target page self-presents (per search index) under the \"Betsson\" brand, yet uses neither a recognised official Betsson domain nor the '.bet.ar' domain Argentina's regulators require of licensed operators — though this rests on an indexed snippet, not a directly loaded live page."
+    ],
+    "recommendedAction": "Re-run once the following are allowlisted for this environment: betsson1002.com (target), data.iana.org and rdap.verisign.com (domain registration), api.gleif.org (legal entity), www.lotba.gob.ar and www.whoxy.com (Argentine register and alias/mirror discovery), and web.archive.org (fallback snapshot). Separately, obtain the internal detection basis for watchlistItemId 518dedd7-be4e-4608-8fe4-278a854e3928 / domainId 7dd214ee-fae4-4056-8487-4b5aa3581e9b, and, if pursuing the Chile angle, obtain direct access to the Chilean press articles reporting the specific replacement domain(s) Betsson-branded operators activated after the 2026-09-01 Subtel order, to confirm or rule out that betsson1002.com is that domain."
+  },
+  "findings": {
+    "brand": {
+      "value": "Betsson",
+      "confidence": "low",
+      "basis": "disclosed",
+      "sources": [
+        {
+          "url": "http://betsson1002.com",
+          "retrievedAt": "2026-09-09T15:12:30.000Z",
+          "note": "Not loaded directly (EGRESS_BLOCKED on https and http, www and bare-domain variants). Brand name comes from a web-search index snippet titling the page \"Betsson: Online Casino, Live Casino & Sportsbetting\"."
+        }
+      ],
+      "note": "Self-presentation only, via a third-party search index, not the live page itself."
+    },
+    "aliases": {
+      "value": [],
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [
+        {
+          "url": "https://www.whoxy.com/keyword/betsson",
+          "retrievedAt": "2026-09-09T15:17:10.000Z",
+          "note": "EGRESS_BLOCKED. Search-result snippet referencing this page reported that the keyword \"betsson\" appears in 1,537 domains, but the list itself could not be loaded, so no specific alias/mirror domain could be confirmed."
+        }
+      ],
+      "note": "No confirmed aliases or mirror domains for this specific site."
+    },
+    "legalEntity": {
+      "value": {
+        "name": null,
+        "registrationNumber": null,
+        "lei": null,
+        "registeredAddress": null,
+        "incorporationCountry": null
+      },
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [],
+      "note": "No operator entity disclosure could be obtained: the site's own about/terms/footer pages could not be loaded (EGRESS_BLOCKED), and no third-party source specifically identifying betsson1002.com's operating entity was found."
+    },
+    "parentGroup": {
+      "value": { "name": null, "lei": null, "relationship": "unknown" },
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [
+        {
+          "url": "https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalName%5D=Betsson",
+          "retrievedAt": "2026-09-09T15:14:50.000Z",
+          "note": "EGRESS_BLOCKED. Not used as a finding about this domain."
+        }
+      ],
+      "note": "No ownership or affiliation link between betsson1002.com and any corporate group could be verified. For context only: unrelated third-party aggregators (not GLEIF's own API, which was blocked) report an entity named 'Betsson AB', LEI 549300W61XW8OFGBG077, registered in Stockholm, Sweden — the known, legitimately-licensed corporate group whose brand name and visual identity betsson1002.com's indexed page title appears to invoke. This is background context, not an attribution, and is not treated as verified since GLEIF's own API could not be reached."
+    },
+    "domainRegistration": {
+      "value": {
+        "registrar": null,
+        "createdAt": null,
+        "expiresAt": null,
+        "nameservers": [],
+        "statusCodes": [],
+        "registrantCountry": null,
+        "privacyProxy": null
+      },
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [
+        { "url": "https://data.iana.org/rdap/dns.json", "retrievedAt": "2026-09-09T15:13:10.000Z", "note": "EGRESS_BLOCKED (RDAP bootstrap)." },
+        { "url": "https://rdap.verisign.com/com/v1/domain/betsson1002.com", "retrievedAt": "2026-09-09T15:14:05.000Z", "note": "EGRESS_BLOCKED (.com registry RDAP)." },
+        { "url": "https://www.whoxy.com/keyword/betsson", "retrievedAt": "2026-09-09T15:17:10.000Z", "note": "EGRESS_BLOCKED (WHOIS/keyword aggregator, attempted as fallback)." }
+      ],
+      "note": "No registration data could be retrieved this run. A raw WHOIS (TCP/43) lookup was not attempted as this environment's tooling is HTTPS-only and cannot reach it."
+    },
+    "countryOfOperation": {
+      "value": { "incorporation": null, "licensingJurisdiction": null, "inputCountry": "AR" },
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [],
+      "note": "Neither incorporation country nor licensing jurisdiction could be established; the target site and all registration/registry sources were blocked or unread this run."
+    },
+    "licences": [],
+    "authorisation": {
+      "authorisedInInputCountry": null,
+      "confidence": "low",
+      "basis": "inferred",
+      "sources": [
+        { "url": "https://tragamonedasargentina.com/licencias/", "retrievedAt": "2026-09-09T15:18:40.000Z", "note": "Secondary source: Argentina's provincially-licensed online gambling operators are reported to use domains ending in '.bet.ar'; other domains are treated as unauthorized." },
+        { "url": "https://www.infobae.com/sociedad/2026/07/18/bloquearon-mas-de-500-sitios-de-apuestas-online-ilegales-en-argentina/", "retrievedAt": "2026-09-09T15:20:15.000Z", "note": "Reports 500+ unauthorized online-gambling domains blocked in Argentina, July 2026." }
+      ],
+      "note": "Not checked directly against any Argentine provincial regulator register — LOTBA's own site (www.lotba.gob.ar) returned EGRESS_BLOCKED. The inference rests solely on secondary reporting that licensed AR operators must use a '.bet.ar' domain; betsson1002.com is a generic .com domain, which is suggestive but not verified evidence against authorisation."
+    },
+    "news": [
+      {
+        "title": "Bloquearon más de 500 sitios de apuestas online ilegales en Argentina",
+        "publisher": "Infobae",
+        "url": "https://www.infobae.com/sociedad/2026/07/18/bloquearon-mas-de-500-sitios-de-apuestas-online-ilegales-en-argentina/",
+        "publishedAt": "2026-07-18",
+        "summary": "Argentine authorities blocked more than 500 unauthorized online betting websites in a large 2026 enforcement operation in Buenos Aires Province; reporting notes that authorized operators use the '.bet.ar' domain and other domains are treated as unlicensed. General market/enforcement context; not specific to betsson1002.com.",
+        "relatesTo": "brand"
+      },
+      {
+        "title": "Subtel ordena bloqueo de 42 sitios de apuestas online a Entel, Movistar, Claro, GTD, WOM y VTR: en la lista están Betano, Coolbet y Betsson",
+        "publisher": "Diario Financiero (Chile)",
+        "url": "https://www.df.cl/empresas/telecom-tecnologia/subtel-ordena-bloqueo-de-42-sitios-de-apuestas-online-a-entel-movistar",
+        "publishedAt": "2026-09-01",
+        "summary": "Chile's Subtel ordered ISPs to block 42 gambling-site domains within 48 hours, from a list supplied by the Superintendencia de Casinos de Juego; a domain associated with the Betsson brand was among those named, alongside Betano, Coolbet, Stake, bet365 and 1xBet.",
+        "relatesTo": "brand"
+      },
+      {
+        "title": "Casas de apuestas activan sitios \"espejo\" tras orden de bloqueo: Cambian dominios y prometen continuidad",
+        "publisher": "Emol",
+        "url": "https://www.emol.com/noticias/Economia/2026/09/02/1210313/apuestas-online-bloqueo-sitios-espejo.html",
+        "publishedAt": "2026-09-02",
+        "summary": "Within roughly 24–48 hours of Chile's Subtel blocking order, several listed operators, including one operating under the Betsson brand, activated new domains to continue service — a documented mirror-domain evasion pattern. This and other articles reviewed did not name betsson1002.com specifically as a replacement domain, so no direct link between this domain and the Chilean episode is confirmed.",
+        "relatesTo": "brand"
+      }
+    ]
+  },
+  "priorityAssessment": {
+    "rationale": "harmAndExposure and consumerHarmSeverity are both unknown for retrieval reasons — the target site and every register attempted were blocked or unreachable this run — which under this rubric requires insufficient_evidence rather than a substantive rating, notwithstanding comparatively richer circumstantial evidence under actorBehaviour and strategicValue gathered via secondary press reporting. A re-run with the target domain and key registers (RDAP, GLEIF, LOTBA, a WHOIS/domain aggregator, web archive) allowlisted would likely support a substantive rating quickly given the existing signal: a brand-impersonation-pattern domain name, absence of Argentina's mandatory '.bet.ar' convention, and an independently-verified Betsson-brand mirror-domain evasion episode in neighbouring Chile days earlier.",
+    "referralFlags": [],
+    "dimensions": [
+      {
+        "dimension": "harmAndExposure",
+        "rating": "unknown",
+        "evidence": "Target site unreachable on both https/http and www/bare-domain variants; no archived snapshot could be loaded. No information on traffic volume, targeting (language/currency/payment methods), or accessibility to vulnerable groups could be obtained. General Argentine market context (500+ and 251-site blocking operations in 2026) shows a large illegal online-gambling market exists nationally, but this is not evidence specific to this domain. Unknown because access was blocked, not because exposure was checked and found low.",
+        "sources": [
+          { "url": "https://www.infobae.com/sociedad/2026/07/18/bloquearon-mas-de-500-sitios-de-apuestas-online-ilegales-en-argentina/", "retrievedAt": "2026-09-09T15:20:15.000Z", "note": null }
+        ]
+      },
+      {
+        "dimension": "consumerHarmSeverity",
+        "rating": "unknown",
+        "evidence": "Terms and responsible-gaming pages could not be loaded (EGRESS_BLOCKED); no player-protection or fraud/non-payment complaint pattern specific to betsson1002.com was found (complaint sites found reference only the unrelated, legitimate betsson.es/betsson.com brand, not attributable to this domain). Unknown because access was blocked, not because protections were checked and found adequate.",
+        "sources": []
+      },
+      {
+        "dimension": "legalReachability",
+        "rating": "unknown",
+        "evidence": "All domain-registration and entity-identification lookups (IANA RDAP bootstrap, .com registry RDAP, GLEIF LEI API, a WHOIS/keyword aggregator) were blocked; no registrar, hosting, or registrant data obtained. A raw WHOIS (TCP/43) lookup was not attempted as it is unreachable via this environment's HTTPS-only tooling.",
+        "sources": []
+      },
+      {
+        "dimension": "actorBehaviour",
+        "rating": "medium",
+        "evidence": "The page title, as indexed by search engines, self-presents using the 'Betsson' brand name on a domain unrelated to Betsson's known official domains — a pattern consistent with brand impersonation, though unverified against the live page. Independently, and verified via multiple Chilean press outlets (Diario Financiero, Emol, Chócale, La Cuarta), Chile's Subtel ordered blocking of 42 gambling domains on 2026-09-01 including one associated with the Betsson brand, and several of the listed operators activated new domains within 24–48 hours to evade the block — demonstrating the Betsson brand name is actively associated with mirror-domain evasion tactics in the region. No source directly confirmed betsson1002.com itself as that specific replacement domain, so that precise link is unverified and not relied upon.",
+        "sources": [
+          { "url": "https://www.df.cl/empresas/telecom-tecnologia/subtel-ordena-bloqueo-de-42-sitios-de-apuestas-online-a-entel-movistar", "retrievedAt": "2026-09-09T15:23:40.000Z", "note": null },
+          { "url": "https://www.emol.com/noticias/Economia/2026/09/02/1210313/apuestas-online-bloqueo-sitios-espejo.html", "retrievedAt": "2026-09-09T15:23:40.000Z", "note": null }
+        ]
+      },
+      {
+        "dimension": "feasibilityAndCost",
+        "rating": "medium",
+        "evidence": "Argentina has active, working mechanisms for blocking unauthorized gambling domains at scale (500+ domains blocked July 2026 in Buenos Aires Province; 251 blocked via an earlier Enacom/judicial order), suggesting a referral for this single domain would be procedurally straightforward if pursued through the same channel. Collateral-risk factors such as shared hosting or CDN use could not be assessed since RDAP/hosting data was blocked.",
+        "sources": [
+          { "url": "https://www.infobae.com/sociedad/2026/07/18/bloquearon-mas-de-500-sitios-de-apuestas-online-ilegales-en-argentina/", "retrievedAt": "2026-09-09T15:20:15.000Z", "note": null }
+        ]
+      },
+      {
+        "dimension": "strategicValue",
+        "rating": "medium",
+        "evidence": "Aligns with Argentina's active 2026 enforcement campaign against illegal online betting, and with LOTBA's separately-reported actions against unauthorized sites and promoting influencers. A confirmed case of unauthorized impersonation of a brand ('Betsson') that itself holds legitimate Argentine provincial licences would carry consumer-protection messaging value, but this domain's operator identity and affiliation are not yet established, limiting certainty of that framing.",
+        "sources": []
+      }
+    ]
+  },
+  "contradictions": [
+    "The target page self-presents (per a search-engine index snippet) under the \"Betsson\" brand name, yet betsson1002.com is neither a recognised official Betsson domain (betsson.com, betsson.co, betsson.lt, betssonab.com) nor uses the '.bet.ar' domain that Argentina's provincial regulators are reported to require of licensed operators — a naming mismatch consistent with brand impersonation. This rests on an indexed snippet rather than a directly loaded live page, since the target itself returned EGRESS_BLOCKED on every fetch attempted this run."
+  ],
+  "provenance": {
+    "toolCallCount": 20,
+    "sourcesConsulted": [
+      { "url": "http://betsson1002.com", "retrievedAt": "2026-09-09T15:12:30.000Z", "note": "Web-search index snippet only; live page not loaded." },
+      { "url": "https://www.casino.org/reviews/betsson/", "retrievedAt": "2026-09-09T15:12:30.000Z", "note": "General Betsson brand context via search results." },
+      { "url": "https://tragamonedasargentina.com/licencias/", "retrievedAt": "2026-09-09T15:18:40.000Z", "note": "Argentine provincial online-gambling licensing overview." },
+      { "url": "https://www.infobae.com/sociedad/2026/07/18/bloquearon-mas-de-500-sitios-de-apuestas-online-ilegales-en-argentina/", "retrievedAt": "2026-09-09T15:20:15.000Z", "note": "Argentina illegal-gambling-site blocking operation, July 2026." },
+      { "url": "https://www.gamingintelligence.com/es/legal/compliance/73395-apuestas-ilegales-argentina/", "retrievedAt": "2026-09-09T15:20:15.000Z", "note": "Argentina 251-site blocking operation." },
+      { "url": "https://www.df.cl/empresas/telecom-tecnologia/subtel-ordena-bloqueo-de-42-sitios-de-apuestas-online-a-entel-movistar", "retrievedAt": "2026-09-09T15:23:40.000Z", "note": "Chile Subtel blocking order naming a Betsson-associated domain." },
+      { "url": "https://www.emol.com/noticias/Economia/2026/09/02/1210313/apuestas-online-bloqueo-sitios-espejo.html", "retrievedAt": "2026-09-09T15:23:40.000Z", "note": "Chile mirror-domain evasion following Subtel order." },
+      { "url": "https://chocale.cl/2026/09/casinos-ilegales-ya-burlaron-el-bloqueo-de-la-subtel-cambiando-dominios/", "retrievedAt": "2026-09-09T15:23:40.000Z", "note": "Chile mirror-domain evasion, corroborating source." },
+      { "url": "https://www.leinumber.com/leicert/549300W61XW8OFGBG077/", "retrievedAt": "2026-09-09T15:14:50.000Z", "note": "Third-party LEI aggregator for the unrelated, legitimate Betsson AB entity; background context only." }
+    ],
+    "unresolved": [
+      { "field": "findings.aliases", "attempted": "General web search for alias/mirror domains of betsson1002.com; no specific confirmed alias domain surfaced (the one specific-looking lead, a WHOIS keyword-index page, was blocked — see provenance.blocked)." },
+      { "field": "findings.news (Chile domain attribution)", "attempted": "Attempted to confirm whether betsson1002.com was the specific replacement domain activated by a Betsson-branded operator after Chile's 2026-09-01 Subtel order; a search-engine summary asserted this link, but the source article (epicentrochile.com) was blocked, so the claim could not be verified and is not included as a finding." }
+    ],
+    "blocked": [
+      { "host": "betsson1002.com", "purpose": "Read target site (homepage, footer, terms, licensing claims)", "denyReason": "EGRESS_BLOCKED", "attempts": 1 },
+      { "host": "www.betsson1002.com", "purpose": "Read target site (www/http variant)", "denyReason": "EGRESS_BLOCKED", "attempts": 1 },
+      { "host": "web.archive.org", "purpose": "Archived snapshot of target site (fallback for blocked target)", "denyReason": "tool-level fetch failure (distinct from proxy EGRESS_BLOCKED; host reported unreachable by the fetch tool)", "attempts": 1 },
+      { "host": "data.iana.org", "purpose": "RDAP bootstrap resolution for the .com TLD", "denyReason": "EGRESS_BLOCKED", "attempts": 1 },
+      { "host": "rdap.verisign.com", "purpose": "Domain registration lookup (.com registry RDAP)", "denyReason": "EGRESS_BLOCKED", "attempts": 1 },
+      { "host": "api.gleif.org", "purpose": "Legal entity / LEI lookup", "denyReason": "EGRESS_BLOCKED", "attempts": 1 },
+      { "host": "www.whoxy.com", "purpose": "WHOIS / domain-keyword aggregator (alias and registration fallback)", "denyReason": "EGRESS_BLOCKED", "attempts": 1 },
+      { "host": "www.lotba.gob.ar", "purpose": "Argentina (CABA) gambling regulator authorized-operator register", "denyReason": "EGRESS_BLOCKED", "attempts": 1 },
+      { "host": "beccarvarela.com", "purpose": "Legal-news detail on a LOTBA enforcement action against unauthorized sites", "denyReason": "EGRESS_BLOCKED", "attempts": 1 },
+      { "host": "www.epicentrochile.com", "purpose": "Verify whether betsson1002.com was named as the specific Chilean replacement domain", "denyReason": "EGRESS_BLOCKED", "attempts": 1 }
+    ]
+  },
+  "analystNotes": "This case rested almost entirely on secondary web-search reporting because the target site and every register attempted (RDAP bootstrap, .com registry RDAP, GLEIF, a WHOIS aggregator, and Argentina's own LOTBA register) returned EGRESS_BLOCKED. Two points warrant analyst attention on re-run. First, a search-engine summary asserted that betsson1002.com was specifically the domain Betsson activated in Chile after the 2026-09-01 Subtel blocking order; the primary article could not be loaded to confirm this, so it is treated as an unverified inference by the search layer, not a finding, and is flagged rather than relied upon — worth re-checking directly once epicentrochile.com or an equivalent source is reachable. Second, the naming pattern (a well-known gambling brand name plus a numeric suffix, on a generic .com TLD rather than Argentina's mandatory '.bet.ar') is the kind of pattern associated with brand-impersonation mirror domains, but this is inference from naming convention and indexed metadata only — nothing about this domain's actual content, operator, or hosting was directly observed this run."
+}
