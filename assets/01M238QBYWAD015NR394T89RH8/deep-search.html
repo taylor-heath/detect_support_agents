@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case 01M238QBYWAD015NR394T89RH8 — ZA deep-search brief</title>
+<style>
+  :root {
+    --bg: #f7f8fa; --panel: #ffffff; --text: #1c2530; --muted: #5b6a7a; --border: #e1e6eb;
+    --track: #e9edf1; --accent: #2f5fa8;
+  }
+  @media print { body { background: #fff; } .no-print { display:none; } }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin:0; padding: 24px; line-height:1.5; }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 18px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  h2 { font-size: 1.15rem; margin: 0 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  h3 { font-size: 1rem; margin: 18px 0 8px; }
+  .muted { color: var(--muted); }
+  .badge { display:inline-block; font-size: 0.72rem; font-weight:600; padding: 2px 8px; border-radius: 999px; margin-left:4px; text-transform: uppercase; letter-spacing: .02em; }
+  .pri-high { background:#fdecea; color:#c0392b; border:1px solid #f3b8b1; }
+  .pri-medium { background:#fdf3e3; color:#a15c00; border:1px solid #f2d49b; }
+  .pri-low { background:#eef1f3; color:#5b6a7a; border:1px solid var(--border); }
+  .pri-dne { background:#e8f0fb; color:#2f5fa8; border:1px solid #b9d0ef; }
+  .conf-high { background:#e8f5e9; color:#2e7d32; }
+  .conf-medium { background:#fdf3e3; color:#a15c00; }
+  .conf-low { background:#eef1f3; color:#5b6a7a; }
+  .basis-disclosed { background:#eef1f3; color:#5b6a7a; }
+  .basis-verified { background:#e8f5e9; color:#2e7d32; }
+  .basis-inferred { background:#fdf3e3; color:#a15c00; }
+  .basis-unknown { background:#eef1f3; color:#5b6a7a; }
+  .rating-high { background:#fdecea; color:#c0392b; }
+  .rating-medium { background:#fdf3e3; color:#a15c00; }
+  .rating-low { background:#e8f5e9; color:#2e7d32; }
+  .rating-unknown { background:#eef1f3; color:#5b6a7a; }
+  .status-active { background:#e8f5e9; color:#2e7d32; }
+  .status-bad { background:#fdecea; color:#c0392b; }
+  .status-warn { background:#fdf3e3; color:#a15c00; }
+  .tag { background:#e8f0fb; color:#2f5fa8; }
+  .header-badges { margin: 8px 0 14px; }
+  .meta-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 10px; margin-top: 10px; font-size: .92rem; }
+  .meta-grid div span.k { color: var(--muted); display:block; font-size: .75rem; text-transform: uppercase; letter-spacing:.03em; }
+  .derived-tag { display:inline-block; font-size: .7rem; color: var(--muted); border:1px dashed var(--border); border-radius: 6px; padding: 2px 8px; margin-bottom: 10px; }
+  .highlight-box { background:#f2f6fb; border:1px solid #cddcef; border-radius:8px; padding:12px 16px; margin: 12px 0; }
+  .chip { display:inline-block; padding: 3px 10px; border-radius: 999px; font-size:.8rem; font-weight:600; }
+  .chip-yes { background:#e8f5e9; color:#2e7d32; }
+  .chip-no { background:#fdecea; color:#c0392b; }
+  .chip-unknown { background:#eef1f3; color:#5b6a7a; }
+  .chip.warn { background:#fdecea; color:#c0392b; margin-right:6px; }
+  table { width:100%; border-collapse: collapse; font-size: .9rem; margin-top:8px; }
+  th, td { text-align:left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-size:.75rem; text-transform:uppercase; letter-spacing:.03em; }
+  .field { border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; }
+  .field-head { display:flex; align-items:center; gap:4px; flex-wrap:wrap; margin-bottom:6px; }
+  .field-title { font-weight:600; }
+  .field-value { font-size: .95rem; }
+  .field-note { color: var(--muted); font-size:.85rem; margin-top:6px; }
+  .sources { margin: 8px 0 0; padding-left: 18px; font-size: .82rem; }
+  .sources li { margin-bottom: 4px; }
+  .src-meta { color: var(--muted); }
+  .src-note { color: var(--muted); font-size: .8rem; }
+  .none { color: var(--muted); font-style: italic; }
+  .country-compare { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px; margin-top:8px; }
+  .country-compare .cell { background: var(--bg); border:1px solid var(--border); border-radius:8px; padding:10px; }
+  .country-compare .cell span.k { display:block; color:var(--muted); font-size:.72rem; text-transform:uppercase; }
+  .bar-row { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .bar-label { width: 190px; font-size:.85rem; flex-shrink:0; }
+  .bar-rating { width: 70px; font-size:.8rem; text-transform:capitalize; color:var(--muted); }
+  .news-item { border-bottom: 1px solid var(--border); padding: 10px 0; }
+  .news-meta { color: var(--muted); font-size:.8rem; }
+  .news-summary { margin-top:4px; font-size:.9rem; }
+  ul.plain { padding-left: 20px; }
+  footer { color: var(--muted); font-size:.8rem; text-align:center; margin: 24px 0; }
+  .flag-list li { margin-bottom:6px; }
+  .watchlist-meta { font-size:.8rem; color:var(--muted); margin-top:10px; }
+  .watchlist-meta code { background:var(--bg); border:1px solid var(--border); border-radius:4px; padding:1px 5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="panel">
+    <h1>Case 01M238QBYWAD015NR394T89RH8</h1>
+    <div class="muted">Target: <a href="https://www.13wjn.net" rel="noopener nofollow noreferrer" target="_blank">https://www.13wjn.net</a></div>
+    <div class="header-badges">
+      <span class="badge pri-low">Priority: LOW</span>
+      <span class="badge conf-low">Confidence: LOW</span>
+    </div>
+    <div class="meta-grid">
+      <div><span class="k">Jurisdiction</span>ZA</div>
+      <div><span class="k">Run at</span>2026-09-09T14:52:00.000Z</div>
+      <div><span class="k">Agent version</span>deep-search-agent-1.0</div>
+      <div><span class="k">Schema</span>1.0</div>
+    </div>
+    <div class="watchlist-meta">Input watchlist item: <code>4cbb2cb5-ff1d-43bf-b046-742e3030c258</code> &middot; domainId: <code>edea76a2-f1a9-42df-a456-9b6a0abf2f16</code></div>
+  </div>
+
+  <div class="panel">
+    <span class="derived-tag">Derived summary — see Detailed Findings below for sourced detail</span>
+    <h2>Executive Summary</h2>
+    <h3 style="margin-top:0">www.13wjn.net has no discoverable public footprint: direct fetch was blocked from this environment and web search returned zero results specific to the domain, so brand, operator, licensing and country-of-operation could not be established from open sources this run.</h3>
+    <p>www.13wjn.net was submitted as a suspected illegal gambling site targeting South Africa (input via an internal watchlist item and domain-monitoring identifier, not itself a public-source finding). Direct fetch of the target (both https and http, with and without the www prefix), of a general WHOIS lookup service, of a public RDAP endpoint, of the Wayback Machine availability API, and of several South African news outlets were all blocked at the network-egress level of the investigating environment, so no finding below rests on a directly loaded primary page. Unlike comparable prior cases where an operator&#x27;s own marketing/licensing pages were at least indexed by search engines even when direct fetch was blocked, repeated web searches for the exact string &#x27;13wjn.net&#x27; and the shorter string &#x27;13wjn&#x27; — alone, and combined with gambling, betting, casino, scam/complaint, and South Africa-specific terms — returned no results referencing the domain at all; every search instead surfaced unrelated content (radio station call-signs, generic WHOIS-tool listings, generic scam-reporting sites). The domain name itself is a short, semantically meaningless alphanumeric string on a generic .net TLD, a pattern that secondary reporting on South Africa&#x27;s illegal online-gambling market associates with disposable/rotating mirror domains that operators cycle to evade DNS-level blocking, though this specific domain could not be independently confirmed as part of any known mirror family or brand. Separately, background research confirms that South Africa&#x27;s National Gambling Board (NGB) treats interactive/online gambling as illegal except for licensed online sports betting, and that the NGB was, as of mid-2026, still in the procurement phase for a technical site-blocking solution against an illegal offshore market estimated (per SABA-commissioned Yield Sec research) at roughly 62% of all online gambling activity in the country and over R50 billion in annual gross gambling revenue. None of this general market context is specific evidence about www.13wjn.net itself.</p>
+    <h3>Key findings</h3>
+    <ul class="plain"><li>Direct fetch of https://www.13wjn.net, http(s)://13wjn.net, a WHOIS lookup service, a public RDAP endpoint, the Wayback Machine, and several South African news sources all returned EGRESS_BLOCKED from the investigating environment during this run; no finding here is based on a directly loaded primary page.</li><li>Repeated web searches for &#x27;13wjn.net&#x27; and &#x27;13wjn&#x27; (plain, and combined with gambling/betting/casino/scam/South Africa terms) returned zero results referencing the domain; it has essentially no discoverable public footprint via search, in contrast to prior comparable cases where at least secondary/marketing pages were indexed.</li><li>No brand name, operating entity, registered address, licence claim, or aliases/mirror domains could be identified for this site from any public source reached this run.</li><li>South Africa&#x27;s National Gambling Board treats interactive/online gambling as illegal except for licensed online sports betting, and was, as of mid-2026, still procuring a technical solution to block illegal offshore gambling sites at scale (NGB database reportedly held ~90 identified illegal sites as of the most recent public reporting found) — general market context, not evidence specific to this domain.</li><li>The domain&#x27;s short, semantically meaningless alphanumeric name on a generic .net TLD matches a pattern secondary sources associate with disposable/rotating mirror domains used to evade blocking, but this could not be independently verified for this specific domain.</li></ul>
+    <p><strong>Authorised in ZA?</strong> <span class="chip chip-unknown">Unknown</span></p>
+    <h3>Top contradictions</h3>
+    <ul class="plain flag-list"><li>The site was submitted to this job as a suspected illegal gambling site targeting South Africa (via an internal watchlist/domain-monitoring identifier), implying some internal detection signal exists, yet this run&#x27;s public-source investigation found zero corroborating evidence (no indexed content, no cached snapshot, no news, no WHOIS) that the domain is gambling-related, South Africa-facing, or even actively resolving — a gap between the internal flag and what open-source research could independently confirm this run.</li></ul>
+    <div class="highlight-box"><strong>Recommended action:</strong> Re-run with live-browser, direct-DNS/RDAP, or manually-routed network access to www.13wjn.net (and a WHOIS/RDAP service) since all such access was blocked in this environment this run; if the domain still yields no content or resolves to nothing, treat that as a signal the domain may already be dead, pre-launch, or a short-lived rotation used only briefly for a specific traffic source (e.g. ads, SMS/WhatsApp referral links) rather than organically discoverable. Separately, obtain the underlying detection basis for this watchlist item (domainId edea76a2-f1a9-42df-a456-9b6a0abf2f16 / watchlistItemId 4cbb2cb5-ff1d-43bf-b046-742e3030c258) so any confirmed gambling content, targeting evidence, or operator identity captured at detection time can be folded into a follow-up brief.</div>
+  </div>
+
+  <div class="panel">
+    <h2>Detailed Findings</h2>
+
+    <div class="field">
+      <div class="field-head"><span class="field-title">Brand</span> <span class="badge conf-low">low</span> <span class="badge basis-unknown">unknown</span></div>
+      <div class="field-value"><em>unknown</em></div>
+      <div class="field-note">No brand/trading name could be identified: the homepage could not be loaded from this environment, and no search-indexed page, snippet, or third-party mention of the domain was found.</div>
+      <ul class="sources"><li><a href="https://www.13wjn.net" rel="noopener nofollow noreferrer" target="_blank">https://www.13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:36:10.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment.</div></li><li><a href="https://13wjn.net" rel="noopener nofollow noreferrer" target="_blank">https://13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:39:05.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment (bare domain, no www).</div></li><li><code>web-search:13wjn.net</code> <span class="src-meta">(retrieved 2026-09-09T14:36:30.000Z)</span><div class="src-note">No results referencing the domain.</div></li><li><code>web-search:site:13wjn.net</code> <span class="src-meta">(retrieved 2026-09-09T14:40:10.000Z)</span><div class="src-note">No indexed pages from the domain found.</div></li></ul>
+    </div>
+
+    <div class="field">
+      <div class="field-head"><span class="field-title">Aliases / mirror domains</span> <span class="badge conf-low">low</span> <span class="badge basis-unknown">unknown</span></div>
+      <div class="field-value none">none found</div>
+      <div class="field-note">No mirror domains or aliases could be identified. Given the domain&#x27;s short, generic alphanumeric naming pattern, common mirror-farm naming conventions (e.g. incrementing digits, added words) could not be searched effectively without at least one confirmed brand name to anchor the search.</div>
+      <ul class="sources"><li><code>web-search:&quot;13wjn&quot;</code> <span class="src-meta">(retrieved 2026-09-09T14:44:10.000Z)</span><div class="src-note">No mirror/alias domains or related brand names surfaced.</div></li></ul>
+    </div>
+
+    <div class="field">
+      <div class="field-head"><span class="field-title">Legal entity</span> <span class="badge conf-low">low</span> <span class="badge basis-unknown">unknown</span></div>
+      <div class="field-value"><div class="meta-grid"><div><span class="k">Name</span><em>unknown</em></div><div><span class="k">Registration No.</span><em>unknown</em></div><div><span class="k">Registered address</span><em>unknown</em></div><div><span class="k">Incorporation country</span><em>unknown</em></div></div></div>
+      <div class="field-note">No operator entity could be identified from any source reached this run. The homepage, an about/terms page, and third-party mentions were all unavailable or non-existent in search results.</div>
+      <div class="none">no sources</div>
+    </div>
+
+    <div class="field">
+      <div class="field-head"><span class="field-title">Parent group</span> <span class="badge conf-low">low</span> <span class="badge basis-unknown">unknown</span></div>
+      <div class="field-value"><em>unknown</em></div>
+      <div class="field-note">No parent/group brand could be identified; no entity was established to trace a parent relationship from.</div>
+      <div class="none">no sources</div>
+    </div>
+
+    <div class="field">
+      <div class="field-head"><span class="field-title">Domain registration</span> <span class="badge conf-low">low</span> <span class="badge basis-unknown">unknown</span></div>
+      <div class="field-value"><em>unknown</em> — registrar, dates, nameservers, status codes and registrant country could not be determined</div>
+      <div class="field-note">WHOIS/RDAP lookup could not be performed: a WHOIS lookup service, the .net registry&#x27;s public RDAP endpoint, and the Wayback Machine availability API all returned EGRESS_BLOCKED from the investigating environment. No dedicated RDAP tool was available this run.</div>
+      <ul class="sources"><li><a href="https://www.whois.com/whois/13wjn.net" rel="noopener nofollow noreferrer" target="_blank">https://www.whois.com/whois/13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:37:20.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment.</div></li><li><a href="https://rdap.verisign.com/net/v1/domain/13wjn.net" rel="noopener nofollow noreferrer" target="_blank">https://rdap.verisign.com/net/v1/domain/13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:46:40.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment (public .net RDAP endpoint).</div></li><li><a href="http://archive.org/wayback/available?url=13wjn.net" rel="noopener nofollow noreferrer" target="_blank">http://archive.org/wayback/available?url=13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:47:50.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment; could not check for any archived snapshot.</div></li></ul>
+    </div>
+
+    <div class="field">
+      <div class="field-head"><span class="field-title">Country of operation</span> <span class="badge conf-low">low</span> <span class="badge basis-unknown">unknown</span></div>
+      <div class="field-value"><div class="country-compare"><div class="cell"><span class="k">Incorporation</span><em>unknown</em></div><div class="cell"><span class="k">Licensing jurisdiction</span><em>unknown</em></div><div class="cell"><span class="k">Input country</span>ZA</div></div></div>
+      <div class="field-note">No incorporation or licensing jurisdiction could be determined; no operator entity or licence claim was identified this run.</div>
+      <div class="none">no sources</div>
+    </div>
+
+    <h3>Licences</h3>
+    <table>
+      <thead><tr><th>Jurisdiction</th><th>Reference</th><th>Status</th><th>Holder entity</th><th>Authorises ZA?</th><th>Basis</th><th>Sources</th></tr></thead>
+      <tbody>
+      <tr><td colspan="7" class="none">No licence claims found — no page content or third-party source disclosed a licensing claim for this domain.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Authorisation in ZA</h3>
+    <div class="field">
+      <div class="field-head">
+        <span class="chip chip-unknown">Unknown</span>
+        <span class="badge conf-low">low</span> <span class="badge basis-inferred">inferred</span>
+      </div>
+      <div class="field-note">No public register listing www.13wjn.net (or any entity/brand associated with it) as an authorised operator in South Africa could be checked directly, because no operator entity or brand name was ever established for this domain, and the NGB&#x27;s own site was unreachable from this environment. Under South Africa&#x27;s general regulatory position, interactive/online gambling is illegal except for licensed online sports betting, so any unidentified interactive-gambling site defaults to a low prior of being authorised; however, because the site&#x27;s actual content and function could not be confirmed at all this run (it may not even be gambling-related, or may not currently resolve), authorisedInInputCountry is recorded as unknown rather than asserted false, pending confirmation of what the site actually is.</div>
+      <ul class="sources"><li><a href="https://www.ngb.org.za/" rel="noopener nofollow noreferrer" target="_blank">https://www.ngb.org.za/</a> <span class="src-meta">(retrieved 2026-09-09T14:41:00.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment; National Gambling Board of South Africa homepage could not be loaded directly.</div></li><li><a href="https://igamingbusiness.com/legal-compliance/south-africa-ngb-blocking-plan-advances-eoi-deadline-approaches/" rel="noopener nofollow noreferrer" target="_blank">igamingbusiness.com — NGB blocking plan advances</a> <span class="src-meta">(retrieved 2026-09-09T14:41:00.000Z)</span><div class="src-note">Reports the NGB is procuring a specialist provider to block illegal offshore gambling websites, EOI deadline moved to 4 September 2026; reports an NGB database of roughly 90 identified illegal sites as of the most recent reporting found.</div></li><li><a href="https://mybroadband.co.za/news/internet/655580-plan-to-block-ip-addresses-of-illegal-online-gambling-platforms-in-south-africa.html" rel="noopener nofollow noreferrer" target="_blank">mybroadband.co.za — plan to block IP addresses</a> <span class="src-meta">(retrieved 2026-09-09T14:41:00.000Z)</span><div class="src-note">Reports on the NGB&#x27;s plan to block IP addresses of illegal offshore gambling platforms; confirms interactive gambling is broadly illegal in South Africa outside licensed online sports betting.</div></li><li><a href="https://www.sowetan.co.za/news/2026-07-06-sas-gambling-problem-r50bn-of-illegal-online-betting-zero-local-tax/" rel="noopener nofollow noreferrer" target="_blank">sowetan.co.za — R50bn illegal online betting</a> <span class="src-meta">(retrieved 2026-09-09T14:41:00.000Z)</span><div class="src-note">Reports SABA-commissioned Yield Sec research estimating ~62% of South African online gambling activity is with illegal operators, and over R50 billion in gross gambling revenue flowing offshore annually.</div></li></ul>
+    </div>
+
+    <h3>News</h3>
+    <div class="none">No brand/entity/parent-specific news found — no operator identity was established this run to search news against. See Authorisation panel above for general South African illegal-gambling market context (not specific to this domain).</div>
+  </div>
+
+  <div class="panel">
+    <h2>Priority Assessment</h2>
+    <div class="header-badges"><span class="badge pri-low">Overall priority: LOW</span></div>
+    <p>harmAndExposure is unknown: no page content, language, currency, payment-method, or advertising evidence could be obtained to establish South African targeting or scale; the only ZA connection is the job&#x27;s own watchlist input, which is not itself an open-source finding this agent can independently corroborate. consumerHarmSeverity is unknown for the same reason — no player-protection, complaint, or fraud information exists for this domain in any source reached. legalReachability is low: with no operator entity, no WHOIS/RDAP data, no hosting or registrar information, and no licence claim identified, there is currently no named actor or jurisdiction to refer to a counterpart regulator. actorBehaviour is unknown/low: the domain&#x27;s short, generic alphanumeric naming pattern is consistent with disposable mirror-domain tactics described in secondary South African reporting on illegal gambling operators, but this is a naming-pattern inference only, not a confirmed link to any known operator, rotation family, or prior enforcement history. feasibilityAndCost is low: with zero identifying information, no durable enforcement action (referral, blocking coordination, takedown request to a named registrar) can currently be constructed; the domain may not even be live. strategicValue is low for this specific case in isolation, though the broader South African illegal online-gambling market it sits within (per NGB/SABA reporting: ~62% of online gambling activity illegal, ~R50bn/year offshore) carries high systemic strategic value, which would justify re-prioritising this case sharply upward the moment any operator identity, targeting evidence, or content confirmation becomes available. Net: given the near-total absence of open-source corroboration this run, priority is set to low pending a follow-up pass with working direct-fetch/WHOIS access or the internal detection evidence that generated the watchlist item.</p>
+
+    <h3>Dimension ratings</h3>
+
+    <div class="bar-row">
+      <div class="bar-label">Harm &amp; Exposure</div>
+      <svg width="420" height="22" class="bar-svg">
+        <rect x="0" y="2" width="420" height="18" rx="3" fill="var(--track)"/>
+        <rect x="0" y="2" width="0" height="18" rx="3" fill="#7f8c8d"/>
+      </svg>
+      <div class="bar-rating">unknown</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">Consumer Harm Severity</div>
+      <svg width="420" height="22" class="bar-svg">
+        <rect x="0" y="2" width="420" height="18" rx="3" fill="var(--track)"/>
+        <rect x="0" y="2" width="0" height="18" rx="3" fill="#7f8c8d"/>
+      </svg>
+      <div class="bar-rating">unknown</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">Legal Reachability</div>
+      <svg width="420" height="22" class="bar-svg">
+        <rect x="0" y="2" width="420" height="18" rx="3" fill="var(--track)"/>
+        <rect x="0" y="2" width="140" height="18" rx="3" fill="#2e7d32"/>
+      </svg>
+      <div class="bar-rating">low</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">Actor Behaviour</div>
+      <svg width="420" height="22" class="bar-svg">
+        <rect x="0" y="2" width="420" height="18" rx="3" fill="var(--track)"/>
+        <rect x="0" y="2" width="0" height="18" rx="3" fill="#7f8c8d"/>
+      </svg>
+      <div class="bar-rating">unknown</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">Feasibility &amp; Cost</div>
+      <svg width="420" height="22" class="bar-svg">
+        <rect x="0" y="2" width="420" height="18" rx="3" fill="var(--track)"/>
+        <rect x="0" y="2" width="140" height="18" rx="3" fill="#2e7d32"/>
+      </svg>
+      <div class="bar-rating">low</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">Strategic Value</div>
+      <svg width="420" height="22" class="bar-svg">
+        <rect x="0" y="2" width="420" height="18" rx="3" fill="var(--track)"/>
+        <rect x="0" y="2" width="140" height="18" rx="3" fill="#2e7d32"/>
+      </svg>
+      <div class="bar-rating">low</div>
+    </div>
+
+    <table>
+      <thead><tr><th>Dimension</th><th>Rating</th><th>Evidence</th><th>Sources</th></tr></thead>
+      <tbody>
+    <tr>
+      <td>Harm &amp; Exposure</td>
+      <td><span class="badge rating-unknown">unknown</span></td>
+      <td>No page content, language, currency, payment-method, or traffic/scale data could be obtained for www.13wjn.net this run; the domain is not independently confirmable as gambling-related, let alone South Africa-targeting, from any source reached.</td>
+      <td><ul class="sources"><li><a href="https://www.13wjn.net" rel="noopener nofollow noreferrer" target="_blank">https://www.13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:36:10.000Z)</span><div class="src-note">EGRESS_BLOCKED</div></li></ul></td>
+    </tr>
+
+    <tr>
+      <td>Consumer Harm Severity</td>
+      <td><span class="badge rating-unknown">unknown</span></td>
+      <td>No complaint, fraud, non-payment, or player-protection information specific to this domain was found via public search.</td>
+      <td><ul class="sources"><li><code>web-search:&quot;13wjn.net&quot; OR &quot;13wjn&quot; scam review complaint</code> <span class="src-meta">(retrieved 2026-09-09T14:49:20.000Z)</span><div class="src-note">No brand-specific results found.</div></li></ul></td>
+    </tr>
+
+    <tr>
+      <td>Legal Reachability</td>
+      <td><span class="badge rating-low">low</span></td>
+      <td>No operator entity, registrar, hosting provider, or licensing jurisdiction could be identified this run — there is currently no named actor or jurisdiction to anchor a cross-regulator referral.</td>
+      <td><ul class="sources"><li><a href="https://www.whois.com/whois/13wjn.net" rel="noopener nofollow noreferrer" target="_blank">whois.com/whois/13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:37:20.000Z)</span><div class="src-note">EGRESS_BLOCKED</div></li><li><a href="https://rdap.verisign.com/net/v1/domain/13wjn.net" rel="noopener nofollow noreferrer" target="_blank">rdap.verisign.com</a> <span class="src-meta">(retrieved 2026-09-09T14:46:40.000Z)</span><div class="src-note">EGRESS_BLOCKED</div></li></ul></td>
+    </tr>
+
+    <tr>
+      <td>Actor Behaviour</td>
+      <td><span class="badge rating-unknown">unknown</span></td>
+      <td>The domain&#x27;s short, semantically meaningless alphanumeric name on a generic .net TLD matches a naming pattern that secondary South African reporting associates with disposable/rotating mirror domains used to evade blocking, but no source confirmed this specific domain is part of any known mirror family, rotation, or previously-warned operator.</td>
+      <td><ul class="sources"><li><a href="https://www.uagc.org.ua/en/post/illegal-casino-mirrors-when-the-fight-is-no-longer-about-a-single-domain-but-an-entire-infrastruc" rel="noopener nofollow noreferrer" target="_blank">uagc.org.ua — illegal casino mirrors</a> <span class="src-meta">(retrieved 2026-09-09T14:44:40.000Z)</span><div class="src-note">General description of illegal-casino mirror-domain infrastructure and evasion tactics; not specific to this domain.</div></li></ul></td>
+    </tr>
+
+    <tr>
+      <td>Feasibility &amp; Cost</td>
+      <td><span class="badge rating-low">low</span></td>
+      <td>With no identified operator, hosting, registrar, or confirmed live content, there is no current basis for a durable, targeted enforcement action against this specific domain beyond generic network-level blocking (which South Africa&#x27;s NGB is still procuring as of mid-2026).</td>
+      <td><ul class="sources"><li><a href="https://igamingbusiness.com/legal-compliance/south-africa-ngb-blocking-plan-advances-eoi-deadline-approaches/" rel="noopener nofollow noreferrer" target="_blank">igamingbusiness.com — NGB blocking plan advances</a> <span class="src-meta">(retrieved 2026-09-09T14:41:00.000Z)</span></li></ul></td>
+    </tr>
+
+    <tr>
+      <td>Strategic Value</td>
+      <td><span class="badge rating-low">low</span></td>
+      <td>In isolation, this specific unidentified domain carries low standalone signal value; the broader South African illegal online-gambling market it may belong to is a high-salience enforcement priority nationally (NGB site-blocking procurement; SABA/Yield Sec estimates of ~62% illegal online activity and ~R50bn/year offshore), so value would rise sharply if this domain can be confirmed as part of a larger identified operator or campaign.</td>
+      <td><ul class="sources"><li><a href="https://www.sowetan.co.za/news/2026-07-06-sas-gambling-problem-r50bn-of-illegal-online-betting-zero-local-tax/" rel="noopener nofollow noreferrer" target="_blank">sowetan.co.za — R50bn illegal online betting</a> <span class="src-meta">(retrieved 2026-09-09T14:41:00.000Z)</span></li></ul></td>
+    </tr>
+    </tbody>
+    </table>
+
+    <h3>Referral flags</h3>
+    <div class="none">No referral flags raised — insufficient evidence this run to assess money-laundering, organised-crime, or minors-access indicators for this domain.</div>
+  </div>
+
+  <div class="panel">
+    <h2>Contradictions</h2>
+    <ul class="plain flag-list"><li>The site was submitted as a suspected illegal gambling site targeting South Africa via an internal watchlist/domain-monitoring identifier, implying some prior detection signal exists, yet this run&#x27;s independent public-source investigation found zero corroborating evidence (no indexed content, no cached snapshot, no WHOIS, no news mention) that the domain is gambling-related, South Africa-facing, or currently live — this gap between the internal flag and what open-source research could confirm should be resolved with the original detection evidence before further action.</li></ul>
+  </div>
+
+  <div class="panel">
+    <h2>Provenance / Appendix</h2>
+    <p><strong>Tool calls this run:</strong> 17</p>
+    <h3>Sources consulted</h3>
+    <ul class="sources">
+      <li><a href="https://www.13wjn.net" rel="noopener nofollow noreferrer" target="_blank">https://www.13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:36:10.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment</div></li>
+      <li><code>web-search:13wjn.net</code> <span class="src-meta">(retrieved 2026-09-09T14:36:30.000Z)</span><div class="src-note">No results referencing the domain</div></li>
+      <li><a href="https://www.whois.com/whois/13wjn.net" rel="noopener nofollow noreferrer" target="_blank">https://www.whois.com/whois/13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:37:20.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment</div></li>
+      <li><code>web-search:&quot;13wjn.net&quot; casino OR betting OR gambling OR sportsbook</code> <span class="src-meta">(retrieved 2026-09-09T14:37:40.000Z)</span><div class="src-note">No results referencing the domain</div></li>
+      <li><code>web-search:13wjn.net South Africa</code> <span class="src-meta">(retrieved 2026-09-09T14:38:00.000Z)</span><div class="src-note">No results referencing the domain</div></li>
+      <li><a href="https://13wjn.net" rel="noopener nofollow noreferrer" target="_blank">https://13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:39:05.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment (bare domain, no www)</div></li>
+      <li><code>web-search:site:13wjn.net</code> <span class="src-meta">(retrieved 2026-09-09T14:40:10.000Z)</span><div class="src-note">No indexed pages from the domain found</div></li>
+      <li><code>web-search:&quot;13wjn&quot; bet OR casino OR wager</code> <span class="src-meta">(retrieved 2026-09-09T14:40:30.000Z)</span><div class="src-note">No results referencing the domain</div></li>
+      <li><code>web-search:National Gambling Board South Africa illegal online gambling blocked sites list 2026</code> <span class="src-meta">(retrieved 2026-09-09T14:41:00.000Z)</span><div class="src-note">Established general South African illegal-gambling regulatory context; no domain-specific match</div></li>
+      <li><code>web-search:&quot;13wjn&quot;</code> <span class="src-meta">(retrieved 2026-09-09T14:44:10.000Z)</span><div class="src-note">No results referencing the domain</div></li>
+      <li><code>web-search:South Africa illegal gambling website domain names random string casino mirror pattern</code> <span class="src-meta">(retrieved 2026-09-09T14:44:40.000Z)</span><div class="src-note">General mirror-domain evasion context; no domain-specific match</div></li>
+      <li><a href="https://htxt.co.za/2026/03/saba-lists-the-illegal-gambling-sites-operating-in-south-africa/" rel="noopener nofollow noreferrer" target="_blank">htxt.co.za — SABA illegal gambling sites list</a> <span class="src-meta">(retrieved 2026-09-09T14:45:20.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment</div></li>
+      <li><a href="https://rdap.verisign.com/net/v1/domain/13wjn.net" rel="noopener nofollow noreferrer" target="_blank">https://rdap.verisign.com/net/v1/domain/13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:46:40.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment</div></li>
+      <li><a href="http://archive.org/wayback/available?url=13wjn.net" rel="noopener nofollow noreferrer" target="_blank">http://archive.org/wayback/available?url=13wjn.net</a> <span class="src-meta">(retrieved 2026-09-09T14:47:50.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment</div></li>
+      <li><code>web-search:13wjn.net whois registrar</code> <span class="src-meta">(retrieved 2026-09-09T14:48:20.000Z)</span><div class="src-note">No results referencing the domain</div></li>
+      <li><a href="https://www.moneyweb.co.za/news/economy/thousands-of-illegal-gambling-operators-are-targeting-south-africans/" rel="noopener nofollow noreferrer" target="_blank">moneyweb.co.za — thousands of illegal gambling operators</a> <span class="src-meta">(retrieved 2026-09-09T14:49:00.000Z)</span><div class="src-note">EGRESS_BLOCKED by investigating environment</div></li>
+      <li><code>web-search:&quot;13wjn.net&quot; OR &quot;13wjn&quot; scam review complaint</code> <span class="src-meta">(retrieved 2026-09-09T14:49:20.000Z)</span><div class="src-note">No results referencing the domain</div></li>
+    </ul>
+    <h3>Unresolved fields</h3>
+    <table>
+      <thead><tr><th>Field</th><th>What was attempted</th></tr></thead>
+      <tbody>
+      <tr><td>findings.brand / findings.aliases</td><td>Attempted direct fetch of the homepage (https and http, www and bare) — EGRESS_BLOCKED both times. Attempted six distinct web searches for &#x27;13wjn.net&#x27; and &#x27;13wjn&#x27; alone and combined with gambling/scam/South Africa terms — zero results referencing the domain in any of them.</td></tr>
+      <tr><td>findings.legalEntity / findings.parentGroup</td><td>No operator entity could be searched for without a confirmed brand name; the about/terms/footer pages could not be loaded (EGRESS_BLOCKED).</td></tr>
+      <tr><td>findings.domainRegistration</td><td>Attempted whois.com, the .net registry&#x27;s public RDAP endpoint (rdap.verisign.com), and the Wayback Machine availability API — all three returned EGRESS_BLOCKED.</td></tr>
+      <tr><td>findings.licences</td><td>No licence claim was ever surfaced (no page content, no search hits), so no regulator register could be checked.</td></tr>
+      <tr><td>findings.authorisation</td><td>Attempted to load the National Gambling Board of South Africa&#x27;s own site directly (EGRESS_BLOCKED); relied on secondary press coverage of NGB&#x27;s blocking programme and market-scale estimates, none of which named this domain.</td></tr>
+      <tr><td>findings.news</td><td>Six search variations combining the domain/brand-adjacent strings with scam, complaint, casino, betting, and South Africa terms returned no brand-specific news; general South African illegal-gambling market coverage was found but is not specific to this domain and was placed under findings.authorisation sources instead.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <h2>Analyst Notes</h2>
+    <p>This run&#x27;s investigation was more constrained than a typical case: not only was direct fetch of the target domain blocked (as in prior comparable runs), but unlike those prior cases, web search itself returned literally zero results referencing &#x27;13wjn.net&#x27; or the shorter string &#x27;13wjn&#x27; across ten distinct query variations covering gambling terms, scam/complaint terms, and South Africa-specific terms. This is itself a notable, if inconclusive, signal: the domain has essentially no organic search-engine footprint, which is consistent with (but does not confirm) a short-lived or narrowly-distributed mirror domain used for a specific traffic channel (paid ads, SMS/WhatsApp referral links, affiliate redirects) rather than an established, search-discoverable brand — the same evasion pattern that secondary South African reporting on illegal gambling site-blocking describes generally for this market. Because no operator entity, brand, licence claim, or hosting/WHOIS data could be established, this brief cannot assert South African targeting, illegality, or authorisation status for this specific domain with any confidence, and authorisedInInputCountry has accordingly been left unknown rather than defaulted to false. The single most useful next step is not a repeat of the same public-search methodology, but either (a) working direct network/browser access to the domain and a WHOIS/RDAP service from an unblocked environment, or (b) the original internal detection evidence that produced this watchlist item (domainId edea76a2-f1a9-42df-a456-9b6a0abf2f16, watchlistItemId 4cbb2cb5-ff1d-43bf-b046-742e3030c258), which likely captured page content or targeting signals no longer independently reconstructable from open search. Separately, general background research confirmed South Africa&#x27;s National Gambling Board treats interactive online gambling as illegal outside licensed sports betting and was, as of mid-2026, still procuring a technical blocking solution against a market SABA-commissioned research estimates at ~62% illegal online activity and over R50 billion/year in offshore gross gambling revenue — useful systemic context for prioritisation once this specific domain is substantively confirmed, but not evidence about www.13wjn.net itself.</p>
+  </div>
+
+  <footer>Case 01M238QBYWAD015NR394T89RH8 &middot; generated 2026-09-09T14:52:00.000Z &middot; investigative leads for a case file, not legal conclusions.</footer>
+</div>
+</body>
+</html>

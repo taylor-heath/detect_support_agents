@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "1.0",
+
+  "header": {
+    "caseId": "01M238QBYWAD015NR394T89RH8",
+    "targetUrl": "https://www.13wjn.net",
+    "country": "ZA",
+    "runAt": "2026-09-09T14:52:00.000Z",
+    "agentVersion": "deep-search-agent-1.0",
+    "priority": "low",
+    "overallConfidence": "low"
+  },
+
+  "executiveSummary": {
+    "headline": "www.13wjn.net has no discoverable public footprint: direct fetch was blocked from this environment and web search returned zero results specific to the domain, so brand, operator, licensing and country-of-operation could not be established from open sources this run.",
+    "narrative": "www.13wjn.net was submitted as a suspected illegal gambling site targeting South Africa (input via an internal watchlist item and domain-monitoring identifier, not itself a public-source finding). Direct fetch of the target (both https and http, with and without the www prefix), of a general WHOIS lookup service, of a public RDAP endpoint, of the Wayback Machine availability API, and of several South African news outlets were all blocked at the network-egress level of the investigating environment, so no finding below rests on a directly loaded primary page. Unlike comparable prior cases where an operator's own marketing/licensing pages were at least indexed by search engines even when direct fetch was blocked, repeated web searches for the exact string '13wjn.net' and the shorter string '13wjn' — alone, and combined with gambling, betting, casino, scam/complaint, and South Africa-specific terms — returned no results referencing the domain at all; every search instead surfaced unrelated content (radio station call-signs, generic WHOIS-tool listings, generic scam-reporting sites). The domain name itself is a short, semantically meaningless alphanumeric string on a generic .net TLD, a pattern that secondary reporting on South Africa's illegal online-gambling market associates with disposable/rotating mirror domains that operators cycle to evade DNS-level blocking, though this specific domain could not be independently confirmed as part of any known mirror family or brand. Separately, background research confirms that South Africa's National Gambling Board (NGB) treats interactive/online gambling as illegal except for licensed online sports betting, and that the NGB was, as of mid-2026, still in the procurement phase for a technical site-blocking solution against an illegal offshore market estimated (per SABA-commissioned Yield Sec research) at roughly 62% of all online gambling activity in the country and over R50 billion in annual gross gambling revenue. None of this general market context is specific evidence about www.13wjn.net itself.",
+    "keyFindings": [
+      "Direct fetch of https://www.13wjn.net, http(s)://13wjn.net, a WHOIS lookup service, a public RDAP endpoint, the Wayback Machine, and several South African news sources all returned EGRESS_BLOCKED from the investigating environment during this run; no finding here is based on a directly loaded primary page.",
+      "Repeated web searches for '13wjn.net' and '13wjn' (plain, and combined with gambling/betting/casino/scam/South Africa terms) returned zero results referencing the domain; it has essentially no discoverable public footprint via search, in contrast to prior comparable cases where at least secondary/marketing pages were indexed.",
+      "No brand name, operating entity, registered address, licence claim, or aliases/mirror domains could be identified for this site from any public source reached this run.",
+      "South Africa's National Gambling Board treats interactive/online gambling as illegal except for licensed online sports betting, and was, as of mid-2026, still procuring a technical solution to block illegal offshore gambling sites at scale (NGB database reportedly held ~90 identified illegal sites as of the most recent public reporting found) — general market context, not evidence specific to this domain.",
+      "The domain's short, semantically meaningless alphanumeric name on a generic .net TLD matches a pattern secondary sources associate with disposable/rotating mirror domains used to evade blocking, but this could not be independently verified for this specific domain."
+    ],
+    "authorisedInInputCountry": null,
+    "topContradictions": [
+      "The site was submitted to this job as a suspected illegal gambling site targeting South Africa (via an internal watchlist/domain-monitoring identifier), implying some internal detection signal exists, yet this run's public-source investigation found zero corroborating evidence (no indexed content, no cached snapshot, no news, no WHOIS) that the domain is gambling-related, South Africa-facing, or even actively resolving — a gap between the internal flag and what open-source research could independently confirm this run."
+    ],
+    "recommendedAction": "Re-run with live-browser, direct-DNS/RDAP, or manually-routed network access to www.13wjn.net (and a WHOIS/RDAP service) since all such access was blocked in this environment this run; if the domain still yields no content or resolves to nothing, treat that as a signal the domain may already be dead, pre-launch, or a short-lived rotation used only briefly for a specific traffic source (e.g. ads, SMS/WhatsApp referral links) rather than organically discoverable. Separately, obtain the underlying detection basis for this watchlist item (the source that flagged www.13wjn.net for domainId edea76a2-f1a9-42df-a456-9b6a0abf2f16 / watchlistItemId 4cbb2cb5-ff1d-43bf-b046-742e3030c258) so any confirmed gambling content, targeting evidence, or operator identity captured at detection time can be folded into a follow-up brief."
+  },
+
+  "findings": {
+    "brand": {
+      "value": null,
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [
+        { "url": "https://www.13wjn.net", "retrievedAt": "2026-09-09T14:36:10.000Z", "note": "EGRESS_BLOCKED by investigating environment." },
+        { "url": "https://13wjn.net", "retrievedAt": "2026-09-09T14:39:05.000Z", "note": "EGRESS_BLOCKED by investigating environment (bare domain, no www)." },
+        { "url": "web-search:13wjn.net", "retrievedAt": "2026-09-09T14:36:30.000Z", "note": "No results referencing the domain." },
+        { "url": "web-search:site:13wjn.net", "retrievedAt": "2026-09-09T14:40:10.000Z", "note": "No indexed pages from the domain found." }
+      ],
+      "note": "No brand/trading name could be identified: the homepage could not be loaded from this environment, and no search-indexed page, snippet, or third-party mention of the domain was found."
+    },
+
+    "aliases": {
+      "value": [],
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [
+        { "url": "web-search:\"13wjn\"", "retrievedAt": "2026-09-09T14:44:10.000Z", "note": "No mirror/alias domains or related brand names surfaced." }
+      ],
+      "note": "No mirror domains or aliases could be identified. Given the domain's short, generic alphanumeric naming pattern, common mirror-farm naming conventions (e.g. incrementing digits, added words) could not be searched effectively without at least one confirmed brand name to anchor the search."
+    },
+
+    "legalEntity": {
+      "value": { "name": null, "registrationNumber": null, "registeredAddress": null, "incorporationCountry": null },
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [],
+      "note": "No operator entity could be identified from any source reached this run. The homepage, an about/terms page, and third-party mentions were all unavailable or non-existent in search results."
+    },
+
+    "parentGroup": {
+      "value": null,
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [],
+      "note": "No parent/group brand could be identified; no entity was established to trace a parent relationship from."
+    },
+
+    "domainRegistration": {
+      "value": {
+        "registrar": null, "createdAt": null, "expiresAt": null,
+        "nameservers": [], "statusCodes": [], "registrantCountry": null, "privacyProxy": null
+      },
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [
+        { "url": "https://www.whois.com/whois/13wjn.net", "retrievedAt": "2026-09-09T14:37:20.000Z", "note": "EGRESS_BLOCKED by investigating environment." },
+        { "url": "https://rdap.verisign.com/net/v1/domain/13wjn.net", "retrievedAt": "2026-09-09T14:46:40.000Z", "note": "EGRESS_BLOCKED by investigating environment (public .net RDAP endpoint)." },
+        { "url": "http://archive.org/wayback/available?url=13wjn.net", "retrievedAt": "2026-09-09T14:47:50.000Z", "note": "EGRESS_BLOCKED by investigating environment; could not check for any archived snapshot." }
+      ],
+      "note": "WHOIS/RDAP lookup could not be performed: a WHOIS lookup service, the .net registry's public RDAP endpoint, and the Wayback Machine availability API all returned EGRESS_BLOCKED from the investigating environment. No dedicated RDAP tool was available this run."
+    },
+
+    "countryOfOperation": {
+      "value": { "incorporation": null, "licensingJurisdiction": null, "inputCountry": "ZA" },
+      "confidence": "low",
+      "basis": "unknown",
+      "sources": [],
+      "note": "No incorporation or licensing jurisdiction could be determined; no operator entity or licence claim was identified this run."
+    },
+
+    "licences": [],
+
+    "authorisation": {
+      "authorisedInInputCountry": null,
+      "confidence": "low",
+      "basis": "inferred",
+      "sources": [
+        { "url": "https://www.ngb.org.za/", "retrievedAt": "2026-09-09T14:41:00.000Z", "note": "EGRESS_BLOCKED by investigating environment; National Gambling Board of South Africa homepage could not be loaded directly." },
+        { "url": "https://igamingbusiness.com/legal-compliance/south-africa-ngb-blocking-plan-advances-eoi-deadline-approaches/", "retrievedAt": "2026-09-09T14:41:00.000Z", "note": "Reports the NGB is procuring a specialist provider to block illegal offshore gambling websites, with an Expression-of-Interest deadline moved to 4 September 2026; reports an NGB database of roughly 90 identified illegal sites as of the most recent reporting found." },
+        { "url": "https://mybroadband.co.za/news/internet/655580-plan-to-block-ip-addresses-of-illegal-online-gambling-platforms-in-south-africa.html", "retrievedAt": "2026-09-09T14:41:00.000Z", "note": "Reports on the NGB's plan to block IP addresses of illegal offshore gambling platforms; confirms interactive gambling is broadly illegal in South Africa outside licensed online sports betting." },
+        { "url": "https://www.sowetan.co.za/news/2026-07-06-sas-gambling-problem-r50bn-of-illegal-online-betting-zero-local-tax/", "retrievedAt": "2026-09-09T14:41:00.000Z", "note": "Reports SABA-commissioned Yield Sec research estimating ~62% of South African online gambling activity is with illegal operators, and over R50 billion in gross gambling revenue flowing offshore annually." }
+      ],
+      "note": "No public register listing www.13wjn.net (or any entity/brand associated with it) as an authorised operator in South Africa could be checked directly, because no operator entity or brand name was ever established for this domain, and the NGB's own site was unreachable from this environment. Under South Africa's general regulatory position, interactive/online gambling is illegal except for licensed online sports betting, so any unidentified interactive-gambling site defaults to a low prior of being authorised; however, because the site's actual content and function could not be confirmed at all this run (it may not even be gambling-related, or may not currently resolve), authorisedInInputCountry is recorded as unknown (null) rather than asserted false, pending confirmation of what the site actually is."
+    },
+
+    "news": []
+  },
+
+  "priorityAssessment": {
+    "priority": "low",
+    "rationale": "harmAndExposure is unknown: no page content, language, currency, payment-method, or advertising evidence could be obtained to establish South African targeting or scale; the only ZA connection is the job's own watchlist input, which is not itself an open-source finding this agent can independently corroborate. consumerHarmSeverity is unknown for the same reason — no player-protection, complaint, or fraud information exists for this domain in any source reached. legalReachability is low: with no operator entity, no WHOIS/RDAP data, no hosting or registrar information, and no licence claim identified, there is currently no named actor or jurisdiction to refer to a counterpart regulator. actorBehaviour is unknown/low: the domain's short, generic alphanumeric naming pattern is consistent with disposable mirror-domain tactics described in secondary South African reporting on illegal gambling operators, but this is a naming-pattern inference only, not a confirmed link to any known operator, rotation family, or prior enforcement history. feasibilityAndCost is low: with zero identifying information, no durable enforcement action (referral, blocking coordination, takedown request to a named registrar) can currently be constructed; the domain may not even be live. strategicValue is low for this specific case in isolation, though the broader South African illegal online-gambling market it sits within (per NGB/SABA reporting: ~62% of online gambling activity illegal, ~R50bn/year offshore) carries high systemic strategic value, which would justify re-prioritising this case sharply upward the moment any operator identity, targeting evidence, or content confirmation becomes available. Net: given the near-total absence of open-source corroboration this run, priority is set to low pending a follow-up pass with working direct-fetch/WHOIS access or the internal detection evidence that generated the watchlist item.",
+    "referralFlags": [],
+    "dimensions": [
+      {
+        "dimension": "harmAndExposure",
+        "rating": "unknown",
+        "evidence": "No page content, language, currency, payment-method, or traffic/scale data could be obtained for www.13wjn.net this run; the domain is not independently confirmable as gambling-related, let alone South Africa-targeting, from any source reached.",
+        "sources": [
+          { "url": "https://www.13wjn.net", "retrievedAt": "2026-09-09T14:36:10.000Z", "note": "EGRESS_BLOCKED" }
+        ]
+      },
+      {
+        "dimension": "consumerHarmSeverity",
+        "rating": "unknown",
+        "evidence": "No complaint, fraud, non-payment, or player-protection information specific to this domain was found via public search.",
+        "sources": [
+          { "url": "web-search:\"13wjn.net\" OR \"13wjn\" scam review complaint", "retrievedAt": "2026-09-09T14:49:20.000Z", "note": "No brand-specific results found." }
+        ]
+      },
+      {
+        "dimension": "legalReachability",
+        "rating": "low",
+        "evidence": "No operator entity, registrar, hosting provider, or licensing jurisdiction could be identified this run — there is currently no named actor or jurisdiction to anchor a cross-regulator referral.",
+        "sources": [
+          { "url": "https://www.whois.com/whois/13wjn.net", "retrievedAt": "2026-09-09T14:37:20.000Z", "note": "EGRESS_BLOCKED" },
+          { "url": "https://rdap.verisign.com/net/v1/domain/13wjn.net", "retrievedAt": "2026-09-09T14:46:40.000Z", "note": "EGRESS_BLOCKED" }
+        ]
+      },
+      {
+        "dimension": "actorBehaviour",
+        "rating": "unknown",
+        "evidence": "The domain's short, semantically meaningless alphanumeric name on a generic .net TLD matches a naming pattern that secondary South African reporting associates with disposable/rotating mirror domains used to evade blocking, but no source confirmed this specific domain is part of any known mirror family, rotation, or previously-warned operator.",
+        "sources": [
+          { "url": "https://www.uagc.org.ua/en/post/illegal-casino-mirrors-when-the-fight-is-no-longer-about-a-single-domain-but-an-entire-infrastruc", "retrievedAt": "2026-09-09T14:44:40.000Z", "note": "General description of illegal-casino mirror-domain infrastructure and evasion tactics; not specific to this domain." }
+        ]
+      },
+      {
+        "dimension": "feasibilityAndCost",
+        "rating": "low",
+        "evidence": "With no identified operator, hosting, registrar, or confirmed live content, there is no current basis for a durable, targeted enforcement action against this specific domain beyond generic network-level blocking (which South Africa's NGB is still procuring as of mid-2026).",
+        "sources": [
+          { "url": "https://igamingbusiness.com/legal-compliance/south-africa-ngb-blocking-plan-advances-eoi-deadline-approaches/", "retrievedAt": "2026-09-09T14:41:00.000Z", "note": null }
+        ]
+      },
+      {
+        "dimension": "strategicValue",
+        "rating": "low",
+        "evidence": "In isolation, this specific unidentified domain carries low standalone signal value; the broader South African illegal online-gambling market it may belong to is a high-salience enforcement priority nationally (NGB site-blocking procurement; SABA/Yield Sec estimates of ~62% illegal online activity and ~R50bn/year offshore), so value would rise sharply if this domain can be confirmed as part of a larger identified operator or campaign.",
+        "sources": [
+          { "url": "https://www.sowetan.co.za/news/2026-07-06-sas-gambling-problem-r50bn-of-illegal-online-betting-zero-local-tax/", "retrievedAt": "2026-09-09T14:41:00.000Z", "note": null }
+        ]
+      }
+    ]
+  },
+
+  "contradictions": [
+    "The site was submitted as a suspected illegal gambling site targeting South Africa via an internal watchlist/domain-monitoring identifier, implying some prior detection signal exists, yet this run's independent public-source investigation found zero corroborating evidence (no indexed content, no cached snapshot, no WHOIS, no news mention) that the domain is gambling-related, South Africa-facing, or currently live — this gap between the internal flag and what open-source research could confirm should be resolved with the original detection evidence before further action."
+  ],
+
+  "provenance": {
+    "toolCallCount": 17,
+    "sourcesConsulted": [
+      { "url": "https://www.13wjn.net", "retrievedAt": "2026-09-09T14:36:10.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "web-search:13wjn.net", "retrievedAt": "2026-09-09T14:36:30.000Z", "note": "No results referencing the domain" },
+      { "url": "https://www.whois.com/whois/13wjn.net", "retrievedAt": "2026-09-09T14:37:20.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "web-search:\"13wjn.net\" casino OR betting OR gambling OR sportsbook", "retrievedAt": "2026-09-09T14:37:40.000Z", "note": "No results referencing the domain" },
+      { "url": "web-search:13wjn.net South Africa", "retrievedAt": "2026-09-09T14:38:00.000Z", "note": "No results referencing the domain" },
+      { "url": "https://13wjn.net", "retrievedAt": "2026-09-09T14:39:05.000Z", "note": "EGRESS_BLOCKED by investigating environment (bare domain, no www)" },
+      { "url": "web-search:site:13wjn.net", "retrievedAt": "2026-09-09T14:40:10.000Z", "note": "No indexed pages from the domain found" },
+      { "url": "web-search:\"13wjn\" bet OR casino OR wager", "retrievedAt": "2026-09-09T14:40:30.000Z", "note": "No results referencing the domain" },
+      { "url": "web-search:National Gambling Board South Africa illegal online gambling blocked sites list 2026", "retrievedAt": "2026-09-09T14:41:00.000Z", "note": "Established general South African illegal-gambling regulatory context; no domain-specific match" },
+      { "url": "web-search:\"13wjn\"", "retrievedAt": "2026-09-09T14:44:10.000Z", "note": "No results referencing the domain" },
+      { "url": "web-search:South Africa illegal gambling website domain names random string casino mirror pattern", "retrievedAt": "2026-09-09T14:44:40.000Z", "note": "General mirror-domain evasion context; no domain-specific match" },
+      { "url": "https://htxt.co.za/2026/03/saba-lists-the-illegal-gambling-sites-operating-in-south-africa/", "retrievedAt": "2026-09-09T14:45:20.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "https://rdap.verisign.com/net/v1/domain/13wjn.net", "retrievedAt": "2026-09-09T14:46:40.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "http://archive.org/wayback/available?url=13wjn.net", "retrievedAt": "2026-09-09T14:47:50.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "web-search:13wjn.net whois registrar", "retrievedAt": "2026-09-09T14:48:20.000Z", "note": "No results referencing the domain" },
+      { "url": "https://www.moneyweb.co.za/news/economy/thousands-of-illegal-gambling-operators-are-targeting-south-africans/", "retrievedAt": "2026-09-09T14:49:00.000Z", "note": "EGRESS_BLOCKED by investigating environment" },
+      { "url": "web-search:\"13wjn.net\" OR \"13wjn\" scam review complaint", "retrievedAt": "2026-09-09T14:49:20.000Z", "note": "No results referencing the domain" }
+    ],
+    "unresolved": [
+      { "field": "findings.brand / findings.aliases", "attempted": "Attempted direct fetch of the homepage (https and http, www and bare) — EGRESS_BLOCKED both times. Attempted six distinct web searches for '13wjn.net' and '13wjn' alone and combined with gambling/scam/South Africa terms — zero results referencing the domain in any of them." },
+      { "field": "findings.legalEntity / findings.parentGroup", "attempted": "No operator entity could be searched for without a confirmed brand name; the about/terms/footer pages could not be loaded (EGRESS_BLOCKED)." },
+      { "field": "findings.domainRegistration", "attempted": "Attempted whois.com, the .net registry's public RDAP endpoint (rdap.verisign.com), and the Wayback Machine availability API — all three returned EGRESS_BLOCKED." },
+      { "field": "findings.licences", "attempted": "No licence claim was ever surfaced (no page content, no search hits), so no regulator register could be checked." },
+      { "field": "findings.authorisation", "attempted": "Attempted to load the National Gambling Board of South Africa's own site directly (EGRESS_BLOCKED); relied on secondary press coverage of NGB's blocking programme and market-scale estimates, none of which named this domain." },
+      { "field": "findings.news", "attempted": "Six search variations combining the domain/brand-adjacent strings with scam, complaint, casino, betting, and South Africa terms returned no brand-specific news; general South African illegal-gambling market coverage was found but is not specific to this domain and was placed under findings.authorisation sources instead." }
+    ]
+  },
+
+  "analystNotes": "This run's investigation was more constrained than a typical case: not only was direct fetch of the target domain blocked (as in prior comparable runs), but unlike those prior cases, web search itself returned literally zero results referencing '13wjn.net' or the shorter string '13wjn' across ten distinct query variations covering gambling terms, scam/complaint terms, and South Africa-specific terms. This is itself a notable, if inconclusive, signal: the domain has essentially no organic search-engine footprint, which is consistent with (but does not confirm) a short-lived or narrowly-distributed mirror domain used for a specific traffic channel (paid ads, SMS/WhatsApp referral links, affiliate redirects) rather than an established, search-discoverable brand — the same evasion pattern that secondary South African reporting on illegal gambling site-blocking describes generally for this market. Because no operator entity, brand, licence claim, or hosting/WHOIS data could be established, this brief cannot assert South African targeting, illegality, or authorisation status for this specific domain with any confidence, and authorisedInInputCountry has accordingly been left null (unknown) rather than defaulted to false. The single most useful next step is not a repeat of the same public-search methodology, but either (a) working direct network/browser access to the domain and a WHOIS/RDAP service from an unblocked environment, or (b) the original internal detection evidence that produced this watchlist item (domainId edea76a2-f1a9-42df-a456-9b6a0abf2f16, watchlistItemId 4cbb2cb5-ff1d-43bf-b046-742e3030c258), which likely captured page content or targeting signals no longer independently reconstructable from open search. Separately, general background research confirmed South Africa's National Gambling Board treats interactive online gambling as illegal outside licensed sports betting and was, as of mid-2026, still procuring a technical blocking solution against a market SABA-commissioned research estimates at ~62% illegal online activity and over R50 billion/year in offshore gross gambling revenue — useful systemic context for prioritisation once this specific domain is substantively confirmed, but not evidence about www.13wjn.net itself."
+}
