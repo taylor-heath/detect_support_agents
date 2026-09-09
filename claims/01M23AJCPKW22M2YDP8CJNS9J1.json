@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M23AJCPKW22M2YDP8CJNS9J1",
+  "requestCommit": "a37c8e0e1abf7e28595e36fb484463838317e757",
+  "agent": { "id": "deep.search", "version": "1.0.0" },
+  "attempt": 1,
+  "claimedAt": "2026-09-09T14:55:18.000Z",
+  "leaseExpiresAt": "2026-09-09T15:35:18.000Z",
+  "heartbeatAt": "2026-09-09T14:55:18.000Z"
+}
