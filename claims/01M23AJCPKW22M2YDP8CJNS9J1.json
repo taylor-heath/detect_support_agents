@@ -5,6 +5,6 @@
   "agent": { "id": "deep.search", "version": "1.0.0" },
   "attempt": 1,
   "claimedAt": "2026-09-09T15:11:46.000Z",
-  "leaseExpiresAt": "2026-09-09T15:31:46.000Z",
-  "heartbeatAt": "2026-09-09T15:11:46.000Z"
+  "leaseExpiresAt": "2026-09-09T15:46:30.000Z",
+  "heartbeatAt": "2026-09-09T15:26:30.000Z"
 }
