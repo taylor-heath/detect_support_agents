@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M2TGAYZ377GBVYJ1T2PA9DXD",
+  "requestCommit": "39d56ca7c4b3d5a592bc0eed94de505c67fad8fb",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-18T14:58:34.746Z",
+  "finishedAt": "2026-09-18T15:09:30.301Z",
+  "durationMs": 655555,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 989893,
+      "sha256": "c0b9082e64dcc8e4a6a2f02735e4a8b45bf487d4a8defa9824e394b2c78725f5",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M2TGAYZ377GBVYJ1T2PA9DXD/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 2,
+    "recordsRendered": 2,
+    "evidenceFilesEmbedded": 2,
+    "evidenceBytesEmbedded": 940906,
+    "attachmentHashesVerified": 4,
+    "evidenceHashVerified": true,
+    "captureAltered": false,
+    "captureValid": false,
+    "captureValidBasis": "keyword legible; clock and URL not in frame",
+    "fieldsNotAvailable": 6,
+    "confidence": 0.95,
+    "classification": "ALLOWS_ONLINE_GAMBLING",
+    "status": "Confirmed",
+    "subcategoriesPerRecord": 2,
+    "subcategoryMultiAssigned": true,
+    "appendixKeywordsPreserved": 286,
+    "appendixReproducedVerbatim": true,
+    "templateFieldsUnaltered": true,
+    "operatorIdentifiersRedacted": 1,
+    "docxHeadings": 9,
+    "docxTables": 7,
+    "embeddedImages": 3,
+    "pageNumbersPresent": true,
+    "runningHeaderPresent": true,
+    "tocFieldPresent": 0,
+    "executiveSummaryOmitted": true,
+    "oxmlOrderingValidated": true,
+    "xmlWellFormed": true,
+    "renderedVisualPass": false,
+    "storageKind": "git",
+    "outputFormat": "docx"
+  },
+  "error": null
+}
