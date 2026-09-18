@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M2TCPA54NFWN2QJD1V9W5NWT",
+  "requestCommit": "d868d53e59e7196556d83be07a103281f26eacfa",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-18T14:16:09.757Z",
+  "finishedAt": "2026-09-18T14:39:50.236Z",
+  "durationMs": 1420479,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 1105103,
+      "sha256": "084e6ae68ade8c4f80fe98c975b0c676750e9ce1f6c8761bcc8e25e165dc9120",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M2TCPA54NFWN2QJD1V9W5NWT/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 45079,
+    "reviewNeededDropped": 21569,
+    "duplicateUrlsDropped": 14,
+    "standardSetRows": 23496,
+    "gambling": 9102,
+    "notGambling": 14380,
+    "unreachable": 14,
+    "unknown": 0,
+    "gamblingShare": 38.7,
+    "licensedGamblingNormalised": 0,
+    "evaluationDays": 43,
+    "distinctClusters": 1010,
+    "multiUrlClusters": 764,
+    "singletonClusters": 246,
+    "clustersToHalf": 125,
+    "top5Share": 6.9,
+    "top10Share": 10.8,
+    "similarityMerges": 167,
+    "crossSubcategoryClusters": 513,
+    "tldRotatingClusters": 559,
+    "linkagePairs": 14082,
+    "topClusterUrls": 177,
+    "variantRows": 8427,
+    "redirectRows": 546,
+    "directRows": 129,
+    "lexiconKeywords": 286,
+    "keywordsMatched": 73,
+    "keywordsNeverMatched": 213,
+    "inferredShare": 97.6,
+    "generalShare": 20.5,
+    "lexiconCoveragePoor": true,
+    "abbreviationsFlagged": [
+      "PP"
+    ],
+    "rankedGamblingRows": 374,
+    "blockingEvidenceRows": 0,
+    "blocklistFeedRows": 9102,
+    "figuresRendered": 15,
+    "tablesRendered": 15,
+    "outputFormat": "docx"
+  },
+  "error": null
+}
