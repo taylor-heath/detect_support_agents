@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M2TEYTFZEEHSEFPWJDHFQH3D",
+  "requestCommit": "4116941087a754359fe0891cee5f857a553472ea",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-18T14:40:32.288Z",
+  "finishedAt": "2026-09-18T14:45:21.218Z",
+  "durationMs": 288930,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 614995,
+      "sha256": "708a57acfaff9b226942bccd24363d09457bebeaade0bfb2cc50292187ecb5e8",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M2TEYTFZEEHSEFPWJDHFQH3D/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 1,
+    "recordsRendered": 1,
+    "evidenceFilesEmbedded": 1,
+    "evidenceBytesEmbedded": 438089,
+    "evidenceHashVerified": true,
+    "captureAltered": false,
+    "captureValid": false,
+    "captureValidBasis": "keyword legible; clock and URL not in frame",
+    "fieldsNotAvailable": 6,
+    "confidence": 0.95,
+    "classification": "ALLOWS_ONLINE_GAMBLING",
+    "status": "Confirmed",
+    "templateStyleBlockUnaltered": true,
+    "outputFormat": "html"
+  },
+  "error": null
+}
