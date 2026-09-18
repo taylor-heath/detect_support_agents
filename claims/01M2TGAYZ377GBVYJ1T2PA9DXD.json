@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M2TGAYZ377GBVYJ1T2PA9DXD",
+  "requestCommit": "39d56ca7c4b3d5a592bc0eed94de505c67fad8fb",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "claimedAt": "2026-09-18T14:58:34.746Z",
+  "leaseExpiresAt": "2026-09-18T15:08:34.748Z",
+  "heartbeatAt": "2026-09-18T14:58:34.746Z"
+}
