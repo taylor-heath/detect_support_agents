@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M354331JCRRQJWX6SK4H2PBM",
+  "requestCommit": "04cb3e9f18f349807f95377820518822e341fc20",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-22T17:56:33.635Z",
+  "finishedAt": "2026-09-22T18:23:56.397Z",
+  "durationMs": 1642762,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 909938,
+      "sha256": "f62ded5a2b48dba8133764c600ff714fa48f7114f78d621f3ed557906c1ae54e",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M354331JCRRQJWX6SK4H2PBM/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 1193,
+    "rowsDeduplicated": 0,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "investigations": 18,
+    "discoveredDomains": 1193,
+    "variantsBandA": 1,
+    "variantsBandB": 202,
+    "variantsBandC": 95,
+    "weakOrUnrelated": 859,
+    "infrastructureSuppressed": 36,
+    "signalYieldPct": 17.0,
+    "signalYieldPctExcludingKnownFalsePositives": 14.1,
+    "knownFalsePositivesFlagged": 35,
+    "brandFamilies": 18,
+    "referenceListExtensions": 14,
+    "derivedBrandFamilies": 11,
+    "corroborationBonusApplied": 0,
+    "siblingBrandPenaltiesApplied": 6,
+    "crossInvestigationDomains": 0,
+    "lexicalClusters": 1002,
+    "unattributedClusters": 1,
+    "enumerationSeries": 2,
+    "abuseHeavySuffixes": 1,
+    "distinctSuffixes": 190,
+    "blocklistEntries": 1,
+    "predictedCandidatesGenerated": 11262,
+    "predictedCandidatesEmitted": 250,
+    "shodanQueryBrands": 16,
+    "sectionsOmittedForMissingColumns": 5,
+    "graphsRendered": 9,
+    "graphsOmittedEmptyState": 2,
+    "outputFormat": "html",
+    "pageGeometry": "A4 portrait, 20mm margins, 170mm content width",
+    "selfContained": true,
+    "externalNetworkRequests": 0
+  },
+  "error": null
+}
