@@ -1,0 +1,47 @@
+attempt 1 — report.custom 1.0.0 — job 01M372QAYAK2BPT5R6TXKFXV5P
+
+input
+  request.json     type report.custom / typeVersion 1, outputFormat docx
+  attachments      12/12 verified against the sha256 in request.json
+  dataset.json.gz  kind urls, rowCount 11, reportedTotal 11, evidence files 10
+  execution        rangeField/rangeFrom/rangeTo all null — no range filter applied,
+                   resolvedAt 2026-09-23T12:09:18.528Z used verbatim, nothing re-resolved
+
+rendering
+  spec.md is a fixed-format evidence template; placeholders filled, nothing added or removed.
+  one record block per dataset row, in dataset order.
+  status   BLACKLISTED -> Confirmed (ok), WHITELISTED -> Dismissed (off),
+           ANALYSIS_ERROR -> Pending (warn)
+  confidence  95 -> High (g-a) on every classified row; absent on the ANALYSIS_ERROR row
+  capture time  taken from the classification step (decisions[].currentStep.insertedAt),
+                rendered with a full UTC offset per instruction 7
+  screenshots   embedded unaltered at 101mm wide; each file's sha256 recomputed and
+                checked against the request manifest before embedding
+  subcategory   scored over the Appendix A.1 keyword sets (A.3 matching rules) against the
+                classified URL plus the model's reasoning text; highest distinct-keyword
+                count wins, ties break on A.1 order, general_gambling only when no product
+                category scores. Not available where the row is not confirmed gambling.
+  keywords      only keywords of the assigned subcategory, in A.1 order; "None matched" when
+                that set produces nothing, "Not available" where no subcategory is assigned.
+  source field  taken from decisions[].initialAuthor. "Redirect (<domain>)" is kept and
+                defanged; "Manual (<user>)" is printed as "Manual (analyst identifier
+                redacted)" — the analyst identifier is never written into the report.
+
+per record
+  m88-th-casino.xyz           Confirmed  General Gambling  None matched
+  m88-th-casino.net           Confirmed  Slots             2 keywords
+  jw8.in.th                   Confirmed  General Gambling  None matched
+  web.hiims.in                Confirmed  General Gambling  None matched
+  feniksu.com                 Confirmed  General Gambling  None matched
+  saladfactorythailand.com    Confirmed  General Gambling  None matched
+  swiper.andispizzagrill.com  Confirmed  Slots             2 keywords
+  kieldercampsite.co.uk       Dismissed  Not available     Not available
+  pragmaticplay.fun           Pending    Not available     Not available  (scraper timeout,
+                              no capture, no classification — every field reported absent)
+  local.ridgmar.com           Confirmed  Slots             2 keywords
+  thai.mdreams.com            Confirmed  General Gambling  None matched
+
+output
+  report.docx  11459733 bytes, 15 A4 pages, 17 tables, 10 embedded captures
+  verified by loading the file back and rendering it to PDF (LibreOffice Writer 24.2);
+  page count, table layout, Thai text and every embedded capture checked in the render.
