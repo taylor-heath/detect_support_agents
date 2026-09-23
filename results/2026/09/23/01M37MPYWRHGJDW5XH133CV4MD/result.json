@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M37MPYWRHGJDW5XH133CV4MD",
+  "requestCommit": "c45105f20662ee529fb1d272aecf7944e46f818c",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-23T17:27:42.682Z",
+  "finishedAt": "2026-09-23T17:55:37.339Z",
+  "durationMs": 1674657,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 836763,
+      "sha256": "f36c894dbb1710daea9b96409e9139a20154f572ced470e1a1d37b730d650579",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M37MPYWRHGJDW5XH133CV4MD/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "reportedTotal": 21858,
+    "csvRowsRead": 21852,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "droppedReviewNeeded": 10286,
+    "duplicateUrlsDropped": 6,
+    "standardSetTotal": 11560,
+    "gambling": 4096,
+    "notGambling": 7464,
+    "unreachable": 0,
+    "unknown": 0,
+    "gamblingSharePct": 35.4,
+    "licensedGamblingRowsNormalised": 0,
+    "lexiconKeywordsLoaded": 286,
+    "lexiconKeywordsMatched": 62,
+    "keywordAssignedRows": 116,
+    "inferredRows": 3980,
+    "inferredSharePct": 97.2,
+    "generalSharePct": 20.2,
+    "abbreviationsFlagged": [
+      "BET",
+      "VIP"
+    ],
+    "distinctClusters": 384,
+    "multiUrlClusters": 286,
+    "singletonClusters": 98,
+    "clustersToHalf": 29,
+    "topClusterUrlCount": 295,
+    "linkagePairs": 2796,
+    "blockingEvidenceRows": 1,
+    "rankedGamblingRows": 106,
+    "blocklistFeedRows": 4096,
+    "cardsRendered": 28,
+    "groupsRendered": 6,
+    "chartsRendered": 14,
+    "pagesRendered": 20,
+    "outputFormat": "docx",
+    "ooxmlValidation": "passed"
+  },
+  "error": null
+}
