@@ -1,0 +1,62 @@
+attempt 1 — report.custom 1.0.0 — job 01M373A1VVJ0VF6A8JWHEJJ9PQ
+
+input
+  request.json     type report.custom / typeVersion 1, outputFormat docx
+  attachments      3/3 verified against the sha256 in request.json
+                   (spec.md, dataset.json.gz, dataset.csv)
+  dataset          kind csv, thailand_23_09_26.csv, 8703845 bytes
+  execution        rangeField/rangeFrom/rangeTo all null — no range filter applied,
+                   resolvedAt 2026-09-23T12:19:36.736Z used verbatim, nothing re-resolved
+  query            {} — the export is used exactly as delivered
+
+row count
+  the manifest reports rowCount/reportedTotal 21858; that is the export's physical line
+  count. one row (ki8.fun) carries six newlines inside its quoted LLM Reasoning field, so
+  the file holds 21852 records over 21858 lines. 21852 records were rendered, every one
+  with a full 9-field row, a non-empty Domain and a non-empty URL. "Records in this
+  report" therefore reads 21852.
+
+rendering
+  spec.md is a fixed-format evidence template; placeholders filled, nothing added or removed.
+  one record block per classified URL, in export order.
+  Model Insights  left with its three placeholders untouched, per instruction 3a.
+  Contents        rendered as the template's own entry list. A Word TOC field over 21852
+                  record headings would be longer than the records it indexes, so the
+                  section-level list the template ships with is what is emitted.
+  status   Illegal gambling -> Confirmed (ok), Not gambling -> Dismissed (off),
+           Review needed -> Pending (warn)
+  confidence  the CSV percentage as a 0.00–1.00 score behind a letter badge:
+              >=90 A, >=80 B, >=70 C, >=60 D, else F. 3530 rows carry no confidence
+              value and read "Not available" with no badge.
+  capture time  from the classification step ("Updated at"), converted to UTC+7 and
+                written DD/MM/YYYY HH:MM, UTC+7, per instruction 7
+  screenshots   this export carries no captures, so Screenshot, SHA-256 and Capture valid
+                read "Not available" on every record — an absent value is reported absent,
+                never inferred
+  subcategory   scored over the Appendix A.1 keyword sets (A.3 matching rules) against the
+                URL plus the model's reasoning text; highest distinct-keyword count wins,
+                ties break on A.1 order, general_gambling only when no product category
+                scores. Assigned only to the 4102 confirmed-gambling rows.
+  keywords      only keywords of the assigned subcategory; "None matched" when that set
+                produces nothing, "Not available" where no subcategory is assigned.
+  defanging     instruction 8 applied to the title, the Source column, the URL and to any
+                hostname quoted inside the Rationale text.
+  source field  the Source column, with the domain in "Variant (...)" / "Redirect (...)"
+                defanged. No analyst identifier appears anywhere in this export.
+
+counts
+  status        Confirmed 4102 / Dismissed 7464 / Pending 10286
+  subcategory   General Gambling 3992, Slots 59, Casino 25, Lottery 19,
+                Football Betting 6, Baccarat 1, Not available 17750
+  keywords      117 records carry at least one Appendix A.1 keyword match
+
+output
+  report.docx  4712133 bytes, 21861 tables (21852 records + 9 fixed tables)
+  the record section is streamed as raw OOXML — python-docx builds the shell with one
+  sentinel record and that record's XML is re-emitted per row — because a 21852-table
+  lxml tree does not fit in memory. document.xml is 236981478 bytes uncompressed.
+  verification: zip integrity checked, all 17 XML parts parsed for well-formedness, no
+  sentinel left in the output, record and table counts reconciled. A 1500-record build
+  of the identical structure was rendered to PDF (LibreOffice Writer 24.2) at 711 pages
+  and inspected; the full document was not rendered end to end — at that ratio it is
+  roughly 10,300 A4 pages.

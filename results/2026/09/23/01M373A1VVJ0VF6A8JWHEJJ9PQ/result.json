@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M373A1VVJ0VF6A8JWHEJJ9PQ",
+  "requestCommit": "5621b85e8c3bd77d64c60d05ac042926d5549e72",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-23T13:27:26.017Z",
+  "finishedAt": "2026-09-23T17:16:33.076Z",
+  "durationMs": 13747059,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 4712133,
+      "sha256": "2b41cecf276f0a7488522ade14be1ee96a0f73ee5203d406a5985b45cc0cec58",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M373A1VVJ0VF6A8JWHEJJ9PQ/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "reportedTotal": 21858,
+    "csvLines": 21858,
+    "rowsRead": 21852,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "recordsRendered": 21852,
+    "statusConfirmed": 4102,
+    "statusDismissed": 7464,
+    "statusPending": 10286,
+    "capturesEmbedded": 0,
+    "capturesMissing": 21852,
+    "recordsWithoutConfidence": 3530,
+    "appendixA1TermsLoaded": 132,
+    "appendixA2TermsLoaded": 159,
+    "recordsWithKeywordMatches": 117,
+    "subcategoryGeneralGambling": 3992,
+    "subcategorySlots": 59,
+    "subcategoryCasino": 25,
+    "subcategoryLottery": 19,
+    "subcategoryFootballBetting": 6,
+    "subcategoryBaccarat": 1,
+    "subcategoryNotAvailable": 17750,
+    "tablesRendered": 21861,
+    "documentXmlBytes": 236981478,
+    "pagesRenderedSample1500": 711,
+    "pagesEstimatedFull": 10350,
+    "outputFormat": "docx",
+    "ooxmlValidation": "passed"
+  },
+  "error": null
+}
