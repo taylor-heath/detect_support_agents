@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3707ZH3AAYJVH0KS9YKGKRX",
+  "requestCommit": "232222ea7f9a12d577dc30f45bbd2818a8ab2559",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-23T11:33:45.987Z",
+  "finishedAt": "2026-09-23T11:46:28.319Z",
+  "durationMs": 762332,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 9310611,
+      "sha256": "b79b15909260bdd85ebf91ec555aa3a682cac4ffb00127baffdd8bdf69b53e1a",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3707ZH3AAYJVH0KS9YKGKRX/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 11,
+    "reportedTotal": 11,
+    "attachmentHashesVerified": 11,
+    "recordsRendered": 11,
+    "statusConfirmed": 8,
+    "statusDismissed": 1,
+    "statusPending": 2,
+    "capturesEmbedded": 9,
+    "capturesMissing": 2,
+    "captureHashesMatchedManifest": 9,
+    "appendixA1TermsLoaded": 132,
+    "appendixA2TermsLoaded": 159,
+    "appendixBTermsLoaded": 96,
+    "recordsWithKeywordMatches": 5,
+    "subcategorySlots": 3,
+    "subcategoryGeneralGambling": 5,
+    "subcategoryNotAvailable": 3,
+    "tablesRendered": 17,
+    "pagesRendered": 16,
+    "outputFormat": "docx",
+    "ooxmlValidation": "passed"
+  },
+  "error": null
+}
