@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M36BJPKWV6SCYTNVZX77T3A0",
+  "requestCommit": "8097d99cad17eda497fc729941644e0ab5684f2f",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-23T07:09:04.500Z",
+  "finishedAt": "2026-09-23T07:20:39.141Z",
+  "durationMs": 694641,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 54971,
+      "sha256": "8f3320da837ce8e6bac51947f73d606ee76c9a9ff930b6b8aeea6be3c9b16efd",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M36BJPKWV6SCYTNVZX77T3A0/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 1193,
+    "uniqueRegistrableDomains": 1190,
+    "attachmentHashesVerified": 3,
+    "seedSites": 18,
+    "brandTokens": 20,
+    "droppedInfrastructure": 85,
+    "droppedNoBrandOrVocabulary": 843,
+    "droppedAlreadyBlocked": 11,
+    "blockCandidates": 251,
+    "brandedVariants": 187,
+    "unbrandedMirrors": 64,
+    "priorityP1": 9,
+    "priorityP2": 161,
+    "priorityP3": 81,
+    "predictedDomains": 73,
+    "liveSuccessorPairs": 16,
+    "unbrandedGamblingGap": 106,
+    "tablesRendered": 7,
+    "outputFormat": "docx",
+    "ooxmlValidation": "passed"
+  },
+  "error": null
+}

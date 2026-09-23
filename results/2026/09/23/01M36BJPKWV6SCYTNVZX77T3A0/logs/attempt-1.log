@@ -1,0 +1,10 @@
+claim      requestCommit=8097d99cad17eda497fc729941644e0ab5684f2f attempt=1
+inputs     spec.md, dataset.json.gz, dataset.csv - all 3 sha256 verified against request.attachments
+execution  rangeField/rangeFrom/rangeTo all null; export used as delivered, no date filter
+parse      1193 rows -> 1190 distinct registrable domains
+tokens     20 brand tokens derived from 18 seeds + bet365, betsala from spec
+filter     -85 infrastructure, -843 no brand/vocabulary, -11 already blocked
+candidates 251 (P1=9 P2=161 P3=81)
+predict    73 unverified next domains
+render     report.docx, 7 captioned tables, OOXML validation passed
+note       LibreOffice PDF preview unavailable in this environment; document verified structurally
