@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M369APFH62DE7XC1141SAW7N",
+  "requestCommit": "e4c35519ee7959501b1c506be9aed4cfb7e651f1",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-23T04:48:34.151Z",
+  "finishedAt": "2026-09-23T05:00:25.263Z",
+  "durationMs": 711112,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 92834,
+      "sha256": "5cd5751296577d9927966a022c2069df20b36e6552a7b72dbf55d26608b03783",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M369APFH62DE7XC1141SAW7N/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 1193,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "seedSites": 18,
+    "brandTokens": 20,
+    "discoveredDomains": 1193,
+    "infrastructureSuppressed": 132,
+    "noSignalSuppressed": 797,
+    "alreadyBlockedSuppressed": 11,
+    "blockCandidates": 253,
+    "candidatesP1": 9,
+    "candidatesP2": 164,
+    "candidatesP3": 80,
+    "brandedVariants": 187,
+    "unbrandedMirrors": 66,
+    "confidenceHigh": 147,
+    "confidenceMedium": 53,
+    "confidenceLow": 53,
+    "liveSuccessorsOfBlockedSeeds": 15,
+    "predictedDomains": 58,
+    "unattributedGamblingDomains": 108,
+    "brandsWithNoUnblockedVariants": 7,
+    "signalYieldPct": 21.2
+  },
+  "error": null
+}
