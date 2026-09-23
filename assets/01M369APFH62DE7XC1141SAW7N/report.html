@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polla Block-List Candidates</title>
+<style>
+  @page { size: A4 portrait; margin: 20mm; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --ink: #16202b;
+    --muted: #5b6b7c;
+    --rule: #d7dee6;
+    --band: #1f3f63;
+    --p1: #b3261e;
+    --p1bg: #fbe9e7;
+    --p2: #9a5b00;
+    --p2bg: #fdf3e3;
+    --p3: #2f6b4f;
+    --p3bg: #e8f4ee;
+    --accent: #1f3f63;
+    --surface: #f4f7fa;
+  }
+
+  body {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    color: var(--ink);
+    background: #fff;
+    font-size: 10.5pt;
+    line-height: 1.55;
+  }
+
+  main { max-width: 170mm; width: 100%; }
+
+  h1, h2, h3 {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.25;
+    color: var(--band);
+  }
+  h1 { font-size: 20pt; margin: 0 0 .2em; letter-spacing: -.01em; }
+  h2 { font-size: 13pt; margin: 1.8em 0 .5em; padding-bottom: .25em; border-bottom: 2px solid var(--band); }
+  h3 { font-size: 11pt; margin: 1.3em 0 .35em; color: var(--ink); }
+  p { margin: 0 0 .7em; }
+
+  .producer {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 8.5pt;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 1.1em;
+  }
+  .lede { color: var(--muted); font-size: 10pt; margin-bottom: 1.4em; }
+
+  .callouts { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin: 0 0 1.4em; }
+  .stat {
+    min-width: 0;
+    background: var(--surface); border: 1px solid var(--rule);
+    border-radius: 4px; padding: .5em .6em;
+  }
+  .stat .v {
+    display: block;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 15pt; font-weight: 700; color: var(--band); line-height: 1.1;
+  }
+  .stat .k {
+    display: block; font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 7.5pt; text-transform: uppercase; letter-spacing: .05em; color: var(--muted);
+  }
+
+  .note {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: .7em .9em; margin: 0 0 1.2em; font-size: 9.5pt;
+  }
+  .note p:last-child { margin-bottom: 0; }
+
+  table { width: 100%; max-width: 100%; border-collapse: collapse; margin: .6em 0 1em; font-size: 8pt; }
+  img, table, pre { max-width: 100%; }
+  caption {
+    caption-side: top; text-align: left; font-size: 9pt; color: var(--muted);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif; padding-bottom: .4em;
+  }
+  th, td { text-align: left; vertical-align: top; padding: .3em .45em; border-bottom: 1px solid var(--rule); }
+  thead th {
+    background: var(--band); color: #fff; font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 7.5pt; text-transform: uppercase; letter-spacing: .04em; font-weight: 600;
+  }
+  thead { display: table-header-group; }
+  tr { break-inside: avoid; }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  code { overflow-wrap: anywhere; }
+  td.dom, code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: 7.6pt; word-break: break-all; }
+  td.ev { color: var(--muted); font-size: 7.4pt; }
+  td.p { white-space: nowrap; }
+  .pill {
+    display: inline-block; padding: .08em .45em; border-radius: 3px;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif; font-size: 7pt; font-weight: 700;
+  }
+  .pill.P1 { background: var(--p1bg); color: var(--p1); }
+  .pill.P2 { background: var(--p2bg); color: var(--p2); }
+  .pill.P3 { background: var(--p3bg); color: var(--p3); }
+  tr.P1 td.dom { font-weight: 700; }
+  td.c { font-family: "Segoe UI", Roboto, Arial, sans-serif; font-size: 7.4pt; white-space: nowrap; }
+  .c-high { color: var(--p1); font-weight: 600; }
+  .c-medium { color: var(--p2); }
+  .c-low { color: var(--muted); }
+
+  ol.summary { padding-left: 1.2em; }
+  ol.summary > li { margin-bottom: .75em; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: .25em; }
+
+  .side { display: flex; flex-wrap: wrap; gap: 14px; }
+  .side > section { flex: 1 1 240px; min-width: 200px; }
+
+  footer {
+    margin-top: 2em; padding-top: .7em; border-top: 1px solid var(--rule);
+    font-size: 8.5pt; color: var(--muted);
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 11pt; }
+    main { padding: 0 16px; }
+    td.ev, td.dom { word-break: break-word; }
+    table { font-size: 8.5pt; }
+    .callouts { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media print {
+    h2 { break-after: avoid; }
+    .callouts { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<main>
+<article>
+
+  <p class="producer">SICPA SA · SICPADetect® · for Polla Chilena de Beneficencia S.A.</p>
+  <h1>Which sites should Polla block next?</h1>
+  <p class="lede">Shodan pivot export of 1193 rows across 18 already-blocked seed sites, filtered
+  against the blocked brand list and ranked for Chilean reach. Range resolved at 2026-09-23T04:45:35.082Z.
+  This output identifies and ranks candidates; it does not block anything.</p>
+
+  <div class="callouts">
+    <div class="stat"><span class="v">1193</span><span class="k">domains returned</span></div>
+    <div class="stat"><span class="v">253</span><span class="k">block candidates</span></div>
+    <div class="stat"><span class="v">9</span><span class="k">P1 block now</span></div>
+    <div class="stat"><span class="v">164</span><span class="k">P2 block</span></div>
+    <div class="stat"><span class="v">80</span><span class="k">P3 monitor</span></div>
+    <div class="stat"><span class="v">58</span><span class="k">predicted next</span></div>
+  </div>
+
+  <section>
+    <h2>Scope and method</h2>
+    <div class="note">
+      <p><strong>Input note.</strong> The request supplied the Shodan export only; no separate
+      <code>brand,domain</code> blocked list was attached. The blocked list was therefore taken from the
+      export's own <code>investigation</code> column — the 18 seed sites Polla had already blocked and
+      pivoted on: 1xbet.com, betway.com, cl.bet7k.com, doradobet.com, epicbet.com, estelarbetpromociones.com, fortunazo.cl, juegaenlineachile.com, jugabet.cl, kaizengaming.com, lat.novibet2.com, latamwin.online, pokerenchile.com, respin.com, state77.com, www.apuestacoolbet.com, www.betsson1002.com, www.skillonnet.com. Two further brand tokens named in the specification,
+      <code>bet365</code> and <code>betsala</code>, were carried in without a seed. If the authoritative
+      blocked list is wider than these, re-run with it attached.</p>
+      <p><strong>Brand tokens used (20):</strong> 1xbet, bet365, bet7k, betsala, betsson, betway, coolbet, doradobet, epicbet, estelarbet, fortunazo, juegaenlinea, jugabet, kaizengaming, latamwin, novibet, pokerenchile, respin, skillonnet, state77. A token was shortened
+      (<code>betsson1002</code> → <code>betsson</code>, <code>apuestacoolbet</code> → <code>coolbet</code>)
+      only where the shortened form appears as a registrable stem elsewhere in the export or ends in gambling
+      vocabulary — which is why <code>state77</code> and <code>latamwin</code> were left intact.
+      Longest token matched first, so <code>bet365</code> never resolves to <code>bet</code>.
+      Matching ignores separators, so <code>1x-bet</code> and <code>1-xbet</code> attribute to
+      <code>1xbet</code>.</p>
+      <p><strong>Filtering.</strong> 1193 domains returned → 132 dropped as CDN, host, ISP,
+      registrar, analytics or government/education infrastructure → 797 dropped as carrying neither a
+      brand token nor gambling vocabulary on a page-content pivot → 11 dropped as already blocked
+      (compared on the registrable domain, so <code>m.betsala11.com</code> counts as
+      <code>betsala11.com</code>) → <strong>253 candidates</strong>: 187 branded variants and
+      66 unbranded mirrors.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Table 1 — Block list candidates</h2>
+    <table>
+      <caption>Table 1. 253 candidate domains, sorted by priority then brand. Every row states why it
+      matches. No domain here is invented; all are present in the export.</caption>
+      <thead>
+        <tr><th>Priority</th><th>Domain</th><th>Brand</th><th>Reason</th>
+        <th>Evidence (found_by)</th><th>Seed site</th><th>Confidence</th></tr>
+      </thead>
+      <tbody>
+<tr class="P1"><td class="p"><span class="pill P1">P1</span></td><td class="dom">betssonchile.com</td><td>betsson</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P1"><td class="p"><span class="pill P1">P1</span></td><td class="dom">betway.cl</td><td>betway</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P1"><td class="p"><span class="pill P1">P1</span></td><td class="dom">betway.lat</td><td>betway</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P1"><td class="p"><span class="pill P1">P1</span></td><td class="dom">coolbetchile-vip.com</td><td>coolbet</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P1"><td class="p"><span class="pill P1">P1</span></td><td class="dom">coolbetchile.com</td><td>coolbet</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P1"><td class="p"><span class="pill P1">P1</span></td><td class="dom">coolbetchile.vip</td><td>coolbet</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P1"><td class="p"><span class="pill P1">P1</span></td><td class="dom">vip-coolbetchile.com</td><td>coolbet</td><td>brand token embedded</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P1"><td class="p"><span class="pill P1">P1</span></td><td class="dom">epicbet.lat</td><td>epicbet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">epicbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P1"><td class="p"><span class="pill P1">P1</span></td><td class="dom">jugabet-sports.cl</td><td>jugabet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">jugabet.cl</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">01-1xbet.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1-xbet-ma.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1x-bet-bangladesh.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-00oj.buzz</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-071.sbs</td><td>1xbet</td><td>numbered mirror</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-1x.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-1xbet-app.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-9wzf7.top</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-addis.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-affiliate.sbs</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-alfx.top</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-app.info</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-app.io</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-ar.bet</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-ar.casino</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-argentina.bet</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-argentina.one</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-asje.top</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-aviator.store</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-axte.top</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-axw.top</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-azerbaijan.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-br.one</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-brasil.net</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-casino-play.online</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-ci.info</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-ctxi.top</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-deposit.sbs</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-drc.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-egypt.casino</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-en-apk.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-esports.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-farsi.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-games.top</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-guncel-giris1.xyz</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-inr.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-loginnow.sbs</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-mobi.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-nigeria.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-pakistan.pro</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-pars.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-pays.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-portal.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-promo.org</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-qatar4.top</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet-team.vip</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet.tv</td><td>1xbet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbet1xbet.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetapk-guinee.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetarabs.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetbest.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetbj-apk.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetbookmakers.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetcasino-somalia.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetegypt.info</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetlive.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetmobcash.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetmobicash.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetportugal.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetregister.live</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbets.dev</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1xbetsea.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">download-1xbet.com</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">vn-1xbet-88.com</td><td>1xbet</td><td>brand token embedded</td><td class="ev">Hostname</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">bet365-luck.com</td><td>bet365</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">vn-bet365.com</td><td>bet365</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">bet7k-br.app</td><td>bet7k</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">cl.bet7k.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betsson-contour.com</td><td>betsson</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betsson.co</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betsson.com</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betsson.latino</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betsson.tech</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betsson1001.com</td><td>betsson</td><td>numbered mirror</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betsson42.com</td><td>betsson</td><td>numbered mirror</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betsson69.com</td><td>betsson</td><td>numbered mirror</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betssonbusiness.com</td><td>betsson</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betssonprovincia.com</td><td>betsson</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">sportbetssonapp.com</td><td>betsson</td><td>brand token embedded</td><td class="ev">Page title</td><td class="ev">www.betsson1002.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betway-luck.com</td><td>betway</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betway.africa</td><td>betway</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betway.partners</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betwayafrica.com</td><td>betway</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betwayscores.com</td><td>betway</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">coolbet.co</td><td>coolbet</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">coolbet.com</td><td>coolbet</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">coolbetopen.com</td><td>coolbet</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">coolbetpartners.com</td><td>coolbet</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">coolbetstage.com</td><td>coolbet</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">epicbet.co</td><td>epicbet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">epicbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">epicbet.global</td><td>epicbet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">epicbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">epicbet.io</td><td>epicbet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">epicbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">epicbet.live</td><td>epicbet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">epicbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">epicbet.online</td><td>epicbet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">epicbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">epicbet.vip</td><td>epicbet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">epicbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">epicbet.world</td><td>epicbet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">epicbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">epicbet1.com</td><td>epicbet</td><td>numbered mirror</td><td class="ev">Certificate name</td><td class="ev">epicbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">epicbet1x2.com</td><td>epicbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">epicbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">arg-fortunazo.com</td><td>fortunazo</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">fortunazo.cl</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">juegaenlinea.com</td><td>juegaenlinea</td><td>TLD rotation</td><td class="ev">Page HTML</td><td class="ev">juegaenlineachile.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">argentina-jugabet.net</td><td>jugabet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">jugabet.cl</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">jugabet-ai.top</td><td>jugabet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">jugabet.cl</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">novibet-fi.com</td><td>novibet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">lat.novibet2.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">novibet.com</td><td>novibet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">lat.novibet2.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">novibet.partners</td><td>novibet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">lat.novibet2.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">respin.co</td><td>respin</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">respin.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">respin.games</td><td>respin</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">respin.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">respin.health</td><td>respin</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">respin.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">respin1.com</td><td>respin</td><td>numbered mirror</td><td class="ev">Hostname</td><td class="ev">respin.com</td><td class="c c-high">High</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">1betng.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">ababet.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">alevcasino024.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">alexandercasino.vip</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">allezsportsbet.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">allowcasino.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.skillonnet.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">altoquecasino.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">amazecasino.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">applications.bet</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">balanzaapuestas.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">balizacasino.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betexile.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betify-play.org</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betwinner-bolivia.casino</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betwinner-burkinafaso.info</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betwinner-chad.info</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betwinner-congo.info</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betwinner-guide-senegal.bet</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betwinner-tr.app</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betwinug.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">betwinzm.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">bitacoraapuestas.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinoare.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinoareg.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinoargen.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinoargt.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinoargte.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinoars.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinoarss.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinobraz.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinobrazl.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinobrz.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinobzil.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinobzl.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinopine.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinopointa.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">casinotower.net</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">catalejobet.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">chap.bet</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">chasquicasino.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">compulsabet.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">derechoviejobet.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">eldatobet.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">elserenobet.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">escrutiniobet.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">gentlecasino.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">jugarcasinoonlinecolombia.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">laderoapuestas.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">leadcasino.net</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">respin.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">likebets.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">listacasinosonlinear.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">www.betsson1002.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">lunax-casino.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">respin.com</td><td class="c c-low">Low</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">sabuesocasino.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">www.betsson1002.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">sinvueltasbet.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">www.betsson1002.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">tragamonedasars.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">www.betsson1002.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P2"><td class="p"><span class="pill P2">P2</span></td><td class="dom">vitrinebet.com</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page title</td><td class="ev">www.betsson1002.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1x-bet.sk</td><td>1xbet</td><td>TLD rotation</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-low">Low</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbet-53262.ru</td><td>1xbet</td><td>numbered mirror</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbet-apk.ci</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbet-apk.cm</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbet-apk.sn</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbet-app.com.kz</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbet-app.sn</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbet-aviator.in</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbet-bk.kz</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbet-vxod.ru</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbet.es</td><td>1xbet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">1xbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">1xbetapk.by</td><td>1xbet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.be</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.bet.ar</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.bet.br</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.cm</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.co.uk</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.com.ar</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.com.br</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.com.py</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.dk</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.ec</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.es</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.fr</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.gr</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.it</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.kz</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.lt</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.mx</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.nl</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.pe</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betsson.se</td><td>betsson</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betssoncasino.be</td><td>betsson</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betssonsports.be</td><td>betsson</td><td>brand token plus affix</td><td class="ev">Certificate name</td><td class="ev">www.betsson1002.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.be</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.bet.ar</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.bo</td><td>betway</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.ca</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.co.bw</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.co.mz</td><td>betway</td><td>brand token embedded</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.co.tz</td><td>betway</td><td>brand token embedded</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.co.za</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.co.zm</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.com.ar</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.com.au</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.com.gh</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.com.ng</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.com.pa</td><td>betway</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.de</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.dk</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.ec</td><td>betway</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.es</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.it</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.mw</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.mx</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.na</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.nl</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.pe</td><td>betway</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.pl</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.pt</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.ro</td><td>betway</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.ug</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betway.us</td><td>betway</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betwaycares.co.za</td><td>betway</td><td>brand token plus affix</td><td class="ev">Hostname</td><td class="ev">betway.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">coolbet.ca</td><td>coolbet</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">coolbet.mx</td><td>coolbet</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">coolbet.pe</td><td>coolbet</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">www.apuestacoolbet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">doradobet.pa</td><td>doradobet</td><td>TLD rotation</td><td class="ev">Certificate name</td><td class="ev">doradobet.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">novibetnotizie.it</td><td>novibet</td><td>brand token plus affix</td><td class="ev">Page HTML</td><td class="ev">lat.novibet2.com</td><td class="c c-medium">Medium</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">respin.com.au</td><td>respin</td><td>TLD rotation</td><td class="ev">Hostname</td><td class="ev">respin.com</td><td class="c c-high">High</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">ababet.ug</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">bestbettingbonuses.co.uk</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">bestbettingsignupoffers.co.uk</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betmobile-apk.com.gh</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betrelay.com.ng</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-low">Low</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">bets307.co.ke</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">betting-sider.eu</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">bombet.co.ke</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">exclusivecasino.co.uk</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">betway.com</td><td class="c c-low">Low</td></tr>
+<tr class="P3"><td class="p"><span class="pill P3">P3</span></td><td class="dom">help-bet.ru</td><td>— (unattributed)</td><td>cloned page</td><td class="ev">Page HTML</td><td class="ev">1xbet.com</td><td class="c c-low">Low</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Table 2 — Predicted next domains</h2>
+    <p>These domains do <strong>not</strong> appear in the export. They are predictions from the naming
+    patterns the operators are already using, and every one is <strong>unverified</strong>. Check that each
+    resolves before submitting it for blocking.</p>
+    <table>
+      <caption>Table 2. 58 predicted domains — unverified. Predictions appear only in this table.</caption>
+      <thead><tr><th>Domain</th><th>Brand</th><th>Basis</th></tr></thead>
+      <tbody>
+<tr><td class="dom">1xbet-app.bet</td><td>1xbet</td><td>TLD rotation — stem &quot;1xbet-app&quot; already on 4 suffixes (.com.kz, .info, .io, .sn); .bet unused</td></tr>
+<tr><td class="dom">1xbet-app.cl</td><td>1xbet</td><td>TLD rotation — stem &quot;1xbet-app&quot; already on 4 suffixes (.com.kz, .info, .io, .sn); .cl unused</td></tr>
+<tr><td class="dom">1xbet-app.com</td><td>1xbet</td><td>TLD rotation — stem &quot;1xbet-app&quot; already on 4 suffixes (.com.kz, .info, .io, .sn); .com unused</td></tr>
+<tr><td class="dom">1xbetchile.com</td><td>1xbet</td><td>Chile affix — form &quot;{t}chile.com&quot; already used by betssonchile.com, coolbetchile.com; not yet seen for 1xbet</td></tr>
+<tr><td class="dom">apuesta1xbet.com</td><td>1xbet</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for 1xbet</td></tr>
+<tr><td class="dom">vip-1xbetchile.com</td><td>1xbet</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for 1xbet</td></tr>
+<tr><td class="dom">apuestabet365.com</td><td>bet365</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for bet365</td></tr>
+<tr><td class="dom">bet365chile.com</td><td>bet365</td><td>Chile affix — form &quot;{t}chile.com&quot; already used by betssonchile.com, coolbetchile.com; not yet seen for bet365</td></tr>
+<tr><td class="dom">vip-bet365chile.com</td><td>bet365</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for bet365</td></tr>
+<tr><td class="dom">apuestabet7k.com</td><td>bet7k</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for bet7k</td></tr>
+<tr><td class="dom">bet7kchile.com</td><td>bet7k</td><td>Chile affix — form &quot;{t}chile.com&quot; already used by betssonchile.com, coolbetchile.com; not yet seen for bet7k</td></tr>
+<tr><td class="dom">vip-bet7kchile.com</td><td>bet7k</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for bet7k</td></tr>
+<tr><td class="dom">apuestabetsson.com</td><td>betsson</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for betsson</td></tr>
+<tr><td class="dom">betsson.bet</td><td>betsson</td><td>TLD rotation — stem &quot;betsson&quot; already on 24 suffixes (.be, .bet.ar, .bet.br, .cm, .co, .co.uk, .com, .com.ar, .com.br, .com.py, .dk, .ec, .es, .fr, .gr, .it, .kz, .latino, .lt, .mx, .nl, .pe, .se, .tech); .bet unused</td></tr>
+<tr><td class="dom">betsson.cl</td><td>betsson</td><td>TLD rotation — stem &quot;betsson&quot; already on 24 suffixes (.be, .bet.ar, .bet.br, .cm, .co, .co.uk, .com, .com.ar, .com.br, .com.py, .dk, .ec, .es, .fr, .gr, .it, .kz, .latino, .lt, .mx, .nl, .pe, .se, .tech); .cl unused</td></tr>
+<tr><td class="dom">betsson.vip</td><td>betsson</td><td>TLD rotation — stem &quot;betsson&quot; already on 24 suffixes (.be, .bet.ar, .bet.br, .cm, .co, .co.uk, .com, .com.ar, .com.br, .com.py, .dk, .ec, .es, .fr, .gr, .it, .kz, .latino, .lt, .mx, .nl, .pe, .se, .tech); .vip unused</td></tr>
+<tr><td class="dom">betsson1003.com</td><td>betsson</td><td>numbered series — observed index 42, 69, 1001, 1002; operator is counting upward</td></tr>
+<tr><td class="dom">betsson1004.com</td><td>betsson</td><td>numbered series — observed index 42, 69, 1001, 1002; operator is counting upward</td></tr>
+<tr><td class="dom">betsson1005.com</td><td>betsson</td><td>numbered series — observed index 42, 69, 1001, 1002; operator is counting upward</td></tr>
+<tr><td class="dom">vip-betssonchile.com</td><td>betsson</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for betsson</td></tr>
+<tr><td class="dom">apuestabetway.com</td><td>betway</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for betway</td></tr>
+<tr><td class="dom">betway.bet</td><td>betway</td><td>TLD rotation — stem &quot;betway&quot; already on 32 suffixes (.africa, .be, .bet.ar, .bo, .ca, .cl, .co.bw, .co.za, .co.zm, .com, .com.ar, .com.au, .com.gh, .com.ng, .com.pa, .de, .dk, .ec, .es, .it, .lat, .mw, .mx, .na, .nl, .partners, .pe, .pl, .pt, .ro, .ug, .us); .bet unused</td></tr>
+<tr><td class="dom">betway.online</td><td>betway</td><td>TLD rotation — stem &quot;betway&quot; already on 32 suffixes (.africa, .be, .bet.ar, .bo, .ca, .cl, .co.bw, .co.za, .co.zm, .com, .com.ar, .com.au, .com.gh, .com.ng, .com.pa, .de, .dk, .ec, .es, .it, .lat, .mw, .mx, .na, .nl, .partners, .pe, .pl, .pt, .ro, .ug, .us); .online unused</td></tr>
+<tr><td class="dom">betway.vip</td><td>betway</td><td>TLD rotation — stem &quot;betway&quot; already on 32 suffixes (.africa, .be, .bet.ar, .bo, .ca, .cl, .co.bw, .co.za, .co.zm, .com, .com.ar, .com.au, .com.gh, .com.ng, .com.pa, .de, .dk, .ec, .es, .it, .lat, .mw, .mx, .na, .nl, .partners, .pe, .pl, .pt, .ro, .ug, .us); .vip unused</td></tr>
+<tr><td class="dom">betwaychile.com</td><td>betway</td><td>Chile affix — form &quot;{t}chile.com&quot; already used by betssonchile.com, coolbetchile.com; not yet seen for betway</td></tr>
+<tr><td class="dom">vip-betwaychile.com</td><td>betway</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for betway</td></tr>
+<tr><td class="dom">coolbet.bet</td><td>coolbet</td><td>TLD rotation — stem &quot;coolbet&quot; already on 5 suffixes (.ca, .co, .com, .mx, .pe); .bet unused</td></tr>
+<tr><td class="dom">coolbet.cl</td><td>coolbet</td><td>TLD rotation — stem &quot;coolbet&quot; already on 5 suffixes (.ca, .co, .com, .mx, .pe); .cl unused</td></tr>
+<tr><td class="dom">coolbet.vip</td><td>coolbet</td><td>TLD rotation — stem &quot;coolbet&quot; already on 5 suffixes (.ca, .co, .com, .mx, .pe); .vip unused</td></tr>
+<tr><td class="dom">apuestadoradobet.com</td><td>doradobet</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for doradobet</td></tr>
+<tr><td class="dom">doradobetchile.com</td><td>doradobet</td><td>Chile affix — form &quot;{t}chile.com&quot; already used by betssonchile.com, coolbetchile.com; not yet seen for doradobet</td></tr>
+<tr><td class="dom">vip-doradobetchile.com</td><td>doradobet</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for doradobet</td></tr>
+<tr><td class="dom">apuestaepicbet.com</td><td>epicbet</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for epicbet</td></tr>
+<tr><td class="dom">epicbet.app</td><td>epicbet</td><td>TLD rotation — stem &quot;epicbet&quot; already on 9 suffixes (.co, .com, .global, .io, .lat, .live, .online, .vip, .world); .app unused</td></tr>
+<tr><td class="dom">epicbet.bet</td><td>epicbet</td><td>TLD rotation — stem &quot;epicbet&quot; already on 9 suffixes (.co, .com, .global, .io, .lat, .live, .online, .vip, .world); .bet unused</td></tr>
+<tr><td class="dom">epicbet.cl</td><td>epicbet</td><td>TLD rotation — stem &quot;epicbet&quot; already on 9 suffixes (.co, .com, .global, .io, .lat, .live, .online, .vip, .world); .cl unused</td></tr>
+<tr><td class="dom">epicbetchile.com</td><td>epicbet</td><td>Chile affix — form &quot;{t}chile.com&quot; already used by betssonchile.com, coolbetchile.com; not yet seen for epicbet</td></tr>
+<tr><td class="dom">vip-epicbetchile.com</td><td>epicbet</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for epicbet</td></tr>
+<tr><td class="dom">apuestafortunazo.com</td><td>fortunazo</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for fortunazo</td></tr>
+<tr><td class="dom">fortunazochile.com</td><td>fortunazo</td><td>Chile affix — form &quot;{t}chile.com&quot; already used by betssonchile.com, coolbetchile.com; not yet seen for fortunazo</td></tr>
+<tr><td class="dom">vip-fortunazochile.com</td><td>fortunazo</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for fortunazo</td></tr>
+<tr><td class="dom">apuestajuegaenlinea.com</td><td>juegaenlinea</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for juegaenlinea</td></tr>
+<tr><td class="dom">vip-juegaenlineachile.com</td><td>juegaenlinea</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for juegaenlinea</td></tr>
+<tr><td class="dom">apuestajugabet.com</td><td>jugabet</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for jugabet</td></tr>
+<tr><td class="dom">jugabetchile.com</td><td>jugabet</td><td>Chile affix — form &quot;{t}chile.com&quot; already used by betssonchile.com, coolbetchile.com; not yet seen for jugabet</td></tr>
+<tr><td class="dom">vip-jugabetchile.com</td><td>jugabet</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for jugabet</td></tr>
+<tr><td class="dom">apuestanovibet.com</td><td>novibet</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for novibet</td></tr>
+<tr><td class="dom">novibet3.com</td><td>novibet</td><td>numbered series — observed index 2; operator is counting upward</td></tr>
+<tr><td class="dom">novibet4.com</td><td>novibet</td><td>numbered series — observed index 2; operator is counting upward</td></tr>
+<tr><td class="dom">novibet5.com</td><td>novibet</td><td>numbered series — observed index 2; operator is counting upward</td></tr>
+<tr><td class="dom">novibetchile.com</td><td>novibet</td><td>Chile affix — form &quot;{t}chile.com&quot; already used by betssonchile.com, coolbetchile.com; not yet seen for novibet</td></tr>
+<tr><td class="dom">vip-novibetchile.com</td><td>novibet</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for novibet</td></tr>
+<tr><td class="dom">apuestarespin.com</td><td>respin</td><td>Chile affix — form &quot;apuesta{t}.com&quot; already used by apuestacoolbet.com; not yet seen for respin</td></tr>
+<tr><td class="dom">respin.bet</td><td>respin</td><td>TLD rotation — stem &quot;respin&quot; already on 5 suffixes (.co, .com, .com.au, .games, .health); .bet unused</td></tr>
+<tr><td class="dom">respin.cl</td><td>respin</td><td>TLD rotation — stem &quot;respin&quot; already on 5 suffixes (.co, .com, .com.au, .games, .health); .cl unused</td></tr>
+<tr><td class="dom">respin.vip</td><td>respin</td><td>TLD rotation — stem &quot;respin&quot; already on 5 suffixes (.co, .com, .com.au, .games, .health); .vip unused</td></tr>
+<tr><td class="dom">respinchile.com</td><td>respin</td><td>Chile affix — form &quot;{t}chile.com&quot; already used by betssonchile.com, coolbetchile.com; not yet seen for respin</td></tr>
+<tr><td class="dom">vip-respinchile.com</td><td>respin</td><td>Chile affix — form &quot;vip-{t}chile.com&quot; already used by vip-coolbetchile.com; not yet seen for respin</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <ol class="summary">
+      <li><strong>Volume and survival.</strong> Shodan returned 1193 domains across 18 pivots.
+      253 survived filtering — 132 were infrastructure, 797 carried no brand token or gambling
+      vocabulary, and 11 were already blocked.</li>
+
+      <li><strong>Most unblocked variants.</strong> <strong>1xbet</strong> (76), <strong>betway</strong> (37), <strong>betsson</strong> (34), <strong>coolbet</strong> (12), <strong>epicbet</strong> (10). Brands with no unblocked variants in this
+      export, stated rather than padded: betsala, estelarbet, kaizengaming, latamwin, pokerenchile, skillonnet, state77.</li>
+
+      <li><strong>Blocked sites whose successor is already live — the urgent case.</strong>
+        <ul>
+<li><strong>betssonchile.com</strong> <span class="pill P1">P1</span> — betsson; seed <code>betsson1002.com</code> is blocked, this Chile-reachable sibling is not.</li>
+<li><strong>betway.cl</strong> <span class="pill P1">P1</span> — betway; seed <code>betway.com</code> is blocked, this Chile-reachable sibling is not.</li>
+<li><strong>betway.lat</strong> <span class="pill P1">P1</span> — betway; seed <code>betway.com</code> is blocked, this Chile-reachable sibling is not.</li>
+<li><strong>coolbetchile-vip.com</strong> <span class="pill P1">P1</span> — coolbet; seed <code>apuestacoolbet.com</code> is blocked, this Chile-reachable sibling is not.</li>
+<li><strong>coolbetchile.com</strong> <span class="pill P1">P1</span> — coolbet; seed <code>apuestacoolbet.com</code> is blocked, this Chile-reachable sibling is not.</li>
+<li><strong>coolbetchile.vip</strong> <span class="pill P1">P1</span> — coolbet; seed <code>apuestacoolbet.com</code> is blocked, this Chile-reachable sibling is not.</li>
+<li><strong>epicbet.lat</strong> <span class="pill P1">P1</span> — epicbet; seed <code>epicbet.com</code> is blocked, this Chile-reachable sibling is not.</li>
+<li><strong>jugabet-sports.cl</strong> <span class="pill P1">P1</span> — jugabet; seed <code>jugabet.cl</code> is blocked, this Chile-reachable sibling is not.</li>
+<li><strong>1xbet-071.sbs</strong> <span class="pill P2">P2</span> — 1xbet; seed <code>1xbet.com</code> is blocked, this next index in the same series is not.</li>
+<li><strong>betsson1001.com</strong> <span class="pill P2">P2</span> — betsson; seed <code>betsson1002.com</code> is blocked, this next index in the same series is not.</li>
+<li><strong>betsson42.com</strong> <span class="pill P2">P2</span> — betsson; seed <code>betsson1002.com</code> is blocked, this next index in the same series is not.</li>
+<li><strong>betsson69.com</strong> <span class="pill P2">P2</span> — betsson; seed <code>betsson1002.com</code> is blocked, this next index in the same series is not.</li>
+<li><strong>epicbet1.com</strong> <span class="pill P2">P2</span> — epicbet; seed <code>epicbet.com</code> is blocked, this next index in the same series is not.</li>
+<li><strong>respin1.com</strong> <span class="pill P2">P2</span> — respin; seed <code>respin.com</code> is blocked, this next index in the same series is not.</li>
+<li><strong>1xbet-53262.ru</strong> <span class="pill P3">P3</span> — 1xbet; seed <code>1xbet.com</code> is blocked, this next index in the same series is not.</li>
+        </ul>
+      </li>
+
+      <li><strong>Best pivot for the next sweep.</strong> <em>Certificate name</em> converts best —
+      118 of 350 returned domains became candidates, 34%. Lead the next
+      sweep with it. The heaviest dead weight is <code>state77.com</code>: 335 domains returned, none of them a candidate — drop it from the rotation. The seeds that returned nothing usable at all were
+      estelarbetpromociones.com, kaizengaming.com, latamwin.online, pokerenchile.com, state77.com.
+        <div class="side">
+          <section>
+            <table>
+              <caption>Table 3. Yield by <code>found_by</code> pivot.</caption>
+              <thead><tr><th>Pivot</th><th>Returned</th><th>Kept</th><th>Yield</th></tr></thead>
+              <tbody>
+<tr><td>Certificate name</td><td class="n">350</td><td class="n">118</td><td class="n">34%</td></tr>
+<tr><td>Page HTML</td><td class="n">373</td><td class="n">86</td><td class="n">23%</td></tr>
+<tr><td>Page title</td><td class="n">160</td><td class="n">19</td><td class="n">12%</td></tr>
+<tr><td>Hostname</td><td class="n">294</td><td class="n">30</td><td class="n">10%</td></tr>
+<tr><td>Favicon (Shodan default)</td><td class="n">16</td><td class="n">0</td><td class="n">0%</td></tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <table>
+              <caption>Table 4. Yield by seed site (seeds returning no candidate omitted).</caption>
+              <thead><tr><th>Seed</th><th>Returned</th><th>Kept</th><th>Yield</th></tr></thead>
+              <tbody>
+<tr><td class="dom">fortunazo.cl</td><td class="n">1</td><td class="n">1</td><td class="n">100%</td></tr>
+<tr><td class="dom">juegaenlineachile.com</td><td class="n">1</td><td class="n">1</td><td class="n">100%</td></tr>
+<tr><td class="dom">epicbet.com</td><td class="n">14</td><td class="n">10</td><td class="n">71%</td></tr>
+<tr><td class="dom">jugabet.cl</td><td class="n">5</td><td class="n">3</td><td class="n">60%</td></tr>
+<tr><td class="dom">doradobet.com</td><td class="n">2</td><td class="n">1</td><td class="n">50%</td></tr>
+<tr><td class="dom">www.apuestacoolbet.com</td><td class="n">25</td><td class="n">12</td><td class="n">48%</td></tr>
+<tr><td class="dom">lat.novibet2.com</td><td class="n">10</td><td class="n">4</td><td class="n">40%</td></tr>
+<tr><td class="dom">www.betsson1002.com</td><td class="n">198</td><td class="n">70</td><td class="n">35%</td></tr>
+<tr><td class="dom">1xbet.com</td><td class="n">295</td><td class="n">91</td><td class="n">31%</td></tr>
+<tr><td class="dom">respin.com</td><td class="n">29</td><td class="n">7</td><td class="n">24%</td></tr>
+<tr><td class="dom">betway.com</td><td class="n">228</td><td class="n">51</td><td class="n">22%</td></tr>
+<tr><td class="dom">cl.bet7k.com</td><td class="n">12</td><td class="n">1</td><td class="n">8%</td></tr>
+<tr><td class="dom">www.skillonnet.com</td><td class="n">14</td><td class="n">1</td><td class="n">7%</td></tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </li>
+
+      <li><strong>Where the variants are moving.</strong> Beyond <code>.com</code>, the candidates cluster on
+      <code>.top</code> (9), <code>.info</code> (6), <code>.bet</code> (5), <code>.vip</code> (4), <code>.sbs</code> (4), <code>.net</code> (4), <code>.co</code> (4), <code>.be</code> (4).
+        <table>
+          <caption>Table 5. Candidate count by suffix, top 12.</caption>
+          <thead><tr><th>Suffix</th><th>Candidates</th></tr></thead>
+          <tbody>
+<tr><td><code>.com</code></td><td class="n">103</td></tr>
+<tr><td><code>.top</code></td><td class="n">9</td></tr>
+<tr><td><code>.info</code></td><td class="n">6</td></tr>
+<tr><td><code>.bet</code></td><td class="n">5</td></tr>
+<tr><td><code>.vip</code></td><td class="n">4</td></tr>
+<tr><td><code>.sbs</code></td><td class="n">4</td></tr>
+<tr><td><code>.net</code></td><td class="n">4</td></tr>
+<tr><td><code>.co</code></td><td class="n">4</td></tr>
+<tr><td><code>.be</code></td><td class="n">4</td></tr>
+<tr><td><code>.co.uk</code></td><td class="n">4</td></tr>
+<tr><td><code>.casino</code></td><td class="n">3</td></tr>
+<tr><td><code>.ru</code></td><td class="n">3</td></tr>
+          </tbody>
+        </table>
+      </li>
+
+      <li><strong>Gambling clusters belonging to no brand on the blocked list.</strong> 108 domains
+      carry gambling vocabulary but no blocked-brand token. The recurring stems:
+        <ul>
+<li><code>188bet*</code> — 8 domains: 188betbaccarat.com, 188betbanca.com, 188betbongda.com, 188betcasinovn.com, 188betdaga.com, 188betlongho.com …</li>
+<li><code>casinoar*</code> — 7 domains: casinoare.com, casinoareg.com, casinoargen.com, casinoargt.com, casinoargte.com, casinoars.com …</li>
+<li><code>betsaf*</code> — 6 domains: betsafe.com, betsafe.ee, betsafe.lv, betsafe.pe, betsafe102.com, betsafe73.com</li>
+<li><code>betwinner*</code> — 6 domains: betwinner-bolivia.casino, betwinner-burkinafaso.info, betwinner-chad.info, betwinner-congo.info, betwinner-guide-senegal.bet, betwinner-tr.app</li>
+<li><code>casino*</code> — 5 domains: casinoassists.com, casinoeuro.com, casinopine.com, casinopointa.com, casinotower.net</li>
+<li><code>vn-cas*</code> — 5 domains: vn-casino-88.com, vn-casino-online.com, vn-casino-truc-tiep.com, vn-casino-truc-tuyen.com, vn-casino-vip.com</li>
+<li><code>casinobr*</code> — 3 domains: casinobraz.com, casinobrazl.com, casinobrz.com</li>
+        </ul>
+      Only those reached through a <code>Page title</code> or <code>Page HTML</code> pivot are listed in
+      Table 1 as cloned pages; the rest are recorded here as a coverage gap in the brand list, not as block
+      candidates.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Loose ends</h2>
+    <ul>
+      <li>The export's <code>ip</code>, <code>port</code>, <code>url</code>, <code>title</code>,
+      <code>org</code>, <code>country_code</code> and <code>timestamp</code> columns are empty in all
+      1193 rows, so no hosting co-tenancy or first-seen analysis was possible.</li>
+      <li><code>kind</code> is <code>facet_domain</code> for every row; it carried no discriminating
+      information and was not used.</li>
+      <li>The <code>execution</code> block of the request carries no range field, bounds or expression
+      (<code>rangeField</code>, <code>rangeFrom</code> and <code>rangeTo</code> are all null), so the whole
+      export was used as delivered and no date filter was applied.</li>
+      <li>Confidence is this report's own grading, not a field in the source: <em>High</em> where the brand
+      token anchors the stem and the pivot is a hostname, certificate name or page title; <em>Medium</em>
+      where only one of those holds; <em>Low</em> where the match rests on page-body text or a default
+      favicon alone.</li>
+    </ul>
+  </section>
+
+  <footer>
+    SICPA SA · SICPADetect® · prepared for Polla Chilena de Beneficencia S.A. ·
+    Source: Shodan pivot export, 1193 rows, resolved 2026-09-23T04:45:35.082Z ·
+    Blocking is a legal and telecom process; this report ranks candidates only.
+  </footer>
+
+</article>
+</main>
+</body>
+</html>
