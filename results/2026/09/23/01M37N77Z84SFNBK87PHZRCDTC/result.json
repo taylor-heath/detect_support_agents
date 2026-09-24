@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M37N77Z84SFNBK87PHZRCDTC",
+  "requestCommit": "ebb4dc294715d5960621e806dc90c4f99a947392",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 3,
+  "status": "succeeded",
+  "startedAt": "2026-09-24T00:12:14.155Z",
+  "finishedAt": "2026-09-24T00:16:54.467Z",
+  "durationMs": 280312,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 492469,
+      "sha256": "40776a204f69fecfd184f39b885eea2e796f763d2e94915d1ed63f1f14998986",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M37N77Z84SFNBK87PHZRCDTC/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 1,
+    "reportedTotal": 1,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "recordsRendered": 1,
+    "statusConfirmed": 1,
+    "statusDismissed": 0,
+    "statusPending": 0,
+    "capturesEmbedded": 1,
+    "capturesMissing": 0,
+    "captureHashesMatchedManifest": 1,
+    "appendixA1TermsLoaded": 132,
+    "appendixA2TermsLoaded": 159,
+    "recordsWithKeywordMatches": 0,
+    "subcategoryGeneralGambling": 1,
+    "subcategoryNotAvailable": 0,
+    "tablesRendered": 6,
+    "outputFormat": "docx",
+    "ooxmlValidation": "passed",
+    "pdfRenderAvailable": false
+  },
+  "error": null
+}

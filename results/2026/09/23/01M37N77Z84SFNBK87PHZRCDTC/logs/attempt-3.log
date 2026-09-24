@@ -1,0 +1,56 @@
+attempt 3 — report.custom 1.0.0 — job 01M37N77Z84SFNBK87PHZRCDTC
+
+attempts 1 and 2 left no result: each claim's lease lapsed with no result.json on main.
+attempt 3 reclaimed the expired lease per the recovery path and ran to completion.
+
+input
+  request.json     type report.custom / typeVersion 1, outputFormat docx
+  attachments      3/3 verified against the sha256 in request.json (spec.md,
+                   dataset.json.gz, one evidence capture) — 0 mismatches
+  dataset.json.gz  kind urls, rowCount 1, reportedTotal 1, evidence files 1
+  execution        rangeField/rangeFrom/rangeTo/rangeExpression all null — no range
+                   filter applied, resolvedAt 2026-09-23T17:32:38.102Z used verbatim,
+                   nothing re-resolved. query {} — the whole saved search.
+
+rendering
+  spec.md is a fixed-format evidence template; placeholders filled, nothing added,
+  renamed, reordered or removed. No preamble, summary or recommendation added.
+  one record block for the single dataset row.
+  date of issue   23/09/2026 — the date of execution.resolvedAt, applied verbatim
+  status          BLACKLISTED -> Confirmed (ok)
+  confidence      95 -> High (g-a); no numeric score printed
+  capture time    from the classification step (decisions[].currentStep.insertedAt),
+                  2026-09-18T14:10:56.066173Z -> 2026-09-18T14:10:56+00:00, full offset
+  screenshot      embedded unaltered — the PNG in the docx is byte-identical to the
+                  evidence file, and its sha256 matches the request manifest
+                  (ae7da5965a9cc91da6e0bb44d99df8c1853baf9a62c14a4aa0199adb7c14ffc4)
+  subcategory     scored over the Appendix A.1 keyword sets (132 terms) under the A.3
+                  matching rules, against the classified URL plus the model's reasoning
+                  text. No A.1 term matches: the A.1 sets are Thai (plus Huay/Huaylan
+                  and mixed terms), while the URL and reasoning are Latin/English, and
+                  plain "casino" is not an A.1 term. No product category scores, the row
+                  is confirmed gambling, so the catch-all applies -> General Gambling.
+  keywords        "None matched" — the assigned subcategory's set produced no match.
+                  The model's own tags (slots, casino) are not A.1 keyword matches and
+                  were not used as such.
+  signal tags     the record block has no Signal tags field; no field was added.
+  source field    from decisions[].initialAuthor, "Redirect (m88-th-casino.lol)", kept
+                  and defanged. All URLs defanged.
+
+per record
+  m88-th-casino.xyz  Confirmed  High  General Gambling  None matched  capture embedded
+
+output
+  report.docx  492469 bytes, 6 tables, 1 embedded capture, A4 portrait,
+               20mm top/bottom and 25mm left/right margins as set by the template
+
+validation
+  zip integrity checked; all 18 XML parts well-formed; every part covered by a content
+  type; every relationship target present in the package; every r:id used in
+  document.xml resolves; the file loads back through a Word reader.
+  LibreOffice is present in this environment but cannot load any document (it fails on
+  a plain .txt too), so no PDF render was produced this attempt and no page count is
+  reported. Instead the rendered text was diffed block by block against the report for
+  job 01M372QAYAK2BPT5R6TXKFXV5P — same spec.md (sha 54f31548...), same row, previously
+  rendered and checked — and the only difference is the title block (report reference
+  and record count). The record, the appendix and the fill guide are identical.
