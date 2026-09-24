@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M38BXX41GV6FRGC4EZSEP8ZT",
+  "requestCommit": "0c7a73a848ce3a05426f9ae9b65d0ba66c7d449c",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-24T00:17:55.141Z",
+  "finishedAt": "2026-09-24T00:40:45.557Z",
+  "durationMs": 1370416,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 712573,
+      "sha256": "abdd9e8c0748d97038bfb859339d9c6e22ecec19dd17494ade3ecfff5c2e0318",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M38BXX41GV6FRGC4EZSEP8ZT/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "reportedTotal": 21858,
+    "csvRowsRead": 21852,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "droppedReviewNeeded": 10286,
+    "duplicateUrlsDropped": 6,
+    "standardSetTotal": 11560,
+    "gambling": 4096,
+    "notGambling": 7464,
+    "unreachable": 0,
+    "unknown": 0,
+    "gamblingSharePct": 35.4,
+    "licensedGamblingRowsNormalised": 0,
+    "evaluationDays": 23,
+    "lexiconKeywordsLoaded": 286,
+    "lexiconKeywordsMatched": 58,
+    "lexiconKeywordsNeverMatched": 233,
+    "inferredRows": 3980,
+    "inferredSharePct": 97.2,
+    "generalSharePct": 21.9,
+    "abbreviationsFlagged": [
+      "VIP",
+      "BET"
+    ],
+    "subcategoryCounts": {
+      "Slots": 1271,
+      "Football Betting": 902,
+      "General Gambling": 899,
+      "Casino": 655,
+      "Lottery": 174,
+      "Playing card": 132,
+      "Baccarat": 63
+    },
+    "distinctClusters": 1818,
+    "multiUrlClusters": 973,
+    "singletonClusters": 845,
+    "clustersToHalf": 55,
+    "topClusterUrlCount": 391,
+    "top10ClusterSharePct": 21.5,
+    "linkagePairs": 20,
+    "crossSubcategoryClusters": 25,
+    "tldRotatingClusters": 25,
+    "blockingEvidenceRows": 1,
+    "rankedGamblingRows": 15,
+    "prominentThaiRowsRendered": 10,
+    "prominentThaiDomainsQualifying": 37,
+    "blocklistFeedRows": 4096,
+    "cardsRendered": 27,
+    "groupsRendered": 7,
+    "chartsRendered": 11,
+    "pagesRendered": 20,
+    "outputFormat": "docx",
+    "ooxmlValidation": "passed",
+    "pdfRenderInspected": true
+  },
+  "error": null
+}
