@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M38EQ5WE7VTGA1H6847P2V4P",
+  "requestCommit": "49426ee1fd9cc8b60cdedd741e26009c0ecbd6ad",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-24T01:00:11.000Z",
+  "finishedAt": "2026-09-24T01:15:27.548Z",
+  "durationMs": 916548,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 5575952,
+      "sha256": "e63bf5ea2d1ffa4e0e377758ebf58822bda405a66d879f7d84db8472c827d2a4",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M38EQ5WE7VTGA1H6847P2V4P/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 9,
+    "reportedTotal": 9,
+    "recordsRendered": 9,
+    "statusConfirmed": 7,
+    "statusPending": 2,
+    "statusDismissed": 0,
+    "capturesEmbedded": 8,
+    "capturesMissing": 1,
+    "captureHashesMatchedManifest": 8,
+    "captureHashMismatches": 0,
+    "recordsWithKeywordMatches": 2,
+    "subcategoryLottery": 2,
+    "subcategoryGeneralGambling": 5,
+    "subcategoryNotAvailable": 2,
+    "confidenceHigh": 7,
+    "confidenceMedium": 0,
+    "confidenceLow": 1,
+    "confidenceNotAvailable": 1,
+    "attachmentsDeclared": 10,
+    "attachmentHashesVerified": 10,
+    "attachmentHashMismatches": 0,
+    "evidenceCapturesEmbeddedUnaltered": 8,
+    "appendixA1TermsLoaded": 132,
+    "appendixA2TermsLoaded": 159,
+    "recordFieldsPerRecord": 11,
+    "fieldsAddedOrRemoved": 0,
+    "imagesEmbedded": 9,
+    "pageSize": "A4",
+    "outputFormat": "docx",
+    "ooxmlValidation": "passed",
+    "relationshipIntegrity": "passed",
+    "placeholdersRemaining": 0,
+    "pdfRenderAvailable": false
+  },
+  "error": null
+}
