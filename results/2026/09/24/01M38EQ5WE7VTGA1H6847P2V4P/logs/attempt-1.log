@@ -1,0 +1,59 @@
+job 01M38EQ5WE7VTGA1H6847P2V4P  type=report.custom  attempt=1
+
+INPUT
+  request.json          type report.custom, typeVersion 1, outputFormat docx
+  attachments           10 declared, 10 present, 10 sha256 verified, 0 mismatches
+  dataset.json.gz       kind=urls, rowCount 9, reportedTotal 9, 9 analyses, 8 evidence captures
+  execution             rangeField/rangeFrom/rangeTo/rangeExpression all null -> no range filter
+                        applied; every row of the dataset is in scope. resolvedAt
+                        2026-09-24T00:58:14.215Z applied verbatim, not re-resolved.
+  spec.md               fixed-format evidence template, specSha256 verified
+
+TEMPLATE CONFORMANCE
+  Record field list left fixed: 11 fields, none added, renamed, reordered or removed.
+  Appendix A reproduced unedited. No section, preamble, summary or commentary added.
+  The template carries no Signal tags field, so none was introduced (template rule 2
+  overrides the Appendix A.2 reference to such a field).
+
+FIELD DERIVATION
+  Status        BLACKLISTED -> Confirmed (ok); REVIEW_NEEDED and ANALYSIS_ERROR ->
+                Pending (warn), both being unresolved rather than dismissed.
+  Confidence    95 -> High (g-a); 10 -> Low (g-f); absent -> "Not available", no badge.
+                No numeric score printed anywhere.
+  Capture time  taken from the classification step that recorded the classification
+                (currentStep.insertedAt), rendered ISO 8601 with explicit UTC offset.
+                lotto432ad.com recorded no classification step -> "Not available".
+  SHA-256       recomputed from the capture bytes; all 8 matched the request manifest.
+  Screenshot    original capture bytes embedded unaltered (verified byte-identical in
+                the output package); displayed at 100mm wide, under the 76mm height cap.
+  Source        reported only where the record evidences it: jun88.info and k7.game
+                carry an earlier decision authored by an external blocklist feed
+                (hagezi). The other seven carry no discovery source -> "Not available".
+  Rationale     the classification reasons verbatim. lotto432ad.com produced no
+                classification, so "Not available"; the recorded scraper fault names
+                internal infrastructure and was therefore not reproduced in the report.
+
+SUBCATEGORY AND KEYWORDS (template rules 4 and 12)
+  Subcategory assigned first, from the capture, never from the domain name; keywords
+  then taken only from that subcategory's Appendix A.1 set, matched verbatim under the
+  A.3 rules, reported in Appendix order.
+  lottovip.bet, lottovipp.com  Lottery. A.1 Lottery terms read off the capture:
+                               หวยรัฐบาล; จับยี่กี VIP; หวยหุ้น; หวยหุ้นไทย
+  jun88.info, slavinaslot.top, gg8830.com, gg8832.com, k7.game
+                               gambling confirmed, no A.1 product term present in the
+                               evidence (captures are Vietnamese and Portuguese), so the
+                               A.1 catch-all General Gambling applies -> "None matched".
+  fun88thf.com                 capture is a loading page, no gambling evidenced, no
+                               subcategory assigned -> "Not available".
+  lotto432ad.com               no capture, no classification -> "Not available".
+
+OUTPUT
+  report.docx   A4 portrait 11906x16838 twips, margins 20mm top/bottom 25mm left/right,
+                matching the template @page rule. 9 record blocks, 9 images
+                (1 crest + 8 captures). No header or footer content added.
+  validation    zip integrity ok; every XML part well-formed; all relationship ids
+                resolve; image parts typed image/png; no placeholder text remains.
+  note          LibreOffice Writer is absent from this environment, so the package was
+                built directly and verified structurally rather than by round-trip
+                render; the same filled content was additionally rendered from the
+                template's own stylesheet and inspected at A4 (14 pages).
