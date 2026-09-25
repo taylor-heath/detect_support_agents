@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SICPADetect — Chile Summary Tables</title>
+<style>
+@page { size: A4 portrait; margin: 20mm; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin:0; padding:0; font-family: Arial, Helvetica, sans-serif; color:#1b2430; background:#fff;
+  font-size:10.5pt; line-height:1.5; }
+img, table, pre { max-width:100%; }
+h1,h2,h3 { color:#16254C; line-height:1.25; }
+h1 { font-size:19pt; margin:0 0 4px; }
+h2 { font-size:13.5pt; margin:24px 0 2px; }
+h3 { font-size:11pt; margin:16px 0 4px; }
+p { margin:0 0 9px; max-width:74ch; }
+header.head { border-bottom:3px solid #16254C; padding-bottom:10px; margin-bottom:16px; }
+header.head .meta { font-size:9pt; color:#5c6b7f; }
+.denom { font-size:9pt; color:#5c6b7f; margin:0 0 8px; font-style:italic; }
+table.grid { width:100%; border-collapse:collapse; margin:6px 0 10px; font-size:9.5pt; }
+table.grid th { background:#16254C; color:#fff; text-align:left; padding:5px 8px; font-weight:700; }
+table.grid th.r, td.r { text-align:right; }
+table.grid td { padding:4px 8px; border-bottom:1px solid #e4e8ef; vertical-align:top; }
+table.grid tbody tr:nth-child(even) { background:#f7f9fc; }
+table.grid tr.tot td { border-top:2px solid #16254C; border-bottom:none; background:#eef2f8; }
+td.sm { font-size:8.5pt; color:#31414f; }
+.note { border-left:5px solid #0087C8; background:#eef7fc; padding:9px 13px; margin:12px 0; font-size:9.5pt; }
+.note p:last-child { margin-bottom:0; }
+.sub { font-size:9pt; color:#46586d; margin:2px 0 12px; }
+ul.b { margin:6px 0 12px; padding-left:20px; } ul.b li { margin-bottom:4px; }
+nav.toc { background:#f2f5f9; padding:9px 14px; margin:0 0 16px; font-size:9.5pt; }
+nav.toc ol { margin:0; padding-left:20px; } nav.toc a { color:#16254C; }
+table.grid thead { display:table-header-group; } table.grid tr { break-inside:avoid; }
+h2,h3 { break-after:avoid; }
+footer { margin-top:20px; border-top:1px solid #d5dce6; padding-top:8px; font-size:8.5pt; color:#5c6b7f; }
+@media (prefers-color-scheme: dark) {
+  body { background:#0e141c; color:#e7edf5; } h1,h2,h3 { color:#8fb6e8; }
+  table.grid td { border-color:#27344a; } table.grid tbody tr:nth-child(even) { background:#151e2a; }
+  table.grid tr.tot td { background:#1b2738; border-top-color:#8fb6e8; }
+  nav.toc { background:#151e2a; } nav.toc a { color:#8fb6e8; }
+  .note { background:#12202b; } td.sm { color:#c4d0de; } .denom, .sub { color:#a9b7c7; }
+}
+@media screen and (max-width:640px) { body { padding:0 16px; } table.grid { font-size:8.5pt; } }
+</style>
+</head>
+<body>
+<article>
+<header class="head">
+<h1>SICPADetect — Chile Summary Tables</h1>
+<p class="meta">Export: <code>chile_25_09_26.csv</code> · 28,258 records read · description field:
+<code>LLM Reasoning</code> · issued 25 September 2026</p>
+</header>
+
+<nav class="toc"><ol>
+<li><a href="#t1">Table 1 — Records by status</a></li>
+<li><a href="#t2">Table 2 — Records by status, .cl domains only</a></li>
+<li><a href="#t3">Table 3 — Records by status, Chile-target-audience indicators</a></li>
+<li><a href="#t4">Table 4 — Chile relevance overall</a></li>
+<li><a href="#method">Method note and data issues</a></li>
+</ol></nav>
+
+<section id="t1">
+<h2>Table 1 — Records by status</h2>
+<p class="denom">Denominator: all 28,258 records in the export.</p>
+<table class="grid"><thead><tr><th>Status</th><th class=r>Records</th><th class=r>% of total</th></tr></thead><tbody><tr><td>Licensed gambling</td><td class="r">0</td><td class="r">0.0%</td></tr><tr><td>Illegal gambling</td><td class="r">13,368</td><td class="r">47.3%</td></tr><tr><td>Not gambling</td><td class="r">4,604</td><td class="r">16.3%</td></tr><tr><td>Unreachable</td><td class="r">495</td><td class="r">1.8%</td></tr><tr><td>Review needed</td><td class="r">9,791</td><td class="r">34.6%</td></tr><tr><td>Unknown / blank</td><td class="r">0</td><td class="r">0.0%</td></tr><tr class="tot"><td><strong>TOTAL</strong></td><td class="r"><strong>28,258</strong></td><td class="r"><strong>100.0%</strong></td></tr></tbody></table>
+</section>
+
+<section id="t2">
+<h2>Table 2 — Records by status, .cl domains only</h2>
+<p class="denom">Denominator: the .cl subset (387 records); the last column is the share of all
+28,258 records. A record counts as .cl when its registrable domain ends in <code>.cl</code>, including
+<code>.gob.cl</code>, <code>.gov.cl</code> and <code>.co.cl</code>.</p>
+<table class="grid"><thead><tr><th>Status</th><th class=r>Records</th><th class=r>% of .cl records</th><th class=r>% of all records</th></tr></thead><tbody><tr><td>Licensed gambling</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr><td>Illegal gambling</td><td class="r">64</td><td class="r">16.5%</td><td class="r">0.2%</td></tr><tr><td>Not gambling</td><td class="r">184</td><td class="r">47.5%</td><td class="r">0.7%</td></tr><tr><td>Unreachable</td><td class="r">6</td><td class="r">1.6%</td><td class="r">0.0%</td></tr><tr><td>Review needed</td><td class="r">133</td><td class="r">34.4%</td><td class="r">0.5%</td></tr><tr><td>Unknown / blank</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr class="tot"><td><strong>TOTAL</strong></td><td class="r"><strong>387</strong></td><td class="r"><strong>100.0%</strong></td><td class="r"><strong>1.4%</strong></td></tr></tbody></table>
+<p class="sub">State domains, reported separately and left inside the table above:
+<code>.gob.cl</code> 13 records · <code>.gov.cl</code> 0 records ·
+<code>.co.cl</code> 0 records.</p>
+</section>
+
+<section id="t3">
+<h2>Table 3 — Records by status, Chile-target-audience indicators</h2>
+<p class="denom">Denominator: the qualifying subset (277 records carrying at least one STRONG
+indicator in the description field). Further columns: share of all 28,258 records, and share of the
+16,720 records with a usable description. The test is applied to the description field only —
+not the URL and not the Source.</p>
+<table class="grid"><thead><tr><th>Status</th><th class=r>Records</th><th class=r>% of qualifying records</th><th class=r>% of all records</th><th class=r>% of usable descriptions</th></tr></thead><tbody><tr><td>Licensed gambling</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr><td>Illegal gambling</td><td class="r">85</td><td class="r">30.7%</td><td class="r">0.3%</td><td class="r">0.5%</td></tr><tr><td>Not gambling</td><td class="r">139</td><td class="r">50.2%</td><td class="r">0.5%</td><td class="r">0.8%</td></tr><tr><td>Unreachable</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr><td>Review needed</td><td class="r">53</td><td class="r">19.1%</td><td class="r">0.2%</td><td class="r">0.3%</td></tr><tr><td>Unknown / blank</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr class="tot"><td><strong>TOTAL</strong></td><td class="r"><strong>277</strong></td><td class="r"><strong>100.0%</strong></td><td class="r"><strong>1.0%</strong></td><td class="r"><strong>1.7%</strong></td></tr></tbody></table>
+
+<h3>Which STRONG indicator triggered each match</h3>
+<p class="denom">Grouped by indicator type. A record can trigger more than one group, so the counts sum to more
+than 277.</p>
+<table class="grid"><thead><tr><th>Indicator type</th><th class="r">Records</th><th>Most frequent matched strings</th></tr></thead><tbody>
+<tr><td>Chilean currency</td><td class="r">42</td><td class="sm">«CLP» ×39, «pesos chilenos» ×2, «CLP$» ×1</td></tr><tr><td>RUT</td><td class="r">19</td><td class="sm">«rut» ×11, «RUT» ×5, «Rut» ×3</td></tr><tr><td>Chilean payment rails</td><td class="r">12</td><td class="sm">«Webpay» ×4, «WebPay» ×3, «cuentarut» ×1, «MACH» ×1, «CuentaRUT» ×1</td></tr><tr><td>Chilean phone convention</td><td class="r">2</td><td class="sm">«+56» ×2</td></tr><tr><td>Explicit Chile reference</td><td class="r">196</td><td class="sm">«Chile» ×152, «chile» ×35, «CHILE» ×4, «chilenos» ×3, «Chileno» ×1</td></tr><tr><td>Chilean regulator or statute</td><td class="r">1</td><td class="sm">«SII» ×1</td></tr><tr><td>Chile-licensed or Chile-facing operators</td><td class="r">3</td><td class="sm">«enjoy casino» ×2, «Monticello» ×1</td></tr><tr><td>Chilean football references</td><td class="r">5</td><td class="sm">«Colo-Colo» ×2, «Universidad Católica» ×1, «CAMPEONATO NACIONAL» ×1, «Universidad de Chile» ×1</td></tr><tr><td>Chilean localisation phrasing</td><td class="r">48</td><td class="sm">«.cl» ×42, «Casino Online Chile» ×3, «casinos chilenos» ×1, «casino online Chile» ×1, «Casino online Chile» ×1</td></tr>
+</tbody></table>
+
+<h3>Weak-only spillover — the regional false-positive risk</h3>
+<p class="denom">Denominator: the weak-only subset (719 records carrying Spanish
+gambling vocabulary in the description but no STRONG indicator). The second column is the share of all
+28,258 records.</p>
+<table class="grid"><thead><tr><th>Status</th><th class=r>Records</th><th class=r>% of weak-only records</th><th class=r>% of all records</th></tr></thead><tbody><tr><td>Licensed gambling</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr><td>Illegal gambling</td><td class="r">638</td><td class="r">88.7%</td><td class="r">2.3%</td></tr><tr><td>Not gambling</td><td class="r">44</td><td class="r">6.1%</td><td class="r">0.2%</td></tr><tr><td>Unreachable</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr><td>Review needed</td><td class="r">37</td><td class="r">5.1%</td><td class="r">0.1%</td></tr><tr><td>Unknown / blank</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr class="tot"><td><strong>TOTAL</strong></td><td class="r"><strong>719</strong></td><td class="r"><strong>100.0%</strong></td><td class="r"><strong>2.5%</strong></td></tr></tbody></table>
+<p class="sub">Most frequent weak terms: «blackjack» ×177, «cashback» ×164, «bingo» ×124, «apuestas deportivas» ×114, «casino online» ×112, «en vivo» ×74, «tragamonedas» ×41, «bono de bienvenida» ×29.</p>
+</section>
+
+<section id="t4">
+<h2>Table 4 — Chile relevance overall</h2>
+<p class="denom">Denominator: all 28,258 records. Four independent axes; a record can satisfy more than one.
+A — registrable domain ends in <code>.cl</code>. B — <code>chile</code>, <code>chi</code>, <code>cl</code> or
+<code>scl</code> appears as a label or token in the hostname of a domain that is not <code>.cl</code>.
+C — at least one STRONG indicator in the description field. D — the Source field carries a STRONG indicator, or
+a Spanish gambling term paired with Chile.</p>
+<table class="grid"><thead><tr><th>Category</th><th class="r">Records</th><th class="r">% of total</th></tr></thead><tbody>
+<tr><td>A only</td><td class="r">91</td><td class="r">0.3%</td></tr><tr><td>B only</td><td class="r">35</td><td class="r">0.1%</td></tr><tr><td>C only</td><td class="r">45</td><td class="r">0.2%</td></tr><tr><td>D only</td><td class="r">171</td><td class="r">0.6%</td></tr><tr><td>Two or more axes</td><td class="r">378</td><td class="r">1.3%</td></tr>
+<tr class="tot"><td><strong>Chile-relevant overall (any axis)</strong></td><td class="r"><strong>720</strong></td><td class="r"><strong>2.5%</strong></td></tr>
+<tr><td>No axis</td><td class="r">27,538</td><td class="r">97.5%</td></tr>
+<tr class="tot"><td><strong>TOTAL</strong></td><td class="r"><strong>28,258</strong></td><td class="r"><strong>100.0%</strong></td></tr>
+</tbody></table>
+
+<h3>Contribution of each axis</h3>
+<p class="denom">Records matching each axis, and how many of those match that axis alone.</p>
+<table class="grid"><thead><tr><th>Axis</th><th class="r">Records matching</th><th class="r">Of which unique to this axis</th></tr></thead><tbody>
+<tr><td>A. Domain</td><td class="r">387</td><td class="r">91</td></tr><tr><td>B. Hostname label</td><td class="r">59</td><td class="r">35</td></tr><tr><td>C. Description</td><td class="r">277</td><td class="r">45</td></tr><tr><td>D. Source</td><td class="r">507</td><td class="r">171</td></tr>
+</tbody></table>
+</section>
+
+<section id="method">
+<h2>Method note and data issues</h2>
+<p>28,258 records were read from the semicolon-delimited export; none were excluded and none were dropped.
+The <code>LLM Reasoning</code> column was treated as the description field throughout.
+Every status value in the export matched an expected value, so the «Unknown / blank» row is zero in every table;
+0 records could not be classified.</p>
+<p>4,540 records (16.1%) have a blank description and 6,998
+(24.8%) carry a description saying the page could not be read, leaving
+16,720 usable descriptions (59.2%) — the second denominator of Table 3. Those two
+populations cannot carry evidence, so any indicator test applied to them would return a false negative by
+construction, not a finding.</p>
+<table class="grid"><thead><tr><th>Unreadable-page description</th><th class="r">Records</th><th class="r">% of all records</th></tr></thead><tbody>
+<tr><td>HTTP error</td><td class="r">3,722</td><td class="r">13.2%</td></tr><tr><td>CDN / bot block</td><td class="r">1,891</td><td class="r">6.7%</td></tr><tr><td>parked / for sale</td><td class="r">1,465</td><td class="r">5.2%</td></tr><tr><td>timeout / unreachable</td><td class="r">219</td><td class="r">0.8%</td></tr>
+<tr><td>Blank description</td><td class="r">4,540</td><td class="r">16.1%</td></tr>
+</tbody></table>
+<p class="sub">A record can show more than one unreadable signal, so these rows sum to more than
+6,998.</p>
+<p>The weak-only spillover is 719 records (2.5%): sites whose
+description proves they are Hispanophone gambling sites but carries nothing that ties them to Chile. Counting
+them as Chile-relevant would inflate the qualifying subset from 277 to
+996 and pull in Peruvian, Argentine, Mexican, Colombian and Spanish
+estates — the regional contamination risk this report is designed to keep out.</p>
+<div class="note">
+<p><strong>Data issues found.</strong></p>
+<ul class="b">
+<li><strong>Ambiguous indicator tokens.</strong> Several STRONG indicators are also ordinary English words or
+common acronyms: <code>Enjoy</code>, <code>Dreams</code>, <code>MACH</code>, <code>Chek</code>,
+<code>Tenpo</code>, <code>SII</code>, <code>BCI</code>, <code>SCJ</code>. Matched as bare words they produced
+30 spurious hits on phrases such as «enjoy the best online gaming experience with 1xBet Morocco». They are
+therefore matched only in brand or contextual form — <code>Casino Enjoy</code>, <code>Enjoy Casino</code>,
+<code>Enjoy Chile</code>, <code>Casino Dreams</code>, and the acronyms only alongside a Chilean context term.
+This is a matching decision, not an inference, and it is reversible.</li>
+<li><strong>Unreachable-page detection by HTTP code.</strong> Matching any three-digit 4xx/5xx number produced
+361 false hits on prize and jackpot amounts (for example «R$ 206.738.555,12»). Codes are therefore counted only
+alongside error phrasing.</li>
+<li><strong>Mixed granularity in the hostname field.</strong> The export mixes bare registrable domains,
+subdomains and hostnames carrying operational labels; axis B tokenises the hostname on dots, hyphens and
+underscores so that <code>example-cl.net</code> and <code>chile.example.com</code> both match, while
+<code>.cl</code> domains are handled by axis A alone.</li>
+<li><strong>No record identifier column.</strong> The export carries no stable record ID, so records are
+identified here by their CSV line number (<code>L2</code> is the first data row).</li>
+</ul>
+</div>
+<p><strong>Settings.</strong> The prompt's defaults were applied without change, as no confirmation was
+available at run time: Table 4 «overall» is the union of the four axes; <code>.gob.cl</code> and
+<code>.gov.cl</code> are counted and reported separately; weak indicators never qualify alone; axis D is
+included; and the unit of count is one record per row, not one row per registrable domain.</p>
+</section>
+
+<footer><p>Produced by SICPA SA — SICPADetect®. Counts are records, not domains. Percentages are rounded to one
+decimal place and may not sum to exactly 100.0% .</p></footer>
+</article>
+</body>
+</html>
