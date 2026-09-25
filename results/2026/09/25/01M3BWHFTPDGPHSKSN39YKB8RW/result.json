@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3BWHFTPDGPHSKSN39YKB8RW",
+  "requestCommit": "1b110e747187787170839300bea314b7e7a0c2ac",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-25T09:41:08.912Z",
+  "finishedAt": "2026-09-25T09:44:35.259Z",
+  "durationMs": 206347,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 12058,
+      "sha256": "969fc57563243257f004e7308b9b948bcfb781ff24fddec479ad4bc2b8228eaa",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3BWHFTPDGPHSKSN39YKB8RW/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "reportedTotal": 23949,
+    "recordsRead": 23943,
+    "recordsExcluded": 0,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "statusIllegalGambling": 4606,
+    "statusNotGambling": 7838,
+    "statusReviewNeeded": 11499,
+    "statusLicensedGambling": 0,
+    "statusUnreachable": 0,
+    "statusUnknownOrBlank": 0,
+    "unrecognisedStatusValues": 0,
+    "unclassifiableRecords": 0,
+    "blankDescriptions": 3615,
+    "thRecords": 102,
+    "thaiIndicatorRecords": 543,
+    "thOnly": 95,
+    "indicatorOnly": 536,
+    "both": 7,
+    "thailandRelevantOverall": 638,
+    "neither": 23305,
+    "indicatorTypesTriggered": 6,
+    "tablesRendered": 5,
+    "totalRowsPresent": 4,
+    "outputFormat": "html",
+    "htmlValidation": "passed"
+  },
+  "error": null
+}
