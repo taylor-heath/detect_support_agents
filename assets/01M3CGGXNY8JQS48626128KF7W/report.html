@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Relevance Chile</title>
+<style>
+@page { size: A4 portrait; margin: 20mm; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin:0; padding:0; font-family: Arial, Helvetica, sans-serif;
+  color:#1b1b1b; font-size:10.5pt; line-height:1.55; background:#fff; }
+h1,h2,h3 { font-family: Arial, Helvetica, sans-serif; color:#16254C; margin:0 0 .4em; line-height:1.2; }
+h1 { font-size:25pt; letter-spacing:-.3px; }
+h2 { font-size:15pt; margin-top:1.9em; padding-top:.5em; border-top:1px solid #d9dee8; }
+h3 { font-size:11.5pt; margin-top:1.4em; color:#16254C; }
+p { margin:0 0 .8em; max-width:72ch; }
+ul,ol { margin:0 0 .9em; padding-left:1.15em; max-width:72ch; }
+li { margin-bottom:.32em; }
+a { color:#0087C8; }
+section { break-inside:auto; }
+table { width:100%; max-width:100%; border-collapse:collapse; font-size:8.6pt; margin:.5em 0 1.1em; }
+th { background:#16254C; color:#fff; text-align:left; padding:5px 7px; font-weight:bold; font-size:8.4pt; }
+td { padding:4px 7px; border-bottom:1px solid #e4e8f0; vertical-align:top; }
+tr { break-inside:avoid; }
+thead { display:table-header-group; }
+.num { text-align:right; white-space:nowrap; }
+.mono { font-family:"Courier New",monospace; font-size:8.1pt; word-break:break-all; }
+img, pre { max-width:100%; }
+
+/* cover */
+.cover { background:#16254C; color:#fff; padding:26mm 16mm 18mm; break-after:page; }
+.cover h1 { color:#fff; max-width:22ch; }
+.cover .sub { font-size:12pt; color:#c8d3e6; max-width:60ch; margin:.6em 0 2.4em; }
+.motif { display:flex; gap:5px; margin-bottom:12mm; }
+.motif i { width:15px; height:15px; display:block; }
+.cmeta { display:grid; grid-template-columns:1fr 1fr; gap:7mm 10mm; margin-top:14mm;
+  border-top:1px solid #3d4d74; padding-top:7mm; }
+.cmeta b { display:block; font-size:7.6pt; letter-spacing:1.1px; text-transform:uppercase; color:#8fa3c8; margin-bottom:2px; }
+.cmeta span { font-size:10.5pt; color:#fff; }
+.conf { margin-top:12mm; font-size:8.4pt; color:#8fa3c8; border:1px solid #3d4d74; padding:4mm; }
+
+/* kpi */
+.kpi { display:grid; grid-template-columns:repeat(4,1fr); gap:3mm; margin:1.1em 0 1.4em; }
+.kpi div { border:1px solid #d9dee8; border-top:3px solid #16254C; padding:4mm 3mm; break-inside:avoid; }
+.kpi .k { font-size:19pt; font-weight:bold; color:#16254C; display:block; line-height:1.1; }
+.kpi .l { font-size:7.9pt; color:#4a5568; display:block; margin-top:3px; }
+
+.callout { border-left:4px solid #E3004A; background:#fdf2f5; padding:4mm 5mm; margin:1.2em 0; break-inside:avoid; }
+.callout h3 { margin-top:0; color:#E3004A; }
+.note { border-left:4px solid #6A9F9C; background:#f2f7f7; padding:4mm 5mm; margin:1.2em 0; font-size:9.6pt; break-inside:avoid; }
+.note h3 { margin-top:0; color:#6A9F9C; }
+.warn { border-left:4px solid #F38A00; background:#fff7ec; padding:4mm 5mm; margin:1.2em 0; break-inside:avoid; }
+.warn h3 { margin-top:0; color:#b96900; }
+
+/* bars */
+.bars { margin:.6em 0 1.2em; }
+.brow { display:grid; grid-template-columns:34% 1fr 11%; align-items:center; gap:3mm; margin-bottom:3.5px; break-inside:avoid; }
+.blab { font-size:8.4pt; color:#2a3550; overflow-wrap:anywhere; }
+.btrack { background:#eef1f6; height:13px; display:block; }
+.bfill { display:block; height:13px; }
+.bval { font-size:8.4pt; text-align:right; font-weight:bold; color:#16254C; }
+
+.wrow { display:grid; grid-template-columns:22% 1fr 8%; align-items:center; gap:3mm; margin-bottom:3.5px; break-inside:avoid; }
+.wlab { font-size:8.2pt; color:#2a3550; }
+.wtrack { background:#eef1f6; height:13px; display:flex; }
+.wA { background:#16254C; height:13px; display:block; }
+.wB { background:#0087C8; height:13px; display:block; }
+.wval { font-size:8.4pt; text-align:right; font-weight:bold; color:#16254C; }
+
+.funnel { margin:.8em 0 1.4em; }
+.fstep { break-inside:avoid; margin-bottom:5px; }
+.fbar { background:#16254C; color:#fff; padding:3.5mm 4mm; font-size:9.4pt; display:flex; justify-content:space-between; }
+.fstep:nth-child(2) .fbar { background:#2f4573; }
+.fstep:nth-child(3) .fbar { background:#0087C8; }
+.fdrop { font-size:8.2pt; color:#8a2b45; padding:1.5mm 4mm; }
+
+.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; margin:1em 0 1.3em; }
+.card { border:1px solid #d9dee8; padding:4mm; break-inside:avoid; }
+.card b { display:block; font-size:9.2pt; margin-bottom:3px; }
+.card p { font-size:8.5pt; margin:0; color:#4a5568; }
+.c-paid { border-top:3px solid #77BC1F; } .c-paid b { color:#3f7a00; }
+.c-listed { border-top:3px solid #F38A00; } .c-listed b { color:#b96900; }
+.c-not { border-top:3px solid #E3004A; } .c-not b { color:#E3004A; }
+
+.dchg { background:#ffe1ea; color:#E3004A; font-weight:bold; padding:0 1px; }
+.legend { font-size:8.2pt; color:#4a5568; margin:.3em 0 1em; }
+.legend i { display:inline-block; width:10px; height:10px; margin:0 3px 0 10px; vertical-align:-1px; }
+.toc { background:#f5f7fb; border:1px solid #d9dee8; padding:5mm 6mm; margin:1.4em 0; break-inside:avoid; }
+.toc h2.toch { margin:0 0 .5em; border-top:none; padding-top:0; margin-top:0; font-size:12pt; }
+.toc ol { margin:0; padding-left:1.25em; column-count:2; column-gap:8mm; font-size:9.2pt; }
+caption { caption-side:top; text-align:left; font-size:8.3pt; color:#4a5568; padding:0 0 3px; font-style:italic; }
+figcaption { font-size:8.3pt; color:#4a5568; font-style:italic; margin-top:-.6em; margin-bottom:1.1em; }
+.pb { break-before:page; }
+@media screen and (max-width:640px) {
+  table { display:block; overflow-x:auto; }
+  .mono { word-break:break-all; }
+  .kpi,.cards { grid-template-columns:1fr 1fr; }
+  .cover { padding:14mm 8mm; }
+  .brow { grid-template-columns:44% 1fr 16%; }
+  .toc ol { column-count:1; }
+}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="motif"><i style="background:#0087C8"></i><i style="background:#E3004A"></i><i style="background:#77BC1F"></i></div>
+  <h1>Market Relevance &amp; Replication Analysis — Chile</h1>
+  <p class="sub">An assessment of which monitored gambling domains in the SICPA Detect export
+  are relevant to the Chilean market, and how the replication estates behind them resolve.</p>
+  <div class="cmeta">
+    <div><b>Client</b><span>Polla Chilena de Beneficencia S.A.</span></div>
+    <div><b>Target market</b><span>Chile — .cl / Spanish / CLP</span></div>
+    <div><b>Detection window</b><span>2026-07-13 to 2026-09-24 (as recorded in the export)</span></div>
+    <div><b>Records assessed</b><span>28,258</span></div>
+    <div><b>Issue date</b><span>25 September 2026</span></div>
+    <div><b>Source export</b><span>chile_25_09_26.csv</span></div>
+  </div>
+  <div class="conf"><b>Confidential.</b> Prepared for the named client. This report makes no
+  assessment of whether any site is licensed, unlicensed, lawful or unlawful, and no such
+  determination should be inferred from inclusion. See the terminology note in section 3.</div>
+</header>
+
+<article>
+
+<div class="toc">
+  <h2 class="toch">Contents</h2>
+  <ol>
+    <li><a href="#s1">Executive summary</a></li>
+    <li><a href="#s2">Scope and mapping rules</a></li>
+    <li><a href="#s3">VAT status — input not supplied</a></li>
+    <li><a href="#s4">Technique: a worked cluster</a></li>
+    <li><a href="#s5">Market, infrastructure, tempo</a></li>
+    <li><a href="#s6">Limits and data quality</a></li>
+    <li><a href="#s7">Annex A — reported URLs</a></li>
+    <li><a href="#s8">Annex B — excluded records</a></li>
+  </ol>
+</div>
+
+<section id="s1">
+<h2 style="border-top:none;margin-top:0;padding-top:0">1. Executive summary</h2>
+
+<p><b>324 of the 13,368 monitored domains carrying gambling content meet the Chile
+relevance test — 2.4% of the gambling population, and 1.1% of the
+28,258 records in the export.</b> The remaining 13,044 gambling domains carry content
+aimed at other markets, principally South-East and South Asia.</p>
+
+<div class="kpi">
+  <div><span class="k">28,258</span><span class="l">Records assessed</span></div>
+  <div><span class="k">13,368</span><span class="l">Carrying gambling content</span></div>
+  <div><span class="k">324</span><span class="l">Chile-relevant (reported set)</span></div>
+  <div><span class="k">124</span><span class="l">With a direct Chile marker</span></div>
+</div>
+
+<h3>Findings</h3>
+<ul>
+<li><b>The largest replication estates in the export are irrelevant to Chile.</b> The single
+biggest cluster, rooted on <span class="mono">b777.pro</span>, accounts for 4,226
+gambling domains and yields 2 Chile-relevant records. The second,
+rooted on <span class="mono">g41</span>, yields 7 from
+1,402. Ranking remediation effort by raw detection volume would
+direct almost all of it at operators serving other markets.</li>
+
+<li><b>Chile-relevant activity is dominated by discovery, not replication.</b> Of the reported set,
+231 records arrived through
+discovery methods (manual review, search, video) against
+93 through traced variant or redirect lineage. The
+inverse holds across the export as a whole, where variants and redirects are
+66% of all records.</li>
+
+<li><b>20 Chile-relevant detections sit on legitimate third-party domains.</b> A water
+utility, a primary school, a clinical laboratory, a medical practice, a cake shop, a timber
+merchant and a Spanish vocational college are all serving gambling content. These indicate
+compromise or paid placement, not operator-owned property, and need a notification and takedown
+route rather than a block order.</li>
+
+<li><b>One of the three predicted successor domains has already resolved.</b>
+<span class="mono">bet364.com</span> is present in the export as a variant of
+<span class="mono">bet365.com</span>, first recorded 2026-08-12.
+<span class="mono">betsson1003</span> and <span class="mono">betsala12</span> are still absent.</li>
+
+<li><b>Detection tempo is uneven and end-loaded.</b> 140 of the 324 reported
+records (43%) were recorded in the final week of the window,
+against a median of 18 per week across the rest.</li>
+</ul>
+
+<div class="callout">
+<h3>Most consequential implication</h3>
+<p>The volume in this export is not a measure of Chilean exposure. 97.6% of
+monitored gambling domains are directed at other markets, and the two largest estates contribute
+9 relevant records between them from
+5,628. Any prioritisation built on raw
+counts, cluster size, or "most replicated brand" will point almost entirely away from Chile. The
+reported set of 324 is small enough to be worked by hand, and that is the correct unit of
+action.</p>
+</div>
+</section>
+
+<section id="s2" class="pb">
+<h2>2. Scope and mapping rules</h2>
+
+<h3>2.1 From the export to the reported set</h3>
+<div class="funnel">
+  <div class="fstep"><div class="fbar"><span>All records in export</span><span>28,258</span></div></div>
+  <div class="fstep"><div class="fbar"><span>Carrying gambling content</span><span>13,368</span></div>
+    <div class="fdrop">&minus;14,890 — 9,791 review needed, 4,604 not gambling, 495 unreachable</div></div>
+  <div class="fstep"><div class="fbar"><span>Passing the Chile relevance test</span><span>324</span></div>
+    <div class="fdrop">&minus;13,044 — 6,688 excluded by a competing locale, 6,356 carrying no market signal</div></div>
+</div>
+<figcaption>Figure 1. Record funnel. The filter removes 98.9% of the export.</figcaption>
+
+<table>
+<caption>Table 1. Content classification as recorded in the source export.</caption>
+<thead><tr><th>Classification</th><th class="num">Records</th><th class="num">Share</th></tr></thead>
+<tbody><tr><td>Gambling</td><td class="num">13,368</td><td class="num">47.3%</td></tr><tr><td>Review needed</td><td class="num">9,791</td><td class="num">34.6%</td></tr><tr><td>Not gambling</td><td class="num">4,604</td><td class="num">16.3%</td></tr><tr><td>Unreachable</td><td class="num">495</td><td class="num">1.8%</td></tr>
+<tr><td><b>Total</b></td><td class="num"><b>28,258</b></td><td class="num"><b>100.0%</b></td></tr></tbody>
+</table>
+
+<h3>2.2 How market relevance was determined</h3>
+<p>A record enters the reported set only if it carries gambling content <i>and</i> satisfies at
+least one relevance test. Three tests were applied in order.</p>
+<ul>
+<li><b>Test A — direct market reference.</b> The string <span class="mono">chile</span> anywhere in
+the domain including mid-string, a <span class="mono">.cl</span> ccTLD, a <span class="mono">cl</span>
+market marker as a subdomain or affix, or captured content citing Chile, Santiago or CLP.
+128 records qualified on Test A.</li>
+<li><b>Test B — Spanish content, uncontested.</b> The captured reasoning quotes Spanish site text
+and no competing non-Spanish market indicator is present. 196 records qualified
+on Test B alone.</li>
+<li><b>Test C — exclusion by competing locale.</b> Applied before Test B. Non-Latin scripts by
+Unicode range, locale-specific vocabulary, and currency or country markers.
+6,688 records were excluded here.</li>
+</ul>
+
+<div class="note">
+<h3>Spanish against Portuguese</h3>
+<p>The two languages were separated on vocabulary that differs between them —
+<span class="mono">apuestas</span> against <span class="mono">apostas</span>,
+<span class="mono">jugar</span> against <span class="mono">jogar</span>,
+<span class="mono">dinero</span> against <span class="mono">dinheiro</span>,
+<span class="mono">ruleta</span> against <span class="mono">roleta</span>,
+<span class="mono">tragamonedas</span> against <span class="mono">caça-níqueis</span>.
+<b><span class="mono">depósito</span> was not treated as a Spanish signal</b>, since it is spelled
+identically in Portuguese and would produce false positives at scale. The same caution was applied
+to every other cognate surviving unchanged across the two languages.</p>
+</div>
+
+<div class="note">
+<h3>Terminology note</h3>
+<p>The source export labels its <span class="mono">Status</span> field with a value carrying a
+legality label. <b>That value has been relabelled to &ldquo;Gambling&rdquo; throughout this report.
+No record has been reclassified</b> — the 13,368 records counted as gambling here are exactly the
+13,368 records carrying that value in the source file, and the annex reconciles against the raw
+export row for row. The only content distinction this report draws is gambling against
+non-gambling. This report makes no assessment of whether any site is licensed, unlicensed, lawful
+or unlawful, and no such determination should be inferred from inclusion in any table. Where a
+&ldquo;blocked-site list&rdquo; is referred to, that describes a list supplied by the client, not a
+determination made here.</p>
+</div>
+
+<h3>2.3 Replication chains</h3>
+<p>The <span class="mono">Source</span> field encodes lineage as
+<span class="mono">Variant (parent)</span> or <span class="mono">Redirect (parent)</span>. Each
+domain was resolved recursively to its root with a cycle guard, and attributed to the root brand
+rather than its immediate parent, so a seventh-generation replica is counted against the brand it
+originated from. Generation records chain depth; depth 1 is a direct replica. The other
+<span class="mono">Source</span> values — <span class="mono">Manual</span>,
+<span class="mono">Google Search</span>, <span class="mono">Youtube</span> — are discovery methods,
+not lineage, and are kept distinct throughout. Every figure in this report states which population
+it describes.</p>
+
+<table>
+<caption>Table 2. Record provenance across the whole export and within the reported set.</caption>
+<thead><tr><th>Provenance</th><th class="num">All records</th><th class="num">Reported set</th></tr></thead>
+<tbody><tr><td>Variant</td><td class="num">16,943</td><td class="num">75</td></tr><tr><td>Redirect</td><td class="num">1,768</td><td class="num">18</td></tr><tr><td>Manual</td><td class="num">7,334</td><td class="num">126</td></tr><tr><td>Google Search</td><td class="num">1,046</td><td class="num">91</td></tr><tr><td>Youtube</td><td class="num">1,167</td><td class="num">14</td></tr></tbody>
+</table>
+</section>
+
+<section id="s3" class="pb">
+<h2>3. VAT status — required input not supplied</h2>
+
+<div class="warn">
+<h3>This section could not be produced</h3>
+<p><b>The VAT reference file was not supplied with this job.</b> The request carried three
+attachments — the report specification, the dataset manifest and the detection export. It did not
+carry the <span class="mono">VAT_PAID</span> list of registered platform URLs or the
+<span class="mono">VAT_NOT_PAID_LISTED</span> list of brands recorded as unregistered.</p>
+<p>Without those two lists there is no basis on which to assign any domain to a VAT category. The
+mapping has therefore <b>not been performed</b>, and no VAT status, split, or per-brand VAT chart
+appears in this report. Assigning statuses by inference would have produced figures with no source
+behind them.</p>
+<p>The rest of the analysis — market relevance, replication lineage, market attribution,
+infrastructure and tempo — does not depend on the VAT lists and is complete.</p>
+</div>
+
+<p>The three categories the mapping would populate, once the reference file is supplied, are set
+out below. They are shown so the gap is legible, not because any record has been assigned to them.</p>
+
+<div class="cards">
+  <div class="card c-paid"><b>VAT_PAID</b><p>The domain, or any ancestor, matches a platform on the
+  registered list. Descendants inherit.</p></div>
+  <div class="card c-listed"><b>VAT_NOT_PAID_LISTED</b><p>The domain, or any ancestor, matches a
+  brand recorded as unregistered. Descendants inherit.</p></div>
+  <div class="card c-not"><b>VAT_NOT_PAID</b><p>Gambling content matching neither list.</p></div>
+</div>
+
+<p>Two caveats will apply to the mapping when it is run, and both belong in front of any reader of
+its output rather than in a footnote.</p>
+
+<div class="callout">
+<h3>Inheritance is an assumption, not a finding</h3>
+<p><span class="mono">VAT_PAID</span> means a domain <i>descends from</i> a registered platform. It
+does not mean the domain itself sits inside that registration. A typosquat trading on a registered
+brand while operating outside its declared estate is indistinguishable, in this data, from a
+legitimate property of that brand. <b>This is the group most needing verification, not the group
+needing least.</b> The Doradobet cluster in section 4 shows the shape of the problem directly:
+eight character-substitution variants that would inherit their parent's status automatically.</p>
+</div>
+
+<div class="warn">
+<h3><span class="mono">VAT_NOT_PAID</span> means unlisted, not confirmed unregistered</h3>
+<p>An operator may hold a registration absent from the supplied lists. The category records the
+absence of a match against a reference file, not a finding about the operator.</p>
+<p>A further gap will apply: where the reference file carries a corporate entry with no consumer-brand
+annotation, the consumer brands operated behind it cannot be derived and will default to
+<span class="mono">VAT_NOT_PAID</span>. Conversely, corporate entries annotated with their consumer
+brand must have that brand token mapped as well, or every domain of that brand falls through the
+same way.</p>
+</div>
+</section>
+
+<section id="s4" class="pb">
+<h2>4. Technique: a worked cluster</h2>
+
+<p>The Doradobet estate is the clearest illustration of how replication presents in this data. The
+canonical domain is <span class="mono">doradobet.com</span>. Sixteen Chile-relevant records
+resolve to this brand, and the variant generation is built almost entirely from single-character
+substitutions at keyboard-adjacent positions — the classic typosquat pattern — rather than from new
+brand tokens.</p>
+
+<p class="legend">Characters differing from the canonical domain are marked
+<b class="dchg">like this</b>.</p>
+
+<table>
+<caption>Table 3. Doradobet cluster, Chile-relevant records, against the canonical domain.</caption>
+<thead><tr><th>Domain</th><th>Provenance</th><th class="num">Gen.</th><th>Market</th></tr></thead>
+<tbody><tr><td class="mono">d<b class="dchg">i</b>radobet.com</td><td>Variant</td><td class="num">1</td><td>Peru</td></tr><tr><td class="mono">doradobe.com</td><td>Variant</td><td class="num">1</td><td>Peru</td></tr><tr><td class="mono">doradobet<b class="dchg">-app</b>.com</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td></tr><tr><td class="mono">doradobet<b class="dchg">-chile</b>.com</td><td>Google Search</td><td class="num">0</td><td>Chile</td></tr><tr><td class="mono">doradobet<b class="dchg">-chile</b>.<b class="dchg">net</b></td><td>Google Search</td><td class="num">0</td><td>Chile</td></tr><tr><td class="mono">doradobet.o<b class="dchg">rg</b></td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td></tr><tr><td class="mono">doradobet.<b class="dchg">pa</b></td><td>Manual</td><td class="num">0</td><td>Panama</td></tr><tr><td class="mono">doradobet<b class="dchg">chile</b>.<b class="dchg">net</b></td><td>Variant</td><td class="num">1</td><td>Chile</td></tr><tr><td class="mono">doradobet<b class="dchg">chile</b>.o<b class="dchg">rg</b></td><td>Google Search</td><td class="num">0</td><td>Chile</td></tr><tr><td class="mono">doradobet<b class="dchg">chile</b>.<b class="dchg">t</b>o<b class="dchg">p</b></td><td>Variant</td><td class="num">1</td><td>Chile</td></tr><tr><td class="mono">doradobe<b class="dchg">y</b>.com</td><td>Variant</td><td class="num">1</td><td>Peru</td></tr><tr><td class="mono">doradob<b class="dchg">r</b>t.com</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td></tr><tr><td class="mono">doradob<b class="dchg">w</b>t.com</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td></tr><tr><td class="mono">dorad<b class="dchg">p</b>bet.com</td><td>Variant</td><td class="num">1</td><td>Peru</td></tr><tr><td class="mono">dora<b class="dchg">o</b>dbet.com</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td></tr><tr><td class="mono">dor<b class="dchg">q</b>dobet.com</td><td>Variant</td><td class="num">1</td><td>Peru</td></tr></tbody>
+</table>
+
+<p>Two things follow from the pattern. First, the substitutions are mechanical:
+<span class="mono">a</span>&rarr;<span class="mono">q</span>,
+<span class="mono">t</span>&rarr;<span class="mono">y</span>,
+<span class="mono">e</span>&rarr;<span class="mono">r</span>, and two transpositions. A generator
+producing the next tranche is trivial to write, and defensive registration of the remaining
+adjacent substitutions is cheaper than detecting each one after it resolves. Second, the
+market attribution splits inside a single cluster: part of the estate carries Chile markers and
+part carries Peruvian content, which means the cluster cannot be treated as a single
+jurisdictional unit.</p>
+
+<h3>Predicted successors</h3>
+<p>The specification flags three successor domains as worth probing ahead of the next ruling, on
+the reasoning that numbered series advance predictably. Their status in this export:</p>
+<table>
+<caption>Table 4. Status of the three predicted successor domains in this export.</caption>
+<thead><tr><th>Domain</th><th>Present in export</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td class="mono">bet364.com</td><td><b>Yes</b></td><td>Recorded as a variant of
+<span class="mono">bet365.com</span>, classification &ldquo;Review needed&rdquo;, first seen
+2026-08-12.</td></tr>
+<tr><td class="mono">betsson1003.com</td><td>No</td><td>Absent. <span class="mono">betsson1001</span>
+and <span class="mono">betsson1002</span> are both present.</td></tr>
+<tr><td class="mono">betsala12.com</td><td>No</td><td>Absent.
+<span class="mono">betsala11.com</span> is present.</td></tr>
+</tbody>
+</table>
+<p>These remain predictions where absent. <span class="mono">bet364.com</span> is not a prediction —
+it is in the export, and its classification is unresolved rather than confirmed.</p>
+</section>
+
+<section id="s5" class="pb">
+<h2>5. Market, infrastructure and tempo</h2>
+
+<h3>5.1 Market attribution</h3>
+<p>Where target-language content points to a specific neighbouring market, that market is recorded
+rather than the record being treated silently as Chilean. Such records are retained — they carry the
+same brands and remain reachable from Chile — but they are labelled so they can be deprioritised.</p>
+<div class="bars"><div class="brow"><span class="blab">Chile</span><span class="btrack"><span class="bfill" style="width:100.0%;background:#16254C"></span></span><span class="bval">124</span></div><div class="brow"><span class="blab">Chile (Spanish content, market not specified)</span><span class="btrack"><span class="bfill" style="width:85.5%;background:#0087C8"></span></span><span class="bval">106</span></div><div class="brow"><span class="blab">Spain</span><span class="btrack"><span class="bfill" style="width:14.5%;background:#F38A00"></span></span><span class="bval">18</span></div><div class="brow"><span class="blab">Argentina</span><span class="btrack"><span class="bfill" style="width:13.7%;background:#F38A00"></span></span><span class="bval">17</span></div><div class="brow"><span class="blab">Mexico</span><span class="btrack"><span class="bfill" style="width:13.7%;background:#F38A00"></span></span><span class="bval">17</span></div><div class="brow"><span class="blab">Peru</span><span class="btrack"><span class="bfill" style="width:12.9%;background:#F38A00"></span></span><span class="bval">16</span></div><div class="brow"><span class="blab">Colombia</span><span class="btrack"><span class="bfill" style="width:8.9%;background:#F38A00"></span></span><span class="bval">11</span></div><div class="brow"><span class="blab">Belgium</span><span class="btrack"><span class="bfill" style="width:2.4%;background:#F38A00"></span></span><span class="bval">3</span></div><div class="brow"><span class="blab">Ecuador</span><span class="btrack"><span class="bfill" style="width:2.4%;background:#F38A00"></span></span><span class="bval">3</span></div><div class="brow"><span class="blab">Brazil</span><span class="btrack"><span class="bfill" style="width:1.6%;background:#F38A00"></span></span><span class="bval">2</span></div><div class="brow"><span class="blab">Greece</span><span class="btrack"><span class="bfill" style="width:0.8%;background:#F38A00"></span></span><span class="bval">1</span></div><div class="brow"><span class="blab">France</span><span class="btrack"><span class="bfill" style="width:0.8%;background:#F38A00"></span></span><span class="bval">1</span></div><div class="brow"><span class="blab">Paraguay</span><span class="btrack"><span class="bfill" style="width:0.8%;background:#F38A00"></span></span><span class="bval">1</span></div><div class="brow"><span class="blab">Denmark</span><span class="btrack"><span class="bfill" style="width:0.8%;background:#F38A00"></span></span><span class="bval">1</span></div><div class="brow"><span class="blab">Panama</span><span class="btrack"><span class="bfill" style="width:0.8%;background:#F38A00"></span></span><span class="bval">1</span></div><div class="brow"><span class="blab">Chile (contested: Brazil)</span><span class="btrack"><span class="bfill" style="width:0.8%;background:#0087C8"></span></span><span class="bval">1</span></div><div class="brow"><span class="blab">Chile (contested: Ecuador)</span><span class="btrack"><span class="bfill" style="width:0.8%;background:#0087C8"></span></span><span class="bval">1</span></div></div>
+<figcaption>Figure 2. Market attribution within the reported set (n=324).</figcaption>
+
+<p>124 records carry a direct Chile marker. A further 106 carry Spanish content
+with no market named — these are reachable from Chile and retained, but the evidence does not place
+them in Chile specifically, and they are the weakest part of the reported set.
+92 records are attributed to a neighbouring market.</p>
+
+<h3>5.2 Contradictions</h3>
+<p>A domain carrying the Chile brand string while serving another market's content is a finding,
+not noise. Two such contradictions are present in the reported set.</p>
+<table>
+<caption>Table 5. Domains carrying a Chile marker while serving another market's content.</caption>
+<thead><tr><th>Domain</th><th>Brand</th><th>Content market</th><th>Evidence</th></tr></thead>
+<tbody><tr><td class="mono">evamedsalud.cl</td><td>evamedsalud</td><td>Brazil</td><td class="mono">Brasil</td></tr><tr><td class="mono">coolbetchile.info</td><td>Coolbet</td><td>Ecuador</td><td class="mono">Ecuador</td></tr></tbody>
+</table>
+<p><span class="mono">coolbetchile.info</span> is the clean case: a domain built on the Chile
+string, serving Ecuadorean content. Blocking it on the strength of the domain name alone would be
+acting on the label rather than the content.</p>
+
+<h3>5.3 Source brands</h3>
+<div class="bars"><div class="brow"><span class="blab">Betsson</span><span class="btrack"><span class="bfill" style="width:100.0%;background:#16254C"></span></span><span class="bval">25</span></div><div class="brow"><span class="blab">Doradobet</span><span class="btrack"><span class="bfill" style="width:64.0%;background:#16254C"></span></span><span class="bval">16</span></div><div class="brow"><span class="blab">1win</span><span class="btrack"><span class="bfill" style="width:52.0%;background:#16254C"></span></span><span class="bval">13</span></div><div class="brow"><span class="blab">22Bet</span><span class="btrack"><span class="bfill" style="width:36.0%;background:#16254C"></span></span><span class="bval">9</span></div><div class="brow"><span class="blab">Jugabet</span><span class="btrack"><span class="bfill" style="width:36.0%;background:#16254C"></span></span><span class="bval">9</span></div><div class="brow"><span class="blab">Betsala</span><span class="btrack"><span class="bfill" style="width:36.0%;background:#16254C"></span></span><span class="bval">9</span></div><div class="brow"><span class="blab">1xBet</span><span class="btrack"><span class="bfill" style="width:32.0%;background:#16254C"></span></span><span class="bval">8</span></div><div class="brow"><span class="blab">Betano</span><span class="btrack"><span class="bfill" style="width:32.0%;background:#16254C"></span></span><span class="bval">8</span></div><div class="brow"><span class="blab">mx7k</span><span class="btrack"><span class="bfill" style="width:28.0%;background:#16254C"></span></span><span class="bval">7</span></div><div class="brow"><span class="blab">g41</span><span class="btrack"><span class="bfill" style="width:28.0%;background:#16254C"></span></span><span class="bval">7</span></div><div class="brow"><span class="blab">com</span><span class="btrack"><span class="bfill" style="width:24.0%;background:#16254C"></span></span><span class="bval">6</span></div><div class="brow"><span class="blab">Rushbet</span><span class="btrack"><span class="bfill" style="width:24.0%;background:#16254C"></span></span><span class="bval">6</span></div><div class="brow"><span class="blab">betmxs</span><span class="btrack"><span class="bfill" style="width:20.0%;background:#16254C"></span></span><span class="bval">5</span></div><div class="brow"><span class="blab">epicbet</span><span class="btrack"><span class="bfill" style="width:20.0%;background:#16254C"></span></span><span class="bval">5</span></div></div>
+<figcaption>Figure 3. Source brands in the reported set, by record count. 149 distinct brands
+carry at least one Chile-relevant record; the 14 largest are shown.</figcaption>
+
+<h3>5.4 Infrastructure</h3>
+<div class="bars"><div class="brow"><span class="blab">.com</span><span class="btrack"><span class="bfill" style="width:100.0%;background:#6A9F9C"></span></span><span class="bval">127</span></div><div class="brow"><span class="blab">.cl</span><span class="btrack"><span class="bfill" style="width:50.4%;background:#0087C8"></span></span><span class="bval">64</span></div><div class="brow"><span class="blab">.es</span><span class="btrack"><span class="bfill" style="width:13.4%;background:#6A9F9C"></span></span><span class="bval">17</span></div><div class="brow"><span class="blab">.net</span><span class="btrack"><span class="bfill" style="width:10.2%;background:#6A9F9C"></span></span><span class="bval">13</span></div><div class="brow"><span class="blab">.mx</span><span class="btrack"><span class="bfill" style="width:9.4%;background:#6A9F9C"></span></span><span class="bval">12</span></div><div class="brow"><span class="blab">.co</span><span class="btrack"><span class="bfill" style="width:7.9%;background:#6A9F9C"></span></span><span class="bval">10</span></div><div class="brow"><span class="blab">.bet</span><span class="btrack"><span class="bfill" style="width:7.9%;background:#6A9F9C"></span></span><span class="bval">10</span></div><div class="brow"><span class="blab">.ar</span><span class="btrack"><span class="bfill" style="width:6.3%;background:#6A9F9C"></span></span><span class="bval">8</span></div><div class="brow"><span class="blab">.pe</span><span class="btrack"><span class="bfill" style="width:5.5%;background:#6A9F9C"></span></span><span class="bval">7</span></div><div class="brow"><span class="blab">.app</span><span class="btrack"><span class="bfill" style="width:3.9%;background:#6A9F9C"></span></span><span class="bval">5</span></div></div>
+<figcaption>Figure 4. Top-level domain spread within the reported set.</figcaption>
+<p>Generic TLDs carry the majority: <span class="mono">.com</span> accounts for
+127 records against 64 on the Chilean ccTLD. A
+further 54 sit on other
+national ccTLDs while carrying Spanish content reachable from Chile. Enforcement scoped to
+<span class="mono">.cl</span> alone would reach under a fifth of the reported set.</p>
+
+<h3>5.5 Detection tempo</h3>
+<div class="wrow"><span class="wlab">2026-07-13</span><span class="wtrack"><span class="wA" style="width:1.4%"></span><span class="wB" style="width:0.0%"></span></span><span class="wval">2</span></div><div class="wrow"><span class="wlab">2026-07-20</span><span class="wtrack"><span class="wA" style="width:0.7%"></span><span class="wB" style="width:2.1%"></span></span><span class="wval">4</span></div><div class="wrow"><span class="wlab">2026-07-27</span><span class="wtrack"><span class="wA" style="width:0.0%"></span><span class="wB" style="width:2.9%"></span></span><span class="wval">4</span></div><div class="wrow"><span class="wlab">2026-08-03</span><span class="wtrack"><span class="wA" style="width:15.0%"></span><span class="wB" style="width:15.7%"></span></span><span class="wval">43</span></div><div class="wrow"><span class="wlab">2026-08-10</span><span class="wtrack"><span class="wA" style="width:20.0%"></span><span class="wB" style="width:15.7%"></span></span><span class="wval">50</span></div><div class="wrow"><span class="wlab">2026-08-17</span><span class="wtrack"><span class="wA" style="width:12.9%"></span><span class="wB" style="width:7.9%"></span></span><span class="wval">29</span></div><div class="wrow"><span class="wlab">2026-08-24</span><span class="wtrack"><span class="wA" style="width:5.7%"></span><span class="wB" style="width:1.4%"></span></span><span class="wval">10</span></div><div class="wrow"><span class="wlab">2026-08-31</span><span class="wtrack"><span class="wA" style="width:4.3%"></span><span class="wB" style="width:8.6%"></span></span><span class="wval">18</span></div><div class="wrow"><span class="wlab">2026-09-07</span><span class="wtrack"><span class="wA" style="width:2.9%"></span><span class="wB" style="width:1.4%"></span></span><span class="wval">6</span></div><div class="wrow"><span class="wlab">2026-09-14</span><span class="wtrack"><span class="wA" style="width:5.7%"></span><span class="wB" style="width:7.1%"></span></span><span class="wval">18</span></div><div class="wrow"><span class="wlab">2026-09-21</span><span class="wtrack"><span class="wA" style="width:22.9%"></span><span class="wB" style="width:77.1%"></span></span><span class="wval">140</span></div>
+<p class="legend"><i style="background:#16254C"></i> Test A (direct Chile marker)
+<i style="background:#0087C8"></i> Test B (Spanish content)</p>
+<figcaption>Figure 5. Weekly detection of reported-set records, by relevance test. Bars are
+labelled with the weekly total.</figcaption>
+<p>The distribution is end-loaded: 140 records in the week of 2026-09-21,
+against 184 across the preceding ten weeks. Most of that final-week
+volume (108 of 140) qualified on Test B rather than on a direct Chile
+marker. This is consistent with a change in collection intensity rather than a change in the
+underlying population, and the weekly series should not be read as a trend in operator activity
+without confirming how the export was assembled.</p>
+
+<h3>5.6 Replication depth</h3>
+<p>Within the reported set, 231 records are roots,
+64 are direct replicas, and
+29 sit at generation two or deeper. Chile
+-relevant activity is therefore shallow. That is not true of the export as a whole, where
+2,497 records resolve through chains of twenty or more generations.</p>
+</section>
+
+<section id="s6" class="pb">
+<h2>6. Limits and data quality</h2>
+
+<h3>6.1 What the filter cost</h3>
+<p>28,258 records were assessed and 324 survived. The table below shows where the largest
+raw clusters went. It is the most important table in this report for anyone allocating effort.</p>
+<table>
+<caption>Table 6. The ten largest replication estates by gambling-record count, against their
+contribution to the reported set.</caption>
+<thead><tr><th>Root cluster</th><th class="num">Gambling records</th><th class="num">Chile-relevant</th><th class="num">Yield</th></tr></thead>
+<tbody><tr><td class="mono">b777</td><td class="num">4,226</td><td class="num">2</td><td class="num">0.0%</td></tr><tr><td class="mono">g41</td><td class="num">1,402</td><td class="num">7</td><td class="num">0.5%</td></tr><tr><td class="mono">1xBet</td><td class="num">1,130</td><td class="num">8</td><td class="num">0.7%</td></tr><tr><td class="mono">b77</td><td class="num">631</td><td class="num">0</td><td class="num">0.0%</td></tr><tr><td class="mono">one-vv609</td><td class="num">110</td><td class="num">0</td><td class="num">0.0%</td></tr><tr><td class="mono">j22</td><td class="num">88</td><td class="num">0</td><td class="num">0.0%</td></tr><tr><td class="mono">Bet365</td><td class="num">84</td><td class="num">2</td><td class="num">2.4%</td></tr><tr><td class="mono">1win</td><td class="num">67</td><td class="num">13</td><td class="num">19.4%</td></tr><tr><td class="mono">m85</td><td class="num">66</td><td class="num">0</td><td class="num">0.0%</td></tr><tr><td class="mono">1-win</td><td class="num">63</td><td class="num">2</td><td class="num">3.2%</td></tr></tbody>
+</table>
+<p>Seven of the ten largest estates contribute nothing. Ranking by raw volume would put
+<span class="mono">b777</span> first at 4,226 records; it contributes
+2. Its content is South-East Asian — the sampled reasoning cites
+slot imagery, parked and expired domains, and 502 errors, not Spanish-language Chilean betting.</p>
+
+<h3>6.2 The residual</h3>
+<p>This analysis is scoped to records the export classifies as carrying gambling content.
+9,791 records (34.6% of the export) are classified
+&ldquo;Review needed&rdquo; and a further 495 are unreachable. <b>These are
+unassessed, not cleared.</b> Of them, 153 review-needed and 13 unreachable
+records carry a Chile marker in the domain — they would enter the reported set on the domain test
+alone if their content were resolved, which would increase it by up to
+51%.</p>
+<p>The unreachable group is not inert. It includes domains that returned 502 errors, parked pages
+and access-denied responses at capture time; a domain unreachable on one capture is routinely
+reachable on the next.</p>
+
+<h3>6.3 Parasite hosting</h3>
+<p>20 records in the reported set sit on domains that are not operator property. They
+are legitimate institutional or commercial sites serving gambling content, which indicates
+compromise or paid placement. <b>They need a notification and takedown route, not a block order</b> —
+blocking them would take down an unrelated service.</p>
+<table>
+<caption>Table 7. Chile-relevant detections on third-party domains.</caption>
+<thead><tr><th>Domain</th><th>Provenance</th><th>Market</th></tr></thead>
+<tbody><tr><td class="mono">agenciasietepulso.cl</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">aguasanjoaquin.cl</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">alsaciaexpress.cl</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">cabalgatastomwesley.com</td><td>Google Search</td><td>Chile (Spanish content, market not specified)</td></tr><tr><td class="mono">claritasturismo.com</td><td>Google Search</td><td>Chile (Spanish content, market not specified)</td></tr><tr><td class="mono">colegiorepublicadeguatemala.cl</td><td>Manual</td><td>Chile</td></tr><tr><td class="mono">consultamedicasanmiguel.cl</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">contigojuegoyaprendo.cl</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">dialogue.cl</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">diariosalud.com.ec</td><td>Google Search</td><td>Ecuador</td></tr><tr><td class="mono">encuentroaci.cl</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">esponjaskonjac.com.ar</td><td>Google Search</td><td>Argentina</td></tr><tr><td class="mono">evamedsalud.cl</td><td>Google Search</td><td>Chile (contested: Brazil)</td></tr><tr><td class="mono">laboratorioclinicoinmunovida.cl</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">muhu.cl</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">mundomadera.cl</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">n9.cl</td><td>Manual</td><td>Chile</td></tr><tr><td class="mono">politecnicotafalla.educacion.navarra.es</td><td>Google Search</td><td>Chile</td></tr><tr><td class="mono">sgllsoftware.com</td><td>Manual</td><td>Chile (Spanish content, market not specified)</td></tr><tr><td class="mono">tortassantaana.cl</td><td>Google Search</td><td>Chile</td></tr></tbody>
+</table>
+<p>The specification already identifies <span class="mono">aguasanjoaquin.cl</span>, a Chilean water
+utility, on these grounds. The pattern is broader than that single case: it includes a primary
+school (<span class="mono">colegiorepublicadeguatemala.cl</span>), a clinical laboratory
+(<span class="mono">laboratorioclinicoinmunovida.cl</span>), a medical practice
+(<span class="mono">consultamedicasanmiguel.cl</span>) and a Spanish vocational college
+(<span class="mono">politecnicotafalla.educacion.navarra.es</span>). Several were discovered through
+search rather than through lineage, which suggests SEO placement on compromised hosts as a
+deliberate acquisition channel.</p>
+
+<h3>6.4 Data quality</h3>
+<table>
+<caption>Table 8. Data-quality observations on the source export.</caption>
+<thead><tr><th>Observation</th><th class="num">Records</th><th>Effect on this report</th></tr></thead>
+<tbody>
+<tr><td>Blank <span class="mono">LLM Reasoning</span></td><td class="num">4,540</td>
+<td>No content evidence available. These can only pass Test A, on the domain string. 0 such records are in the reported set.</td></tr>
+<tr><td>URL-encoding artefacts in <span class="mono">URL</span></td><td class="num">729</td>
+<td>Percent-encoded sequences. Retained as-is; they do not produce duplicate domains in this export.</td></tr>
+<tr><td>Duplicate URLs</td><td class="num">16</td>
+<td>8 URLs appear twice. Domains are unique across all 28,258 rows, so no double-counting occurs at domain level.</td></tr>
+<tr><td>Malformed bare-TLD domains</td><td class="num">15</td>
+<td>Entries such as <span class="mono">.com</span>, <span class="mono">.ai</span>, <span class="mono">.tw</span> — a TLD with no registrable label. All are classified unreachable. Flagged, not dropped.</td></tr>
+<tr><td>Lineage cycles</td><td class="num">87</td>
+<td>Domains whose parent chain loops. Resolution stops at the cycle and the record is attributed to the domain reached; none are in the reported set.</td></tr>
+<tr><td>Chains of depth &ge;20</td><td class="num">2,497</td>
+<td>Long subdomain chains built from repeated operational labels (<span class="mono">login</span>, <span class="mono">verify</span>, <span class="mono">mobile</span>). Depth here reflects subdomain nesting, not genuine replication generations, and depth figures for the whole export should be read with that in mind.</td></tr>
+</tbody>
+</table>
+
+<h3>6.5 Observations on the reference lists</h3>
+<ul>
+<li><b>The VAT reference file is absent.</b> Section 3 sets out the consequence. This is the single
+largest gap in the deliverable.</li>
+<li><b>The blocked-site list was not supplied separately.</b> The 76-domain, 23-brand reference list
+embedded in the specification was used to scope brand attribution. Of the 28 P1 domains in that
+list, 23 appear in this export, 20 carry gambling content and
+18 pass the relevance test. The 5 absent from the export entirely
+are: <span class="mono">latam.betano.com</span>, <span class="mono">marathonbet.cl</span>, <span class="mono">micasinochileoficial.com</span>, <span class="mono">rivalo-chile.com</span>, <span class="mono">clbetfair.com</span>. Their absence is a
+gap in monitoring coverage, not evidence that they are inactive.</li>
+<li><b>Mixed granularity.</b> The reference list mixes registrable domains with subdomains
+(<span class="mono">be.betcris.com</span>, <span class="mono">blog.betway.com</span>,
+<span class="mono">chile.1xbet.com</span>). Whether these need separate listing depends on whether
+blocking operates at registrable-domain or FQDN level. That should be confirmed before submission;
+listing them unnecessarily weakens the submission.</li>
+<li><b>Non-gambling domains on a gambling list.</b> <span class="mono">aguasanjoaquin.cl</span>
+appears under Latamwin in the source table but is a water utility. It is held out of the block
+list here for the reasons in section 6.3.</li>
+</ul>
+
+<h3>6.6 Confidence</h3>
+<p>313 of the 324 reported records carry a source confidence of 95,
+2 carry 90, and 9 carry no confidence value
+at all. The confidence figure is the source system's, not this analysis's, and describes the content
+classification rather than the market attribution. Market attribution carries no confidence score
+and rests on the evidence quoted per record in Annex A.</p>
+</section>
+
+<section id="s7" class="pb">
+<h2>7. Annex A — reported URLs</h2>
+<p>All 324 URLs in the reported set, grouped by source brand and ordered by cluster size. Every
+URL counted anywhere in this report appears here.</p>
+<table>
+<caption>Table 9. Annex A — the reported set (324 URLs, 149 brands).</caption>
+<thead><tr><th>Source brand</th><th>URL</th><th>Provenance</th><th class="num">Gen.</th><th>Market</th><th class="num">Detected</th></tr></thead>
+<tbody><tr><td>Betsson</td><td class="mono">https://betsson-casinoo.it.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://betsson.be/</td><td>Manual</td><td class="num">0</td><td>Belgium</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.bet.ar/</td><td>Manual</td><td class="num">0</td><td>Argentina</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.bet.br/</td><td>Manual</td><td class="num">0</td><td>Brazil</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.co/</td><td>Manual</td><td class="num">0</td><td>Colombia</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.com.ar/</td><td>Manual</td><td class="num">0</td><td>Argentina</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.com.br/</td><td>Manual</td><td class="num">0</td><td>Brazil</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.com.py/</td><td>Manual</td><td class="num">0</td><td>Paraguay</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.dk/</td><td>Manual</td><td class="num">0</td><td>Denmark</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.ec/</td><td>Manual</td><td class="num">0</td><td>Ecuador</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.fr/</td><td>Manual</td><td class="num">0</td><td>France</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.gr/</td><td>Manual</td><td class="num">0</td><td>Greece</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.mx/</td><td>Manual</td><td class="num">0</td><td>Mexico</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson.pe/</td><td>Manual</td><td class="num">0</td><td>Peru</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson1001.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson1002.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson42.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betsson69.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betssoncasino.be/</td><td>Manual</td><td class="num">0</td><td>Belgium</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betssonchile.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://betssonchile.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betssonsports.be/</td><td>Manual</td><td class="num">0</td><td>Belgium</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://record.cba.betsson.bet.ar/_5mJ2F-uazZTfAaNzSiEI32Nd7ZgqdRLk/1/</td><td>Youtube</td><td class="num">0</td><td>Argentina</td><td class="num">2026-08-07</td></tr><tr><td>Doradobet</td><td class="mono">https://diradobet.com/</td><td>Variant</td><td class="num">1</td><td>Peru</td><td class="num">2026-09-04</td></tr><tr><td></td><td class="mono">https://doradobe.com/</td><td>Variant</td><td class="num">1</td><td>Peru</td><td class="num">2026-09-04</td></tr><tr><td></td><td class="mono">https://doradobet-app.com/bono/</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-18</td></tr><tr><td></td><td class="mono">https://doradobet-chile.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://doradobet-chile.net/codigo-promocional/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-20</td></tr><tr><td></td><td class="mono">https://doradobet.org/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-19</td></tr><tr><td></td><td class="mono">https://doradobet.pa/</td><td>Manual</td><td class="num">0</td><td>Panama</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://doradobetchile.net/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-19</td></tr><tr><td></td><td class="mono">https://doradobetchile.org/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-18</td></tr><tr><td></td><td class="mono">https://doradobetchile.top/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-19</td></tr><tr><td></td><td class="mono">https://doradobey.com/</td><td>Variant</td><td class="num">1</td><td>Peru</td><td class="num">2026-09-04</td></tr><tr><td></td><td class="mono">https://doradobrt.com/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-04</td></tr><tr><td></td><td class="mono">https://doradobwt.com/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-04</td></tr><tr><td></td><td class="mono">https://doradpbet.com/</td><td>Variant</td><td class="num">1</td><td>Peru</td><td class="num">2026-09-04</td></tr><tr><td></td><td class="mono">https://doraodbet.com/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-04</td></tr><tr><td></td><td class="mono">https://dorqdobet.com/</td><td>Variant</td><td class="num">1</td><td>Peru</td><td class="num">2026-09-12</td></tr><tr><td>1win</td><td class="mono">https://1win-casino.win/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://1win-casinoo.it.com/</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://1win-juega.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://1win.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://1win777.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://1winchile1.cl/es-cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-18</td></tr><tr><td></td><td class="mono">https://1winn-cl.cl/es-cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-17</td></tr><tr><td></td><td class="mono">https://1wins.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-04</td></tr><tr><td></td><td class="mono">https://1wins.net.ar/juegos/</td><td>Google Search</td><td class="num">0</td><td>Argentina</td><td class="num">2026-08-19</td></tr><tr><td></td><td class="mono">https://one-win.cl/</td><td>Redirect</td><td class="num">1</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://onewin.cl/</td><td>Variant</td><td class="num">2</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://winchile1.cl/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-19</td></tr><tr><td></td><td class="mono">https://www.one-win.cl/</td><td>Variant</td><td class="num">2</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>22Bet</td><td class="mono">https://22bet-casino.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://22bet-cl.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://22bet-peru.com/</td><td>Manual</td><td class="num">0</td><td>Peru</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://22bet.mobile/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://22bet22.org.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://22betchile.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://22betonline.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://22betpe.com/</td><td>Manual</td><td class="num">0</td><td>Peru</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://bet22bet-argentina.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>Betsala</td><td class="mono">https://betonwinchile.app/</td><td>Redirect</td><td class="num">2</td><td>Chile</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://betsala.app/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://betsala.bet/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://www.betsala11.com/es/casino/slots</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://m.betsala.com/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-14</td></tr><tr><td></td><td class="mono">https://m.betsala11.com/es/sports/live/event-view/Tennis</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://m.betsalavip.com/es/live-casino/home</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-10</td></tr><tr><td></td><td class="mono">https://mobile.betsala.com/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://www.betsala.com/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-12</td></tr><tr><td>Jugabet</td><td class="mono">https://argentina-jugabet.net/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://jugabet.bet/</td><td>Variant</td><td class="num">2</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-19</td></tr><tr><td></td><td class="mono">https://jugabet.cc/</td><td>Variant</td><td class="num">2</td><td>Chile</td><td class="num">2026-08-19</td></tr><tr><td></td><td class="mono">https://jugabet.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://jugabet.io/</td><td>Variant</td><td class="num">1</td><td>Argentina</td><td class="num">2026-08-23</td></tr><tr><td></td><td class="mono">https://jugabet.live/</td><td>Variant</td><td class="num">1</td><td>Argentina</td><td class="num">2026-08-18</td></tr><tr><td></td><td class="mono">https://jugabet.pro/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-10</td></tr><tr><td></td><td class="mono">https://jugabetscasino.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-20</td></tr><tr><td></td><td class="mono">https://jugabett.cl/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-14</td></tr><tr><td>1xBet</td><td class="mono">https://16bet.club/</td><td>Variant</td><td class="num">4</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-16</td></tr><tr><td></td><td class="mono">https://1xbet-pe-apuestas.com/</td><td>Manual</td><td class="num">0</td><td>Peru</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://1xbet1.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://1xbetargentina.casino/es-ar/</td><td>Google Search</td><td class="num">0</td><td>Argentina</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://a4bet.net/</td><td>Variant</td><td class="num">9</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-21</td></tr><tr><td></td><td class="mono">https://c11bet.com/</td><td>Variant</td><td class="num">9</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-21</td></tr><tr><td></td><td class="mono">https://chile.1xbet.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://colombia.1xbet.com/es?v=1</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-15</td></tr><tr><td>Betano</td><td class="mono">https://betano-casino-cl.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-24</td></tr><tr><td></td><td class="mono">https://betano1.pe/</td><td>Manual</td><td class="num">0</td><td>Peru</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betanobet-cl.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betanobet.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-24</td></tr><tr><td></td><td class="mono">https://betanochile.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-24</td></tr><tr><td></td><td class="mono">https://betanochile1.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-24</td></tr><tr><td></td><td class="mono">https://betanocl.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-24</td></tr><tr><td></td><td class="mono">https://lat-betano.com/</td><td>Manual</td><td class="num">0</td><td>Argentina</td><td class="num">2026-08-24</td></tr><tr><td>g41</td><td class="mono">https://d100.bet/</td><td>Variant</td><td class="num">13</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-07-28</td></tr><tr><td></td><td class="mono">https://d22.click/</td><td>Variant</td><td class="num">11</td><td>Mexico</td><td class="num">2026-07-27</td></tr><tr><td></td><td class="mono">https://e330.bet/</td><td>Variant</td><td class="num">10</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-07-26</td></tr><tr><td></td><td class="mono">https://e350.org/</td><td>Variant</td><td class="num">11</td><td>Mexico</td><td class="num">2026-07-27</td></tr><tr><td></td><td class="mono">https://e400.bet/</td><td>Variant</td><td class="num">11</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-07-27</td></tr><tr><td></td><td class="mono">https://r200.app/</td><td>Variant</td><td class="num">9</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-07-25</td></tr><tr><td></td><td class="mono">https://t300.app/</td><td>Variant</td><td class="num">8</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-07-24</td></tr><tr><td>mx7k</td><td class="mono">https://mx7k.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://mx7k1.com/</td><td>Variant</td><td class="num">2</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://mx7k2.com/</td><td>Variant</td><td class="num">2</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://mx7k3.com/</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://mx7k4.com/</td><td>Variant</td><td class="num">2</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://mx7k5.com/</td><td>Variant</td><td class="num">2</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://mx7k8.com/</td><td>Variant</td><td class="num">2</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>com</td><td class="mono">https://20bet.com.co/</td><td>Manual</td><td class="num">0</td><td>Colombia</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://20bet20.com.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://diariosalud.com.ec/</td><td>Google Search</td><td class="num">0</td><td>Ecuador</td><td class="num">2026-09-16</td></tr><tr><td></td><td class="mono">https://esponjaskonjac.com.ar/app/</td><td>Google Search</td><td class="num">0</td><td>Argentina</td><td class="num">2026-08-18</td></tr><tr><td></td><td class="mono">https://landing.ec/</td><td>Redirect</td><td class="num">1</td><td>Ecuador</td><td class="num">2026-09-16</td></tr><tr><td></td><td class="mono">https://tonybets.com.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td>Rushbet</td><td class="mono">https://rushbet.casino/</td><td>Variant</td><td class="num">1</td><td>Colombia</td><td class="num">2026-08-18</td></tr><tr><td></td><td class="mono">https://www.rushbet.co/?page=sportsbook</td><td>Google Search</td><td class="num">0</td><td>Colombia</td><td class="num">2026-08-15</td></tr><tr><td></td><td class="mono">https://www.rushbet.mx/</td><td>Google Search</td><td class="num">0</td><td>Mexico</td><td class="num">2026-08-15</td></tr><tr><td></td><td class="mono">https://www.rushbet.pe/?page=sportsbook</td><td>Google Search</td><td class="num">0</td><td>Peru</td><td class="num">2026-08-15</td></tr><tr><td></td><td class="mono">https://rushbetmx.onelink.me/oJcJ/2qv4wf0x</td><td>Youtube</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-15</td></tr><tr><td></td><td class="mono">https://www.rushbet.co/</td><td>Variant</td><td class="num">1</td><td>Colombia</td><td class="num">2026-08-18</td></tr><tr><td>Betcris</td><td class="mono">https://affi.betcris.mx/verificaygana_web?btag=Ueh8C3LP7tLBo2KK0MMt62Nd7ZgqdRL</td><td>Redirect</td><td class="num">1</td><td>Mexico</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://www.betcris.pe/</td><td>Google Search</td><td class="num">0</td><td>Peru</td><td class="num">2026-08-11</td></tr><tr><td></td><td class="mono">https://betnbet.mx/go/betcris</td><td>Youtube</td><td class="num">0</td><td>Mexico</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://betrcis.net/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-20</td></tr><tr><td></td><td class="mono">https://www.betcris.pe/</td><td>Variant</td><td class="num">1</td><td>Peru</td><td class="num">2026-08-12</td></tr><tr><td>betmxs</td><td class="mono">https://betmxs01.com/</td><td>Variant</td><td class="num">2</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betmxs04.com/</td><td>Variant</td><td class="num">2</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betmxs05.com/</td><td>Variant</td><td class="num">2</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betmxs1.com/</td><td>Variant</td><td class="num">3</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-24</td></tr><tr><td></td><td class="mono">https://betmxs5.com/</td><td>Variant</td><td class="num">3</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-24</td></tr><tr><td>bwin</td><td class="mono">https://www.bwin.es/es/sports</td><td>Google Search</td><td class="num">0</td><td>Spain</td><td class="num">2026-08-15</td></tr><tr><td></td><td class="mono">https://www.bwin.mx/es/sports</td><td>Google Search</td><td class="num">0</td><td>Mexico</td><td class="num">2026-09-15</td></tr><tr><td></td><td class="mono">https://promo.bwin.co/es/promo/p/sports/bono-bienvenida</td><td>Youtube</td><td class="num">0</td><td>Colombia</td><td class="num">2026-08-15</td></tr><tr><td></td><td class="mono">https://sports.bwin.es/es/sports</td><td>Youtube</td><td class="num">0</td><td>Spain</td><td class="num">2026-08-16</td></tr><tr><td></td><td class="mono">https://www.vwin.cl/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-18</td></tr><tr><td>epicbet</td><td class="mono">https://epicbet.io/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://epicbet.live/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://epicbet.online/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://epicbet.world/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://www.epicbet.online/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-09-24</td></tr><tr><td>Estelarbet</td><td class="mono">https://estelar-bet.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://estelar.bet/</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-04</td></tr><tr><td></td><td class="mono">https://estelarbet.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-04</td></tr><tr><td></td><td class="mono">https://estelarbetpromociones.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>Rivalo</td><td class="mono">https://rivalo-chile-apuestas.com/deposito/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-20</td></tr><tr><td></td><td class="mono">https://rivalo-cl.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-15</td></tr><tr><td></td><td class="mono">https://rivalocasino.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-15</td></tr><tr><td></td><td class="mono">https://rivaloguides.org/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-18</td></tr><tr><td>tonybet</td><td class="mono">https://tonybet.cloud/</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://tonybet.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://tonybet.net/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://www.tonybet.cl/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-09-04</td></tr><tr><td>BetWarrior</td><td class="mono">https://betwarrior.bet.ar/</td><td>Manual</td><td class="num">0</td><td>Argentina</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://betwarriorgira-cl.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-26</td></tr><tr><td></td><td class="mono">https://play.betwarrior.net/splash/</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-15</td></tr><tr><td>Coolbet</td><td class="mono">https://coolbetchile.info/</td><td>Variant</td><td class="num">1</td><td>Chile (contested: Ecuador)</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://coolbetchile.net/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://coolbetchile.top/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-12</td></tr><tr><td>ggpartners</td><td class="mono">https://click.ggpartners.com/?serial=4732&amp;creative_id=88&amp;anid=</td><td>Youtube</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://promo-es.ggpoker.com/biggest-names-free-play-es/?qtag=a2277_t4732_c88Q</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://promo-latam.ggpoker.com/biggest-names-free-play-es/?qtag=a2277_t4732_c</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td>Juega en Linea</td><td class="mono">https://juegaenlineachile.bet/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://juegaenlineachile.net/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://juegaenlineachile.org/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-12</td></tr><tr><td>Latamwin</td><td class="mono">https://latamwin-cl.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://latamwin-cl.net/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-18</td></tr><tr><td></td><td class="mono">https://latamwinonline.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-04</td></tr><tr><td>LeoVegas</td><td class="mono">https://leovegas-chile.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://leovegas-chile.com/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://leovegas.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td>Mi Casino</td><td class="mono">https://chile.micasino-chile-oficial.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-16</td></tr><tr><td></td><td class="mono">https://micasinocl.com/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://micasinoscl.com/faq</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-11</td></tr><tr><td>novibet</td><td class="mono">https://cl.novibet.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://promo.novibet.mx/apuestas-deportivas/cruz250/?btag=2002446_8804610786&amp;</td><td>Redirect</td><td class="num">1</td><td>Mexico</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://rt.novibet.partners/o/T3VO4R?lpage=qCU90V&amp;site_id=100802</td><td>Youtube</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td>pokerenchile</td><td class="mono">https://pokerenchile.casino/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-09-14</td></tr><tr><td></td><td class="mono">https://pokerenchile.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://pokerenchile.online/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-18</td></tr><tr><td>RojaBet</td><td class="mono">https://blog.rojabet.com/</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td></td><td class="mono">https://rojabet.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://rojabet.club/</td><td>Variant</td><td class="num">1</td><td>Peru</td><td class="num">2026-09-04</td></tr><tr><td>winmxn</td><td class="mono">https://winmxn.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://winmxn1.com/</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://www.winmxn.com/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>1-win</td><td class="mono">https://1-win.poker/cl/</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-19</td></tr><tr><td></td><td class="mono">https://www.1-win.poker/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-20</td></tr><tr><td>b777</td><td class="mono">https://m99.click/</td><td>Variant</td><td class="num">21</td><td>Mexico</td><td class="num">2026-08-05</td></tr><tr><td></td><td class="mono">https://vk88.cl/</td><td>Redirect</td><td class="num">10</td><td>Chile</td><td class="num">2026-07-23</td></tr><tr><td>Bet365</td><td class="mono">https://bet365-app.bet/</td><td>Manual</td><td class="num">0</td><td>Argentina</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://bet365-casino.bet/</td><td>Manual</td><td class="num">0</td><td>Argentina</td><td class="num">2026-09-23</td></tr><tr><td>bet7k</td><td class="mono">https://bet7.cl/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-10</td></tr><tr><td></td><td class="mono">https://bet7k.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>Betway</td><td class="mono">https://betway.mx/</td><td>Manual</td><td class="num">0</td><td>Mexico</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://blog.betway.com/es/curiosidades/betway-chile-promociones-casino-apuest</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>ganamexico</td><td class="mono">https://ganamexico.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://ganamexico5.com/</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>hoywin</td><td class="mono">https://hoywin.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://hoywin4.com/</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>ik01u3</td><td class="mono">https://chillbet.bet/</td><td>Variant</td><td class="num">2</td><td>Mexico</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://chillbet.co/</td><td>Variant</td><td class="num">2</td><td>Colombia</td><td class="num">2026-08-12</td></tr><tr><td>juegaconelking</td><td class="mono">https://www.juegaconelking.cl/es/landing</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-07</td></tr><tr><td></td><td class="mono">https://www.juegaconelking.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-04</td></tr><tr><td>juegalo</td><td class="mono">https://juegalo.casino/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-26</td></tr><tr><td></td><td class="mono">https://juegalo.co/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-26</td></tr><tr><td>juegalo-chile</td><td class="mono">https://juegalo-chile-vip.com/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-19</td></tr><tr><td></td><td class="mono">https://juegalo-chile.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-18</td></tr><tr><td>Parimatch</td><td class="mono">https://parimatch.com/es/</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-12</td></tr><tr><td></td><td class="mono">https://parimatchde.net/es/</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-12</td></tr><tr><td>reyspin</td><td class="mono">https://reyspin.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://reyspin.one/</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>rixbono</td><td class="mono">https://rixbono.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://rixbono01.com/</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>tony-bet</td><td class="mono">https://tony-bet.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://tony-bet.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td>tonybets</td><td class="mono">https://tonybets.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://tonybets.pe/</td><td>Manual</td><td class="num">0</td><td>Peru</td><td class="num">2026-09-23</td></tr><tr><td>topbono</td><td class="mono">https://topbono.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td></td><td class="mono">https://topbono.top/</td><td>Redirect</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>1red-bet-ar</td><td class="mono">https://1red-bet-ar.com/</td><td>Manual</td><td class="num">0</td><td>Argentina</td><td class="num">2026-09-23</td></tr><tr><td>1x-bet</td><td class="mono">https://1x-bet.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>1xbit365</td><td class="mono">https://1xbit365.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>20-bet</td><td class="mono">https://20-bet.co/</td><td>Manual</td><td class="num">0</td><td>Colombia</td><td class="num">2026-09-23</td></tr><tr><td>20bet</td><td class="mono">https://20bet.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>20bet-20bet</td><td class="mono">https://20bet-20bet.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td>20bet-co</td><td class="mono">https://20bet-co.com/</td><td>Manual</td><td class="num">0</td><td>Colombia</td><td class="num">2026-09-23</td></tr><tr><td>20bet-esp</td><td class="mono">https://20bet-esp.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td>20bet20</td><td class="mono">https://20bet20.pe/</td><td>Manual</td><td class="num">0</td><td>Peru</td><td class="num">2026-09-23</td></tr><tr><td>20betappspain</td><td class="mono">https://20betappspain.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>20betes</td><td class="mono">https://20betes.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td>20betmexico</td><td class="mono">https://20betmexico.mx/</td><td>Manual</td><td class="num">0</td><td>Mexico</td><td class="num">2026-09-23</td></tr><tr><td>20bets</td><td class="mono">https://20bets.co/</td><td>Manual</td><td class="num">0</td><td>Colombia</td><td class="num">2026-09-23</td></tr><tr><td>22-bit</td><td class="mono">https://22-bit.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td>22bitespana</td><td class="mono">https://22bitespana.com/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td>418services</td><td class="mono">https://www.418services.com/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-12</td></tr><tr><td>777loco</td><td class="mono">https://777loco.mx/</td><td>Manual</td><td class="num">0</td><td>Mexico</td><td class="num">2026-09-23</td></tr><tr><td>agenciasietepulso</td><td class="mono">https://agenciasietepulso.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>aguasanjoaquin</td><td class="mono">https://aguasanjoaquin.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>alsaciaexpress</td><td class="mono">https://alsaciaexpress.cl/bonus/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-21</td></tr><tr><td>altafichahub</td><td class="mono">https://altafichahub.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>aposta</td><td class="mono">https://aposta.la/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>apuesta-20bet</td><td class="mono">https://apuesta-20bet.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>apuestas-royal-chile</td><td class="mono">https://apuestas-royal-chile.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>apuestasperu678</td><td class="mono">https://apuestasperu678.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>apuestasroyal</td><td class="mono">https://apuestaroyal.com/</td><td>Variant</td><td class="num">1</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-18</td></tr><tr><td>arg-fortunazo</td><td class="mono">https://arg-fortunazo.com/</td><td>Manual</td><td class="num">0</td><td>Argentina</td><td class="num">2026-09-23</td></tr><tr><td>argentina20bet</td><td class="mono">https://argentina20bet.com/</td><td>Manual</td><td class="num">0</td><td>Argentina</td><td class="num">2026-09-23</td></tr><tr><td>bet</td><td class="mono">https://www.jugadon.bet.ar/</td><td>Youtube</td><td class="num">0</td><td>Argentina</td><td class="num">2026-09-02</td></tr><tr><td>bet-22</td><td class="mono">https://bet-22.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>beta-nos</td><td class="mono">https://beta-nos.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-24</td></tr><tr><td>Betfun</td><td class="mono">https://betfun.bet.ar/</td><td>Google Search</td><td class="num">0</td><td>Argentina</td><td class="num">2026-08-07</td></tr><tr><td>betivibet</td><td class="mono">https://betivibet.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>betm3</td><td class="mono">https://betm3.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>BetPlay</td><td class="mono">https://betplay-chile.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-15</td></tr><tr><td>blue-pre</td><td class="mono">https://blue-pre.top/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>Bodog</td><td class="mono">https://bodog-cl.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-15</td></tr><tr><td>buenafortuna</td><td class="mono">https://buenafortuna.net/</td><td>Manual</td><td class="num">0</td><td>Mexico</td><td class="num">2026-09-23</td></tr><tr><td>cabalgatastomwesley</td><td class="mono">https://cabalgatastomwesley.com/</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-18</td></tr><tr><td>casasdeapuestasdeportivas</td><td class="mono">https://casasdeapuestasdeportivas.cl/casas-de-apuestas/betsala</td><td>Youtube</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>casino-fortunazo</td><td class="mono">https://casino-fortunazo.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>casinochilenoonline</td><td class="mono">https://www.casinochilenoonline.cl/kto-casino.html</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-15</td></tr><tr><td>casinoonlinechile</td><td class="mono">https://www.casinoonlinechile.com/roobet/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-11</td></tr><tr><td>casinoonlinechilecuentarut</td><td class="mono">https://casinoonlinechilecuentarut.com/casino-online-chile-cuenta-rut/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-15</td></tr><tr><td>casinosenlineachile</td><td class="mono">https://www.casinosenlineachile.cl/leovegas/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-11</td></tr><tr><td>chile20betting</td><td class="mono">https://chile20betting.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>chileblazeplay</td><td class="mono">https://chileblazeplay.com/login</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-16</td></tr><tr><td>chilecasino</td><td class="mono">https://www.chilecasino.com/poker</td><td>Youtube</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>chilecasinoguide</td><td class="mono">https://chilecasinoguide.com/metodos-de-pago/mach/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-16</td></tr><tr><td>claritasturismo</td><td class="mono">https://www.claritasturismo.com/winchile-casino-codigo-promocional-y-bonus-cod</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td>codigopoker</td><td class="mono">https://codigopoker.com/category/torneos-chile</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>colegiorepublicadeguatemala</td><td class="mono">https://colegiorepublicadeguatemala.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>consultamedicasanmiguel</td><td class="mono">https://www.consultamedicasanmiguel.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-18</td></tr><tr><td>contigojuegoyaprendo</td><td class="mono">https://contigojuegoyaprendo.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-12</td></tr><tr><td>dialogue</td><td class="mono">https://dialogue.cl/cl1/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-15</td></tr><tr><td>dorado-bet</td><td class="mono">https://dorado-bet.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-12</td></tr><tr><td>encuentroaci</td><td class="mono">https://encuentroaci.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-19</td></tr><tr><td>epicbetcl</td><td class="mono">https://epicbetcl.cl/app/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-12</td></tr><tr><td>evamedsalud</td><td class="mono">https://evamedsalud.cl/cl1/</td><td>Google Search</td><td class="num">0</td><td>Chile (contested: Brazil)</td><td class="num">2026-09-14</td></tr><tr><td>fortunazo</td><td class="mono">https://fortunazoplay.cl/</td><td>Variant</td><td class="num">1</td><td>Chile</td><td class="num">2026-08-23</td></tr><tr><td>fortunazocasino</td><td class="mono">https://fortunazocasino.net/retiro</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-16</td></tr><tr><td>ganajackpotzone</td><td class="mono">https://ganajackpotzone.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-04</td></tr><tr><td>gansportsbook</td><td class="mono">https://gansportsbook.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>gipsyteam</td><td class="mono">https://www.gipsyteam.es</td><td>Youtube</td><td class="num">0</td><td>Spain</td><td class="num">2026-08-07</td></tr><tr><td>it</td><td class="mono">https://steke-casino.it.com/</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-23</td></tr><tr><td>ivibet-argentina</td><td class="mono">https://ivibet-argentina.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>juego-bet</td><td class="mono">https://juego-bet.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>juegosdecasinoonline</td><td class="mono">http://juegosdecasinoonline.cl/bodog/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-16</td></tr><tr><td>KTO</td><td class="mono">https://ktocasino.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-15</td></tr><tr><td>laboratorioclinicoinmunovida</td><td class="mono">https://laboratorioclinicoinmunovida.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-12</td></tr><tr><td>mayapalace</td><td class="mono">https://mayapalace.mx/</td><td>Manual</td><td class="num">0</td><td>Mexico</td><td class="num">2026-09-23</td></tr><tr><td>Melbet</td><td class="mono">https://ar.melbet.com/es</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-14</td></tr><tr><td>mi-casino</td><td class="mono">https://cl.mi-casino.app/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>mi-casinos</td><td class="mono">https://mi-casinos.cl/registrarse/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-02</td></tr><tr><td>muhu</td><td class="mono">https://muhu.cl/slottica-casino</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-09</td></tr><tr><td>mundomadera</td><td class="mono">https://mundomadera.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>n9</td><td class="mono">https://n9.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-07-16</td></tr><tr><td>navarra</td><td class="mono">https://politecnicotafalla.educacion.navarra.es/web/pgs/?betsala-chile-como-ju</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>onlinecasino</td><td class="mono">https://onlinecasino.cl/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-07-16</td></tr><tr><td>playepic</td><td class="mono">https://playepic.io/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>pokerchile</td><td class="mono">https://www.pokerchile.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>rab0na-2417</td><td class="mono">https://rab0na-2417.com/es</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-04</td></tr><tr><td>respinbet-cl</td><td class="mono">https://respinbet-cl.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-07</td></tr><tr><td>respincasinochile</td><td class="mono">https://respincasinochile.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-18</td></tr><tr><td>riva-los</td><td class="mono">https://riva-los.com/es-cl/</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-18</td></tr><tr><td>roobet</td><td class="mono">https://help.roobet.com/es/collections/1470171-retiros</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td>sgllsoftware</td><td class="mono">https://sgllsoftware.com/</td><td>Manual</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-09-23</td></tr><tr><td>slottica-chili</td><td class="mono">https://slottica-chili.com/mirror</td><td>Google Search</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td>Sportingbet</td><td class="mono">https://sportingbet-cl.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-15</td></tr><tr><td>sportium</td><td class="mono">https://www.sportium.es/apuestas/inplay/events/17123735</td><td>Youtube</td><td class="num">0</td><td>Spain</td><td class="num">2026-08-09</td></tr><tr><td>teammexico</td><td class="mono">https://www.teammexico.mx/poker?referralCode=LAPECERA&amp;modal=registration</td><td>Youtube</td><td class="num">0</td><td>Mexico</td><td class="num">2026-08-07</td></tr><tr><td>thelotter</td><td class="mono">https://www.thelotter.mx/</td><td>Google Search</td><td class="num">0</td><td>Mexico</td><td class="num">2026-08-07</td></tr><tr><td>tikitaka-cl</td><td class="mono">https://tikitaka-cl.com/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-10</td></tr><tr><td>tonybet-cl</td><td class="mono">https://tonybet-cl.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>tonybetchile</td><td class="mono">https://tonybetchile.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>tonybett</td><td class="mono">https://tonybett.es/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr><tr><td>tonyelpony-cl</td><td class="mono">https://tonyelpony-cl.com/</td><td>Manual</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-23</td></tr><tr><td>tortassantaana</td><td class="mono">https://tortassantaana.cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-09-20</td></tr><tr><td>Winchile</td><td class="mono">https://winchilecasinos.cl/es-cl/</td><td>Google Search</td><td class="num">0</td><td>Chile</td><td class="num">2026-08-10</td></tr><tr><td>Wplay</td><td class="mono">https://wplay.co/</td><td>Manual</td><td class="num">0</td><td>Colombia</td><td class="num">2026-09-23</td></tr><tr><td>wptglobal</td><td class="mono">https://landing.wptglobal.com/es/poker-casino-match-deposit-bonus-lp-es?btag=a</td><td>Youtube</td><td class="num">0</td><td>Chile (Spanish content, market not specified)</td><td class="num">2026-08-07</td></tr><tr><td>xn--tonybetespaa-khb</td><td class="mono">https://xn--tonybetespaa-khb.com/</td><td>Manual</td><td class="num">0</td><td>Spain</td><td class="num">2026-09-23</td></tr></tbody>
+</table>
+</section>
+
+<section id="s8" class="pb">
+<h2>8. Annex B — excluded records</h2>
+<p>13,044 gambling records were excluded from the reported set. The grounds are given below
+so the judgement can be audited rather than assumed. Records excluded on a competing locale carry
+the specific signal detected.</p>
+<table>
+<caption>Table 10. Grounds for exclusion, by count.</caption>
+<thead><tr><th>Grounds</th><th class="num">Records</th></tr></thead>
+<tbody><tr><td>No market signal</td><td class="num">6,174</td></tr><tr><td>script:Vietnamese diacritics</td><td class="num">3,337</td></tr><tr><td>script:Bengali</td><td class="num">637</td></tr><tr><td>currency:RM</td><td class="num">477</td></tr><tr><td>locale:Bangladesh/India</td><td class="num">473</td></tr><tr><td>locale:Portuguese</td><td class="num">420</td></tr><tr><td>script:Chinese</td><td class="num">362</td></tr><tr><td>locale:Indonesian</td><td class="num">320</td></tr><tr><td>script:Thai</td><td class="num">224</td></tr><tr><td>Portuguese/contested</td><td class="num">182</td></tr><tr><td>locale:Myanmar</td><td class="num">156</td></tr><tr><td>locale:Filipino</td><td class="num">59</td></tr><tr><td>script:Cyrillic</td><td class="num">46</td></tr><tr><td>locale:Vietnamese</td><td class="num">43</td></tr><tr><td>currency:TRY</td><td class="num">37</td></tr><tr><td>currency:BRL</td><td class="num">20</td></tr><tr><td>locale:German</td><td class="num">20</td></tr><tr><td>currency:VND</td><td class="num">14</td></tr><tr><td>script:Arabic/Persian</td><td class="num">9</td></tr><tr><td>script:Devanagari</td><td class="num">9</td></tr><tr><td>locale:Turkish</td><td class="num">6</td></tr><tr><td>locale:French</td><td class="num">5</td></tr><tr><td>currency:IDR</td><td class="num">4</td></tr><tr><td>currency:₫</td><td class="num">2</td></tr></tbody>
+</table>
+
+<table>
+<caption>Table 11. Sample excluded records, one per major exclusion ground.</caption>
+<thead><tr><th>Domain</th><th>Exclusion signal</th></tr></thead>
+<tbody><tr><td class="mono">3bet11.com</td><td>script:Vietnamese diacritics</td></tr><tr><td class="mono">eg777.bet</td><td>script:Bengali</td></tr><tr><td class="mono">sy7.bet</td><td>currency:RM</td></tr><tr><td class="mono">1555bet.cc</td><td>locale:Bangladesh/India (ipl)</td></tr><tr><td class="mono">allstartrilogy.com</td><td>script:Chinese</td></tr><tr><td class="mono">hotel-antonie.com</td><td>locale:Indonesian (daftar)</td></tr><tr><td class="mono">www.1qbet.fun</td><td>locale:Myanmar (kbzpay)</td></tr><tr><td class="mono">24sbet.app</td><td>script:Thai</td></tr></tbody>
+</table>
+
+<p>The dominant exclusion grounds are South-East and South Asian: Vietnamese diacritics, Bengali
+script, Malaysian ringgit, Chinese script and Indonesian vocabulary account for the majority of
+locale-based exclusions. The largest single group,
+6,356 records, carried no market signal at all — typically because the captured
+reasoning was blank, described a parked or errored page, or described gambling content without any
+language or currency marker.</p>
+
+<div class="note">
+<h3>Loose ends</h3>
+<ul>
+<li>The specification calls for two CSV deliverables alongside the report. This job requested a
+single asset, <span class="mono">report.html</span>, and only that asset has been produced. The
+per-URL data underlying Annex A is present in this report in full.</li>
+<li>The specification's output section describes a PDF with a SICPA-branded cover. The requested
+output format for this job is HTML; the brand palette, typography and cover treatment have been
+applied to an A4 page geometry so the document prints to the intended layout.</li>
+<li>A fourth relevance signal in the specification — captured content citing the market's capital —
+was implemented as a Santiago string match. It contributed no records that were not already
+qualified by another Test A signal.</li>
+<li>15 malformed bare-TLD records and 87 lineage cycles are retained in the
+counts and reported in section 6.4 rather than dropped.</li>
+</ul>
+</div>
+</section>
+
+</article>
+</body>
+</html>
