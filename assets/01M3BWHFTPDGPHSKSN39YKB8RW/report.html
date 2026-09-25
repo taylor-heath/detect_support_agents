@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SICPADetect — Thailand Summary Tables</title>
+<style>
+@page { size: A4 portrait; margin: 20mm; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin:0; padding:0; font-family: Arial, Helvetica, sans-serif; color:#1b2430; background:#fff;
+  font-size:10.5pt; line-height:1.5; }
+img, table, pre { max-width:100%; }
+h1,h2,h3 { color:#16254C; line-height:1.25; }
+h1 { font-size:19pt; margin:0 0 4px; }
+h2 { font-size:13.5pt; margin:24px 0 2px; }
+h3 { font-size:11pt; margin:16px 0 4px; }
+p { margin:0 0 9px; max-width:74ch; }
+header.head { border-bottom:3px solid #16254C; padding-bottom:10px; margin-bottom:16px; }
+header.head .meta { font-size:9pt; color:#5c6b7f; }
+.denom { font-size:9pt; color:#5c6b7f; margin:0 0 8px; font-style:italic; }
+table.grid { width:100%; border-collapse:collapse; margin:6px 0 10px; font-size:9.5pt; }
+table.grid th { background:#16254C; color:#fff; text-align:left; padding:5px 8px; font-weight:700; }
+table.grid th.r, td.r { text-align:right; }
+table.grid td { padding:4px 8px; border-bottom:1px solid #e4e8ef; vertical-align:top; }
+table.grid tbody tr:nth-child(even) { background:#f7f9fc; }
+table.grid tr.tot td { border-top:2px solid #16254C; border-bottom:none; background:#eef2f8; }
+td.sm { font-size:8.5pt; color:#31414f; }
+.note { border-left:5px solid #0087C8; background:#eef7fc; padding:9px 13px; margin:12px 0; font-size:9.5pt; }
+.note p:last-child { margin-bottom:0; }
+.sub { font-size:9pt; color:#46586d; margin:2px 0 12px; }
+ul.b { margin:6px 0 12px; padding-left:20px; } ul.b li { margin-bottom:4px; }
+nav.toc { background:#f2f5f9; padding:9px 14px; margin:0 0 16px; font-size:9.5pt; }
+nav.toc ol { margin:0; padding-left:20px; } nav.toc a { color:#16254C; }
+table.grid thead { display:table-header-group; } table.grid tr { break-inside:avoid; }
+h2,h3 { break-after:avoid; }
+footer { margin-top:20px; border-top:1px solid #d5dce6; padding-top:8px; font-size:8.5pt; color:#5c6b7f; }
+@media (prefers-color-scheme: dark) {
+  body { background:#0e141c; color:#e7edf5; } h1,h2,h3 { color:#8fb6e8; }
+  table.grid td { border-color:#27344a; } table.grid tbody tr:nth-child(even) { background:#151e2a; }
+  table.grid tr.tot td { background:#1b2738; border-top-color:#8fb6e8; }
+  nav.toc { background:#151e2a; } nav.toc a { color:#8fb6e8; }
+  .note { background:#12202b; } td.sm { color:#c4d0de; } .denom, .sub { color:#a9b7c7; }
+}
+@media screen and (max-width:640px) { body { padding:0 16px; } table.grid { font-size:8.5pt; } }
+</style>
+</head>
+<body>
+<article>
+<header class="head">
+<h1>SICPADetect — Thailand Summary Tables</h1>
+<p class="meta">Export: <code>thailand_25_09_26.csv</code> · 23,943 records read · description field:
+<code>LLM Reasoning</code> · issued 25 September 2026</p>
+</header>
+
+<nav class="toc"><ol>
+<li><a href="#t1">Table 1 — Records by status</a></li>
+<li><a href="#t2">Table 2 — Records by status, .th domains only</a></li>
+<li><a href="#t3">Table 3 — Records by status, Thai-target-audience indicators</a></li>
+<li><a href="#t4">Table 4 — Thailand relevance overall</a></li>
+<li><a href="#method">Method note and data issues</a></li>
+</ol></nav>
+
+<section id="t1">
+<h2>Table 1 — Records by status</h2>
+<p class="denom">Denominator: all 23,943 records in the export.</p>
+<table class="grid"><thead><tr><th>Status</th><th class=r>Records</th><th class=r>% of total</th></tr></thead><tbody><tr><td>Licensed gambling</td><td class="r">0</td><td class="r">0.0%</td></tr><tr><td>Illegal gambling</td><td class="r">4,606</td><td class="r">19.2%</td></tr><tr><td>Not gambling</td><td class="r">7,838</td><td class="r">32.7%</td></tr><tr><td>Unreachable</td><td class="r">0</td><td class="r">0.0%</td></tr><tr><td>Review needed</td><td class="r">11,499</td><td class="r">48.0%</td></tr><tr><td>Unknown / blank</td><td class="r">0</td><td class="r">0.0%</td></tr><tr class="tot"><td><strong>TOTAL</strong></td><td class="r"><strong>23,943</strong></td><td class="r"><strong>100.0%</strong></td></tr></tbody></table>
+</section>
+
+<section id="t2">
+<h2>Table 2 — Records by status, .th domains only</h2>
+<p class="denom">Denominator: the .th subset (102 records); the last column is the share of all
+23,943 records. A record counts as .th when its registrable domain ends in <code>.th</code>, including
+<code>.co.th</code>, <code>.go.th</code>, <code>.ac.th</code>, <code>.or.th</code>, <code>.in.th</code>,
+<code>.net.th</code> and <code>.mi.th</code>.</p>
+<table class="grid"><thead><tr><th>Status</th><th class=r>Records</th><th class=r>% of .th records</th><th class=r>% of all records</th></tr></thead><tbody><tr><td>Licensed gambling</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr><td>Illegal gambling</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr><td>Not gambling</td><td class="r">94</td><td class="r">92.2%</td><td class="r">0.4%</td></tr><tr><td>Unreachable</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr><td>Review needed</td><td class="r">8</td><td class="r">7.8%</td><td class="r">0.0%</td></tr><tr><td>Unknown / blank</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr class="tot"><td><strong>TOTAL</strong></td><td class="r"><strong>102</strong></td><td class="r"><strong>100.0%</strong></td><td class="r"><strong>0.4%</strong></td></tr></tbody></table>
+<p class="sub">Breakdown of the .th subset by second level domain: <code>co.th</code> 39, <code>go.th</code> 28, <code>ac.th</code> 14, <code>or.th</code> 13, <code>in.th</code> 6, <code>.th</code> 2.</p>
+</section>
+
+<section id="t3">
+<h2>Table 3 — Records by status, Thai-target-audience indicators</h2>
+<p class="denom">Denominator: the Thai-indicator subset (543 records carrying at least one
+indicator); the last column is the share of all 23,943 records. The test is applied to the description field
+only, not the URL.</p>
+<table class="grid"><thead><tr><th>Status</th><th class=r>Records</th><th class=r>% of Thai-indicator records</th><th class=r>% of all records</th></tr></thead><tbody><tr><td>Licensed gambling</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr><td>Illegal gambling</td><td class="r">370</td><td class="r">68.1%</td><td class="r">1.5%</td></tr><tr><td>Not gambling</td><td class="r">98</td><td class="r">18.0%</td><td class="r">0.4%</td></tr><tr><td>Unreachable</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr><td>Review needed</td><td class="r">75</td><td class="r">13.8%</td><td class="r">0.3%</td></tr><tr><td>Unknown / blank</td><td class="r">0</td><td class="r">0.0%</td><td class="r">0.0%</td></tr><tr class="tot"><td><strong>TOTAL</strong></td><td class="r"><strong>543</strong></td><td class="r"><strong>100.0%</strong></td><td class="r"><strong>2.3%</strong></td></tr></tbody></table>
+<h3>Which indicator triggered each match</h3>
+<p class="denom">Grouped by indicator type. A record can carry more than one indicator, so the counts sum to
+more than 543.</p>
+<table class="grid"><thead><tr><th>Indicator type</th><th class="r">Records</th><th>Most frequent matched strings</th></tr></thead><tbody>
+<tr><td>Thai script</td><td class="r">365</td><td class="sm">«สมัครสมาชิก» ×80, «สลากรางวัลพิเศ» ×23, «คาสิโนออนไลน์» ×15, «การพนันออนไลน์» ×11, «บาท» ×8</td></tr><tr><td>Currency reference</td><td class="r">67</td><td class="sm">«baht» ×23, «THB» ×18, «บาท» ×15, «Baht» ×8, «฿» ×3</td></tr><tr><td>Thai payment or banking reference</td><td class="r">57</td><td class="sm">«PromptPay» ×46, «TrueMoney» ×7, «SCB» ×1, «true money» ×1, «KBank» ×1</td></tr><tr><td>Thai contact convention</td><td class="r">90</td><td class="sm">«ไลน์» ×88, «Line Official» ×1, «LINE app» ×1</td></tr><tr><td>Explicit reference to Thailand</td><td class="r">183</td><td class="sm">«Thai» ×158, «Thailand» ×19, «Bangkok» ×3, «thailand» ×1, «THAILAND» ×1</td></tr><tr><td>Thai-market term in Latin script</td><td class="r">33</td><td class="sm">«PG Slot» ×17, «PG SLOT» ×3, «Huay» ×2, «slotxo» ×2, «HUAY» ×2</td></tr>
+</tbody></table>
+</section>
+
+<section id="t4">
+<h2>Table 4 — Thailand relevance overall</h2>
+<p class="denom">Denominator: all 23,943 records.</p>
+<table class="grid"><thead><tr><th>Category</th><th class="r">Records</th><th class="r">% of total</th></tr></thead><tbody>
+<tr><td>.th domain only (no Thai indicator in description)</td><td class="r">95</td><td class="r">0.4%</td></tr><tr><td>Thai indicator only (not a .th domain)</td><td class="r">536</td><td class="r">2.2%</td></tr><tr><td>Both .th domain and Thai indicator</td><td class="r">7</td><td class="r">0.0%</td></tr>
+<tr class="tot"><td><strong>Thailand-relevant overall (any of the above)</strong></td><td class="r"><strong>638</strong></td><td class="r"><strong>2.7%</strong></td></tr>
+<tr><td>Neither</td><td class="r">23,305</td><td class="r">97.3%</td></tr>
+<tr class="tot"><td><strong>TOTAL</strong></td><td class="r"><strong>23,943</strong></td><td class="r"><strong>100.0%</strong></td></tr>
+</tbody></table>
+</section>
+
+<section id="method">
+<h2>Method note and data issues</h2>
+<p>23,943 records were read from the semicolon-delimited export; no rows were excluded and none were dropped.
+The <code>LLM Reasoning</code> column was treated as the description field, and the Table 3 test was
+applied to that column alone. Every status value in the export matched an expected value, so the
+«Unknown / blank» row is zero in every table, and 0 records could not be classified.
+Two of the five expected status values, <code>Licensed gambling</code> and <code>Unreachable</code>, do not
+occur in this export and are shown as zero rather than omitted.</p>
+<p>3,615 records (15.1%) carry a blank description. They cannot satisfy the
+Table 3 test by construction, so the Thai-indicator subset is a floor rather than a measurement.</p>
+<div class="note">
+<p><strong>Data issues found.</strong></p>
+<ul class="b">
+<li><strong>Record identifiers.</strong> The export carries no stable record ID column, so records are
+identified here by CSV line number, where <code>L2</code> is the first data row.</li>
+<li><strong>Ambiguous indicator tokens.</strong> «LINE» is a common English word, so the contact-convention
+test matches only the explicit forms <code>LINE ID</code>, <code>LINE app</code>, <code>LINE official</code>,
+<code>LINE@</code> and the Thai <code>ไลน์</code>, never the bare word. Bank acronyms are matched
+case-sensitively on a token boundary for the same reason.</li>
+<li><strong>The two tests measure different things.</strong> Only 7 records satisfy both
+the domain test and the description test, so the .th subset and the Thai-indicator subset are close to
+disjoint. A figure quoting either one alone understates Thailand relevance.</li>
+<li><strong>Physical lines versus records.</strong> The export manifest reports 23,949 rows against the 23,950
+physical lines of the file; 23,943 records parse once quoted fields carrying embedded line breaks are joined.
+The difference is a line count, not missing data.</li>
+</ul>
+</div>
+<p><strong>Settings.</strong> The prompt's defaults were applied without change, as no confirmation was
+available at run time: the Table 4 overall figure is the union of the two tests; no top level domains are
+excluded, so <code>.go.th</code>, <code>.ac.th</code> and <code>.mi.th</code> are counted; and the unit of
+count is one record per row, not one row per registrable domain.</p>
+</section>
+
+<footer><p>Produced by SICPA SA — SICPADetect®. Counts are records, not domains. Percentages are rounded to one
+decimal place and may not sum to exactly 100.0% .</p></footer>
+</article>
+</body>
+</html>
