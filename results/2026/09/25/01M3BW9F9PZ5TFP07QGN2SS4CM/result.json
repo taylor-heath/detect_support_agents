@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3BW9F9PZ5TFP07QGN2SS4CM",
+  "requestCommit": "39b6c3c17f492fd40658a49921957a52f817c9c2",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-25T09:19:24.701Z",
+  "finishedAt": "2026-09-25T09:25:51.530Z",
+  "durationMs": 386829,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 16415,
+      "sha256": "9d9a31c35c5b6fcdafc43db7cd0b59a784f428d770427543c1a85780fac5d010",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3BW9F9PZ5TFP07QGN2SS4CM/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "reportedTotal": 28258,
+    "recordsRead": 28258,
+    "recordsExcluded": 0,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "statusIllegalGambling": 13368,
+    "statusNotGambling": 4604,
+    "statusUnreachable": 495,
+    "statusReviewNeeded": 9791,
+    "statusUnknownOrBlank": 0,
+    "unrecognisedStatusValues": 0,
+    "unclassifiableRecords": 0,
+    "clRecords": 387,
+    "clGobRecords": 13,
+    "clGovRecords": 0,
+    "clCoRecords": 0,
+    "descBlank": 4540,
+    "descUnreadable": 6998,
+    "descUsable": 16720,
+    "qualifyingStrongIndicator": 277,
+    "qualifyingWithUsableDesc": 271,
+    "indicatorGroupsTriggered": 9,
+    "weakOnlySpillover": 719,
+    "axisAMatches": 387,
+    "axisBMatches": 59,
+    "axisCMatches": 277,
+    "axisDMatches": 507,
+    "chileRelevantAnyAxis": 720,
+    "noAxis": 27538,
+    "tablesRendered": 8,
+    "totalRowsPresent": 5,
+    "outputFormat": "html",
+    "htmlValidation": "passed"
+  },
+  "error": null
+}
