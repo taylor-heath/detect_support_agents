@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3BW9DD33ZD4FV0XVYX0X7HB",
+  "requestCommit": "1929667fa639ce87a0ba94b579b098b1692a2a03",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-25T09:03:58.479Z",
+  "finishedAt": "2026-09-25T09:18:57.419Z",
+  "durationMs": 898940,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 8754993,
+      "sha256": "a46cdbf780a4c5d3a676d63efa3486366d3c040a500b892bdfd64e5739999a33",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3BW9DD33ZD4FV0XVYX0X7HB/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "reportedTotal": 28258,
+    "sourceRows": 28258,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "gamblingRecords": 13368,
+    "nonGamblingRecords": 4604,
+    "unreachableRecords": 495,
+    "reviewNeededRecords": 9791,
+    "marketRelevantRecords": 358,
+    "excludedRecords": 13010,
+    "filterCostPct": 97.32,
+    "vatPaidReported": 70,
+    "vatNotPaidListedReported": 30,
+    "vatNotPaidReported": 258,
+    "vatPaidInheritedReported": 40,
+    "vatPaidAllGambling": 1214,
+    "reportedRootBrands": 218,
+    "maxGeneration": 67,
+    "lineageRecords": 18711,
+    "cycleGuardHits": 0,
+    "marketAttributionMarkets": 7,
+    "attributionContradictions": 1,
+    "parasiteCandidates": 12,
+    "blankReasoningGambling": 4042,
+    "duplicateUrlRows": 36,
+    "urlEncodedRows": 729,
+    "annexARows": 358,
+    "annexBRows": 13010,
+    "csvReportSetRows": 358,
+    "csvFullMappedRows": 13368,
+    "chartsRendered": 6,
+    "tablesRendered": 12,
+    "vatReferenceFileSupplied": false,
+    "vatReferenceSubstituted": true,
+    "blockedSiteListSupplied": false,
+    "terminologyScanForbiddenTerms": 0,
+    "annexReconciles": true,
+    "outputFormat": "html",
+    "htmlValidation": "passed"
+  },
+  "error": null
+}
