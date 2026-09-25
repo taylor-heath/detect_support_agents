@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3BW9BQB3NXGZ6ZFZV21MANK",
+  "requestCommit": "5869fc72a2dc34bade0d53f7b8e0af571c2e07d7",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-25T08:55:23.675Z",
+  "finishedAt": "2026-09-25T09:03:34.910Z",
+  "durationMs": 491235,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 88982,
+      "sha256": "e1298edac1e9916d5d0cc615da883abd50b12f77b175d62d711106c3f41df1c1",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3BW9BQB3NXGZ6ZFZV21MANK/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "reportedTotal": 28258,
+    "csvDataLines": 28258,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "rowsExcludedByUrlRule": 1,
+    "droppedReviewNeeded": 9791,
+    "droppedDuplicateUrl": 6,
+    "standardSetTotal": 18460,
+    "juego": 13361,
+    "noJuego": 4604,
+    "inaccesibles": 495,
+    "desconocidos": 0,
+    "juegoSharePct": 72.38,
+    "ivaRegistrado": 76,
+    "ivaNoRegistradoListado": 146,
+    "ivaNoRegistrado": 13139,
+    "evaluationDays": 72,
+    "earliest": "2026-07-16",
+    "latest": "2026-09-25",
+    "distinctSuffixes": 362,
+    "distinctVariantBrands": 2084,
+    "redirectDistinctSeeds": 319,
+    "juegoConRank": 604,
+    "topRankedRows": 15,
+    "top100RegistradoRows": 76,
+    "top100ListadoRows": 100,
+    "b1BrandsTracked": 29,
+    "b1BrandsWithMatches": 28,
+    "chartsRendered": 6,
+    "tablesRendered": 9,
+    "sectionsRendered": 7,
+    "outputFormat": "html",
+    "htmlValidation": "passed",
+    "pdfPagesA4": 20
+  },
+  "error": null
+}
