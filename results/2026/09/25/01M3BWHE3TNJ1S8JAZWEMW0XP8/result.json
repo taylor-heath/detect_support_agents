@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3BWHE3TNJ1S8JAZWEMW0XP8",
+  "requestCommit": "74a6fc4e9ae66660b112fb756c7253b11b662ed5",
+  "agent": {
+    "id": "report.custom",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-25T09:26:34.696Z",
+  "finishedAt": "2026-09-25T09:40:42.829Z",
+  "durationMs": 848133,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 434177,
+      "sha256": "8098074f7035a4962d4903c5969426db0213655f9d54fead85d707f0c85fb116",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3BWHE3TNJ1S8JAZWEMW0XP8/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "reportedTotal": 23949,
+    "csvRecordsParsed": 23943,
+    "attachmentHashesVerified": 3,
+    "attachmentHashMismatches": 0,
+    "encodingMojibakeRows": 0,
+    "licensedGamblingRowsNormalised": 0,
+    "droppedReviewNeeded": 11499,
+    "droppedDuplicateUrl": 9,
+    "standardSetTotal": 12435,
+    "gambling": 4597,
+    "notGambling": 7838,
+    "unreachable": 0,
+    "unknown": 0,
+    "gamblingSharePct": 36.97,
+    "lexiconKeywordsLoaded": 291,
+    "lexiconTabs": 14,
+    "distinctKeywordsMatched": 67,
+    "keywordsNeverMatched": 220,
+    "inferredSharePct": 96.95,
+    "generalSharePct": 17.38,
+    "abbrevMatchesTotal": 1597,
+    "abbrevFlagged": [
+      "VIP",
+      "BET"
+    ],
+    "distinctClusters": 63,
+    "multiUrlClusters": 32,
+    "singletonCount": 31,
+    "clustersToHalf": 2,
+    "top5SharePct": 86.84,
+    "top10SharePct": 95.87,
+    "crossSubcatClusters": 20,
+    "tldRotationClusters": 17,
+    "linkagePairs": 3,
+    "evaluationDays": 25,
+    "earliest": "2026-08-31",
+    "latest": "2026-09-24",
+    "gamblingRanked": 123,
+    "groupBQualifiedDomains": 56,
+    "groupBRowsRendered": 10,
+    "blockingEvidence": 1,
+    "blocklistFeedRows": 4597,
+    "cardsRendered": 30,
+    "chartsRendered": 8,
+    "heatMapsRendered": 3,
+    "tablesRendered": 34,
+    "outputFormat": "docx",
+    "ooxmlValidation": "passed",
+    "chartLabelInspection": "passed"
+  },
+  "error": null
+}
