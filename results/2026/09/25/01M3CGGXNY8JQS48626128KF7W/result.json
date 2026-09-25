@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3CGGXNY8JQS48626128KF7W",
+  "requestCommit": "afb6046147950b19e20b30c3e600057e79b3aecf",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-25T14:49:59.954Z",
+  "finishedAt": "2026-09-25T15:02:51.136Z",
+  "durationMs": 771182,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 105980,
+      "sha256": "fd5d4c2fd928a4c00ae68b9e5ab59696e31bb58babce9151996bd53deb9d36c8",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3CGGXNY8JQS48626128KF7W/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "reportedTotal": 28258,
+    "recordsRead": 28258,
+    "attachmentsVerified": 3,
+    "attachmentHashMismatches": 0,
+    "statusGambling": 13368,
+    "statusReviewNeeded": 9791,
+    "statusNotGambling": 4604,
+    "statusUnreachable": 495,
+    "marketRelevantReported": 324,
+    "relevantTestA": 128,
+    "relevantTestB": 196,
+    "excludedCompetingLocale": 6688,
+    "excludedNoMarketSignal": 6356,
+    "chileDirectMarker": 124,
+    "chileSpanishUnspecified": 106,
+    "attributedNeighbouringMarket": 92,
+    "marketContradictions": 2,
+    "parasiteHostedRecords": 20,
+    "distinctSourceBrands": 149,
+    "lineageCycles": 87,
+    "blankReasoning": 4540,
+    "duplicateUrlRows": 16,
+    "malformedBareTldRecords": 15,
+    "annexAUrlCount": 324,
+    "vatMappingPerformed": 0,
+    "renderedPages": 34,
+    "terminologyViolationsInRenderedOutput": 0
+  },
+  "error": null
+}
