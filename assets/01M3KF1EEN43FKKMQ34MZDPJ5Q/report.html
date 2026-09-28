@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chile Summary Tables</title>
+<meta name="description" content="Four summary tables over a SICPADetect export: records by status, .cl subset, Chile-target-audience indicators, and Chile relevance across four axes.">
+<style>
+@page { size: A4 portrait; margin: 20mm; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; color:#1b1b1b;
+  background:#fff; font-size:10.5pt; line-height:1.55; }
+main { max-width:170mm; }
+img, table, pre, svg { max-width:100%; }
+h1 { font-size:21pt; color:#16254C; margin:0 0 .25em; }
+h2 { font-size:14pt; color:#16254C; margin:1.8em 0 .2em; page-break-after:avoid; }
+h3 { font-size:10.8pt; color:#16254C; margin:1.3em 0 .3em; page-break-after:avoid; }
+p { margin:0 0 .75em; max-width:72ch; }
+ul { margin:0 0 .8em; padding-left:1.15em; max-width:72ch; }
+li { margin-bottom:.25em; }
+.lead { color:#54607a; font-size:10pt; max-width:72ch; }
+.denom { font-size:9pt; color:#54607a; margin:.1em 0 .6em; }
+.denom b { color:#1b1b1b; }
+table { width:100%; border-collapse:collapse; font-size:9pt; margin:.3em 0 1em; }
+caption { caption-side:top; text-align:left; font-size:8.6pt; color:#54607a; padding-bottom:4px; }
+th { background:#16254C; color:#fff; text-align:left; padding:5px 7px; font-size:8.5pt; }
+td { padding:4px 7px; border-bottom:1px solid #e4e8f0; vertical-align:top; }
+tr { break-inside:avoid; }
+thead { display:table-header-group; }
+tfoot td { font-weight:bold; border-top:2px solid #16254C; border-bottom:none; background:#f3f5f9; }
+.num { text-align:right; white-space:nowrap; }
+.mono { font-family:"Courier New",monospace; font-size:8.4pt; word-break:break-all; }
+.note { border-left:4px solid #0087C8; background:#f3f7fb; padding:9px 13px; margin:1em 0;
+  font-size:9.4pt; break-inside:avoid; }
+.note b { color:#16254C; }
+header.hdr { border-bottom:3px solid #16254C; padding-bottom:.6em; margin-bottom:1.2em; }
+.meta { font-size:8.8pt; color:#54607a; }
+footer { margin-top:2em; border-top:1px solid #d9dee8; padding-top:.6em; font-size:8.4pt; color:#54607a; }
+@media screen and (max-width:640px) {
+  main { max-width:100%; padding:0 16px; }
+  table { font-size:8.4pt; }
+}
+</style>
+</head>
+<body>
+<main>
+<header class="hdr">
+<h1>SICPADetect — Chile Summary Tables</h1>
+<p class="lead">Four tables over one SICPADetect export, plus a method note and the data issues
+found. Counts are of records, not domains. Percentages are rounded to one decimal place.</p>
+<p class="meta">Export: 30,151 classified records · description field: <span class="mono">LLM
+Reasoning</span> · issued 28 September 2026</p>
+</header>
+<h2>Table 1 — Records by status</h2>
+<p class="denom">Denominator: <b>all 30,151 records in the export.</b></p>
+<table><thead><tr><th>Status</th><th class="num">Records</th><th class="num">% of total</th></tr></thead>
+<tbody>
+<tr><td>Illegal gambling</td><td class="num">14,433</td><td class="num">47.9%</td></tr>
+<tr><td>Licensed gambling</td><td class="num">0</td><td class="num">0.0%</td></tr>
+<tr><td>Not gambling</td><td class="num">4,720</td><td class="num">15.7%</td></tr>
+<tr><td>Unreachable</td><td class="num">499</td><td class="num">1.7%</td></tr>
+<tr><td>Review needed</td><td class="num">10,499</td><td class="num">34.8%</td></tr>
+</tbody><tfoot><tr><td>TOTAL</td><td class="num">30,151</td><td class="num">100.0%</td></tr></tfoot></table>
+<h2>Table 2 — Records by status, .cl domains only</h2>
+<p class="denom">Denominator: <b>the 431 records whose registrable domain ends in
+<span class="mono">.cl</span></b> (including <span class="mono">.gob.cl</span>,
+<span class="mono">.gov.cl</span> and <span class="mono">.co.cl</span>). The final column restates
+each count against all 30,151 records.</p>
+<table><thead><tr><th>Status</th><th class="num">Records</th><th class="num">% of .cl records</th>
+<th class="num">% of all records</th></tr></thead><tbody>
+<tr><td>Illegal gambling</td><td class="num">68</td><td class="num">15.8%</td><td class="num">0.2%</td></tr>
+<tr><td>Licensed gambling</td><td class="num">0</td><td class="num">0.0%</td><td class="num">0.0%</td></tr>
+<tr><td>Not gambling</td><td class="num">213</td><td class="num">49.4%</td><td class="num">0.7%</td></tr>
+<tr><td>Unreachable</td><td class="num">10</td><td class="num">2.3%</td><td class="num">0.0%</td></tr>
+<tr><td>Review needed</td><td class="num">140</td><td class="num">32.5%</td><td class="num">0.5%</td></tr>
+</tbody><tfoot><tr><td>TOTAL</td><td class="num">431</td><td class="num">100.0%</td><td class="num">1.4%</td></tr></tfoot></table>
+<p class="denom">State domains, reported separately and left inside the table above:
+<span class="mono">.gob.cl</span> <b>13</b> records ·
+<span class="mono">.gov.cl</span> <b>0</b> records ·
+<span class="mono">.co.cl</span> <b>0</b> records. Together they are
+3.0% of the .cl subset.</p>
+<h2>Table 3 — Records by status, Chile-target-audience indicators</h2>
+<p class="denom">Denominator: <b>the 366 records whose description carries at least one STRONG
+indicator.</b> Weak indicators alone never qualify a record. The test is applied to the description
+field only — not the URL, not the Source. Two further columns restate each count against all
+30,151 records and against the 16,202 records with a usable description.</p>
+<table><thead><tr><th>Status</th><th class="num">Records</th><th class="num">% of qualifying</th>
+<th class="num">% of all records</th><th class="num">% of usable descriptions</th></tr></thead><tbody>
+<tr><td>Illegal gambling</td><td class="num">134</td><td class="num">36.6%</td><td class="num">0.4%</td><td class="num">0.8%</td></tr>
+<tr><td>Licensed gambling</td><td class="num">0</td><td class="num">0.0%</td><td class="num">0.0%</td><td class="num">0.0%</td></tr>
+<tr><td>Not gambling</td><td class="num">172</td><td class="num">47.0%</td><td class="num">0.6%</td><td class="num">1.1%</td></tr>
+<tr><td>Unreachable</td><td class="num">0</td><td class="num">0.0%</td><td class="num">0.0%</td><td class="num">0.0%</td></tr>
+<tr><td>Review needed</td><td class="num">60</td><td class="num">16.4%</td><td class="num">0.2%</td><td class="num">0.4%</td></tr>
+</tbody><tfoot><tr><td>TOTAL</td><td class="num">366</td><td class="num">100.0%</td><td class="num">1.2%</td><td class="num">2.3%</td></tr></tfoot></table>
+<h3>Which STRONG indicator triggered each match</h3>
+<p class="denom">A record can carry more than one indicator, so the column sums to more than the
+366 qualifying records.</p>
+<table><thead><tr><th>Indicator type</th><th class="num">Records</th>
+<th class="num">% of qualifying</th></tr></thead><tbody>
+<tr><td>Explicit Chile reference</td><td class="num">211</td><td class="num">57.7%</td></tr>
+<tr><td>Chilean localisation phrasing</td><td class="num">71</td><td class="num">19.4%</td></tr>
+<tr><td>Chile-licensed or Chile-facing operators</td><td class="num">57</td><td class="num">15.6%</td></tr>
+<tr><td>Chilean currency</td><td class="num">44</td><td class="num">12.0%</td></tr>
+<tr><td>RUT</td><td class="num">21</td><td class="num">5.7%</td></tr>
+<tr><td>Chilean payment rails</td><td class="num">12</td><td class="num">3.3%</td></tr>
+<tr><td>Chilean football references</td><td class="num">5</td><td class="num">1.4%</td></tr>
+<tr><td>Chilean phone convention</td><td class="num">2</td><td class="num">0.5%</td></tr>
+<tr><td>Chilean regulator or statute</td><td class="num">1</td><td class="num">0.3%</td></tr>
+</tbody><tfoot><tr><td>TOTAL indicator hits</td><td class="num">424</td><td class="num">115.8%</td></tr></tfoot></table>
+<h3>Weak-only spillover — the regional false-positive risk</h3>
+<p class="denom">Records carrying Spanish gambling vocabulary but <b>no</b> STRONG indicator:
+<b>1,436</b>, 4.8% of all records. These establish that a site
+is Hispanophone, not that it targets Chile.</p>
+<table><thead><tr><th>Status</th><th class="num">Records</th><th class="num">% of weak-only</th>
+</tr></thead><tbody>
+<tr><td>Illegal gambling</td><td class="num">1,257</td><td class="num">87.5%</td></tr>
+<tr><td>Review needed</td><td class="num">90</td><td class="num">6.3%</td></tr>
+<tr><td>Not gambling</td><td class="num">89</td><td class="num">6.2%</td></tr>
+</tbody><tfoot><tr><td>TOTAL</td><td class="num">1,436</td><td class="num">100.0%</td></tr></tfoot></table>
+<h2>Table 4 — Chile relevance overall</h2>
+<p class="denom">Denominator: <b>all 30,151 records in the export.</b> Four independent axes —
+A: registrable domain ends in <span class="mono">.cl</span>; B: <span class="mono">chile</span>,
+<span class="mono">chi</span>, <span class="mono">cl</span> or <span class="mono">scl</span> as a
+label or token in the hostname of a non-<span class="mono">.cl</span> domain; C: at least one STRONG
+indicator in the description; D: a STRONG indicator, or a Spanish gambling term paired with Chile,
+in the Source field. A record can satisfy more than one.</p>
+<table><thead><tr><th>Category</th><th class="num">Records</th><th class="num">% of total</th>
+</tr></thead><tbody>
+<tr><td>A only</td><td class="num">106</td><td class="num">0.4%</td></tr>
+<tr><td>B only</td><td class="num">36</td><td class="num">0.1%</td></tr>
+<tr><td>C only</td><td class="num">100</td><td class="num">0.3%</td></tr>
+<tr><td>D only</td><td class="num">175</td><td class="num">0.6%</td></tr>
+<tr><td>Two or more axes</td><td class="num">411</td><td class="num">1.4%</td></tr>
+<tr><td><strong>Chile-relevant overall (any axis)</strong></td><td class="num"><strong>828</strong></td><td class="num"><strong>2.7%</strong></td></tr><tr><td>No axis</td><td class="num">29,323</td><td class="num">97.3%</td></tr></tbody><tfoot><tr><td>TOTAL</td><td class="num">30,151</td><td class="num">100.0%</td></tr></tfoot></table>
+<h3>What each axis adds on its own</h3>
+<table><thead><tr><th>Axis</th><th class="num">Records matching</th>
+<th class="num">Of which unique to this axis</th><th class="num">% of all records</th></tr></thead>
+<tbody>
+<tr><td>A. Domain</td><td class="num">431</td><td class="num">106</td><td class="num">1.4%</td></tr>
+<tr><td>B. Hostname label</td><td class="num">61</td><td class="num">36</td><td class="num">0.2%</td></tr>
+<tr><td>C. Description</td><td class="num">366</td><td class="num">100</td><td class="num">1.2%</td></tr>
+<tr><td>D. Source</td><td class="num">519</td><td class="num">175</td><td class="num">1.7%</td></tr>
+</tbody><tfoot><tr><td>TOTAL</td><td class="num">1,377</td><td class="num">417</td><td class="num">—</td></tr></tfoot></table>
+<p class="denom">The axis totals overlap, so they sum to more than the 828
+Chile-relevant records; the unique column is the part that would be lost if that test were dropped.</p>
+<h2>Method note</h2>
+<ul>
+<li><b>30,151 records read</b> from the semicolon-delimited export; 0 blank lines
+and 0 rows with an inconsistent field count. <b>No rows were excluded</b> —
+every record in the file is counted in Table 1 and Table 4.</li>
+<li><b>4,544 records have a blank description</b> (15.1%
+of the export) and <b>9,405 more carry a description saying the page could
+not be read</b> — chiefly page could not be read (7,490 records). Neither group can carry
+content evidence, which leaves <b>16,202 usable descriptions</b>, the second denominator in
+Table 3.</li>
+<li><b>The description field is <span class="mono">LLM Reasoning</span></b>. Tests A, B and C read
+the domain, the hostname and that field respectively; axis D reads <span class="mono">Source</span>.
+No other field was treated as a description.</li>
+<li><b>Every status value matched an expected value.</b> The export carries only
+<span class="mono">Illegal gambling</span>, <span class="mono">Review needed</span>,
+<span class="mono">Not gambling</span> and <span class="mono">Unreachable</span>; no
+<span class="mono">Licensed gambling</span> record appears, and no row fell into
+<span class="mono">Unknown / blank</span>. No row was left unclassified.</li>
+<li><b>Weak-only spillover: 1,436 records</b> carry Spanish gambling vocabulary with no
+STRONG indicator — 4.8% of the export, and roughly
+3× the qualifying population. Counting Spanish as a Chile signal would
+pull all of them in and fill the picture with Peruvian, Argentine, Mexican, Colombian and Spanish
+estates; that is the regional contamination risk this tiering exists to hold back.</li>
+</ul>
+
+<h3>Data issues found</h3>
+<ul>
+<li>4,544 blank descriptions, concentrated in
+Illegal gambling (4,042), Unreachable (499), Not gambling (3).
+Records with no description can qualify on a domain or Source axis, never on axis C.</li>
+<li>9,405 unreadable-page descriptions, by kind:
+Page could not be read 7,490, HTTP 4xx / 5xx 3,985, CDN / bot block 2,295, Parked or for-sale page 1,780, Timeout 235.
+A record can carry more than one kind.</li>
+<li>13 <span class="mono">.gob.cl</span> and 0 <span class="mono">.gov.cl</span>
+records sit inside the .cl subset. They are state domains and are reported separately beneath
+Table 2 so they do not distort the .cl picture silently.</li>
+<li>No unrecognised status values, and no record missing both a Domain and a URL, so no row needed a
+<span class="mono">Unknown / blank</span> line or an unclassified listing.</li>
+</ul>
+
+<div class="note"><b>Settings applied.</b> All defaults from the prompt were used and none were
+varied: Table 4 "overall" is the <b>union</b> of the four axes; <span class="mono">.gob.cl</span>
+and <span class="mono">.gov.cl</span> are <b>counted and reported separately</b>; weak indicators
+<b>never qualify a record alone</b>; the Source axis is <b>included</b> as axis D; and the unit of
+count is <b>one record per row</b>, not one row per registrable domain. Changing any of these
+changes the figures above, so they are stated rather than assumed.</div>
+
+<footer>
+<p>SICPADetect export summarised by SICPA SA. Counts are of records. Percentages are rounded to one
+decimal place and may not sum to exactly 100.0% for that reason. No count in this document is
+estimated or inferred: where a field is missing, the record is reported as such rather than
+dropped.</p>
+</footer>
+</main>
+</body>
+</html>
