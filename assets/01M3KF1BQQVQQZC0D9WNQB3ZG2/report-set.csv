@@ -1,0 +1,359 @@
+﻿vat_status;vat_operator;url;domain;record_type;parent_domain;root_domain;generation;content_class;market;market_evidence;confidence;detected
+VAT_PAID;;https://bet7.cl/;bet7.cl;Variant;bet7k.cl;bet7k.cl;1;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-10
+VAT_PAID;;https://bet7k.cl/;bet7k.cl;Manual;;bet7k.cl;0;Gambling;Chile;Domain: ccTLD .cl;;2026-09-23
+VAT_PAID;Kaizen Gaming International Limited (Betano);https://betano-casino-cl.com/;betano-casino-cl.com;Manual;;betano-casino-cl.com;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-24
+VAT_PAID;Kaizen Gaming International Limited (Betano);https://betano1.pe/;betano1.pe;Manual;;betano1.pe;0;Gambling;Peru;"Spanish content with Peru marker (""ccTLD .pe"")";95;2026-09-23
+VAT_PAID;Kaizen Gaming International Limited (Betano);https://betanobet-cl.com/;betanobet-cl.com;Manual;;betanobet-cl.com;0;Gambling;Chile;"Domain: ""cl"" marker in hostname";;2026-09-23
+VAT_PAID;Kaizen Gaming International Limited (Betano);https://betanobet.cl/;betanobet.cl;Manual;;betanobet.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-24
+VAT_PAID;Kaizen Gaming International Limited (Betano);https://betanochile.com/;betanochile.com;Manual;;betanochile.com;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-24
+VAT_PAID;Kaizen Gaming International Limited (Betano);https://betanochile1.com/;betanochile1.com;Manual;;betanochile1.com;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-24
+VAT_PAID;Kaizen Gaming International Limited (Betano);https://betanocl.com/;betanocl.com;Manual;;betanocl.com;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-24
+VAT_PAID;Betsala B.V.;https://betonwinchile.app/;betonwinchile.app;Redirect;betsala.app;betsala.com;2;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-12
+VAT_PAID;Betsala B.V.;https://betsala.app/;betsala.app;Variant;betsala.com;betsala.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-12
+VAT_PAID;Betsala B.V.;https://betsala.bet/;betsala.bet;Variant;betsala.com;betsala.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-12
+VAT_PAID;Betsala B.V.;https://betsala.com/;betsala.com;Manual;betsala.com;betsala.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-04
+VAT_PAID;Betsala B.V.;https://www.betsala.com/;betsala.com;Variant;betsala.com;betsala.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-12
+VAT_PAID;Betsala B.V.;https://m.betsala.com/;m.betsala.com;Variant;betsala.com;betsala.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-14
+VAT_PAID;Betsala B.V.;https://mobile.betsala.com/;mobile.betsala.com;Variant;betsala.com;betsala.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-12
+VAT_PAID;Betsala B.V.;https://www.betsala11.com/es/casino/slots;betsala11.com;Google Search;;betsala11.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-07
+VAT_PAID;Betsala B.V.;https://m.betsala11.com/es/sports/live/event-view/Tennis;m.betsala11.com;Google Search;;m.betsala11.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-07
+VAT_PAID;Betsala B.V.;https://m.betsalavip.com/es/live-casino/home;m.betsalavip.com;Google Search;;m.betsalavip.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-10
+VAT_PAID;Netplay Malta Limited;https://betsson1001.com/;betsson1001.com;Manual;;betsson1001.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_PAID;Betway Limited;https://blog.betway.com/es/curiosidades/betway-chile-promociones-casino-apuestas/;blog.betway.com;Google Search;;blog.betway.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-07
+VAT_PAID;1XBET;https://chile.1xbet.com/;chile.1xbet.com;Manual;;chile.1xbet.com;0;Gambling;Chile;"Domain: ""chile"" in domain";;2026-09-23
+VAT_PAID;Polar Limited;https://coolbetchile.info/;coolbetchile.info;Variant;coolbetchile.com;coolbetchile.com;1;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-12
+VAT_PAID;Polar Limited;https://coolbetchile.net/;coolbetchile.net;Variant;coolbetchile.com;coolbetchile.com;1;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-12
+VAT_PAID;Polar Limited;https://coolbetchile.top/;coolbetchile.top;Variant;coolbetchile.com;coolbetchile.com;1;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-12
+VAT_PAID;VS Services LTD.;https://diradobet.com/;diradobet.com;Variant;doradobet.com;doradobet.com;1;Gambling;Peru;"Spanish content with Peru marker (""para Perú"")";95;2026-09-04
+VAT_PAID;VS Services LTD.;https://doradobe.com/;doradobe.com;Variant;doradobet.com;doradobet.com;1;Gambling;Peru;"Spanish content with Peru marker (""peru"")";95;2026-09-04
+VAT_PAID;VS Services LTD.;https://doradobet.org/;doradobet.org;Variant;doradobet.com;doradobet.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-19
+VAT_PAID;VS Services LTD.;https://doradobey.com/;doradobey.com;Variant;doradobet.com;doradobet.com;1;Gambling;Peru;"Spanish content with Peru marker (""para Perú"")";95;2026-09-04
+VAT_PAID;VS Services LTD.;https://doradobrt.com/;doradobrt.com;Variant;doradobet.com;doradobet.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-04
+VAT_PAID;VS Services LTD.;https://doradobwt.com/;doradobwt.com;Variant;doradobet.com;doradobet.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-04
+VAT_PAID;VS Services LTD.;https://doradoet.com/;doradoet.com;Variant;doradobet.com;doradobet.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-04
+VAT_PAID;VS Services LTD.;https://doradovet.com/;doradovet.com;Variant;doradobet.com;doradobet.com;1;Gambling;Peru;"Spanish content with Peru marker (""Peru"")";95;2026-09-04
+VAT_PAID;VS Services LTD.;https://doradpbet.com/;doradpbet.com;Variant;doradobet.com;doradobet.com;1;Gambling;Peru;"Spanish content with Peru marker (""Perú"")";95;2026-09-04
+VAT_PAID;VS Services LTD.;https://doraodbet.com/;doraodbet.com;Variant;doradobet.com;doradobet.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-04
+VAT_PAID;VS Services LTD.;https://dorqdobet.com/;dorqdobet.com;Variant;doradobet.com;doradobet.com;1;Gambling;Peru;"Spanish content with Peru marker (""Perú"")";95;2026-09-12
+VAT_PAID;VS Services LTD.;https://dorsdobet.com/;dorsdobet.com;Variant;doradobet.com;doradobet.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-12
+VAT_PAID;S3 Tech N.V.;https://estelarbet.cl/;estelarbet.cl;Manual;;estelarbet.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-04
+VAT_PAID;Leontodo N.V.;https://fortunazoplay.cl/;fortunazoplay.cl;Variant;fortunazo.cl;fortunazo.cl;1;Gambling;Chile;Domain: ccTLD .cl;95;2026-08-23
+VAT_PAID;Ingus Bridge Corp;https://juegaenlineachile.bet/;juegaenlineachile.bet;Variant;juegaenlineachile.com;juegaenlineachile.com;1;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-12
+VAT_PAID;Ingus Bridge Corp;https://juegaenlineachile.net/;juegaenlineachile.net;Variant;juegaenlineachile.com;juegaenlineachile.com;1;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-12
+VAT_PAID;Ingus Bridge Corp;https://juegaenlineachile.org/;juegaenlineachile.org;Variant;juegaenlineachile.com;juegaenlineachile.com;1;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-12
+VAT_PAID;Gladia N.V.;https://jugabet.bet/;jugabet.bet;Variant;jugabet.live;jugabet.cl;2;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-19
+VAT_PAID;Gladia N.V.;https://jugabet.cc/;jugabet.cc;Variant;jugabet.live;jugabet.cl;2;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-19
+VAT_PAID;Gladia N.V.;https://jugabet.cl/;jugabet.cl;Manual;jugabet.cl;jugabet.cl;0;Gambling;Chile;Domain: ccTLD .cl;;2026-09-23
+VAT_PAID;Gladia N.V.;https://jugabet.club/;jugabet.club;Variant;jugabet.cl;jugabet.cl;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-14
+VAT_PAID;Gladia N.V.;https://jugabet.fun/;jugabet.fun;Variant;jugabet.cl;jugabet.cl;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-02
+VAT_PAID;Gladia N.V.;https://jugabet.io/;jugabet.io;Variant;jugabet.cl;jugabet.cl;1;Gambling;Argentina;"Spanish content with Argentina marker (""ARS"")";95;2026-08-23
+VAT_PAID;Gladia N.V.;https://jugabet.live/;jugabet.live;Variant;jugabet.cl;jugabet.cl;1;Gambling;Argentina;"Spanish content with Argentina marker (""ARS"")";95;2026-08-18
+VAT_PAID;Gladia N.V.;https://jugabet.pro/;jugabet.pro;Variant;jugabet.cl;jugabet.cl;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-10
+VAT_PAID;Gladia N.V.;https://jugabett.cl/;jugabett.cl;Variant;jugabet.cl;jugabet.cl;1;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-14
+VAT_PAID;Kaizen Gaming International Limited (Betano);https://lat-betano.com/;lat-betano.com;Manual;;lat-betano.com;0;Gambling;Argentina;"Spanish content with Argentina marker (""Argentina"")";95;2026-08-24
+VAT_PAID;W&C N.V.;https://latamwin-cl.cl/;latamwin-cl.cl;Google Search;;latamwin-cl.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-07
+VAT_PAID;W&C N.V.;https://latamwin-cl.net/;latamwin-cl.net;Google Search;;latamwin-cl.net;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-18
+VAT_PAID;W&C N.V.;https://latamwinonline.com/;latamwinonline.com;Manual;;latamwinonline.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-04
+VAT_PAID;Logflex MT Limited;https://cl.novibet.com/;cl.novibet.com;Manual;cl.novibet.com;cl.novibet.com;0;Gambling;Chile;"Domain: ""cl"" marker in hostname";;2026-09-23
+VAT_PAID;;https://pokerenchile.casino/;pokerenchile.casino;Variant;pokerenchile.com;pokerenchile.com;1;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-14
+VAT_PAID;;https://pokerenchile.com/;pokerenchile.com;Manual;;pokerenchile.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-23
+VAT_PAID;;https://pokerenchile.online/;pokerenchile.online;Variant;pokerenchile.com;pokerenchile.com;1;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-18
+VAT_PAID;Logflex MT Limited;https://promo.novibet.mx/apuestas-deportivas/cruz250/?btag=2002446_8804610786&utm_source=2002446_&utm_medium=affiliate&utm_campaign=DEPORTES&promocode=cruz250;promo.novibet.mx;Redirect;rt.novibet.partners;rt.novibet.partners;1;Gambling;Mexico;"Spanish content with Mexico marker (""ccTLD .mx"")";95;2026-08-07
+VAT_PAID;Logflex MT Limited;https://rt.novibet.partners/o/T3VO4R?lpage=qCU90V&site_id=100802;rt.novibet.partners;Other;;rt.novibet.partners;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-07
+VAT_NOT_PAID_LISTED;1WIN;https://1wgxwx.life/?open=register;1wgxwx.life;Redirect;1win-abc82.com;1win-abc82.com;1;Gambling;Chile;Content: +56 phone prefix;95;2026-09-23
+VAT_NOT_PAID_LISTED;1WIN;https://1win-abc82.com/;1win-abc82.com;Manual;;1win-abc82.com;0;Gambling;Chile;Content: +56 phone prefix;95;2026-09-23
+VAT_NOT_PAID_LISTED;1WIN;https://1win-casino.win/;1win-casino.win;Manual;;1win-casino.win;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID_LISTED;1WIN;https://1win-casinoo.it.com/;1win-casinoo.it.com;Google Search;;1win-casinoo.it.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-07
+VAT_NOT_PAID_LISTED;1WIN;https://1win-juega.com/;1win-juega.com;Manual;;1win-juega.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-23
+VAT_NOT_PAID_LISTED;1WIN;https://1win.cl/;1win.cl;Google Search;;1win.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-07
+VAT_NOT_PAID_LISTED;1WIN;https://1win777.cl/;1win777.cl;Manual;;1win777.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-23
+VAT_NOT_PAID_LISTED;1WIN;https://1winchile1.cl/es-cl/;1winchile1.cl;Google Search;;1winchile1.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-18
+VAT_NOT_PAID_LISTED;1WIN;https://winchile1.cl/;winchile1.cl;Variant;1winchile1.cl;1winchile1.cl;1;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-19
+VAT_NOT_PAID_LISTED;1WIN;https://1winn-cl.cl/es-cl/;1winn-cl.cl;Google Search;;1winn-cl.cl;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-17
+VAT_NOT_PAID_LISTED;1WIN;https://1wins.cl/;1wins.cl;Manual;;1wins.cl;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-04
+VAT_NOT_PAID_LISTED;1WIN;https://1wins.net.ar/juegos/;1wins.net.ar;Google Search;;1wins.net.ar;0;Gambling;Argentina;"Spanish content with Argentina marker (""ccTLD .ar"")";95;2026-08-19
+VAT_NOT_PAID_LISTED;BET365;https://bet365-app.bet/;bet365-app.bet;Manual;;bet365-app.bet;0;Gambling;Argentina;"Spanish content with Argentina marker (""ARS"")";95;2026-09-23
+VAT_NOT_PAID_LISTED;BET365;https://bet365-casino.bet/;bet365-casino.bet;Manual;;bet365-casino.bet;0;Gambling;Argentina;"Spanish content with Argentina marker (""Argentina"")";95;2026-09-23
+VAT_NOT_PAID_LISTED;BETCRIS;https://bectris.net/;bectris.net;Variant;betcris.com;betcris.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-12
+VAT_NOT_PAID_LISTED;BETCRIS;https://betrcis.net/;betrcis.net;Variant;betcris.com;betcris.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-20
+VAT_NOT_PAID_LISTED;BETCRIS;https://www.betcris.pe/;betcris.pe;Variant;betcris.pe;betcris.pe;0;Gambling;Peru;"Spanish content with Peru marker (""ccTLD .pe"")";95;2026-08-12
+VAT_NOT_PAID_LISTED;BETCRIS;https://www.betcris.pe/;betcris.pe;Google Search;betcris.pe;betcris.pe;0;Gambling;Peru;"Spanish content with Peru marker (""ccTLD .pe"")";95;2026-08-11
+VAT_NOT_PAID_LISTED;BETCRIS;https://affi.betcris.mx/verificaygana_web?btag=Ueh8C3LP7tLBo2KK0MMt62Nd7ZgqdRLk&utm_source=myaffiliates;affi.betcris.mx;Redirect;betnbet.mx;betnbet.mx;1;Gambling;Mexico;"Spanish content with Mexico marker (""MXN"")";95;2026-08-07
+VAT_NOT_PAID_LISTED;GGPOKER;https://promo-es.ggpoker.com/biggest-names-free-play-es/?qtag=a2277_t4732_c88Q20260807125255606648_s&incoming_url=;promo-es.ggpoker.com;Redirect;click.ggpartners.com;click.ggpartners.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-07
+VAT_NOT_PAID_LISTED;GGPOKER;https://promo-latam.ggpoker.com/biggest-names-free-play-es/?qtag=a2277_t4732_c88Q20260807125255606648_s&incoming_url=;promo-latam.ggpoker.com;Redirect;click.ggpartners.com;click.ggpartners.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-07
+VAT_NOT_PAID_LISTED;LEOVEGAS;https://leovegas-chile.cl/;leovegas-chile.cl;Google Search;;leovegas-chile.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-07
+VAT_NOT_PAID_LISTED;LEOVEGAS;https://leovegas-chile.com/;leovegas-chile.com;Variant;leovegas-chile.cl;leovegas-chile.cl;1;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-12
+VAT_NOT_PAID_LISTED;LEOVEGAS;https://leovegas-mx.com/;leovegas-mx.com;Google Search;;leovegas-mx.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-07
+VAT_NOT_PAID_LISTED;THELOTTER;https://www.thelotter.mx/;thelotter.mx;Google Search;;thelotter.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""MXN"")";95;2026-08-07
+VAT_NOT_PAID;;https://000winng.cc/;000winng.cc;Manual;;000winng.cc;0;Gambling;Argentina;"Spanish content with Argentina marker (""Argentina"")";95;2026-09-23
+VAT_NOT_PAID;;https://www.05xbet.org/;05xbet.org;Variant;05xbet.org;05xbet.org;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-16
+VAT_NOT_PAID;;https://05xbet.org/;05xbet.org;Variant;05xbet.org;05xbet.org;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-15
+VAT_NOT_PAID;;https://speedtester.br.com/;speedtester.br.com;Redirect;05xbet.org;05xbet.org;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-15
+VAT_NOT_PAID;;https://www.1-win.poker/;1-win.poker;Variant;1-win.poker;1-win.poker;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-20
+VAT_NOT_PAID;;https://1-win.poker/cl/;1-win.poker;Google Search;1-win.poker;1-win.poker;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-19
+VAT_NOT_PAID;;https://1-xbet-ma.com/;1-xbet-ma.com;Manual;;1-xbet-ma.com;0;Gambling;Chile;Content: Chile-facing operator;95;2026-09-23
+VAT_NOT_PAID;;https://ma1xbet.com/;ma1xbet.com;Redirect;1-xbet-ma.com;1-xbet-ma.com;1;Gambling;Chile;Content: Chile-facing operator;95;2026-09-22
+VAT_NOT_PAID;;https://20bet-24x.com/;20bet-24x.com;Redirect;20bet2.com;17bet2.com;2;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-25
+VAT_NOT_PAID;;https://20bet2.com/;20bet2.com;Variant;17bet2.com;17bet2.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-25
+VAT_NOT_PAID;;https://1red-bet-ar.com/;1red-bet-ar.com;Manual;;1red-bet-ar.com;0;Gambling;Argentina;"Spanish content with Argentina marker (""Argentina"")";95;2026-09-23
+VAT_NOT_PAID;;https://1redbetcasino.org/;1redbetcasino.org;Manual;;1redbetcasino.org;0;Gambling;Argentina;"Spanish content with Argentina marker (""Argentina"")";95;2026-09-23
+VAT_NOT_PAID;;https://1x-bet.cl/;1x-bet.cl;Manual;;1x-bet.cl;0;Gambling;Chile;Content: Chilean payment rail;95;2026-09-23
+VAT_NOT_PAID;;https://1xbet-pe-apuestas.com/;1xbet-pe-apuestas.com;Manual;;1xbet-pe-apuestas.com;0;Gambling;Peru;"Spanish content with Peru marker (""Peru"")";95;2026-09-23
+VAT_NOT_PAID;;https://1xbet1.cl/;1xbet1.cl;Google Search;;1xbet1.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-07
+VAT_NOT_PAID;;https://1xbetargentina.casino/es-ar/;1xbetargentina.casino;Google Search;;1xbetargentina.casino;0;Gambling;Argentina;"Spanish content with Argentina marker (""argentina"")";95;2026-08-07
+VAT_NOT_PAID;;https://1xbit365.com/;1xbit365.com;Manual;;1xbit365.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://20-bet.co/;20-bet.co;Manual;;20-bet.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""COLOMBIA"")";95;2026-09-23
+VAT_NOT_PAID;;https://20-bet.pe/;20-bet.pe;Manual;;20-bet.pe;0;Gambling;Peru;"Spanish content with Peru marker (""ccTLD .pe"")";95;2026-09-23
+VAT_NOT_PAID;;https://20bet-co.com/;20bet-co.com;Manual;;20bet-co.com;0;Gambling;Colombia;"Spanish content with Colombia marker (""COLOMBIA"")";95;2026-09-23
+VAT_NOT_PAID;;https://20bet.cl/;20bet.cl;Manual;;20bet.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-23
+VAT_NOT_PAID;;https://20bet.com.co/;20bet.com.co;Manual;;20bet.com.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""ccTLD .co"")";95;2026-09-23
+VAT_NOT_PAID;;https://20bet20.pe/;20bet20.pe;Manual;;20bet20.pe;0;Gambling;Peru;"Spanish content with Peru marker (""ccTLD .pe"")";95;2026-09-23
+VAT_NOT_PAID;;https://20betappspain.com/;20betappspain.com;Manual;;20betappspain.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://20betargentina.com/;20betargentina.com;Manual;;20betargentina.com;0;Gambling;Argentina;"Spanish content with Argentina marker (""argentina"")";95;2026-09-23
+VAT_NOT_PAID;;https://20betmexico.mx/;20betmexico.mx;Manual;;20betmexico.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""ccTLD .mx"")";95;2026-09-23
+VAT_NOT_PAID;;https://20bets.co/;20bets.co;Manual;;20bets.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""ccTLD .co"")";95;2026-09-23
+VAT_NOT_PAID;;https://20bets.mx/;20bets.mx;Manual;;20bets.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""ccTLD .mx"")";95;2026-09-23
+VAT_NOT_PAID;;https://22-bet.co/;22-bet.co;Manual;;22-bet.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""ccTLD .co"")";95;2026-09-23
+VAT_NOT_PAID;;https://22bet-casino.cl/;22bet-casino.cl;Manual;;22bet-casino.cl;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-23
+VAT_NOT_PAID;;https://22bet-cl.com/;22bet-cl.com;Manual;;22bet-cl.com;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-23
+VAT_NOT_PAID;;https://22bet-peru.com/;22bet-peru.com;Manual;;22bet-peru.com;0;Gambling;Peru;"Spanish content with Peru marker (""PERÚ"")";95;2026-09-23
+VAT_NOT_PAID;;https://22bet.mobile/;22bet.mobile;Manual;;22bet.mobile;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://22bet.pe/;22bet.pe;Manual;;22bet.pe;0;Gambling;Peru;"Spanish content with Peru marker (""PERÚ"")";95;2026-09-23
+VAT_NOT_PAID;;https://22betchile.com/;22betchile.com;Manual;;22betchile.com;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-09-23
+VAT_NOT_PAID;;https://22betonline.cl/;22betonline.cl;Manual;;22betonline.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-23
+VAT_NOT_PAID;;https://22betpe.com/;22betpe.com;Manual;;22betpe.com;0;Gambling;Peru;"Spanish content with Peru marker (""PEN"")";95;2026-09-23
+VAT_NOT_PAID;;https://22bett.pe/;22bett.pe;Manual;;22bett.pe;0;Gambling;Peru;"Spanish content with Peru marker (""ccTLD .pe"")";95;2026-09-23
+VAT_NOT_PAID;;https://22bitcasinoargentina.com/;22bitcasinoargentina.com;Manual;;22bitcasinoargentina.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://22bitespana.com/;22bitespana.com;Manual;;22bitespana.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://c11bet.com/;c11bet.com;Variant;c9bet.net;4xbet.app;7;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-21
+VAT_NOT_PAID;;https://16bet.club/;16bet.club;Variant;16bet.org;6xbet.org;3;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-16
+VAT_NOT_PAID;;https://599bet.club/;599bet.club;Variant;600bet.org;6xbet.org;3;Gambling;Chile;Content: Chile-facing operator;95;2026-09-16
+VAT_NOT_PAID;;https://x30bet.org/;x30bet.org;Variant;x3bet.org;6xbet.org;3;Gambling;Chile;Content: Chile-facing operator;95;2026-09-16
+VAT_NOT_PAID;;https://26bet.win/;26bet.win;Variant;74bet.win;74bet.win;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-25
+VAT_NOT_PAID;;https://777loco.mx/;777loco.mx;Manual;;777loco.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""MXN"")";95;2026-09-23
+VAT_NOT_PAID;;https://f6bet.vip/;f6bet.vip;Variant;f7bet.org;7fbet.org;2;Gambling;Chile;Content: RUT;95;2026-09-23
+VAT_NOT_PAID;;https://81bet.xyz/;81bet.xyz;Variant;881bet.xyz;878bet.co;2;Gambling;Chile;Content: RUT;95;2026-09-26
+VAT_NOT_PAID;;https://9897bet.com/;9897bet.com;Variant;9997bet.com;996bet.me;3;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-27
+VAT_NOT_PAID;;https://agenciasietepulso.cl/;agenciasietepulso.cl;Google Search;;agenciasietepulso.cl;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-07
+VAT_NOT_PAID;;https://aguasanjoaquin.cl/;aguasanjoaquin.cl;Google Search;;aguasanjoaquin.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-08-07
+VAT_NOT_PAID;;https://alsaciaexpress.cl/bonus/;alsaciaexpress.cl;Google Search;;alsaciaexpress.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-21
+VAT_NOT_PAID;;https://altafichahub.com/;altafichahub.com;Manual;;altafichahub.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://apuesta-20bet.com/;apuesta-20bet.com;Manual;;apuesta-20bet.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://apuestas-royal-chile.cl/;apuestas-royal-chile.cl;Manual;;apuestas-royal-chile.cl;0;Gambling;Chile;"Domain: ""chile"" in domain";;2026-09-23
+VAT_NOT_PAID;;https://apuestasclub.com/blog;apuestasclub.com;Other;;apuestasclub.com;0;Gambling;Mexico;"Spanish content with Mexico marker (""MXN"")";95;2026-08-14
+VAT_NOT_PAID;;https://apuestasperu678.com/;apuestasperu678.com;Manual;;apuestasperu678.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://apuestaroyal.com/;apuestaroyal.com;Variant;apuestasroyal.com;apuestasroyal.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-18
+VAT_NOT_PAID;;https://apuestasvzla.com/;apuestasvzla.com;Manual;;apuestasvzla.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://ar.melbet.com/es;ar.melbet.com;Google Search;;ar.melbet.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-14
+VAT_NOT_PAID;;https://arg-fortunazo.com/;arg-fortunazo.com;Manual;;arg-fortunazo.com;0;Gambling;Argentina;"Spanish content with Argentina marker (""Argentina"")";95;2026-09-23
+VAT_NOT_PAID;;https://argentina-jugabet.net/;argentina-jugabet.net;Manual;;argentina-jugabet.net;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://argentina20bet.com/;argentina20bet.com;Manual;;argentina20bet.com;0;Gambling;Argentina;"Spanish content with Argentina marker (""ARGENTINA"")";95;2026-09-23
+VAT_NOT_PAID;;https://argentina22bet.com/;argentina22bet.com;Manual;;argentina22bet.com;0;Gambling;Argentina;"Spanish content with Argentina marker (""Argentina"")";95;2026-09-23
+VAT_NOT_PAID;;https://ad.22betpartners.com/redirect.aspx?bid=1554&pid=19352&sref=sourceName&sourceName=B87155;ad.22betpartners.com;Redirect;bdeal.io;bdeal.io;1;Gambling;Peru;"Spanish content with Peru marker (""PEN"")";95;2026-08-07
+VAT_NOT_PAID;;https://bdeal.io/11870/LYONBETS;bdeal.io;Other;;bdeal.io;0;Gambling;Peru;"Spanish content with Peru marker (""PEN"")";95;2026-08-07
+VAT_NOT_PAID;;https://lp.22betpartners.com/p/multisport-2-loc/index-pe.php?btag=400811_52ceb75b9c1a40bfbada1d3edc6eae4d&sref=sourceName&sourceName=B87155;lp.22betpartners.com;Redirect;bdeal.io;bdeal.io;1;Gambling;Peru;"Spanish content with Peru marker (""PEN"")";95;2026-08-07
+VAT_NOT_PAID;;https://bet-22.cl/;bet-22.cl;Manual;;bet-22.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-23
+VAT_NOT_PAID;;https://bet-apuestas.com/;bet-apuestas.com;Manual;;bet-apuestas.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://bet22bet-argentina.com/;bet22bet-argentina.com;Manual;;bet22bet-argentina.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://bet22bet.mx/;bet22bet.mx;Manual;;bet22bet.mx;0;Gambling;Mexico;"Spanish content with Mexico marker ("".mx"")";95;2026-09-23
+VAT_NOT_PAID;;https://beta-nos.com/;beta-nos.com;Manual;;beta-nos.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-24
+VAT_NOT_PAID;;https://betfun.bet.ar/;betfun.bet.ar;Google Search;;betfun.bet.ar;0;Gambling;Argentina;"Spanish content with Argentina marker (""ccTLD .ar"")";95;2026-08-07
+VAT_NOT_PAID;;https://betivibet.cl/;betivibet.cl;Manual;;betivibet.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-23
+VAT_NOT_PAID;;https://betm3.com/;betm3.com;Manual;;betm3.com;0;Gambling;Chile;Content: Chile-facing operator;95;2026-09-23
+VAT_NOT_PAID;;https://www.betmaster.com.mx/;betmaster.com.mx;Variant;betmaster.com.mx;betmaster.com.mx;0;Gambling;Mexico;"Spanish content with Mexico marker ("".mx"")";95;2026-07-29
+VAT_NOT_PAID;;https://betmx1.com/;betmx1.com;Variant;betmxs1.com;betmxs.com;4;Gambling;Mexico;"Spanish content with Mexico marker (""México"")";95;2026-09-25
+VAT_NOT_PAID;;https://betmxs04.com/;betmxs04.com;Variant;betmxs03.com;betmxs.com;2;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://betmxs11.com/;betmxs11.com;Variant;betmxs01.com;betmxs.com;3;Gambling;Chile;Content: Chile-facing operator;95;2026-09-24
+VAT_NOT_PAID;;https://betmxs3.com/;betmxs3.com;Variant;betmxs5.com;betmxs.com;4;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-25
+VAT_NOT_PAID;;https://betnbet.mx/go/betcris;betnbet.mx;Other;;betnbet.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""MXN"")";95;2026-08-07
+VAT_NOT_PAID;;https://betplay-chile.com/;betplay-chile.com;Google Search;;betplay-chile.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-15
+VAT_NOT_PAID;;https://betsson-casinoo.it.com/;betsson-casinoo.it.com;Google Search;;betsson-casinoo.it.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-07
+VAT_NOT_PAID;;https://betsson.be/;betsson.be;Manual;;betsson.be;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://betsson.bet.ar/;betsson.bet.ar;Manual;;betsson.bet.ar;0;Gambling;Argentina;"Spanish content with Argentina marker (""Buenos Aires"")";95;2026-09-23
+VAT_NOT_PAID;;https://betsson.co/;betsson.co;Manual;;betsson.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""ccTLD .co"")";95;2026-09-23
+VAT_NOT_PAID;;https://betsson.com/;betsson.com;Manual;;betsson.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://betsson.com.ar/;betsson.com.ar;Manual;;betsson.com.ar;0;Gambling;Argentina;"Spanish content with Argentina marker (""Buenos Aires"")";95;2026-09-23
+VAT_NOT_PAID;;https://betsson.dk/;betsson.dk;Manual;;betsson.dk;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://betsson.ec/;betsson.ec;Manual;;betsson.ec;0;Gambling;Ecuador;"Spanish content with Ecuador marker (""ccTLD .ec"")";95;2026-09-23
+VAT_NOT_PAID;;https://betsson.gr/;betsson.gr;Manual;;betsson.gr;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://betsson.mx/;betsson.mx;Manual;;betsson.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""ccTLD .mx"")";95;2026-09-23
+VAT_NOT_PAID;;https://betsson.pe/;betsson.pe;Manual;;betsson.pe;0;Gambling;Peru;"Spanish content with Peru marker (""ccTLD .pe"")";95;2026-09-23
+VAT_NOT_PAID;;https://betsson1002.com/;betsson1002.com;Manual;;betsson1002.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://www.betsson1003.com/cl/casino;betsson1003.com;Google Search;;betsson1003.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-27
+VAT_NOT_PAID;;https://betsson42.com/;betsson42.com;Manual;;betsson42.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://betsson69.com/;betsson69.com;Manual;;betsson69.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://betssoncasino.be/;betssoncasino.be;Manual;;betssoncasino.be;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://betssonchile.cl/;betssonchile.cl;Google Search;;betssonchile.cl;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-07
+VAT_NOT_PAID;;https://betssonchile.com/;betssonchile.com;Manual;;betssonchile.com;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-09-23
+VAT_NOT_PAID;;https://betssonprovincia.com/;betssonprovincia.com;Manual;;betssonprovincia.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://betssonsports.be/;betssonsports.be;Manual;;betssonsports.be;0;Gambling;Colombia;"Spanish content with Colombia marker (""COP"")";95;2026-09-23
+VAT_NOT_PAID;;https://betwarrior.bet.ar/;betwarrior.bet.ar;Manual;;betwarrior.bet.ar;0;Gambling;Argentina;"Spanish content with Argentina marker (""ARGENTINA"")";95;2026-09-23
+VAT_NOT_PAID;;https://betwarriorgira-cl.com/;betwarriorgira-cl.com;Google Search;;betwarriorgira-cl.com;0;Gambling;Chile;"Domain: ""cl"" marker in hostname";95;2026-08-26
+VAT_NOT_PAID;;https://betway.mx/;betway.mx;Manual;;betway.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""ccTLD .mx"")";95;2026-09-23
+VAT_NOT_PAID;;https://blog.rojabet.com/;blog.rojabet.com;Google Search;;blog.rojabet.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-07
+VAT_NOT_PAID;;https://blue-dev.top/;blue-dev.top;Manual;;blue-dev.top;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://blue-pre.top/;blue-pre.top;Manual;;blue-pre.top;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://blue333.top/;blue333.top;Manual;;blue333.top;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://bodog-cl.com/;bodog-cl.com;Google Search;;bodog-cl.com;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-15
+VAT_NOT_PAID;;https://bodog.club/;bodog.club;Variant;bodog.com;bodog.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-04
+VAT_NOT_PAID;;https://dk89.net/;dk89.net;Variant;dk87.net;bu88.ph;11;Gambling;Chile;Content: RUT;95;2026-07-30
+VAT_NOT_PAID;;https://m99.click/;m99.click;Variant;md99.click;bu88.ph;17;Gambling;Mexico;"Spanish content with Mexico marker (""México"")";95;2026-08-05
+VAT_NOT_PAID;;https://www.vwin.cl/;vwin.cl;Variant;bwin.cl;bwin.cl;1;Gambling;Chile;Domain: ccTLD .cl;95;2026-08-18
+VAT_NOT_PAID;;https://www.bwin.co/es/sports;bwin.co;Google Search;;bwin.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""ccTLD .co"")";95;2026-08-15
+VAT_NOT_PAID;;https://promo.bwin.co/es/promo/p/sports/bono-bienvenida;promo.bwin.co;Other;;promo.bwin.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""COP"")";95;2026-08-15
+VAT_NOT_PAID;;https://www.bwin.mx/es/sports;bwin.mx;Google Search;;bwin.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""ccTLD .mx"")";95;2026-09-15
+VAT_NOT_PAID;;https://ca-tonybet.com/;ca-tonybet.com;Manual;;ca-tonybet.com;0;Gambling;Chile;Content: Chile-facing operator;95;2026-09-23
+VAT_NOT_PAID;;https://cabalgatastomwesley.com/;cabalgatastomwesley.com;Google Search;;cabalgatastomwesley.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-18
+VAT_NOT_PAID;;https://casasdeapuestasdeportivas.cl/casas-de-apuestas/betsala;casasdeapuestasdeportivas.cl;Other;;casasdeapuestasdeportivas.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-08-07
+VAT_NOT_PAID;;https://casino-fortunazo.cl/;casino-fortunazo.cl;Google Search;;casino-fortunazo.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-08-07
+VAT_NOT_PAID;;https://www.casinochilenoonline.cl/kto-casino.html;casinochilenoonline.cl;Google Search;;casinochilenoonline.cl;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-15
+VAT_NOT_PAID;;https://www.casinoonlinechile.com/roobet/;casinoonlinechile.com;Google Search;;casinoonlinechile.com;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-11
+VAT_NOT_PAID;;https://casinoonlinechilecuentarut.com/casino-online-chile-cuenta-rut/;casinoonlinechilecuentarut.com;Google Search;;casinoonlinechilecuentarut.com;0;Gambling;Chile;Content: RUT;95;2026-08-15
+VAT_NOT_PAID;;https://www.casinosenlineachile.cl/leovegas/;casinosenlineachile.cl;Google Search;;casinosenlineachile.cl;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-11
+VAT_NOT_PAID;;https://chile.micasino-chile-oficial.cl/;chile.micasino-chile-oficial.cl;Google Search;;chile.micasino-chile-oficial.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-16
+VAT_NOT_PAID;;https://chile20betting.com/;chile20betting.com;Manual;;chile20betting.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-23
+VAT_NOT_PAID;;https://chileblazeplay.com/login;chileblazeplay.com;Google Search;;chileblazeplay.com;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-16
+VAT_NOT_PAID;;https://www.chilecasino.com/poker;chilecasino.com;Other;;chilecasino.com;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-07
+VAT_NOT_PAID;;https://chilecasinoguide.com/metodos-de-pago/mach/;chilecasinoguide.com;Google Search;;chilecasinoguide.com;0;Gambling;Chile;Content: Chilean payment rail;95;2026-08-16
+VAT_NOT_PAID;;https://click.ggpartners.com/?serial=4732&creative_id=88&anid=;click.ggpartners.com;Other;;click.ggpartners.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-07
+VAT_NOT_PAID;;https://clrivalo.cl/amazons-spear.html;clrivalo.cl;Google Search;;clrivalo.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-25
+VAT_NOT_PAID;;https://codigopoker.com/category/torneos-chile;codigopoker.com;Google Search;;codigopoker.com;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-07
+VAT_NOT_PAID;;https://colegiorepublicadeguatemala.cl/;colegiorepublicadeguatemala.cl;Manual;;colegiorepublicadeguatemala.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-23
+VAT_NOT_PAID;;https://www.consultamedicasanmiguel.cl/;consultamedicasanmiguel.cl;Google Search;;consultamedicasanmiguel.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-18
+VAT_NOT_PAID;;https://contigojuegoyaprendo.cl/;contigojuegoyaprendo.cl;Google Search;;contigojuegoyaprendo.cl;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-12
+VAT_NOT_PAID;;https://d100.bet/;d100.bet;Variant;d200.bet;d200.bet;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-07-28
+VAT_NOT_PAID;;https://dialogue.cl/cl1/;dialogue.cl;Google Search;;dialogue.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-15
+VAT_NOT_PAID;;https://diariosalud.com.ec/;diariosalud.com.ec;Google Search;;diariosalud.com.ec;0;Gambling;Ecuador;"Spanish content with Ecuador marker (""ECUADOR"")";95;2026-09-16
+VAT_NOT_PAID;;https://landing.ec/;landing.ec;Redirect;diariosalud.com.ec;diariosalud.com.ec;1;Gambling;Ecuador;"Spanish content with Ecuador marker (""ECUADOR"")";95;2026-09-16
+VAT_NOT_PAID;;https://dorado-bet.cl/;dorado-bet.cl;Google Search;;dorado-bet.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-08-12
+VAT_NOT_PAID;;https://doradobet-app.com/bono/;doradobet-app.com;Google Search;;doradobet-app.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-18
+VAT_NOT_PAID;;https://doradobet-chile.com/;doradobet-chile.com;Google Search;;doradobet-chile.com;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-07
+VAT_NOT_PAID;;https://doradobet-chile.net/codigo-promocional/;doradobet-chile.net;Google Search;;doradobet-chile.net;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-20
+VAT_NOT_PAID;;https://doradobetchile.net/;doradobetchile.net;Variant;doradobetchile.org;doradobetchile.org;1;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-19
+VAT_NOT_PAID;;https://doradobetchile.org/;doradobetchile.org;Google Search;doradobetchile.org;doradobetchile.org;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-18
+VAT_NOT_PAID;;https://doradobetchile.top/;doradobetchile.top;Variant;doradobetchile.org;doradobetchile.org;1;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-19
+VAT_NOT_PAID;;https://e330.bet/;e330.bet;Variant;e30.bet;e30.app;2;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-07-26
+VAT_NOT_PAID;;https://e350.org/;e350.org;Variant;e35.org;e30.app;3;Gambling;Mexico;"Spanish content with Mexico marker (""México"")";95;2026-07-27
+VAT_NOT_PAID;;https://e400.bet/;e400.bet;Variant;e300.bet;e30.app;3;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-07-27
+VAT_NOT_PAID;;https://eo999.app/;eo999.app;Variant;ek999.app;ek999.app;1;Gambling;Chile;Content: Chile-facing operator;95;2026-08-07
+VAT_NOT_PAID;;https://encuentroaci.cl/;encuentroaci.cl;Google Search;;encuentroaci.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-19
+VAT_NOT_PAID;;https://epicbet.io/;epicbet.io;Manual;;epicbet.io;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://epicbet.live/;epicbet.live;Manual;;epicbet.live;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://www.epicbet.online/;epicbet.online;Variant;epicbet.online;epicbet.online;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-24
+VAT_NOT_PAID;;https://epicbet.online/;epicbet.online;Manual;epicbet.online;epicbet.online;0;Gambling;Chile;Content: Chilean football reference;95;2026-09-23
+VAT_NOT_PAID;;https://epicbet.world/;epicbet.world;Manual;;epicbet.world;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://epicbetcl.cl/app/;epicbetcl.cl;Google Search;;epicbetcl.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-08-12
+VAT_NOT_PAID;;https://estelar-bet.cl/;estelar-bet.cl;Google Search;;estelar-bet.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-08-07
+VAT_NOT_PAID;;https://estelar.bet/;estelar.bet;Redirect;estelarbet.vip;estelarbet.vip;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-04
+VAT_NOT_PAID;;https://estelarbet.vip/;estelarbet.vip;Manual;;estelarbet.vip;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-04
+VAT_NOT_PAID;;https://estelarbet1.cl/;estelarbet1.cl;Google Search;;estelarbet1.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-26
+VAT_NOT_PAID;;https://estelarbetpromociones.com/;estelarbetpromociones.com;Manual;;estelarbetpromociones.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://evamedsalud.cl/cl1/;evamedsalud.cl;Google Search;;evamedsalud.cl;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-14
+VAT_NOT_PAID;;https://d22.click/;d22.click;Variant;r22.click;f30.app;5;Gambling;Mexico;"Spanish content with Mexico marker (""México"")";95;2026-07-27
+VAT_NOT_PAID;;https://r33.click/;r33.click;Variant;r32.click;f30.app;6;Gambling;Mexico;"Spanish content with Mexico marker (""Mexico"")";95;2026-07-28
+VAT_NOT_PAID;;https://r200.app/;r200.app;Variant;f200.app;f300.app;2;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-07-25
+VAT_NOT_PAID;;https://t300.app/;t300.app;Variant;f300.app;f300.app;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-07-24
+VAT_NOT_PAID;;https://fortunazo-en-chile.com/;fortunazo-en-chile.com;Google Search;;fortunazo-en-chile.com;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-27
+VAT_NOT_PAID;;https://fortunazocasino.net/retiro;fortunazocasino.net;Google Search;;fortunazocasino.net;0;Gambling;Chile;Content: RUT;95;2026-08-16
+VAT_NOT_PAID;;https://v30.site/;v30.site;Variant;v31.bet;g41.bet;6;Gambling;Mexico;"Spanish content with Mexico marker (""México"")";95;2026-07-22
+VAT_NOT_PAID;;https://ganajackpotzone.com/;ganajackpotzone.com;Google Search;;ganajackpotzone.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-04
+VAT_NOT_PAID;;https://gansportsbook.com/;gansportsbook.com;Manual;;gansportsbook.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://gg8852.app/;gg8852.app;Variant;gg8847.com;gg8858.com;4;Gambling;Chile;Content: RUT;95;2026-07-29
+VAT_NOT_PAID;;https://hoywin.com/;hoywin.com;Manual;;hoywin.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://hoywin4.com/;hoywin4.com;Redirect;hoywin.com;hoywin.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://chillbet.bet/;chillbet.bet;Variant;chillbet.mx;ik01u3.top;2;Gambling;Mexico;"Spanish content with Mexico marker (""México"")";95;2026-08-12
+VAT_NOT_PAID;;https://chillbet.co/;chillbet.co;Variant;chillbet.mx;ik01u3.top;2;Gambling;Colombia;"Spanish content with Colombia marker (""ccTLD .co"")";95;2026-08-12
+VAT_NOT_PAID;;https://ivibet-argentina.com/;ivibet-argentina.com;Manual;;ivibet-argentina.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://www.juegaconelking.cl/es/landing;juegaconelking.cl;Google Search;;juegaconelking.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-07
+VAT_NOT_PAID;;https://www.juegaconelking.com/;juegaconelking.com;Manual;;juegaconelking.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-04
+VAT_NOT_PAID;;https://juegalo-chile-vip.com/;juegalo-chile-vip.com;Variant;juegalo-chile.com;juegalo-chile.com;1;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-19
+VAT_NOT_PAID;;https://juegalo-chile.com/;juegalo-chile.com;Google Search;;juegalo-chile.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-18
+VAT_NOT_PAID;;https://juegalo.casino/;juegalo.casino;Variant;juegalo.com;juegalo.com;1;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-26
+VAT_NOT_PAID;;https://juegalo.co/;juegalo.co;Variant;juegalo.com;juegalo.com;1;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-26
+VAT_NOT_PAID;;https://juego-bet.cl/;juego-bet.cl;Google Search;;juego-bet.cl;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-07
+VAT_NOT_PAID;;http://juegosdecasinoonline.cl/bodog/;juegosdecasinoonline.cl;Google Search;;juegosdecasinoonline.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-08-16
+VAT_NOT_PAID;;https://jugabetscasino.cl/;jugabetscasino.cl;Google Search;;jugabetscasino.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-08-20
+VAT_NOT_PAID;;https://www.jugadon.bet.ar/;jugadon.bet.ar;Other;;jugadon.bet.ar;0;Gambling;Argentina;"Spanish content with Argentina marker (""ccTLD .ar"")";95;2026-09-02
+VAT_NOT_PAID;;https://ke999.io/;ke999.io;Variant;ke99.io;ke99.fun;2;Gambling;Chile;Content: Chile-facing operator;95;2026-08-09
+VAT_NOT_PAID;;https://ktocasino.cl/;ktocasino.cl;Google Search;;ktocasino.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-15
+VAT_NOT_PAID;;https://laboratorioclinicoinmunovida.cl/;laboratorioclinicoinmunovida.cl;Google Search;;laboratorioclinicoinmunovida.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-12
+VAT_NOT_PAID;;https://laderoapuestas.com/;laderoapuestas.com;Manual;;laderoapuestas.com;0;Gambling;Argentina;"Spanish content with Argentina marker (""Argentina"")";95;2026-09-23
+VAT_NOT_PAID;;https://www.loteria.cl/juegos/kino/;loteria.cl;Google Search;;loteria.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-27
+VAT_NOT_PAID;;https://mayapalace.mx/;mayapalace.mx;Manual;;mayapalace.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""ccTLD .mx"")";95;2026-09-23
+VAT_NOT_PAID;;https://cl.mi-casino.app/;cl.mi-casino.app;Google Search;;cl.mi-casino.app;0;Gambling;Chile;"Domain: ""cl"" marker in hostname";95;2026-09-23
+VAT_NOT_PAID;;https://mi-casinos.cl/registrarse/;mi-casinos.cl;Google Search;;mi-casinos.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-02
+VAT_NOT_PAID;;https://micasinocl.com/;micasinocl.com;Variant;micasinoscl.com;micasinoscl.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-12
+VAT_NOT_PAID;;https://muhu.cl/slottica-casino;muhu.cl;Google Search;;muhu.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-09
+VAT_NOT_PAID;;https://mundomadera.cl/;mundomadera.cl;Google Search;;mundomadera.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-23
+VAT_NOT_PAID;;https://mx1000.com/;mx1000.com;Manual;;mx1000.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://mx1000.top/;mx1000.top;Redirect;mx1000.com;mx1000.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://mx7k.com/;mx7k.com;Manual;;mx7k.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://mx7k1.com/;mx7k1.com;Variant;mx7k3.com;mx7k.com;2;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://mx7k2.com/;mx7k2.com;Variant;mx7k3.com;mx7k.com;2;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://mx7k3.com/;mx7k3.com;Redirect;mx7k.com;mx7k.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://mx7k4.com/;mx7k4.com;Variant;mx7k3.com;mx7k.com;2;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://mx7k5.com/;mx7k5.com;Variant;mx7k3.com;mx7k.com;2;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://mx7k8.com/;mx7k8.com;Variant;mx7k3.com;mx7k.com;2;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://myregistro.info/donaldbet/;myregistro.info;Other;;myregistro.info;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-07
+VAT_NOT_PAID;;https://n9.cl/;n9.cl;Manual;;n9.cl;0;Gambling;Chile;Domain: ccTLD .cl;;2026-07-16
+VAT_NOT_PAID;;https://www.nayafacil.com/;nayafacil.com;Google Search;;nayafacil.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;90;2026-09-14
+VAT_NOT_PAID;;https://negociosabiertos.co/es-co/;negociosabiertos.co;Google Search;;negociosabiertos.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""COLOMBIA"")";95;2026-09-25
+VAT_NOT_PAID;;https://www.one-win.cl/;one-win.cl;Variant;one-win.cl;one-win.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-23
+VAT_NOT_PAID;;https://one-win.cl/;one-win.cl;Redirect;one-win.cl;one-win.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-23
+VAT_NOT_PAID;;https://onewin.cl/;onewin.cl;Variant;one-win.cl;one-win.cl;1;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-23
+VAT_NOT_PAID;;https://onlinecasino.cl/;onlinecasino.cl;Manual;;onlinecasino.cl;0;Gambling;Chile;Domain: ccTLD .cl;;2026-07-16
+VAT_NOT_PAID;;https://www.oy88.app/;oy88.app;Variant;ot88.app;ot88.app;1;Gambling;Chile;Content: RUT;95;2026-07-27
+VAT_NOT_PAID;;https://play.betwarrior.net/splash/;play.betwarrior.net;Google Search;;play.betwarrior.net;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-15
+VAT_NOT_PAID;;https://playepic.io/;playepic.io;Manual;;playepic.io;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://www.pokerchile.cl/;pokerchile.cl;Google Search;;pokerchile.cl;0;Gambling;Chile;"Domain: ""chile"" in domain";95;2026-08-07
+VAT_NOT_PAID;;https://politecnicotafalla.educacion.navarra.es/web/pgs/?betsala-chile-como-jugar-de-live-casino-con-betsoft.html;politecnicotafalla.educacion.navarra.es;Google Search;;politecnicotafalla.educacion.navarra.es;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-07
+VAT_NOT_PAID;;https://rab0na-2417.com/es;rab0na-2417.com;Manual;;rab0na-2417.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-04
+VAT_NOT_PAID;;https://record.cba.betsson.bet.ar/_5mJ2F-uazZTfAaNzSiEI32Nd7ZgqdRLk/1/;record.cba.betsson.bet.ar;Other;;record.cba.betsson.bet.ar;0;Gambling;Argentina;"Spanish content with Argentina marker (""Buenos Aires"")";95;2026-08-07
+VAT_NOT_PAID;;https://respinbet-cl.com/;respinbet-cl.com;Google Search;;respinbet-cl.com;0;Gambling;Chile;"Domain: ""cl"" marker in hostname";95;2026-08-07
+VAT_NOT_PAID;;https://respincasinochile.com/;respincasinochile.com;Google Search;;respincasinochile.com;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-18
+VAT_NOT_PAID;;https://riva-los.com/es-cl/;riva-los.com;Google Search;;riva-los.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-18
+VAT_NOT_PAID;;https://rivalo-chile-apuestas.com/deposito/;rivalo-chile-apuestas.com;Google Search;;rivalo-chile-apuestas.com;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-20
+VAT_NOT_PAID;;https://rivalo-cl.com/;rivalo-cl.com;Google Search;;rivalo-cl.com;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-15
+VAT_NOT_PAID;;https://rivalocasino.cl/;rivalocasino.cl;Google Search;;rivalocasino.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-15
+VAT_NOT_PAID;;https://rivaloguides.org/;rivaloguides.org;Google Search;;rivaloguides.org;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-08-18
+VAT_NOT_PAID;;https://rixbono.com/;rixbono.com;Manual;;rixbono.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://rixbono01.com/;rixbono01.com;Redirect;rixbono.com;rixbono.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://rojabet.cl/;rojabet.cl;Manual;;rojabet.cl;0;Gambling;Chile;Domain: ccTLD .cl;;2026-09-23
+VAT_NOT_PAID;;https://rojabet.club/;rojabet.club;Variant;rojabet.com;rojabet.com;1;Gambling;Peru;"Spanish content with Peru marker (""para Perú"")";95;2026-09-04
+VAT_NOT_PAID;;https://rushbet.casino/;rushbet.casino;Variant;rushbet.co;rushbet.co;1;Gambling;Colombia;"Spanish content with Colombia marker (""Colombia"")";95;2026-08-18
+VAT_NOT_PAID;;https://www.rushbet.co/;rushbet.co;Variant;rushbet.co;rushbet.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""ccTLD .co"")";95;2026-08-18
+VAT_NOT_PAID;;https://www.rushbet.co/?page=sportsbook;rushbet.co;Google Search;rushbet.co;rushbet.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""ccTLD .co"")";95;2026-08-15
+VAT_NOT_PAID;;https://www.rushbet.mx/;rushbet.mx;Google Search;;rushbet.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""ccTLD .mx"")";95;2026-08-15
+VAT_NOT_PAID;;https://www.rushbet.pe/?page=sportsbook;rushbet.pe;Google Search;;rushbet.pe;0;Gambling;Peru;"Spanish content with Peru marker (""ccTLD .pe"")";95;2026-08-15
+VAT_NOT_PAID;;https://sgllsoftware.com/;sgllsoftware.com;Manual;;sgllsoftware.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://simulart.cl/cl/;simulart.cl;Google Search;;simulart.cl;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-27
+VAT_NOT_PAID;;https://spinbet.mx/;spinbet.mx;Manual;;spinbet.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""ccTLD .mx"")";95;2026-09-23
+VAT_NOT_PAID;;https://sportingbet-cl.com/;sportingbet-cl.com;Google Search;;sportingbet-cl.com;0;Gambling;Chile;"Domain: ""cl"" marker in hostname";95;2026-08-15
+VAT_NOT_PAID;;https://sports.bwin.co/es/sports;sports.bwin.co;Other;;sports.bwin.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""ccTLD .co"")";95;2026-08-15
+VAT_NOT_PAID;;https://steke-casino.it.com/;steke-casino.it.com;Google Search;;steke-casino.it.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-08-23
+VAT_NOT_PAID;;https://t6.com/;t6.com;Manual;;t6.com;0;Gambling;Chile;Content: Chile-facing operator;95;2026-09-25
+VAT_NOT_PAID;;https://www.t6vip.online/;t6vip.online;Redirect;t6.com;t6.com;1;Gambling;Chile;Content: Chile-facing operator;95;2026-09-25
+VAT_NOT_PAID;;https://www.teammexico.mx/poker?referralCode=LAPECERA&modal=registration;teammexico.mx;Other;;teammexico.mx;0;Gambling;Mexico;"Spanish content with Mexico marker (""ccTLD .mx"")";95;2026-08-07
+VAT_NOT_PAID;;https://tikitaka-cl.com/;tikitaka-cl.com;Google Search;;tikitaka-cl.com;0;Gambling;Chile;Content: Explicit Chile reference;95;2026-09-10
+VAT_NOT_PAID;;https://tony-bet.cl/;tony-bet.cl;Manual;;tony-bet.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-23
+VAT_NOT_PAID;;https://tonybet-cl.com/;tonybet-cl.com;Manual;;tonybet-cl.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-23
+VAT_NOT_PAID;;https://www.tonybet.cl/;tonybet.cl;Variant;tonybet.cl;tonybet.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-04
+VAT_NOT_PAID;;https://tonybet.com/;tonybet.com;Manual;tonybet.com;tonybet.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://tonybet.cloud/;tonybet.cloud;Redirect;tonybet.net;tonybet.net;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://tonybet.net/;tonybet.net;Manual;;tonybet.net;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://tonybetchile.com/;tonybetchile.com;Manual;;tonybetchile.com;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-09-23
+VAT_NOT_PAID;;https://tonybets.fi/;tonybets.fi;Manual;;tonybets.fi;0;Gambling;Chile;Content: Chile-facing operator;95;2026-09-23
+VAT_NOT_PAID;;https://tonybets.pe/;tonybets.pe;Manual;;tonybets.pe;0;Gambling;Peru;"Spanish content with Peru marker (""ccTLD .pe"")";95;2026-09-23
+VAT_NOT_PAID;;https://tonyelpony-cl.com/;tonyelpony-cl.com;Manual;;tonyelpony-cl.com;0;Gambling;Chile;"Domain: ""cl"" marker in hostname";95;2026-09-23
+VAT_NOT_PAID;;https://tortassantaana.cl/;tortassantaana.cl;Google Search;;tortassantaana.cl;0;Gambling;Chile;Domain: ccTLD .cl;95;2026-09-20
+VAT_NOT_PAID;;https://luxanna88.info/?spreadCode=uy395&event=1;luxanna88.info;Redirect;uy395.luxanna88.blog;uy395.luxanna88.blog;1;Gambling;Chile;Content: Chile-facing operator;95;2026-09-24
+VAT_NOT_PAID;;https://uy395.luxanna88.blog/;uy395.luxanna88.blog;Manual;;uy395.luxanna88.blog;0;Gambling;Chile;Content: Chile-facing operator;95;2026-09-24
+VAT_NOT_PAID;;https://luxanna1868.fun/?spreadCode=uy395&event=1;luxanna1868.fun;Redirect;uy395.luxanna88.fun;uy395.luxanna88.fun;1;Gambling;Chile;Content: Chile-facing operator;95;2026-09-24
+VAT_NOT_PAID;;https://uy395.luxanna88.fun/;uy395.luxanna88.fun;Manual;;uy395.luxanna88.fun;0;Gambling;Chile;Content: Chile-facing operator;95;2026-09-24
+VAT_NOT_PAID;;https://vk88.cl/;vk88.cl;Redirect;vk88.ng;vj88.ng;2;Gambling;Chile;Domain: ccTLD .cl;95;2026-07-23
+VAT_NOT_PAID;;https://winchilecasinos.cl/es-cl/;winchilecasinos.cl;Google Search;;winchilecasinos.cl;0;Gambling;Chile;Content: Chilean currency (CLP);95;2026-08-10
+VAT_NOT_PAID;;https://www.winmxn.com/;winmxn.com;Variant;winmxn.com;winmxn.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://winmxn.com/;winmxn.com;Manual;winmxn.com;winmxn.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://winmxn1.com/;winmxn1.com;Redirect;winmxn.com;winmxn.com;1;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
+VAT_NOT_PAID;;https://wplay.co/;wplay.co;Manual;;wplay.co;0;Gambling;Colombia;"Spanish content with Colombia marker (""ccTLD .co"")";95;2026-09-23
+VAT_NOT_PAID;;https://xn--tonybetespaa-khb.com/;xn--tonybetespaa-khb.com;Manual;;xn--tonybetespaa-khb.com;0;Gambling;Spanish content, market unspecified;Spanish content, no country marker;95;2026-09-23
