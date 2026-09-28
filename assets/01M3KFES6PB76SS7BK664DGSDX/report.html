@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thailand Summary Tables</title>
+<meta name="description" content="Four summary tables over a SICPADetect export: records by status, the .th subset, Thai-target-audience indicators, and Thailand relevance overall.">
+<style>
+@page { size: A4 portrait; margin: 20mm; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; color:#1b1b1b;
+  background:#fff; font-size:10.5pt; line-height:1.55; }
+main { max-width:170mm; }
+img, table, pre, svg { max-width:100%; }
+h1 { font-size:21pt; color:#16254C; margin:0 0 .25em; }
+h2 { font-size:14pt; color:#16254C; margin:1.8em 0 .2em; page-break-after:avoid; }
+h3 { font-size:10.8pt; color:#16254C; margin:1.3em 0 .3em; page-break-after:avoid; }
+p { margin:0 0 .75em; max-width:72ch; }
+ul { margin:0 0 .8em; padding-left:1.15em; max-width:72ch; }
+li { margin-bottom:.25em; }
+.lead { color:#54607a; font-size:10pt; max-width:72ch; }
+.denom { font-size:9pt; color:#54607a; margin:.1em 0 .6em; }
+.denom b { color:#1b1b1b; }
+table { width:100%; border-collapse:collapse; font-size:9pt; margin:.3em 0 1em; }
+th { background:#16254C; color:#fff; text-align:left; padding:5px 7px; font-size:8.5pt; }
+td { padding:4px 7px; border-bottom:1px solid #e4e8f0; vertical-align:top; }
+tr { break-inside:avoid; }
+thead { display:table-header-group; }
+tfoot td { font-weight:bold; border-top:2px solid #16254C; border-bottom:none; background:#f3f5f9; }
+tr.strong td { font-weight:bold; background:#f3f5f9; }
+.num { text-align:right; white-space:nowrap; }
+.mono { font-family:"Courier New",monospace; font-size:8.4pt; overflow-wrap:anywhere; }
+.note { border-left:4px solid #0087C8; background:#f3f7fb; padding:9px 13px; margin:1em 0;
+  font-size:9.4pt; break-inside:avoid; }
+.note b { color:#16254C; }
+header.hdr { border-bottom:3px solid #16254C; padding-bottom:.6em; margin-bottom:1.2em; }
+.meta { font-size:8.8pt; color:#54607a; }
+footer { margin-top:2em; border-top:1px solid #d9dee8; padding-top:.6em; font-size:8.4pt; color:#54607a; }
+@media screen and (max-width:640px) {
+  main { max-width:100%; padding:0 16px; }
+  table { font-size:8.4pt; }
+}
+</style>
+</head>
+<body>
+<main>
+<header class="hdr">
+<h1>SICPADetect — Thailand Summary Tables</h1>
+<p class="lead">Four tables over one SICPADetect export, plus a method note and the data issues
+found. Counts are of records, not domains. Percentages are rounded to one decimal place.</p>
+<p class="meta">Export: 53,867 classified records · description field: <span class="mono">LLM
+Reasoning</span> · issued 28 September 2026</p>
+</header>
+
+<h2>Table 1 — Records by status</h2>
+<p class="denom">Denominator: <b>all 53,867 records in the export.</b></p>
+<table><thead><tr><th>Status</th><th class="num">Records</th><th class="num">% of total</th></tr></thead>
+<tbody>
+<tr><td>Illegal gambling</td><td class="num">9,212</td><td class="num">17.1%</td></tr>
+<tr><td>Licensed gambling</td><td class="num">0</td><td class="num">0.0%</td></tr>
+<tr><td>Not gambling</td><td class="num">11,594</td><td class="num">21.5%</td></tr>
+<tr><td>Unreachable</td><td class="num">28</td><td class="num">0.1%</td></tr>
+<tr><td>Review needed</td><td class="num">22,032</td><td class="num">40.9%</td></tr>
+<tr><td>Unknown / blank</td><td class="num">11,001</td><td class="num">20.4%</td></tr>
+</tbody><tfoot><tr><td>TOTAL</td><td class="num">53,867</td><td class="num">100.0%</td></tr></tfoot></table>
+<p class="denom">The <b>Unknown / blank</b> row holds the
+11,001 records carrying the status value
+<span class="mono">Scraping url</span>, which is not one of the expected values. They are reported
+here rather than dropped.</p>
+<h2>Table 2 — Records by status, .th domains only</h2>
+<p class="denom">Denominator: <b>the 154 records whose registrable domain ends in
+<span class="mono">.th</span></b> — including <span class="mono">.co.th</span>,
+<span class="mono">.go.th</span>, <span class="mono">.ac.th</span>, <span class="mono">.or.th</span>,
+<span class="mono">.in.th</span>, <span class="mono">.net.th</span> and
+<span class="mono">.mi.th</span>. The final column restates each count against all 53,867
+records.</p>
+<table><thead><tr><th>Status</th><th class="num">Records</th><th class="num">% of .th records</th>
+<th class="num">% of all records</th></tr></thead><tbody>
+<tr><td>Illegal gambling</td><td class="num">1</td><td class="num">0.6%</td><td class="num">0.0%</td></tr>
+<tr><td>Licensed gambling</td><td class="num">0</td><td class="num">0.0%</td><td class="num">0.0%</td></tr>
+<tr><td>Not gambling</td><td class="num">132</td><td class="num">85.7%</td><td class="num">0.2%</td></tr>
+<tr><td>Unreachable</td><td class="num">2</td><td class="num">1.3%</td><td class="num">0.0%</td></tr>
+<tr><td>Review needed</td><td class="num">19</td><td class="num">12.3%</td><td class="num">0.0%</td></tr>
+</tbody><tfoot><tr><td>TOTAL</td><td class="num">154</td><td class="num">100.0%</td><td class="num">0.3%</td></tr></tfoot></table>
+<p class="denom">The .th subset by second-level domain: <span class="mono">.co.th</span> <b>58</b> · <span class="mono">.go.th</span> <b>44</b> · <span class="mono">.or.th</span> <b>21</b> · <span class="mono">.ac.th</span> <b>20</b> · <span class="mono">.in.th</span> <b>7</b> · <span class="mono">.th</span> <b>4</b>. No .th record was excluded; the prompt default counts state domains.</p>
+<h2>Table 3 — Records by status, Thai-target-audience indicators</h2>
+<p class="denom">Denominator: <b>the 1,008 records whose description carries at least one Thai
+indicator.</b> The test is applied to the description field only, not the URL. The final column
+restates each count against all 53,867 records.</p>
+<table><thead><tr><th>Status</th><th class="num">Records</th>
+<th class="num">% of Thai-indicator records</th><th class="num">% of all records</th></tr></thead>
+<tbody>
+<tr><td>Illegal gambling</td><td class="num">722</td><td class="num">71.6%</td><td class="num">1.3%</td></tr>
+<tr><td>Licensed gambling</td><td class="num">0</td><td class="num">0.0%</td><td class="num">0.0%</td></tr>
+<tr><td>Not gambling</td><td class="num">138</td><td class="num">13.7%</td><td class="num">0.3%</td></tr>
+<tr><td>Unreachable</td><td class="num">0</td><td class="num">0.0%</td><td class="num">0.0%</td></tr>
+<tr><td>Review needed</td><td class="num">148</td><td class="num">14.7%</td><td class="num">0.3%</td></tr>
+</tbody><tfoot><tr><td>TOTAL</td><td class="num">1,008</td><td class="num">100.0%</td><td class="num">1.9%</td></tr></tfoot></table>
+<h3>Which indicator triggered each match</h3>
+<p class="denom">A record can carry more than one indicator, so the column sums to
+1,340 against 1,008 qualifying records.</p>
+<table><thead><tr><th>Indicator type</th><th class="num">Records</th>
+<th class="num">% of Thai-indicator records</th></tr></thead><tbody>
+<tr><td>Thai script</td><td class="num">703</td><td class="num">69.7%</td></tr>
+<tr><td>Explicit Thailand reference</td><td class="num">341</td><td class="num">33.8%</td></tr>
+<tr><td>Thai payment or banking reference</td><td class="num">155</td><td class="num">15.4%</td></tr>
+<tr><td>Currency reference</td><td class="num">95</td><td class="num">9.4%</td></tr>
+<tr><td>Transliterated Thai-market product term</td><td class="num">41</td><td class="num">4.1%</td></tr>
+<tr><td>Thai contact convention</td><td class="num">5</td><td class="num">0.5%</td></tr>
+</tbody><tfoot><tr><td>TOTAL indicator hits</td><td class="num">1,340</td><td class="num">132.9%</td></tr></tfoot></table>
+<h2>Table 4 — Thailand relevance overall</h2>
+<p class="denom">Denominator: <b>all 53,867 records in the export.</b> The overall figure is the
+union of the two tests, per the prompt default.</p>
+<table><thead><tr><th>Category</th><th class="num">Records</th><th class="num">% of total</th>
+</tr></thead><tbody>
+<tr><td>.th domain only (no Thai indicator in description)</td><td class="num">129</td>
+<td class="num">0.2%</td></tr>
+<tr><td>Thai indicator only (not a .th domain)</td><td class="num">983</td>
+<td class="num">1.8%</td></tr>
+<tr><td>Both .th domain and Thai indicator</td><td class="num">25</td>
+<td class="num">0.0%</td></tr>
+<tr class="strong"><td>Thailand-relevant overall (any of the above)</td><td class="num">1,137</td>
+<td class="num">2.1%</td></tr>
+<tr><td>Neither</td><td class="num">52,730</td>
+<td class="num">97.9%</td></tr>
+</tbody><tfoot><tr><td>TOTAL</td><td class="num">53,867</td><td class="num">100.0%</td></tr>
+</tfoot></table>
+
+<h2>Method note</h2>
+<ul>
+<li><b>53,867 records read</b> from the semicolon-delimited export, with 0 blank
+lines and 0 rows of inconsistent field count. <b>No rows were excluded</b>:
+every record is counted in Table 1 and Table 4, and no row could not be classified.</li>
+<li><b>The description field is <span class="mono">LLM Reasoning</span>.</b> Table 3 reads that
+field only; Table 2 reads the registrable domain; Table 4 combines the two.</li>
+<li><b>One status value did not match an expected value:</b>
+<span class="mono">Scraping url</span>, 11,001
+records (20.4% of the export). It is
+reported in the <b>Unknown / blank</b> row rather than dropped. No record carried
+<span class="mono">Licensed gambling</span>.</li>
+<li><b>16,127 records have a blank description</b>
+(29.9% of the export). They cannot satisfy the Table 3 test, which
+reads the description alone, and so can only reach Table 4 through the domain axis.</li>
+<li><b>The manifest reports 53,873 rows against the 53,867 records parsed here.</b> The
+difference is one record whose quoted description contains six line breaks: a line count reads it as
+seven rows, a CSV parse as one. The parsed figure is the one used throughout.</li>
+</ul>
+
+<div class="note"><b>Settings applied.</b> All defaults from the prompt were used and none were
+varied: the Table 4 overall figure is the <b>union</b> of the .th and Thai-indicator tests, not
+their intersection; <b>no TLD was excluded</b>, so <span class="mono">.go.th</span>,
+<span class="mono">.ac.th</span> and <span class="mono">.mi.th</span> are counted and broken out
+beneath Table 2; and the unit of count is <b>one record per row</b>, not one row per registrable
+domain. Changing any of these changes the figures above, so they are stated rather than assumed.</div>
+
+<footer>
+<p>SICPADetect export summarised by SICPA SA. Counts are of records. Percentages are rounded to one
+decimal place and may not sum to exactly 100.0% for that reason. No count in this document is
+estimated or inferred: where a field is missing or a value is unrecognised, the record is reported
+as such rather than dropped.</p>
+</footer>
+</main>
+</body>
+</html>
