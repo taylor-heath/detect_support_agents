@@ -1,0 +1,15 @@
+attempt 1 — report.custom 01M3KF1EEN43FKKMQ34MZDPJ5Q
+claimed             2026-09-28T08:00:15.356Z
+attachments         spec.md, dataset.json.gz, dataset.csv — 3/3 sha256 verified
+ingest              30151 rows, 0 blank lines, 0 field-count mismatches, 0 rows excluded
+description field   LLM Reasoning
+descriptions        blank 4544 / unreadable 9405 / usable 16202
+table 1             all 30151 records by status; every status value matched an expected value
+table 2             .cl subset 431 records (.gob.cl 13, .gov.cl 0, .co.cl 0 reported separately)
+table 3             366 records qualify on a STRONG indicator; 424 indicator hits
+                    weak-only spillover 1436 records
+table 4             any axis 828, no axis 29323; A 431/106 B 61/36 C 366/100 D 519/175 (matching/unique)
+checks              every table sums to its stated denominator; TOTAL row present in each
+settings            prompt defaults used unchanged; stated in the report
+render              report.html 14239 bytes, 4 A4 pages, no external requests
+finished            2026-09-28T08:04:29.999Z
