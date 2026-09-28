@@ -1,0 +1,62 @@
+job 01M3M0TFQW4MXVP237J1870JJB  type report.custom  typeVersion 1  attempt 1
+request-commit 22e7c10b525ed6e59ee36a15ed3985befecc403c
+outputFormat docx  expectedAssets report.docx (required)
+
+INPUT
+  12/12 attachments verified against request.attachments sha256 — 0 mismatches
+  dataset.json.gz  kind=urls  rowCount=10  reportedTotal=10  fetchedAt 2026-09-28T12:46:17.297Z
+  execution range: rangeField/rangeFrom/rangeTo all null — no range filter applied,
+    resolvedAt 2026-09-28T12:46:14.933Z applied verbatim, nothing re-resolved
+  query {} — the full saved search, all 10 domains rendered
+
+SPEC HANDLING
+  spec.md is a fixed-format evidence template. Its record field list (11 fields) was
+  reproduced exactly; no field added, renamed, reordered or removed. No executive
+  summary, table of contents, commentary or conclusion was added: spec rule 3 forbids
+  material beyond the values themselves, and it is more specific than the general docx
+  house style. Page numbers and a running header were kept as page furniture only.
+  Appendix A (A.1-A.4) carried across verbatim, all 286 keywords intact.
+
+CLASSIFICATION METHOD
+  Status:     BLACKLISTED -> Confirmed, REVIEW_NEEDED -> Pending
+  Confidence: confidencePercent banded 75-100 High / 50-74 Medium / 0-49 Low;
+              no numeric score printed
+  Capture ts: ANALYSIS_DONE / currentStep insertedAt for that URL (the classification
+              step), ISO 8601 with full UTC offset — not the report generation time
+  Subcategory: assigned from the capture, then keywords listed from that subcategory's
+              A.1 set only, in A.1 order, matched under A.3. Where several products
+              scored, the subcategory with the most verbatim A.1 matches was taken;
+              ties and zero-match captures fell to the product most prominently
+              evidenced on the page. general_gambling used only where the site is
+              confirmed gambling but no product type is evidenced (suriyathai[.]net,
+              a login gate).
+  Keywords:   17 verbatim matches across 4 records; 5 records "None matched"
+              (Vietnamese-language captures and the login gate — the A.1 sets are
+              Thai); 1 record "Not available" (no subcategory assigned).
+  Record 1 (www[.]lottovip[.]com[.]com) captured a 502 Bad Gateway page:
+              classification UNAVAILABLE, so Subcategory and Keywords are
+              "Not available" rather than inferred from the domain name.
+
+SCREENSHOTS
+  All 10 captures embedded, unaltered — no crop, rescale, annotation or redaction.
+  Byte-identical copies confirmed by sha256 after embedding. Only the display box is
+  bounded (76mm high) so a record block still fits one A4 page.
+  Evidence files carry no extension; embedding them directly produced extensionless
+  package parts with no declared content type, which Word rejects. Byte-identical
+  .png copies were embedded instead — same bytes, same hashes.
+
+VERIFICATION (9/9 passed)
+  1 zip integrity                                     ok
+  2 OOXML child-element ordering, 5101 containers     0 violations
+  3 all 11 image parts present, typed, referenced     ok
+  4 10/10 captures byte-identical to the evidence     ok
+  5 independent parser (docx2txt) reads the document  ok
+  6 all template sections and fixed text present      ok
+  7 Appendix A.1/A.2 keyword counts match declared    14/14 sets
+  8 keywords belong to the assigned subcategory only  no signal-tag leakage
+  9 keywords in A.1 order, no duplicates              ok
+
+NOTE
+  LibreOffice is present in this environment but cannot load any .docx (it fails on a
+  trivial one-paragraph file too), so no PDF render check was possible. Verification
+  was structural and by independent parser instead.
