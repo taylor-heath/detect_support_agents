@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3KF1AH0Z43KR7JPCKH42DJS",
+  "requestCommit": "704b7d21700e1ecd22d6e70db3dd564322607195",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-28T07:37:51.768Z",
+  "finishedAt": "2026-09-28T07:47:47.213Z",
+  "durationMs": 595445,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 84978,
+      "sha256": "bc7ba993479f5af1c062a9e63150d50a46def76ee1ea182a3e67607867213d47",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3KF1AH0Z43KR7JPCKH42DJS/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "reportedTotal": 30151,
+    "recordsRead": 30151,
+    "attachmentsVerified": 3,
+    "attachmentHashMismatches": 0,
+    "blankLines": 0,
+    "fieldCountMismatches": 0,
+    "removedTwitterComn": 0,
+    "twitterComRetained": 1,
+    "droppedReviewNeeded": 10499,
+    "duplicateUrlRows": 11,
+    "standardSetTotal": 19641,
+    "juego": 14422,
+    "noJuego": 4720,
+    "inaccesibles": 499,
+    "desconocidos": 0,
+    "ivaRegistrado": 76,
+    "ivaNoRegistradoListado": 151,
+    "ivaNoRegistrado": 14195,
+    "evaluationDays": 74,
+    "distinctSuffixes": 365,
+    "distinctVariantBrands": 2248,
+    "variantRows": 9026,
+    "redirectRows": 478,
+    "distinctRedirectSeeds": 362,
+    "rankedGamblingRows": 676,
+    "gamblingRowsWithoutRank": 13746,
+    "blankReasoning": 4542,
+    "malformedBareTldRecords": 6,
+    "brandHeatmapRows": 29,
+    "brandsWithExternalLookup": 11,
+    "top100IvaRegistradoRows": 76,
+    "top100IvaNoRegistradoListadoRows": 100,
+    "renderedPages": 18,
+    "terminologyViolationsInRenderedOutput": 0,
+    "legalEntityColumnPresent": 0,
+    "externalLookupQueries": 11
+  },
+  "error": null
+}
