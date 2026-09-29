@@ -1,0 +1,70 @@
+report.custom / 01M3P4SZY21WZ19A704G7CK5NV / attempt 1
+Informe de sitios a bloquear (Polla Chilena)
+
+INPUT
+  attachments verified against request.json sha256: spec.md, dataset.json.gz, dataset.csv -> 3/3 match
+  dataset.csv (chile_28_08_26.csv) parsed as semicolon-delimited UTF-8; all 9 expected columns present
+  30,151 records read; 13 duplicate URLs dropped; 0 blank records
+  status: Illegal gambling 14,433 / Review needed 10,499 / Not gambling 4,720 / Unreachable 499
+
+POPULATION (regla 1 and regla 5)
+  the export's legality label in Status is renamed Juego and stated once in the report's
+  terminology note, so the counts still reconcile with the original file.
+  evaluated population = Illegal gambling + Review needed = 24,919 records. Rule 5 requires the
+  unvalidated rows to be included, so pending-review variants are in; 1,779 of the proposals are
+  pending. Not gambling and Unreachable are excluded and both counts are stated under Límites.
+
+BRAND ATTRIBUTION (regla 2)
+  the two embedded tables parse to 23 denounced brands over 90 distinct domains and 101 denunciation
+  records, and 31 monitored brands. Both figures match the spec's own stated totals.
+  Source lineage Variant(x)/Redirect(x) is resolved to the root with cycle control; mean chain depth
+  5.3, maximum 21. Long chains are real: 09bet.app > 11bet.app > 1qbet.app > ... > 6xbet.org >
+  1xbet.com is a single-character rotation network, which is why 1xBet carries 1,907 proposals.
+  the brand goes to the root of the chain as rule 2 requires. The motivo, by contrast, describes the
+  relation actually observed, against the brand token when the name carries it and otherwise against
+  the immediate parent. An earlier version derived the motivo from the root token and labelled 69%
+  of all proposals a typosquat, which was an artefact of that choice, not a finding.
+  near-spelling fallback is deliberately strict (length >= 6, same first three characters, one edit
+  or Jaro-Winkler >= 0.96). A looser version attributed apuestasvzla.com to Apuestas Royal and
+  bet.cc to Bet365 on a shared generic prefix.
+
+CHILE RELEVANCE (regla 4)
+  Alta 89, Media 1,423, Baja 1,678.
+  Spanish and Portuguese are separated on vocabulary that differs between them; "depósito" is never
+  used as a Spanish signal, as the spec requires. 224 proposals carry Portuguese and are placed in
+  Baja on that basis.
+  Baja requires positive evidence of another market. 2,829 proposals carry no determinable content
+  language, almost always because the page was down, blocked or parked, so a generic suffix
+  reachable from Chile stays Media and the report says how many cases that is, so Media reads as
+  reachability rather than as a content finding.
+  'chile', 'chil' and 'latam' are matched as substrings; 'cl' and 'lat' only when delimited. As bare
+  substrings they promoted kenyaconsulatela.com to Alta on the 'lat' inside "consulate".
+
+MANUAL VERIFICATION (as the spec's checklist requires)
+  10 records reviewed against their LLM Reasoning. Three defects found and fixed: Media was being
+  assigned without the Spanish-content test; transposition typosquats (ggpoker -> ggpkoer) were
+  labelled "marca embebida" because the edit test did not cover transpositions; and a domain whose
+  stem equals the brand token defaulted to "rotación de TLD" even when the suffix was the brand's
+  own. A second sample of 10 was reviewed after the fixes with no further defects.
+
+CHECKLIST BEFORE DELIVERY — all pass
+  no occurrence of ilegal / ilícito / con licencia / sin licencia outside the terminology note
+  CSV rows (3,190) equal the summary total and equal the rows rendered in the report tables
+  no CSV domain appears in the denounced table, compared by registrable domain (111 excluded)
+  every row carries a motivo from the permitted list and an estado_marca
+  nothing attributed to skillonnet.com, 418services.com, baytreeinteractive.com or kaizengaming.com
+  every URL comes from the export; none invented
+  aguasanjoaquin.cl excluded as a seed: it is a Chilean water utility, not operator property
+
+OUTPUT
+  report.html: self-contained, A4 via @page, no horizontal overflow at 1000 px or at 390 px,
+  light and dark schemes, one h1, jump-link contents. Checked in Chromium at both widths and
+  printed to PDF at 210 x 297 mm.
+  sitios-propuestos.csv: UTF-8 with BOM, 3,190 rows, ordered by relevancia then marca then dominio,
+  columns exactly as SALIDA 2 specifies.
+  0 legitimate compromised sites were found; that section states so explicitly rather than being
+  dropped.
+
+STORAGE
+  git-lfs is not available in this environment, so assets are committed to git directly and
+  storage.kind is "git", matching every earlier result in this repository.
