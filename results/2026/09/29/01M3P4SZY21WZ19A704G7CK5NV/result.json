@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3P4SZY21WZ19A704G7CK5NV",
+  "requestCommit": "8ae2f9a90d0f66cc1a036d515db1be80a68c551a",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-29T10:02:32.000Z",
+  "finishedAt": "2026-09-29T10:16:09.739Z",
+  "durationMs": 817739,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 478067,
+      "sha256": "37483d9cc714424f37babcd10079615cccc7f204e822ef2b8a5a582bdcc6f434",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3P4SZY21WZ19A704G7CK5NV/report.html"
+      }
+    },
+    {
+      "name": "sitios-propuestos.csv",
+      "contentType": "text/csv",
+      "bytes": 426587,
+      "sha256": "4fbd17d40ecad33444c83e7ca07f9922e9bd1e03006e26b5fcf6319d1abdd959",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3P4SZY21WZ19A704G7CK5NV/sitios-propuestos.csv"
+      }
+    }
+  ],
+  "metrics": {
+    "attachmentsVerified": 3,
+    "attachmentHashMismatches": 0,
+    "registrosLeidos": 30151,
+    "reportedTotal": 30151,
+    "duplicadosDescartados": 13,
+    "registrosVacios": 0,
+    "candidatosEvaluados": 24919,
+    "noJuego": 4720,
+    "inalcanzables": 499,
+    "urlPropuestas": 3190,
+    "marcasConActividad": 53,
+    "marcasDenunciadas": 23,
+    "marcasSeguimiento": 31,
+    "dominiosDenunciadosEnTabla": 77,
+    "relevanciaAlta": 89,
+    "relevanciaMedia": 1423,
+    "relevanciaBaja": 1678,
+    "estadoDenunciada": 2511,
+    "estadoSinDenunciaPrevia": 679,
+    "pendientesDeRevision": 1779,
+    "motivoReplicaNumerada": 1267,
+    "motivoRotacionTLD": 641,
+    "motivoMarcaMasAfijo": 283,
+    "motivoMarcaEmbebida": 42,
+    "motivoTyposquat": 714,
+    "motivoPaginaClonada": 19,
+    "motivoRedireccion": 224,
+    "excluidosMarcaFueraDeAlcance": 20603,
+    "excluidosInfraestructura": 1011,
+    "excluidosYaDenunciados": 111,
+    "excluidosSociedadOperadora": 3,
+    "sitiosLegitimosComprometidos": 0,
+    "aristasDeLinaje": 14565,
+    "idiomaNoDeterminado": 1394,
+    "filasCsv": 3190,
+    "verificacionesPasadas": 7,
+    "verificacionesTotales": 7,
+    "registrosRevisadosAMano": 20,
+    "defectosCorregidosTrasRevision": 3,
+    "personalDataFieldsRedacted": 0
+  },
+  "error": null
+}
