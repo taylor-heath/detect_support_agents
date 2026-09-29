@@ -1,0 +1,89 @@
+job 01M3PC6ZKWY0XSZZJPCZ6ENDB1  type=report.custom typeVersion=1  attempt 1
+agent report-custom-agent 1.0.0
+request-commit 9f37de88775744a94ab0aefed9f007782b2a07da
+
+INPUTS
+  attachments declared 12; verified 12 against request.attachments[].sha256/bytes;
+    0 mismatches, 0 missing.
+  spec.md sha256 matches params.specSha256.
+  dataset.json.gz: kind=urls rowCount=10 reportedTotal=10 domainIds=10 analyses=10.
+  params.execution: rangeField=null rangeFrom=null rangeTo=null rangeExpression=null
+    resolvedAt=2026-09-29T10:43:48.712Z. No range filter to apply; the gateway
+    supplied no field selector and no bounds, so all 10 supplied rows were read.
+    No relative range was re-resolved.
+  params.query = {} (empty). No additional filtering applied.
+
+SELECTION (spec rule 15: remove any item whose STATUS is not CONFIRMED)
+  BLACKLISTED -> Confirmed, retained: 9
+  REVIEW_NEEDED, removed:             1  (www.lottovip.com.com,
+                                          classification UNAVAILABLE, 502 Bad Gateway)
+
+FIELD DERIVATION
+  Source (rule 10.5): "SICPADetect" + source metadata from decisions[].initialAuthor.
+    The word "Manual" was stripped from 3 values; the bracketed detail was kept.
+    The string "Manual" does not appear anywhere in the rendered report.
+  Confidence (rule 11): numeric confidencePercent mapped to a band and never printed.
+    95 -> High (7 records), 90 -> High (2 records). No Medium or Low occurred.
+  Capture time (rule 7): taken from the classification step of the record's current
+    decision (ANALYSIS_DONE where present; for auto.woloplay.net the only recorded
+    step, BLACKLISTED, carries the classification details). Emitted in ISO 8601 with
+    a full UTC offset. Source timestamps are UTC, so the offset is +00:00; the
+    instant was not shifted to another zone.
+  Screenshot (rules 9, 10): each capture embedded in the document as an unaltered
+    PNG - no crop, rescale beyond uniform fit-to-column, annotation, enhancement or
+    redaction. Filename line carries the evidence path as committed with the request.
+  Subcategory / Keywords (rules 4, 12): subcategory assigned first from the capture,
+    then keywords taken only from that subcategory's Appendix A.1 set, matched
+    verbatim under the A.3 rules, reported in A.1 order. A.2 signal-tag keywords
+    were excluded from "Keywords detected" throughout.
+
+KEYWORD MATCHING - per record (subcategory | keywords)
+  suriyathai.net      General Gambling | None matched
+  lotto432ad.com      Lottery          | 8 matched
+  jun8891.com         Casino           | 2 matched
+  mun8.com            Slots            | 1 matched
+  y2k168.net          General Gambling | None matched
+  auto.woloplay.net   General Gambling | None matched
+  woloplay.net        General Gambling | None matched
+  1x789.app           Slots            | 2 matched
+  fin882.co           Slots            | 1 matched
+
+  4 records resolved to the general_gambling catch-all. Each is a bare login wall
+  whose capture carries no Appendix A.1 product keyword: the site is confirmed
+  gambling but the product type is not evidenced, which is the condition A.1
+  states for that value.
+
+VERIFICATION
+  Every keyword list re-derived mechanically from the transcribed capture text and
+  compared with the list rendered. Checks run per record: (a) list equals the
+  derived list, (b) no keyword outside the assigned subcategory's set, (c) no A.2
+  signal-tag keyword present, (d) Appendix A.1 ordering preserved.
+    checks run 36, failed 0.
+  Appendix A parsed out of spec.md rather than retyped, so A.1-A.4 are reproduced
+  unedited, unreordered and unextended (rule 5a). Rows: A.1 7, A.2 7, A.3 6, A.4 5.
+  Rendered to PDF and read back page by page: 14 pages, A4 portrait, 20mm top and
+  bottom margins, 25mm left and right, every record block held on a single page.
+
+FORMAT NOTES
+  outputFormat=docx. Word heading styles (Heading 1/2/3) carry the structure, so the
+  navigation pane works. Page numbers and the document's own footer line run in the
+  footer; a running header carries the title.
+  No table of contents: the document has 2 top-level sections, below the threshold
+  at which one is called for.
+  No executive summary. The report specification (rule 3) forbids adding any
+  section, preamble, commentary, summary, analysis or conclusion, and that
+  instruction was followed in preference to the general house style for long
+  documents.
+  Thai text is set with a complex-script font (Leelawadee UI) and falls back to
+  whatever Thai face the reader has; Latin text is Arial.
+
+DATA HANDLING
+  No government identifier, financial account number, credential or API key was
+  written to the report or to this log. No personal data field was redacted,
+  because none was present in the values reported. Two captures show partially
+  masked account identifiers rendered by the sites themselves; they are part of the
+  unaltered evidence image, which rule 10 forbids modifying, and they are already
+  masked at source.
+
+RESULT
+  status succeeded; 1 asset: report.docx (9 records, 14 pages).

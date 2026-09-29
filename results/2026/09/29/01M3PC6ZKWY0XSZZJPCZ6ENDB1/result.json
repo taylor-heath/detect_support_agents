@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3PC6ZKWY0XSZZJPCZ6ENDB1",
+  "requestCommit": "9f37de88775744a94ab0aefed9f007782b2a07da",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-29T10:45:56.000Z",
+  "finishedAt": "2026-09-29T11:05:01.822Z",
+  "durationMs": 1145822,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 5828636,
+      "sha256": "257140857c9a13261140d8fe1ee267956e0f9e916c5effd232579a9faa74cc62",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3PC6ZKWY0XSZZJPCZ6ENDB1/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "attachmentsDeclared": 12,
+    "attachmentsVerified": 12,
+    "attachmentHashMismatches": 0,
+    "attachmentsMissing": 0,
+    "rowsRead": 10,
+    "reportedTotal": 10,
+    "recordsConfirmed": 9,
+    "recordsRemovedNotConfirmed": 1,
+    "evidenceCapturesEmbedded": 9,
+    "distinctCaptureHashes": 8,
+    "subcategorySlots": 3,
+    "subcategoryLottery": 1,
+    "subcategoryCasino": 1,
+    "subcategoryGeneralGambling": 4,
+    "keywordMatchesTotal": 14,
+    "recordsWithNoKeywordMatch": 4,
+    "signalTagKeywordsInKeywordField": 0,
+    "confidenceHigh": 9,
+    "confidenceMedium": 0,
+    "confidenceLow": 0,
+    "numericConfidenceScoresPrinted": 0,
+    "sourceValuesContainingManual": 0,
+    "appendixRowsReproduced": 25,
+    "verificationChecksRun": 36,
+    "verificationChecksFailed": 0,
+    "renderedPages": 14,
+    "personalDataFieldsRedacted": 0
+  },
+  "error": null
+}
