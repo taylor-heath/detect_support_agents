@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3P46SY42EZNJGB4V3HF7V9P",
+  "requestCommit": "d89761e617dfaa35e1a9ffe463100f87d368c874",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-29T08:39:06.000Z",
+  "finishedAt": "2026-09-29T10:01:50.334Z",
+  "durationMs": 4964334,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 1179955,
+      "sha256": "8a9226a90786bd8590a47c3ec9159cd0682d1effd13a5ec2ffd619d5669060a6",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3P46SY42EZNJGB4V3HF7V9P/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "attachmentsVerified": 3,
+    "attachmentHashMismatches": 0,
+    "rowsRead": 53867,
+    "reportedTotal": 53873,
+    "reviewNeededDropped": 22032,
+    "duplicateUrlsDropped": 37,
+    "standardSetTotal": 31798,
+    "gambling": 9175,
+    "notGambling": 11594,
+    "unreachable": 28,
+    "unknown": 11001,
+    "licensedGamblingNormalised": 0,
+    "lexiconKeywords": 286,
+    "lexiconCategories": 14,
+    "distinctKeywordsMatched": 80,
+    "keywordAssigned": 338,
+    "inferredAssigned": 8837,
+    "inferredSharePct": 96.3,
+    "generalSharePct": 15.7,
+    "lexiconCoverageWarningRaised": 1,
+    "abbreviationsFlagged": 1,
+    "distinctClusters": 2491,
+    "multiUrlClusters": 1342,
+    "singletonCount": 1149,
+    "clustersToHalf": 78,
+    "similarityMerges": 1369,
+    "seedKeyedRows": 30888,
+    "crossSubcategoryClusters": 552,
+    "tldRotatingClusters": 796,
+    "linkagePairs": 6056,
+    "rankedGamblingRows": 236,
+    "prominentQualified": 26,
+    "prominentRendered": 10,
+    "prominentVietnameseExcluded": 0,
+    "blockingEvidenceRows": 7,
+    "blocklistFeedRows": 9175,
+    "evaluationPeriodDays": 29,
+    "cardsRendered": 30,
+    "sectionsRendered": 7,
+    "figuresRendered": 11,
+    "contentsVerified": 1,
+    "pagesRendered": 21,
+    "personalDataFieldsRedacted": 0
+  },
+  "error": null
+}
