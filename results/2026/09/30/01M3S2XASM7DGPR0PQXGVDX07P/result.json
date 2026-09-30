@@ -6,17 +6,17 @@
     "id": "report-custom-agent",
     "version": "1.0.0"
   },
-  "attempt": 1,
+  "attempt": 2,
   "status": "succeeded",
-  "startedAt": "2026-09-30T12:03:31.011Z",
-  "finishedAt": "2026-09-30T12:25:34.806Z",
-  "durationMs": 1323795,
+  "startedAt": "2026-09-30T12:54:56.670Z",
+  "finishedAt": "2026-09-30T12:56:17.925Z",
+  "durationMs": 81255,
   "assets": [
     {
       "name": "report.docx",
       "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-      "bytes": 8210129,
-      "sha256": "95da0535d4bf148b9f46899af978bf96a7e425d26ed3459c259fc228ebe3d06f",
+      "bytes": 8210177,
+      "sha256": "51c9c7e0739b83b644cba7af630a8488a1778553b8d394fd3ee7b96725f23169",
       "storage": {
         "kind": "git",
         "key": "assets/01M3S2XASM7DGPR0PQXGVDX07P/report.docx"
@@ -59,11 +59,15 @@
     "fieldsNotAvailable": 1,
     "rationaleLabelsDeleted": 10,
     "personalDataFieldsRedacted": 0,
-    "finalCheckAssertions": 113,
+    "finalCheckAssertions": 126,
     "finalCheckFailures": 0,
     "renderedPages": 15,
     "layoutChecksRun": 4,
-    "layoutChecksFailed": 0
+    "layoutChecksFailed": 0,
+    "mediaPartsWithResolvableContentType": 10,
+    "mediaPartsTotal": 10,
+    "drawingsEmbedded": 11,
+    "unresolvedRelationshipIds": 0
   },
   "error": null
 }
