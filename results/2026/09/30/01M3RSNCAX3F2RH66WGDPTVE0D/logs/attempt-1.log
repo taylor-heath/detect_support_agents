@@ -1,0 +1,57 @@
+report.custom attempt 1 - 01M3RSNCAX3F2RH66WGDPTVE0D
+
+INGEST
+  spec.md, dataset.json.gz and dataset.csv verified against the declared sha256. All three match.
+  Required columns all present. Optional columns Interesting Keywords and Remarks absent.
+  Encoding check passed: Thai script intact in 573 rows, no mojibake.
+  40,975 CSV records parsed from a reported 40,981 rows; the difference is embedded newlines
+  inside quoted fields, which the CSV reader resolves into whole records.
+
+RUN PARAMETERS (§1.1)
+  None supplied in params. Six fallbacks applied:
+    pilotStartDate      -> earliest exported record (2026-09-04), footnote line added
+    crawlCapacityPerDay -> capacity comparison (§6.14) and Card 1 point b omitted
+    sourceFeedName      -> generic rank caption only
+    unknownCauses       -> no specific cause named (moot: unknown = 0)
+    reportReference     -> omitted from the title page
+    classification      -> omitted from the title page
+  execution.rangeFrom / rangeTo are null and query is empty, so the whole dataset was used.
+
+STANDARD SET (§3)
+  20,727 Review needed rows dropped; 33 URL duplicates dropped. Standard total 20,215.
+  Gambling 8,833 (43.7%), Not gambling 11,338, Unreachable 44, Unknown 0.
+  No row arrived as Licensed gambling.
+
+ASSIGNMENT (§4)
+  Lexicon loaded from Appendix A: 14 categories, 286 distinct keywords, counts match the spec.
+  292 gambling rows assigned by lexicon match, 8,541 by model inference (96.7%).
+  inferredShare 96.7% exceeds 30%, so the report states that the lexicon covers part of the
+  vocabulary in this dataset and that inference-based subcategory figures are indicative.
+  generalShare 16.4%, below the 40% threshold.
+  No gambling row had empty reasoning, so no row fell to "Unspecified".
+  VIP (40.2%) and BET (23.6%) each exceed 20% of Abbreviations matches and are flagged in the footnote.
+
+CLUSTERING (§5)
+  Crawler seed linkage is transitive by construction and dominates this export: 8,277 of the
+  8,833 gambling rows are crawler variants. 91 clusters, 42 multi-URL, 49 singletons.
+  The largest cluster holds 8,344 URLs (94.5%), so clustersToHalf is 1.
+  Near-miss merge held to the spec threshold: Jaro-Winkler >= 0.90 with a prefix relation.
+  Jaro-Winkler implementation verified against MARTHA/MARHTA, DWAYNE/DUANE, DIXON/DICKSONX.
+
+RENDER
+  Word output, A4, 25 mm side margins, 160 mm content column, cards at 10 mm padding.
+  8 charts rendered with matplotlib and inspected after render; three label defects found and
+  fixed (C2 date tick collision, D2 legend over the axis title, E4 node label collisions).
+  Heat maps D4, D5 and E3 render as native Word tables so counts stay legible on paper.
+  Thai runs carry a Thai-capable font so the script survives outside this container.
+
+VERIFICATION
+  OOXML tcPr/trPr child order normalised: 0 out-of-order, 0 duplicated.
+  Round-trip load OK; zip integrity OK; all document parts well-formed; 8 images embedded.
+  Prohibited-string scan (§9.7) passed. All 60 percentages at one decimal place.
+  All 35 contents links resolve to a bookmark.
+
+NOT DONE
+  No PDF proof: libreoffice-writer is not installed in this container, so no import filter is
+  available and no page-level pagination check was possible. Charts were inspected individually.
+  No crest image was supplied with the request, so the title page carries no crest.
