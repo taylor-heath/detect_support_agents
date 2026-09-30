@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3S2XASM7DGPR0PQXGVDX07P",
+  "requestCommit": "6734ee53a941a85339368d0d557a272448b0c56c",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-30T12:03:31.011Z",
+  "finishedAt": "2026-09-30T12:25:34.806Z",
+  "durationMs": 1323795,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 8210129,
+      "sha256": "95da0535d4bf148b9f46899af978bf96a7e425d26ed3459c259fc228ebe3d06f",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3S2XASM7DGPR0PQXGVDX07P/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "attachmentsDeclared": 12,
+    "attachmentsVerified": 12,
+    "attachmentHashMismatches": 0,
+    "attachmentsMissing": 0,
+    "rowsRead": 10,
+    "reportedTotal": 10,
+    "rowCountVarianceExplained": 0,
+    "recordsConfirmed": 10,
+    "recordsExcluded": 0,
+    "recordBlocksFilled": 10,
+    "recordBlocksUnused": 0,
+    "capturesEmbedded": 10,
+    "capturesByteIdentical": 10,
+    "captureHashMismatches": 0,
+    "distinctCaptureFiles": 9,
+    "duplicateCapturePairs": 1,
+    "captureTimestampsResolved": 10,
+    "captureTimestampsMissing": 0,
+    "confidenceHigh": 10,
+    "confidenceMedium": 0,
+    "confidenceLow": 0,
+    "subcategorySlots": 7,
+    "subcategoryCasino": 1,
+    "subcategoryGeneralGambling": 2,
+    "keywordRecordsMatched": 8,
+    "keywordRecordsNoneMatched": 2,
+    "keywordTriggersTotal": 10,
+    "keywordSetViolations": 0,
+    "signalTagLeaks": 0,
+    "sourceValuesRewritten": 10,
+    "toolNamesRemoved": 6,
+    "e2PlaceholdersInserted": 0,
+    "fieldsNotAvailable": 1,
+    "rationaleLabelsDeleted": 10,
+    "personalDataFieldsRedacted": 0,
+    "finalCheckAssertions": 113,
+    "finalCheckFailures": 0,
+    "renderedPages": 15,
+    "layoutChecksRun": 4,
+    "layoutChecksFailed": 0
+  },
+  "error": null
+}

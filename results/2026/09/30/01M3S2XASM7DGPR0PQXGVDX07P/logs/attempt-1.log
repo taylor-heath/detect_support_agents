@@ -1,0 +1,78 @@
+job 01M3S2XASM7DGPR0PQXGVDX07P  type=report.custom  typeVersion=1  attempt=1
+agent report-custom-agent 1.0.0
+
+INPUT
+  request.json            read at origin/main 6734ee53a941a85339368d0d557a272448b0c56c
+  spec.md                 73770 B  sha256 verified against attachments manifest  OK
+  dataset.json.gz          6516 B  sha256 verified against attachments manifest  OK
+  evidence captures       10 files, sha256 verified against attachments manifest OK
+  outputFormat            docx
+  execution               rangeField/rangeFrom/rangeTo/rangeExpression all null;
+                          resolvedAt 2026-09-30T11:58:57.873Z applied verbatim, no range
+                          re-resolved.
+
+WORK
+  10 analyses read; all 10 carry currentStatus BLACKLISTED and caseManagement
+  ILLEGAL_GAMBLING, so all 10 qualify as Confirmed under spec rule 16 and fill the
+  ten fixed record blocks. No block left unused, so no [NEW RECORD REQUIRED].
+  Capture timestamps taken from each decision's ANALYSIS_DONE step (spec rule 8) and
+  rendered with the full +07:00 offset. Evidence hashes recomputed from the capture
+  files; all 10 match the request manifest. Captures embedded byte-identically (no
+  crop, rescale, annotation or redaction), verified by hashing word/media/* in the
+  output.
+
+OPERATOR SUMMARY (spec rule 21) -- not part of the report
+  Values changed from the source record
+    - Source field, records 1, 2, 5, 6, 8, 9: source record carries the tool name
+      "Manual (claude.ai)". Under rule 11 the words "Manual" and "claude.ai" are
+      removed; nothing remains, so the value reads
+      "SICPADetect automated classification pipeline".
+    - Source field, record 3: "Variant (jun8888.info)"  -> "SICPADetect (Variant: jun8888.info)"
+    - Source field, record 4: "Variant (mun89.com)"     -> "SICPADetect (Variant: mun89.com)"
+    - Source field, records 7 and 10: "Variant (1x789.cc)" -> "SICPADetect (Variant: 1x789.cc)"
+    - Confidence, all records: numeric score replaced by a band under rule 12
+      (95 -> High for records 1-4 and 6-10; 90 -> High for record 5). No numeric
+      score is printed anywhere.
+    - Rationale, all records: the source "reasons" string prefixes each observation
+      with "Screenshot:". Rule 18 forbids that opening, and rule 17 requires the
+      labelled evidence lines, so the observations are restated under
+      Visual / Functional / Keyword / Capture integrity labels.
+    - Rationale, all records: the "Domain / URL evidence" label and its preceding
+      break are deleted. No domain in this set carries a gambling term or pattern,
+      and rule 7 forbids inferring one from the domain name alone.
+
+  E2 placeholders inserted
+    - None. Every record has a capture, a capture timestamp and a SHA-256 hash.
+
+  Other values that could not be filled from the record
+    - "Report reference": no REF-YYYY-NNN value exists in the source record, the
+      attachments or the run parameters. Written as "Not available" under rule 7.
+      Needs the reference number MDES assigns to this submission.
+
+  Notes on rendering this template as .docx
+    - Subcategory and keywords were assigned per rule 13, subcategory first, then
+      only keywords from that subcategory's Appendix A.1 set found verbatim in the
+      capture. Records 1 and 5 are login-gated pages with no product evidence, so
+      they take the general_gambling catch-all and read "None matched".
+    - Screenshots are embedded, not linked; the .docx carries the capture bytes.
+    - Each record block starts on a new page so .record{break-inside:avoid} holds.
+    - A page-number footer was added, which the HTML template leaves to the print
+      renderer. No other section, heading, preamble or commentary was added.
+
+CHECKS
+  113 assertions over the built document, 0 failures:
+  10 record blocks; front page reads 10; no "Manual"/"claude.ai"/AI tool name
+  anywhere; every capture timestamp carries a UTC offset; every record carries a
+  SHA-256 hash; explanatory note present once, in record 1; no rationale opens with
+  "Screenshot:"; every rationale uses the labels; no em dash; no double full stop;
+  "Keywords captured" repeats "Keywords detected"; capture-valid hash and timestamp
+  agree with the record; every subcategory is one of the seven A.1 values; every
+  keyword belongs to its record's subcategory set, in Appendix A.1 order, with no
+  signal-tag leakage.
+  Layout verified by rendering to PDF: 15 A4 pages, each record on one page.
+
+OUTPUT
+  assets/01M3S2XASM7DGPR0PQXGVDX07P/report.docx
+  8210129 bytes  sha256 95da0535d4bf148b9f46899af978bf96a7e425d26ed3459c259fc228ebe3d06f
+  storage.kind "git": git-lfs is not installed in this environment and this
+  repository has never tracked assets with it; every prior result uses kind "git".
