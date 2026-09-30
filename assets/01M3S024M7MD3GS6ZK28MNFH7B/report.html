@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thailand Summary Tables</title>
+<style>
+  @page { size: A4 portrait; margin: 20mm; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  :root {
+    --ink: #16191d; --muted: #5b6571; --rule: #d6dbe2; --rule-strong: #9aa4b2;
+    --bg: #ffffff; --panel: #f4f6f9; --accent: #1f4b7a; --flag: #8a4b00; --flag-bg: #fdf0dc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 10.5pt; line-height: 1.5;
+  }
+  article { max-width: 170mm; }
+  h1, h2, h3 { font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.25; color: var(--accent); }
+  h1 { font-size: 19pt; margin: 0 0 2mm; letter-spacing: -0.2px; }
+  h2 { font-size: 12.5pt; margin: 9mm 0 1mm; padding-bottom: 1.5mm; border-bottom: 1.5px solid var(--rule-strong); }
+  h3 { font-size: 10.5pt; margin: 6mm 0 1mm; color: var(--ink); }
+  p { margin: 0 0 2.5mm; }
+  .lede { color: var(--muted); font-size: 9.5pt; margin-bottom: 1mm; }
+  dl.meta {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 2mm;
+    padding: 3mm 4mm; margin: 4mm 0 0; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8.5pt;
+  }
+  .meta { display: grid; grid-template-columns: 34mm 1fr; gap: 0.8mm 3mm; }
+  .meta dt { color: var(--muted); }
+  .meta dd { margin: 0; }
+  .denom {
+    font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8.5pt; color: var(--muted);
+    border-left: 2.5px solid var(--accent); padding: 0.5mm 0 0.5mm 3mm; margin: 0 0 3mm;
+  }
+  table { width: 100%; max-width: 100%; border-collapse: collapse; margin: 0 0 3mm; font-size: 9.5pt; }
+  caption { text-align: left; font-size: 8.5pt; color: var(--muted); padding-bottom: 1.5mm;
+             font-family: "Helvetica Neue", Arial, sans-serif; }
+  thead th {
+    font-family: "Helvetica Neue", Arial, sans-serif; font-size: 8.5pt; text-align: right;
+    border-bottom: 1.5px solid var(--rule-strong); padding: 1.6mm 2mm; color: var(--accent);
+  }
+  thead th:first-child { text-align: left; }
+  tbody th { text-align: left; font-weight: 400; padding: 1.6mm 2mm; border-bottom: 1px solid var(--rule); }
+  tbody td { padding: 1.6mm 2mm; border-bottom: 1px solid var(--rule); }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tbody tr:nth-child(even) th, tbody tr:nth-child(even) td { background: #fafbfc; }
+  tr.total th, tr.total td {
+    font-weight: 700; border-top: 1.5px solid var(--rule-strong); border-bottom: none; background: #eef2f7 !important;
+  }
+  tr.sub th, tr.sub td { font-weight: 700; background: #f4f6f9 !important; }
+  code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; }
+  .flag { background: var(--flag-bg); color: var(--flag); font-size: 7.5pt; padding: 0.3mm 1.2mm; border-radius: 1mm; }
+  .note { font-size: 8.5pt; color: var(--muted); margin: 0 0 3mm; }
+  ul { margin: 0 0 3mm; padding-left: 5mm; }
+  li { margin-bottom: 1mm; }
+  section { break-inside: auto; }
+  h2 { break-after: avoid; }
+  table { break-inside: avoid; }
+  img, pre { max-width: 100%; }
+  @media screen {
+    body { padding: 20mm 16px; }
+    article { margin: 0 auto; }
+  }
+  @media screen and (max-width: 600px) {
+    body { padding: 16px; font-size: 11pt; }
+    .meta { grid-template-columns: 1fr; }
+    .meta dt { margin-top: 1.5mm; }
+    table { font-size: 9pt; }
+  }
+</style>
+</head>
+<body>
+<article>
+
+<header>
+  <p class="lede">SICPADetect export · saved search 00888457</p>
+  <h1>Thailand Summary Tables</h1>
+  <dl class="meta">
+      <dt>Source export</dt><dd><code>thailand_04_09_to_30_09.csv</code></dd>
+      <dt>Records read</dt><dd>40,975</dd>
+      <dt>Description field</dt><dd><code>LLM Reasoning</code></dd>
+      <dt>Unit of count</dt><dd>One record per row (no de-duplication)</dd>
+      <dt>Report rule</dt><dd><code>37e74b49-9a71-44b4-8a18-046cd475c983</code></dd>
+      <dt>Resolved at</dt><dd>2026-09-30T11:09:11Z</dd>
+  </dl>
+</header>
+
+<section id="t1">
+  <h2>Table 1 — Records by status</h2>
+  <p class="denom"><strong>Denominator:</strong> all records in the export (40,975).</p>
+  <table>
+    <caption>All classified records, by status value as exported.</caption>
+    <thead><tr><th scope="col">Status</th><th scope="col">Records</th><th scope="col">% of total</th></tr></thead>
+    <tbody>
+      <tr><th scope='row'>Illegal gambling</th><td class='n'>8,866</td><td class='n'>21.6%</td></tr>
+<tr><th scope='row'>Review needed</th><td class='n'>20,727</td><td class='n'>50.6%</td></tr>
+<tr><th scope='row'>Not gambling</th><td class='n'>11,338</td><td class='n'>27.7%</td></tr>
+<tr><th scope='row'>Unreachable</th><td class='n'>44</td><td class='n'>0.1%</td></tr>
+      <tr class="total"><th scope="row">TOTAL</th><td class="n">40,975</td><td class="n">100.0%</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="t2">
+  <h2>Table 2 — Records by status, <code>.th</code> domains only</h2>
+  <p class="denom"><strong>Denominator:</strong> the <code>.th</code> subset (107 records). The third column
+  shows each figure as a share of all 40,975 records.</p>
+  <table>
+    <caption>A record counts as <code>.th</code> where its registrable domain ends in <code>.th</code>.</caption>
+    <thead><tr><th scope="col">Status</th><th scope="col">Records</th>
+      <th scope="col">% of .th records</th><th scope="col">% of all records</th></tr></thead>
+    <tbody>
+      <tr><th scope='row'>Illegal gambling</th><td class='n'>1</td><td class='n'>0.9%</td><td class='n'>0.0%</td></tr>
+<tr><th scope='row'>Review needed</th><td class='n'>15</td><td class='n'>14.0%</td><td class='n'>0.0%</td></tr>
+<tr><th scope='row'>Not gambling</th><td class='n'>89</td><td class='n'>83.2%</td><td class='n'>0.2%</td></tr>
+<tr><th scope='row'>Unreachable</th><td class='n'>2</td><td class='n'>1.9%</td><td class='n'>0.0%</td></tr>
+      <tr class="total"><th scope="row">TOTAL</th><td class="n">107</td>
+        <td class="n">100.0%</td><td class="n">0.3%</td></tr>
+    </tbody>
+  </table>
+  <h3>Composition of the <code>.th</code> subset</h3>
+  <table>
+    <caption>Second-level suffix of the 107 matched domains.</caption>
+    <thead><tr><th scope="col">Suffix</th><th scope="col">Records</th></tr></thead>
+    <tbody>
+      <tr><th scope='row'><code>.co.th</code></th><td class='n'>31</td></tr>
+<tr><th scope='row'><code>.go.th</code></th><td class='n'>31</td></tr>
+<tr><th scope='row'><code>.ac.th</code></th><td class='n'>20</td></tr>
+<tr><th scope='row'><code>.or.th</code></th><td class='n'>18</td></tr>
+<tr><th scope='row'><code>.in.th</code></th><td class='n'>4</td></tr>
+<tr><th scope='row'>Direct second-level <code>.th</code> (<code>bt.th</code>, <code>exposemediagroup.th</code>, <code>kucoin.th</code>)</th><td class='n'>3</td></tr>
+      <tr class="total"><th scope="row">TOTAL</th><td class="n">107</td></tr>
+    </tbody>
+  </table>
+  <p class="note">No <code>.net.th</code> or <code>.mi.th</code> records occur in this export.
+  <code>.go.th</code>, <code>.ac.th</code> and <code>.mi.th</code> are counted, per the default setting.</p>
+</section>
+
+<section id="t3">
+  <h2>Table 3 — Records by status, Thai-target-audience indicators</h2>
+  <p class="denom"><strong>Denominator:</strong> the Thai-indicator subset (845 records). The third column
+  shows each figure as a share of all 40,975 records. The test is applied to the
+  <code>LLM Reasoning</code> field only, never to the URL or domain.</p>
+  <table>
+    <caption>Records whose description field carries at least one Thai-audience indicator.</caption>
+    <thead><tr><th scope="col">Status</th><th scope="col">Records</th>
+      <th scope="col">% of Thai-indicator records</th><th scope="col">% of all records</th></tr></thead>
+    <tbody>
+      <tr><th scope='row'>Illegal gambling</th><td class='n'>613</td><td class='n'>72.5%</td><td class='n'>1.5%</td></tr>
+<tr><th scope='row'>Review needed</th><td class='n'>139</td><td class='n'>16.4%</td><td class='n'>0.3%</td></tr>
+<tr><th scope='row'>Not gambling</th><td class='n'>93</td><td class='n'>11.0%</td><td class='n'>0.2%</td></tr>
+      <tr class="total"><th scope="row">TOTAL</th><td class="n">845</td>
+        <td class="n">100.0%</td><td class="n">2.1%</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Which indicator triggered each match</h3>
+  <p class="note">A record matching more than one indicator type is counted once under each type it triggered,
+  so the rows below sum to more than the 845 matched records.</p>
+  <table>
+    <caption>Indicator types, by number of records triggering each.</caption>
+    <thead><tr><th scope="col">Indicator type</th><th scope="col">Records</th>
+      <th scope="col">% of Thai-indicator records</th></tr></thead>
+    <tbody>
+      <tr><th scope='row'>Thai script (U+0E00–U+0E7F)</th><td class='n'>593</td><td class='n'>70.2%</td></tr>
+<tr><th scope='row'>Explicit Thailand / Thai language / Thai city or province</th><td class='n'>272</td><td class='n'>32.2%</td></tr>
+<tr><th scope='row'>Thai payment / banking reference</th><td class='n'>142</td><td class='n'>16.8%</td></tr>
+<tr><th scope='row'>Currency reference (฿ / THB / baht / บาท)</th><td class='n'>64</td><td class='n'>7.6%</td></tr>
+<tr><th scope='row'>Transliterated Thai-market gambling term</th><td class='n'>25</td><td class='n'>3.0%</td></tr>
+<tr><th scope='row'>Thai contact convention (+66 / LINE)</th><td class='n'>4</td><td class='n'>0.5%</td></tr>
+      <tr class="sub"><th scope="row">Total indicator triggers</th><td class="n">1,100</td>
+        <td class="n">130.2%</td></tr>
+      <tr class="total"><th scope="row">TOTAL distinct records</th><td class="n">845</td>
+        <td class="n">100.0%</td></tr>
+    </tbody>
+  </table>
+  <p class="note">628 records matched 1 indicator type, 183 records matched 2 indicator types, 30 records matched 3 indicator types, 4 records matched 4 indicator types.</p>
+</section>
+
+<section id="t4">
+  <h2>Table 4 — Thailand relevance overall</h2>
+  <p class="denom"><strong>Denominator:</strong> all records in the export (40,975). &ldquo;Thailand-relevant
+  overall&rdquo; uses the default <strong>union</strong> rule — a <code>.th</code> domain <em>or</em> a Thai
+  indicator, not both.</p>
+  <table>
+    <caption>Domain evidence and description evidence, cross-tabulated.</caption>
+    <thead><tr><th scope="col">Category</th><th scope="col">Records</th><th scope="col">% of total</th></tr></thead>
+    <tbody>
+      <tr><th scope="row"><code>.th</code> domain only (no Thai indicator in description)</th>
+        <td class="n">81</td><td class="n">0.2%</td></tr>
+      <tr><th scope="row">Thai indicator only (not a <code>.th</code> domain)</th>
+        <td class="n">819</td><td class="n">2.0%</td></tr>
+      <tr><th scope="row">Both <code>.th</code> domain and Thai indicator</th>
+        <td class="n">26</td><td class="n">0.1%</td></tr>
+      <tr class="sub"><th scope="row">Thailand-relevant overall (any of the above)</th>
+        <td class="n">926</td><td class="n">2.3%</td></tr>
+      <tr><th scope="row">Neither</th><td class="n">40,049</td><td class="n">97.7%</td></tr>
+      <tr class="total"><th scope="row">TOTAL</th><td class="n">40,975</td><td class="n">100.0%</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Under the alternative strict-intersection rule (<code>.th</code> <em>and</em> Thai indicator),
+  the overall figure would be 26 records (0.1%).</p>
+</section>
+
+<section id="method">
+  <h2>Method note and data issues</h2>
+  <ul>
+    <li><strong>Total records read: 40,975</strong>, parsed from <code>dataset.csv</code> as semicolon-delimited
+      CSV with quoted fields. <strong>No rows were excluded</strong>, and no row failed to classify, so no record
+      IDs are listed as unclassifiable.</li>
+    <li><strong>The manifest reports 40,981 rows; this report counts 40,975.</strong> The file
+      holds 40,982 physical lines (40,981 after the header), but one record — <code>ki8.fun</code> — contains six
+      newline characters inside a quoted <code>LLM Reasoning</code> value. The exporter counted lines; 40,975 is
+      the correct count of logical records. Nothing is missing from the data.</li>
+    <li><strong>The description field was <code>LLM Reasoning</code></strong>, the only free-text reasoning column
+      in the export. Available columns: Domain, URL, Status, Source, Rank, Updated at, Confidence, LLM Reasoning,
+      Case Management Status.</li>
+    <li><strong>All status values matched an expected value.</strong> Four distinct values occur — Illegal gambling,
+      Review needed, Not gambling, Unreachable. No status was blank, unrecognised or otherwise unmatched, so the
+      &ldquo;Unknown / blank&rdquo; row is empty in every table and has been omitted rather than shown as zero.</li>
+    <li><strong>Settings applied were the prompt defaults</strong>, as the request supplied no overrides: union for
+      the Table 4 overall figure, no excluded TLDs (<code>.go.th</code>, <code>.ac.th</code> and <code>.mi.th</code>
+      counted), and one record per row with no de-duplication to registrable domain. The request carried an empty
+      query and a null date range, so the export was used in full as delivered.</li>
+    <li><strong>Percentages are rounded to one decimal place</strong> and a column of rounded components may
+      therefore differ from its rounded total by up to 0.1 points.</li>
+  </ul>
+</section>
+
+</article>
+</body>
+</html>
