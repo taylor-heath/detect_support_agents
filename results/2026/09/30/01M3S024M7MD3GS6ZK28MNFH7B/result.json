@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M3S024M7MD3GS6ZK28MNFH7B",
+  "requestCommit": "07e779140ec984fac78487db4b3d56986997048a",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-09-30T11:49:16.506Z",
+  "finishedAt": "2026-09-30T11:56:00.989Z",
+  "durationMs": 404483,
+  "assets": [
+    {
+      "name": "report.html",
+      "contentType": "text/html",
+      "bytes": 13657,
+      "sha256": "c0746257e612a1af360f8b4336e56dec56000177d8eac924f45a9628af7d20da",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M3S024M7MD3GS6ZK28MNFH7B/report.html"
+      }
+    }
+  ],
+  "metrics": {
+    "attachmentsDeclared": 3,
+    "attachmentsVerified": 3,
+    "attachmentHashMismatches": 0,
+    "attachmentsMissing": 0,
+    "rowsRead": 40975,
+    "reportedTotal": 40981,
+    "rowCountVarianceExplained": 1,
+    "rowsExcluded": 0,
+    "rowsUnclassifiable": 0,
+    "malformedRows": 0,
+    "statusValuesDistinct": 4,
+    "statusValuesUnexpected": 0,
+    "illegalGambling": 8866,
+    "reviewNeeded": 20727,
+    "notGambling": 11338,
+    "unreachable": 44,
+    "unknownOrBlank": 0,
+    "thDomainRecords": 107,
+    "thDomainSharePct": 0.3,
+    "thaiIndicatorRecords": 845,
+    "thaiIndicatorSharePct": 2.1,
+    "indicatorTypesDefined": 6,
+    "indicatorTypesMatched": 6,
+    "indicatorTriggersTotal": 1100,
+    "thOnly": 81,
+    "indicatorOnly": 819,
+    "thAndIndicator": 26,
+    "thailandRelevantUnion": 926,
+    "thailandRelevantIntersection": 26,
+    "neither": 40049,
+    "thailandRelevantSharePct": 2.3,
+    "tablesRendered": 4,
+    "supportingTablesRendered": 2,
+    "sectionsRendered": 5,
+    "runParametersSupplied": 0,
+    "runParameterDefaultsApplied": 3,
+    "personalDataFieldsRedacted": 0,
+    "layoutChecksRun": 4,
+    "layoutChecksFailed": 0
+  },
+  "error": null
+}
