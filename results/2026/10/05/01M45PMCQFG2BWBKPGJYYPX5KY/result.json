@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M45PMCQFG2BWBKPGJYYPX5KY",
+  "requestCommit": "fe40ebe499a5575cc6300273dee6c1faaf1e5058",
+  "agent": { "id": "report-custom-agent", "version": "1.0.0" },
+  "attempt": 1,
+  "status": "failed",
+  "startedAt": "2026-10-05T10:42:38.000Z",
+  "finishedAt": "2026-10-05T10:42:51.000Z",
+  "durationMs": 13000,
+  "assets": [],
+  "metrics": { "rowCount": 0 },
+  "error": {
+    "code": "NO_DATA",
+    "message": "The dataset attached to this request contains no rows, so no report can be generated; the only crawl source run recorded an error (BRIGHTDATA_TOKEN is not set).",
+    "retryable": false,
+    "detailsRef": null
+  }
+}
