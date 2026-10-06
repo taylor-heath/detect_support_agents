@@ -2,9 +2,12 @@
   "schemaVersion": "1.0",
   "jobId": "01M48WF7ZFSDQM8JM9AS0WSNGQ",
   "requestCommit": "b1dd08afdd9f926def3b70a166f5cd9cc59ee157",
-  "agent": {"id": "report-custom-agent", "version": "1.0.0"},
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
   "attempt": 1,
   "claimedAt": "2026-10-06T15:15:47.000Z",
-  "leaseExpiresAt": "2026-10-06T15:25:47.000Z",
-  "heartbeatAt": "2026-10-06T15:15:47.000Z"
+  "leaseExpiresAt": "2026-10-06T15:27:42.000Z",
+  "heartbeatAt": "2026-10-06T15:17:42.000Z"
 }
