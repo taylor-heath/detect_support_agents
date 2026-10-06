@@ -1,0 +1,12 @@
+attempt 1
+input: dataset.json.gz (21978 rows) and spec.md verified against request sha256
+dataset has no Source, Rank, URL, Case Management or Interesting Keywords columns
+  status mapping: BLACKLISTED -> Gambling, WHITELISTED -> Not gambling
+  dedupe key: domain (no URL column); no Review needed rows
+  evidence text: reasons + domain
+  no numeric rank: card B1 omitted, gambling ranking shown as sample with rank shown as a dash
+  no Source: source analysis, structure card E9 and redirect card E10 omitted; no seed linkage
+product subcategory without a lexicon hit: rule based reasoning pass over description text (inferred, low confidence)
+cluster stem: registrable label of the domain; separators stripped before trailing affixes
+possible operator linkage: abbreviation keywords excluded, at least 2 shared keywords
+storage: LFS push refused (403), asset stored as kind git
