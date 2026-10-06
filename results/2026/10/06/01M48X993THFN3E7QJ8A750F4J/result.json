@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M48X993THFN3E7QJ8A750F4J",
+  "requestCommit": "e4902f1dc98b5a1bf234e0eb03c5d0e7637d8fb9",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-10-06T15:31:24.000Z",
+  "finishedAt": "2026-10-06T15:35:39.000Z",
+  "durationMs": 255002,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 474581,
+      "sha256": "a6b61bce5f58abe234a1a0fbba77c6560bb46ff7a343fef3a637aa436d3d281c",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M48X993THFN3E7QJ8A750F4J/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 21978,
+    "standardSetTotal": 21978,
+    "gamblingCount": 9858,
+    "reviewNeededDropped": 0,
+    "licensedCount": 0,
+    "brandClusters": 2273
+  },
+  "error": null
+}
