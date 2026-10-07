@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M4AF22BCZ24NG439NRBBP162",
+  "requestCommit": "c93b701a7008396b0165f0da9c3c3f6c03345849",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-10-07T06:00:01.287Z",
+  "finishedAt": "2026-10-07T06:15:17.735Z",
+  "durationMs": 916448,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 11311951,
+      "sha256": "47ba3df89999f978889fdfa11431082e426eb32259848a8b0a5279cf8cf052ce",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M4AF22BCZ24NG439NRBBP162/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "attachmentsDeclared": 12,
+    "attachmentsVerified": 12,
+    "attachmentHashMismatches": 0,
+    "attachmentsMissing": 0,
+    "datasetRowCount": 10,
+    "reportedTotal": 10,
+    "recordsEvaluated": 10,
+    "recordsConfirmed": 9,
+    "recordsExcludedNotConfirmed": 1,
+    "recordBlocksFilled": 9,
+    "recordBlocksPlaceholder": 1,
+    "recordBlocksTotal": 10,
+    "capturesEmbedded": 9,
+    "capturesVerifiedByteIdentical": 9,
+    "capturesMissing": 0,
+    "captureTimestampsMissing": 0,
+    "evidenceHashesMissing": 0,
+    "pageTextDocumentsOmitted": 10,
+    "confidenceHigh": 9,
+    "confidenceMedium": 0,
+    "confidenceLow": 0,
+    "subcategorySlots": 6,
+    "subcategoryCasino": 2,
+    "subcategoryGeneralGambling": 1,
+    "subcategoryFootballBetting": 0,
+    "subcategoryLottery": 0,
+    "subcategoryPlayingCard": 0,
+    "subcategoryBaccarat": 0,
+    "recordsWithKeywordMatches": 8,
+    "recordsNoneMatched": 1,
+    "distinctKeywordsMatched": 4,
+    "sourceFieldsRewritten": 9,
+    "toolNamesRemoved": 5,
+    "newRecordRequiredPlaceholders": 1,
+    "newCaptureRequiredPlaceholders": 0,
+    "renderedPages": 15,
+    "outputFormat": "docx"
+  },
+  "error": null
+}
