@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M4AB1G96QZZQ4DZ6T0N7XEFN",
+  "requestCommit": "a79dae9d6bebe00b456654b7597038a796f9b4f5",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-10-07T04:51:05.393Z",
+  "finishedAt": "2026-10-07T05:29:47.325336Z",
+  "durationMs": 2321932,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 896825,
+      "sha256": "f5570962a420bb2d41d6a79dcb9f5718e832544d382587526af37e756fd3be9d",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M4AB1G96QZZQ4DZ6T0N7XEFN/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "attachmentsDeclared": 3,
+    "attachmentsVerified": 3,
+    "attachmentHashMismatches": 0,
+    "attachmentsMissing": 0,
+    "rowsRead": 24653,
+    "reportedTotal": 24659,
+    "recordsSpanningMultipleLines": 6,
+    "recordsMalformedUnusable": 0,
+    "reviewNeededDropped": 0,
+    "duplicatesDropped": 48,
+    "recordsEvaluated": 24605,
+    "gambling": 11648,
+    "notGambling": 12957,
+    "unreachable": 0,
+    "unknown": 0,
+    "gamblingSharePct": 47.3,
+    "licensedGamblingNormalised": 0,
+    "periodStart": "2026-09-04",
+    "periodEnd": "2026-10-07",
+    "periodDays": 34,
+    "lexiconKeywords": 286,
+    "lexiconCategories": 14,
+    "distinctKeywordsMatched": 82,
+    "keywordsNeverMatched": 204,
+    "inferredSharePct": 96.3,
+    "generalSharePct": 25.5,
+    "distinctClusters": 1102,
+    "multiUrlClusters": 757,
+    "singletonClusters": 345,
+    "clustersToHalf": 30,
+    "topClusterUrlCount": 1586,
+    "clustersSpanningSubcategories": 616,
+    "clustersRotatingTlds": 588,
+    "operatorLinkagePairs": 11211,
+    "rankedGamblingRows": 268,
+    "prominentSitesRendered": 10,
+    "vietnameseAudienceExclusions": 0,
+    "blockingIndicatorRows": 7,
+    "blockedGambling": 0,
+    "blocklistFeedRows": 11648,
+    "figuresRendered": 11,
+    "tablesRendered": 9,
+    "renderedPages": 23
+  },
+  "error": null
+}
