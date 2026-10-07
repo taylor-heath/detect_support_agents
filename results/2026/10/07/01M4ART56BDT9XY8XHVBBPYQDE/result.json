@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M4ART56BDT9XY8XHVBBPYQDE",
+  "requestCommit": "a5237923ddc4d9c79ffa6fe48401c838b32ba59f",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-10-07T08:51:05.585Z",
+  "finishedAt": "2026-10-07T09:48:46.452Z",
+  "durationMs": 3460867,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 879093,
+      "sha256": "9a2a65337ae0bd009c01c8eff376d0c977961072e336d26aad44554de06898f3",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M4ART56BDT9XY8XHVBBPYQDE/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "attachmentsDeclared": 3,
+    "attachmentsVerified": 3,
+    "attachmentHashMismatches": 0,
+    "attachmentsMissing": 0,
+    "datasetRowCount": 24653,
+    "reportedTotal": 24659,
+    "reviewNeededDropped": 0,
+    "duplicateUrlsDropped": 48,
+    "standardSetTotal": 24605,
+    "gamblingRows": 11648,
+    "notGamblingRows": 12957,
+    "gamblingSharePct": 47.3,
+    "licensedGamblingNormalised": 0,
+    "evaluationDays": 34,
+    "lexiconKeywords": 286,
+    "lexiconKeywordsMatched": 74,
+    "lexiconKeywordsNeverMatched": 212,
+    "subcategoryKeywordAssigned": 428,
+    "subcategoryInferredAssigned": 11220,
+    "inferredSharePct": 96.3,
+    "generalSharePct": 25.0,
+    "distinctClusters": 1533,
+    "multiUrlClusters": 1030,
+    "singletonClusters": 503,
+    "clustersToHalf": 166,
+    "prominentThaiRows": 10,
+    "vietnameseExcludedRows": 10,
+    "rankedGamblingRows": 268,
+    "enforcementEvidenceRows": 7,
+    "blocklistFeedRows": 11648,
+    "cardsRendered": 26,
+    "chartsRendered": 11,
+    "reportPages": 22
+  },
+  "error": null
+}
