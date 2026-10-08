@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M4DE6GCFC73PSVCPDSHSJBYT",
+  "requestCommit": "7bbe57c2d805e61fbceed43b75e61dc1f481e0a8",
+  "agent": { "id": "report-custom-agent", "version": "1.0.0" },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-10-08T09:42:36.000Z",
+  "finishedAt": "2026-10-08T09:43:39.000Z",
+  "durationMs": 63000,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 59036,
+      "sha256": "11fb32fd8b9294dc3f998bfc77d966031edf90d5d389427e16ffabc4d6a41e32",
+      "storage": { "kind": "git", "key": "assets/01M4DE6GCFC73PSVCPDSHSJBYT/report.docx" }
+    }
+  ],
+  "metrics": { "rowsRead": 10, "recordsInReport": 0, "droppedNotConfirmed": 1, "droppedNoDetectRecord": 9 },
+  "error": null
+}
