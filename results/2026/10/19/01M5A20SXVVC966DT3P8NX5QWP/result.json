@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M5A20SXVVC966DT3P8NX5QWP",
+  "requestCommit": "e2d5716ff766e80c892354193c268748d214d39f",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-10-19T12:33:17.000Z",
+  "finishedAt": "2026-10-19T13:00:33.000Z",
+  "durationMs": 1636000,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 564086,
+      "sha256": "218c7648bcbe18ae69f6d0cb1e2d4b5098982f7fcb15bf8c607ef87251a81969",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M5A20SXVVC966DT3P8NX5QWP/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 29059,
+    "standardSetTotal": 29059,
+    "gamblingCount": 13818,
+    "reviewNeededDropped": 0,
+    "licensedCount": 0,
+    "brandClusters": 6049,
+    "inferredSharePct": 96.7,
+    "generalSharePct": 23.5,
+    "anchoredUrls": 230
+  },
+  "error": null
+}
