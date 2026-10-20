@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M5C45898FCAE4FR191PVF9ZB",
+  "requestCommit": "8d8be7b7e23bcb4b26563af3006fe6075152b532",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-10-20T07:43:38.000Z",
+  "finishedAt": "2026-10-20T08:35:55.000Z",
+  "durationMs": 3137576,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 780643,
+      "sha256": "2a9a10f83e802c87977707373dc5bf1a1d060e4a01d5c8f480763e6588f29bad",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M5C45898FCAE4FR191PVF9ZB/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 29057,
+    "standardSetTotal": 29057,
+    "gamblingCount": 13815,
+    "reviewNeededDropped": 0,
+    "licensedCount": 0,
+    "brandClusters": 2798,
+    "inferredSharePct": 96.7,
+    "generalSharePct": 21.7,
+    "anchoredUrls": 230,
+    "blockingEvidence": 0,
+    "thaiRankedSites": 10
+  },
+  "error": null
+}
