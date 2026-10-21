@@ -30,7 +30,7 @@ None: the dataset has no SICPADetect validation result.
 
 ## Open points for review
 - No capture contains a system clock. I did not treat that as a V2 failure for captures with an address bar. If required, all ten fail V2.
-- Seven captures show a browser update notice and, in five, a translation bar over the top-right of the page header. I did not treat these as V3 overlays because the page content stays readable; an analyst may decide otherwise.
+- Eight captures show a browser update notice and, in five, a translation bar over the top-right of the page header. I did not treat these as V3 overlays because the page content stays readable; an analyst may decide otherwise.
 - Keywords were read from the images by eye; no OCR or page source was available. u11k.pro and metal--vip.com read None matched.
 - Subcategory for u11k.pro stays Football Betting (as in the previous report); its page also carries slot and casino rows.
 - The Login and Register buttons of u11k.pro are hidden behind the browser notice, so its functional evidence omits them.
