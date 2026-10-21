@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M5F4PNH8SADMYBEH46NC2NBS",
+  "requestCommit": "b7a2f0316831187e984c0dcb96a8db744bd84770",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 2,
+  "status": "succeeded",
+  "startedAt": "2026-10-21T12:27:36.589Z",
+  "finishedAt": "2026-10-21T12:27:39.256Z",
+  "durationMs": 2667,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 668914,
+      "sha256": "1d4c06cebd3c3c45bebe5d7afe5ac0e23eb721da05d370ceece1dc4c0200c98e",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M5F4PNH8SADMYBEH46NC2NBS/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 29864,
+    "standardSetTotal": 29864,
+    "gamblingCount": 14182,
+    "needsAnalysis": 0,
+    "brandClusters": 3074,
+    "multiUrlClusters": 1566,
+    "inferredSharePct": 96.7,
+    "generalSharePct": 5.9,
+    "anchoredUrls": 229,
+    "anchorsApplied": 159,
+    "anchorsMatched": 142,
+    "thaiEnforcement": 0,
+    "otherBlockPhrases": 7,
+    "thaiRankedSites": 10
+  },
+  "error": null
+}
