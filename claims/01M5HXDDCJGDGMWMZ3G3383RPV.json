@@ -6,8 +6,8 @@
     "id": "report-custom-agent",
     "version": "1.0.0"
   },
-  "attempt": 2,
-  "claimedAt": "2026-10-22T14:05:49.000Z",
-  "leaseExpiresAt": "2026-10-22T14:45:50.000Z",
-  "heartbeatAt": "2026-10-22T14:35:50.000Z"
+  "attempt": 3,
+  "claimedAt": "2026-10-22T14:36:12.000Z",
+  "leaseExpiresAt": "2026-10-22T14:46:12.000Z",
+  "heartbeatAt": "2026-10-22T14:36:12.000Z"
 }
