@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M5HXDDCJGDGMWMZ3G3383RPV",
+  "requestCommit": "7f1792e7977f2c32b7df8464d0245f1ed69d3f80",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 3,
+  "status": "succeeded",
+  "startedAt": "2026-10-22T14:36:12.000Z",
+  "finishedAt": "2026-10-22T14:37:00.000Z",
+  "durationMs": 48000,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 735859,
+      "sha256": "ab08c6f454323bea2347e31fa6f817819c96b00a174b9d832340ce025d7f401b",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M5HXDDCJGDGMWMZ3G3383RPV/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 29976,
+    "standardSetTotal": 29976,
+    "gamblingCount": 14182,
+    "needsAnalysis": 0,
+    "unreachableCount": 112,
+    "analysisErrorRows": 112,
+    "unknownCount": 0,
+    "distinctDomains": 6827,
+    "brandClusters": 2809,
+    "multiDomainClusters": 990,
+    "hostFarms": 15,
+    "topDomainSharePct": 20.3,
+    "inferredSharePct": 96.7,
+    "generalSharePct": 12.4,
+    "anchoredUrls": 228,
+    "linkagePairs": 130,
+    "thaiEnforcement": 0,
+    "otherEnforcement": 7,
+    "gaps": 2,
+    "pages": 38
+  },
+  "error": null
+}
