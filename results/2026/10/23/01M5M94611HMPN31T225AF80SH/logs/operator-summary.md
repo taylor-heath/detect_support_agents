@@ -2,7 +2,7 @@
 
 Source value: taken from the author field of the current decision step (`currentStep.author`) in dataset.json.gz only. Author `System` is written as SICPADetect automated classification pipeline (no source metadata remains); `Redirect (x)` is written as SICPADetect (Redirect: x). The initial author (Manual) is not used.
 
-Capture time: the classification step `insertedAt` (UTC) converted to +07:00 with whole seconds. Reports no SICPADetect validation result exists in the dataset, so Capture valid was judged from the capture files under checks V1 to V6.
+Capture time: the classification step insertedAt (UTC) converted to +07:00 with whole seconds. No SICPADetect validation result exists in the dataset, so Capture valid was judged from the capture files under checks V1 to V6.
 
 Record selection: all 10 domains are BLACKLISTED with case management state ILLEGAL_GAMBLING, read as Confirmed. The current decision of each record was used (for ufa350d.com, wingame.games and raprnb.com the earlier decisions were not used).
 
