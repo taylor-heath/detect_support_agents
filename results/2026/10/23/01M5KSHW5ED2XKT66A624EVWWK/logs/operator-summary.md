@@ -14,3 +14,8 @@
 ## Known limits
 - Rendered with LibreOffice (39 pages), not opened in Word. Card corners are square. Annex titles do not repeat "(continued)". Contents page numbers are cached PAGEREF values.
 - Pre-issue checks run: banned wording scan and Thai render spot check; word-count limits on prose blocks were not machine verified.
+
+## Attempt 2 changes
+- Author System is no longer shown; such rows show Not recorded, or their pipeline source when one exists.
+- pipeline.sources enrich the source label and a new card, Discovery sources recorded by the pipeline.
+- Variants classified gambling: the dataset has none. All 7,805 rows authored by the variant step are WHITELISTED with no description, so the variant count stays 0; they were not reclassified.
