@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0",
+  "jobId": "01M5KSHW5ED2XKT66A624EVWWK",
+  "requestCommit": "d1b87d432448990af85ea2ea763121c8c309c4eb",
+  "agent": {
+    "id": "report-custom-agent",
+    "version": "1.0.0"
+  },
+  "attempt": 1,
+  "status": "succeeded",
+  "startedAt": "2026-10-23T07:12:14.000Z",
+  "finishedAt": "2026-10-23T07:35:03.000Z",
+  "durationMs": 1369007,
+  "assets": [
+    {
+      "name": "report.docx",
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 776774,
+      "sha256": "42777114c01d3f8be6209a3f2bfd866bfe71f0e7e1f29f95d3e41b066099335d",
+      "storage": {
+        "kind": "git",
+        "key": "assets/01M5KSHW5ED2XKT66A624EVWWK/report.docx"
+      }
+    }
+  ],
+  "metrics": {
+    "rowsRead": 29976,
+    "standardSetTotal": 29976,
+    "gamblingCount": 14182,
+    "unreachableCount": 112,
+    "distinctDomains": 6827,
+    "brandClusters": 2968,
+    "multiDomainClusters": 1180,
+    "hostFarms": 15,
+    "topDomainSharePct": 20.3,
+    "inferredSharePct": 96.7,
+    "thaiEnforcement": 0,
+    "otherEnforcement": 7,
+    "pages": 39
+  },
+  "error": null
+}
