@@ -1,0 +1,1857 @@
+<p align="right"><img src="data:image/png;base64,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" alt="Ministry of Digital Economy and Society crest" width="63" height="62"></p>
+
+# Data Insights & Patterns — Report Generation Instructions (MDES edition)
+
+Instructions for generating the **Data Insights & Patterns** report from a
+SICPADetect spreadsheet export, for the **Ministry of Digital Economy and Society
+(MDES), Thailand**.
+
+Follow in order: **(1) ingest & validate the input, (2) load the keyword lexicon,
+(3) build the "standard" working set, (4) assign subcategory and signal tags,
+(5) cluster brands, (6) compute every metric, (7) assemble the report sections
+and the two annexes,
+(8) write the five narrative insights, (9) render the title page and generate the
+contents card last, from the cards that actually rendered, (10) run the pre-issue
+checks in §9.7 and fix every failure before the report is issued.**
+
+The report is fully data-driven: **never invent a value** — if the input does not
+contain it, leave it blank or omit the section. The one exception is the **Model
+Insights** section (§7), which carries a fixed section introduction and is
+otherwise laid out empty and written by a human afterwards.
+
+---
+
+## 0. Jurisdictional premise — read before anything else
+
+Under Thai law, **all online gambling is illegal**. There is no licensing route.
+The report therefore **does not distinguish legal from illegal gambling** and must
+never use *illegal*, *licensed* or *unlicensed* as a classification axis, label,
+chart series, column header or metric name.
+
+| Legacy concept | MDES replacement |
+|---|---|
+| `Illegal gambling` status | `Gambling` |
+| `Licensed gambling` status | `Gambling` (normalised on ingest, §1) |
+| `illegal` / `licensed` counts | `gambling` count |
+| `illegalShare`, `illegalOfGambling` | `gamblingShare` = gambling / total |
+| Illegal ranking + Licensed ranking | one **Gambling ranking** |
+| `status: "illegal_gambling"` in the feed | `status: "gambling"` |
+
+The analytical weight that previously sat on the legal/illegal split now sits on
+**subcategory** (§4) and **brand clustering** (§5).
+
+---
+
+## 1. Input
+
+- **Format:** a single **semicolon-delimited (`;`) CSV** with a header row
+  (a "SICPADetect spreadsheet export"). Trim whitespace from every header. Skip
+  empty lines.
+- **Required columns** (validation fails if any is missing; extra columns are
+  allowed and ignored unless named below):
+  `Domain`, `URL`, `Status`, `Source`, `Rank`, `Updated at`, `Confidence`,
+  `LLM Reasoning`, `Case Management Status`.
+- **Optional columns** (used only if present, never inferred): legal entity —
+  first non-empty of `Legal entity`, `Legal Entity`, `Legal entity name`,
+  `Entity`, `Operator`, `Operator name`; legal-entity country — first non-empty of
+  `Legal entity country`, `Legal Entity Country`, `Entity country`,
+  `Operator country`, `Jurisdiction`. If present, `Interesting Keywords` and
+  `Remarks` are read as additional evidence text in §4. Fetch diagnostics —
+  `HTTP status`, `Final URL`, `Fetch error` and `Fetch route`, matched on header
+  case-insensitively — are used in §6.8 and §6.16 when present.
+- **Ingest metadata** (supplied alongside the export, never inferred from it):
+  report reference; document classification; **collection network**, meaning the
+  connection the crawler used (provider, connection type such as consumer
+  broadband, mobile, VPN or proxy, and country of exit); and an **operations log**
+  of dated pipeline events (crawler outage, source ingestion delay, model change,
+  deliberate pause) recorded as `start date / end date / component / cause`. Where
+  an item is not supplied, the report says it was not recorded; it never describes
+  or guesses it.
+- **Status normalisation on ingest:**
+
+| Raw value | Normalised to |
+|---|---|
+| `Illegal gambling` | `Gambling` |
+| `Licensed gambling` | `Gambling` |
+| `Gambling`, `yes` | `Gambling` |
+| `Not gambling`, `no` | `Not gambling` |
+| `Unreachable`, `Cannot locate`, `ANALYSIS_ERROR` | `Unreachable` |
+| `Review needed`, `Needs more analysis` | `Needs more analysis` |
+| anything else | `Unknown` |
+
+  Count rows arriving as `Licensed gambling` and state the figure once in a
+  footnote — it is a data-quality signal about the upstream classifier, not a
+  finding.
+
+  `ANALYSIS_ERROR` (matched case-insensitively, with or without the underscore)
+  marks a URL that SICPADetect could not finish analysing. Treat it as
+  `Unreachable`: no judgement was made about the page, so it belongs with the
+  URLs the system could not read, never with `Unknown`. Count these rows as
+  `analysisErrorRows`; they stay inside `unreachable` in every figure, and card
+  C6 gives them their own cause (§6.16). The raw value `ANALYSIS_ERROR` never
+  renders.
+
+  `Needs more analysis` is the outcome the classifier gives a site it could not
+  decide with confidence. It is the same outcome named in the Model Insights
+  section and renders under that name everywhere; the raw value `Review needed`
+  never renders.
+
+**Encoding:** read as UTF-8. The lexicon is predominantly Thai; if Thai characters
+arrive mojibaked, stop and report an encoding failure rather than proceeding with a
+lexicon that cannot match.
+
+If required columns are missing, stop and report exactly which are missing.
+
+---
+
+## 2. The keyword lexicon
+
+### 2.1 Source
+
+The canonical lexicon is **Appendix A** of this document: 14 categories,
+286 distinct keywords, reproduced in full. Use Appendix A as the authority. The
+originating workbook `Gambling_Keywords_Full_English_Categories_V1.xlsx` is the
+upstream source; where a later version of the workbook exists, regenerate
+Appendix A from it rather than matching against the two in parallel.
+
+Load exactly as found. **Do not add, translate or extend keywords.** If a needed
+term is missing, report it under `suggestedLexiconAdditions` rather than silently
+matching on it.
+
+> **This document is instructions, not report content.** Nothing in §§0–6 or in
+> Appendix A is rendered in the report, except what the two annexes reproduce. In particular the report carries no
+> lexicon description, no input or status mapping, no column-validation notes and
+> no loose ends of any kind — not at the top, not in a footnote, and not in any
+> appendix other than the two annexes defined in §7. The report opens on the
+> executive summary card and contains only the cards listed in §7. The
+> explanatory blocks defined in §7 are the only exceptions: the Model Insights
+> section introduction (card A1), the classification outcomes card (C0), the
+> brand cluster explainer (card E0), the lexicon match explanation inside card
+> D2, and the table explanations in cards E1a, E4a, E5, E6, E7, E11, F1 and F2. Two reference annexes close the report, also defined in §7:
+> Annex 1 carries the seven product subcategory definitions with the complete
+> keyword set of each (card H1), and Annex 2 the ranked domains applied as brand
+> anchors (card H2). Annex 1 reproduces the Appendix A.1 keyword lists in full;
+> nothing else from Appendix A renders, and Annex 2 never shows the anchor stems,
+> match keys or mode codes. Beyond those, lexicon provenance appears only on the
+> title page and in the footnote line (§9.1).
+
+### 2.2 The two axes
+
+The tabs divide into two groups that are used differently. Keyword counts are
+given below; the keywords themselves are in Appendix A.
+
+**Product tabs — candidates for the single `subcategory` field:**
+
+| Tab | Keywords | Role |
+|---|---|---|
+| `Football Betting` | 21 | Product |
+| `Slots` | 32 | Product |
+| `Casino` | 14 | Product |
+| `Lottery` | 20 | Product |
+| `Playing card` | 12 | Product |
+| `Baccarat` | 11 | Product |
+| `General Gambling` | 22 | **Catch-all — lowest priority (§4.2)** |
+
+**Signal tabs — emitted as `signalTags`, never as a subcategory:**
+
+| Tab | Keywords | What a match indicates |
+|---|---|---|
+| `Deposit & Withdrawal` | 24 | Payment and cash-out mechanics advertised |
+| `Promotions` | 27 | Free-credit and bonus acquisition offers |
+| `Marketing & Acquisition` | 25 | Win-rate and payout claims |
+| `Affiliate & Agent` | 20 | Affiliate, agent or referral structure |
+| `Vague-Evasion Terms` | 20 | Deliberate avoidance of explicit gambling vocabulary |
+| `Abbreviations` | 22 | Provider or network branding |
+| `Hashtags` | 21 | Promoted through hashtag campaigns |
+
+A site is never assigned to a signal tab as its subcategory. Signal tags are a
+multi-valued field: a site can carry any number of them, or none.
+
+### 2.3 Matching rules
+
+| Script | Rule |
+|---|---|
+| Thai (keyword contains no Latin letters) | Plain case-sensitive substring match against the evidence text. Thai has no word delimiters, so no boundary test is possible or wanted. |
+| Latin | Case-insensitive match on a token boundary — `[^a-z0-9]` or string edge on both sides. This stops `BET` matching `betterment` and `WIN` matching `winter`. |
+| Hashtag (starts with `#`) | Match the full string including `#` against the evidence text. **Additionally** strip the `#` and re-run the stripped form against the product tabs (§4.3). |
+
+**Short Latin abbreviations require extra care.** `PG`, `PP`, `FC`, `XO`, `SA`,
+`WM`, `AG`, `AE` are two-character strings that will false-positive against ordinary
+text and against unrelated domains. For these eight, a match counts only when the
+token stands alone or sits adjacent to a separator inside a domain stem
+(`pg-slot`, `slotxo`, `.../pg/...`). A bare occurrence inside running prose does
+not count. Record how many matches each abbreviation produced; if any single
+abbreviation accounts for more than 20% of all `Abbreviations` matches, flag it in
+the footnote as a probable false-positive source.
+
+### 2.4 Known lexicon collisions
+
+Five keywords appear on more than one tab, and one Latin keyword appears on two
+tabs in different case. Resolve per §4.2 (specific product beats
+`General Gambling`). Do not de-duplicate the lexicon itself.
+
+| Keyword | Tabs | Resolution |
+|---|---|---|
+| `คาสิโน` | General Gambling, Casino | Casino |
+| `คาสิโนออนไลน์` | General Gambling, Casino | Casino |
+| `พนันกีฬา` | General Gambling, Football Betting | Football Betting |
+| `พนันบอล` | General Gambling, Football Betting | Football Betting |
+| `แทงบอล` | General Gambling, Football Betting | Football Betting |
+| `Wallet` / `WALLET` | Deposit & Withdrawal, Abbreviations | Latin matching is case-insensitive, so one match tags both signal tabs. Neither is a product tab, so no subcategory is affected. |
+
+`รูเล็ตออนไลน์` is listed twice under Casino in the source workbook. Appendix A.1
+lists it once, which is why Casino carries 14 keywords here and in Annex 1.
+
+---
+
+## 3. Build the working set ("standard")
+
+1. Count every data row received as `rowsReceived`.
+2. Set aside every row whose normalised `Status` is **`Needs more analysis`** and
+   count them as `needsAnalysis`. They are not discarded: they feed the pipeline
+   summary (card C5) and the review leads (card E11), and nothing else.
+3. **De-duplicate by `URL`**, keeping the first occurrence (rows with no URL are
+   kept and keyed by their whole content). Count the rows removed as
+   `duplicatesRemoved`.
+4. The result is the **standard set**; `total = number of rows in it`. By
+   construction `rowsReceived = needsAnalysis + duplicatesRemoved + total`; if the
+   figures do not reconcile, stop and report the difference.
+
+**Units.** The report counts in two units and never mixes them for one quantity:
+
+| Unit | Means | Used for |
+|---|---|---|
+| URL | One row of the standard set: one address SICPADetect analysed. When the export records no path, as in the 21 October export, a URL is a full hostname (`account.login.49m.co`). | Every count of rows, including status, subcategory, source and suffix counts, and cluster size (`urlCount`). |
+| domain | One registrable domain, `domain(row)` below (`49m.co`). Many URLs, and many hostnames, can sit on one domain. | Every count of distinct domains: `distinctDomains`, cluster `domainCount`, the domain concentration figures (§5.4), the one-row-per-domain rule in card B1, the per-suffix counts in card E6, late joiners and §6.9 item 3. |
+
+A hostname is never counted or labelled as a domain. In prose, *site* may stand
+for URL. Axis titles, column headers, metric labels and chart introductions
+always name the unit as URLs or domains, and the same quantity carries the same
+unit everywhere it appears.
+
+Version 11 stemmed and counted full hostnames. In the 21 October run, one
+registered domain, `49m.co`, carried 2,885 hostnames built from template words
+(`account.login.account.www.m.49m.co` and so on). The report counted them as
+2,885 domains, stated that 14,182 distinct domains carried the gambling URLs and
+called the estate diffuse, although that one domain held 20.3% of gambling URLs.
+
+Helper definitions:
+
+- **label(row)** = `Domain` if non-empty, else `URL`. This is the host, which may
+  carry any number of subdomain levels.
+- **domain(row)** = the registrable domain of the host in `label(row)`, taken
+  from the Public Suffix List including its private suffixes, so
+  `account.login.49m.co` → `49m.co`, `games.kaga88.com` → `kaga88.com` and
+  `sitejin.pages.dev` stays `sitejin.pages.dev`. An IP address, or a host with no
+  registrable domain, is its own domain.
+- **suffix(domain)** = the last dot-segment (`casino.bet` → `.bet`); `(unknown)`
+  if the domain has no dot.
+- **Source category** = classify `Source` by prefix, case-insensitively:
+  `Manual` → `Manual`; `Google Search` → `Google Search`; `Variant` → `Variant`;
+  `Redirect` → `Redirect`; `Analyst Enriched` → `SICPADetect automated
+  classification pipeline`; otherwise `Other`.
+- **seed(Source)** = the text inside the first parentheses of `Source`
+  (`Variant (bet365.com)` → `bet365.com`), else empty. This is the row's
+  **referrer**: the domain the variant was derived from or the redirect came from.
+- **sourceLabel(row)** = the source as it renders anywhere in the report or the
+  feed:
+
+| Source category | Referrer available | Rendered as |
+|---|---|---|
+| `Manual` | — | `Manual` |
+| `Google Search` | — | `Google Search` |
+| `Variant` | yes | `Variant · referrer: <seed>` |
+| `Variant` | no | `Variant` |
+| `Redirect` | yes | `Redirect · referrer: <seed>` |
+| `Redirect` | no | `Redirect` |
+| `SICPADetect automated classification pipeline` | yes | `SICPADetect automated classification pipeline · referrer: <seed>` |
+| `SICPADetect automated classification pipeline` | no | `SICPADetect automated classification pipeline` |
+| `Other` | — | the raw `Source` value, unless it carries no information: a value of one or two characters, only punctuation, or one of `n/a`, `na`, `none`, `null`, `unknown` (case-insensitive) renders as `Not recorded` |
+
+  The string `Analyst Enriched` never renders anywhere in the report, the feed or
+  the footnote, in any case or spelling. Wherever a row is shown as a variant or a
+  redirect, its referrer is listed when available; when it is not, the label
+  stands alone and nothing is guessed in its place.
+- **isGambling** = normalised `Status == 'Gambling'`.
+- **evidenceText(row)** = `LLM Reasoning`, `Interesting Keywords`, `Remarks`,
+  `URL` and `Domain`, non-empty parts joined with single spaces. Keep original
+  case and Thai characters intact; lowercase only a parallel copy used for Latin
+  matching.
+
+---
+
+## 4. Subcategory and signal tag assignment
+
+Run over **every row in the standard set**.
+
+### 4.1 Non-gambling rows
+
+If `Status != Gambling` → `subcategory = "Not applicable"`,
+`subcategoryMethod = "n/a"`, `signalTags = []`. Stop. Do not force non-gambling
+rows into a product bucket, even if a keyword happens to match.
+
+### 4.2 Keyword pass (gambling rows)
+
+| Step | Rule |
+|---|---|
+| 1 | Match every lexicon keyword against `evidenceText(row)` per §2.3. Keep the tab, keyword and matched location for each hit. |
+| 2 | **Signal tags:** for each signal tab with ≥ 1 match, add the tab name to `signalTags`. Store the matched keywords in `signalKeywords`. |
+| 3 | **Product score:** for each of the six specific product tabs, score = number of distinct keywords matched from that tab. `General Gambling` is scored separately and is **not** eligible while any specific tab scores > 0. |
+| 4 | Exactly one specific tab scores > 0 → assign it. `subcategoryMethod = "keyword"`, `subcategoryConfidence = "high"`. |
+| 5 | Several specific tabs score > 0 → assign the highest. Tie-break: (a) more distinct keywords matched; (b) a match in `Domain`/`URL` beats one in reasoning text; (c) longer keyword wins, since `บาคาร่าออนไลน์` is more specific than `คาสิโน`; (d) tab order as listed in §2.2. Record every scoring tab in `subcategoryAlternatives`. Confidence `high` if the top score is at least double the runner-up, else `medium`. |
+| 6 | No specific tab scores but `General Gambling` does → `subcategory = "General Gambling"`, `subcategoryMethod = "keyword"`, `subcategoryConfidence = "medium"`. The site is confirmed gambling but the product type is not evidenced. |
+| 7 | No product tab scores at all → §4.4. |
+
+A site can score zero on product tabs and still carry several signal tags — a
+promo-heavy landing page with no game vocabulary is exactly the
+`Vague-Evasion Terms` case. It goes to §4.4 for the product judgement while
+keeping its tags.
+
+### 4.3 Hashtag routing
+
+A `Hashtags` match always adds the `Hashtags` signal tag. In addition, strip the
+leading `#` and re-run the remainder against the product tabs: `#สล็อต` therefore
+also contributes a `Slots` product hit, `#บาคาร่าออนไลน์` a `Baccarat` hit. Hashtags
+whose stripped form matches only a signal tab (`#เครดิตฟรี`, `#ฝากถอนออโต้`)
+contribute no product score.
+
+### 4.4 Reasoning pass (no product keyword found)
+
+Where the keyword pass yields no product tab, make a judgement from the content of
+`LLM Reasoning`: read what the model described the site as offering and place it in
+the closest **product tab**. Constraints:
+
+| # | Constraint |
+|---|---|
+| 1 | Choose only from the seven product tabs in §2.2. Never invent a subcategory and never assign a signal tab as the subcategory. |
+| 2 | Judge on the described game or product offering, not on branding, layout or tone. |
+| 3 | If the reasoning describes several offerings, choose the one it treats as primary and record the rest in `subcategoryAlternatives`. |
+| 4 | If the reasoning confirms gambling but names no specific product, assign `General Gambling`. This is the correct answer, not a failure — do not guess at a product. |
+| 5 | If the reasoning describes a site that lists, reviews, ranks or links to other gambling sites rather than operating games, assign `General Gambling`, add the `Affiliate & Agent` signal tag and set `isListingSite = true`. MDES and SICPA have yet to agree labelling rules for these sites, so they are counted separately (§4.6) and stay in `General Gambling` until a jointly agreed rule is added to this document. |
+| 6 | If `LLM Reasoning` is empty, assign `"Unspecified"`. Do not infer from the domain name alone. |
+| 7 | Set `subcategoryMethod = "inferred"`, `subcategoryConfidence = "low"`. |
+| 8 | Write a one-sentence `subcategoryBasis` paraphrasing the phrase in the reasoning that drove the choice, so a reviewer can audit it. |
+
+### 4.5 Fields emitted per row
+
+`subcategory`, `subcategoryMethod` (`keyword` \| `inferred` \| `n/a`),
+`subcategoryConfidence` (`high` \| `medium` \| `low`),
+`subcategoryMatchedKeywords`, `subcategoryAlternatives`, `subcategoryBasis`,
+`signalTags`, `signalKeywords`, `isListingSite`.
+
+### 4.6 Quality metrics
+
+- `inferredShare` = inferred rows / gambling rows × 100.
+- `generalShare` = rows assigned `General Gambling` / gambling rows × 100.
+- `keywordsNeverMatched` = lexicon entries with zero hits, listed per tab.
+- `listingSites` = gambling rows with `isListingSite = true`, reported in the
+  card D3 caption.
+
+Report the first three in the footnote line (§9.1). **If `inferredShare` > 30% or
+`generalShare` > 40%, state plainly that the lexicon has poor coverage of this
+dataset and that subcategory figures are indicative only.** A Thai-language lexicon
+run against a set of English or transliterated domains will produce exactly this,
+and the report should say so rather than present thin figures confidently.
+
+---
+
+## 5. Brand clustering
+
+The centre of this report: collapse many domains onto the operator behind them.
+
+### 5.1 Normalising a name to a stem
+
+| Step | Operation | Example |
+|---|---|---|
+| 1 | Take `domain(row)` (§3), so every hostname on one domain gets the same stem | `https://account.login.www.ufabet168th.com/x` → `ufabet168th.com` |
+| 2 | Lowercase. An IP address is kept whole and takes no stem: it joins a cluster only through seed linkage or an anchor | `ufabet168th.com` |
+| 3 | Drop the public suffix | `ufabet168th` |
+| 4 | **Template tokens.** Split on `-`, `_` and `.`, and drop every leading or trailing part that is a template token. Then repeatedly strip a template token joined directly to the start of the name. Template tokens: `support`, `login`, `secure`, `verify`, `account`, `mobile`, `signin`. | `support-login-secure49m` → `secure49m` → `49m`; `supportaccountk` → `accountk` → `k` |
+| 5 | Repeatedly strip trailing market/version affixes: `th`, `thai`, `aff`, `affiliate`, `vip`, `official`, `v\d+` | `ufabet168` |
+| 6 | Strip separators `-`, `_`, `.` | `jun-88` → `jun88` |
+| 7 | **Numbers.** Strip a trailing digit run only when the part before it is at least 5 characters long, then apply step 5 once more. Short brand names carry their numbers, so `jun88`, `w88` and `gg88` keep them, and `jun88` and `jun68` stay different names. | `ufabet168` → `ufabet`; `jun88` stays `jun88` |
+| 8 | If the result is under 3 characters, revert to the step-3 value, except where step 4 removed template tokens (see below) | `xo-th` → `xo` → revert to `xo-th` |
+
+The result is **stem(row)**.
+
+**Template-only names.** If step 4 leaves nothing, or fewer than 3 characters,
+the name is made only of template words plus a stray letter or two
+(`verify`, `accounth`, `supportmobileo`). Mark the row `templateOnly`. It has no
+stem: it never joins a cluster under §5.2 rules 3 and 4, and joins one only
+through seed linkage or a brand anchor; otherwise it is a singleton. These names
+come from a shared naming template, not from a brand, so grouping them by name
+would merge unrelated operators. Count them as `templateOnlyRows` (§6.9).
+
+Version 10 stripped every trailing digit run and had no template step. That
+merged different short brands (`jun88`, `jun68`, `jun77` all became `jun`),
+split one brand across clusters (`jun88.info` under `jun`, `jun88wa.com` under
+`jun88a`) and let template words such as `verify`, `secure` and `login` act as
+cluster names.
+
+### 5.2 Forming clusters
+
+**Domains are clustered, not hostnames.** Every URL on one domain joins the same
+cluster. Seed linkage and anchors are decided per domain: a domain takes the seed
+link or anchor that most of its URLs carry, with ties going to seed linkage. The
+rules below therefore place domains, and every URL follows its domain.
+
+| # | Rule |
+|---|---|
+| 1 | **Seed linkage.** A `Redirect` row with a non-empty `seed` joins the cluster of `stem(seed)`: the redirect was observed by the crawler, not inferred. A `Variant` row with a non-empty `seed` joins that cluster only when its own stem is compatible with the seed's stem: the two are equal, one is a prefix of the other, or their Jaro–Winkler similarity is at least 0.90. Variant names are generated by the crawler from the seed, so a variant whose name reduces to a different brand (`bin88` generated from `jun88`) is not evidence of a shared operator. Such a row clusters on its own name under rules 2–6 and keeps the link as `variantOf = seed`. Linkage is one hop only: a row is tested against its own seed, never against its seed's seed. Where a seed link passes, it wins over rules 2–6. |
+| 2 | **Brand anchor:** otherwise, if the row matches a brand anchor under §5.5, it joins that anchor's cluster. Every row matching the same anchor joins the same cluster, even when their stems differ (`ufabet` and `ufabetwin` both join `ufabet`). A seed-linked cluster whose seed matches an anchor takes that anchor too. |
+| 3 | Otherwise group rows sharing an identical stem. |
+| 4 | **Near-miss merge:** merge two stems when Jaro–Winkler similarity ≥ 0.90 **and** one is a prefix of the other or they differ only in trailing characters (`dafabet` + `dafawining` → `dafa`). Never merge below 0.90. Never merge an unanchored cluster into an anchored one on similarity alone, and never merge two clusters held by different anchors. |
+| 5 | A cluster's **name** is its anchor brand when it has one; otherwise its shortest member stem. |
+| 6 | A domain whose stem appears on no other domain, never merged and matching no anchor, is a **singleton**: a cluster of one domain, however many URLs sit on it. A single domain matching an anchor is an anchored cluster of one, not a singleton. |
+| 7 | Record per cluster: `name`, `urlCount`, `domains`, `suffixes`, `sources`, `subcategories` (counts), `signalTags` (counts), `seedLinked`, `mergeBasis` (`seed` \| `anchor` \| `stem` \| `similarity`), `anchorBrand` (or null), `anchorRank` (or null), `anchorMode` (or null), `firstSeen` / `lastSeen`, `memberStems` (URL count per distinct member stem), `mergeBasisCounts` (URL count per `mergeBasis`), `domainCount` (distinct member domains), `urlsPerDomain` (URL count per member domain). |
+| 8 | `clusters` sorted by `urlCount` desc; `multiDomainClusters` = those holding 2 or more domains; `singletonCount` = the rest. |
+
+### 5.3 Signal-tag corroboration
+
+Two clusters sharing an unusual signal-keyword fingerprint are plausibly the same
+operator even when their names differ. The fingerprint must be unusual: words
+that most of the estate uses make unrelated clusters look alike. For each pair of
+multi-domain clusters, compute the Jaccard similarity of their `signalKeywords` sets
+after three exclusions:
+
+1. Drop every abbreviation flagged under §2.3 as a probable false-positive source
+   (in the 21 October run, `VIP` and `BET`).
+2. Drop every keyword matched in more than 10% of gambling rows (§6.6).
+3. Fold keywords that differ only in case into one (`Wallet` and `WALLET`).
+
+A pair qualifies when its Jaccard score is at least 0.60 **and** the two clusters
+share at least 3 of the remaining keywords. Sort qualifying pairs by Jaccard, then
+by the number of keywords shared, and keep the top 15 for a **"Possible operator
+linkage"** table: `cluster A / cluster B / shared keywords / Jaccard`. Emit
+`linkagePairs` = the number of pairs that qualify.
+
+**Discrimination check.** If more than 200 pairs qualify, or any one cluster
+appears in more than 20 qualifying pairs, the signal is not telling operators
+apart in this sample. Render the card without the table: its explanation, then
+one line giving `linkagePairs` and stating that the remaining shared vocabulary
+is too common to point to shared operators. The 21 October run produced 77,238
+pairs at 0.60 or more, driven by `VIP`, `BET`, `WIN` and `WALLET`, which is the
+case this check exists to catch.
+
+**Do not merge on this signal.** It is a lead for an analyst, not a clustering
+decision — shared promotional vocabulary is common across unrelated operators using
+the same affiliate templates. Label the table as indicative.
+
+### 5.4 Cluster metrics
+
+- `distinctClusters`, `multiDomainClusters`, `singletonCount`.
+- **Concentration:** share of gambling URLs in the top 5 and top 10 clusters, and
+  `clustersToHalf` = clusters needed to cover 50% of gambling URLs.
+- **Cross-subcategory clusters:** clusters spanning ≥ 2 product subcategories,
+  with the list — these are multi-product operators.
+- **TLD rotation:** clusters whose `suffixes` list has ≥ 2 entries, with the
+  number of distinct member domains per suffix and the first and last
+  `Updated at` date on which each suffix was seen.
+- `topCluster` = the largest; `topClusterDomains` = up to 40 member labels.
+- **Dominance check:** `topClusterShare = topCluster.urlCount / gambling × 100`.
+  Above 25%, set `dominantCluster = true`. A cluster that size is either one very
+  large operation or a merge that is too loose, and the report must let the reader
+  tell which (card E4a, §8 insight 3).
+- **Domain concentration:** `distinctDomains` = distinct domains among gambling
+  rows. For each domain, its URL count. `topDomains` = the 15 domains with the most
+  gambling URLs, each with its share of gambling URLs, its cluster and its first
+  and last `Updated at` date. `topDomain` = the first of them and
+  `topDomainShare = topDomain.urlCount / gambling × 100`. `domainsToHalf` =
+  domains needed to cover 50% of gambling URLs; also the share held by the top 5
+  and top 10 domains.
+- **Domain dominance:** if `topDomainShare` exceeds 10%, set
+  `dominantDomain = true`. One registered domain carrying that share of the
+  estate changes what enforcement can do: action at domain level, through the
+  registry, the registrar or DNS blocking, reaches every hostname on it at once.
+- **Host farms:** a domain carrying 20 or more gambling URLs is a **host farm**:
+  many hostnames on one registered domain. They are often produced by wildcard
+  DNS, which makes every name under the domain resolve to the same site, so the
+  hostnames are not necessarily separate pages. For each host farm emit
+  `{ domain, urls, share, cluster, templateHostShare, firstSeen, lastSeen,
+  fetchEvidence }`, where `templateHostShare` = share of its hostnames whose
+  subdomain labels are all template tokens (§5.1 step 4), `www` or `m`, and
+  `fetchEvidence` = hostnames with a 2xx `HTTP status` out of the farm's URLs where
+  that column is present, else `not recorded`. Also emit `hostFarmCount` and
+  `hostFarmUrls`, with their share of gambling URLs.
+- **Largest-cluster breakdown** (`topClusterBreakdown`, always computed): the top
+  cluster's URLs grouped by member stem, each with its URL count, distinct
+  domains (registrable domains, never hostnames), `mergeBasis` counts, source split (variant / redirect / direct) and the
+  anchor matched, if any. Sorted by URL count; top 15 stems plus an `Other stems`
+  row. Also `topClusterStemCount` = distinct member stems.
+- `variantLinksRejected` = variant rows whose seed link failed the compatibility
+  test in §5.2 rule 1.
+- **Domains appearing during the period:** for each multi-domain cluster,
+  `lateJoiners` = member domains first seen at least 7 days after the cluster's
+  `firstSeen`. Dates are when SICPADetect recorded a domain, not when it was
+  registered, blocked or replaced.
+- **Brand anchoring:** `anchoredClusters` = clusters holding an anchor;
+  `anchoredUrls` and `anchoredShare = anchoredUrls / gambling × 100`;
+  `unanchoredClusters` = multi-domain clusters with no anchor, which are operators
+  that do not appear in the external domain ranking; `anchorsMatched` = anchors that
+  matched at least one row, out of the anchors applied.
+- `anchorConflicts` = rows matching two or more anchors, with the anchors
+  involved (see §5.5).
+- **Generic-name check:** no cluster is named by a template token (§5.1 step 4)
+  or by a word on the generic list in §5.5 refinement 3. If any of the 20 largest
+  clusters would be, stop and report it: a generic word is acting as a brand and
+  the normalisation needs correcting before the report is generated.
+
+### 5.5 Brand anchors
+
+The brand anchors in **§5.6** are taken from a ranking of gambling domains for
+Thailand supplied by an external data provider
+(`country-ranking-Gambling-th-2026-09.csv`, 200 domains). The ranking is not a
+monthly SICPADetect output and is not the `Rank` column of the input feed (§1),
+which drives cards B1 and F1. Never describe it as monthly.
+
+The anchors give the clusters a fixed reference: a URL that
+belongs to a known ranked brand is grouped under that brand's name rather than
+under whatever stem it happens to carry. Regenerate §5.6 whenever the provider
+supplies a new ranking, rather than matching against two rankings in parallel. Annex 2
+(card H2, §7) renders the applied part of §5.6, so it follows the regenerated
+list automatically.
+
+**Stem refinements for anchor matching.** Anchor stems in §5.6 were derived
+with the version 10 normalisation, which stripped every trailing digit run
+(`fun88` → `fun`, `kaga88` → `kaga`), plus the four refinements below. Until §5.6
+is regenerated with the current §5.1, test a row against the anchors with
+`anchorStem(row)`: §5.1 with step 7 replaced by stripping every trailing digit
+run, plus the same refinements, so that the two sides are normalised
+identically. `anchorStem` is used only for this test; the row's cluster stem is
+always `stem(row)`.
+
+| # | Refinement |
+|---|---|
+| 1 | Collapse any subdomain to its registrable domain before stemming (`games.kaga88.com` → `kaga88.com`). Public suffixes come from the Public Suffix List, including private suffixes such as `cloudfront.net`. Since version 12 this is §5.1 step 1 for every row, so it changes nothing extra here. |
+| 2 | Strip the alphabetic affixes `th`, `thai`, `aff`, `affiliate`, `vip`, `official` only when a separator precedes them, so a word that happens to end in `th` is not cut. |
+| 3 | If stripping leaves a generic word — `bet`, `casino`, `slot`, `slots`, `lotto`, `win`, `play`, `game`, `games`, `score`, `live`, `ball`, `goal`, `poker`, `sport`, `sports`, `luck`, or any template token from §5.1 step 4 — keep the step-3 value instead (`bet365` stays `bet365`). |
+| 4 | Stems under 3 characters never take part in a near-miss merge. |
+
+**Match modes.** Each anchor carries one mode, which limits how widely it can
+reach:
+
+| Mode | A row matches the anchor when |
+|---|---|
+| `stem+prefix` | its stem equals the anchor stem, or begins with it and the anchor stem is at least 5 characters (`ufabet168th.com` → `ufabet`). |
+| `stem-equal` | its stem equals the anchor stem. Used for stems of 3–4 characters, where a prefix test would sweep in unrelated names. |
+| `exact` | its registrable domain equals the anchor's match key. Used for generic stems, random or hash-like names, and shared CDN hostnames. |
+| `review` | never, until an analyst confirms the anchor. These ranked domains are probably not gambling operators (content, tool, advertising or payment destinations). Promote one by changing its mode; do not apply it unconfirmed. |
+
+**Conflicts.** If a row matches more than one anchor, prefer in order: (a) an
+`exact` or `stem-equal` match over a `stem+prefix` match; (b) the longer anchor
+stem; (c) the better rank. Record every anchor the row matched in
+`anchorConflicts`.
+
+**What anchoring does not do.** An anchor is an analytical reference drawn from
+the external data provider's ranking, not evidence of ownership. It never overrides seed linkage,
+never removes a row from the gambling set, and never pulls in a row whose
+`Status` is not `Gambling`. Rows that match no anchor cluster exactly as before
+under §5.2 rules 3–6.
+
+### 5.6 Brand anchor list
+
+200 ranked domains reducing to 192 anchor brands. The match key is the anchor
+stem for `stem+prefix` and `stem-equal`, and the registrable domain for `exact`
+and `review`. Where two ranked domains share a brand, both rows are listed and
+the better rank is the brand's `anchorRank`.
+
+| Mode | Ranked domains |
+|---|---|
+| `stem+prefix` | 119 |
+| `stem-equal` | 19 |
+| `exact` | 21 |
+| `review` | 41 |
+
+| Rank | Ranked domain | Anchor brand | Match key | Mode |
+|---|---|---|---|---|
+| 1 | `22onlinegames.com` | 22onlinegames | `22onlinegames` | `stem+prefix` |
+| 2 | `speed-manga.net` | speedmanga | `speed-manga.net` | `review` |
+| 3 | `debet.tv` | debet | `debet` | `stem+prefix` |
+| 4 | `aiscore.com` | aiscore | `aiscore` | `stem+prefix` |
+| 5 | `ufabet.com` | ufabet | `ufabet` | `stem+prefix` |
+| 6 | `chatgpt.site` | chatgpt | `chatgpt.site` | `review` |
+| 7 | `invl.me` | invl | `invl` | `stem-equal` |
+| 8 | `lottoheng168.com` | lottoheng | `lottoheng` | `stem+prefix` |
+| 9 | `888scoreonline.net` | 888scoreonline | `888scoreonline` | `stem+prefix` |
+| 10 | `hacksawgaming.com` | hacksawgaming | `hacksawgaming` | `stem+prefix` |
+| 11 | `chestgoingpunch.com` | chestgoingpunch | `chestgoingpunch.com` | `review` |
+| 12 | `playin.com` | playin | `playin` | `stem+prefix` |
+| 13 | `movie911hd.com` | movie911hd | `movie911hd.com` | `review` |
+| 14 | `gosh.io` | gosh | `gosh` | `stem-equal` |
+| 15 | `24live.com` | 24live | `24live` | `stem+prefix` |
+| 16 | `326821905591.com` | 326821905591 | `326821905591.com` | `exact` |
+| 17 | `timewall.io` | timewall | `timewall.io` | `review` |
+| 18 | `rollercoin.com` | rollercoin | `rollercoin.com` | `review` |
+| 19 | `vlr.gg` | vlr | `vlr.gg` | `exact` |
+| 20 | `7mkr.com` | 7mkr | `7mkr.com` | `exact` |
+| 21 | `flashscore.co.uk` | flashscore | `flashscore` | `stem+prefix` |
+| 22 | `808ball15.com` | 808ball | `808ball` | `stem+prefix` |
+| 23 | `thaidriveexam.com` | thaidriveexam | `thaidriveexam.com` | `review` |
+| 24 | `bet365.com` | bet365 | `bet365` | `stem+prefix` |
+| 25 | `mlnhngoc.net` | mlnhngoc | `mlnhngoc` | `stem+prefix` |
+| 26 | `m8geqpm2kpnf78dkfxp9ksg94ndx9weaoa39.com` | m8geqpm2kpnf78dkfxp9ksg94ndx9weaoa | `m8geqpm2kpnf78dkfxp9ksg94ndx9weaoa39.com` | `exact` |
+| 27 | `13o.net` | 13o | `13o` | `stem-equal` |
+| 28 | `nolimitcity.com` | nolimitcity | `nolimitcity` | `stem+prefix` |
+| 29 | `1xbet.com` | 1xbet | `1xbet` | `stem+prefix` |
+| 30 | `betufa.com` | betufa | `betufa` | `stem+prefix` |
+| 31 | `d3my3ye7lo15uo.cloudfront.net` | d3my3ye7lo15uo | `d3my3ye7lo15uo.cloudfront.net` | `exact` |
+| 32 | `viieuvkf.com` | viieuvkf | `viieuvkf.com` | `exact` |
+| 33 | `smilepayz.com` | smilepayz | `smilepayz.com` | `review` |
+| 34 | `anaidahog.com` | anaidahog | `anaidahog` | `stem+prefix` |
+| 35 | `techpointspot.com` | techpointspot | `techpointspot.com` | `review` |
+| 36 | `m1rs.com` | m1rs | `m1rs.com` | `exact` |
+| 37 | `spinova-hub.com` | spinovahub | `spinovahub` | `stem+prefix` |
+| 38 | `beer777.com` | beer | `beer` | `stem-equal` |
+| 39 | `crackstreams.mx` | crackstreams | `crackstreams.mx` | `review` |
+| 40 | `evisa.gov.vn` | evisa | `evisa.gov.vn` | `review` |
+| 41 | `kaga88.com` | kaga | `kaga` | `stem-equal` |
+| 42 | `painamour.com` | painamour | `painamour` | `stem+prefix` |
+| 43 | `bet365.ee` | bet365 | `bet365` | `stem+prefix` |
+| 44 | `seriesdet.com` | seriesdet | `seriesdet` | `stem+prefix` |
+| 45 | `singaporepools.com.sg` | singaporepools | `singaporepools` | `stem+prefix` |
+| 46 | `stake.com` | stake | `stake` | `stem+prefix` |
+| 47 | `rainbet.com` | rainbet | `rainbet` | `stem+prefix` |
+| 48 | `utmdigital.com` | utmdigital | `utmdigital.com` | `review` |
+| 49 | `wsgamings.com` | wsgamings | `wsgamings` | `stem+prefix` |
+| 50 | `jackpots.ch` | jackpots | `jackpots` | `stem+prefix` |
+| 51 | `yahutech.com` | yahutech | `yahutech.com` | `review` |
+| 52 | `pic5678.com` | pic | `pic` | `stem-equal` |
+| 53 | `guruacademy.in.th` | guruacademy | `guruacademy.in.th` | `review` |
+| 54 | `sporticos.com` | sporticos | `sporticos` | `stem+prefix` |
+| 55 | `rsg-games.com` | rsggames | `rsggames` | `stem+prefix` |
+| 56 | `openguessr.com` | openguessr | `openguessr.com` | `review` |
+| 57 | `faphouse4k.com` | faphouse4k | `faphouse4k.com` | `review` |
+| 58 | `cuisez.com` | cuisez | `cuisez.com` | `review` |
+| 59 | `casino.org` | casino.org | `casino.org` | `exact` |
+| 60 | `coktv1.com` | cokt | `cokt` | `stem-equal` |
+| 61 | `games.kaga88.com` | kaga | `kaga` | `stem-equal` |
+| 62 | `royal558.com` | royal | `royal` | `stem+prefix` |
+| 63 | `dafabet.com` | dafabet | `dafabet` | `stem+prefix` |
+| 64 | `nowgoal26.com` | nowgoal | `nowgoal` | `stem+prefix` |
+| 65 | `voe.sx` | voe | `voe.sx` | `review` |
+| 66 | `glivesport.com` | glivesport | `glivesport` | `stem+prefix` |
+| 67 | `pragmaticplay.com` | pragmaticplay | `pragmaticplay` | `stem+prefix` |
+| 68 | `lottovip.bet` | lottovip | `lottovip` | `stem+prefix` |
+| 69 | `chatursply.com` | chatursply | `chatursply` | `stem+prefix` |
+| 70 | `afiyukent.one` | afiyukent | `afiyukent` | `stem+prefix` |
+| 71 | `8provider.com` | 8provider | `8provider` | `stem+prefix` |
+| 72 | `iqoption.net` | iqoption | `iqoption` | `stem+prefix` |
+| 73 | `millipiyangoonline.com` | millipiyangoonline | `millipiyangoonline` | `stem+prefix` |
+| 74 | `stp4bet.net` | stp4bet | `stp4bet` | `stem+prefix` |
+| 75 | `animeexpeditions.com` | animeexpeditions | `animeexpeditions.com` | `review` |
+| 76 | `essencereferencetummy.com` | essencereferencetummy | `essencereferencetummy.com` | `review` |
+| 77 | `corevibe-network.com` | corevibenetwork | `corevibenetwork` | `stem+prefix` |
+| 78 | `flashscore.com.ua` | flashscore | `flashscore` | `stem+prefix` |
+| 79 | `wuoza.com` | wuoza | `wuoza` | `stem+prefix` |
+| 80 | `papasqueens.com` | papasqueens | `papasqueens` | `stem+prefix` |
+| 81 | `ouraidream.com` | ouraidream | `ouraidream` | `stem+prefix` |
+| 82 | `guitartuna.com` | guitartuna | `guitartuna.com` | `review` |
+| 83 | `faucetpay.io` | faucetpay | `faucetpay.io` | `review` |
+| 84 | `w88cric.com` | w88cric | `w88cric` | `stem+prefix` |
+| 85 | `askmebet.live` | askmebet | `askmebet` | `stem+prefix` |
+| 86 | `chainers.io` | chainers | `chainers` | `stem+prefix` |
+| 87 | `minhngoc.net.vn` | minhngoc | `minhngoc` | `stem+prefix` |
+| 88 | `adzilla.meme` | adzilla | `adzilla.meme` | `review` |
+| 89 | `crickfree.be` | crickfree | `crickfree` | `stem+prefix` |
+| 90 | `freebitco.in` | freebitco | `freebitco.in` | `review` |
+| 91 | `asianbookie.com` | asianbookie | `asianbookie` | `stem+prefix` |
+| 92 | `nova88.com` | nova | `nova` | `stem-equal` |
+| 93 | `health.teenee.com` | teenee | `teenee.com` | `review` |
+| 94 | `ekamsply.com` | ekamsply | `ekamsply` | `stem+prefix` |
+| 95 | `connect234.com` | connect | `connect` | `stem+prefix` |
+| 96 | `techondicas.com` | techondicas | `techondicas.com` | `review` |
+| 97 | `888casino.it` | 888casino | `888casino` | `stem+prefix` |
+| 98 | `issuya.com` | issuya | `issuya` | `stem+prefix` |
+| 99 | `crex.com` | crex | `crex` | `stem-equal` |
+| 100 | `sport.888casino.it` | 888casino | `888casino` | `stem+prefix` |
+| 101 | `flixer.gd` | flixer | `flixer.gd` | `review` |
+| 102 | `1x-bet.mobi` | 1xbet | `1xbet` | `stem+prefix` |
+| 103 | `slotcatalog.com` | slotcatalog | `slotcatalog` | `stem+prefix` |
+| 104 | `thboxing.com` | thboxing | `thboxing` | `stem+prefix` |
+| 105 | `gys5.com` | gys | `gys5.com` | `exact` |
+| 106 | `m88.com` | m88 | `m88.com` | `exact` |
+| 107 | `stevenbridges.co` | stevenbridges | `stevenbridges` | `stem+prefix` |
+| 108 | `allbetasia.com` | allbetasia | `allbetasia` | `stem+prefix` |
+| 109 | `betway.com` | betway | `betway` | `stem+prefix` |
+| 110 | `bigwinboard.com` | bigwinboard | `bigwinboard` | `stem+prefix` |
+| 111 | `shuffle.com` | shuffle | `shuffle` | `stem+prefix` |
+| 112 | `ballthaitv.com` | ballthaitv | `ballthaitv` | `stem+prefix` |
+| 113 | `scoresinlive.com` | scoresinlive | `scoresinlive` | `stem+prefix` |
+| 114 | `fun88.com` | fun | `fun` | `stem-equal` |
+| 115 | `622coffee.com` | 622coffee | `622coffee` | `stem+prefix` |
+| 116 | `romspedia.com` | romspedia | `romspedia.com` | `review` |
+| 117 | `betfair.com` | betfair | `betfair` | `stem+prefix` |
+| 118 | `trendybeatz.com` | trendybeatz | `trendybeatz.com` | `review` |
+| 119 | `givamblog.com` | givamblog | `givamblog` | `stem+prefix` |
+| 120 | `pokerstars.com` | pokerstars | `pokerstars` | `stem+prefix` |
+| 121 | `fon.bet` | fon | `fon` | `stem-equal` |
+| 122 | `bondeddarkenedswerve.com` | bondeddarkenedswerve | `bondeddarkenedswerve.com` | `review` |
+| 123 | `sportradar.com` | sportradar | `sportradar.com` | `review` |
+| 124 | `pokerstarslive.com` | pokerstars | `pokerstarslive` | `stem+prefix` |
+| 125 | `njtv-01.com` | njtv | `njtv-01.com` | `exact` |
+| 126 | `footballpredictions.com` | footballpredictions | `footballpredictions` | `stem+prefix` |
+| 127 | `api-ugaming.com` | apiugaming | `apiugaming` | `stem+prefix` |
+| 128 | `stake.ceo` | stake | `stake` | `stem+prefix` |
+| 129 | `3rmwa7p.com` | 3rmwa7p | `3rmwa7p.com` | `exact` |
+| 130 | `livescore.red` | livescore | `livescore` | `stem+prefix` |
+| 131 | `ballhengheng.com` | ballhengheng | `ballhengheng` | `stem+prefix` |
+| 132 | `twoplustwo.com` | twoplustwo | `twoplustwo` | `stem+prefix` |
+| 133 | `spankbanglive.com` | spankbanglive | `spankbanglive.com` | `review` |
+| 134 | `casino.com` | casino.com | `casino.com` | `exact` |
+| 135 | `hurlmedia.design` | hurlmedia | `hurlmedia.design` | `review` |
+| 136 | `manko.fun` | manko | `manko` | `stem+prefix` |
+| 137 | `bojel.com` | bojel | `bojel` | `stem+prefix` |
+| 138 | `chipy.com` | chipy | `chipy` | `stem+prefix` |
+| 139 | `xskt.com.vn` | xskt | `xskt.com.vn` | `exact` |
+| 140 | `bch.games` | bch | `bch.games` | `exact` |
+| 141 | `dhlottery.co.kr` | dhlottery | `dhlottery` | `stem+prefix` |
+| 142 | `sagaming.com` | sagaming | `sagaming` | `stem+prefix` |
+| 143 | `hkjc.com` | hkjc | `hkjc.com` | `exact` |
+| 144 | `betika.com` | betika | `betika` | `stem+prefix` |
+| 145 | `backgammongalaxy.com` | backgammongalaxy | `backgammongalaxy` | `stem+prefix` |
+| 146 | `thehendonmob.com` | thehendonmob | `thehendonmob` | `stem+prefix` |
+| 147 | `misterdonghua.com` | misterdonghua | `misterdonghua.com` | `review` |
+| 148 | `melbetegypt.com` | melbetegypt | `melbetegypt` | `stem+prefix` |
+| 149 | `cyberscore.live` | cyberscore | `cyberscore` | `stem+prefix` |
+| 150 | `national-lottery.co.uk` | nationallottery | `nationallottery` | `stem+prefix` |
+| 151 | `oddschecker.com` | oddschecker | `oddschecker` | `stem+prefix` |
+| 152 | `lckts.com` | lckts | `lckts.com` | `exact` |
+| 153 | `sbfplay99.com` | sbfplay | `sbfplay` | `stem+prefix` |
+| 154 | `ohoboxing.com` | ohoboxing | `ohoboxing` | `stem+prefix` |
+| 155 | `recharge.game` | recharge | `recharge` | `stem+prefix` |
+| 156 | `racenet.com.au` | racenet | `racenet` | `stem+prefix` |
+| 157 | `fatty777.xyz` | fatty | `fatty` | `stem+prefix` |
+| 158 | `2ded.com` | 2ded | `2ded` | `stem-equal` |
+| 159 | `marathonbet.ru` | marathonbet | `marathonbet` | `stem+prefix` |
+| 160 | `bet911.com` | bet911 | `bet911` | `stem+prefix` |
+| 161 | `cloudbet.com` | cloudbet | `cloudbet` | `stem+prefix` |
+| 162 | `duel.com` | duel | `duel` | `stem-equal` |
+| 163 | `footystats.org` | footystats | `footystats` | `stem+prefix` |
+| 164 | `az24.vn` | az24 | `az24` | `stem-equal` |
+| 165 | `sbobet.com` | sbobet | `sbobet` | `stem+prefix` |
+| 166 | `racing.com` | racing | `racing` | `stem+prefix` |
+| 167 | `bc.game` | bc | `bc.game` | `exact` |
+| 168 | `d1q60f0kk3cf0.cloudfront.net` | d1q60f0kk3cf | `d1q60f0kk3cf0.cloudfront.net` | `exact` |
+| 169 | `dordir.com` | dordir | `dordir` | `stem+prefix` |
+| 170 | `sunmacau.com` | sunmacau | `sunmacau` | `stem+prefix` |
+| 171 | `dol-rtknetwork.com` | dolrtknetwork | `dolrtknetwork` | `stem+prefix` |
+| 172 | `arbeit-zuhause.com` | arbeitzuhause | `arbeit-zuhause.com` | `review` |
+| 173 | `bebayankhs.com` | bebayankhs | `bebayankhs` | `stem+prefix` |
+| 174 | `mivasstore.com` | mivasstore | `mivasstore` | `stem+prefix` |
+| 175 | `sportsbet.com.au` | sportsbet | `sportsbet` | `stem+prefix` |
+| 176 | `tpi.li` | tpi | `tpi` | `stem-equal` |
+| 177 | `casino.guru` | casino.guru | `casino.guru` | `exact` |
+| 178 | `grabyourluck.com` | grabyourluck | `grabyourluck` | `stem+prefix` |
+| 179 | `gamban.com` | gamban | `gamban.com` | `review` |
+| 180 | `exma.io` | exma | `exma` | `stem-equal` |
+| 181 | `allideasofanime.com` | allideasofanime | `allideasofanime.com` | `review` |
+| 182 | `pubg.plus` | pubg | `pubg` | `stem-equal` |
+| 183 | `football.nowgoal26.com` | nowgoal | `nowgoal` | `stem+prefix` |
+| 184 | `storehyson.com` | storehyson | `storehyson` | `stem+prefix` |
+| 185 | `brabet.com` | brabet | `brabet` | `stem+prefix` |
+| 186 | `mycasino.ch` | mycasino | `mycasino` | `stem+prefix` |
+| 187 | `crowncoinscasino.com` | crowncoinscasino | `crowncoinscasino` | `stem+prefix` |
+| 188 | `goal-th.com` | goalth | `goalth` | `stem+prefix` |
+| 189 | `ggbetconnect.com` | ggbetconnect | `ggbetconnect` | `stem+prefix` |
+| 190 | `bitcotasks.com` | bitcotasks | `bitcotasks.com` | `review` |
+| 191 | `timesurveys.com` | timesurveys | `timesurveys.com` | `review` |
+| 192 | `paddypower.com` | paddypower | `paddypower` | `stem+prefix` |
+| 193 | `9jarocks.net` | 9jarocks | `9jarocks.net` | `review` |
+| 194 | `tadagaming.com` | tadagaming | `tadagaming` | `stem+prefix` |
+| 195 | `olbg.com` | olbg | `olbg` | `stem-equal` |
+| 196 | `ingoodhealth.co.za` | ingoodheal | `ingoodhealth.co.za` | `review` |
+| 197 | `thscore.fun` | thscore | `thscore` | `stem+prefix` |
+| 198 | `slotstemple.com` | slotstemple | `slotstemple` | `stem+prefix` |
+| 199 | `777.ua` | 777 | `777.ua` | `exact` |
+| 200 | `m-918kiss.com` | m918kiss | `m918kiss` | `stem+prefix` |
+
+---
+
+## 6. Metrics to compute
+
+### 6.1 Counts
+`total`; `gambling`, `notGambling`, `unreachable`, `unknown`;
+`gamblingShare = gambling / total × 100`; `distinctDomains` (§5.4).
+
+### 6.2 Evaluation period & volume over time
+Parse `Updated at` as a date, ignoring unparseable values. `earliest` / `latest` =
+min / max (`YYYY-MM-DD`). `days` = `round((latest − earliest)/1 day) + 1`, else `0`.
+**URLs analyzed per day:** distinct URLs updated per date, ascending series
+`{ date, count }`, with every calendar day between `earliest` and `latest`
+present (a day with no rows counts as zero).
+
+**Gaps and peaks.** `meanDaily` = the mean daily count over every calendar day
+from `earliest` to `latest`, days with no rows included. Use the mean, not the
+median. When volume arrives in bursts, most days are low, and a median-based
+threshold sinks with them and hides the gaps it is meant to find: in the
+21 October run the median was 60 URLs, the gap threshold therefore 6 URLs a day,
+and the report stated that no gap existed beside a chart showing several
+near-empty stretches. A **gap** is a run of 3 or more consecutive days on which
+the count is below 10% of `meanDaily`. A **peak** is a run of consecutive days
+above 3 × `meanDaily`, reported as one period. Emit each as
+`{ start, end, days, urls }`, and emit `lowDays` = days below 10% of
+`meanDaily`.
+
+**Gap self-check.** Before any text states that no gap was found, test the
+plotted daily series itself: find every run of 3 or more consecutive days below
+the threshold. If one exists, it is a gap and the statement is false. The C2
+caption gives the threshold in URLs a day and `lowDays`, so a reader can check
+the chart against the text. Attach to each the cause from the operations log
+(§1) when an entry overlaps it; otherwise its cause is `not recorded`. Never
+describe a gap or peak as normal, expected or typical of a pilot, and never
+supply a cause the operations log does not give.
+
+`Updated at` is the date the record last changed, which is not necessarily the
+date the URL was first collected: a re-analysed URL moves to its later date. The
+card C2 caption says so.
+
+### 6.3 Status distribution
+`{ status, count, pct = count/total*100 }`, sorted by count desc. The standard
+set excludes `Needs more analysis` rows (§3), so that outcome never appears in
+this distribution; its count, `needsAnalysis`, is given in the card C3 caption
+and in card C5.
+
+### 6.4 Subcategory distribution (gambling rows only)
+`{ subcategory, count, pct = count/gambling*100, keywordAssigned,
+inferredAssigned, distinctClusters }`, sorted desc. Also emit the method split
+`{ subcategory, keyword, inferred }` for the confidence chart.
+
+### 6.5 Signal tag distribution (gambling rows only)
+`{ tag, count, pct = count/gambling*100 }` for all seven signal tabs, plus
+`tagsPerSite` = mean number of tags per gambling row.
+
+### 6.6 Keyword frequency (gambling rows only)
+For every lexicon keyword, the number of gambling rows matching it:
+`{ keyword, tab, count, pct = count/gambling*100 }`, sorted desc. Keep the **top
+25** for the heat map. Also emit `distinctKeywordsMatched` and
+`keywordsNeverMatched` per tab.
+
+### 6.7 Top 10 URL suffixes
+Group the standard set by `suffix(Domain)`: `{ total, pct = total/all*100,
+gambling, pctGambling = gambling/total*100 }`. Top 10 by total.
+
+### 6.8 Redirect and variant structure (gambling rows only)
+`variantRows`, `redirectRows` and `directRows`, where `directRows` = gambling
+rows whose Source category is neither `Variant` nor `Redirect`, so the three sum
+to `gambling`; each as a percentage of `gambling`. Group redirect rows by `seed`,
+count distinct URLs, keep the top 10. `topRedirect` = busiest seed;
+`topRedirectTargets` = up to 40 labels.
+
+**Variant verification.** Variant names are generated by the crawler, so the
+report shows what evidence exists that a variant counted as gambling is a live
+site the classifier actually read. For all `Variant` rows in the standard set,
+emit the status split `{ gambling, notGambling, unreachable, unknown }`. For
+gambling variant rows emit `variantWithReasoning` = rows whose `LLM Reasoning` is
+non-empty. Where `HTTP status` is present, add `variantFetchOk` = rows whose final
+status is 2xx; where `Final URL` is present, add `variantRedirected` = rows whose
+final URL sits on a different registrable domain. Never state that variants were
+verified beyond what these fields show.
+
+### 6.9 Naming-convention insights
+From the domain names in the largest clusters, up to four bullets:
+1. **Recurring tokens** — count hostnames containing each of `mobile, m., account,
+   login, secure, verify, support, app, bet, casino, win, play, th, thai, aff, vip,
+   slot, pg` and name the top 3 with counts. Phrase as evidence of a templated
+   naming scheme.
+2. **TLD switching** — if names span more than one suffix, list the top 4 with
+   counts and note the operator rotates top-level domains.
+3. **Distinct count** — "The gambling URLs sit on `distinctDomains` domains across
+   `M` brand clusters." `distinctDomains` counts registrable domains, never
+   hostnames.
+4. **Template-named domains** — when `templateOnlyRows` > 0: "`N` gambling URLs
+   have names made only of template words such as login, secure or verify; they
+   are kept as singletons unless a crawler link or ranked brand ties them to a
+   cluster."
+   If there is no evidence: "No evidence found."
+
+### 6.10 Source analysis (standard set)
+For each category in fixed order `Manual, Google Search, Variant, Redirect,
+SICPADetect automated classification pipeline, Other`:
+`{ total, gambling, notGambling, pctGambling }`, with that category's `total` as
+the denominator.
+
+### 6.11 Regulatory-blocking evidence
+Scan `LLM Reasoning` case-insensitively for: `access to this site has been blocked`,
+`court order`, `regulatory authority`, `illegal content`,
+`not permitted in your country`, `blocked by`, `has been blocked`, `ปิดกั้น`,
+`คำสั่งศาล`, `กระทรวงดิจิทัล` — **except** skip gambling rows whose reasoning also
+contains `gambling site` (still active). Capture
+`{ url, cluster, subcategory, phrase, excerpt }`, excerpt ~160 characters around
+the phrase.
+
+> `illegal content` is retained as a trigger because it is a string found in
+> third-party block pages, not a classification this report makes.
+
+Split the evidence by origin. `thaiEnforcement` = rows whose phrase or excerpt is
+a Thai-authority indicator: `ปิดกั้น`, `คำสั่งศาล`, `กระทรวงดิจิทัล`, or an explicit
+reference to a Thai court, MDES or a Thai ISP block page. `otherEnforcement` = the
+rest, such as foreign regulator or hosting-provider block pages. Only
+`thaiEnforcement` is described as enforcement in Thailand; Card 1 and insight 5
+report both counts.
+
+Blocking evidence reflects what was visible from the collection network (§1). If
+the crawler connects through a VPN, proxy or foreign exit that bypasses Thai
+ISP-level blocking, blocked sites appear reachable and live, and these counts
+understate enforcement. State the collection network beside the counts wherever
+they appear, or that it was not recorded.
+
+**How detection is explained.** Wherever the counts appear in prose (Card 1,
+insight 5), one sentence says how they were found: the model's description of
+each page is scanned for fixed block-page phrases in English and Thai, such as
+court-order and blocked-site notices, and a phrase naming a Thai court, MDES or a
+Thai ISP counts as a Thai enforcement indicator. Every row found is listed in
+card C7.
+
+### 6.12 Ranking
+Parse `Rank` numerically. **Gambling ranking** = gambling rows with a numeric rank,
+ascending, top 15 → `{ rank, domain=label, cluster, subcategory,
+source=sourceLabel }`. If none
+are ranked, output a sample of up to 10 gambling rows with rank shown as `—`.
+
+### 6.13 Blocklist feed
+For every gambling row emit `{ url, domain, cluster, subcategory,
+subcategoryMethod, subcategoryConfidence, signalTags, source=sourceLabel,
+referrer (seed, or null), rank (or null),
+date (YYYY-MM-DD from "Updated at", else raw), status: "gambling", legalEntity,
+legalEntityCountry, registrableDomain (domain(row)), hostFarm (true when the
+domain is a host farm, §5.4) }`. The existing `domain` field keeps the host as
+before, so the Blocklist screen is unaffected; `registrableDomain` lets an
+operator block a host farm once instead of hostname by hostname.
+
+### 6.14 Brand anchor table (for Annex 2)
+For every row of §5.6 whose mode is `stem+prefix`, `stem-equal` or `exact`, emit
+`{ rank, rankedDomain, anchorBrand, mode, urlsMatched, cluster }`, ascending by
+`rank`.
+
+- `urlsMatched` = gambling URLs in the standard set that joined a cluster through
+  this anchor under §5.2 rule 2, after conflict resolution under §5.5. A URL that
+  joined through seed linkage and whose seed matches the anchor counts too. `0`
+  when none matched.
+- Where two ranked domains share an anchor brand, the brand's count sits on its
+  better-ranked row only; the other row carries `sharedWithRank` = that rank, so
+  no URL is counted twice.
+- `cluster` = the name of the cluster holding the anchor, or null.
+
+Also emit `anchorsApplied` (rows above), `anchorsInReview` (rows of §5.6 in
+`review` mode), and reuse `anchorsMatched`, `anchoredUrls`, `anchoredShare` and
+the count of `anchorConflicts` from §5.4.
+
+### 6.15 Pipeline summary
+The stages from export to analysis, each with its count: `rowsReceived` →
+`needsAnalysis` set aside → `duplicatesRemoved` → `total` analysed, then `total`
+split by status (§6.3). The stages reconcile exactly (§6.19).
+
+### 6.16 Unreachable URLs by cause
+Assign every `Unreachable` row one cause, taking the first rule that applies:
+
+| # | Evidence | Cause |
+|---|---|---|
+| 0 | Raw status `ANALYSIS_ERROR` (§1) | Analysis error: SICPADetect could not complete its analysis |
+| 1 | `Fetch error` present | `timeout`, `timed out` → Timeout; `dns`, `nxdomain`, `not resolved` → DNS failure; `captcha`, `challenge`, `bot` → CAPTCHA or bot challenge; `geo`, `country`, `region` → Geo-block; `ssl`, `tls`, `certificate` → TLS error; anything else → Other recorded error. |
+| 2 | `HTTP status` present, no `Fetch error` | 4xx → HTTP client error; 5xx → HTTP server error. |
+| 3 | Neither present | Scan `LLM Reasoning` with the rule 1 patterns; the cause renders with `(from reasoning)`. |
+| 4 | Nothing found | Not recorded. |
+
+Emit `{ cause, count, pct = count/unreachable*100 }`. Where `Fetch route` is
+present, also emit `fallbackAttempted` = standard-set rows whose route names a
+fallback, `fallbackReached` = those not `Unreachable`, and
+`fallbackSuccessRate = fallbackReached / fallbackAttempted × 100`.
+
+### 6.17 Needs-more-analysis rows linked to gambling clusters
+Test each row set aside in §3 step 2 against the gambling clusters with §5.2
+rules 1–4 (seed with the compatibility test, anchor, identical stem, near-miss).
+For each row that links, emit `{ url, domain, linkedCluster, linkBasis,
+clusterUrlCount }`; `needsAnalysisLinked` = their count. These are review leads.
+They are never added to the gambling set, to a cluster or to any figure, and
+their status never changes in the report.
+
+### 6.18 Ranked brand clusters
+For each cluster holding at least one gambling row with a numeric `Rank`: `{
+cluster, urlCount, bestRank, rankedUrls, subcategories }`, ascending by
+`bestRank`, top 15. This sets the feed's visibility measure beside cluster size,
+so a reader can see which highly visible sites belong to large operations. No
+composite priority score is computed.
+
+### 6.19 Reconciliation
+Before §7, confirm each identity below. A failure stops generation and names the
+check that failed; it is never rounded away or footnoted.
+
+| Check | Identity |
+|---|---|
+| Pipeline | `rowsReceived = needsAnalysis + duplicatesRemoved + total` |
+| Status | `gambling + notGambling + unreachable + unknown = total` |
+| Subcategory | subcategory counts (including `Unspecified`) sum to `gambling`; `keywordAssigned + inferredAssigned` equals the count in each row |
+| Clusters | `urlCount` over all clusters, singletons included, sums to `gambling` |
+| Domains | every domain sits in exactly one cluster; `domainCount` over all clusters sums to `distinctDomains`; `distinctDomains` ≤ `gambling` |
+| Host farms | `hostFarmUrls` ≤ `gambling`, and each farm's URL count equals the URLs on that domain |
+| Structure | `variantRows + redirectRows + directRows = gambling` |
+| Unreachable causes | cause counts sum to `unreachable` |
+| Largest cluster | `topClusterBreakdown` URL counts, `Other stems` included, sum to `topCluster.urlCount` |
+
+Every table that divides a figure into parts (status, subcategory, unreachable
+causes, the largest-cluster breakdown, the pipeline summary) closes with a total
+row, and that total equals the parent figure shown elsewhere in the report.
+Top-N tables, such as the top 10 URL suffixes, state the number of rows outside
+the top N instead.
+
+---
+
+## 7. Report structure
+
+**Every block in the report is a card.** There is no loose text on the page: a
+figure, chart, table, diagram or narrative line only ever appears inside a card
+with a title. Card geometry, spacing and grid behaviour are in §9.4. The title
+page is the one page that carries no card.
+
+Cards render in the order below. A card whose data is unavailable is omitted
+entirely — never rendered empty, and never replaced with a placeholder. **The
+Model Insights section is the sole exception**: it is written by hand after
+generation and therefore renders empty, with its placeholders intact.
+
+**Main headers and section headings.** After the title page and the contents
+card, the report is divided into four main headers, rendered in this order:
+
+| Main header | What sits beneath it |
+|---|---|
+| **Executive Summary** | Card 1, with its two parts: Insights and trends; Key figures. |
+| **Model Insights** | Five cards, in this order: Introduction; Executive Summary; Overall and per class results; Error Analysis; Segments and Confidence. |
+| **Data Analysis** | Six sections, in this order: 10 most prominent gambling sites in Thailand; The numbers; Subcategories; Brands and clustering; Ranking; Key insights. |
+| **Annexes** | Two reference cards, in this order: Annex 1 — Subcategory definitions; Annex 2 — Ranked domains used for clustering. |
+
+Main headers render at the top heading level and the six Data Analysis section
+headings one level below them. Every main header, section heading and Model
+Insights card title renders as its name only, exactly as written above,
+including its capitalisation. Never prefix a heading with *Group*, *Section*, a
+letter or a number, and never refer to a section by letter anywhere in the
+report. The two annex card titles are the one exception: they carry `Annex 1` and
+`Annex 2` exactly as written above. The card IDs used in this specification (A1, B1, C2, E4
+and so on) are internal cross-references for the generator and never render.
+
+**One string per heading.** A heading, its contents entry and every reference to
+it in prose use the identical string. In particular the first Data Analysis
+section heading and its card B1 are both `10 most prominent gambling sites in
+Thailand`, and the third main header is `Data Analysis`; never reword them (not
+*best matched*, not *gaming sites*, not *SICPADetect Data Analysis*). Use
+*gambling*, never *gaming*, in every title and label.
+
+**Heading placement.** Each main header starts on a new page. A section heading
+never sits alone at the foot of a page: it moves to the next page with the first
+card beneath it.
+
+### Title page
+
+Full page, alone, with a page break after it. No card border, no grid, no chart.
+
+| Element | Value |
+|---|---|
+| Crest | Ministry of Digital Economy and Society, top right: the crest shown at the top of this document, matching the crest used on the Site Classification Report. |
+| Title | **Data Insights & Patterns**. |
+| Subtitle | One line: the estate analysed and the evaluation period, e.g. `21,852 URLs · 12 Aug – 23 Sep 2026`. Omit the dates if `earliest → latest` is unavailable. |
+| Issued to | Ministry of Digital Economy and Society, Thailand. |
+| Prepared by | SICPA SA. |
+| Report reference | `[REF-YYYY-NNN]` if supplied on ingest; omitted if not. |
+| Date of issue | The generation date, `DD/MM/YYYY`. |
+| Source system | SICPADetect, with the lexicon version from §2.1. |
+| Document classification | The marking supplied on ingest. Rendered in the same status fill used elsewhere in the report. |
+| Footer | The same footer line as the rest of the report. |
+
+Nothing else appears on this page. No summary figure, no chart, no contents list,
+no abstract.
+
+### Card 0 — Contents
+
+Single full-width card, immediately after the title page.
+
+The contents list is **generated from the cards that actually rendered** — never
+hand-written and never copied from this specification. Build it as the last step,
+after every omit decision in §7 has been made, so a card dropped for missing data
+can never appear in it.
+
+| Property | Value |
+|---|---|
+| Entries | Three levels. The four main headers (Executive Summary, Model Insights, Data Analysis, Annexes) sit at the top level. Beneath Executive Summary sit Card 1's two part headings. Beneath Model Insights sit its five card titles. Beneath Data Analysis sit card C0 and then its six section headings, each with its cards indented beneath it. Beneath Annexes sit the annex card titles that rendered. The title page and Card 0 itself are not listed. |
+| Label | The card's own rendered title, verbatim. Never re-worded, never truncated. |
+| Locator | Page number where the renderer paginates; otherwise an internal link to the card. |
+| Omitted cards | Absent. A card omitted under the rule above never appears in the contents. |
+| Section with no surviving cards | The section heading is dropped too. The four main headers are never dropped; Annex 1 always renders, so Annexes always has at least one entry. |
+| Model Insights | Always listed, with all five card titles (Introduction; Executive Summary; Overall and per class results; Error Analysis; Segments and Confidence), even though the section is empty apart from its fixed introduction at generation time. |
+| Order | Document order, identical to §7. |
+
+### Card 1 — Executive summary
+
+Sits alone under the **Executive Summary** main header. Single full-width card in two parts, stacked, in this order. Both parts sit in the
+one card. The part headings are rendered.
+
+**Part 1a. Insights and trends.**
+
+Prose. Four to six short paragraphs, 250 words at most. Written last, after §8, so
+it condenses the five narrative insights rather than anticipating them.
+
+| Rule | Value |
+|---|---|
+| Source | Computed metrics only. Every statement traces to a figure in §6. No new fact may appear here that is absent from the rest of the report. |
+| Content | What the estate looks like, what the dominant product types are, how concentrated the operators are, how the estate is grown and marketed, and where enforcement currently stands. Concentration is stated for domains as well as clusters: never write that no single cluster or domain dominates, or that the estate is diffuse, when `dominantDomain` or `dominantCluster` is true. Where host farms exist, one sentence gives their number and the share of gambling URLs they carry. |
+| Trends | Only where the evaluation period supports one. State the direction and the period it covers. Where `days` is too short to carry a trend, say so in one sentence and state nothing further about direction. Where §6.2 found a gap, one sentence gives its dates and its recorded cause, or says the cause was not recorded. |
+| Figures | At most six figures in the whole of Part 1a. The numbers live in Part 1b and in the cards. |
+| Prohibited | Recommendations, forecasts, severity judgements, comparisons to other countries, and any restatement of the Model Insights section. |
+| Empty | If §8 produced no insight because a metric was unavailable, the paragraph covering it is dropped. Nothing is invented to fill the space. |
+
+**Part 1b. Key figures.**
+
+A two-column table: reporting figures on the left, values on the right. Rows: URLs
+analysed; URLs set aside as Needs more analysis; gambling URLs and share; not
+gambling and unreachable; domains carrying the gambling URLs (`distinctDomains`);
+brand clusters identified and how many hold more than one domain;
+`clustersToHalf`; largest cluster, its size in URLs and domains and its share of
+gambling URLs; largest domain, its URLs and its share of gambling URLs; host
+farms and the share of gambling URLs they carry; dominant product subcategory and share; most common signal tag and share;
+URLs showing Thai enforcement indicators and other block pages, with the
+collection network; the keyword versus inferred split. Omit any row whose metric is unavailable rather than estimating
+it.
+
+### Model Insights
+
+**Completed manually. Never generated, never pre-filled, never omitted** — apart
+from the fixed section introduction in card A1, below.
+
+This section is the one place in the report where a human writes free prose. It is
+the second main header, after Executive Summary and before Data Analysis, so the
+manual reading of the model frames the generated findings that follow. The
+generator lays out five cards, in this order, and stops:
+
+| Card | Title | Content |
+|---|---|---|
+| A1 | **Introduction** | The fixed section introduction below, verbatim, followed by an empty placeholder. |
+| A2 | **Executive Summary** | Empty. Placeholder only. |
+| A3 | **Overall and per class results** | Empty. Placeholder only. |
+| A4 | **Error Analysis** | Empty. Placeholder only. |
+| A5 | **Segments and Confidence** | Empty. Placeholder only. |
+
+**Section introduction (card A1).** Rendered verbatim at the top of card A1,
+above the placeholder. It is fixed text, not generated from the data, and it is
+the only text in this section that the generator writes:
+
+> The results in this section come from a controlled test of the SICPADetect
+> classification model. The test was run against a predefined dataset, fixed in
+> advance so that results are consistent and can be reproduced. It was designed
+> to measure model performance only. The test dataset is separate from, and not
+> related to, the data examined in the Data Analysis section, so figures in this
+> section should not be compared or combined with figures elsewhere in this
+> report.
+
+Rules for this section, which override the general rules where they conflict:
+
+- Do **not** draft, suggest, summarise or pre-populate any of the five cards
+  beyond the fixed introduction in A1. Do not reword, shorten or extend that
+  introduction. Do not carry text across from the Key insights narrative cards or
+  from Card 1.
+- Do **not** omit a card because it is empty. The §7 omit-if-unavailable rule and
+  the §9.1 empty-state rule do not apply here.
+- Each card renders at full width with its title and a placeholder body sized to
+  hold roughly 150 words, so the layout does not shift when the text is added. In
+  A1 the placeholder sits beneath the fixed introduction.
+- Placeholder bodies carry no example text, no prompt and no instruction — a
+  neutral blank area only.
+
+**Checklist for the Model Insights authors (never rendered).** The generator does
+not write this section, but most of MDES's feedback of 21 October 2026 on the
+pilot report concerns it. Before the section is issued, its authors confirm each
+point below.
+
+| # | Check |
+|---|---|
+| 1 | **Definitions first.** The Introduction card defines the four outcomes (Gambling, Not gambling, Unreachable, Needs more analysis) and the confidence score before any figure uses them: whether the score is reported by the model or computed by a formula, the levels it actually takes, and the thresholds that assign each outcome. |
+| 2 | **Error groups add up.** The error groups are mutually exclusive and sum to the stated error total. A case that fits two groups is placed in one, and every error has a group (the feedback found 65 + 18 + 20 = 103 against 99 stated). |
+| 3 | **Segment tables reconcile.** Each segment table totals to the reference-label count it breaks down, or states why it does not (for example a site counted in several subcategories) and what the base is. |
+| 4 | **Test set composition.** State how many test sites are gambling and their split by subcategory, and give precision, recall and F1 per subcategory where the labels allow. Say whether the test set's mix (for example its share of unreachable sites) was designed to match the live estate or to stress the model. This describes the test design; the fixed introduction still bars combining the figures. |
+| 5 | **Confidence levels explained.** Explain why accuracy differs by confidence level, in particular any level that is less accurate than a lower one. |
+| 6 | **Reachable sites marked unreachable.** State whether each such case was a fetch failure or the model's interpretation. |
+| 7 | **Listing, review and ranking sites.** Note that their labelling awaits a rule agreed jointly with MDES (§4.4 rule 5). |
+| 8 | **Same finishing checks.** The prose integrity, units and heading checks of §9.7 apply to this section too. |
+
+### Data Analysis
+
+Main header. Card C0 (*How URLs are classified*, specified under The numbers)
+renders directly beneath it, before the first section heading, so that every
+outcome is defined before any Data Analysis figure appears. The six sections
+below follow, in this order.
+
+### 10 most prominent gambling sites in Thailand
+
+| Card | Content |
+|---|---|
+| B1 | **10 most prominent gambling sites in Thailand** — single full-width card: a ranked table of the ten highest-ranked gambling sites in the feed that are evidenced as targeting the Thai population. |
+
+**Selection, in this order.** Start from the standard working set (§3), gambling
+rows only — the rows whose source status was `Illegal gambling`, normalised to
+`Gambling` on ingest per §0. Keep only rows carrying at least one Thai-audience
+indicator from the list below **and no Vietnamese-audience indicator**. Rank
+ascending on numeric `Rank`; a row with no numeric rank is excluded, never sorted
+to the end. Collapse variants and redirects to their registrable domain and keep
+the best-ranked row per domain, so one operator cannot fill the table. Take the
+first ten.
+
+**Where the evidence must come from.** Both tests below run against the row's
+**description text only**: `LLM Reasoning`, `Interesting Keywords` and `Remarks`,
+joined as in §3. `URL` and `Domain` are excluded from this test, even though they
+form part of `evidenceText(row)` elsewhere. A domain that looks Thai (`th`, `thai`,
+`thb`, `siam`, a `.th` suffix, a Thai city in the name) is **never sufficient on its
+own**: the description must independently carry a Thai-audience indicator. Brand
+names shared across Southeast Asian markets (`fun88`, `jun88`, `99ok`, `lotto`,
+`vip` and similar) carry no market signal in either direction.
+
+**Thai-audience indicators.** At least one must be present in the description
+text, and the table names which one fired:
+
+| Indicator | Test |
+|---|---|
+| Thai script | Any character in U+0E00–U+0E7F. |
+| Thai currency | `฿`, `THB`, `baht`, `บาท`. |
+| Thai payment rails | `พร้อมเพย์` / PromptPay, `ทรูวอลเล็ต` / TrueMoney, or a Thai bank name (Kasikorn / KBank, SCB, Bangkok Bank, Krungthai, Krungsri, TTB, GSB). |
+| Thai contact convention | A `+66` number, or a LINE ID or LINE official account. |
+| Explicit Thai reference | A positive statement that the site targets or serves Thailand, is written in Thai, or names a Thai city or province, in any script. A negated or comparative mention (`not aimed at Thailand`, `unlike Thai sites`) does not count. |
+| Thai-market product terms | An Appendix A keyword **in Thai script**. Latin abbreviations and Latin words from Appendix A (`BET`, `VIP`, `WIN`, `PG`, `JILI`, `Wallet`, `Agent` and so on) are used across the region and do not count here. |
+
+**Vietnamese-audience indicators — exclusion test.** If any of the following is
+present in the description text, the row is excluded from this card, whatever Thai
+indicators it also carries:
+
+| Indicator | Test |
+|---|---|
+| Vietnamese script | Latin letters with Vietnamese diacritics: `ă â đ ê ô ơ ư` in either case, or any character in U+1EA0–U+1EF9. |
+| Vietnamese currency | `VND`, `₫`, `đồng`, `dong` used as a currency. |
+| Vietnamese payment rails | MoMo, ZaloPay, VNPay, ViettelPay, or a Vietnamese bank name (Vietcombank, Techcombank, VietinBank, BIDV, MB Bank, ACB, Sacombank, VPBank). |
+| Vietnamese contact convention | A `+84` number, or a Zalo ID or Zalo account. |
+| Explicit Vietnamese reference | Vietnam, Việt Nam, Vietnamese, or a Vietnamese city or province (Hanoi / Hà Nội, Ho Chi Minh City / Sài Gòn, Da Nang / Đà Nẵng and so on). |
+| Vietnamese gambling vocabulary | Terms such as `nhà cái`, `cá cược`, `cá độ`, `xổ số`, `lô đề`, `nổ hũ`, `tài xỉu`, `đá gà`, `game bài`. |
+
+Where the description is ambiguous — no Thai indicator and no Vietnamese one, or
+a mention of both markets with no clear primary audience — the row is excluded.
+The card never fills a place on a guess.
+
+**Columns.** `rank / URL / domain / brand cluster / subcategory /
+Thai-targeting evidence / source`. The rank is a single figure that never wraps
+(§9.4 table cells); the URL, evidence and source columns wrap instead. The evidence column names the indicator and
+quotes the matched string from the description text, in its original script. It
+never cites the URL or domain as evidence. The source column carries
+`sourceLabel(row)` (§3), so a variant or redirect lists its referrer when one is
+available.
+
+**Rules.**
+- The card title and every label use **gambling**, never *illegal*, *unlicensed*
+  or *unranked-illegal*, per §0. The source status value is a filter only and is
+  never printed.
+- If fewer than ten rows qualify, render those that do and add one line giving the
+  number found. Never pad the table, and never relax the Thai-audience test or the
+  Vietnamese exclusion to reach ten.
+- Beneath the table, one line records how many otherwise eligible ranked rows were
+  excluded because their description carried a Vietnamese-audience indicator.
+  Omit the line if the count is zero.
+- If no row qualifies, the card is omitted and Card 1 carries a single line
+  recording that no ranked gambling site in this sample carried Thai-audience
+  evidence.
+- Caption: rank reflects search visibility in the source feed, not harm, reach or
+  revenue.
+
+### The numbers
+Cards render in the order listed. Card IDs are internal and do not follow render
+order.
+
+| Card | Content |
+|---|---|
+| C0 | **How URLs are classified** — single full-width prose card. It does not render in this section: it sits directly beneath the Data Analysis main header, before the first section (see Data Analysis above). Specified below. |
+| C1 | **Metric cards row** — four small cards side by side: Total URLs analyzed; Gambling URLs; Gambling domains (`distinctDomains`); Evaluation period (`days`, with `earliest → latest`). |
+| C5 | **From collection to analysis** — flow diagram of §6.15: each stage as a box carrying its count, with the rows set aside at each step shown branching off, ending in the status split. A total row beneath reconciles the stages. Always renders. |
+| C2 | **URLs analyzed per day** — line chart of §6.2. Gaps render as shaded bands and peaks as marked periods. The caption states the gap threshold in URLs a day and `lowDays`. The caption lists each gap and peak with its dates and its recorded cause, or `cause not recorded`, and states that a URL is dated by the last time its record changed. |
+| C3 | **Status distribution** — pie chart and a `status / count / pct` table in one card. Fixed colours: Gambling `#c0392b`, Not gambling `#9aa7b4`, Unreachable `#7d3c98`, Unknown `#e67e22`. Caption: `needsAnalysis` URLs classified as Needs more analysis are set aside before this count and appear in From collection to analysis. |
+| C6 | **Unreachable URLs by cause** — table of §6.16: `cause / URLs / % of unreachable`, with a total row, and one line beneath giving `fallbackSuccessRate` when `Fetch route` is present. Caption: the collection network (§1), or that it was not recorded. If every cause is `Not recorded`, the card carries one line instead of the table: the export records no fetch diagnostics for the unreachable URLs. When `unreachable` is zero the card still renders, with one line instead of the table: the export contains no Unreachable URLs, and whether unreachable URLs are removed before export is not recorded. A zero is a finding MDES asked about, so it is stated rather than hidden. |
+| C4 | **Top 10 URL suffixes** — bar chart and a `suffix / total / % of all / gambling / % gambling` table in one card. |
+| C7 | **Pages showing blocking indicators** — table of §6.11, one row per URL, Thai-authority rows first: `URL / brand cluster / indicator (Thai authority or other) / phrase found / excerpt`. The excerpt is cut to about 80 characters at a word boundary and ends with an ellipsis. Caption: the detection sentence of §6.11 and the collection network, or that it was not recorded. When both counts are zero the card renders with one line: no page carried a block-page phrase, with the collection network caveat. Renders last in The numbers. |
+
+**C0 — How URLs are classified.** Fixed text, rendered verbatim, so that every
+outcome is defined before any figure uses it:
+
+> Every URL in this analysis receives one of five outcomes. **Gambling**: the
+> classifier judged, from what was recorded about the page, that the site offers
+> or promotes gambling. **Not gambling**: the page was read and judged not to
+> offer gambling. **Unreachable**: the page could not be fetched or read from the
+> collection network, or SICPADetect could not complete its analysis, so no
+> judgement was made. **Needs more analysis**: the
+> classifier could not decide with enough confidence, so the URL is set aside for
+> human review; these URLs are counted in From collection to analysis and are
+> excluded from every other figure in this section. **Unknown**: the export
+> carried a status outside these four. Figures in this section count URLs, one
+> URL being one address analysed; where a card counts domains instead, it says
+> so.
+
+This card is exempt from the omit-if-unavailable rule.
+
+### Subcategories
+Every subcategory axis in this section draws its seven columns from the product
+categories in **Appendix A.1**, in the order listed there. No other value may
+appear on a subcategory axis.
+
+| Card | Content |
+|---|---|
+| D1 | **Gambling sites by product subcategory** — horizontal bar, descending, product palette (§9.2). Every bar carries both figures in its label: the site count and its share of gambling rows to one decimal place, e.g. `Slots — 412 (38.4%)`. The share is of gambling rows, not of all rows, and the axis title says so. |
+| D2 | **Assignment method by subcategory** — stacked bar; `keyword` in the subcategory colour, `inferred` in the same hue at 45% opacity. Caption carries `inferredShare` and `generalShare`. Beneath the chart and above the caption, the card carries a short **lexicon match explanation**, specified below. |
+| D3 | **Subcategory table** — `subcategory / count / % of gambling / keyword-assigned / inferred / distinct clusters`, closing with a total row equal to `gambling`. Rows assigned `Unspecified` (§4.4 rule 6) sit on their own line above the total when non-zero. Caption: `listingSites` of the General Gambling URLs are listing, review or ranking sites, pending jointly agreed labelling rules. |
+| D4 | **Heat map — Keyword × subcategory** — rows: the top 25 matched keywords from §6.6, each labelled with a coloured strip showing its own Appendix A category so cross-category bleed is visible. Columns: the seven product subcategories. Cell: gambling sites matching that keyword within that subcategory. |
+| D5 | **Heat map — Signal tag × subcategory** — rows: the seven signal categories from Appendix A.2. Columns: the seven product subcategories. Cell: site count. Shows which products lean on promotional, payment or evasion language. |
+
+**D2 lexicon match explanation.** A short prose block inside card D2, headed
+*What a lexicon match means*. It tells a reader who has never seen the lexicon
+what the two fills on the chart stand for. It covers three points, in this order:
+
+| Point | What it says |
+|---|---|
+| What a lexicon match is | A site is assigned to a subcategory by lexicon match when a word or phrase from the gambling keyword lexicon appears in what was recorded about the site — the model's description, extracted keywords, remarks recorded by the SICPADetect automated classification pipeline, or the URL and domain — and that word belongs to the product category the site was assigned. Example: a site whose description contains `บาคาร่าออนไลน์` is assigned to Baccarat by lexicon match. |
+| Which lexicon | The SICPADetect Thai gambling keyword lexicon, at the version shown on the title page: 286 keywords in 14 categories, mostly in Thai script. Seven categories describe the gambling product and decide the subcategory. The other seven describe how a site markets or operates itself and are reported as signal tags, never as a subcategory. |
+| Why it matters | A lexicon match rests on a specific word that can be pointed to on the site, so the assignment can be checked and repeated. An inferred assignment rests on the model's reading of its own description when no lexicon word was found, so it carries lower confidence. The larger the lexicon share of a bar, the more that subcategory figure can be relied on. A large inferred share means the sites use vocabulary the lexicon does not yet cover. |
+
+Rules: 90 to 130 words; plain prose, no list; no figures from the dataset (the
+lexicon's own size, 286 keywords and 14 categories, is the one permitted
+exception); present tense; no recommendation. The keyword quoted in the example
+may be replaced by the most frequently matched product keyword in the dataset, in
+its original script.
+
+If no lexicon keyword matched at all, cards D4 and D5 are omitted and card D3
+carries a single line: "No lexicon keywords matched this sample; every gambling
+row was assigned by reasoning inference."
+
+### Brands and clustering
+| Card | Content |
+|---|---|
+| E0 | **What brand clusters are** — single full-width prose card, the first card in this section. Specified below. |
+| E1 | **Metric cards row** — Distinct clusters; Clusters with ≥ 2 domains; Singletons (one domain each); `clustersToHalf`. |
+| E1a | **Domains with the most URLs** — table of `topDomains` (§5.4): `domain / URLs / % of gambling URLs / brand cluster / first seen / last seen / host farm`. When `dominantDomain` is true, the subtitle gives `topDomainShare`. Beneath the table, one line gives `hostFarmCount`, `hostFarmUrls` and their share of gambling URLs, `domainsToHalf`, and the fetch evidence for the host farms, or that it was not recorded. Opens with a table explanation, specified below. |
+| E2 | **Top 15 brand clusters by URL count** — horizontal bar chart; cluster names are unbounded in length and will not fit as upright labels under fifteen vertical bars. The axis counts URLs, never domains, and every bar label gives both, e.g. `2,885 URLs · 1 domain`, so a cluster that is one host farm is visible at a glance. |
+| E3 | **Heat map — Brand cluster × subcategory** — rows: top 20 clusters. Columns: the seven product subcategories from Appendix A.1. Cell: URL count. Multi-product operators appear as horizontal bands. |
+| E4 | **Cluster expansion — `topCluster.name`** — node diagram; cluster name at the centre, member domains (registrable domains, each labelled with its URL count) around it. When the largest cluster holds fewer than 3 domains, the card shows, and takes its title from, the largest cluster holding at least 3 instead, and its interpretation line says why. Edges are styled by `mergeBasis` (solid = seed, dashed = stem, dotted = similarity). One interpretation line inside the card. |
+| E4a | **Inside the largest cluster** — table of `topClusterBreakdown` (§5.4): `member stem / URLs / domains / how joined / variant · redirect · direct / ranked brand`, closing with a total row. When the cluster sits on one domain, a line beneath the table says so and refers to Domains with the most URLs. The `how joined` cell gives the URL count per `mergeBasis`. When `dominantCluster` is true, the subtitle gives `topClusterShare`. Beneath the table, one line gives `variantLinksRejected`. Opens with a table explanation, specified below. Renders whenever the largest cluster holds two or more member stems. |
+| E5 | **Clusters spanning multiple subcategories** — table: `cluster / URL count / subcategories / suffixes`. The `subcategories` cell lists each subcategory with its site count. Opens with a table explanation, specified below. |
+| E6 | **Clusters rotating top-level domains** — table: `cluster / suffix / domains / first seen / last seen`, one line per suffix within each cluster. Beneath the table, one line gives the number of clusters with `lateJoiners` and the domains involved. Caption: dates are when SICPADetect recorded each domain, not when it was registered, blocked or replaced; where `days` is under 60, the period is too short to confirm rotation over time. Opens with a table explanation, specified below. |
+| E7 | **Possible operator linkage** — table: `cluster A / cluster B / shared keywords / Jaccard`, or, when the §5.3 discrimination check fails, the single line §5.3 specifies in place of the table. Card subtitle reads "Indicative — not a clustering decision". Opens with a table explanation, specified below. |
+| E8 | **Naming conventions** — the §6.9 bullets. |
+| E9 | **Structure: direct → redirect → variant** — three small metric cards in one row, in URLs, summing to `gambling`. Caption: the variant verification figures of §6.8. |
+| E10 | **Redirect propagation — `topRedirect`** — node diagram. Rendered only when a top redirect exists. |
+| E11 | **Needs more analysis URLs linked to known clusters** — table of §6.17: `URL / domain / linked cluster / link basis / cluster size`. Subtitle reads "Review leads — status unchanged". Opens with a table explanation, specified below. Omitted when `needsAnalysisLinked` is zero. |
+
+**E0 — What brand clusters are.** A prose card that explains the idea before any
+cluster figure appears, so the rest of the section reads without reference to
+this specification. Two short paragraphs, 170 to 220 words in total, headed
+*What a cluster is* and *Why clusters matter*.
+
+| Paragraph | What it says |
+|---|---|
+| What a cluster is | A brand cluster is a group of URLs, and the domains they sit on, judged to belong to the same gambling brand or operator. Domains join a cluster in one of four ways, listed here in order of strength: the crawler followed a redirect from one to another, or generated one as a variant of another's name and the two names match (seed linkage); one matches a brand in a ranking of gambling domains for Thailand supplied by an external data provider, so it is grouped under that brand's name even when its own name differs (the ranked brands applied are listed in Annex 2); their names reduce to the same stem once market tags, version numbers and suffixes are removed, so `ufabet168th.com` and `ufabet-vip.net` both reduce to `ufabet`, while short names keep their numbers and `jun88` and `jun68` stay apart; or their stems are near identical in spelling. A domain that matches no other domain and no ranked brand is a singleton. All the hostnames on one registered domain always belong to the same cluster. |
+| Why clusters matter | Operators rarely run a single site. They register many domains, rotate top-level domains and move players between them through redirects, so that when one address is blocked another takes its place. Counting URLs therefore overstates how many operators there are and hides who is behind the estate. Clustering shows how many distinct operations exist, how concentrated the estate is, and which operators run several product types. That changes where enforcement has leverage: acting on a cluster reaches every domain in it, where acting on a single URL leaves the rest of the brand running. |
+
+Rules: plain prose; present tense; no figures from the dataset, since E1 onwards
+carry them; the stem example may be replaced by one drawn from the largest
+cluster. Close with one sentence noting that clusters are an analytical grouping
+based on names, crawler links and an external domain ranking, not a legal
+finding about ownership, and that
+the Possible operator linkage table is indicative only. Refer to that table by
+its rendered title only; its card ID (E7) never appears in the prose. This card is exempt from the
+omit-if-unavailable rule: it renders whenever the section renders, including when
+every cluster is a singleton.
+
+**Table explanations (E1a, E4a, E5, E6, E7, E11, F1, F2).** Each of these eight cards opens with a
+short prose block, set between the card title (and subtitle) and the table,
+headed *How to read this table*. It lets a reader who has not seen this
+specification understand what the table lists, how a row gets into it and why
+it matters. Each block covers the three points below, in that order.
+
+Rules for all eight: 80 to 130 words; plain prose, no list; present tense. No
+figures from the dataset, since the table carries them; the qualifying
+thresholds named below are the one exception. No recommendation and no
+conclusion about any named cluster. Refer to other cards by their rendered
+titles, never by card ID. The block renders only with its table: when the card
+is omitted for empty data, the block goes with it.
+
+*E1a — Domains with the most URLs*
+
+| Point | What it says |
+|---|---|
+| What the table lists | The registered domains that carry the most gambling URLs in this sample. Each row gives the domain, its number of URLs, their share of all gambling URLs, the brand cluster it belongs to, the first and last day SICPADetect recorded it, and whether it is a host farm. |
+| How a domain qualifies | The domains with the most URLs are listed, largest first. A domain carrying 20 or more gambling URLs is marked as a host farm: many hostnames under one registered name. |
+| Why it matters | Many hostnames under one domain usually come from a single setting that makes every name under the domain lead to the same site, so they may not be separate pages. Action against the domain itself reaches every one of its hostnames at once, where blocking hostname by hostname never catches up. |
+
+*E4a — Inside the largest cluster*
+
+| Point | What it says |
+|---|---|
+| What the table lists | The member names that make up the largest brand cluster. Each row is one stem, the name left once market tags, numbers and suffixes are removed, with its URLs, its distinct domains, how those URLs joined the cluster and whether the crawler found them directly, through a redirect or as a generated variant. |
+| How a row qualifies | Every stem in the largest cluster is listed, largest first, with smaller stems grouped in a final row. The joining routes are those described in What brand clusters are. |
+| Why it matters | Acting on a cluster is only worth more than acting on single URLs if the cluster reflects one real operation. Several unrelated names held together by one weak link point to a loose merge rather than a single operator, so this table lets the reader check the grouping before relying on it. |
+
+*E5 — Clusters spanning multiple subcategories*
+
+| Point | What it says |
+|---|---|
+| What the table lists | Brand clusters whose member sites fall into two or more product subcategories, for example one brand that runs both slots sites and football betting sites. Each row gives the cluster name, the number of its URLs in this sample, each subcategory present with its site count, and the domain suffixes the cluster uses. |
+| How a cluster qualifies | Subcategories are assigned to each site, not to the cluster. A cluster qualifies when at least two of its sites carry different product subcategories. Where General Gambling appears beside a specific product, it means a product could not be evidenced for those sites, not necessarily that the brand offers a second product. Definitions of each subcategory are in Annex 1. |
+| Why it matters | These brands offer several gambling products under one name, so action against the brand reaches all of them at once. They also show where the subcategory figures earlier in the report are driven by the same operators rather than by separate ones. |
+
+*E6 — Clusters rotating top-level domains*
+
+| Point | What it says |
+|---|---|
+| What the table lists | Brand clusters whose member domains use two or more top-level domains, the ending of the address, for example the same brand name registered under `.com`, `.net` and `.co`. Each line gives the cluster, one suffix it uses, how many member domains use that suffix and the first and last day SICPADetect recorded them. |
+| How a cluster qualifies | The suffix is the public suffix removed when a name is reduced to its stem, so a two-part ending such as `.co.th` counts as one suffix. A cluster qualifies when its members use at least two different suffixes. |
+| Why it matters | Registering one brand name under several endings keeps the brand reachable when one domain is blocked: a player only has to change the ending. Blocking a single domain then leaves its siblings running, and the suffix list shows which endings to watch for the brand. Not every case is evasion; some operators register several endings to protect their name or to serve different markets. |
+
+*E7 — Possible operator linkage*
+
+| Point | What it says |
+|---|---|
+| What the table lists | Pairs of brand clusters with different names that use an unusually similar set of signal keywords, the lexicon words describing how a site promotes itself, takes payment or avoids blocking. Each row gives the two clusters, the signal keywords they share and their Jaccard score. |
+| How the score works | The Jaccard score is the number of signal keywords the two clusters share, divided by the number of distinct signal keywords either of them uses. It runs from 0, nothing in common, to 1, identical sets. Words used by a large share of the sample, and abbreviations known to match by accident, are left out before the score is calculated. Only pairs scoring 0.60 or more and sharing at least three of the remaining keywords are listed. |
+| Why it matters, and its limits | A close match can point to one operator running two brands, which the name-based clustering cannot see. It can equally come from unrelated operators using the same affiliate website template. The pairs are therefore leads to verify with other evidence, such as shared hosting, payment accounts or contact details. The clusters are never merged on this score. |
+
+*F1 — Gambling ranking*
+
+| Point | What it says |
+|---|---|
+| What the table lists | The gambling sites in this sample that carry a rank in the SICPADetect feed, best ranked first, up to fifteen. Each row gives the rank, the domain, its brand cluster, its subcategory and where SICPADetect found it. |
+| Where the rank comes from | The rank is the position recorded for the site in the source feed and reflects its search visibility: the lower the number, the more visible the site. It is not the external ranking used to anchor brand clusters in Annex 2, and unlike the ten most prominent gambling sites in Thailand table it is not filtered for a Thai audience or limited to one row per domain. Where no site in the sample carries a rank, the block says that the table shows a sample of gambling sites instead, with no rank. |
+| Why it matters | The highest-ranked sites are the ones users are most likely to reach, so they are where blocking has the most immediate effect on exposure. Rank measures visibility only, not harm, reach or revenue. |
+
+*E11 — Needs more analysis URLs linked to known clusters*
+
+| Point | What it says |
+|---|---|
+| What the table lists | URLs the classifier could not decide with confidence whose names or crawler links tie them to a brand cluster already classified as gambling. Each row gives the URL, its domain, the cluster it links to, how it links and the size of that cluster. |
+| How a row qualifies | The URL is tested against the gambling clusters with the same rules used to build them. A match is listed; the URL keeps its Needs more analysis outcome and is not counted anywhere else. |
+| Why it matters | A link to a known gambling brand is evidence a reviewer can use to decide the case quickly. It is not a classification: mirrors usually share a brand, but a name match alone does not prove what a page offers. |
+
+*F2 — Ranked brand clusters*
+
+| Point | What it says |
+|---|---|
+| What the table lists | Brand clusters that contain at least one gambling site carrying a rank in the SICPADetect feed. Each row gives the cluster, its number of URLs, the best rank among its members, how many members are ranked and its subcategories. |
+| How a cluster qualifies | One ranked gambling member is enough. Clusters are ordered by their best rank, so the most visible brands come first, and the URL count shows how large each operation is. |
+| Why it matters | A brand that is both highly visible and large is where action reaches the most users and the most addresses at once. Rank measures visibility only, not harm, reach or revenue, and no combined score is calculated. |
+
+### Ranking
+| Card | Content |
+|---|---|
+| F1 | **Gambling ranking** — table, top 15 by rank, or the §6.12 sample when none are ranked. The source column carries `sourceLabel(row)` (§3). Opens with a table explanation, specified under *Table explanations* above. |
+| F2 | **Ranked brand clusters** — table of §6.18: `cluster / URLs / best rank / ranked URLs / subcategories`. Opens with a table explanation, specified under *Table explanations* above. Omitted when no gambling row carries a numeric rank. |
+
+### Key insights
+| Card | Content |
+|---|---|
+| G1–G5 | The five narrative cards in §8, one card each: title, body, and a single closing take line set apart from the body. |
+
+### Annexes
+
+Main header, the fourth and last. Two reference cards sit beneath it, in this
+order. They hold material a reader needs to check figures elsewhere in the
+report. They carry no findings, no insight lines and no interpretation, and
+nothing in them feeds Card 1 or the Key insights.
+
+| Card | Content |
+|---|---|
+| H1 | **Annex 1 — Subcategory definitions** — single full-width card: the seven product subcategories, each with a fixed definition, its keyword count and its complete set of lexicon keywords. |
+| H2 | **Annex 2 — Ranked domains used for clustering** — single full-width card: the ranked domains applied as brand anchors under §5.5, in rank order, with how many URLs in this sample each one drew into a cluster. |
+
+**Annex titles and numbering.** Both titles render exactly as written in the table,
+including `Annex 1` and `Annex 2`, as the one exception to the heading rule above.
+The annexes are numbered, never lettered, so a reader cannot confuse them with
+Appendix A of this specification. Annex 1 always renders, so its number never
+changes.
+
+**H1 — Subcategory definitions.**
+
+Opens with the fixed introduction below, rendered verbatim. It is not generated
+from the data and is not reworded, shortened or extended:
+
+> Each site classified as gambling is assigned one of the seven product
+> subcategories below, according to what it offers. General Gambling applies only
+> when a site is confirmed as gambling but no specific product can be evidenced. A
+> subcategory is assigned by lexicon match when one of the keywords listed under
+> it appears in what was recorded about the site, and by inference from the
+> model's description when none is found. How a site markets or operates itself
+> is recorded separately as signal tags and does not decide its subcategory. The
+> keywords under each subcategory are its complete set in the lexicon, shown in
+> their original script. A few keywords appear under both a specific product and
+> General Gambling; they always count toward the specific product.
+
+Then one block per subcategory, seven blocks in the order of Appendix A.1. Each
+block has three lines:
+
+1. **Heading line:** the subcategory name in bold, then `·`, then the keyword
+   count, e.g. `**Football Betting** · 21 keywords`.
+2. **Definition:** the fixed definition from the table below, rendered verbatim.
+3. **Keywords:** every keyword listed for that category in Appendix A.1, in the
+   order listed there, separated by ` · `. Copy them from Appendix A.1 exactly,
+   character for character; never retype, transliterate, translate, correct or
+   re-sort them. Keywords in Latin or mixed script (`สล็อต pg`, `Huay`) render
+   as listed.
+
+| Subcategory | Definition |
+|---|---|
+| Football Betting | Betting on the outcome of football and other sports matches, including match odds, single match and accumulator ("step") bets, and tipping or match analysis offered to bettors. |
+| Slots | Online slot machine games, including sites that promote particular slot providers, high payout rates or slots played directly without an agent. |
+| Casino | Online and live casino table and wheel games other than baccarat and card games, such as roulette, dragon tiger, hi lo dice and wheel spin games. |
+| Lottery | Betting on lottery and number draws, including the Thai government and underground lotteries, Lao, Hanoi and Malaysian draws, fast draw yi ki lotteries and lotteries settled on stock index figures. |
+| Playing card | Card games other than baccarat, such as pok deng, blackjack, poker and Thai two card and three card games. |
+| Baccarat | Baccarat in any form, live or online, including demo tables and betting formula or prediction services sold for baccarat. |
+| General Gambling | Sites confirmed as gambling whose recorded content uses only generic gambling or betting vocabulary, so no specific product can be evidenced. Assigned only when no other subcategory applies. |
+
+**Legibility of the Thai keywords.** Every keyword must be readable on paper as
+well as on screen. A block that fails any rule below is a defect.
+
+| Rule | Value |
+|---|---|
+| Font | A typeface with full Thai coverage, such as Sarabun or Noto Sans Thai, embedded in the PDF. Never let the renderer fall back to a font without Thai glyphs. |
+| Size | Keywords at 10 pt minimum, larger than the 8 pt chart minimum in §9.5, because Thai tone marks and vowels stack above and below the line. |
+| Line height | At least 1.6, so that marks above one line never touch the marks below the line above, and no mark is clipped. |
+| Wrapping | Lines break only at the ` · ` separators, never inside a keyword. Each keyword is kept on one line as a single unit. This is stricter than the dictionary wrapping in §9.1 and §9.5, which applies to chart labels. |
+| No reduction | No truncation, ellipsis, shrink-to-fit, condensed font or reduced tracking. If a block does not fit, it continues on the next line. |
+| Contrast | Body text colour on the page background; no grey or tinted keyword text. |
+| Render check | After render, inspect every keyword against Appendix A.1. A missing or empty box, a dotted-circle mark (◌), a tone mark or vowel displaced or clipped, or two keywords run together is a defect. Fix the font or layout and render again. |
+
+Rules for H1:
+- No figures from the dataset. Counts and shares live in D1 and D3; the keyword
+  count is the only number in the card.
+- Count check: the keyword count in each heading line is the number of distinct
+  keywords listed in that block. Where it differs from the `n` column in
+  Appendix A.1 (for example a keyword listed twice), the listed keywords decide
+  the count, and the difference is raised with the lexicon owner.
+- `Not applicable` and `Unspecified` are not product subcategories and are not
+  listed. Signal tags are not listed.
+- When Appendix A is regenerated from a new lexicon version, revise the
+  definitions here at the same time. Never adjust them at generation time. The
+  keyword lists always follow Appendix A.1 as it stands.
+- A subcategory block never splits across pages; if it does not fit, it moves
+  whole to the next page, and the card continues under the annex exception in
+  §9.4.
+- Caption: the keyword lists are those of the SICPADetect lexicon at the version
+  shown on the title page.
+- Exempt from the omit-if-unavailable rule: H1 always renders.
+
+**H2 — Ranked domains used for clustering.**
+
+Subtitle: the ranking's source and how many ranked domains were applied, e.g.
+`Ranking of gambling domains for Thailand · external data provider · 159 of 200
+ranked domains applied`. Take the counts from §6.14. Never call the ranking
+monthly.
+
+Opens with the fixed introduction below, rendered verbatim:
+
+> Brand clusters are anchored to a ranking of gambling domains for Thailand
+> supplied by an external data provider. When a URL in this sample matches a
+> ranked brand, it is
+> grouped under that brand's name instead of the name it happens to carry. The
+> ranking is an analytical reference. A place in it is not evidence of ownership,
+> harm or reach, and a match never adds a site to the gambling set.
+
+Then a table built from §6.14: `rank / ranked domain / brand / match basis / URLs
+matched / cluster`, ascending by rank.
+
+| Column | Renders as |
+|---|---|
+| rank | The rank from §5.6. |
+| ranked domain | The ranked domain, as listed in §5.6. |
+| brand | The anchor brand. |
+| match basis | Plain words in place of the mode code: `stem+prefix` → `Brand name and extended names`; `stem-equal` → `Brand name only`; `exact` → `This domain only`. Mode codes, anchor stems and match keys never render. |
+| URLs matched | `urlsMatched`. Where a brand has two ranked domains, the second row reads `With rank N` in place of a count. |
+| cluster | The cluster name, or `—` when nothing matched. |
+
+Beneath the table, in this order, each line omitted when its figure is zero or
+unavailable:
+1. `anchorsMatched` of `anchorsApplied` ranked domains matched at least one URL in
+   this sample, together covering `anchoredUrls` gambling URLs
+   (`anchoredShare`% of gambling URLs).
+2. The count of URLs that matched more than one ranked brand and were placed with
+   the closest match.
+3. `anchorsInReview` ranked domains are awaiting analyst review, were not
+   applied and are not listed.
+
+Rules for H2:
+- Only anchors in `stem+prefix`, `stem-equal` or `exact` mode are listed.
+  `review` rows never render, not even by name: they are probably not gambling
+  operators, and listing them under a gambling ranking would present an
+  unconfirmed classification. An anchor an analyst promotes out of `review` mode
+  lists like any other.
+- Every applied anchor is listed, including those with zero matches. The zero rows
+  show which ranked brands are absent from this sample.
+- Rank, domain and brand are not reordered, filtered by match count or
+  highlighted.
+- Labels use **gambling**, never *illegal*, *licensed* or *unlicensed*, per §0.
+- Caption: rank is as supplied by the external data provider and is not a measure
+  of harm, reach or revenue; it is separate from the rank shown in the Gambling
+  ranking card. Grouping a URL under a ranked brand is an analytical grouping,
+  not a legal finding about ownership.
+- The table runs across pages under the annex exception in §9.4.
+- If no ranking was applied in this run, H2 is omitted and does not appear in the
+  contents. If a ranking was applied and nothing matched, H2 still renders: the
+  zero column is the result.
+
+
+## 8. The five Key Insights (narrative)
+
+Each card has a **title**, a **body** and a one-line **take**. Compute first:
+`gamblingShare`; `topClusterShare = topCluster.urlCount / gambling × 100`;
+`topDomainShare` and `domainsToHalf` (§5.4);
+`top10Share`; `thaiEnforcement` and `otherEnforcement` from §6.11.
+
+| # | Card | Body | Take |
+|---|---|---|---|
+| 1 | **Scale of the analysis** | Total distinct URLs over the evaluation period (`days`, plus `earliest → latest` if known), of which `gambling` gambling, `notGambling` not gambling, `unreachable` unreachable; `needsAnalysis` further URLs were set aside as Needs more analysis. Where §6.2 found gaps, name them with their recorded cause or say it was not recorded. | The sample is large enough to reason about patterns, not isolated cases. |
+| 2 | **What is being offered** | The top three product subcategories with counts and shares; `generalShare` of sites confirmed as gambling without an evidenced product type; `inferredShare`; the number of lexicon keywords that never matched. | Name the dominant product type. If the top subcategory is under 40% of gambling rows, say the estate is spread across product types rather than concentrated. If `generalShare` exceeds 40%, say the lexicon does not yet resolve product type for this sample and name the tabs with the weakest coverage. |
+| 3 | **Brand clustering** | `distinctClusters` clusters across `gambling` URLs on `distinctDomains` domains; `multiDomainClusters` hold more than one domain; `clustersToHalf` clusters and `domainsToHalf` domains cover half the estate; the largest cluster, `topCluster.name`, holds `topCluster.urlCount` URLs (`topClusterShare`% of gambling URLs) on `topCluster.domainCount` domains, across `M` subcategories; the largest domain, `topDomain`, holds `topDomain.urlCount` URLs (`topDomainShare`%). Where host farms exist, give `hostFarmCount` and the share of gambling URLs they carry. Write every count with the correct singular or plural (`1 member stem`, `1 domain`). If every cluster is a singleton, state that no brand-family structure was detected. | Apply the first rule that fits. (a) If `dominantDomain` is true, write two sentences. First: one registered domain carries `topDomainShare`% of the estate through many hostnames, so action at domain level reaches all of them at once, where URL-by-URL blocking would need one entry per hostname. Second, always: the verdict of rule (c) on the rest of the estate, for example "Beyond it, the estate is diffuse: `clustersToHalf` clusters and `domainsToHalf` domains are needed to cover half of the gambling URLs." A take under rule (a) with only the first sentence is incomplete. (b) If `dominantCluster` is true: draw no concentration conclusion; say that concentration is driven by the largest cluster, that its make-up is set out in the Inside the largest cluster table, and that cluster-level action depends on confirming it is one operation. (c) Otherwise, if `clustersToHalf ≤ 10` or `domainsToHalf ≤ 10`, a small number of operators account for most of the estate and enforcement against clusters and domains is far more efficient than against individual URLs; if not, the estate is diffuse and per-URL blocking will have limited leverage. |
+| 4 | **How the estate is grown and marketed** | `variantRows` crawler-identified variants (with the §6.8 verification figure that applies), `redirectRows` behind redirect chains, `directRows` reached directly; busiest redirect source `topRedirect` with `topRedirect.count` destinations; `N` clusters rotate across more than one TLD; the two most common signal tags with their shares. | Redirects and TLD rotation keep a stable entry point while the sites behind it are replaced. Where `Promotions` or `Vague-Evasion Terms` dominate, the acquisition route is promotional content rather than search, which changes where enforcement has to look. |
+| 5 | **Enforcement position** | `thaiEnforcement` pages show Thai enforcement indicators (Thai court orders, MDES or Thai ISP block pages) and `otherEnforcement` show other block pages, with the detection sentence of §6.11 and a pointer to the Pages showing blocking indicators table; the collection network, or that it was not recorded. If both are zero: the set appears pre-enforcement and is a candidate for a first pass. | Only Thai-authority indicators are described as enforcement in Thailand. A measurable share is already under enforcement, or: this set is a candidate for a first enforcement pass, prioritised by domain and cluster rather than by URL. Where the collection network may bypass Thai ISP blocking, or was not recorded, say the enforcement count may be understated. |
+
+---
+
+## 9. Output & presentation notes
+
+### 9.1 General
+- Percentages to one decimal place.
+- Empty states are explicit ("No multi-domain brand clusters were detected in this
+  sample."), never fabricated data. The Model Insights section is exempt: its five cards are written
+  by hand after generation and render blank, with no empty-state line, apart from
+  the fixed section introduction in card A1.
+- Never present an inferred assignment as though it were keyword-derived; every
+  subcategory figure carries its method split.
+- Thai keywords render in their original script throughout — never transliterate or
+  translate them in chart labels or tables. Where an axis cannot fit Thai text,
+  wrap it before shortening it (§9.5). Thai has no spaces between words, so it
+  wraps at word boundaries found by a Thai line-breaking dictionary (as ICU line
+  breaking provides) and never inside a character cluster: a vowel or tone mark
+  is never separated from the consonant it sits on. Truncate only as a last
+  resort, and never rely on a tooltip alone
+  to carry the full string — the report is read on paper as well as on screen.
+- **Thai rendering applies everywhere**, not only in Annex 1. Every card, chart
+  label, table cell and heat-map row uses the Font, Line height and Render check
+  rules of the Annex 1 legibility table (§7, H1). A vowel or tone mark displaced
+  from its consonant (`สมาชกิ` for `สมาชิก`), a dotted circle or an empty box
+  anywhere in the report is a defect.
+- **Units and wording:** URLs and domains per §3 *Units*; *gambling*, never
+  *gaming*; `Needs more analysis`, never `Review needed`.
+- **Singular and plural.** Every generated phrase that puts a count before a noun
+  agrees with the count, everywhere in the report: `1 gambling URL`,
+  `1 domain`, `1 member stem`, `1 cluster`, but `2 gambling URLs`. Where a
+  sentence would read awkwardly in the singular, rewrite it rather than leave
+  the plural (`One gambling URL has a name made only of template words`).
+- The report carries one footnote line, at the foot of the last page rather than in
+  a card: `lexiconSource`, `lexiconVersion`, keyword count per tab, `inferredShare`,
+  `generalShare`, the count of rows normalised from `Licensed gambling`, the
+  count of rows normalised from `ANALYSIS_ERROR` (`analysisErrorRows`), any
+  abbreviation flagged under §2.3, the clustering thresholds used (near-miss
+  similarity, variant compatibility, cluster dominance (25%), domain dominance
+  (10%), the host-farm threshold (20 URLs on one domain), late-joiner interval, and the
+  §5.3 linkage exclusions, minimum shared keywords and discrimination limits),
+  the gap and peak thresholds of §6.2 with `meanDaily`, and the collection network or that it was not
+  recorded. There is no methodology card. The footnote is one unbroken block: it
+  never breaks across a page, and if it does not fit at the foot of the last page
+  it moves whole to a new final page.
+- The blocklist feed (§6.13) is the one output consumed by another screen (the
+  Blocklist), where an operator can promote a site to `blacklisted`.
+
+### 9.2 Palette
+Categorical palette: `#1F3F63, #c0392b, #27ae60, #7d3c98, #9aa7b4, #2f5c8f,
+#e67e22`. Assign product subcategory colours in descending count order; there are
+exactly seven product tabs, so no cycling is needed. Signal tabs reuse the same
+palette at 70% opacity to keep the two axes visually distinct. Colours must stay
+readable in light and dark themes.
+
+### 9.3 Heat map rules
+- Sequential single-hue scale based on `#1F3F63`, 8% to 100% opacity. Zero cells
+  render as page background with a hairline border, never as the palest fill, so
+  "no data" is distinct from "low count".
+- Cell labels show the integer count where the cell is at least 8 mm wide and 5 mm
+  tall. Below that the count is dropped and the colour scale carries the value —
+  never shrink the digits to fit, and never leave the count recoverable only from
+  a tooltip.
+- Text flips to white above 55% fill opacity.
+- Row order: descending row total. Column order: descending column total.
+- Cap at 25 rows × 12 columns; overflow collapses into a final `Other` row or
+  column with a note giving the number collapsed.
+- Minimum 14 mm per column. The seven subcategory columns of D4, D5 and E3 sit in
+  140 mm of card width once §9.4 padding is taken off; row labels therefore take
+  at most 40 mm, leaving 100 mm across seven columns. Column headings wrap to two
+  lines at that width — `General Gambling` and `Football Betting` will not fit on
+  one — so reserve two label lines on every subcategory axis rather than letting
+  the longest heading truncate.
+- Every heat map carries a legend showing the count at both scale endpoints.
+
+### 9.4 Card layout
+
+Every block is a card. Nothing renders outside one, with the single exception of
+the title page (§7), which carries no card, no border and no grid.
+
+| Property | Value |
+|---|---|
+| Structure | Title, optional one-line subtitle, introduction where §9.6 requires one, body (chart, table, diagram or prose), optional caption. One idea per card. |
+| Corner radius | 6 px |
+| Border | 1 px hairline, `#C9D2DB` |
+| Fill | page background; no tint, so heat-map zero cells stay distinguishable |
+| Padding | 10 mm all sides |
+| Gap between cards | 6 mm |
+| Title | bold, sentence case, never truncated. Main headers, section headings, the Model Insights card titles and the two annex titles are the exception: they render exactly as written in §7. |
+| Blank pages | no page may carry only the running header and footer. A blank page appears when a card ends at the foot of a page and the next element forces a further break (a main header's page break, or a card that cannot split): suppress the extra break. In the annexes, a table row that is taller than the space left continues on the next page rather than leaving an empty one. |
+| Page break | a card never splits across pages; if it will not fit, it moves whole to the next page. **Annex exception:** the table in H2, and H1 when its subcategory blocks do not fit on one page, may continue across pages. The card title repeats at the top of each continuation page followed by `(continued)`, the table header row repeats, a table row or H1 subcategory block never splits, and the lines and caption beneath the table sit on the last page. |
+| Grid | full-width cards span the 160 mm content column; metric-card rows place 3–4 equal cards across that column |
+| Headings | each main header starts on a new page; a section heading travels with the first card beneath it and never sits alone at the foot of a page |
+| Table cells | numbers, ranks, dates and percentages never wrap inside a cell (`1,071,656` stays on one line); numeric columns take the width of their longest value and text columns such as URL and domain wrap instead |
+| Unbreakable tokens | a date, a suffix (`.casino`), a domain, a stem, a cluster name or a long digit string (`326821905591`) never breaks inside itself, in tables, metric cards, chart labels or captions. A list of suffixes or names breaks only after a separator (comma or `·`). Where a token is wider than its column, widen the column at the expense of a prose column; if it still does not fit, shorten the token with an ellipsis and give it in full in the card caption. A date range in a metric card breaks only at its arrow, `2026-09-04 →` on one line and `2026-10-20` on the next. |
+| Prose | no prose block, caption or line ends mid-sentence; a length limit is met by rewriting, never by cutting text off |
+| Empty data | the card is omitted entirely, not rendered empty |
+| Nesting | cards never nest; a chart and its table share one card rather than sitting in two |
+
+Metric-card rows are the one exception to one-idea-per-card: three or four single
+figures may sit side by side in a row of small cards, each with its own border and
+its figure set large above a short label.
+
+### 9.5 Chart label legibility
+
+No label may overlap another label, a bar, a cell border, a node, or the plot
+frame, and no label may be clipped by the card edge. Where a layout cannot meet
+that, change the chart form — never shrink the type below the minimum and never
+let two labels sit on top of each other.
+
+| Rule | Value |
+|---|---|
+| Minimum type | 8 pt for any axis label, tick label, legend entry, in-cell value or node label. Nothing on a chart is smaller. |
+| Long category names | Wrap to a maximum of two lines. Latin wraps at word boundaries; Thai wraps at dictionary word boundaries and never inside a character cluster (§9.1). |
+| Rotation | Category labels stay horizontal. A chart whose labels will not fit horizontally becomes a horizontal bar chart instead of rotating its labels. |
+| Bar orientation | More than eight categories, or any category name over roughly 12 characters, renders horizontally. This covers D1 and E2. |
+| Truncation | Last resort only, with a visible ellipsis, and only when the full string is recoverable from a table or legend **inside the same card**. A tooltip alone is not recovery. |
+| Time axis | At most 12 tick labels on C2. Thin evenly and always keep the first and last date. Never let date labels collide. |
+| Pie and donut | No label sits on a segment below 5%. Those values move to a legend carrying name, count and percentage. C3 uses a legend rather than leader lines. |
+| Value labels on bars | Inside the bar when the bar is long enough to hold them at 8 pt with 2 mm clearance; otherwise immediately outside the bar end. |
+| Legend | Below the plot, never overlapping it, never floating inside it. |
+| Node diagrams | E4 and E10 place labels so that none collide. Where two would, shorten to the cluster stem and list the full names in a caption beneath the diagram. |
+| Axis titles | Omitted where the card title already names the quantity, rather than repeated and competing for space. |
+| Final check | Every chart is inspected after render. A clipped label, an overlapping pair, or a truncation with no in-card recovery is a defect, not an acceptable trade-off. |
+
+### 9.6 Chart introductions
+
+Every card carrying a chart, a heat map or a node diagram opens with one short
+introduction, set between the card title and the figure. It says what the figure
+plots. It does not say what the figure means.
+
+**Cards that carry one:** C2, C3, C4, C5, D1, D2, D4, D5, E2, E3, E4, E10. Table only
+cards, metric card rows and prose cards do not.
+
+| Rule | Value |
+|---|---|
+| Length | Two sentences at most, 40 words at most. |
+| Content | What is plotted, what one unit on the figure represents, and which axis or dimension carries what. Nothing else. |
+| Tense | Present. |
+| Figures | None. The chart, the table and the caption carry the numbers. |
+| Prohibited | Interpretation, judgement, adjectives of scale, cause, recommendation, forecast, and any phrase that tells the reader what to conclude. |
+| Hyphens and dashes | None. No hyphen, no en dash, no em dash. Where a term normally takes a hyphen, use the unhyphenated spelling or rewrite the phrase. |
+| Parentheses | None. Split the sentence instead. |
+| Repetition | Never restates the card title. |
+| Register | Plain declarative sentences. No filler openers such as "This chart shows the way in which". |
+| Empty data | The card is omitted under §7, so its introduction is omitted with it. |
+
+**Form to follow.** State the quantity, then the breakdown, then the unit.
+
+| Card | Introduction |
+|---|---|
+| C5 | URLs at each stage from the export to the analysis. Each box carries the URLs kept and each branch the URLs set aside. |
+| C2 | Daily count of URLs analysed across the evaluation period. Each point is one calendar day and shaded bands mark gaps. |
+| C3 | Share of the estate by classification status. Each segment is one status and the table beside it carries the counts. |
+| C4 | The ten most common URL suffixes in the estate. Bar length is the total count and the table separates the gambling share. |
+| D1 | Gambling sites by product subcategory. Bar length is the site count and each label carries the count and the share of gambling rows. |
+| D2 | How each subcategory was assigned. Solid fill is a lexicon keyword match and the lighter fill is reasoning inference. |
+| D4 | Matched keywords against product subcategory. Each cell is the number of gambling sites carrying that keyword in that subcategory. |
+| D5 | Signal tags against product subcategory. Each cell is the number of gambling sites carrying that tag in that subcategory. |
+| E2 | The fifteen largest brand clusters. Bar length is the number of URLs in the cluster. |
+| E3 | Brand clusters against product subcategory. Each cell is the number of URLs a cluster holds in that subcategory. |
+| E4 | The largest brand cluster and its member domains. Edge style records why each domain joined the cluster. |
+| E10 | The busiest redirect source and the destinations reached from it. Each node is one domain. |
+
+These are the forms to follow, not fixed text. Rewrite each one from the data
+actually plotted.
+
+### 9.7 Pre-issue checks
+
+Run after the final render, on the rendered report rather than on the data. Any
+failure is fixed and the report rendered again; none is accepted as a trade-off.
+
+| Check | Pass when |
+|---|---|
+| Reconciliation | Every §6.19 identity holds, every total row equals its parent figure, and every figure quoted in Card 1 or the Key insights matches the card it comes from. |
+| Prose integrity | Every generated sentence (Card 1, E0, the table explanations, the Key insights, captions and lines beneath tables) is complete and grammatical, with no repeated word (`from from`), no stray fragment (`we g`) and no sentence cut off mid-clause. Fix by rewriting, not by deleting the end. |
+| Data claims | No sentence explains a pattern with a cause the input does not give, such as calling a gap normal for a pilot. Every statement about gaps or peaks agrees with the plotted daily series (§6.2 gap self-check). |
+| Cluster names | None of the 20 largest clusters is named by a template token or a generic word (§5.4 generic-name check), and no brand appears under two cluster names in the Top 15 chart. |
+| Concentration claims | No sentence says that no cluster or domain dominates, or that the estate is diffuse, while `dominantDomain` or `dominantCluster` is true. No hostname count is labelled as domains, and `distinctDomains` is the registrable-domain count. |
+| Operator linkage | The Possible operator linkage table appears only when the §5.3 discrimination check passes. |
+| Headings | Each contents entry matches its heading verbatim; each main header opens a page; no heading sits alone at a page foot. |
+| Units and wording | No card mixes URLs and domains for one quantity; *gaming*, *Review needed*, *illegal*, *licensed* and *unlicensed* appear nowhere as labels. |
+| Thai text | The Annex 1 render check, applied to every page. |
+| Tables | No number, rank or date wraps inside a cell; no table row splits across pages. |
+| Page breaks | No card splits outside the annex exception; the footnote is whole; no page carries only the header and footer. |
+| Singular and plural | No generated count disagrees with its noun (`1 gambling URLs`, `1 member stems`). |
+| Unbreakable tokens | No date, suffix, domain, stem, cluster name or digit string breaks inside itself anywhere, including metric cards and the Annex 2 table. No Source cell shows a one- or two-character placeholder such as `x`. |
+| Insight 3 | When `dominantDomain` is true, the take carries both sentences of rule (a), including the verdict on the rest of the estate. |
+| Outcome definitions first | Card C0 is the first card under the Data Analysis main header, before the first section heading. |
+
+---
+
+## Appendix A — Subcategory and keyword reference
+
+Canonical lexicon. 14 categories, 286 distinct keywords. Reference material for
+the classifier and for the heat-map axes — **never rendered in the report as an
+appendix**. The one exception: Annex 1 (card H1, §7) reproduces the seven
+product categories of A.1 with a fixed definition, the keyword count and the
+complete keyword list of each. A.2, A.3 and the category ids never render.
+
+### A.1 Product subcategories
+
+Exactly one is assigned per gambling row, as `subcategory`. These seven are the
+only permitted values, and they are the columns of every subcategory axis and
+every heat map in §7. `general_gambling` is a catch-all: assign it only when no
+other product category scores.
+
+| Category | `id` | n | Keywords |
+|---|---|---|---|
+| **Football Betting** | `football_betting` | 21 | พนันบอล · พนันบอลออนไลน์ · แทงบอล · แทงบอลออนไลน์ · พนันฟุตบอล · แทงฟุตบอล · สปอร์ตบุ๊ค · บอลออนไลน์ · ราคาบอล · บอลสเต็ป · บอลเดี่ยว · สเต็ปบอล · แทงบอลชุด · ทีเด็ดบอล · วิเคราะห์บอล · โต๊ะบอล · ล้มโต๊ะบอล · เดิมพันฟุตบอล · เว็บแทงบอล · บอลสเต็ปแม่น · พนันกีฬา |
+| **Slots** | `slots` | 32 | สล็อต · สล็อตออนไลน์ · เกมสล็อต · เกมสล็อตออนไลน์ · สล็อตแตกง่าย · สล็อตแตกบ่อย · สล็อตแตกหนัก · สล็อตแตกจริง · สล็อตใหม่ · สล็อตเว็บตรง · สล็อตวอเลท · เล่นสล็อต · สล็อตเครดิตฟรี · สล็อตแตกทุกวัน · สล็อตมาแรง · สล็อตยอดนิยม · สล็อตค่ายดัง · สล็อตไม่ผ่านเอเย่นต์ · สล็อต pg · สล็อต joker · สล็อต jili · สล็อต pragmatic · สล็อต xo · สล็อต auto · สล็อตแตกไว · สล็อตฝากถอนออโต้ · สล็อตฝากไม่มีขั้นต่ำ · สล็อตโบนัสแตกหนัก · สล็อตสายฟรี · สล็อตปั่นง่าย · สล็อต RTP สูง · สล็อตคืนกำไร |
+| **Casino** | `casino` | 14 | คาสิโน · คาสิโนออนไลน์ · คาสิโนสด · คาสิโนสดออนไลน์ · เสือมังกร · รูเล็ต · รูเล็ตออนไลน์ · รูเล๊ต · ไฮโล · ไฮโลออนไลน์ · ไฮโลไทย · หมุนวงล้อโบนันซ่ารายวัน · หมุนวงล้อโบนันซ่า · ปั่นแปะ |
+| **Lottery** | `lottery` | 20 | หวยออนไลน์ · แทงหวย · ซื้อหวยออนไลน์ · หวยยี่กี · หวยฮานอย · หวยลาว · หวยรัฐบาล · หวยมาเลย์ · หวยจับยี่กี · จับยี่กี VIP · หวยใต้ดิน · หวยออนไลน์จ่ายจริง · เว็บหวย · เว็บแทงหวย · Huay · Huaylan · หวยหุ้น · หวยหุ้นไทย · หวยหุ้นต่างประเทศ · หวยชุด |
+| **Playing card** | `playing_card` | 12 | ไพ่ · ไพ่ออนไลน์ · ไพ่ ออนไลน์ · ไพ่ป๊อก · ป๊อกเด้ง · ป๊อกเด้งออนไลน์ · แบล็คแจ็ค · แบล็คแจ็คออนไลน์ · โป๊กเกอร์ · โป๊กเกอร์ออนไลน์ · ตีไก่สองใบ · ตีไก่สามใบ |
+| **Baccarat** | `baccarat` | 11 | บาคารา · บาคาร่า · บาคาร่าออนไลน์ · ไพ่บาคาร่า · บาคาร่าสด · โต๊ะบาคาร่า · บาคาร่าทดลอง · บาคาร่าฟรี · บาคาร่าระบบ AI · บาคาร่าขั้นเทพ · สูตรบาคาร่า |
+| **General Gambling** | `general_gambling` | 22 | พนัน · การพนัน · พนันออนไลน์ · เว็บพนัน · เว็บเดิมพัน · เดิมพัน · เดิมพันออนไลน์ · คาสิโน · คาสิโนออนไลน์ · บ่อน · บ่อนออนไลน์ · เว็บเกมพนัน · เกมพนัน · เว็บเสี่ยงโชค · เสี่ยงโชค · เว็บเกมเงิน · เล่นเงินจริง · เกมได้เงินจริง · เดิมพันกีฬา · พนันกีฬา · พนันบอล · แทงบอล |
+
+### A.2 Signal tags
+
+Zero or more per gambling row, as `signalTags`. **Never a subcategory** — these
+record how a site operates or markets itself, not what it sells. They are the
+rows of heat map D5.
+
+| Category | `id` | n | Indicates | Keywords |
+|---|---|---|---|---|
+| **Deposit & Withdrawal** | `deposit_withdrawal` | 24 | Payment and cash-out mechanics advertised | ฝากถอนออโต้ · ฝากถอนอัตโนมัติ · ฝากถอนเร็ว · ฝากไว · ถอนจริง · ถอนเร็ว · ถอนไม่อั้น · ถอนทุกวัน · ฝากไม่มีขั้นต่ำ · ถอนไม่มีขั้นต่ำ · ฝาก 1 บาท · ฝาก 10 บาท · ฝากเริ่มต้น · ถอนภายใน 1 นาที · ถอนภายใน 30 วินาที · ฝากผ่านวอเลท · Wallet · ทรูวอลเล็ต · วอลเล็ต · พร้อมเพย์ · ระบบออโต้ · ระบบอัตโนมัติ · อัตราการจ่าย · เรทการจ่าย |
+| **Promotions** | `promotions` | 27 | Free-credit and bonus acquisition offers | เครดิตฟรี · รับเครดิตฟรี · เครดิตฟรีไม่ต้องฝาก · เครดิตฟรีกดรับเอง · แจกเครดิตฟรี · โบนัสฟรี · โบนัสสมาชิกใหม่ · โบนัสแรกเข้า · โบนัสต้อนรับ · โบนัสแตกหนัก · โบนัส 100% · โปรสมาชิกใหม่ · โปรฝากแรก · โปรถอนจริง · โปรคืนยอดเสีย · คืนยอดเสีย · โบนัสรายวัน · โบนัสรายสัปดาห์ · โบนัสรายเดือน · โบนัสแนะนำเพื่อน · โบนัสชวนเพื่อน · โปรคุ้ม · โปรแรง · โปรเด็ด · โปรพิเศษ · ของแถม · กิจกรรมแจกเครดิต |
+| **Marketing & Acquisition** | `marketing_acquisition` | 25 | Win-rate and payout claims | แตกหนัก · แตกจริง · แตกไม่อั้น · แตกทุกวัน · ทำกำไร · กำไรวันละ · รายได้เสริม · รายได้พิเศษ · สร้างรายได้ · ได้เงินจริง · ถอนเงินจริง · รวยจากมือถือ · เล่นง่าย · ได้จริง · จ่ายจริง · จ่ายหนัก · เข้ากลุ่มฟรี · รับยูสฟรี · สมัครฟรี · สมัครรับโบนัส · สมัครสมาชิก · สมัครวันนี้ · ลุ้นรางวัล · สมาชิกใหม่ · รับทุนฟรี |
+| **Affiliate & Agent** | `affiliate_agent` | 20 | Affiliate, agent or referral structure | เอเย่นต์ · Agent · Affiliate · ตัวแทน · นายหน้า · ดีลเลอร์ · รับตัวแทน · เปิดยูสเซอร์ · รับคนเล่น · สายงานพนัน · ระบบแนะนำเพื่อน · ค่าคอม · คอมมิชชั่น · รายได้จากการแนะนำ · รับสมัครพาร์ทเนอร์ · Partner · แชร์รายได้ · หารายได้ออนไลน์ · รายได้ไม่จำกัด · ดีลเลอร์สด |
+| **Vague-Evasion Terms** | `vague_evasion` | 20 | Deliberate avoidance of explicit gambling vocabulary | เกมทำเงิน · เกมออนไลน์ทำเงิน · เกมเศรษฐีออนไลน์ · ค่ายเกมดัง · เกมโบนัสแตก · เกมทุนน้อย · เกมสร้างรายได้ · เว็บทำเงิน · เว็บรายได้เสริม · เกมปั่นเครดิต · ปั่นทุน · ปั่นกำไร · ปั่นเครดิต · รับทุนเล่น · เล่นรับทรัพย์ · สายปั่น · สายทำกำไร · สายฟรี · ปั่นแตก · เกมแตกง่าย |
+| **Abbreviations** | `abbreviations` | 22 | Provider or network branding | PG · PGSOFT · PP · PRAGMATIC · JILI · JDB · FC · SLOTXO · XO · SA · SEXY · WM · AG · AE · M8BET · BET · WIN · VIP · AUTO · RTP · WALLET · TRUEWALLET |
+| **Hashtags** | `hashtags` | 21 | Promoted through hashtag campaigns | #สล็อต · #สล็อตแตกง่าย · #สล็อตเว็บตรง · #สล็อตออนไลน์ · #สล็อตแตกหนัก · #เครดิตฟรี · #บาคาร่า · #บาคาร่าออนไลน์ · #คาสิโนออนไลน์ · #พนันบอล · #แทงบอล · #เว็บพนัน · #เว็บตรง · #เว็บตรงไม่ผ่านเอเย่นต์ · #เล่นสล็อต · #แตกง่าย · #แตกหนัก · #ถอนจริง · #ฝากถอนออโต้ · #สล็อตวอเลท · #สล็อตpg |
+
+### A.3 Matching summary
+
+| Keyword type | Rule |
+|---|---|
+| Thai | Case-sensitive substring. Thai has no word delimiters, so no boundary test applies. |
+| Latin | Case-insensitive, token boundary both sides, so `BET` does not match *betterment*. |
+| Mixed (`สล็อต pg`) | Substring. |
+| Hashtag | Match including `#`, then strip `#` and re-run against product categories, so `#สล็อต` also scores Slots. |
+| Two-letter abbreviations | `PG PP FC XO SA WM AG AE` count only when standing alone or at a separator inside a domain stem. High false-positive risk; monitor per §2.3. |
+
+**Cross-category collisions.** `คาสิโน` and `คาสิโนออนไลน์` resolve to Casino.
+`พนันกีฬา`, `พนันบอล` and `แทงบอล` resolve to Football Betting. The specific
+product category always beats `general_gambling`. `รูเล็ตออนไลน์` is listed twice
+under Casino in the source workbook and appears once in A.1. `Wallet` and
+`WALLET` match the same text, since Latin matching is case-insensitive, and tag
+both signal categories.
